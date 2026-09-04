@@ -13,6 +13,7 @@ const { page } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <Seo page={page} />
     <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="/content.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">{page.language === "hu" ? "Ugrás a tartalomhoz" : "Skip to content"}</a>

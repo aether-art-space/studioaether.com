@@ -36,11 +36,11 @@ export const site = {
 };
 
 export const pages = [
-  route("/", "en", "Homepage", "Photo Studio in Budapest | aether art space", "photostudio in Budapest tailored for creation", "/hu", { priority: "Critical", section: "home", description: "A creative photo studio in Budapest for professional photographers, first-timers, photoshoots, workshops and resident artists." }),
-  route("/hu", "hu", "Homepage", "aether art space - kreatív fotóstúdió Budapesten", "fotóstúdió Budapesten az alkotáshoz kialakítva", "/", { priority: "Critical", section: "home", description: "Kreatív fotóstúdió Budapesten fotózásokhoz, workshopokhoz, felszereléshez és rezidens művészekhez." }),
+  route("/", "en", "Homepage", "Photo Studio in Budapest | aether art space", "photostudio in Budapest tailored for creation - both for pros and first timers", "/hu", { priority: "Critical", section: "home", description: "aether art space is a creative photo studio in the heart of Budapest, built for portraits, commercial shoots, self photo sessions, and first-time creators." }),
+  route("/hu", "hu", "Homepage", "aether art space - kreatív fotóstúdió Budapesten", "fotóstúdió Budapesten az alkotáshoz kialakítva - profiknak és első alkalmasoknak is", "/", { priority: "Critical", section: "home", description: "Az aether art space kreatív fotóstúdió Budapest szívében portré-, reklám-, szelfi- és első alkalmas fotózásokhoz." }),
 
-  route("/studio", "en", "Studio rental / space", "Photo Studio Rental in Budapest | Equipped Creative Studio | aether", "the Studio", "/hu/studio", { priority: "Critical" }),
-  route("/hu/studio", "hu", "Studio rental / space", "Fotóstúdió bérlés Budapesten | Felszerelt kreatív stúdió | aether", "a stúdió", "/studio", { priority: "Critical" }),
+  route("/studio", "en", "Studio rental / space", "Photo Studio Rental in Budapest | Equipped Creative Studio | aether", "the Studio", "/hu/studio", { priority: "Critical", description: "Rent a creative photo studio in Budapest with strobes, modifiers, paper backdrops, cameras, furniture, outfits, and props for professional photoshoots." }),
+  route("/hu/studio", "hu", "Studio rental / space", "Fotóstúdió bérlés Budapesten | Felszerelt kreatív stúdió | aether", "a stúdió", "/studio", { priority: "Critical", description: "Bérelhető fotóstúdió Budapesten vakukkal, fényformálókkal, papírhátterekkel, kamerákkal, bútorokkal és kellékekkel fotózásokhoz." }),
   route("/selfie-studio-budapest", "en", "Selfie studio", "Self Photo Studio in Budapest | Private Selfie Photoshoot | aether", "Aether Selfie Studio", "/hu/selfie-studio-budapest", { priority: "Critical" }),
   route("/hu/selfie-studio-budapest", "hu", "Selfie studio", "Szelfi stúdió Budapesten | aether art space", "Aether Szelfi Studio", "/selfie-studio-budapest", { priority: "Critical" }),
   route("/equipment", "en", "Equipment / camera rental", "Photo Studio Equipment in Budapest | aether art space", "equipment", "/hu/equipment"),

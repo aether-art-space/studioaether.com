@@ -23,7 +23,7 @@ npm run dev
 
 `npm run dev` starts Astro’s development server. `npm run preview` serves the last production build.
 
-The current page body is a conservative scaffold. It preserves the route and SEO contract while the verified Wix content, images and conversion details are migrated page by page.
+The current page body is a conservative scaffold on routes not yet migrated. The English/Hungarian homepage and studio pair now use verified Wix copy and current studio facts; remaining routes are migrated page by page after their own source audit.
 
 ## Migration gates before DNS cutover
 

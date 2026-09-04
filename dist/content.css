@@ -1,0 +1,19 @@
+.artist-section{margin-bottom:8rem}
+.artist-section>h2{font:clamp(2rem,4vw,4.6rem)/.95 var(--serif);letter-spacing:-.06em;max-width:45rem;margin:.5rem 0 2rem}
+.artists-grid{margin-bottom:0}
+.beginner-copy{margin-bottom:8rem}
+.quote{font:clamp(1.5rem,3vw,2.5rem)/1.05 var(--serif);letter-spacing:-.04em}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.5rem;padding-left:1.2rem;margin:2rem 0}
+.steps li::marker{color:var(--muted)}
+.studio-overview{margin-bottom:5rem}
+.studio-facts ul,.backdrop-list{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+.studio-facts li,.backdrop-list li{border-bottom:1px solid var(--line);padding:.45rem 0}
+.studio-media{display:grid;grid-template-columns:1.5fr 1fr;gap:1rem;margin-bottom:8rem}
+.studio-media figure{margin:0;background:var(--ink);color:var(--paper);padding:.5rem}
+.studio-media img{display:block;width:100%;height:auto;object-fit:cover}
+.studio-media figcaption{font-size:.72rem;padding:.6rem .4rem}
+.backdrop-copy h2{font:clamp(2rem,4vw,4rem)/.95 var(--serif);letter-spacing:-.06em;margin:.5rem 0 1.5rem}
+@media(max-width:850px){
+  .steps{grid-template-columns:1fr}
+  .studio-media{grid-template-columns:1fr}
+}

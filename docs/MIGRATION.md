@@ -8,6 +8,8 @@ All 46 inventory URLs are represented in the route contract, along with the nine
 
 Astro generates clean URL paths as directory-index documents. Production hosting must serve `/hu`, `/studio` and the other no-trailing-slash paths directly and must not introduce automatic trailing-slash redirects.
 
+Content migration status: `/`, `/hu`, `/studio` and `/hu/studio` have been compared against fresh Wix HTML for title, description, core headings, copy and selected image semantics. Other routes retain the conservative scaffold until their own content and asset audits are complete.
+
 | Route group | Initial V2 treatment |
 | --- | --- |
 | 22 EN/HU navigation-visible pairs | Preserve exact URL, intent, observed title and reciprocal counterpart relationship. |
