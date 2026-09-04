@@ -1,0 +1,125 @@
+---
+import { absoluteUrl, pageByPath, site, siteUrl, faqItemsFor } from "../lib/site.mjs";
+
+const { page } = Astro.props;
+const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
+const canonicalUrl = absoluteUrl(page.path);
+const counterpart = page.counterpartPath ? pageByPath.get(page.counterpartPath) : null;
+const alternates = [
+  { hreflang: page.language === "hu" ? "hu-hu" : "en-us", href: canonicalUrl },
+  ...(counterpart ? [{ hreflang: counterpart.language === "hu" ? "hu-hu" : "en-us", href: absoluteUrl(counterpart.path) }] : [])
+];
+const englishPage = page.language === "en" ? page : counterpart?.language === "en" ? counterpart : null;
+const xDefault = absoluteUrl(englishPage?.path || "/");
+const tracking = preview ? { googleTagId: "", ga4Id: "", googleAdsId: "" } : site.tracking;
+const trackingId = tracking.googleTagId || tracking.ga4Id || tracking.googleAdsId;
+const schemas: Record<string, unknown>[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${siteUrl()}/#business`,
+    name: site.name,
+    url: siteUrl(),
+    email: site.email,
+    telephone: site.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Lónyay utca 60.",
+      postalCode: "1093",
+      addressLocality: "Budapest",
+      addressCountry: "HU"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    name: page.title,
+    url: canonicalUrl,
+    inLanguage: page.language,
+    isPartOf: { "@id": `${siteUrl()}/#website` }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: page.language === "hu" ? "Kezdőlap" : "Home",
+        item: absoluteUrl(page.language === "hu" ? "/hu" : "/")
+      },
+      ...(page.path !== "/" && page.path !== "/hu" ? [{
+        "@type": "ListItem",
+        position: 2,
+        name: page.h1,
+        item: canonicalUrl
+      }] : [])
+    ]
+  }
+];
+
+if (page.section === "home" && page.path === "/") {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl()}/#website`,
+    name: site.name,
+    url: siteUrl(),
+    inLanguage: ["en", "hu"]
+  });
+}
+
+if (page.section === "service") {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${canonicalUrl}#service`,
+    name: page.h1,
+    serviceType: page.purpose,
+    provider: { "@id": `${siteUrl()}/#business` },
+    areaServed: { "@type": "City", name: "Budapest" }
+  });
+}
+
+if (page.section === "faq") {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#faq`,
+    mainEntity: faqItemsFor(page).map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer }
+    }))
+  });
+}
+
+if (page.path.endsWith("photographer-daniel")) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${canonicalUrl}#person`,
+    name: "Dániel Z. Aczél",
+    jobTitle: "Photographer",
+    worksFor: { "@id": `${siteUrl()}/#business` },
+    url: canonicalUrl
+  });
+}
+---
+<title>{page.title}</title>
+<meta name="description" content={page.description} />
+<meta name="robots" content={preview ? "noindex,nofollow" : "index,follow"} />
+{preview && <meta name="googlebot" content="noindex,nofollow" />}
+<meta property="og:title" content={page.title} />
+<meta property="og:description" content={page.description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href={canonicalUrl} />
+{alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />)}
+<link rel="alternate" hreflang="x-default" href={xDefault} />
+{schemas.map((schema) => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />)}
+{trackingId && <script is:inline set:html={`window.siteTracking=${JSON.stringify(tracking)};`} />}
+{trackingId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(trackingId)}`} />}
+{trackingId && <script is:inline src="/tracking.js" defer />}

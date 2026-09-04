@@ -4,15 +4,15 @@ This document turns the inventory and migration plan into implementation rules f
 
 ## Route disposition
 
-All 46 inventory URLs are generated at their existing paths: 22 EN/HU pairs plus the two additional indexed EN URLs. Every page has a source URL, language, observed title, heading, counterpart (where confirmed), priority, action and verification field in `src/data/routes.mjs`.
+All 46 inventory URLs are represented in the route contract, along with the nine additional URLs discovered in the live XML sitemaps. Every route has a source URL, language, observed title, heading, counterpart (where confirmed), priority, action and verification field in `src/data/routes.mjs`.
 
-The generator emits both directory-index and flat `.html` artifacts so the hosting layer can serve `/hu`, `/studio` and the other no-trailing-slash paths without URL changes. Production hosting must be configured to use the clean path directly and must not introduce automatic trailing-slash redirects.
+Astro generates clean URL paths as directory-index documents. Production hosting must serve `/hu`, `/studio` and the other no-trailing-slash paths directly and must not introduce automatic trailing-slash redirects.
 
 | Route group | Initial V2 treatment |
 | --- | --- |
 | 22 EN/HU navigation-visible pairs | Preserve exact URL, intent, observed title and reciprocal counterpart relationship. |
-| `/mentoring` | Keep live and indexable pending Search Console/backlink review. Do not invent a redirect. |
-| `/photographer-daniel` | Keep live and indexable pending Search Console/backlink review. Do not invent a redirect. |
+| `/mentoring` | Match the observed Wix behavior with one direct 301 to `/photographer-mentoring-budapest`; keep the source out of the sitemap and internal links. |
+| `/photographer-daniel` | Preserve and keep indexable pending Search Console/backlink review; its sitemap-discovered Hungarian counterpart is also represented. |
 | `/hu/fitness` | Preserve URL and correct the known corporate-photography title mismatch to fitness/yoga wording after baseline capture. |
 | FAQ | Preserve URL; visible content avoids stale package values until current commercial rules are confirmed. Do not add FAQPage schema before content approval. |
 | Privacy policy | Preserve URL; public studio address and legal provider address remain separate decisions. |
@@ -40,4 +40,4 @@ Run `npm run build && npm run check`. Then crawl the generated or deployed site 
 
 ## Redirect policy
 
-No redirect table is committed until the Search Console/backlink review determines whether `/mentoring` consolidates to `/photographer-mentoring-budapest` and whether `/photographer-daniel` should be preserved or mapped. If a redirect is approved, it must be a single direct server-side 301 or 308 and all internal links must target the final URL.
+The current redirect table matches the observed live behavior for `/mentoring`: a single direct server-side 301 to `/photographer-mentoring-budapest`, including the slash variant. `/photographer-daniel` remains live until Search Console/backlink review supports a different disposition. Any future redirect must remain a single direct server-side 301 or 308, with internal links targeting the final URL.

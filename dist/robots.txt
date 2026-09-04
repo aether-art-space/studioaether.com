@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: *?lightbox=
 Sitemap: https://www.studioaether.com/sitemap.xml

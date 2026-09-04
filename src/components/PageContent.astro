@@ -1,0 +1,69 @@
+---
+import { faqItemsFor, introFor, site, localizedNav } from "../lib/site.mjs";
+
+const { page } = Astro.props;
+const hu = page.language === "hu";
+const serviceLinks = localizedNav(page.language).flatMap((group) => group.links)
+  .filter(([path]) => path !== page.path)
+  .slice(0, 4);
+const relatedHref = hu ? "/hu/packages" : "/packages";
+---
+
+{page.section === "home" ? (
+  <>
+    <section class="hero hero--home">
+      <div>
+        <p class="eyebrow">{hu ? "budapesti fotóstúdió" : "photo studio in Budapest"}</p>
+        <h1>{page.h1}</h1>
+        <p class="hero-lead">{introFor(page)}</p>
+        <div class="actions"><a class="button" data-gtag-event="booking_click" data-gtag-location="home" href={site.bookingUrl}>{hu ? "stúdió foglalása" : "book the studio"}</a><a class="text-link" href={hu ? "/hu/studio" : "/studio"}>{hu ? "többet a stúdióról" : "more about the studio"}</a></div>
+      </div>
+      <div class="hero-mark" aria-hidden="true"><span>aether</span><i>art space</i></div>
+    </section>
+    <section class="intro-grid">
+      <div><p class="eyebrow">{hu ? "a kedvenc fotóstúdiód" : "your new favourite photostudio"}</p><h2>{hu ? "A kreatív folyamat minden részletéhez" : "A space for creating art"}</h2></div>
+      <div><p>{hu ? "A stúdiót úgy alakítottuk ki, hogy a fotózásokhoz, workshopokhoz és önálló alkotáshoz szükséges tér, fények, kellékek és segítség egy helyen legyenek." : "Whether you're a professional photographer or an amateur looking for a space to capture your vision, our studio is built to nurture the creative process."}</p><a class="text-link" href={hu ? "/hu/equipment" : "/equipment"}>{hu ? "felszerelés megtekintése" : "check out our equipment"}</a></div>
+    </section>
+    <section class="feature-grid">
+      {[
+        [hu ? "tágas stúdió" : "spacious studio", hu ? "Alkoss saját projekteden, vagy kérj segítséget a helyszínen." : "Rent our studio for creative projects and workshops.", hu ? "/hu/studio" : "/studio"],
+        [hu ? "egyedi bútorok és kellékek" : "unique furniture & props", hu ? "Székek, asztalok, ruhák és kellékek a különleges ötletekhez." : "Chairs, tables, wardrobe and props to give every shoot its own character.", hu ? "/hu/props" : "/props"],
+        [hu ? "rezidens alkotók" : "resident artists", hu ? "Fotósok, modellek, sminkesek és stylistok egy helyen." : "Photographers, models, make-up artists and stylists available in-house.", hu ? "/hu/photographers-budapest" : "/photographers-budapest"]
+      ].map(([title, copy, href], index) => <article class="feature"><span class="feature-number">0{index + 1}</span><h2>{title}</h2><p>{copy}</p><a class="text-link" href={href}>{hu ? "felfedezem" : "learn more"}</a></article>)}
+    </section>
+    <section class="callout"><p class="eyebrow">{hu ? "első alkalom a stúdióban?" : "first time in a studio?"}</p><h2>{hu ? "Megmutatjuk, hogyan használd a felszerelést." : "We will show you around and teach you how to use our equipment."}</h2><a class="button button--dark" href={site.bookingUrl}>{hu ? "foglalás" : "book now"}</a></section>
+  </>
+) : page.path === "/post-booking" || page.path === "/hu/post-booking" ? (
+  <>
+    <section class="hero"><p class="eyebrow">{hu ? "foglalás visszaigazolása" : "booking confirmation"}</p><h1>{page.h1}</h1><p class="hero-lead">{hu ? "Hamarosan jelentkezünk a foglalásod részleteivel." : "We will be in touch shortly with the details of your booking."}</p></section>
+    <section class="callout"><h2>{hu ? "Köszönjük, hogy az aether art space-t választottad." : "Thank you for choosing aether art space."}</h2><a class="button button--dark" href={hu ? "/hu" : "/"}>{hu ? "vissza a főoldalra" : "back to home"}</a></section>
+  </>
+) : page.section === "booking" ? (
+  <>
+    <section class="hero"><p class="eyebrow">{hu ? "foglalás" : "booking"}</p><h1>{page.h1}</h1><p class="hero-lead">{introFor(page)}</p><div class="actions"><a class="button" data-gtag-event="booking_click" data-gtag-location="booking" href={site.bookingUrl}>{hu ? "fotóstúdió foglalása" : "book the photo studio"}</a><a class="button button--outline" data-gtag-event="selfie_booking_click" data-gtag-location="booking" href={site.selfieBookingUrl}>{hu ? "szelfi stúdió foglalása" : "book the selfie studio"}</a></div></section>
+    <section class="price-grid"><article><p class="eyebrow">studio rent</p><h2>7.000 HUF / hour</h2><p>{hu ? "A fotóstúdió használata felszereléssel és helyszíni segítséggel." : "Studio rental for your photoshoot, workshop or creative project."}</p></article><article><p class="eyebrow">photoshoots</p><h2>from 39.000 HUF</h2><p>{hu ? "Fotózási csomagok különböző méretű projektekhez." : "Photoshoot packages for projects of different sizes and purposes."}</p></article><article><p class="eyebrow">selfie studio</p><h2>private session</h2><p>{hu ? "Privát fotózás saját tempóban." : "A private, self-directed photo session."}</p></article></section>
+    <p class="audit-note">{hu ? "A végleges árlistát és foglalási feltételeket a cutover előtti forrásellenőrzés során kell rögzíteni." : "Final prices and booking terms must be confirmed during the pre-cutover source audit."}</p>
+  </>
+) : page.section === "faq" ? (
+  <>
+    <section class="hero"><p class="eyebrow">{hu ? "gyakori kérdések" : "frequently asked questions"}</p><h1>{page.h1}</h1><p class="hero-lead">{introFor(page)}</p></section>
+    <section class="faq-list">{faqItemsFor(page).map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</section>
+    <p class="audit-note">{hu ? "A csomagárakat, lemondási szabályokat és elérhetőségeket a forrásaudit után kell véglegesíteni." : "Package prices, cancellation rules and contact details must be finalized after the source audit."}</p>
+  </>
+) : page.section === "legal" ? (
+  <>
+    <section class="hero"><p class="eyebrow">{hu ? "jogi információ" : "legal information"}</p><h1>{page.h1}</h1><p class="hero-lead">{introFor(page)}</p></section>
+    <section class="legal-copy"><h2>{hu ? "Adatkezelés" : "Data processing"}</h2><p>{hu ? "Az oldalon küldött üzeneteket és foglalási adatokat kizárólag a megkeresés megválaszolásához és a szolgáltatás teljesítéséhez használjuk." : "Messages and booking information submitted through the site are used to respond to enquiries and provide the requested service."}</p><h2>{hu ? "Kapcsolat" : "Contact"}</h2><p>{site.email}<br />{site.publicAddress}</p><p class="audit-note">{hu ? "A teljes jogi szöveg és a hivatalos szolgáltatói cím közzététel előtt jogi ellenőrzést igényel." : "The complete legal text and official provider address require legal review before publication."}</p></section>
+  </>
+) : page.path.endsWith("photographer-daniel") ? (
+  <>
+    <section class="hero"><p class="eyebrow">{hu ? "fotós profil" : "photographer profile"}</p><h1>{page.h1}</h1><p class="hero-lead">{hu ? "Dániel Z. Aczél fotós és az aether art space alapítója Budapesten." : "Dániel Z. Aczél is a photographer and the founder of aether art space in Budapest."}</p><div class="actions"><a class="button" href={`mailto:${site.email}`}>{hu ? "kapcsolat" : "contact the studio"}</a><a class="text-link" href={hu ? "/hu/photographers-budapest" : "/photographers-budapest"}>{hu ? "rezidens fotósok" : "resident photographers"}</a></div></section>
+    <section class="split-copy"><div><h2>{hu ? "Fotózás, tanítás és közös stúdió" : "Photography, teaching and a shared studio"}</h2><p>{hu ? "Ezt a sitemapból is elérhető profilt a migráció alatt megőrizzük." : "This sitemap-discovered profile is preserved during migration."}</p></div><div class="audit-note">{page.action}</div></section>
+  </>
+) : (
+  <>
+    <section class="hero"><p class="eyebrow">{page.purpose}</p><h1>{page.h1}</h1><p class="hero-lead">{introFor(page)}</p><div class="actions"><a class="button" data-gtag-event="booking_click" data-gtag-location="service" href={site.bookingUrl}>{hu ? "érdekel a foglalás" : "check availability"}</a><a class="text-link" href={relatedHref}>{hu ? "csomagok megtekintése" : "view photography packages"}</a></div></section>
+    <section class="split-copy"><div class="visual-card"><span>budapest</span><strong>aether<br />art space</strong></div><div><p class="eyebrow">{hu ? "a lehetőségek" : "made for the process"}</p><h2>{page.h1}</h2><p>{hu ? `Az ${page.purpose.toLowerCase()} szolgáltatást a budapesti aether art space-ben úgy alakítottuk ki, hogy az alkotáshoz szükséges tér és figyelem egy helyen legyen.` : `Our ${page.purpose.toLowerCase()} offering is built around a calm, flexible studio environment with the space and attention your project needs.`}</p><p>{hu ? "A pontos részletekért, elérhetőségért és személyre szabott ajánlatért írj nekünk." : "Contact us for details, availability and a tailored recommendation."}</p><a class="text-link" href={`mailto:${site.email}`}>{hu ? "írj nekünk" : "send us a message"}</a></div></section>
+    <section class="related"><p class="eyebrow">{hu ? "kapcsolódó oldalak" : "continue exploring"}</p><div class="related-links">{serviceLinks.map(([path, label]) => <a class="text-link" href={path}>{label}</a>)}</div></section>
+  </>
+)}

@@ -13,6 +13,7 @@ const route = (path, language, purpose, title, h1, counterpartPath, options = {}
   action: options.action ?? "KEEP EXACT URL",
   verification: options.verification ?? "live crawl + source-level head audit",
   disposition: options.disposition ?? "preserve",
+  redirectTo: options.redirectTo ?? null,
   description: options.description ?? `${h1} in Budapest at aether art space. Explore the studio, services and booking options.`,
   section: options.section ?? "service"
 });
@@ -82,8 +83,19 @@ export const pages = [
   route("/hu/faq", "hu", "FAQ", "GYIK | Aether Art Space", "Gyakran Idézett Kérdések", "/faq", { nav: false, priority: "High", action: "KEEP EXACT URL; audit stale content", section: "faq" }),
   route("/privacy-policy", "en", "Privacy policy", "Privacy Policy | aether art space", "Privacy Policy", "/hu/privacy-policy", { nav: false, priority: "High", action: "KEEP EXACT URL; legal review", section: "legal" }),
   route("/hu/privacy-policy", "hu", "Privacy policy", "Privacy Policy | Aether Art Space", "Privacy Policy", "/privacy-policy", { nav: false, priority: "High", action: "KEEP EXACT URL; legal review", section: "legal" }),
-  route("/mentoring", "en", "LEGACY mentoring URL", "Digital and Analogue Photography Mentoring | Aether Art Space", "Photography Mentoring in Budapest", null, { nav: false, priority: "High", action: "INVESTIGATE canonical/redirect; do not drop", disposition: "preserve-pending-search-console" }),
-  route("/photographer-daniel", "en", "Photographer profile - Dániel", "Dániel Z. Aczél Photographer in Budapest | aether art space", "Photographer profile", null, { nav: false, priority: "Medium", action: "PRESERVE OR REDIRECT intentionally", disposition: "preserve-pending-search-console" })
+  route("/mentoring", "en", "LEGACY mentoring URL", "Digital and Analogue Photography Mentoring | Aether Art Space", "Photography Mentoring in Budapest", null, { nav: false, priority: "High", action: "DIRECT 301 TO CURRENT MENTORING URL", disposition: "redirect", redirectTo: "/photographer-mentoring-budapest" }),
+  route("/photographer-daniel", "en", "Photographer profile - Dániel", "Dániel Z. Aczél Photographer in Budapest | aether art space", "Photographer profile", "/hu/photographer-daniel", { nav: false, priority: "Medium", action: "PRESERVE; sitemap-discovered counterpart", disposition: "preserve-pending-search-console" }),
+
+  // Sitemap-discovered pages not present in the supplied navigation inventory.
+  route("/christmas-photoshoot", "en", "Christmas photoshoot", "Christmas Themed Photography | Aether Art Space", "Christmas Photoshoot", "/hu/christmas-photoshoot", { nav: false, priority: "Medium", action: "PRESERVE URL; content review before cutover", disposition: "preserve-pending-content-review" }),
+  route("/hu/christmas-photoshoot", "hu", "Christmas photoshoot", "Karácsonyi fotózás Budapesten | aether art space", "Karácsonyi Fotózás", "/christmas-photoshoot", { nav: false, priority: "Medium", action: "PRESERVE URL; content review before cutover", disposition: "preserve-pending-content-review" }),
+  route("/christmas-studio", "en", "Christmas studio", "Christmas Studio in Budapest | aether art space", "Capture the Holiday Spirit in Our Christmas-Themed Studio!", "/hu/christmas-studio", { nav: false, priority: "Medium", action: "PRESERVE URL; seasonal content review before cutover", disposition: "preserve-pending-content-review" }),
+  route("/hu/christmas-studio", "hu", "Christmas studio", "Karácsonyi fotóstúdió Budapesten | aether art space", "Ragadd meg az ünnep hangulatát karácsonyi tematikájú stúdiónkban!", "/christmas-studio", { nav: false, priority: "Medium", action: "PRESERVE URL; seasonal content review before cutover", disposition: "preserve-pending-content-review" }),
+  route("/post-booking", "en", "Post-booking confirmation", "post-booking | Aether Art Space", "Thanks for booking!", "/hu/post-booking", { nav: false, priority: "High", action: "PRESERVE URL; conversion-flow review", disposition: "preserve-pending-content-review", section: "booking" }),
+  route("/hu/post-booking", "hu", "Post-booking confirmation", "Poszt-foglalás | Aether Art Space", "Köszönjük foglalásod!", "/post-booking", { nav: false, priority: "High", action: "PRESERVE URL; conversion-flow review", disposition: "preserve-pending-content-review", section: "booking" }),
+  route("/wedding-photography", "en", "Wedding photography", "Wedding Photographer Budapest | Natural & Elegant Wedding Photography | aether", "Wedding Photography in Budapest & Across Hungary", "/hu/wedding-photography", { nav: false, priority: "Medium", action: "PRESERVE URL; content/title review before cutover", disposition: "preserve-pending-content-review" }),
+  route("/hu/wedding-photography", "hu", "Wedding photography", "Glamour, Boudoir és Művészi Akt Fotózás | Aether Art Space", "Esküvő és jegyes fotózás", "/wedding-photography", { nav: false, priority: "Medium", action: "PRESERVE URL; live title/content appears mismatched; review before cutover", disposition: "preserve-pending-content-review" }),
+  route("/hu/photographer-daniel", "hu", "Photographer profile - Dániel", "Dániel Z. Aczél fotós Budapesten | aether art space", "Dániel Z. Aczél", "/photographer-daniel", { nav: false, priority: "Medium", action: "PRESERVE; sitemap-discovered counterpart", disposition: "preserve-pending-search-console" })
 ];
 
 export const pageByPath = new Map(pages.map((page) => [page.path, page]));

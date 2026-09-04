@@ -1,0 +1,10 @@
+---
+import { site } from "../lib/site.mjs";
+const { page } = Astro.props;
+const hu = page.language === "hu";
+---
+<footer class="site-footer">
+  <div><p class="eyebrow">{hu ? "kapcsolat" : "contact"}</p><a href={`mailto:${site.email}`}>{site.email}</a><br /><a href="tel:+36703861739">{site.phone}</a></div>
+  <div><p class="eyebrow">{hu ? "nyitvatartás" : "opening hours"}</p><p>APPOINTMENT ONLY<br />Mon–Fri 09:00–22:00<br />Sat–Sun 10:00–22:00</p></div>
+  <div><p class="eyebrow">{hu ? "cím" : "address"}</p><p>{site.publicAddress}</p><a href={hu ? "/hu/faq" : "/faq"}>{hu ? "GYIK" : "FAQ"}</a> · <a href={hu ? "/hu/privacy-policy" : "/privacy-policy"}>{hu ? "Adatvédelem" : "Privacy"}</a></div>
+</footer>

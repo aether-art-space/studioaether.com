@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageContent from "../components/PageContent.astro";
+import { pages } from "../data/routes.mjs";
+
+export function getStaticPaths() {
+  return pages
+    .filter((page) => page.path !== "/" && page.disposition !== "redirect")
+    .map((page) => ({
+      params: { slug: page.path.slice(1) },
+      props: { page }
+    }));
+}
+
+const { page } = Astro.props;
+---
+<BaseLayout page={page}>
+  <PageContent page={page} />
+</BaseLayout>

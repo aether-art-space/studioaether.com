@@ -1,0 +1,15 @@
+---
+import { site } from "../lib/site.mjs";
+const { page } = Astro.props;
+const hu = page.language === "hu";
+const languageHref = page.counterpartPath || (hu ? "/" : "/hu");
+---
+<header class="site-header">
+  <a class="brand" href={hu ? "/hu" : "/"} aria-label={site.name}>
+    <span>aether</span><small>art space</small>
+  </a>
+  <nav class="header-actions" aria-label={hu ? "Oldal és nyelv" : "Page and language"}>
+    <a href={languageHref}>{hu ? "EN" : "HU"}</a>
+    <a class="header-book" data-gtag-event="booking_click" data-gtag-location="header" href={site.bookingUrl}> {hu ? "foglalás" : "book"}</a>
+  </nav>
+</header>

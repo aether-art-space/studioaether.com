@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageContent from "../components/PageContent.astro";
+import { pageByPath } from "../data/routes.mjs";
+
+const page = pageByPath.get("/");
+if (!page) throw new Error("Missing homepage route data");
+---
+<BaseLayout page={page}>
+  <PageContent page={page} />
+</BaseLayout>

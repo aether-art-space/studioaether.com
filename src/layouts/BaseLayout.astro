@@ -1,0 +1,26 @@
+---
+import Seo from "../components/Seo.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteNav from "../components/SiteNav.astro";
+
+const { page } = Astro.props;
+---
+<!doctype html>
+<html lang={page.language}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Seo page={page} />
+    <link rel="stylesheet" href="/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{page.language === "hu" ? "Ugrás a tartalomhoz" : "Skip to content"}</a>
+    <SiteHeader page={page} />
+    <div class="site-shell">
+      <SiteNav page={page} />
+      <main id="main"><slot /></main>
+    </div>
+    <SiteFooter page={page} />
+  </body>
+</html>
