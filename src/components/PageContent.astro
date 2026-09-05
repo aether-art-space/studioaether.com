@@ -1,6 +1,6 @@
 ---
 import { faqItemsFor, introFor, site, localizedNav } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, propsContent, propsImages, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, propsContent, propsImages, residentArtistContent, residentArtistImages, homeImages } from "../data/content.mjs";
 import BookingFooter from "./BookingFooter.astro";
 
 const { page } = Astro.props;
@@ -19,6 +19,15 @@ const collectionSections = collectionPage?.sections.map((section) => ({
   paragraphs: section.paragraphs,
   galleries: section.galleries.map((gallery) => ({ imageKey: gallery.imageKey, note: ("note" in gallery ? gallery.note : null) as string[] | null }))
 })) ?? [];
+const artistType = page.path.includes("photographers-budapest") ? "photographers" : page.path.includes("/stylists") ? "stylists" : page.path.includes("make-up-artists") ? "makeup" : null;
+const artistPage = artistType ? residentArtistContent[artistType][hu ? "hu" : "en"] : null;
+const artistImages = artistType ? residentArtistImages[artistType] : null;
+const artistPageAny = artistPage as any;
+const artistImagesAny = artistImages as any;
+const artistProfiles = artistPageAny?.profiles.map((profile: any) => {
+  const source = artistType === "makeup" ? artistImagesAny.profiles[profile.imageIndex] : { image: artistImagesAny[profile.image], gallery: artistImagesAny[profile.gallery] };
+  return { ...profile, image: source.image, gallery: source.gallery };
+}) ?? [];
 const serviceLinks = localizedNav(page.language).flatMap((group) => group.links)
   .filter(([path]) => path !== page.path)
   .slice(0, 4);
@@ -247,6 +256,55 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
       <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
       <img data-lightbox-image src={collectionImageMap[collectionSections[0].galleries[0].imageKey][0].src} alt="" />
+      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
+    </dialog>
+  </>
+) : artistPage ? (
+  <>
+    <section class="artist-hero" aria-labelledby="artist-title">
+      <h1 id="artist-title">{artistPageAny.heroHeading}</h1>
+      <p>{artistPageAny.heroCopy}</p>
+    </section>
+    <section class="artist-intro" aria-labelledby="artist-intro-title">
+      <div class="artist-intro__copy">
+        <h2 id="artist-intro-title">{hu ? "rezidens alkotók" : "resident artists"}</h2>
+        {artistPageAny.intro.map((paragraph: string) => <p>{paragraph}</p>)}
+      </div>
+      {artistPageAny.packages?.length > 0 && <div class="artist-packages">
+        {artistPageAny.packages.map((packageItem: any) => <article class="artist-package">
+          <h3>{packageItem.title}</h3>
+          <p>{packageItem.description}</p>
+          <strong>{packageItem.price}</strong>
+          <ul>{packageItem.features.map((feature: string) => <li>{feature}</li>)}</ul>
+        </article>)}
+      </div>}
+    </section>
+    <section class={`artist-profiles artist-profiles--${artistType}`} aria-label={hu ? "Rezidens alkotók" : "Resident artists"}>
+      <div class="artist-profiles__grid">
+        {artistProfiles.map((profile: any) => <article class="artist-profile">
+          <button class="artist-profile__image" type="button" data-gallery-image data-gallery-src={profile.image.src} data-gallery-alt={profile.image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={profile.image.src} alt={profile.image.alt} width={profile.image.width} height={profile.image.height} loading="lazy" decoding="async" /></button>
+          <div class="artist-profile__body">
+            <h3>{profile.name}</h3>
+            <p class="artist-profile__role">{profile.role}</p>
+            <p>{profile.specialties}</p>
+            {profile.description && <p>{profile.description}</p>}
+            {profile.price && <strong>{profile.price}</strong>}
+            {profile.websiteUrl && <a class="text-link" href={profile.websiteUrl} target="_blank" rel="noreferrer noopener">{profile.website}</a>}
+            {profile.more && <span class="artist-profile__more">{profile.more}</span>}
+          </div>
+          {profile.gallery?.length > 0 && <div class="artist-profile__gallery">{profile.gallery.map((image: any) => <button class="artist-profile__gallery-item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>)}</div>}
+        </article>)}
+      </div>
+    </section>
+    {artistPageAny.footerNote && <p class="artist-note">{artistPageAny.footerNote}</p>}
+    <section class="artist-contact" aria-labelledby="artist-contact-title">
+      <h2 id="artist-contact-title">{artistPageAny.contactHeading}</h2>
+      <a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(hu ? "fotós foglalás" : "artist booking")}`}>{site.email}</a>
+    </section>
+    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Rezidens alkotók galériája" : "Resident artists gallery"} data-studio-lightbox>
+      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
+      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
+      <img data-lightbox-image src={artistProfiles[0].image.src} alt={artistProfiles[0].image.alt} />
       <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
     </dialog>
   </>

@@ -447,6 +447,109 @@ export const propsContent = {
   }
 };
 
+const artistImage = (directory, filename, alt) => ({ src: `/images/${directory}/${filename}`, alt });
+const artistGallery = (directory, filenames, alt) => filenames.map((filename) => artistImage(directory, filename, alt));
+const numbered = (directory, prefix, start, end, extension, alt) => artistGallery(directory, Array.from({ length: end - start + 1 }, (_, index) => `${prefix}-${String(start + index).padStart(2, "0")}.${extension}`), alt);
+
+export const residentArtistImages = {
+  photographers: {
+    daniel: artistImage("photographers", "photographers-01.jpg", "Dániel Z. Aczél, photographer"),
+    danielGallery: numbered("photographers", "photographers", 4, 13, "jpg", "Dániel Z. Aczél photography"),
+    alexandra: artistImage("photographers", "photographers-13.jpg", "Alexandra Kulcsár-Horváth, photographer"),
+    alexandraGallery: numbered("photographers", "photographers", 14, 22, "jpg", "Alexandra Kulcsár-Horváth photography")
+  },
+  stylists: {
+    profile: artistImage("stylists", "stylists-01.jpg", "Szmilkó Lilla, stylist"),
+    gallery: numbered("stylists", "stylists", 3, 8, "jpg", "Styling work by Szmilkó Lilla")
+  },
+  makeup: {
+    profiles: [
+      { image: artistImage("makeup", "makeup-02.jpg", "Szmilkó Lilla, stylist"), gallery: numbered("makeup", "makeup", 3, 8, "jpg", "Styling work by Szmilkó Lilla") },
+      { image: artistImage("makeup", "makeup-09.png", "Csenge Katica Denes, hair and make-up artist"), gallery: artistGallery("makeup", ["makeup-10.jpg", "makeup-11.jpg", "makeup-12.png", "makeup-13.jpg", "makeup-14.jpg", "makeup-15.jpeg"], "Make-up work by Csenge Katica Denes") },
+      { image: artistImage("makeup", "makeup-16.jpg", "Noémi Holczimmer, make-up artist"), gallery: artistGallery("makeup", ["makeup-17.jpeg", "makeup-18.jpeg", "makeup-19.jpeg", "makeup-20.jpg", "makeup-21.jpeg", "makeup-22.jpg"], "Make-up work by Noémi Holczimmer") },
+      { image: artistImage("makeup", "makeup-23.jpg", "Anna Máté, make-up artist"), gallery: numbered("makeup", "makeup", 24, 29, "jpg", "Make-up work by Anna Máté") }
+    ]
+  }
+};
+
+const photographerPackagesEn = [
+  { title: "Small Studio Photoshoot", description: "Pick this package if you want some new profile pictures, CV pictures or just want to try out a simple studio shoot.", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] },
+  { title: "Standard Studio Photoshoot", description: "Perfect for a studio shoot with multiple outfits or styles. Also a good solution for couples or friends.", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] },
+  { title: "All-inclusive Studio Photoshoot", description: "If you want a nice set of perfect pictures that are beyond the usual, this offer is for you. Including complicated sets, special lighting or group photos - we can do anything you can imagine!", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }
+];
+const photographerPackagesHu = [
+  { title: "Kis Studiós Fotózás csomag", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretne kipróbálni.", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] },
+  { title: "Standard Studiós Fotózás csomag", description: "Tökéletes stúdiós felvételekhez többféle öltözékkel vagy stílussal. Pároknak vagy barátoknak is jó megoldás.", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 ruha", "akár 3 stúdióbeállítás", "1-2 modell"] },
+  { title: "All-inclusive Studiós Fotózás csomag", description: "Ha egy szép, a megszokotton túlmutató képsorozatra vágysz, ez az ajánlat neked szól. Bonyolult szettek, speciális világítás vagy csoportképek – bármit meg tudunk csinálni, amit csak el tudsz képzelni!", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "akár 3 ruha", "akár 3 stúdióbeállítás", "egyetlen modelltől csoportokig"] }
+];
+
+export const residentArtistContent = {
+  photographers: {
+    en: {
+      heroHeading: "resident photographers", heroCopy: "our photographers are available for booking", intro: ["Our talented resident photographers at aether art space are available for booking, each offering a unique creative style that transforms every photoshoot into an unforgettable experience.", "With a shared commitment to excellence and artistry, they work closely with clients to create images that resonate and leave a lasting impression. Book your session today and let our photographers bring your vision to life."],
+      packages: photographerPackagesEn,
+      profiles: [
+        { name: "Dániel Z. Aczél", role: "photographer - studio owner", specialties: "portrait, glamour, boudoir, art nude & fitness", description: "Comfortably stuck between worlds; shooting in both digital and analogue, in studio and in nature, with natural and artificial light and both with amateur and professional models.", image: "daniel", gallery: "danielGallery", website: "www.aczel.pictures", websiteUrl: "https://www.aczel.pictures", more: "more about Dániel" },
+        { name: "Alexandra Kulcsár-Horváth", role: "photographer", specialties: "wedding, portrait, lifestyle & business", description: "She specialises in creating wedding photography, honest and natural portraits be it for business, dating or just for memories.", image: "alexandra", gallery: "alexandraGallery", more: "more about Alexandra" }
+      ],
+      contactHeading: "For booking one of our artists, drop a message:"
+    },
+    hu: {
+      heroHeading: "rezidens fotósaink", heroCopy: "foglald le fotósainkat fotózásodhoz", intro: ["Az aether art space tehetséges fotósai lefoglalhatók fotózásra, és mindegyikük saját, egyedi stílussal járul hozzá, hogy minden fotózás felejthetetlen élmény legyen.", "Mindannyian a kiválóságra és művésziességre törekednek, és szorosan együttműködnek az ügyfelekkel, hogy olyan képeket alkossanak, amelyek maradandó benyomást keltenek. Foglalj időpontot, és engedd, hogy fotósaink életre keltsék az elképzeléseidet!"],
+      packages: photographerPackagesHu,
+      profiles: [
+        { name: "Aczél Dániel Zoltán", role: "fotográfus - studió tulajdonos", specialties: "portré, glamour, boudoir, akt és fitness", description: "Kényelmesen evickélve a világok között; fényképez digitális és analóg kamerával, stúdióban és természetben, természetes és mesterséges fénnyel, valamint amatőr és professzionális modellekkel.", image: "daniel", gallery: "danielGallery", website: "www.aczel.pictures", websiteUrl: "https://www.aczel.pictures", more: "bővebben Dánielről" },
+        { name: "Kulcsár-Horváth Alexandra", role: "fotográfus", specialties: "esküvő, portré, lifestyle és üzleti", description: "Szakterülete az esküvőfotózás, őszinte és természetes portrék készítése üzleti felhasználásra, párkereséshez, vagy emléknek.", image: "alexandra", gallery: "alexandraGallery", more: "bővebben Alexandráról" }
+      ],
+      contactHeading: "Foglalj fotózást rezidens fotósainkkal:"
+    }
+  },
+  stylists: {
+    en: {
+      heroHeading: "styling and personal brand design", heroCopy: "work with our stylist and personal brand experts for your next photoshoot in our Budapest studio", intro: ["Add professional styling to your photoshoot for a more polished, cohesive and camera-ready result. From one fully styled look to multi-look concepts and full brand-focused styling, our stylist helps shape the outfits, mood and visual direction of the session. Styling can be used for portraits, model portfolios, personal branding, glamour, boudoir, creative editorial shoots, commercial campaigns, lookbooks and brand content. It can also be booked together with photography, makeup and hair in one place."],
+      packages: [
+        { title: "Standard Styling Package", description: "For one fully styled look during your photoshoot. Ideal if you want a polished outfit selected specifically for the concept, with professional styling that makes the final images feel more intentional and complete.", price: "35.000. HUF", features: ["1 fully styled look", "outfit concept and direction", "clothing and accessory sourcing", "fitting and final styling on set"] },
+        { title: "Signature Styling Package", description: "For photoshoots with multiple outfits or a more defined visual direction. Best if you want a cohesive set of looks for portraits, model portfolio, branding, glamour or creative images.", price: "55.000. HUF", features: ["2-3 fully styled look", "outfit concept and direction", "clothing and accessory sourcing", "fitting and final styling on set"] },
+        { title: "Personal Brand Design & Styling", description: "For clients who need a stronger, more strategic visual identity. Ideal for entrepreneurs, creatives, coaches, performers and personal brands who want images that feel consistent, intentional and aligned with their work.", price: "75.000. HUF", features: ["personal brand visual direction", "styling concept for the photoshoot", "outfit planning for multiple uses", "mood, color and image direction", "recommended for branding shoots and campaigns"] }
+      ],
+      profiles: [{ name: "Szmilkó Lilla", role: "stylist", specialties: "visual identity design and fashion advisory for you or your clients", image: "profile", gallery: "gallery" }],
+      contactHeading: "For booking one of our artists, drop a message:"
+    },
+    hu: {
+      heroHeading: "styling és énmárka tervezés", heroCopy: "dolgozz stylistunkkal a következő fotózásodon Budapesti stúdiónkban", intro: ["Adj professzionális stylingot a fotózásodhoz a letisztultabb, egységesebb és kamera előtt is jobban működő végeredményért. Az egyetlen teljesen összeállított looktól a több outfites koncepciókon át a teljes énmárka-stylingig stylistunk segít kialakítani a fotózás öltözékeit, hangulatát és vizuális irányát.", "A styling kérhető portrékhoz, modell portfólióhoz, personal brandinghez, glamour, boudoir és kreatív editorial fotózásokhoz, kereskedelmi kampányokhoz, lookbookokhoz és márkatartalmakhoz is. A szolgáltatás fotózással, sminkkel és hajjal együtt, egy helyen is foglalható."],
+      packages: [
+        { title: "Standard Styling Csomag", description: "Egy teljesen összeállított look a fotózásodra. Ideális, ha egy koncepcióhoz illeszkedő, átgondolt outfitet szeretnél, professzionális stylinggal, hogy a végeredmény tudatosabbnak és teljesebbnek hasson.", price: "35.000. HUF", features: ["1 teljesen összeállított look", "outfit koncepció és irány", "ruhák és kiegészítők beszerzése", "próba és végső styling a fotózáson"] },
+        { title: "Signature Styling Package", description: "Több outfites fotózásokhoz vagy erősebb vizuális irányhoz. Akkor ajánlott, ha egységes, több lookból álló anyagot szeretnél portréhoz, modell portfólióhoz, brandinghez, glamour vagy kreatív képekhez.", price: "55.000. HUF", features: ["2–3 teljesen összeállított look", "outfit koncepció és vizuális irány", "ruhák és kiegészítők beszerzése", "próba és végső styling a fotózáson"] },
+        { title: "Personal Brand Tervezés & Styling", description: "Azoknak, akiknek erősebb, stratégiaibb vizuális identitásra van szükségük. Ideális vállalkozóknak, kreatív szakembereknek, coachoknak, előadóknak és személyes márkáknak, akik következetes, tudatos és a munkájukhoz illeszkedő képeket szeretnének.", price: "75.000. HUF", features: ["énmárka vizuális irányának kialakítása", "styling koncepció a fotózáshoz", "outfit tervezés több felhasználási célra", "hangulat-, szín- és képi irány", "ajánlott branding fotózásokhoz és kampányokhoz"] }
+      ],
+      profiles: [{ name: "Szmilkó Lilla", role: "stylist", specialties: "vizuális identitás tervezés és stílustanácsadás neked, klienseidnek", image: "profile", gallery: "gallery" }],
+      contactHeading: "Foglalj fotózást rezidens alkotóinkkal:"
+    }
+  },
+  makeup: {
+    en: {
+      heroHeading: "resident make-up artists, hair stylists and fashion stylists", heroCopy: "our MUAs, stylists and hair stylists are available for booking", intro: ["Our skilled resident makeup artists at aether art space are available for hire, offering their expertise to both models and photographers renting the studio.", "Each artist brings a distinctive style, ensuring that every look is tailored to enhance the vision of the shoot, whether it's natural elegance or bold, creative expression. With an eye for detail and a commitment to flawless application, our makeup artists elevate any project, helping bring concepts to life with precision and artistry. Book today to add the perfect finishing touch to your next photoshoot."],
+      profiles: [
+        { name: "Szmilkó Lilla", role: "stylist", specialties: "visual identity design and fashion advisory for you or your clients", price: "styling services from 35.000. HUF", imageIndex: 0 },
+        { name: "Csenge Katica Denes", role: "hair & make-up artist", specialties: "fashion, commercial - natural, skin like skin, soft touches", price: "make-ups from 15.000. HUF", imageIndex: 1 },
+        { name: "Noémi Holczimmer", role: "make-up artist", specialties: "glamour, natural, alternative, extreme, themed", price: "make-ups from 15.000. HUF", imageIndex: 2 },
+        { name: "Anna Máté", role: "make-up artist", specialties: "glamour, beauty, natural, everyday", price: "make-ups from 15.000. HUF", imageIndex: 3 }
+      ],
+      footerNote: "If you work with our make-up artists, you can use the studio for applying the makeup before your shoot.", contactHeading: "For booking one of our artists, drop a message:"
+    },
+    hu: {
+      heroHeading: "rezidens sminkesek, fodrászok, stylistok", heroCopy: "foglald le sminkeseinket, stílustanácsadóinkat és hajszobrászainkat fotózásodhoz", intro: ["Az aether art space kiváló sminkesei és haj-stylistjai a modellek és a stúdiót bérlő fotósok számára is elérhetőek.", "Minden sminkesünk egyedi stílust képvisel, és gondoskodik arról, hogy a fotózás megjelenése tökéletesen tükrözze az elképzelt koncepciót – legyen szó természetes eleganciáról vagy merész, kreatív kifejezésről. Precíz munkájukkal és figyelmükkel sminkeseink bármely projektet magasabb szintre emelnek, hogy az elképzelések tökéletesen megvalósuljanak. Foglalj időpontot, és tedd teljessé a következő fotózásod megjelenését!"],
+      profiles: [
+        { name: "Szmilkó Lilla", role: "stylist", specialties: "vizuális identitás tervezés és stílustanácsadás neked, klienseidnek", price: "styling 35.000. Ft-tól", imageIndex: 0 },
+        { name: "Csenge Katica Denes", role: "haj-stylist és sminkes", specialties: "divat, reklám - természetes, skin like skin, finom igazítások", price: "sminkek 15.000. Ft-tól", imageIndex: 1 },
+        { name: "Holczimmer Noémi", role: "sminkes", specialties: "glamour, természetes, alternatív, extrém, tematikus", price: "sminkek 15.000. Ft-tól", imageIndex: 2 },
+        { name: "Máté Anna", role: "sminkes", specialties: "glamour, beauty, természetes, mindennapi", price: "sminkek 15.000. Ft-tól", imageIndex: 3 }
+      ],
+      footerNote: "Ha sminkeseinkkel dolgozol, a sminkelésre ingyenesen használhatjátok a studiót a fotózásod előtt.", contactHeading: "Foglalj fotózást rezidens sminkeseinkkel:"
+    }
+  }
+};
+
 export const homeImages = {
   hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },

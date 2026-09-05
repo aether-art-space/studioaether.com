@@ -278,6 +278,74 @@
   .collection-section--wardrobe .collection-gallery-wrap + .collection-gallery-wrap { margin-top: 42px; }
 }
 
+/* Resident artist pages: profile cards, packages, and portfolio galleries. */
+.artist-hero { padding: 91px 24px 45px; text-align: center; }
+.artist-hero h1 { max-width: 1120px; margin: 0 auto; font: 400 68px/1.1 var(--serif); letter-spacing: 0; }
+.artist-hero p { width: min(700px, 100%); margin: 14px auto 0; font: 400 21px/1.35 var(--sans); }
+.artist-intro { padding: 39px 24px 62px; }
+.artist-intro__copy { width: min(830px, 100%); margin: 0 auto; }
+.artist-intro__copy h2 { display: none; }
+.artist-intro__copy p { margin: 0; font: var(--text-body); }
+.artist-intro__copy p + p { margin-top: 28px; }
+.artist-packages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; width: min(980px, 100%); margin: 52px auto 0; }
+.artist-package { min-width: 0; padding: 29px 24px 26px; background: #f5f5f5; text-align: center; }
+.artist-package h3 { min-height: 55px; margin: 0; font: 400 27px/1.05 var(--serif); }
+.artist-package p { min-height: 104px; margin: 23px 0 0; font: var(--text-small); text-align: left; }
+.artist-package strong { display: block; margin-top: 19px; font: 400 24px/1.1 var(--serif); }
+.artist-package ul { margin: 19px 0 0; padding: 0; list-style: none; text-align: left; font: var(--text-small); }
+.artist-package li { padding: 4px 0; }
+.artist-package li::before { content: "▪︎ "; }
+.artist-profiles { padding: 48px 24px 62px; text-align: center; }
+.artist-profiles > h2 { margin: 0 0 37px; font: 400 38px/1.1 var(--serif); }
+.artist-profiles__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; width: min(1415px, 100%); margin: 0 auto; }
+.artist-profiles--photographers .artist-profiles__grid { grid-template-columns: repeat(2, 368px); justify-content: center; }
+.artist-profiles--stylists .artist-profiles__grid { grid-template-columns: minmax(0, 686px); justify-content: center; }
+.artist-profile { min-width: 0; background: #f5f5f5; }
+.artist-profile__image { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.artist-profile__image img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(.45); transition: filter 220ms ease; }
+.artist-profile__image:hover img, .artist-profile__image:focus-visible img { filter: grayscale(0); }
+.artist-profile__image:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.artist-profile__body { min-height: 309px; padding: 26px 18px 21px; }
+.artist-profile__body h3 { margin: 0; font: 400 26px/1.1 var(--serif); }
+.artist-profile__body p { margin: 12px 0 0; font: var(--text-small); }
+.artist-profile__body .artist-profile__role { font-size: 17px; }
+.artist-profile__body strong { display: block; margin-top: 18px; font: 400 18px/1.15 var(--serif); }
+.artist-profile__body .text-link { display: inline-block; margin-top: 19px; font-weight: 700; }
+.artist-profile__more { display: block; margin-top: 22px; padding: 10px 8px; border: 1px solid var(--ink); font: var(--text-small); }
+.artist-profile__gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; }
+.artist-profile__gallery-item { display: block; min-width: 0; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.artist-profile__gallery-item img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.artist-note { width: min(980px, calc(100% - 48px)); margin: 0 auto 48px; text-align: center; font: var(--text-body); }
+.artist-contact { padding: 72px 24px; background: var(--ink); color: var(--paper); text-align: center; }
+.artist-contact h2 { width: min(600px, 100%); margin: 0 auto 26px; font: 400 38px/1.1 var(--serif); }
+.artist-contact .text-link { color: inherit; }
+
+@media (max-width: 760px) {
+  .artist-hero { padding: 68px 18px 50px; }
+  .artist-hero h1 { font-size: clamp(45px, 12vw, 62px); }
+  .artist-hero p { margin-top: 18px; font: 400 15px/22.5px var(--sans); }
+  .artist-intro { padding: 46px 18px 58px; }
+  .artist-intro__copy p { font: 400 15px/22.5px var(--sans); }
+  .artist-intro__copy p + p { margin-top: 24px; }
+  .artist-packages { grid-template-columns: 1fr; gap: 12px; margin-top: 38px; }
+  .artist-package { padding: 25px 18px 22px; }
+  .artist-package h3 { min-height: 0; font-size: 25px; }
+  .artist-package p { min-height: 0; margin-top: 17px; font: 400 15px/22.5px var(--sans); }
+  .artist-package strong { font-size: 22px; }
+  .artist-package ul { font: 400 15px/22.5px var(--sans); }
+  .artist-profiles { padding: 46px 18px 58px; }
+  .artist-profiles > h2 { margin-bottom: 28px; font-size: 32px; }
+  .artist-profiles__grid, .artist-profiles--photographers .artist-profiles__grid, .artist-profiles--stylists .artist-profiles__grid { grid-template-columns: 1fr; width: 100%; }
+  .artist-profile__body { min-height: 0; padding: 24px 18px 22px; }
+  .artist-profile__body h3 { font-size: 25px; }
+  .artist-profile__body p { font: 400 15px/22.5px var(--sans); }
+  .artist-profile__body .artist-profile__role { font-size: 16px; }
+  .artist-profile__gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .artist-note { width: calc(100% - 36px); margin-bottom: 38px; font: 400 15px/22.5px var(--sans); }
+  .artist-contact { padding: 58px 18px; }
+  .artist-contact h2 { font-size: 32px; }
+}
+
 /* Studio page: source-faithful structure for the bilingual studio routes. */
 .studio-intro {
   min-height: 586px;
