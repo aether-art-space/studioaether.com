@@ -822,7 +822,7 @@ export const seasonalImages = {
 
 export const profileContent = {
   en: { hero: "in-house photographer, studio owner", intro: ["Based in his Budapest photostudio Dániel crafts imagery that balances personal expression, intimacy, and bold vision.", "He works across a wide spectrum of genres — portrait, glamour, boudoir, nude & erotic art, fitness, and creative/conceptual photography. Whether shooting in his private studio or on location, his approach adapts to suit the idea: digital or analog, controlled lighting or ambient surroundings.", "Dániel’s sessions are rooted in collaboration. He believes in open communication — discussing your vision up front, tweaking references, and building a plan together. On set, he offers clear direction when needed but also gives space for genuine moments to unfold. His priority: respect, consent, and creating a safe, empowering environment — especially for first-time clients.", "In addition to commissioned work, Dániel publishes fine art books and limited print editions. One notable recent project is BLACK, a 168-page volume featuring dark studio imagery created over four years.", "Clients praise his professionalism, kindness, and ability to deliver high-quality results consistently. Dániel also welcomes travel assignments — if your project is calling him elsewhere, he’s happy to come along."], packageHeading: "Daniel is available for photoshoots in the following genres:", contactHeading: "Contact us if you want to shoot with our photographer!", contactEmailSubject: "shoot with Daniel - aether art space" },
-  hu: { hero: "házon belüli fotós, a stúdió tulajdonosa", intro: ["Dániel budapesti fotóstúdiójában olyan képeket készít, amelyekben a személyes önkifejezés, az intimitás és a merész látásmód egyensúlyba kerül.", "Munkája a műfajok széles skáláját öleli fel – portré, glamour, boudoir, akt és erotikus művészet, fitness, valamint kreatív és konceptuális fotózás. Saját stúdiójában és külső helyszíneken is fotózik, a megközelítését mindig az ötlethez igazítva: digitális vagy analóg technikával, kontrollált világítással vagy természetes környezetben.", "Dániel fotózásai az együttműködésre épülnek. Fontos számára a nyílt kommunikáció – előre egyezteti az elképzeléseidet, finomítja a referenciákat, és közösen alakítja ki a tervet. A fotózáson szükség esetén egyértelműen irányít, ugyanakkor teret enged a valódi pillanatok kibontakozásának. Elsődleges számára a tisztelet, a beleegyezés és a biztonságos, önbizalmat adó környezet megteremtése, különösen az első alkalommal érkezők számára."], packageHeading: "Dániel az alábbi műfajokban vállal fotózásokat:", contactHeading: "Írj nekünk, ha Dániellel szeretnél fotózni!", contactEmailSubject: "fotózás Dániellel - aether art space" }
+  hu: { hero: "házon belüli fotós, a stúdió tulajdonosa", intro: ["Dániel budapesti fotóstúdiójában olyan képeket készít, amelyekben a személyes önkifejezés, az intimitás és a merész látásmód egyensúlyba kerül.", "Munkája a műfajok széles skáláját öleli fel – portré, glamour, boudoir, akt és erotikus művészet, fitness, valamint kreatív és konceptuális fotózás. Saját stúdiójában és külső helyszíneken is fotózik, a megközelítését mindig az ötlethez igazítva: digitális vagy analóg technikával, kontrollált világítással vagy természetes környezetben.", "Dániel fotózásai az együttműködésre épülnek. Fontos számára a nyílt kommunikáció – előre egyezteti az elképzeléseidet, finomítja a referenciákat, és közösen alakítja ki a tervet. A fotózáson szükség esetén egyértelműen irányít, ugyanakkor teret enged a valódi pillanatok kibontakozásának. Elsődleges számára a tisztelet, a beleegyezés és a biztonságos, önbizalmat adó környezet megteremtése, különösen az első alkalommal érkezők számára.", "A megrendelt munkák mellett Dániel képzőművészeti könyveket és limitált példányszámú nyomatokat is publikál. Egyik jelentős, közelmúltbeli projektje a BLACK, egy 168 oldalas kötet, amely négy éven át készült, sötét stúdióhangulatú képeket tartalmaz.", "Ügyfelei nagyra értékelik professzionalizmusát, kedvességét és következetes, magas színvonalú munkáját. Dániel szívesen vállal utazással járó megbízásokat is – ha a projekt más helyszínre hívja, örömmel megy."], packageHeading: "Dániel az alábbi műfajokban vállal fotózásokat:", contactHeading: "Írj nekünk, ha Dániellel szeretnél fotózni!", contactEmailSubject: "fotózás Dániellel - aether art space" }
 };
 
 export const profileImages = {
@@ -837,9 +837,32 @@ export const profileImages = {
   ]
 };
 
+export const mentoringImages = {
+  mentors: [
+    { src: "/images/wix/mentoring/mentoring-01.jpg", width: 612, height: 630, alt: "Professional photography mentor" },
+    { src: "/images/wix/mentoring/mentoring-02.jpg", width: 2716, height: 3395, alt: "Photography mentor" },
+    { src: "/images/wix/mentoring/mentoring-03.jpg", width: 500, height: 500, alt: "Photography mentor" },
+    { src: "/images/wix/mentoring/mentoring-04.jpg", width: 1000, height: 1000, alt: "Photography mentor" }
+  ],
+  digital: [
+    { src: "/images/wix/mentoring/mentoring-05.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-06.jpg", width: 1000, height: 1250, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-07.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-08.jpg", width: 4191, height: 5240, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-09.jpg", width: 1000, height: 1500, alt: "Digital photography mentoring" }
+  ],
+  analogue: [
+    { src: "/images/wix/mentoring/mentoring-10.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-11.jpg", width: 1500, height: 1000, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-12.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-13.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/mentoring-14.jpg", width: 3923, height: 4904, alt: "Analogue photography mentoring" }
+  ]
+};
+
 export const postBookingContent = {
-  en: { intro: "We will confirm your appointment in 24 hours via email.", lead: "In the meantine, here are some rules that you should know:", sections: [["Cancellations", "You can reschedule your shoot for free if you let us know 24 hours before your appointment. If you cancel, 50% of the booking price will be deducted from your next booking. If you cancel within 24 hours or do not show up, the full price is due."], ["Arriving at the studio", "Entry is guaranteed from your booking time. If there is no booking before yours, you may arrive earlier. If there is no booking after yours, you can extend your time on the spot. Setup and packing are part of your booked time. Assistance is available for 4000 HUF / hour. Please leave the studio smooth, clean and orderly for the next guests."]], bookingLabel: "Book the studio again" },
-  hu: { intro: "Foglalásodat 24 órán belül e-mailben visszaigazoljuk.", lead: "Addig is itt van néhány fontos szabály, amit érdemes tudnod:", sections: [["Lemondás", "Az időpontodat ingyenesen átteheted, ha legalább 24 órával a foglalás előtt jelzed. Lemondás esetén a foglalás árának 50%-át levonjuk a következő foglalásod árából. 24 órán belüli lemondás vagy meg nem jelenés esetén a teljes árat ki kell fizetni."], ["Érkezés a stúdióba", "A belépés a foglalásod kezdetétől biztosított. Ha előtted nincs másik foglalás, korábban is érkezhetsz. Ha utánad nincs másik foglalás, a helyszínen meghosszabbíthatod az idődet. A berendezés és az elpakolás a lefoglalt idő része. Asszisztencia 4000 Ft / óra díjért kérhető. Kérjük, a stúdiót simán, tisztán és rendezetten hagyd a következő vendégek számára."]], bookingLabel: "Foglalj újra stúdiót" }
+  en: { intro: "We will confirm your appointment in 24 hours via email.", lead: "In the meantime, here are some rules that you should know:", sections: [["Cancellations", "We know it's not easy to schedule with multiple people, so we try to be flexible. If you want to move your booking, let us know 24 hours before your shoot. If you want to cancel your booking, we will charge you half the rental price and deduct it from your next booking. If you want to cancel within 24 hours of your shoot, we ask you to pay the full price, since we won't be able to fill your timeslot anymore."], ["Arriving", "We can only guarantee entry to the studio area from the time of your booking, but if you arrive earlier and we are already there, you are welcome to come in and have a coffee in our waiting area. If the studio is free, we can also start the clock earlier. If there is no booking after you, you can extend your original booking on the spot at an hourly rate. Assembly of the lights and set-up are part of your booking time. We ask you to return the studio the way you received it, so please plan your shooting length accordingly. If you are not confident shooting in a studio, or you just want to focus on shooting and not worry about other things, you can ask for assistance (4000 HUF / hour). With these guidelines, we want to keep things running smoothly and provide a good experience in a clean and orderly studio for everyone. Thank you for helping us, and talk to you soon!" ]], bookingLabel: "Book the studio again" },
+  hu: { intro: "Foglalásod 24 órán belül visszaigazoljuk e-mailben.", lead: "Addig is itt van néhány szabály, amiről érdemes tudnod:", sections: [["Lemondás", "Tudjuk, hogy nem egyszerű több emberrel időpontot egyeztetni, ezért igyekszünk rugalmasak lenni a foglalásokkal. Ha át szeretnéd tenni az időpontodat, szólj nyugodtan legkésőbb 24 órával a fotózásod előtt. Ha le szeretnéd mondani a foglalásodat, a bérleti díj felét kérjük, amit levonunk a következő foglalásodból. Ha a fotózásod előtt 24 órán belül szeretnéd lemondani az időpontot, a teljes árat kérjük, mert ezt az időpontot már nem tudjuk feltölteni."], ["Érkezés", "A stúdiótérbe csak a foglalás időpontjától tudjuk garantálni a belépést, de ha korábban érkezel és már ott vagyunk, gyere be nyugodtan, és igyál meg egy kávét a váróteremben. Ha szabad a stúdió, korábban is indíthatjuk az órát. Ha nincs utánad foglalás, az eredeti foglalásodat a helyszínen óradíjasan meghosszabbíthatod. A fények és a díszlet összeszerelése a foglalási idő része. Arra kérünk, hogy úgy add vissza a teret, ahogy megkaptad, ezért ennek megfelelően tervezd meg a fotózásod hosszát. Ha nem vagy magabiztos a stúdióban való fotózásban, vagy csak az alkotásra szeretnél koncentrálni, asszisztenciát is kérhetsz (4000 Ft / óra). Ezekkel az irányelvekkel szeretnénk gondoskodni arról, hogy a foglalások zökkenőmentesen menjenek, és mindenki számára jó élményt nyújtsunk egy tiszta és rendezett stúdióban. Köszönjük, hogy segítesz nekünk, és hamarosan beszélünk!" ]], bookingLabel: "Foglalj újra stúdiót" }
 };
 
 export const weddingContent = {
@@ -861,6 +884,9 @@ export const weddingContent = {
   }
 };
 
+weddingContent.hu.photographersIntro = "Two distinct personalities. Two different perspectives. One shared vision. We notice different details and respond to different moments. Working together allows us to tell a richer, more complete story of your wedding—while giving you the freedom to experience the day naturally.";
+weddingContent.hu.photographers[1][2] = "Dániel combines precise composition and creative lighting with an editorial perspective. Together, we balance careful direction with unobtrusive observation—stepping in when guidance is helpful and disappearing into the background when the moment should simply unfold.";
+
 export const weddingImages = [
   { src: "/images/wix/wedding/wedding-01.jpg", width: 1500, height: 1000, alt: "Wedding photography in Hungary" },
   { src: "/images/wix/wedding/wedding-02.jpg", width: 1000, height: 1500, alt: "Wedding portrait" },
@@ -871,6 +897,32 @@ export const weddingImages = [
   { src: "/images/wix/wedding/wedding-07.jpg", width: 5561, height: 3707, alt: "Wedding reception photography" },
   { src: "/images/wix/wedding/wedding-08.jpg", width: 1000, height: 1500, alt: "Wedding portrait photography" }
 ];
+
+export const weddingSectionImages = {
+  glance: { src: "/images/wix/wedding/source-sections/wedding-glance.jpg", width: 1000, height: 1500, alt: "Wedding photography at a Budapest wedding" },
+  coverage: [
+    { src: "/images/wix/wedding/source-sections/coverage-01.png", width: 1000, height: 667, alt: "Wedding preparations photography" },
+    { src: "/images/wix/wedding/source-sections/coverage-02.jpg", width: 1000, height: 563, alt: "Creative couple wedding portrait" },
+    { src: "/images/wix/wedding/source-sections/coverage-03.jpg", width: 1000, height: 1500, alt: "Wedding ceremony photography" },
+    { src: "/images/wix/wedding/source-sections/coverage-04.png", width: 1000, height: 667, alt: "Wedding reception photography" },
+    { src: "/images/wix/wedding/source-sections/coverage-05.png", width: 1000, height: 667, alt: "Wedding family portrait" },
+    { src: "/images/wix/wedding/source-sections/coverage-06.png", width: 1000, height: 667, alt: "Wedding party photography" }
+  ],
+  options: [
+    { src: "/images/wix/wedding/source-sections/options-01.png", width: 1000, height: 667, alt: "Engagement photoshoot" },
+    { src: "/images/wix/wedding/source-sections/options-02.jpg", width: 1500, height: 1000, alt: "Bridal boudoir photography" },
+    { src: "/images/wix/wedding/source-sections/options-03.png", width: 1499, height: 1000, alt: "Analogue wedding photography" },
+    { src: "/images/wix/wedding/source-sections/options-04.png", width: 928, height: 522, alt: "Polaroid camera rental" },
+    { src: "/images/wix/wedding/source-sections/options-05.jpg", width: 6240, height: 4160, alt: "Selfie corner rental" }
+  ],
+  alexandra: { src: "/images/wix/wedding/source-sections/photographer-alexandra.jpg", width: 5000, height: 3571, alt: "Alexandra Kulcsár-Horváth" },
+  approach: [
+    { src: "/images/wix/wedding/source-sections/approach-01.jpg", width: 600, height: 600, alt: "Natural wedding moments" },
+    { src: "/images/wix/wedding/source-sections/approach-02.jpg", width: 600, height: 600, alt: "Elegant wedding portraits" },
+    { src: "/images/wix/wedding/source-sections/approach-03.jpg", width: 600, height: 600, alt: "Unobtrusive wedding photography" }
+  ],
+  testimonial: { src: "/images/wix/wedding/source-sections/testimonial.jpg", width: 1000, height: 1500, alt: "Wedding photography testimonial" }
+};
 
 const privacySections = [
   ["Interpretation and Definitions", ["The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.", "For the purposes of this Privacy Policy:", "Account means a unique account created for You to access our Service or parts of our Service.", "Affiliate means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.", "Company (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to aether art space, Budapest, Tátra utca 29b.", "Cookies are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.", "Country refers to: Hungary", "Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.", "Personal Data is any information that relates to an identified or identifiable individual.", "Service refers to the Website.", "Service Provider means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.", "Usage Data refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).", "Website refers to aether art space, accessible from https://studioaether.com", "You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable."]],

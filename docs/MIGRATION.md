@@ -10,6 +10,8 @@ Astro generates clean URL paths as directory-index documents. Production hosting
 
 Content migration status: all production routes in the route contract have now been compared against fresh Wix HTML in the connected Chrome reference for titles, descriptions, headings, source copy, images/crops, links and responsive behavior. The homepage remains unchanged after its committed migration. The remaining source discrepancies and pre-cutover decisions are recorded below.
 
+Follow-up parity audit (September 5, 2026): all rendered source image sets are now represented locally, including the mentoring galleries and the additional wedding section images; the generated site has no unresolved local image references. LocalBusiness/ProfessionalService, opening hours, social profiles and price range are retained in JSON-LD, with WebPage, BreadcrumbList and relevant Service/Person nodes added for the V2 document model. FAQPage remains intentionally omitted pending approval. Hungarian copy was checked against the live Wix source with only small grammar/typography corrections; the source’s English legal policy and mixed-language Hungarian wedding page remain preserved and are still explicit pre-cutover review items. `/hu/post-booking` intentionally has no description meta tag because the live Wix source has none.
+
 | Route group | Initial V2 treatment |
 | --- | --- |
 | 22 EN/HU navigation-visible pairs | Preserve exact URL, intent, observed title and reciprocal counterpart relationship. |

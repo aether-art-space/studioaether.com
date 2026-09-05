@@ -16,12 +16,18 @@ const trackingId = tracking.googleTagId || tracking.ga4Id || tracking.googleAdsI
 const schemas: Record<string, unknown>[] = [
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": `${siteUrl()}/#business`,
     name: site.name,
     url: siteUrl(),
     email: site.email,
     telephone: site.phone,
+    priceRange: "$",
+    sameAs: [site.instagramUrl, site.facebookUrl],
+    openingHoursSpecification: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "22:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday", "Sunday"], opens: "10:00", closes: "22:00" }
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Lónyay utca 60.",
@@ -95,11 +101,11 @@ if (page.path.endsWith("photographer-daniel")) {
 }
 ---
 <title>{page.title}</title>
-<meta name="description" content={page.description} />
+{page.description && <meta name="description" content={page.description} />}
 <meta name="robots" content={preview ? "noindex,nofollow" : "index,follow"} />
 {preview && <meta name="googlebot" content="noindex,nofollow" />}
 <meta property="og:title" content={page.title} />
-<meta property="og:description" content={page.description} />
+{page.description && <meta property="og:description" content={page.description} />}
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalUrl} />
 <meta name="twitter:card" content="summary_large_image" />

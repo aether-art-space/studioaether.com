@@ -10,6 +10,7 @@ const fail = [];
 const warnings = [];
 const htmlFor = new Map();
 const indexablePages = pages.filter((page) => page.disposition !== "redirect");
+const intentionallyUndescribed = new Set(["/hu/post-booking"]);
 const attribute = (html, tag, name) => html.match(new RegExp(`<${tag}\\b[^>]*\\b${name}=["']([^"']+)["']`, "i"))?.[1] || "";
 
 for (const page of indexablePages) {
@@ -39,7 +40,7 @@ for (const page of indexablePages) {
   if (!canonicalTag || canonical !== `${site.domain}${page.path}`) fail.push(`canonical mismatch: ${page.path}`);
   const hreflang = page.language === "hu" ? "hu-hu" : "en-us";
   if (!html.includes(`hreflang="${hreflang}"`)) fail.push(`self hreflang missing: ${page.path}`);
-  if (!html.match(/<meta\b[^>]*name=["']description["'][^>]*content=["'][^"']+[^>]*>/i)) fail.push(`missing description: ${page.path}`);
+  if (!intentionallyUndescribed.has(page.path) && !html.match(/<meta\b[^>]*name=["']description["'][^>]*content=["'][^"']+[^>]*>/i)) fail.push(`missing description: ${page.path}`);
 
   const links = [...html.matchAll(/\bhref=["'](\/(?!\/)[^"'#?]*)/gi)].map((match) => match[1]);
   for (const link of links) {

@@ -1041,6 +1041,13 @@ summary { cursor: pointer; font: 26px/1.15 var(--serif); }
 .service-mentoring h2 { text-align: center; }
 .service-mentor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; margin-top: 36px; }
 .service-mentor-grid .service-package { min-height: 0; }
+.mentoring-mentors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; max-width: 760px; margin: 36px auto 0; }
+.mentoring-mentors__heading { margin: 36px 0 0; text-align: center; font: 400 28px/1.1 var(--serif); }
+.mentoring-mentors img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.mentoring-gallery { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; margin-top: 28px; }
+.mentoring-gallery button { display: block; min-width: 0; padding: 0; border: 0; background: none; cursor: zoom-in; overflow: hidden; }
+.mentoring-gallery img { display: block; width: 100%; height: 160px; object-fit: cover; transition: transform 220ms ease; }
+.mentoring-gallery button:hover img, .mentoring-gallery button:focus-visible img { transform: scale(1.035); }
 .service-package h4 { margin: 28px 0 12px; font: 700 17px/1.35 var(--sans); }
 .service-lesson { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .25); }
 .service-lesson h4 { margin: 0; font: 400 24px/1.1 var(--serif); }
@@ -1103,6 +1110,7 @@ summary { cursor: pointer; font: 26px/1.15 var(--serif); }
 .wedding-glance { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 980px; margin: 0 auto; padding: 0 24px 72px; }
 .wedding-glance h2, .wedding-approach h2, .wedding-contact h2 { margin: 0 0 18px; font: 400 48px/1.08 var(--serif); }
 .wedding-glance p, .wedding-approach p, .wedding-contact > p { font: var(--text-body); }
+.wedding-glance img { display: block; width: 100%; max-height: 420px; margin: 0 0 28px; object-fit: cover; object-position: center; }
 .service-gallery--wedding { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-auto-rows: 210px; }
 .service-gallery--wedding button:nth-child(1), .service-gallery--wedding button:nth-child(3), .service-gallery--wedding button:nth-child(6), .service-gallery--wedding button:nth-child(8) { grid-row: span 2; }
 .service-gallery--wedding button:nth-child(5), .service-gallery--wedding button:nth-child(7) { grid-column: span 2; }
@@ -1112,6 +1120,12 @@ summary { cursor: pointer; font: 26px/1.15 var(--serif); }
 .wedding-feature-grid h3 { margin: 0 0 16px; font: 400 28px/1.08 var(--serif); }
 .wedding-feature-grid p { margin: 0 0 18px; font: var(--text-small); }
 .wedding-feature-grid strong { font: 700 15px/1.3 var(--sans); }
+.wedding-source-gallery { display: grid; gap: 5px; margin-top: 36px; }
+.wedding-source-gallery img { display: block; width: 100%; height: 220px; object-fit: cover; }
+.wedding-source-gallery--coverage { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.wedding-source-gallery--options { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.wedding-source-gallery--approach { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.wedding-testimonial-image { display: block; width: min(100%, 300px); max-height: 420px; margin: 32px auto; object-fit: cover; }
 .wedding-people { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 36px; }
 .wedding-people article { padding: 24px; background: var(--ink); color: var(--paper); }
 .wedding-people img { display: block; width: 100%; height: 300px; object-fit: cover; object-position: center; }
@@ -1161,6 +1175,9 @@ summary { cursor: pointer; font: 26px/1.15 var(--serif); }
   .id-photo-booking { padding-right: 18px; padding-left: 18px; }
   .service-gallery--id { grid-template-columns: 1fr; padding-right: 0; padding-left: 0; }
   .service-mentor-grid { grid-template-columns: 1fr; }
+  .mentoring-mentors { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; }
+  .mentoring-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mentoring-gallery img { height: 190px; }
   .service-contact { padding-right: 18px; padding-left: 18px; }
   .service-contact h2 { font-size: 39px; }
   .booking-intro { padding: 56px 18px 38px; }
@@ -1188,6 +1205,8 @@ summary { cursor: pointer; font: 26px/1.15 var(--serif); }
   .wedding-glance { grid-template-columns: 1fr; gap: 18px; padding-right: 18px; padding-left: 18px; }
   .wedding-glance h2, .wedding-approach h2, .wedding-contact h2 { font-size: 39px; }
   .service-gallery--wedding { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wedding-source-gallery--coverage, .wedding-source-gallery--options, .wedding-source-gallery--approach { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wedding-source-gallery img { height: 170px; }
   .wedding-feature-grid, .wedding-people { grid-template-columns: 1fr; }
   .wedding-contact { padding-right: 18px; padding-left: 18px; }
   .wedding-contact form { grid-template-columns: 1fr; }
