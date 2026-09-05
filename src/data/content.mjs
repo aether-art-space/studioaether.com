@@ -138,6 +138,158 @@ export const studioContent = {
   }
 };
 
+export const selfieContent = {
+  en: {
+    heroHeading: "Aether Selfie Studio\nBudapest’s Premier DIY Photo Experience",
+    heroSubheading: "Take Control of Your Photoshoot",
+    heroCopy: "The Aether Art Space Selfie Studio in the heart of Budapest offers a unique, self-service photo studio experience. Whether you're a content creator, influencer, couple, tourist, or just here for fun, this is the best place in Budapest to take professional-quality selfies and portraits without a photographer.",
+    heroCta: "Book Now",
+    processHeading: "This is how the selfie studio works",
+    processSteps: [
+      ["You choose a backdrop and style", "process-01"],
+      ["You watch yourself on the TV", "process-02"],
+      ["You press a remote controller", "(there is a 2 second delay, so it's not visible on the pictures)", "process-03"],
+      ["You see your photos instantly on the TV", "process-04"],
+      ["You get all the pictures online before you arrive home", "process-03"]
+    ],
+    galleryHeading: "Selfies made in our studio",
+    customizeHeading: "The only selfie studio in Budapest where you can customize your shoot",
+    customizeCopy: "While most studios offer a fixed setup with little flexibility, we do things differently. At Aether Art Space, everything is designed around your vision. You’re not locked into a template — you choose the backdrop, the lighting, the framing. It’s your space, your rules.",
+    customizeCustom: "If you want something custom, you can also bring us a photo example and we will recreate it for you on the spot.",
+    controls: [
+      ["choose a background you like", ["Green built set", "Pure White", "Stone Grey", "Black", "Blue Mist", "Orchid", "Ultramarine", "Deep Yellow", "Orange", "Crimson", "Choral", "Egg Nog"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
+      ["choose a lighting style that fits you", ["Moody for dramatic shots", "Rembrandt for a classic look", "High fashion for edgy pics", "Blacklight"], ["control-13", "control-14", "control-15", "control-16"]],
+      ["close ups or full body as you need", ["Portrait", "Waist up", "Full body"], ["control-17", "control-18", "control-19"]]
+    ],
+    benefitsHeading: "Why choose us for your selfies?",
+    benefitsIntro: "In our automatic studio you will find everything for creative and professional photographs.",
+    benefits: [
+      ["custom backgrounds and props", "Choose from 10+ colored backgrounds and use our diverse selection of furniture and props."],
+      ["make up desk and dressing room", "Get ready comfortably for your pictures with our make up desk. Hairspray, hair dryer and other useful stuff provided."],
+      ["automatic professional lighting", "We have high quality lights that make you look your best. Preinstalled and adjusted so you don't have to do anything."],
+      ["remote controlled camera", "Our camera stands on a tripod and shoots with a remote controller that you can hide in your palm."],
+      ["private and discreet space", "You are alone in the studio space during the shoot and we can deliver your photos without looking at them."],
+      ["get your pics before you arrive home", "After your shoot we quickly export and forward your photos, so you can access it within minutes after."]
+    ],
+    pricesHeading: "Friendliest prices in town",
+    prices: [
+      ["Mini Selfie Session", ["1-6 people", "unlimited pictures"], "10.990. HUF / 30 min", "price-01"],
+      ["Selfie Session", ["1-6 people", "unlimited pictures"], "16.990 HUF / hour", "price-02"],
+      ["Retouching service", ["Get your favourite pictures professionally retouched"], "5000 HUF / photo", "price-03"]
+    ],
+    extrasHeading: "Extras",
+    extras: [["Large Angel Wings", "8.000. HUF"], ["Live White Snake", "15.000. HUF", "let us know in advance please!"], ["Smoke machine", "5.000. HUF"]],
+    reserveHeading: "Reserve your spot",
+    reserveCopy: "Don’t miss your chance to experience Budapest’s most creative photo studio.",
+    reserveCta: "Book Now",
+    szegedHeading: "Check out our Location in Szeged city!",
+    szegedCopy: "Our Szeged mini selfie studio is the first one in the city.\n\nSame prices, same friendly atmosphere and same attention to detail - go check it out!",
+    szegedCta: "Szeged Selfie Space"
+  },
+  hu: {
+    heroHeading: "Aether Szelfi Studio\nBudapest legjobb csináld-magad fotóstudiója",
+    heroSubheading: "Vedd át az irányítást fotózásod felett",
+    heroCopy: "Az Aether Art Space Selfie Stúdió Budapest szívében egyedülálló, önkiszolgáló fotózási élményt kínál. Legyen szó tartalomgyártóról, influenszerről, párokról, turistákról vagy bárkiről, aki csak szórakozni szeretne – ez a legjobb hely Budapesten, ahol fotós nélkül is professzionális minőségű szelfiket és portrékat készíthetsz.",
+    heroCta: "Foglalj most",
+    processHeading: "Így működik a szelfi studiónk",
+    processSteps: [
+      ["Választasz háttért és stílust", "process-01"],
+      ["Látod magad a TV-n", "process-02"],
+      ["Megnyomod a távirányítót", "(itt van egy 2mp-es késleltetés, hogy legyen időd eltenni a távirányítót)", "process-03"],
+      ["Azonnal visszanézed a képet a TV-n", "process-04"],
+      ["Megkapod az összes fotód mielőtt hazaérsz", "process-03"]
+    ],
+    galleryHeading: "Studiónkban készült szelfik",
+    customizeHeading: "Az egyetlen szelfi-studió Budapesten, ahol személyre szabhatod a képeid",
+    customizeCopy: "Ilyen hely nincs még egy Budapesten. Míg más stúdiók előre meghatározott, sablonos beállításokat kínálnak, mi teljesen mást képviselünk. Az Aether Selfie Stúdióban minden a te elképzeléseid köré épül. Te választod ki a hátteret, a világítást, a képkivágást – ez a te tered, a te szabályaid.",
+    customizeCustom: "... vagy kérj egyedi világítást mintakép után!",
+    controls: [
+      ["válassz háttérszínt tetszésed szerint", ["Épített sötétzöld díszlet", "Tiszta fehér", "Szikla szürke", "Fekete", "Világoskék", "Orchidea lila", "Sötétkék", "Élénk Sárga", "Narancs", "Bordó", "Világos rózsaszín", "Világos bézs"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
+      ["válassz világítás stílust, ami megy hozzád", ["\"Moody\" a drámai hatásért", "\"Rembrandt\" a klasszikus világítás", "\"High fashion\" merész kinézetért", "vagy \"UV\""], ["control-13", "control-14", "control-15", "control-16"]],
+      ["válassz közeli vagy teljes alakos képek közül", ["Válassz \"Portré\"", "\"Deréktól felfele\"", "\"Teljes alakos\" kivágásaink közül - az utóbbi csoportoknak is alkalmas."], ["control-17", "control-18", "control-19"]]
+    ],
+    benefitsHeading: "Miért minket válassz a képeidhez?",
+    benefitsIntro: "Automatikus studiónkban mindent megtalálsz, hogy kreatív és profi képek készüljenek rólad.",
+    benefits: [
+      ["színes hátterek, egyedi kellékek", "Válassz több mint 10 színes háttér közül, és használd változatos bútor- és kellékválasztékunkat!"],
+      ["sminkasztal és öltöző szoba", "Készülj fel kényelmesen a fotózásra sminkasztalunknál! Hajlakk, hajszárító és sok más hasznos eszköz biztosított."],
+      ["profi világítás és automatikus technika", "Prémium minőségű lámpák, hogy a legjobb formádat hozd. Előre be vannak állítva, így neked semmit sem kell tenned."],
+      ["távirányítóval működő kamera", "A kameránk állványra van rögzítve, és egy tenyérben elrejthető távirányítóval tudsz fotózni."],
+      ["privát és diszkrét tér", "A fotózás alatt teljesen egyedül leszel a stúdióban, és akár láthatatlanul továbbküldjük a képeket neked."],
+      ["megkapod a képeid mielőtt hazaérnél", "A fotózás után gyorsan exportáljuk és továbbítjuk a képeidet, így néhány percen belül már hozzáférhetsz."]
+    ],
+    pricesHeading: "Legjobb árak Budapesten",
+    prices: [
+      ["Mini Szelfi Fotózás", ["1-6 fő", "korlátlan kép"], "10.990. Ft / 30 perc", "price-01"],
+      ["Szelfi fotózás", ["1-6 fő", "korlátlan kép"], "16.990. Ft / óra", "price-02"],
+      ["Retusálás", ["Retusáltasd ki magazin minőségre a kedvenc képeid."], "5.000. Ft / fotó", "price-03"]
+    ],
+    extrasHeading: "Extrák",
+    extras: [["Nagy Angyalszárny", "8.000. HUF"], ["Élő fehér kígyó", "15.000. HUF", "Előzetes foglalás szükséges!"], ["Füstgép", "5.000. HUF"]],
+    reserveHeading: "Foglald le a helyed",
+    reserveCopy: "Ne hagyd ki a lehetőséget, hogy kipróbáld Budapest legkreatívabb fotóstúdióját!",
+    reserveCta: "Foglalj Most",
+    szegedHeading: "Nézd meg a Szegedi studiónkat is!",
+    szegedCopy: "Megnyitottuk Szeged első szelfi studióját!\n\nUgyanazok az árak, barátságos atmoszfére és a figyelem a részletekre, mint első lokációnkban. Nézd meg:",
+    szegedCta: "Szeged Selfie Space"
+  }
+};
+
+export const selfieImages = {
+  hero: { src: "/images/selfie/hero.jpg", width: 1800, height: 1200, alt: "Camera and lights in the Aether Selfie Studio" },
+  process: [
+    { src: "/images/selfie/process-01.jpg", width: 1800, height: 1012, alt: "Selfie studio camera and screen" },
+    { src: "/images/selfie/process-02.jpg", width: 1800, height: 1012, alt: "Selfie studio setup" },
+    { src: "/images/selfie/process-03.jpg", width: 1800, height: 1800, alt: "A visitor using the selfie studio" },
+    { src: "/images/selfie/process-04.jpg", width: 1800, height: 1200, alt: "Selfie studio portrait session" }
+  ],
+  gallery: [
+    { src: "/images/selfie/gallery-01.jpg", width: 1800, height: 1200, alt: "Selfie studio portrait" },
+    { src: "/images/selfie/gallery-02.jpg", width: 1800, height: 1200, alt: "Creative selfie studio portrait" },
+    { src: "/images/selfie/gallery-03.jpg", width: 1800, height: 1200, alt: "Selfie studio group portrait" },
+    { src: "/images/selfie/gallery-04.jpg", width: 1200, height: 1800, alt: "Portrait made in the selfie studio" },
+    { src: "/images/selfie/gallery-05.jpg", width: 1800, height: 1200, alt: "Selfie studio portrait with colored light" },
+    { src: "/images/selfie/gallery-06.jpeg", width: 1800, height: 1800, alt: "Selfie studio creative portrait" },
+    { src: "/images/selfie/gallery-07.jpeg", width: 1800, height: 1200, alt: "Selfie studio portrait" },
+    { src: "/images/selfie/gallery-08.jpeg", width: 1800, height: 1200, alt: "Selfie studio portrait with props" },
+    { src: "/images/selfie/gallery-09.jpeg", width: 1800, height: 1199, alt: "Selfie studio portrait" }
+  ],
+  controls: new Map([
+    ["control-01", { src: "/images/selfie/control-01.jpg", width: 500, height: 333, alt: "Green built set" }],
+    ["control-02", { src: "/images/selfie/control-02.jpg", width: 500, height: 500, alt: "Pure white backdrop" }],
+    ["control-03", { src: "/images/selfie/control-03.webp", width: 500, height: 500, alt: "Stone grey backdrop" }],
+    ["control-04", { src: "/images/selfie/control-04.png", width: 500, height: 500, alt: "Black backdrop" }],
+    ["control-05", { src: "/images/selfie/control-05.png", width: 500, height: 500, alt: "Blue mist backdrop" }],
+    ["control-06", { src: "/images/selfie/control-06.jpg", width: 500, height: 500, alt: "Orchid backdrop" }],
+    ["control-07", { src: "/images/selfie/control-07.webp", width: 500, height: 500, alt: "Ultramarine backdrop" }],
+    ["control-08", { src: "/images/selfie/control-08.jpg", width: 500, height: 500, alt: "Deep yellow backdrop" }],
+    ["control-09", { src: "/images/selfie/control-09.webp", width: 500, height: 500, alt: "Orange backdrop" }],
+    ["control-10", { src: "/images/selfie/control-10.png", width: 500, height: 500, alt: "Crimson backdrop" }],
+    ["control-11", { src: "/images/selfie/control-11.png", width: 500, height: 500, alt: "Coral backdrop" }],
+    ["control-12", { src: "/images/selfie/control-12.png", width: 500, height: 500, alt: "Eggnog backdrop" }],
+    ["control-13", { src: "/images/selfie/control-13.jpg", width: 400, height: 500, alt: "Moody lighting" }],
+    ["control-14", { src: "/images/selfie/control-14.jpg", width: 333, height: 500, alt: "Rembrandt lighting" }],
+    ["control-15", { src: "/images/selfie/control-15.jpg", width: 400, height: 500, alt: "High fashion lighting" }],
+    ["control-16", { src: "/images/selfie/control-16.png", width: 500, height: 333, alt: "Blacklight" }],
+    ["control-17", { src: "/images/selfie/control-17.jpg", width: 333, height: 500, alt: "Portrait framing" }],
+    ["control-18", { src: "/images/selfie/control-18.jpg", width: 400, height: 500, alt: "Waist up framing" }],
+    ["control-19", { src: "/images/selfie/control-19.jpg", width: 333, height: 500, alt: "Full body framing" }]
+  ]),
+  benefits: [
+    { src: "/images/selfie/benefit-01.jpg", width: 900, height: 900, alt: "A sword prop in the selfie studio" },
+    { src: "/images/selfie/benefit-02.jpg", width: 600, height: 900, alt: "Selfie studio make-up desk" },
+    { src: "/images/selfie/benefit-03.jpg", width: 900, height: 900, alt: "Professional studio lights" },
+    { src: "/images/selfie/benefit-04.jpg", width: 900, height: 900, alt: "Remote controlled camera" },
+    { src: "/images/selfie/benefit-05.jpg", width: 600, height: 900, alt: "Private selfie studio space" },
+    { src: "/images/selfie/benefit-06.jpg", width: 600, height: 900, alt: "Selfie studio image delivery" }
+  ],
+  prices: [
+    { src: "/images/selfie/price-01.jpg", width: 600, height: 900, alt: "Selfie studio session" },
+    { src: "/images/selfie/price-02.jpg", width: 900, height: 900, alt: "Selfie studio portrait" },
+    { src: "/images/selfie/price-03.jpg", width: 900, height: 900, alt: "Retouched selfie studio portrait" }
+  ]
+};
+
 export const studioImages = [
   { src: "/images/studio/floorplan.png", alt: "photostudio floorplan", width: 1435, height: 1111 }
 ];

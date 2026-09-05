@@ -1,12 +1,13 @@
 ---
 import { faqItemsFor, introFor, site, localizedNav } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, homeImages } from "../data/content.mjs";
 import BookingFooter from "./BookingFooter.astro";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
 const home = homeContent[hu ? "hu" : "en"];
 const studio = studioContent[hu ? "hu" : "en"];
+const selfie = selfieContent[hu ? "hu" : "en"];
 const serviceLinks = localizedNav(page.language).flatMap((group) => group.links)
   .filter(([path]) => path !== page.path)
   .slice(0, 4);
@@ -159,6 +160,55 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <img data-lightbox-image src={studioGalleryImages[0].src} alt={studioGalleryImages[0].alt} />
       <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
     </dialog>
+  </>
+) : page.path === "/selfie-studio-budapest" || page.path === "/hu/selfie-studio-budapest" ? (
+  <>
+    <section class="selfie-hero" aria-labelledby="selfie-title">
+      <img class="selfie-hero__image" src={selfieImages.hero.src} alt={selfieImages.hero.alt} width={selfieImages.hero.width} height={selfieImages.hero.height} fetchpriority="high" decoding="async" />
+      <div class="selfie-hero__veil" aria-hidden="true"></div>
+      <div class="selfie-hero__content">
+        <h1 id="selfie-title">{selfie.heroHeading.split("\n").map((line) => <span>{line}</span>)}</h1>
+        <h2>{selfie.heroSubheading}</h2>
+        <p>{selfie.heroCopy}</p>
+        <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-hero" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.heroCta}</a>
+      </div>
+    </section>
+    <section class="selfie-process" aria-labelledby="selfie-process-title">
+      <h2 id="selfie-process-title">{selfie.processHeading}</h2>
+      <ol class="selfie-process__list">
+        {selfie.processSteps.map((step) => { const note = step.length === 3 ? step[1] : ""; return <li><span>{step[0]}</span>{note && <small>{note}</small>}</li>; })}
+      </ol>
+      <div class="selfie-process__images">
+        {selfieImages.process.map((image) => <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />)}
+      </div>
+    </section>
+    <section class="selfie-gallery" aria-labelledby="selfie-gallery-title">
+      <h2 id="selfie-gallery-title">{selfie.galleryHeading}</h2>
+      <div class="selfie-gallery__track">{selfieImages.gallery.map((image) => <figure><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></figure>)}</div>
+    </section>
+    <section class="selfie-customize" aria-labelledby="selfie-customize-title">
+      <div class="selfie-customize__intro">
+        <h2 id="selfie-customize-title">{selfie.customizeHeading}</h2>
+        <p>{selfie.customizeCopy}</p>
+      </div>
+      <div class="selfie-controls">
+        {selfie.controls.map((control) => { const label = control[0] as string; const options = control[1] as string[]; const ids = control[2] as string[]; return <article class="selfie-control"><h3>{label}</h3><div class="selfie-control__images">{ids.map((id, index) => { const image = selfieImages.controls.get(id); return image && <figure><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><figcaption>{options[index]}</figcaption></figure>; })}</div><p class="selfie-control__options">{options.join(", ")}</p></article>; })}
+      </div>
+      <p class="selfie-customize__custom">{selfie.customizeCustom}</p>
+    </section>
+    <section class="selfie-benefits" aria-labelledby="selfie-benefits-title">
+      <div class="selfie-benefits__intro"><h2 id="selfie-benefits-title">{selfie.benefitsHeading}</h2><p>{selfie.benefitsIntro}</p></div>
+      <div class="selfie-benefits__grid">{selfie.benefits.map(([title, copy], index) => { const image = selfieImages.benefits[index]; return <article class="selfie-benefit"><h3>{title}</h3><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><p>{copy}</p></article>; })}</div>
+    </section>
+    <section class="selfie-prices" aria-labelledby="selfie-prices-title">
+      <div class="selfie-prices__intro"><h2 id="selfie-prices-title">{selfie.pricesHeading}</h2></div>
+      <div class="selfie-prices__grid">{selfie.prices.map((priceItem, index) => { const title = priceItem[0] as string; const details = priceItem[1] as string[]; const price = priceItem[2] as string; const image = selfieImages.prices[index]; return <article class="selfie-price"><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><div class="selfie-price__copy"><h3>{title}</h3>{details.map((detail) => <p>{detail}</p>)}<strong>{price}</strong></div></article>; })}</div>
+      <div class="selfie-extras"><h3>{selfie.extrasHeading}</h3>{selfie.extras.map(([title, price, note]) => <p><strong>{title}</strong><span>{price}</span>{note && <small>{note}</small>}</p>)}</div>
+      <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.reserveCta}</a></div>
+    </section>
+    <section class="selfie-location" aria-labelledby="selfie-location-title">
+      <div><h2 id="selfie-location-title">{selfie.szegedHeading}</h2><p>{selfie.szegedCopy}</p><a class="text-link" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div>
+    </section>
   </>
 ) : page.path === "/post-booking" || page.path === "/hu/post-booking" ? (
   <>
