@@ -1,5 +1,5 @@
 ---
-import { absoluteUrl, pageByPath, site, siteUrl, faqItemsFor } from "../lib/site.mjs";
+import { absoluteUrl, pageByPath, site, siteUrl } from "../lib/site.mjs";
 
 const { page } = Astro.props;
 const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
@@ -79,19 +79,6 @@ if (page.section === "service") {
     serviceType: page.purpose,
     provider: { "@id": `${siteUrl()}/#business` },
     areaServed: { "@type": "City", name: "Budapest" }
-  });
-}
-
-if (page.section === "faq") {
-  schemas.push({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": `${canonicalUrl}#faq`,
-    mainEntity: faqItemsFor(page).map(([question, answer]) => ({
-      "@type": "Question",
-      name: question,
-      acceptedAnswer: { "@type": "Answer", text: answer }
-    }))
   });
 }
 
