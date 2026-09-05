@@ -617,6 +617,45 @@ export const modelsContent = {
   }
 };
 
+export const packagesContent = {
+  en: {
+    heroHeading: "all packages and services", heroCopy: "photoshoots, styling, make up and combined packages",
+    intro: ["Choose the photoshoot package that fits your needs, and add makeup, hair or styling if you want — all with one booking, in one place.", "The studio, professional lighting, photoshoot, retouching and creative team work together to create a polished, cohesive result that works well on camera. Ideal for portraits, model portfolios, personal branding, glamour, boudoir and creative photoshoots."],
+    packages: [
+      { title: "Small Studio Photoshoot", description: "Pick this package if you want some new profile pictures, CV pictures or just want to try out a simple studio shoot.", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] },
+      { title: "Standard Photoshoot", description: "Perfect for a studio shoot with multiple outfits or styles. Also a good solution for couples or friends.", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] },
+      { title: "All-inclusive Photoshoot", description: "If you want a nice set of perfect pictures that are beyond the usual, this offer is for you. Including complicated sets, special lighting or group photos - we can do anything you can imagine!", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }
+    ],
+    upgradesHeading: "upgrade your shoot", upgradesIntro: "Add professional makeup, hair and styling to your photoshoot in Budapest for a more polished, cohesive result. Our makeup artist and stylist can help you prepare camera-ready looks, plan outfits and create a stronger visual direction for portraits, model portfolios, branding sessions, glamour, boudoir and editorial-style shoots.",
+    upgrades: [
+      { title: "Add Make up & Hair", description: "Professional make-up and hair that is camera-ready and tailored to your look.", priceLabel: "Starting from", price: "+15.000. HUF", cta: "all make up packages", href: "/make-up-artists" },
+      { title: "Add Styling", description: "Professional styling, outfit direction and sourcing for a stronger vision and a cohesive look that fits your concept.", priceLabel: "starting from", price: "+35.000. HUF", cta: "all styling packages", href: "/stylists" },
+      { title: "Complete Creative Team", description: "Make-up, hair and styling together. The perfect choice for a complete transformation or a high end concept.", priceLabel: "starting from", price: "+48.000. HUF", cta: "ask for an offer", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+    ],
+    contactHeading: "For booking one of our artists, drop a message:", contactSubject: "combined shoot inquiry"
+  },
+  hu: {
+    heroHeading: "fotózás és kombinált csomagjaink", heroCopy: "foglald le kreatív csapatunkat fotózásodhoz",
+    intro: ["Válaszd ki a számodra megfelelő fotózási csomagot, és igény szerint kérj hozzá sminket, hajat vagy stylingot is — mindezt egy foglalással, egy helyen.", "A stúdió, a professzionális világítás, a fotózás, az utómunka és a kreatív csapat összehangoltan dolgozik azon, hogy a végeredmény egységes, átgondolt és kamera előtt is működőképes legyen. Ideális portrékhoz, modell portfólióhoz, personal brandinghez, glamour, boudoir és kreatív fotózásokhoz."],
+    packages: [
+      { title: "Kis Fotózás csomag", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretne kipróbálni.", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] },
+      { title: "Standard Fotózás csomag", description: "Tökéletes stúdiós felvételekhez többféle öltözékkel vagy stílussal. Pároknak vagy barátoknak is jó megoldás.", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 ruha", "akár 3 stúdióbeállítás", "1-2 modell"] },
+      { title: "All-inclusive Fotózás csomag", description: "Ha egy szép, a megszokotton túlmutató képsorozatra vágysz, ez az ajánlat neked szól. Bonyolult szettek, speciális világítás vagy csoportképek – bármit meg tudunk csinálni, amit csak el tudsz képzelni!", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "akár 3 ruha", "akár 3 stúdióbeállítás", "egyetlen modelltől csoportokig"] }
+    ],
+    upgradesHeading: "kiegészítő szolgáltatások", upgradesIntro: "A fotózási csomagok mellé profi sminket, frizurát és stylingot is kérhetsz, hogy a végeredmény egységesebb, kidolgozottabb és kamera előtt is működőképes legyen. Sminkesünk és stylistunk segít a megjelenés kialakításában, az outfit tervezésében és a fotózás vizuális irányának erősítésében.",
+    upgrades: [
+      { title: "Smink és haj hozzáadása", description: "Professzionális smink és frizura, amely kamera előtt is jól működik, és a te megjelenésedhez igazodik.", priceLabel: "kezdő ár:", price: "+15.000. HUF", cta: "összes smink csomag", href: "/hu/make-up-artists" },
+      { title: "Styling hozzáadása", description: "Professzionális styling, tanácsadás és beszerzés egy erősebb vizuális koncepcióért és egységes megjelenésért.", priceLabel: "kezdő ár:", price: "+35.000. HUF", cta: "összes styling csomag", href: "/hu/stylists" },
+      { title: "Teljes kreatív csapat", description: "Smink, haj és styling együtt. Ideális választás teljes átalakuláshoz vagy magasabb szintű koncepcióhoz.", priceLabel: "kezdő ár:", price: "+48.000. HUF", cta: "kérj ajánlatot", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+    ],
+    contactHeading: "Foglalj fotózást rezidens csapatunkkal:", contactSubject: "combined shoot inquiry"
+  }
+};
+
+export const packagesImages = {
+  contact: { src: "/images/wix/reference/packages-contact.jpg", width: 1440, height: 471, alt: "creative photoshoot at aether art space" }
+};
+
 export const homeImages = {
   hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },
