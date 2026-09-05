@@ -621,6 +621,10 @@
 details { padding: 18px 0; border-bottom: 1px solid var(--ink); }
 summary { cursor: pointer; font: 26px/1.15 var(--serif); }
 .audit-note { max-width: 980px; margin: 0 auto 60px; padding: 16px; border-left: 3px solid var(--ink); color: var(--muted); }
+.legal-copy > p:first-child { margin-bottom: 42px; font: var(--text-body); }
+.legal-copy section { margin: 0 0 40px; }
+.legal-copy h2 { margin: 0 0 14px; font: 400 34px/1.1 var(--serif); }
+.legal-copy p { margin: 0 0 14px; font: var(--text-small); }
 @media (max-width: 1199px) and (min-width: 761px) {
   .home-feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 55px 24px; }
 }

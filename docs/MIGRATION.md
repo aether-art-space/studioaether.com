@@ -8,7 +8,7 @@ All 46 inventory URLs are represented in the route contract, along with the nine
 
 Astro generates clean URL paths as directory-index documents. Production hosting must serve `/hu`, `/studio` and the other no-trailing-slash paths directly and must not introduce automatic trailing-slash redirects.
 
-Content migration status: `/`, `/hu`, `/studio` and `/hu/studio` have been compared against fresh Wix HTML for title, description, core headings, copy and selected image semantics. Other routes retain the conservative scaffold until their own content and asset audits are complete.
+Content migration status: all production routes in the route contract have now been compared against fresh Wix HTML in the connected Chrome reference for titles, descriptions, headings, source copy, images/crops, links and responsive behavior. The homepage remains unchanged after its committed migration. The remaining source discrepancies and pre-cutover decisions are recorded below.
 
 | Route group | Initial V2 treatment |
 | --- | --- |
@@ -16,8 +16,9 @@ Content migration status: `/`, `/hu`, `/studio` and `/hu/studio` have been compa
 | `/mentoring` | Match the observed Wix behavior with one direct 301 to `/photographer-mentoring-budapest`; keep the source out of the sitemap and internal links. |
 | `/photographer-daniel` | Preserve and keep indexable pending Search Console/backlink review; its sitemap-discovered Hungarian counterpart is also represented. |
 | `/hu/fitness` | Preserve URL and correct the known corporate-photography title mismatch to fitness/yoga wording after baseline capture. |
-| FAQ | Preserve URL; visible content avoids stale package values until current commercial rules are confirmed. Do not add FAQPage schema before content approval. |
-| Privacy policy | Preserve URL; public studio address and legal provider address remain separate decisions. |
+| FAQ | Preserve URL and verified 18-question bilingual accordion content. FAQPage schema is intentionally omitted pending approval. The Wix FAQ contains stale hourly pricing that must not override the audited booking page. |
+| Privacy policy | Preserve URL and the audited generated-policy text dated October 19, 2024. The source identifies the legal provider as `aether art space, Budapest, Tátra utca 29b`, while the public studio address remains `Lónyay utca 60., 1093 Budapest`; legal owner/address, contact-email presentation and policy update require review before cutover. |
+| `/wedding-photography` and `/hu/wedding-photography` | Preserve both URLs and the audited wedding source assets. The Hungarian source currently carries a glamour/boudoir title and introductory copy before wedding sections; resolve whether to preserve or editorially correct that mismatch before cutover. Wedding package prices are consultation-led in the current source. |
 
 ## Required source-level inputs before cutover
 
@@ -27,10 +28,12 @@ Content migration status: `/`, `/hu`, `/studio` and `/hu/studio` have been compa
 - Record current GA4 property, Google tag, Ads conversion actions, Consent Mode and enhanced conversions configuration.
 - Confirm current redirects, hostname behavior, HTTPS and sitemap.
 - Confirm FAQ prices, cancellation policy, phone number(s), artist packages and legal address.
+- Resolve the Hungarian wedding-page title/content mismatch and confirm the wedding package/form submission destination.
+- Review the generated privacy policy with the legal owner before publishing; do not substitute the public studio address for the source legal provider address without approval.
 
 ## Acceptance checks
 
-Run `npm run build && npm run check`. Then crawl the generated or deployed site and verify:
+Run `npm run check && npm run build`. Then crawl the generated or deployed site and verify:
 
 - every inventory URL returns 200 or an approved direct 301/308;
 - sitemap contains only canonical, indexable 200 URLs;
