@@ -1,0 +1,20 @@
+{
+  "origin": "https://www.studioaether.com",
+  "generatedAt": "2026-09-05T09:54:56.009Z",
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "viewport": "desktop-1440",
+      "screenshot": "docs/baseline/visual/www.studioaether.com/home-desktop-1440.png",
+      "measurement": "docs/baseline/visual/www.studioaether.com/home-desktop-1440.json"
+    },
+    {
+      "id": "home",
+      "path": "/",
+      "viewport": "mobile-390",
+      "screenshot": "docs/baseline/visual/www.studioaether.com/home-mobile-390.png",
+      "measurement": "docs/baseline/visual/www.studioaether.com/home-mobile-390.json"
+    }
+  ]
+}

@@ -1,10 +1,45 @@
 ---
+import { ClockIcon, InfoIcon, MapPinIcon, PhoneIcon } from "@phosphor-icons/react/ssr";
+import BookingFooter from "./BookingFooter.astro";
 import { site } from "../lib/site.mjs";
 const { page } = Astro.props;
 const hu = page.language === "hu";
 ---
 <footer class="site-footer">
-  <div><p class="eyebrow">{hu ? "kapcsolat" : "contact"}</p><a href={`mailto:${site.email}`}>{site.email}</a><br /><a href="tel:+36703861739">{site.phone}</a></div>
-  <div><p class="eyebrow">{hu ? "nyitvatartás" : "opening hours"}</p><p>APPOINTMENT ONLY<br />Mon–Fri 09:00–22:00<br />Sat–Sun 10:00–22:00</p></div>
-  <div><p class="eyebrow">{hu ? "cím" : "address"}</p><p>{site.publicAddress}</p><a href={hu ? "/hu/faq" : "/faq"}>{hu ? "GYIK" : "FAQ"}</a> · <a href={hu ? "/hu/privacy-policy" : "/privacy-policy"}>{hu ? "Adatvédelem" : "Privacy"}</a></div>
+  <BookingFooter page={page} />
+  <section class="site-footer__details" aria-label={hu ? "Kapcsolat és stúdióinformációk" : "Contact and studio information"}>
+    <div class="site-footer__grid">
+      <div class="footer-column footer-column--contact">
+        <div class="footer-icon-slot" aria-hidden="true"><PhoneIcon className="footer-icon footer-icon--phone" size={23} weight="regular" /></div>
+        <h2>{hu ? "Kontakt és Social media" : "Contact & Socials"}</h2>
+        <div class="footer-contact-group">
+          <a href="tel:+36703861739">HU / EN:&nbsp;<strong>+36/70-386-17-39</strong></a>
+          <a href={`mailto:${site.email}?subject=contact%20from%20website%20footer`}>{site.email}</a>
+        </div>
+        <div class="footer-contact-group footer-contact-group--social">
+          <a href={site.instagramUrl} target="_blank" rel="noreferrer noopener"><strong>@aether.art.space</strong>{hu ? " Instagramon" : " on Instagram"}</a>
+          <a href={site.facebookUrl} target="_blank" rel="noreferrer noopener"><strong>aetherbudapest</strong>{hu ? " Facebookon" : " on Facebook"}</a>
+        </div>
+      </div>
+      <nav class="footer-column footer-column--pages" aria-label={hu ? "Egyéb oldalak" : "Other pages"}>
+        <div class="footer-icon-slot" aria-hidden="true"><InfoIcon className="footer-icon footer-icon--info" size={25} weight="regular" /></div>
+        <h2>{hu ? "Egyéb oldalak" : "Other pages"}</h2>
+        <a href={hu ? "/hu/faq" : "/faq"}>FAQ</a>
+        <a href={hu ? "/hu/privacy-policy" : "/privacy-policy"}>Privacy Policy</a>
+      </nav>
+      <div class="footer-column footer-column--hours">
+        <div class="footer-icon-slot" aria-hidden="true"><ClockIcon className="footer-icon footer-icon--clock" size={24} weight="regular" /></div>
+        <h2>{hu ? "Nyitvatartás" : "Opening hours"}</h2>
+        <p>{hu ? "CSAK FOGLALÁSSAL" : "APPOINTMENT ONLY"}<br /><br />{hu ? "Hétfő - Péntek" : "Monday - Friday"}<br />09:00 - 22:00<br /><br />{hu ? "Szombat - Vasárnap" : "Saturday - Sunday"}<br />10:00 - 22:00</p>
+      </div>
+      <div class="footer-column footer-column--address">
+        <div class="footer-icon-slot" aria-hidden="true"><MapPinIcon className="footer-icon footer-icon--location" size={29} weight="regular" /></div>
+        <h2>{hu ? "Cím" : "Address"}</h2>
+        <address>
+          <span>HUNGARY - 1093. Budapest</span>
+          <span><a href={site.mapsUrl} target="_blank" rel="noreferrer noopener">Lónyay utca 60.</a>&nbsp;{hu ? "4-es kapucsengő" : "#4 doorbell"}</span>
+        </address>
+      </div>
+    </div>
+  </section>
 </footer>

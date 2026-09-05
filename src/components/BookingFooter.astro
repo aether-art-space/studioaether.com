@@ -1,0 +1,26 @@
+---
+import { homeContent, homeImages } from "../data/content.mjs";
+import { site } from "../lib/site.mjs";
+
+const { page } = Astro.props;
+const hu = page.language === "hu";
+const home = homeContent[hu ? "hu" : "en"];
+---
+<section class="home-booking" aria-labelledby="footer-booking-title">
+  <div class="home-booking__intro">
+    <h2 id="footer-booking-title">{home.bookingHeading}</h2>
+    <p>{home.bookingLead}</p>
+  </div>
+  <div class="home-booking__grid">{home.bookingCards.map(([title, copy, cta], index) => {
+    const href = index === 0 ? site.bookingUrl : index === 1 ? site.selfieBookingUrl : `mailto:${site.email}?subject=aether%20footer`;
+    const event = index === 0 ? "booking_click" : index === 1 ? "selfie_booking_click" : "email_click";
+    return <article class="home-booking-card">
+      <h3>{title}</h3>
+      <p>{copy}{index === 2 && <a href={`mailto:${site.email}?subject=${hu ? "contact%20from%20aether%20footer" : "aether%20-%20footer"}`}>{site.email}</a>}</p>
+      <div class="home-booking-card__media">
+        <img class="home-booking-card__image" src={homeImages.booking[index].src} alt={hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt} width={homeImages.booking[index].width} height={homeImages.booking[index].height} loading="lazy" decoding="async" />
+      </div>
+      <a class="button button--dark home-booking-card__action" data-gtag-event={event} data-gtag-location="footer-booking" href={href}>{cta}</a>
+    </article>;
+  })}</div>
+</section>

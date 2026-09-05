@@ -43,7 +43,13 @@ for (const page of indexablePages) {
 
   const links = [...html.matchAll(/\bhref=["'](\/(?!\/)[^"'#?]*)/gi)].map((match) => match[1]);
   for (const link of links) {
-    if (["/site.css", "/content.css", "/tracking.js"].includes(link)) continue;
+    if ([
+      "/site.css",
+      "/content.css",
+      "/tracking.js",
+      "/fonts/Jitter-Regular-hun-v2.ttf",
+      "/fonts/Jura-400.ttf"
+    ].includes(link)) continue;
     if (!pageByPath.has(link)) fail.push(`broken internal link ${link} from ${page.path}`);
   }
   if (html.includes('content="noindex')) fail.push(`unexpected noindex in production build: ${page.path}`);

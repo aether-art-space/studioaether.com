@@ -1,0 +1,20 @@
+{
+  "origin": "http://localhost:4173",
+  "generatedAt": "2026-09-05T10:05:12.979Z",
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "viewport": "desktop-1440",
+      "screenshot": "docs/baseline/visual/localhost/home-desktop-1440.png",
+      "measurement": "docs/baseline/visual/localhost/home-desktop-1440.json"
+    },
+    {
+      "id": "home",
+      "path": "/",
+      "viewport": "mobile-390",
+      "screenshot": "docs/baseline/visual/localhost/home-mobile-390.png",
+      "measurement": "docs/baseline/visual/localhost/home-mobile-390.json"
+    }
+  ]
+}

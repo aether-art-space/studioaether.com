@@ -28,6 +28,7 @@ export const site = {
   selfieBookingUrl: "https://cal.com/aether-studio/selfie-shoot",
   instagramUrl: "https://www.instagram.com/aether.art.space/",
   facebookUrl: "https://www.facebook.com/aetherbudapest",
+  mapsUrl: "https://www.google.com/maps/place/aether+art+space/@47.4815598,19.066554,858m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4741dde41b60a103:0x197de13c0a70664f!8m2!3d47.4815598!4d19.066554!16s%2Fg%2F11lmf_6403",
   tracking: {
     googleTagId: process.env.PUBLIC_GOOGLE_TAG_ID || "",
     ga4Id: process.env.PUBLIC_GA4_ID || "",

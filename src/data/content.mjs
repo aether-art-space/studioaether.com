@@ -3,6 +3,10 @@ export const homeContent = {
     eyebrow: "your new favourite photostudio",
     introHeading: "the studio space is perfected to host the creative process end-to-end",
     introCopy: "Whether you're a professional photographer or an amateur looking for a space to capture your vision, our studio is the perfect place for you. We have created our photostudio to nurture the creative process. If you are looking for a reliable model, outfits and of course the necessary technical assets like flashes and light modifiers, you can find it in our studio.",
+    studioShowcaseTitle: "a space for creating art",
+    studioShowcaseIntro: "Whether you're a professional photographer or an amateur looking for a space to capture your vision, our studio is the perfect place for you.",
+    studioShowcaseBody: "We have created our photostudio to nurture the creative process. If you are looking for a reliable model, outfits and of course the necessary technical assets like flashes and light modifiers, you can find it in our studio.",
+    studioShowcaseCta: "learn more about our studio",
     features: [
       ["spacious studio", "rent our studio for your creative projects and workshops for the best price in Budapest", "/studio", "more about the studio"],
       ["flashes, cameras & films", "try out a new camera! We have a selection of digital and analogue cameras with some spare film too", "/equipment", "check out our equipment"],
@@ -14,26 +18,48 @@ export const homeContent = {
     beginnerHeading: "first time in a studio?",
     beginnerLead: "we will show you around and teach you how to use our equipment!",
     beginnerQuote: "“I’d never touched a strobe light before. The team explained everything and even helped me set up.”",
-    beginnerAttribution: "— Anna, first-time portrait photographer",
-    beginnerProof: "We’ve worked with hundreds of beginners, first-time creatives, and solo artists. You’re in good hands.",
+    beginnerAttribution: "Anna, first-time portrait photographer",
+    beginnerQuoteSecond: "“I was scared to book, but honestly—it felt like a creative playground with no pressure.”",
+    beginnerAttributionSecond: "Márk, photography student",
+    beginnerProof: ["We’ve worked with hundreds of beginners, first-time creatives, and solo artists.", "You’re in good hands."],
     beginnerSteps: ["Tell us your idea when booking", "We will recommend a setup", "You get help on-site", "You leave with great results"],
-    beginnerCta: "Book now and get beginner-friendly support!",
+    beginnerCtaLead: "Book now",
+    beginnerCtaTail: " and get beginner-friendly support!",
     artistsHeading: "our in-house artists",
     artistsLead: "Our resident artists for hire can help you realise your vision in our Budapest studio",
     artists: [
       ["photographers", "the resident photographers are available for a photoshoot in the studio in various styles and genres", "/photographers-budapest", "get to know our photographers"],
       ["models", "we have a list of reliable models that you can shoot in our studio for a discounted price", "/models-budapest", "get to know our models"],
-      ["make-up artists", "you can get a make-up artist in-house for your shoot. Our trusted MUAs cover various styles", "/make-up-artists", "get to know our MUAs"],
+      ["make-up artists", "you can get a make-up artist in-house for your shoot. our trusted MUAs cover various styles", "/make-up-artists", "get to know our MUAs"],
       ["stylists", "hire our stylists and personal brand designers for your photoshoot", "/stylists", "get to know our stylists"]
     ],
     photographersHeading: "book our photographers for your photoshoot",
     photographersCopy: "Our professional resident photographers are available in our Budapest studio in the following genres:",
-    packagesCopy: "photoshoots packages of all sizes starting from 39.000. HUF"
+    photographyServices: [
+      ["commercial & product", "/commercial-photography-budapest", "learn more"],
+      ["corporate\n& event", "/corporate-photography-budapest", "learn more"],
+      ["business &\ncasual portrait", "/portrait-photography-budapest", "learn more"],
+      ["fitness\n& yoga", "/fitness", "learn more"],
+      ["glamour &\nboudoir", "/glamour-boudoir-photography-budapest", "learn more"],
+      ["model digitals & portfolio", "/model-polaroids-budapest", "learn more"]
+    ],
+    packagesCopy: "photoshoots packages of all sizes starting from 39.000. HUF",
+    bookingHeading: "Book the Studio",
+    bookingLead: "Book our Budapest photo studio for your photoshoot, workshop or anything else:",
+    bookingCards: [
+      ["Photo Studio", "Book the studio for your photo session here:", "Book the Photo Studio"],
+      ["Selfie Studio", "Book the studio for your selfie session here:", "Book the Selfie Studio"],
+      ["Contact Us", "Questions? You need a photographer? Write us on ", "Send us a Message via Email"]
+    ]
   },
   hu: {
     eyebrow: "az új kedvenc fotóstudiód",
     introHeading: "a studiótér az alkotási folyamat köré van tökéletesítve elejétől végéig",
     introCopy: "Akár profi fotós, akár amatőr vagy, aki olyan helyet keres, ahol megvalósíthatod elképzeléseid, stúdiónk a tökéletes hely számodra. Fotóstúdiónkat úgy alakítottuk ki, hogy a teljes alkotási folyamatot támogassa és megkönnyítse. Találsz nálunk projektedhez ajánlott modelleket, ruhákat, kiegészítőket és természetesen szükséges technikai eszközöket, mint vakuk, fényformálók és kamerák.",
+    studioShowcaseTitle: "tér az alkotáshoz",
+    studioShowcaseIntro: "Akár profi fotós, akár amatőr vagy, aki olyan helyet keres, ahol megvalósíthatod elképzeléseid, stúdiónk a tökéletes hely számodra.",
+    studioShowcaseBody: "Fotóstúdiónkat úgy alakítottuk ki, hogy a teljes alkotási folyamatot támogassa és megkönnyítse. Találsz nálunk projektedhez ajánlott modelleket, ruhákat, kiegészítőket és természetesen szükséges technikai eszközöket, mint vakuk, fényformálók és kamerák.",
+    studioShowcaseCta: "többet a stúdióról",
     features: [
       ["tágas studiótér", "béreld ki stúdiónkat projektedhez, vagy workshophoz a legjobb áron Budapesten", "/hu/studio", "bővebben a studióról"],
       ["vakuk, kamerák és filmek", "próbálj ki egy új fényképezőgépet! Vakuk, digitális és analóg kamerák választékát kínáljuk helyben", "/hu/equipment", "nézd meg felszerelésünket"],
@@ -45,10 +71,13 @@ export const homeContent = {
     beginnerHeading: "először jársz stúdióban?",
     beginnerLead: "Megmutatjuk a helyet és megtanítjuk, hogyan használd az eszközeinket!",
     beginnerQuote: "„Soha életemben nem használtam stúdióvakut. A csapat mindent elmagyarázott, sőt, a beállításban is segítettek.”",
-    beginnerAttribution: "— Anna, első alkalmas portréfotós",
-    beginnerProof: "Több száz kezdővel, első projektes alkotóval és művésszel dolgoztunk már együtt. Jó kezekben leszel.",
+    beginnerAttribution: "Anna, első alkalmas portréfotós",
+    beginnerQuoteSecond: "„Féltem foglalni, de végül kreatív játszótérnek éreztem, minden nyomás nélkül.”",
+    beginnerAttributionSecond: "Márk, fotográfia szakos hallgató",
+    beginnerProof: ["Több száz kezdővel, első projektes alkotóval és művésszel dolgoztunk már együtt.", "Jó kezekben leszel."],
     beginnerSteps: ["Mondd el az ötleted foglaláskor!", "Mi ajánlunk hozzá egy megfelelő beállítást", "A helyszínen segítünk mindenben", "És elégedetten, szuper eredményekkel távozol"],
-    beginnerCta: "Foglalj most, és kérj segítséget első fotózásodhoz!",
+    beginnerCtaLead: "Foglalj most",
+    beginnerCtaTail: ", és kérj segítséget első fotózásodhoz!",
     artistsHeading: "alkotóink",
     artistsLead: "Rezidens művészeink segítenek megvalósítani az elképzeléseid stúdiónkban.",
     artists: [
@@ -59,7 +88,22 @@ export const homeContent = {
     ],
     photographersHeading: "foglald le fotósainkat fotózásodhoz",
     photographersCopy: "Professzionális rezidens fotósaink segítenek megvalósítani ötleteid a Budapesti studiónkban az alábbi műfajokban:",
-    packagesCopy: "Fotózás csomagok minden méretben 39.000.Ft-tól elérhetőek fotósainkkal"
+    photographyServices: [
+      ["reklám és termékfotózás", "/hu/commercial-photography-budapest", "bővebben..."],
+      ["vállati és eseményfotózás", "/hu/corporate-photography-budapest", "bővebben..."],
+      ["üzleti és személyes portré", "/hu/portrait-photography-budapest", "bővebben..."],
+      ["fitnessz és jóga fotózás", "/hu/fitness", "bővebben..."],
+      ["glamour és boudoir", "/hu/glamour-boudoir-photography-budapest", "bővebben..."],
+      ["model polaroidok és portfólió", "/hu/model-polaroids-budapest", "bővebben..."]
+    ],
+    packagesCopy: "Fotózás csomagok minden méretben 39.000.Ft-tól elérhetőek fotósainkkal",
+    bookingHeading: "Foglald le a stúdiót",
+    bookingLead: "Foglald le stúdiónkat egy fotózásra, vagy bármi másra.",
+    bookingCards: [
+      ["Fotóstudió", "Itt lefoglalhatod a fotóstudiónkat a fotózásodhoz:", "Foglald le a fotóstúdiót"],
+      ["Szelfi Studió", "Itt lefoglalhatod a szelfi studiónkat és fotózhatod magad:", "Foglald le a szelfi studiót"],
+      ["Írj nekünk!", "Fotósra van szükséged? Kérdéseid vannak? Írj a ", "Email küldése"]
+    ]
   }
 };
 
@@ -98,3 +142,41 @@ export const studioImages = [
   { src: "https://static.wixstatic.com/media/94c0c9_3d3b307b954a4fceb82f25bf67971076~mv2.jpg/v1/fill/w_960,h_408,al_c,q_85,enc_avif,quality_auto/EFI08382-bnw-2.jpg", alt: "the interior of the best photostudio in Budapest", width: 960, height: 408 },
   { src: "https://static.wixstatic.com/media/94c0c9_dd2e841ec5284ea28c701324fcad8dba~mv2.png/v1/crop/x_65,y_0,w_1435,h_1111/fill/w_972,h_752,al_c,q_85,enc_avif,quality_auto/floorplan.png", alt: "photostudio floorplan", width: 972, height: 752 }
 ];
+
+export const homeImages = {
+  hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
+  icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },
+  features: [
+    { src: "/images/wix/reference/feature-studio.jpg", alt: "photostudio interior" },
+    { src: "/images/wix/reference/feature-camera.jpg", alt: "analogue camera for rent" },
+    { src: "/images/wix/reference/feature-furniture.jpg", alt: "studio furniture" },
+    { src: "/images/wix/reference/feature-clothes.jpg", alt: "clothes and accessories for photoshoots" },
+    { src: "/images/wix/reference/feature-props.jpg", alt: "photo studio props" },
+    { src: "/images/wix/reference/feature-extras.jpg", alt: "extras available in the photostudio" }
+  ],
+  creatingArt: [
+    { src: "/images/wix/reference/creating-art-1-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
+    { src: "/images/wix/reference/creating-art-2-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
+    { src: "/images/wix/reference/creating-art-3-full.jpg", width: 1000, height: 1500, alt: "a framed artwork in the aether art space photo studio" },
+    { src: "/images/wix/reference/creating-art-4-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" }
+  ],
+  artists: [
+    { src: "/images/wix/reference/artist-photographers.jpg", width: 362, height: 362, alt: "resident photographer", altHu: "rezidens fotós" },
+    { src: "/images/wix/reference/artist-models.jpg", width: 362, height: 362, alt: "resident photomodel", altHu: "rezidens fotómodell" },
+    { src: "/images/wix/reference/artist-makeup.jpg", width: 362, height: 362, alt: "resident make-up artist", altHu: "rezidens sminkes" },
+    { src: "/images/wix/reference/artist-stylists.jpg", width: 362, height: 362, alt: "resident stylist", altHu: "rezidens stylist" }
+  ],
+  photographers: [
+    { src: "/images/wix/reference/service-commercial.jpg", width: 300, height: 298, alt: "commercial and product photography" },
+    { src: "/images/wix/reference/service-corporate.jpg", width: 300, height: 298, alt: "corporate and event photography" },
+    { src: "/images/wix/reference/service-portrait.jpg", width: 300, height: 298, alt: "business and casual portrait photography" },
+    { src: "/images/wix/reference/service-fitness.jpg", width: 300, height: 298, alt: "fitness and yoga photography" },
+    { src: "/images/wix/reference/service-glamour.jpg", width: 300, height: 298, alt: "glamour and boudoir photography" },
+    { src: "/images/wix/reference/service-models.jpg", width: 300, height: 298, alt: "model digitals and portfolio photography" }
+  ],
+  booking: [
+    { src: "/images/wix/reference/booking-photo-studio.jpg", width: 640, height: 382, alt: "aether photo studio interior", altHu: "az aether fotóstúdió belső tere" },
+    { src: "/images/wix/reference/booking-selfie-studio.jpg", width: 640, height: 382, alt: "aether selfie studio", altHu: "az aether szelfi stúdió" },
+    { src: "/images/wix/reference/booking-contact.jpg", width: 640, height: 382, alt: "photoshoot in the aether studio", altHu: "fotózás az aether stúdióban" }
+  ]
+};
