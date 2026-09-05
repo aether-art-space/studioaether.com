@@ -139,8 +139,54 @@ export const studioContent = {
 };
 
 export const studioImages = [
-  { src: "https://static.wixstatic.com/media/94c0c9_3d3b307b954a4fceb82f25bf67971076~mv2.jpg/v1/fill/w_960,h_408,al_c,q_85,enc_avif,quality_auto/EFI08382-bnw-2.jpg", alt: "the interior of the best photostudio in Budapest", width: 960, height: 408 },
-  { src: "https://static.wixstatic.com/media/94c0c9_dd2e841ec5284ea28c701324fcad8dba~mv2.png/v1/crop/x_65,y_0,w_1435,h_1111/fill/w_972,h_752,al_c,q_85,enc_avif,quality_auto/floorplan.png", alt: "photostudio floorplan", width: 972, height: 752 }
+  { src: "/images/studio/floorplan.png", alt: "photostudio floorplan", width: 1435, height: 1111 }
+];
+
+export const studioGalleryImages = [
+  { src: "/images/studio/gallery-01.jpg", alt: "A clean orderly photostudio with high ceiling and a backdrop in the distance.", width: 453, height: 302, layout: "wide" },
+  { src: "/images/studio/gallery-02.jpg", alt: "Studio interior with a photo shoot in progress.", width: 310, height: 207, layout: "wide-small" },
+  { src: "/images/studio/gallery-03.jpg", alt: "A high bookshelf full of props.", width: 138, height: 207, layout: "wide-small" },
+  { src: "/images/studio/gallery-04.jpg", alt: "Studio reception area with a make-up desk.", width: 203, height: 306, layout: "tall" },
+  { src: "/images/studio/gallery-05.jpg", alt: "Photo books and props in the studio.", width: 203, height: 203, layout: "square" },
+  { src: "/images/studio/gallery-06.jpg", alt: "Make-up desk and mirror in the studio.", width: 235, height: 353, layout: "tall" },
+  { src: "/images/studio/gallery-07.jpg", alt: "Studio interior with a camera and lighting.", width: 235, height: 156, layout: "short" },
+  { src: "/images/studio/gallery-08.jpg", alt: "Studio interior with a photographer and model.", width: 343, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-09.jpg", alt: "White studio room with a backdrop.", width: 342, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-10.jpg", alt: "Studio corner with a camera and props.", width: 342, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-11.jpg", alt: "Photo studio interior with framed artwork.", width: 343, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-12.jpg", alt: "Studio room prepared for a photoshoot.", width: 343, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-13.jpg", alt: "Camera equipment in the studio.", width: 342, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-14.jpg", alt: "Studio furniture and equipment.", width: 343, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-15.jpg", alt: "Studio interior with a dark backdrop.", width: 342, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-16.jpg", alt: "Textile backdrop in the studio.", width: 343, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-17.jpg", alt: "Studio interior with camera equipment.", width: 342, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-18.jpg", alt: "Framed photography and seating in the studio.", width: 343, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-19.jpg", alt: "Photography equipment and props.", width: 342, height: 514, layout: "portrait" },
+  { src: "/images/studio/gallery-20.jpg", alt: "Camera equipment on display.", width: 179, height: 267, layout: "final-small" },
+  { src: "/images/studio/gallery-21.jpg", alt: "Film cameras and accessories.", width: 178, height: 267, layout: "final-small" },
+  { src: "/images/studio/gallery-22.jpg", alt: "Studio furniture and framed photography.", width: 362, height: 242, layout: "final-wide" },
+  { src: "/images/studio/gallery-23.jpg", alt: "Collection of cameras and studio equipment.", width: 771, height: 514, layout: "extra-wide" }
+];
+
+export const studioBackdropImages = [
+  { src: "/images/studio/backdrop-01.jpg", alt: "Pure white paper backdrop" },
+  { src: "/images/studio/backdrop-02.webp", alt: "Stone grey paper backdrop" },
+  { src: "/images/studio/backdrop-03.png", alt: "Ultra black paper backdrop" },
+  { src: "/images/studio/backdrop-04.png", alt: "Crimson paper backdrop" },
+  { src: "/images/studio/backdrop-05.webp", alt: "Orange paper backdrop" },
+  { src: "/images/studio/backdrop-06.webp", alt: "Deep yellow paper backdrop" },
+  { src: "/images/studio/backdrop-07.png", alt: "Blue mist paper backdrop" },
+  { src: "/images/studio/backdrop-08.webp", alt: "Ultramarine paper backdrop" },
+  { src: "/images/studio/backdrop-09.jpg", alt: "Orchid paper backdrop" },
+  { src: "/images/studio/backdrop-10.png", alt: "Coral paper backdrop" },
+  { src: "/images/studio/backdrop-11.png", alt: "Eggnog paper backdrop" },
+  { src: "/images/studio/backdrop-12.jpg", alt: "Dark green wall backdrop" },
+  { src: "/images/studio/backdrop-13.jpg", alt: "Moveable crimson wall backdrop" },
+  { src: "/images/studio/backdrop-14.jpg", alt: "Moveable black wall backdrop" },
+  { src: "/images/studio/backdrop-15.jpg", alt: "Crimson textile backdrop" },
+  { src: "/images/studio/backdrop-16.jpg", alt: "Teal textile backdrop" },
+  { src: "/images/studio/backdrop-17.jpg", alt: "Mustard textile backdrop" },
+  { src: "/images/studio/backdrop-18.jpg", alt: "Dark blue textile backdrop" }
 ];
 
 export const homeImages = {

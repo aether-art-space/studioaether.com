@@ -6,7 +6,7 @@ const { page } = Astro.props;
 const hu = page.language === "hu";
 ---
 <footer class="site-footer">
-  <BookingFooter page={page} />
+  {page.path !== "/studio" && page.path !== "/hu/studio" && <BookingFooter page={page} />}
   <section class="site-footer__details" aria-label={hu ? "Kapcsolat és stúdióinformációk" : "Contact and studio information"}>
     <div class="site-footer__grid">
       <div class="footer-column footer-column--contact">
