@@ -341,6 +341,112 @@ export const studioBackdropImages = [
   { src: "/images/studio/backdrop-18.jpg", alt: "Dark blue textile backdrop" }
 ];
 
+const equipmentImage = (filename, alt) => ({ src: `/images/equipment/${filename}`, alt });
+export const equipmentImages = {
+  lightSources: [
+    equipmentImage("A7305006.jpg", "strobe flash - Godox DP600III"),
+    equipmentImage("A7304153.jpg", "A7304153.jpg"),
+    equipmentImage("A7305000.jpg", "strobe flash - Godox MS300"),
+    equipmentImage("A7306627.jpg", "A7306627.jpg"),
+    equipmentImage("DSC04162.jpg", "DSC04162.jpg")
+  ],
+  modifiers: [
+    equipmentImage("A7304989.jpg", "light modifier - beauty dish"),
+    equipmentImage("A7305471.jpg", "A7305471.jpg"),
+    equipmentImage("A7309208.jpg", "A7309208.jpg"),
+    equipmentImage("A7304988.jpg", "light modifier - octabox"),
+    equipmentImage("A7305003.jpg", "light modifier - medium softbox"),
+    equipmentImage("A7304991.jpg", "light modifier - strip"),
+    equipmentImage("A7304980.jpg", "light modifier - snoot"),
+    equipmentImage("A7304995.jpg", "light modifier - reflector dish"),
+    equipmentImage("A7305059.jpg", "light modifier - reflector sheet"),
+    equipmentImage("att_TZpjebbKyT4WQeKwOq105sNYDApO3xYrHu9-y4uZR2E.png", "reflector accessories"),
+    equipmentImage("A7305053.jpg", "light modifier - reflective umbrella"),
+    equipmentImage("A7305051.jpg", "light modifier - translucent umbrella")
+  ],
+  other: [
+    equipmentImage("A7307384.jpg", "tripods and stands"),
+    equipmentImage("A7302058-2.jpg", "A7302058-2.jpg"),
+    equipmentImage("A7307393.jpg", "fog machine"),
+    equipmentImage("A7303209_edited.jpg", "A7303209_edited.jpg"),
+    equipmentImage("A7301405.jpg", "A7301405.jpg")
+  ],
+  cameras: [
+    equipmentImage("A7307161.jpg", "digital camera - Sony A7iii"),
+    equipmentImage("A7309387.jpg", "A7309387.jpg"),
+    equipmentImage("A7304160.jpg", "A7304160.jpg"),
+    equipmentImage("A7305078.jpg", "medium format analogue camera - Hasselblad 500C"),
+    equipmentImage("A7304971.jpg", "analogue camera - Nikon EM"),
+    equipmentImage("A7304972.jpg", "analogue camera - Chinon CE-4"),
+    equipmentImage("A7304973.jpg", "analogue camera - Yashica FX-100"),
+    equipmentImage("A7304159.jpg", "A7304159.jpg"),
+    equipmentImage("A7304974.jpg", "analogue camera - FED2"),
+    equipmentImage("A7305079.jpg", "analogue camera - Olympus MJU2"),
+    equipmentImage("A7304979.jpg", "analogue camera - Super 8")
+  ],
+  lenses: [
+    equipmentImage("A7307150.jpg", "Nikon mount lenses"),
+    equipmentImage("A7307156.jpg", "M42 mount lenses"),
+    equipmentImage("A7307151.jpg", "Pentax K mount lenses"),
+    equipmentImage("A7307157.jpg", "Canon mount lenses"),
+    equipmentImage("A7307163.jpg", "Canon mount lenses")
+  ]
+};
+
+export const equipmentContent = {
+  en: {
+    heroHeading: "equipment",
+    heroCopy: "our lights, cameras, lenses and other electronics that you can use for your studio session",
+    sections: [
+      { heading: "Light Sources", paragraphs: ["We chose powerful studio flash strobes and LED lights designed to provide consistent, professional lighting for every shot. They offer precise control over light intensity and direction, helping you create dramatic effects, highlight details, and shape the mood of your scene.", "Whether you're working with portraits, products, or creative compositions, our light sources ensure you get the perfect lighting every time—giving your photos that polished, studio-quality finish.", "If you don't have experience with this equipment yet, we are happy to help you!", "We keep on-camera flash triggers compatible with any brand of camera you may bring ...and some sync-cables for the oldschool types."], galleries: [{ imageKey: "lightSources" }] },
+      { heading: "Light Modifiers", paragraphs: ["Enhance your lighting with our wide range of modifiers, designed to control and soften light, create shadows, or add special effects. From softboxes to umbrellas, they allow you to shape the perfect lighting for any photoshoot."], galleries: [{ imageKey: "modifiers" }] },
+      { heading: "Other equpiment", paragraphs: ["We also offer a variety of additional equipment to complete your setup in our studio - including fog machines for atmospheric effects and sturdy tripods for steady shots."], galleries: [{ imageKey: "other" }] },
+      { heading: "Cameras for Rent", paragraphs: ["Capture your vision with our selection of analog and digital cameras, lenses, and accessories, all available for your shoot. Whether you prefer the timeless charm of film or the flexibility of digital, we’ve got you covered. Choose from 35mm, medium format, and instant cameras, including our flagship Hasselblad 500C and Leica R3—icons of photographic excellence.", "With a variety of lenses and essential gear at your disposal, you can experiment freely and bring your creative ideas to life.", "available for you to use in the studio - assistance included"], galleries: [{ imageKey: "cameras" }] },
+      { heading: "Lenses for rent", paragraphs: ["You can use lenses in the studio either with a rented camera or on your own camera."], galleries: [{ imageKey: "lenses" }] }
+    ]
+  },
+  hu: {
+    heroHeading: "felszerelés és kellékek",
+    heroCopy: "fénytechnika, bérelhető kamerák, eszközök fotózáshoz és előkészületekhez",
+    sections: [
+      { heading: "Fényforrások", paragraphs: ["Professzionális világítótesteket választottunk, mert biztosítják a konzisztens, profi világítást minden egyes felvételhez.", "Ezek a vakuk és LEDek pontosan szabályozhatóak, így könnyedén irányíthatod a fény intenzitását és irányát, hogy drámai hatásokat, részleteket emelj ki, és formáld a jelenet hangulatát.", "Legyen szó portrékról, termékekről vagy kreatív kompozíciókról, a vakuink mindig a tökéletes világítást biztosítják, hogy a fotóid mindig kifinomultak, stúdióminőségűek legyenek.", "Ha még nem használtál ilyen eszközöket, szívesen segítünk!", "Bármilyen fényképezőgéppel kompatibilis vakukioldókat tartunk studiónkban ...és néhány szinkronkábelt is a régivágásúaknak."], galleries: [{ imageKey: "lightSources" }] },
+      { heading: "Fényformálók", paragraphs: ["A fényformálók segítenek a fény irányításában, lágyításában, árnyékok létrehozásában vagy különleges effektek hozzáadásában. Softboxoktól kezdve az ernyőkig, eszközeink lehetővé teszi, hogy a legjobb világítást alakítsd ki bármilyen fotózáshoz."], galleries: [{ imageKey: "modifiers" }] },
+      { heading: "További eszközök", paragraphs: ["stúdióban használható"], galleries: [{ imageKey: "other" }] },
+      { heading: "Bérelhető Kamerák", paragraphs: ["Rögzítsd a víziódat analóg és digitális fényképezőgépeink, objektívjeink és kiegészítőink segítségével, mindegyik elérhető a fotózáshoz.", "Legyen szó a filmek időtlen varázsáról vagy a digitális fényképezés rugalmasságáról, nálunk mindkettőt megtalálod. Válassz 35mm-es, középformátumú vagy instant fényképezőgépek közül, köztük a zászlóshajóinkat, a Hasselblad 500C-t és a Leica R3-at, melyek a fényképezés kiválóságát képviselik.", "Számos objektív és alapvető felszerelés áll rendelkezésedre, hogy szabadon kísérletezhess és életre keltsd kreatív ötleteidet.", "kameráinkat studiónkban használhatod - asszisztencia az árban"], galleries: [{ imageKey: "cameras" }] },
+      { heading: "Bérelhető objektívek", paragraphs: ["objektíveket a stúdióban használhatod kamera bérléssel vagy a saját fényképeződön"], galleries: [{ imageKey: "lenses" }] }
+    ]
+  }
+};
+
+const propsImageSet = (start, count, alt) => Array.from({ length: count }, (_, index) => ({ src: `/images/props/image-${start + index}.jpg`, alt }));
+export const propsImages = {
+  wardrobe: propsImageSet(1, 10, "Wardrobe piece at aether art space"),
+  wardrobeFree: propsImageSet(11, 25, "Clothing item available in the studio"),
+  collection: propsImageSet(36, 25, "Photo prop at aether art space"),
+  furniture: propsImageSet(61, 25, "Furniture piece at aether art space")
+};
+
+export const propsContent = {
+  en: {
+    heroHeading: "props",
+    heroCopy: "furniture, unique clothing items, jewellery and small to medium size props that you can use for your creative shoots in our studio",
+    sections: [
+      { heading: "The Wardrobe", subheading: "Unique Outfits & Accessories for Your Photoshoot", paragraphs: ["Unlock endless creative possibilities with our carefully curated wardrobe, available for all photoshoots at our Budapest studio. From vintage gowns and avant-garde fashion to statement jewelry and unique accessories, our collection is designed to inspire and enhance your visual storytelling.", "Whether you're a photographer, model, or artist, you can freely explore and use these pieces to bring your vision to life. No limits, just pure creative freedom—step in and transform your shoot."], galleries: [{ imageKey: "wardrobe" }, { imageKey: "wardrobeFree", note: ["unique clothing items are available for rent in the studio", "5000-9000 HUF"] }] },
+      { heading: "The Prop Collection", subheading: "Unique Props to Elevate Your Photoshoot", paragraphs: ["Take your photoshoot to the next level with our curated collection of unique props. Whether it’s a dramatic sword, a red devil’s pitchfork, vintage suitcases, or other unexpected treasures, these pieces are here to add depth, storytelling, and personality to your shots.", "Whether you're crafting a fantasy-inspired portrait, a cinematic scene, or a bold artistic statement, these props are yours to explore. Let your imagination run wild and bring your vision to life!"], galleries: [{ imageKey: "collection", note: ["you can use all items for your photoshoot for free"] }] },
+      { heading: "The Furniture Collection", subheading: "Authentic Pieces with Character", paragraphs: ["Set the perfect mood for your photoshoot with our diverse furniture collection. From sleek modern designs to retro gems and original antique pieces, each item carries its own story and atmosphere. No replicas—just real, character-filled pieces that add depth, texture, and emotion to your scene.", "If you're going for timeless elegance, vintage nostalgia, or contemporary edge, our furniture is here to help shape your vision."], galleries: [{ imageKey: "furniture", note: ["furnitures are available in the studio for free"] }] }
+    ]
+  },
+  hu: {
+    heroHeading: "kellékek",
+    heroCopy: "bútorok, egyedi ruházati cikkek, ékszerek és kis méretű kellékek, amelyeket stúdiónkban felhasználhatsz kreatív fotózásaidhoz",
+    sections: [
+      { heading: "A ruhatár", subheading: "Egyedi ruhák és kiegészítők a fotózáshoz", paragraphs: ["Vintage ruhák, avantgárd divat, látványos ékszerek és egyedi kiegészítők – a kollekciónk azért van, hogy inspiráljon és segítsen életre kelteni a vizuális történetmesélésedet.", "Legyél fotós, modell vagy művész, bátran válogathatsz és használhatod ezeket a darabokat, hogy megvalósítsd a víziódat. Nincsenek szabályok, csak tiszta kreatív szabadság – lépj be, és alakítsd át a fotózásodat!"], galleries: [{ imageKey: "wardrobe" }, { imageKey: "wardrobeFree", note: ["prémium ruháinkat kibérelheted fotózásodhoz", "5000-9000 HUF"] }] },
+      { heading: "A kellékgyűjtemény", subheading: "Egyedi kellékek a fotózáshoz", paragraphs: ["Legyen szó egy drámai kardról, egy vörös ördögvilláról, vintage bőröndökről vagy más váratlan kincsekről, ezek a darabok mélységet, történetet és karaktert adnak a képeidhez.", "Akár egy fantasy ihlette portrét, egy filmes jelenetet vagy egy merész művészi kompozíciót alkotsz, a kellékeinket szabadon használhatod, hogy tökéletessé tedd víziódat!"], galleries: [{ imageKey: "collection", note: ["a kiegészítőinket ingyenesen használatod fotózásodhoz"] }] },
+      { heading: "A bútorkollekció", subheading: "Authentikus darabok karakterrel", paragraphs: ["Letisztult modern darabok, retró különlegességek és eredeti antik bútorok – mindegyiknek megvan a maga története és atmoszférája. Nincsenek utánzatok, csak valódi, karakteres darabok, amelyek mélységet, textúrát és érzelmet adnak a kompozícióidhoz.", "bútoraink elérhetőek a studióban ingyenesen"], galleries: [{ imageKey: "furniture" }] }
+    ]
+  }
+};
+
 export const homeImages = {
   hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },

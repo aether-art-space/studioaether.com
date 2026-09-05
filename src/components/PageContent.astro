@@ -1,6 +1,6 @@
 ---
 import { faqItemsFor, introFor, site, localizedNav } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, propsContent, propsImages, homeImages } from "../data/content.mjs";
 import BookingFooter from "./BookingFooter.astro";
 
 const { page } = Astro.props;
@@ -8,6 +8,17 @@ const hu = page.language === "hu";
 const home = homeContent[hu ? "hu" : "en"];
 const studio = studioContent[hu ? "hu" : "en"];
 const selfie = selfieContent[hu ? "hu" : "en"];
+const isEquipment = page.path === "/equipment" || page.path === "/hu/equipment";
+const isProps = page.path === "/props" || page.path === "/hu/props";
+const collectionPage = isEquipment ? equipmentContent[hu ? "hu" : "en"] : isProps ? propsContent[hu ? "hu" : "en"] : null;
+const collectionImages = isEquipment ? equipmentImages : propsImages;
+const collectionImageMap = collectionImages as Record<string, Array<{ src: string; alt: string; width?: number; height?: number }>>;
+const collectionSections = collectionPage?.sections.map((section) => ({
+  heading: section.heading,
+  subheading: "subheading" in section ? section.subheading : "",
+  paragraphs: section.paragraphs,
+  galleries: section.galleries.map((gallery) => ({ imageKey: gallery.imageKey, note: ("note" in gallery ? gallery.note : null) as string[] | null }))
+})) ?? [];
 const serviceLinks = localizedNav(page.language).flatMap((group) => group.links)
   .filter(([path]) => path !== page.path)
   .slice(0, 4);
@@ -209,6 +220,35 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section class="selfie-location" aria-labelledby="selfie-location-title">
       <div><h2 id="selfie-location-title">{selfie.szegedHeading}</h2><p>{selfie.szegedCopy}</p><a class="text-link" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div>
     </section>
+  </>
+) : collectionPage ? (
+  <>
+    <section class="collection-hero" aria-labelledby="collection-title">
+      <h1 id="collection-title">{collectionPage.heroHeading}</h1>
+      <p>{collectionPage.heroCopy}</p>
+    </section>
+    {collectionSections.map((section, index) => (
+      <section class={`collection-section collection-section--${section.galleries[0].imageKey}`} aria-labelledby={`collection-section-${index}`}>
+        <div class="collection-section__intro">
+          <h2 id={`collection-section-${index}`}>{section.heading}</h2>
+          {section.subheading && <h3>{section.subheading}</h3>}
+          <span class="collection-section__rule" aria-hidden="true"></span>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        {section.galleries.map((gallery) => <div class="collection-gallery-wrap">
+          <div class={`collection-gallery collection-gallery--${gallery.imageKey}`}>
+            {collectionImageMap[gallery.imageKey].map((image) => <figure><button class="collection-gallery__item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button></figure>)}
+          </div>
+          {gallery.note && <div class="collection-gallery__note"><p>{gallery.note[0]}</p>{gallery.note[1] && <strong>{gallery.note[1]}</strong>}</div>}
+        </div>)}
+      </section>
+    ))}
+    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Kellék- és felszerelés galéria" : "Props and equipment gallery"} data-studio-lightbox>
+      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
+      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
+      <img data-lightbox-image src={collectionImageMap[collectionSections[0].galleries[0].imageKey][0].src} alt="" />
+      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
+    </dialog>
   </>
 ) : page.path === "/post-booking" || page.path === "/hu/post-booking" ? (
   <>

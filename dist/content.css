@@ -233,6 +233,51 @@
   .selfie-location p { font: 400 15px/22.5px var(--sans); }
 }
 
+/* Equipment and props catalogs: source-faithful image collections with responsive grids. */
+.collection-hero { padding: 91px 24px 45px; text-align: center; }
+.collection-hero h1 { margin: 0; font: 400 80px/1 var(--serif); letter-spacing: 0; }
+.collection-hero p { width: min(680px, 100%); margin: 20px auto 0; font: 400 21px/1.35 var(--sans); }
+.collection-section { padding: 39px 24px 62px; text-align: center; }
+.collection-section__intro { width: min(630px, 100%); margin: 0 auto; }
+.collection-section__intro h2 { margin: 0; font: 400 38px/1.1 var(--serif); letter-spacing: 0; }
+.collection-section__intro h3 { margin: 14px 0 0; font: 400 22px/1.15 var(--serif); }
+.collection-section__rule { display: block; width: 31px; height: 3px; margin: 18px auto 28px; background: var(--ink); }
+.collection-section__intro p { margin: 0; text-align: left; font: var(--text-body); }
+.collection-section__intro p + p { margin-top: 28px; }
+.collection-gallery-wrap { margin-top: 57px; }
+.collection-gallery { display: grid; gap: 20px; width: min(1450px, 100%); margin: 0 auto; }
+.collection-gallery figure { min-width: 0; margin: 0; overflow: hidden; }
+.collection-gallery__item { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.collection-gallery img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform 320ms ease; }
+.collection-gallery figure:hover img { transform: scale(1.03); }
+.collection-gallery__item:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.collection-gallery--lightSources, .collection-gallery--other, .collection-gallery--lenses { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.collection-gallery--modifiers, .collection-gallery--cameras { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.collection-section--lightSources { padding-top: 39px; }
+.collection-section--lightSources .collection-gallery-wrap { margin-top: 57px; }
+.collection-gallery__note { margin: 36px auto 0; font: var(--text-body); }
+.collection-gallery__note p { margin: 0; }
+.collection-gallery__note strong { display: block; margin-top: 7px; font-weight: 600; }
+.collection-section--wardrobe, .collection-section--collection, .collection-section--furniture { padding-bottom: 60px; }
+.collection-section--wardrobe .collection-gallery-wrap + .collection-gallery-wrap { margin-top: 52px; }
+.collection-section--wardrobeFree .collection-gallery__note { margin-top: 27px; }
+
+@media (max-width: 760px) {
+  .collection-hero { padding: 68px 18px 50px; }
+  .collection-hero h1 { font-size: clamp(54px, 15vw, 70px); }
+  .collection-hero p { margin-top: 18px; font: 400 15px/22.5px var(--sans); }
+  .collection-section { padding: 46px 18px 58px; }
+  .collection-section__intro h2 { font-size: 32px; }
+  .collection-section__intro h3 { margin-top: 12px; font-size: 20px; }
+  .collection-section__rule { margin: 16px auto 24px; }
+  .collection-section__intro p { font: 400 15px/22.5px var(--sans); }
+  .collection-section__intro p + p { margin-top: 24px; }
+  .collection-gallery-wrap { margin-top: 40px; }
+  .collection-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .collection-gallery__note { margin-top: 24px; font: 400 15px/22.5px var(--sans); }
+  .collection-section--wardrobe .collection-gallery-wrap + .collection-gallery-wrap { margin-top: 42px; }
+}
+
 /* Studio page: source-faithful structure for the bilingual studio routes. */
 .studio-intro {
   min-height: 586px;
