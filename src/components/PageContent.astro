@@ -1,10 +1,11 @@
 ---
-import { faqItemsFor, introFor, site, localizedNav } from "../lib/site.mjs";
+import { faqGroupsFor, introFor, site, localizedNav } from "../lib/site.mjs";
 import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, propsContent, propsImages, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, packagesImages, commonPhotoPackages, commonUpgrades, serviceContent, serviceImages, specialContent, specialImages, mentoringContent, homeImages } from "../data/content.mjs";
 import BookingFooter from "./BookingFooter.astro";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
+const faqGroups = faqGroupsFor(page) as Array<[string, Array<[string, string]>]>;
 const home = homeContent[hu ? "hu" : "en"];
 const studio = studioContent[hu ? "hu" : "en"];
 const selfie = selfieContent[hu ? "hu" : "en"];
@@ -531,7 +532,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : page.section === "faq" ? (
   <>
     <section class="hero"><p class="eyebrow">{hu ? "gyakori kérdések" : "frequently asked questions"}</p><h1>{page.h1}</h1><p class="hero-lead">{introFor(page)}</p></section>
-    <section class="faq-list">{faqItemsFor(page).map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</section>
+    <section class="faq-groups">{faqGroups.map(([heading, items]) => <section class="faq-group"><h2>{heading}</h2><div class="faq-list">{items.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div></section>)}</section>
     <p class="audit-note">{hu ? "A csomagárakat, lemondási szabályokat és elérhetőségeket a forrásaudit után kell véglegesíteni." : "Package prices, cancellation rules and contact details must be finalized after the source audit."}</p>
   </>
 ) : page.section === "legal" ? (

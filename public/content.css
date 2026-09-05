@@ -614,6 +614,10 @@
 .studio-facts li, .backdrop-list li { border-bottom: 1px solid var(--line); padding: 7px 0; }
 .faq-list, .legal-copy, .related { max-width: 980px; margin: 0 auto 110px; }
 .faq-list { border-top: 1px solid var(--ink); }
+.faq-groups { max-width: 980px; margin: 0 auto 110px; }
+.faq-group + .faq-group { margin-top: 54px; }
+.faq-group h2 { margin: 0 0 18px; font: 400 40px/1.08 var(--serif); }
+.faq-group .faq-list { max-width: none; margin: 0; }
 details { padding: 18px 0; border-bottom: 1px solid var(--ink); }
 summary { cursor: pointer; font: 26px/1.15 var(--serif); }
 .audit-note { max-width: 980px; margin: 0 auto 60px; padding: 16px; border-left: 3px solid var(--ink); color: var(--muted); }
@@ -667,7 +671,7 @@ summary { cursor: pointer; font: 26px/1.15 var(--serif); }
   .home-booking__grid { grid-template-columns: 1fr; gap: 18px; width: 100%; max-width: 420px; margin-top: 36px; }
   .home-booking-card { min-height: 303px; }
   .home-booking-card__media { right: 0; left: 0; width: 100%; }
-  .hero, .intro-grid, .split-copy, .feature-grid, .price-grid, .callout, .studio-media, .faq-list, .legal-copy, .related { margin-right: 18px; margin-left: 18px; }
+  .hero, .intro-grid, .split-copy, .feature-grid, .price-grid, .callout, .studio-media, .faq-list, .faq-groups, .legal-copy, .related { margin-right: 18px; margin-left: 18px; }
   .hero { padding: 65px 0 75px; }
   .hero h1 { font-size: 48px; }
   .intro-grid, .split-copy { padding-top: 14px; }
