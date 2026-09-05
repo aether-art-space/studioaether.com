@@ -550,6 +550,73 @@ export const residentArtistContent = {
   }
 };
 
+const modelImage = (filename, alt, objectPosition = "50% 50%") => ({ src: `/images/models/${filename}`, alt, width: 300, height: 524, objectPosition });
+const modelGallery = (filenames, alt, positions = []) => filenames.map((filename, index) => modelImage(filename, alt, positions[index] ?? "50% 50%"));
+
+export const modelImages = {
+  people: [
+    modelGallery(["model-01.jpg", "model-01-02.jpg", "model-01-03.jpg", "model-01-04.jpg", "model-01-05.jpg", "model-01-06.jpg", "model-01-07.jpg"], "Grinnie model portfolio"),
+    modelGallery(["model-02.jpg", "model-02-02.jpg", "model-02-03.jpg", "model-02-04.jpg", "model-02-05.jpg", "model-02-06.jpg"], "Wendy model portfolio", ["45% 30%", "50% 15%", "48% 39%", "44% 17%", "50% 19%", "51% 20%"]),
+    modelGallery(["model-03.jpg", "model-03-02.jpg", "model-03-03.jpg", "model-03-04.jpg", "model-03-05.jpg", "model-03-06.jpg", "model-03-07.jpg"], "Orsolya model portfolio", ["56% 15%", "49% 21%", "45% 38%", "52% 46%", "57% 32%", "54% 13%", "62% 46%"]),
+    modelGallery(["model-04.jpg", "model-04-02.jpg", "model-04-03.jpg", "model-04-04.jpg", "model-04-05.jpg", "model-04-06.jpg", "model-04-07.jpg"], "Vuk model portfolio"),
+    modelGallery(["model-05.jpg", "model-05-02.jpg", "model-05-03.jpg", "model-05-04.jpg", "model-05-05.jpg", "model-05-06.jpg", "model-05-07.jpg"], "Szeder model portfolio", ["48% 35%", "50% 18%", "44% 34%", "34% 46%", "57% 20%", "48% 36%", "53% 18%"]),
+    modelGallery(["model-06.jpg", "model-06-02.jpg", "model-06-03.jpg", "model-06-04.jpg", "model-06-05.jpg", "model-06-06.jpg", "model-06-07.jpg"], "Nome model portfolio"),
+    modelGallery(["model-07.jpg", "model-07-02.jpg", "model-07-03.jpg", "model-07-04.jpg", "model-07-05.jpg", "model-07-06.jpg", "model-07-07.jpg"], "Ezra model portfolio", ["52% 42%", "51% 15%", "45% 39%", "75% 32%", "49% 33%", "47% 29%", "26% 29%"]),
+    modelGallery(["model-08.jpg", "model-08-02.jpg", "model-08-03.jpg", "model-08-04.jpg", "model-08-05.jpg", "model-08-06.jpg", "model-08-07.jpg"], "Luca model portfolio"),
+    modelGallery(["model-09.jpg", "model-09-02.jpg", "model-09-03.jpg", "model-09-04.jpg", "model-09-05.jpg", "model-09-06.jpg"], "Csuri model portfolio", ["40% 35%", "50% 50%", "50% 50%", "34% 19%", "50% 50%", "47% 15%"])
+  ],
+  animal: modelImage("model-19.jpg", "Lucifer, white rat snake model", "50% 50%"),
+  platform: modelImage("model-20.png", "Naebula creative platform", "50% 50%")
+};
+
+const modelProfilesEn = [
+  { name: "Grinnie", imageIndex: 0, measurements: [["Height: 170cm / 5'7\"", "Size: S"], ["Eyes: blue", "Hair: black and green dreadlocks"], ["Bust: 87cm / 5'77\"", "Waist: 64cm / 2'1\"", "Hips: 82cm / 2'8\""], ["Shoe size: 37 (EU)"], ["Tattoos: a lot", "Piercings: a lot"]] },
+  { name: "Wendy", imageIndex: 1, measurements: [["Height: 160cm / 4'2\"", "Dress size: XS-S"], ["Eyes: Brown", "Hair: Black"], ["Bust: 68cm / 26\"", "Waist: 37cm / 14\"", "Hips: 76cm / 76\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: a lot", "Piercings: a lot"]] },
+  { name: "Orsolya", imageIndex: 2, measurements: [["Height: 158cm / 5'2\"", "Dress size: XS"], ["Eyes: Brown", "Hair: Red"], ["Bust: 83cm / 32\"", "Waist: 59cm / 123\"", "Hips: 83cm / 32\""], ["Shoe size: 36 (EU) / 5.5 (US)"], ["Tattoos: none", "Piercings: none"]] },
+  { name: "Vuk", imageIndex: 3, measurements: [["Height: 160cm / 5'5\"", "Dress size: XS"], ["Eyes: Brown", "Hair: Red"], ["Bust: 79cm / 31\"", "Waist: 61cm / 24\"", "Hips: 78cm / 31\""], ["Shoe size: 38 (EU) / 5.5 (US)"], ["Tattoos: back, thies, collarbone", "Piercings: bellybutton"]] },
+  { name: "Szeder", imageIndex: 4, measurements: [["Height: 161cm / 5'3\"", "Dress size: S"], ["Eyes: Grey-Blue", "Hair: Blonde"], ["Bust: 76cm / 30\"", "Waist: 64cm / 24\"", "Hips: 80cm / 31\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: 1", "Piercings: 2 on face "]] },
+  { name: "Nome", imageIndex: 5, measurements: [["Height: 168cm / 5'5\"", "Dress size: S"], ["Eyes: Grey", "Hair: Black"], ["Bust: 105cm / 41\"", "Waist: 81cm / 32\"", "Hips: 108 / 42\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: 12 small tattoos", "Piercings: on nipples and ears"]] },
+  { name: "Ezra", imageIndex: 6, measurements: [["Height: 164cm / 5'4\"", "Dress size: XS-S"], ["Eyes: Dark brown", "Hair: Black"], ["Bust: 78cm / 30\"", "Waist: 65cm / 25\"", "Hips: 78 / 30\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 14 all over", "Piercings: 3 on face, 1 on ear"]] },
+  { name: "Luca", imageIndex: 7, measurements: [["Height: 175cm / 5'9\"", "Dress size: S-M"], ["Eyes: Green", "Hair: Platinum Blonde"], ["Bust: 86cm / 34\"", "Waist: 67cm / 26\"", "Hips: 92 / 36\""], ["Shoe size: 39,5 (EU) / 8 (US)"], ["Tattoos: 2 small linework", "Piercings: ear stretchers and rings"]] },
+  { name: "Csuri", imageIndex: 8, measurements: [["Height: 170 / 5'7\"", "Dress size: S"], ["Eyes: Green", "Hair: Blonde, light blue"], ["Bust: 78cm / 31\"", "Waist: 67cm / 26\"", "Hips: 90cm / 35,5\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 2 small ones", "Piercings: in nose"]] }
+];
+
+const modelProfilesHu = [
+  { name: "Grinnie", imageIndex: 0, measurements: [["Magasság: 170cm / 5'7\"", "Ruhaméret: S"], ["Szemszín: blue", "Hajszín: fekete és zöld raszta"], ["Mellbőség: 87cm / 5'77\"", "Derék: 64cm / 2'1\"", "Csípő: 82cm / 2'8\""], ["Cipőméret: 37 (EU)"], ["Tetoválások: a lot", "Piercingek: a lot"]] },
+  { name: "Wendy", imageIndex: 1, measurements: [["Magasság: 160cm / 4'24\"", "Ruhaméret: XS-S"], ["Szemszín: Barna", "Hajszín: Fekete"], ["Mellbőség: 68cm / 26\"", "Derék: 37cm / 14\"", "Csípő: 76cm / 76\""], ["Cipőméret: 37 (EU) / 6.5 (US)"], ["Tetoválás: sok", "Piercingek: sok"]] },
+  { name: "Orsolya", imageIndex: 2, measurements: [["Magasság: 158cm / 5'2\"", "Ruhaméret: XS"], ["Szemszín: Barna", "Hajszín: Vörös"], ["Mellbőség: 83cm / 32\"", "Derék: 59cm / 123\"", "Csípő: 83cm / 32\""], ["Cipőméret: 36 (EU) / 5.5 (US)"], ["Tetoválások: nincs", "Piercingek: nincs"]] },
+  { name: "Vuk", imageIndex: 3, measurements: [["Magasság: 160cm / 5'5\"", "Ruhaméret: XS"], ["Szemszín: Barna", "Hajszín: Vörös"], ["Mellbőség: 79cm / 31\"", "Derék: 61cm / 24\"", "Csípő: 78cm / 31\""], ["Cipőméret: 38 (EU) / 5.5 (US)"], ["Tetoválások: hát, combok, kulccsont", "Piercingek: köldök"]] },
+  { name: "Szeder", imageIndex: 4, measurements: [["Magasság: 161cm / 5'3\"", "Ruhaméret: S"], ["Szemszín: Grey-Blue", "Hajszín: Blonde"], ["Mellbőség: 76cm / 30\"", "Derék: 64cm / 24\"", "Csípő: 80cm / 31\""], ["Cipőméret: 37 (EU) / 6.5 (US)"], ["Tetoválások: 1", "Piercingek: 2 arcon"]] },
+  { name: "Nome", imageIndex: 5, measurements: [["Magasság: 168 cm / 5'5\"", "Ruhamérete: S"], ["Szemszín: Szürke", "Hajszín: fekete"], ["Mellbőség: 105 cm / 41\"", "Derék: 81 cm / 32\"", "Csípő: 108/42\""], ["Cipőméret: 37 (EU) / 6,5 (USA)"], ["Tetoválások: 12 kis tetoválás", "Piercingek: mellbimbón és fülekben"]] },
+  { name: "Ezra", imageIndex: 6, measurements: [["Magasság: 164cm / 5'4\"", "Ruhaméret: XS-S"], ["Szemszín: Sötétbarna", "Hajszín: Fekete"], ["Mellbőség: 78cm / 30\"", "Derék: 65cm / 25\"", "Csípő: 78 / 30\""], ["Cipőméret: 38 (EU) / 7.5 (US)"], ["Tetoválások: 14", "Piercingek: 3 arcon, 1 fülben"]] },
+  { name: "Luca", imageIndex: 7, measurements: [["Magasság: 175cm / 5'9\"", "Ruhaméret: S-M"], ["Szemszín: Zöld", "Hajszín: Platinaszőke"], ["Mellbőség: 86cm / 34\"", "Derék: 67cm / 26\"", "Csípő: 92 / 36\""], ["Cipőméret: 39,5 (EU) / 8 (US)"], ["Tetoválások: 2 kicsi linework", "Piercingek: fültágító és fülbevalók"]] },
+  { name: "Csuri", imageIndex: 8, measurements: [["Magasság: 170 / 5'7\"", "Ruhaméret: S"], ["Szemszín: Zöld", "Hajszín: Szőke / Világoskék"], ["Mellbőség: 78cm / 31\"", "Csípő: 67cm / 26\"", "Derék: 90cm / 35,5\""], ["Cipőméret: 38 (EU) / 7.5 (US)"], ["Tetoválások: 2 kicsi", "Piercingek: 1db - bal orrcimpán"]] }
+];
+const modelProfilesEnWithContact = modelProfilesEn.map((profile) => ({ ...profile, contact: `Want to shoot with ${profile.name}?` }));
+const modelContactsHu = ["Szeretnél Grinnievel dolgozni?", "Szeretnél Wendyvel dolgozni?", "Szeretnél Orsolyával dolgozni?", "Szeretnél Vukkal dolgozni?", "Szeretnél Szederrel dolgozni?", "Szeretnél Noméval dolgozni?", "Szeretnél Ezrával dolgozni?", "Szeretnél Lucával dolgozni?", "Szeretnél Csurival dolgozni?"];
+const modelProfilesHuWithContact = modelProfilesHu.map((profile, index) => ({ ...profile, contact: modelContactsHu[index] }));
+
+export const modelsContent = {
+  en: {
+    heroHeading: "trusted models", heroCopy: "a list of reliable and professional photo models you can shoot in our Budapest studio for a fixed price",
+    intro: ["At aether art space, if you’re looking for a model for your photoshoot, we’ve got you covered with a selection of trusted, professional models we’ve already enjoyed working with. These experienced models know how to bring out the best in any shoot, whether it’s fashion, portraits, or creative projects.", "If you book the model and the studio together, you’ll get an even better price—since we’re not an agency, there’s no added margin on booking our models. It’s all about making your creative process smoother and more affordable."],
+    feeTitle: "basic model fee", feePrice: "15.000. HUF / hour", contactLabel: "Contact us", measurementsTitle: "Measurements", contactPrefix: "Want to shoot with", contactSuffix: "?",
+    people: modelProfilesEnWithContact,
+    animalHeading: "our non-human models", animalIntro: ["If you book a pet and the studio together, you’ll get an even better price!", "Since we’re not an agency, there’s no added margin on booking these pets. It’s all about making your creative process smoother and more affordable."],
+    animal: { name: "Lucifer", description: "a very relaxed white rat snake", priceLabel: "starting from:", price: "16.000. HUF / shoot", measurementsTitle: "Measurements", measurements: [["length: 150cm"], ["color: off white"], ["legs: none"]], contactPrefix: "Want to shoot with Lucifer", contactSuffix: "?" },
+    platform: { heading: "Still looking for a model?", subheading: "Try our free platform for finding models / photographers and creatives!", paragraphs: ["We are building a free online platform where you can easily find your next creative partner for your shoot. TFP or paid work, beginners or pros.", "Browse creatives around you or create a project and wait for them to join.", "Try it out for free!"], cta: "go to naebula.app" }
+  },
+  hu: {
+    heroHeading: "kedvenc modelleink", heroCopy: "megbízható és professzionális fotómodelleink, akikkel budapesti stúdiónkban fix áron alkothatsz",
+    intro: ["Az aetherart spaceben, ha modellt keresel a fotózásodhoz, megtalálod a legjobb megbízható, profi modelleket, akikkel mi is szívesen dolgozunk együtt. Tapasztalt modelleink pontosan tudják, hogyan hozzák ki a legtöbbet egy fotózásból, legyen szó divatfotókról, portrékról vagy kreatív projektekről.", "Ha együtt foglalod le a modellt és a stúdiót, kedvezőbb árat kapsz – mivel nem vagyunk ügynökség, nincs a foglaláson extra költség. Célunk, hogy a kreatív folyamatod gördülékenyebb és megfizethetőbb legyen."],
+    feeTitle: "alap modell díj", feePrice: "15.000. HUF", contactLabel: "Kontakt", measurementsTitle: "Méretek", contactPrefix: "Szeretnél", contactSuffix: "-vel dolgozni?",
+    people: modelProfilesHuWithContact,
+    animalHeading: "állat modelleink", animalIntro: ["Ha együtt foglalsz egy állatot és a stúdiót, még jobb árat kapsz – mivel nem vagyunk ügynökség, ezeknek a kisállatoknak a lefoglalása nem jár plusz költséggel. Célunk az, hogy kreatív folyamatod gördülékenyebbé és megfizethetővé tegyük."],
+    animal: { name: "Lucifer", description: "egy nyugis fehér patkánykígyó", priceLabel: "kezdő ár:", price: "16.000. HUF / alkalom", measurementsTitle: "Méretek", measurements: [["hossz: 150cm"], ["szín: törtfehér"], ["lábak: nincs"]], contactPrefix: "Szeretnél Luciferrel dolgozni", contactSuffix: "?" },
+    platform: { heading: "Még mindig modellt keresel?", subheading: "Próbáld ki az ingyenes platformunkat, ahol modellt / fotóst és további kreatívokat tudsz találni!", paragraphs: ["Egy ingyenes online platformot építünk, ahol könnyedén megtalálhatod a következő kreatív partneredet a fotózásodhoz. TFP vagy fizetett munka, kezdőknek és profiknak egyaránt.", "Böngéssz a környékeden lévő kreatívok között, vagy hozz létre egy projektet, és várd meg, amíg csatlakoznak.", "Próbáld ki ingyen!"], cta: "tovább a naebula.app - ra" }
+  }
+};
+
 export const homeImages = {
   hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },

@@ -1,6 +1,6 @@
 ---
 import { faqItemsFor, introFor, site, localizedNav } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, propsContent, propsImages, residentArtistContent, residentArtistImages, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, propsContent, propsImages, residentArtistContent, residentArtistImages, modelsContent, modelImages, homeImages } from "../data/content.mjs";
 import BookingFooter from "./BookingFooter.astro";
 
 const { page } = Astro.props;
@@ -28,6 +28,10 @@ const artistProfiles = artistPageAny?.profiles.map((profile: any) => {
   const source = artistType === "makeup" ? artistImagesAny.profiles[profile.imageIndex] : { image: artistImagesAny[profile.image], gallery: artistImagesAny[profile.gallery] };
   return { ...profile, image: source.image, gallery: source.gallery };
 }) ?? [];
+const isModels = page.path === "/models-budapest" || page.path === "/hu/models-budapest";
+const modelPage = isModels ? modelsContent[hu ? "hu" : "en"] : null;
+const modelPageAny = modelPage as any;
+const modelPeopleImages = modelImages.people;
 const serviceLinks = localizedNav(page.language).flatMap((group) => group.links)
   .filter(([path]) => path !== page.path)
   .slice(0, 4);
@@ -259,6 +263,80 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
     </dialog>
   </>
+) : modelPage ? (
+  <>
+    <section class="models-hero" aria-labelledby="models-title">
+      <h1 id="models-title">{modelPageAny.heroHeading}</h1>
+      <p>{modelPageAny.heroCopy}</p>
+    </section>
+    <section class="models-intro" aria-labelledby="models-intro-title">
+      <div class="models-intro__copy">
+        <h2 id="models-intro-title">{modelPageAny.heroHeading}</h2>
+        {modelPageAny.intro.map((paragraph: string) => <p>{paragraph}</p>)}
+      </div>
+      <div class="models-fee">
+        <h2>{modelPageAny.feeTitle}</h2>
+        <strong>{modelPageAny.feePrice}</strong>
+        <a class="button button--outline" href="#models-contact">{modelPageAny.contactLabel}</a>
+      </div>
+    </section>
+    <section class="models-list" aria-labelledby="models-list-title">
+      <h2 id="models-list-title">{modelPageAny.feeTitle}</h2>
+      {modelPageAny.people.map((profile: any) => {
+        const gallery = modelPeopleImages[profile.imageIndex];
+        const firstImage = gallery[0];
+        return <article class="model-card" data-model-card>
+          <div class="model-gallery">
+            <div class="model-gallery__thumbs" aria-label={`${profile.name} ${hu ? "képei" : "images"}`}>
+              {gallery.map((image: any, index: number) => <button class={`model-gallery__thumb${index === 0 ? " is-active" : ""}`} type="button" data-model-thumb data-model-src={image.src} data-model-alt={image.alt} data-model-position={image.objectPosition} aria-label={`${profile.name}, ${hu ? "kép" : "image"} ${index + 1}`} aria-pressed={index === 0 ? "true" : "false"}><img src={image.src} alt="" width="100" height="100" style={`object-position: ${image.objectPosition};`} loading="lazy" decoding="async" /></button>)}
+            </div>
+            <button class="model-gallery__main" type="button" data-gallery-image data-model-main data-gallery-src={firstImage.src} data-gallery-alt={firstImage.alt} aria-label={hu ? `Kép megnyitása: ${profile.name}` : `Open ${profile.name} image`}>
+              <img data-model-main-image src={firstImage.src} alt={firstImage.alt} width={firstImage.width} height={firstImage.height} style={`object-position: ${firstImage.objectPosition};`} loading="lazy" decoding="async" />
+            </button>
+          </div>
+          <div class="model-card__body">
+            <h3>{profile.name}</h3>
+            <h4>{modelPageAny.measurementsTitle}</h4>
+            <div class="model-measurements">{profile.measurements.map((group: string[]) => <p>{group.map((line) => <span>{line}</span>)}</p>)}</div>
+            <div class="model-card__action"><p>{profile.contact}</p><a class="button button--outline" href="#models-contact">{modelPageAny.contactLabel}</a></div>
+          </div>
+        </article>;
+      })}
+    </section>
+    <section class="models-animal" aria-labelledby="models-animal-title">
+      <div class="models-animal__intro">
+        <h2 id="models-animal-title">{modelPageAny.animalHeading}</h2>
+        {modelPageAny.animalIntro.map((paragraph: string) => <p>{paragraph}</p>)}
+      </div>
+      <article class="model-animal">
+        <img src={modelImages.animal.src} alt={modelImages.animal.alt} width={modelImages.animal.width} height={modelImages.animal.height} loading="lazy" decoding="async" />
+        <div class="model-animal__body">
+          <h3>{modelPageAny.animal.name}</h3>
+          <p>{modelPageAny.animal.description}</p>
+          <strong>{modelPageAny.animal.priceLabel}</strong>
+          <b>{modelPageAny.animal.price}</b>
+          <h4>{modelPageAny.animal.measurementsTitle}</h4>
+          <div class="model-measurements">{modelPageAny.animal.measurements.map((group: string[]) => <p>{group.map((line) => <span>{line}</span>)}</p>)}</div>
+          <div class="model-card__action"><p>{modelPageAny.animal.contactPrefix}{modelPageAny.animal.contactSuffix}</p><a class="button button--outline" href="#models-contact">{modelPageAny.contactLabel}</a></div>
+        </div>
+      </article>
+    </section>
+    <section class="models-platform" aria-labelledby="models-platform-title">
+      <div class="models-platform__copy">
+        <h2 id="models-platform-title">{modelPageAny.platform.heading}</h2>
+        <h3>{modelPageAny.platform.subheading}</h3>
+        {modelPageAny.platform.paragraphs.map((paragraph: string) => <p>{paragraph}</p>)}
+        <a class="button button--outline" href="https://naebula.app/" target="_blank" rel="noreferrer noopener">{modelPageAny.platform.cta}</a>
+      </div>
+      <img src={modelImages.platform.src} alt={modelImages.platform.alt} width={modelImages.platform.width} height={modelImages.platform.height} loading="lazy" decoding="async" />
+    </section>
+    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Modellgaléria" : "Model gallery"} data-studio-lightbox>
+      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
+      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
+      <img data-lightbox-image src={modelPeopleImages[0][0].src} alt={modelPeopleImages[0][0].alt} />
+      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
+    </dialog>
+  </>
 ) : artistPage ? (
   <>
     <section class="artist-hero" aria-labelledby="artist-title">
@@ -356,6 +434,25 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     image.src = item.dataset.gallerySrc || "";
     image.alt = item.dataset.galleryAlt || "";
   };
+
+  document.querySelectorAll<HTMLElement>("[data-model-card]").forEach((card) => {
+    const main = card.querySelector<HTMLButtonElement>("[data-model-main]");
+    const mainImage = card.querySelector<HTMLImageElement>("[data-model-main-image]");
+    const thumbs = [...card.querySelectorAll<HTMLButtonElement>("[data-model-thumb]")];
+    thumbs.forEach((thumb) => thumb.addEventListener("click", () => {
+      if (!main || !mainImage) return;
+      main.dataset.gallerySrc = thumb.dataset.modelSrc || "";
+      main.dataset.galleryAlt = thumb.dataset.modelAlt || "";
+      mainImage.src = thumb.dataset.modelSrc || "";
+      mainImage.alt = thumb.dataset.modelAlt || "";
+      mainImage.style.objectPosition = thumb.dataset.modelPosition || "50% 50%";
+      thumbs.forEach((item) => {
+        const active = item === thumb;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+    }));
+  });
 
   galleryItems.forEach((item, index) => item.addEventListener("click", () => {
     if (!(lightbox instanceof HTMLDialogElement)) return;

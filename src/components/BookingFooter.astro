@@ -6,7 +6,7 @@ const { page } = Astro.props;
 const hu = page.language === "hu";
 const home = homeContent[hu ? "hu" : "en"];
 ---
-<section class="home-booking" aria-labelledby="footer-booking-title">
+<section class="home-booking" id={page.path.includes("models-budapest") ? "models-contact" : undefined} aria-labelledby="footer-booking-title">
   <div class="home-booking__intro">
     <h2 id="footer-booking-title">{home.bookingHeading}</h2>
     <p>{home.bookingLead}</p>

@@ -51,8 +51,8 @@ export const pages = [
 
   route("/photographers-budapest", "en", "Resident photographers", "Photographers in Budapest | aether art space", "resident photographers", "/hu/photographers-budapest"),
   route("/hu/photographers-budapest", "hu", "Resident photographers", "Fotósok Budapesten | aether art space", "rezidens fotósok", "/photographers-budapest"),
-  route("/models-budapest", "en", "Resident models", "Models in Budapest | aether art space", "resident models / models", "/hu/models-budapest"),
-  route("/hu/models-budapest", "hu", "Resident models", "Modellek Budapesten | aether art space", "modellek", "/models-budapest"),
+  route("/models-budapest", "en", "Resident models", "Models in Budapest | aether art space", "trusted models", "/hu/models-budapest", { description: "Meet models available for photo shoots, campaigns, creative projects, and portfolio work at aether art space in Budapest." }),
+  route("/hu/models-budapest", "hu", "Resident models", "Modellek Budapesten | aether art space", "kedvenc modelleink", "/models-budapest", { description: "Ismerd meg az aether art space modelljeit budapesti fotózásokhoz, kreatív projektekhez, kampányokhoz és portfólióépítéshez." }),
   route("/stylists", "en", "Stylists / brand designers", "Stylists & Brand Designers in Budapest | aether art space", "stylists / brand designers", "/hu/stylists", { priority: "Medium" }),
   route("/hu/stylists", "hu", "Stylists / brand designers", "Stylistok és énmárka tervezők Budapesten | aether art space", "stylistok / énmárka tervezők", "/stylists", { priority: "Medium" }),
   route("/make-up-artists", "en", "Make-up / hair artists", "Make-up Artists & Hair Stylists in Budapest | aether art space", "make-up artists / hair stylists", "/hu/make-up-artists", { priority: "Medium" }),
