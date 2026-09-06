@@ -85,9 +85,20 @@ export default function AetherHeaderNavigation({
                 <ul>
                   {group.links.map((link) => (
                     <li key={link.href}>
-                      <NavigationMenu.Link asChild>
-                        <a href={link.href}>{link.label}</a>
-                      </NavigationMenu.Link>
+                      <a
+                        href={link.href}
+                        onPointerDown={(event) => {
+                          if (event.button !== 0) return;
+                          event.preventDefault();
+                          window.location.assign(link.href);
+                        }}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          window.location.assign(link.href);
+                        }}
+                      >
+                        {link.label}
+                      </a>
                     </li>
                   ))}
                 </ul>

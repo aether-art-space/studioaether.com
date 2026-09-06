@@ -1,0 +1,18 @@
+---
+type PageHeroVariant = "collection" | "artist" | "packages" | "models" | "service" | "studio";
+
+interface Props {
+  title: string;
+  lead: string;
+  headingId: string;
+  variant: PageHeroVariant;
+}
+
+const { title, lead, headingId, variant } = Astro.props;
+---
+
+<section class={`page-hero page-hero--${variant}`} aria-labelledby={headingId}>
+  <h1 id={headingId}>{title}</h1>
+  <p>{lead}</p>
+  <slot />
+</section>

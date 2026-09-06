@@ -2,6 +2,9 @@
 import { faqGroupsFor, introFor, site, localizedNav } from "../lib/site.mjs";
 import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, packagesImages, commonPhotoPackages, commonUpgrades, serviceContent, serviceImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
 import BookingFooter from "./BookingFooter.astro";
+import CircularCard from "./CircularCard.astro";
+import GalleryLightbox from "./GalleryLightbox.astro";
+import PageHero from "./PageHero.astro";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
@@ -87,12 +90,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         <p>{home.introHeading}</p>
       </div>
       <div class="home-feature-grid">
-        {home.features.map(([title, copy, href, label], index) => <article class="home-feature">
-          <h3>{title}</h3>
-          <img src={homeImages.features[index]?.src} alt={homeImages.features[index]?.alt} width="181" height="181" loading="lazy" decoding="async" />
-          <p>{copy}</p>
-          <a class="text-link" href={href}>{label}</a>
-        </article>)}
+        {home.features.map(([title, copy, href, label], index) => <CircularCard variant="feature" title={title} copy={copy} href={href} linkLabel={label} image={homeImages.features[index]} />)}
       </div>
     </section>
     <section class="studio-showcase" aria-labelledby="studio-showcase-title">
@@ -115,12 +113,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         </aside>
       </div>
     </section>
-    <dialog class="studio-lightbox" aria-label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} data-studio-lightbox>
-      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
-      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
-      <img data-lightbox-image src={homeImages.creatingArt[0].src} alt={homeImages.creatingArt[0].alt} width={homeImages.creatingArt[0].width} height={homeImages.creatingArt[0].height} />
-      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
-    </dialog>
+    <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} variant="home" />
     <section class="beginner-section" aria-labelledby="beginner-title">
       <div class="beginner-section__main">
         <h2 id="beginner-title">{home.beginnerHeading}</h2>
@@ -139,38 +132,25 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         <h2 id="artists-title">{home.artistsHeading}</h2>
         <p>{home.artistsLead}</p>
       </div>
-      <div class="home-artists__grid">{home.artists.map(([title, copy, href, label], index) => <article class="home-artist-card">
-        <h3>{title}</h3>
-        <img src={homeImages.artists[index].src} alt={hu ? homeImages.artists[index].altHu : homeImages.artists[index].alt} width={homeImages.artists[index].width} height={homeImages.artists[index].height} loading="lazy" decoding="async" />
-        <p>{copy}</p>
-        <a class="text-link" href={href}>{label}</a>
-      </article>)}</div>
+      <div class="home-artists__grid">{home.artists.map(([title, copy, href, label], index) => <CircularCard variant="artist" title={title} copy={copy} href={href} linkLabel={label} image={{ ...homeImages.artists[index], alt: hu ? homeImages.artists[index].altHu : homeImages.artists[index].alt }} />)}</div>
     </section>
     <section class="home-services" aria-labelledby="services-title">
       <div class="home-services__intro">
         <h2 id="services-title">{home.photographersHeading}</h2>
         <p>{home.photographersCopy}</p>
       </div>
-      <div class="home-services__grid">{home.photographyServices.map(([title, href, label], index) => <article class="home-service-card">
-        <h3>{title}</h3>
-        <img src={homeImages.photographers[index].src} alt={homeImages.photographers[index].alt} width={homeImages.photographers[index].width} height={homeImages.photographers[index].height} loading="lazy" decoding="async" />
-        <a class="text-link" href={href}>{label}</a>
-      </article>)}</div>
+      <div class="home-services__grid">{home.photographyServices.map(([title, href, label], index) => <CircularCard variant="service" title={title} href={href} linkLabel={label} image={homeImages.photographers[index]} />)}</div>
       {hu ? <p class="home-services__packages">{home.packagesCopy}</p> : <a class="home-services__packages" href="/photographers-budapest">{home.packagesCopy}</a>}
     </section>
   </>
 ) : page.path === "/studio" || page.path === "/hu/studio" ? (
   <>
-    <section class="studio-intro" aria-labelledby="studio-title">
-      <div class="studio-intro__inner">
-        <h1 id="studio-title">{page.h1}</h1>
-        <p class="studio-intro__eyebrow">{studio.eyebrow}</p>
-        <div class="studio-intro__copy">
-          <p>{studio.paragraphs[0]}</p>
-          <p>{studio.paragraphs[1]}</p>
-        </div>
+    <PageHero variant="studio" headingId="studio-title" title={page.h1} lead={studio.eyebrow}>
+      <div class="studio-intro__copy">
+        <p>{studio.paragraphs[0]}</p>
+        <p>{studio.paragraphs[1]}</p>
       </div>
-    </section>
+    </PageHero>
     <section class="studio-overview" aria-labelledby="studio-facts-title">
       <div class="studio-overview__floorplan"><img src={studioImages[0].src} alt={hu ? "fotóstúdió alaprajz" : studioImages[0].alt} width={studioImages[0].width} height={studioImages[0].height} loading="lazy" decoding="async" /></div>
       <div class="studio-overview__facts">
@@ -209,12 +189,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <p class="studio-backdrops__note">{studio.backdropNote}</p>
     </section>
     <BookingFooter page={page} />
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} data-studio-lightbox>
-      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
-      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
-      <img data-lightbox-image src={studioGalleryImages[0].src} alt={studioGalleryImages[0].alt} />
-      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
-    </dialog>
+    <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} />
   </>
 ) : page.path === "/selfie-studio-budapest" || page.path === "/hu/selfie-studio-budapest" ? (
   <>
@@ -267,10 +242,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : collectionPage ? (
   <>
-    <section class="collection-hero" aria-labelledby="collection-title">
-      <h1 id="collection-title">{collectionPage.heroHeading}</h1>
-      <p>{collectionPage.heroCopy}</p>
-    </section>
+    <PageHero variant="collection" headingId="collection-title" title={collectionPage.heroHeading} lead={collectionPage.heroCopy} />
     {collectionSections.map((section, index) => (
       <section class={`collection-section collection-section--${section.galleries[0].imageKey}`} aria-labelledby={`collection-section-${index}`}>
         <div class="collection-section__intro">
@@ -281,25 +253,17 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         </div>
         {section.galleries.map((gallery) => <div class="collection-gallery-wrap">
           <div class={`collection-gallery collection-gallery--${gallery.imageKey}`}>
-            {collectionImageMap[gallery.imageKey].map((image, imageIndex) => { const caption = collectionCaptionMap?.[gallery.imageKey]?.[imageIndex]; return <figure><button class="collection-gallery__item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>{caption && <figcaption><strong>{caption.title}</strong>{caption.detail && <small>{caption.detail}</small>}{caption.price && <b>{caption.price}</b>}</figcaption>}</figure>; })}
+            {collectionImageMap[gallery.imageKey].map((image, imageIndex) => { const caption = collectionCaptionMap?.[gallery.imageKey]?.[imageIndex]; return <figure><button class="collection-gallery__item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} data-gallery-title={caption?.title} data-gallery-description={caption?.detail} data-gallery-price={caption?.price} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>{caption && <figcaption><strong>{caption.title}</strong>{caption.detail && <small>{caption.detail}</small>}{caption.price && <b>{caption.price}</b>}</figcaption>}</figure>; })}
           </div>
           {gallery.note && <div class="collection-gallery__note"><p>{gallery.note[0]}</p>{gallery.note[1] && <strong>{gallery.note[1]}</strong>}</div>}
         </div>)}
       </section>
     ))}
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Kellék- és felszerelés galéria" : "Props and equipment gallery"} data-studio-lightbox>
-      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
-      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
-      <img data-lightbox-image src={collectionImageMap[collectionSections[0].galleries[0].imageKey][0].src} alt="" />
-      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
-    </dialog>
+    <GalleryLightbox label={hu ? "Kellék- és felszerelés galéria" : "Props and equipment gallery"} hu={hu} />
   </>
 ) : packagesPage ? (
   <>
-    <section class="packages-hero" aria-labelledby="packages-title">
-      <h1 id="packages-title">{packagesPageAny.heroHeading}</h1>
-      <p>{packagesPageAny.heroCopy}</p>
-    </section>
+    <PageHero variant="packages" headingId="packages-title" title={packagesPageAny.heroHeading} lead={packagesPageAny.heroCopy} />
     <section class="packages-intro" aria-labelledby="packages-intro-title">
       <div>
         <h2 id="packages-intro-title">{packagesPageAny.heroHeading}</h2>
@@ -340,10 +304,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : modelPage ? (
   <>
-    <section class="models-hero" aria-labelledby="models-title">
-      <h1 id="models-title">{modelPageAny.heroHeading}</h1>
-      <p>{modelPageAny.heroCopy}</p>
-    </section>
+    <PageHero variant="models" headingId="models-title" title={modelPageAny.heroHeading} lead={modelPageAny.heroCopy} />
     <section class="models-intro" aria-labelledby="models-intro-title">
       <div class="models-intro__copy">
         <h2 id="models-intro-title">{modelPageAny.heroHeading}</h2>
@@ -363,9 +324,9 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         return <article class="model-card" data-model-card>
           <div class="model-gallery">
             <div class="model-gallery__thumbs" aria-label={`${profile.name} ${hu ? "képei" : "images"}`}>
-              {gallery.map((image: any, index: number) => <button class={`model-gallery__thumb${index === 0 ? " is-active" : ""}`} type="button" data-model-thumb data-model-src={image.src} data-model-alt={image.alt} data-model-position={image.objectPosition} aria-label={`${profile.name}, ${hu ? "kép" : "image"} ${index + 1}`} aria-pressed={index === 0 ? "true" : "false"}><img src={image.src} alt="" width="100" height="100" style={`object-position: ${image.objectPosition};`} loading="lazy" decoding="async" /></button>)}
+              {gallery.map((image: any, index: number) => <button class={`model-gallery__thumb${index === 0 ? " is-active" : ""}`} type="button" data-model-thumb data-model-src={image.src} data-model-alt={image.alt} data-model-title={profile.name} data-model-position={image.objectPosition} aria-label={`${profile.name}, ${hu ? "kép" : "image"} ${index + 1}`} aria-pressed={index === 0 ? "true" : "false"}><img src={image.src} alt="" width="100" height="100" style={`object-position: ${image.objectPosition};`} loading="lazy" decoding="async" /></button>)}
             </div>
-            <button class="model-gallery__main" type="button" data-gallery-image data-model-main data-gallery-src={firstImage.src} data-gallery-alt={firstImage.alt} aria-label={hu ? `Kép megnyitása: ${profile.name}` : `Open ${profile.name} image`}>
+            <button class="model-gallery__main" type="button" data-gallery-image data-model-main data-gallery-src={firstImage.src} data-gallery-alt={firstImage.alt} data-gallery-title={profile.name} aria-label={hu ? `Kép megnyitása: ${profile.name}` : `Open ${profile.name} image`}>
               <img data-model-main-image src={firstImage.src} alt={firstImage.alt} width={firstImage.width} height={firstImage.height} style={`object-position: ${firstImage.objectPosition};`} loading="lazy" decoding="async" />
             </button>
           </div>
@@ -405,19 +366,11 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       </div>
       <img src={modelImages.platform.src} alt={modelImages.platform.alt} width={modelImages.platform.width} height={modelImages.platform.height} loading="lazy" decoding="async" />
     </section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Modellgaléria" : "Model gallery"} data-studio-lightbox>
-      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
-      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
-      <img data-lightbox-image src={modelPeopleImages[0][0].src} alt={modelPeopleImages[0][0].alt} />
-      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
-    </dialog>
+    <GalleryLightbox label={hu ? "Modellgaléria" : "Model gallery"} hu={hu} />
   </>
 ) : artistPage ? (
   <>
-    <section class="artist-hero" aria-labelledby="artist-title">
-      <h1 id="artist-title">{artistPageAny.heroHeading}</h1>
-      <p>{artistPageAny.heroCopy}</p>
-    </section>
+    <PageHero variant="artist" headingId="artist-title" title={artistPageAny.heroHeading} lead={artistPageAny.heroCopy} />
     <section class="artist-intro" aria-labelledby="artist-intro-title">
       <div class="artist-intro__copy">
         <h2 id="artist-intro-title">{hu ? "rezidens alkotók" : "resident artists"}</h2>
@@ -435,17 +388,17 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section class={`artist-profiles artist-profiles--${artistType}`} aria-label={hu ? "Rezidens alkotók" : "Resident artists"}>
       <div class="artist-profiles__grid">
         {artistProfiles.map((profile: any) => <article class="artist-profile">
-          <button class="artist-profile__image" type="button" data-gallery-image data-gallery-src={profile.image.src} data-gallery-alt={profile.image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={profile.image.src} alt={profile.image.alt} width={profile.image.width} height={profile.image.height} loading="lazy" decoding="async" /></button>
+          <button class="artist-profile__image" type="button" data-gallery-image data-gallery-src={profile.image.src} data-gallery-alt={profile.image.alt} data-gallery-title={profile.name} data-gallery-description={profile.description} data-gallery-link={profile.websiteUrl} data-gallery-link-label={profile.website} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={profile.image.src} alt={profile.image.alt} width={profile.image.width} height={profile.image.height} loading="lazy" decoding="async" /></button>
           <div class="artist-profile__body">
             <h3>{profile.name}</h3>
             <p class="artist-profile__role">{profile.role}</p>
             <p>{profile.specialties}</p>
-            {profile.description && <p>{profile.description}</p>}
+            {profile.description && <p class="artist-profile__description">{profile.description}</p>}
             {profile.price && <strong>{profile.price}</strong>}
             {profile.websiteUrl && <a class="text-link" href={profile.websiteUrl} target="_blank" rel="noreferrer noopener">{profile.website}</a>}
             {profile.more && <span class="artist-profile__more">{profile.more}</span>}
           </div>
-          {profile.gallery?.length > 0 && <div class="artist-profile__gallery">{profile.gallery.map((image: any) => <button class="artist-profile__gallery-item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>)}</div>}
+          {profile.gallery?.length > 0 && <div class="artist-profile__gallery">{profile.gallery.map((image: any) => <button class="artist-profile__gallery-item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} data-gallery-title={profile.name} data-gallery-description={profile.description} data-gallery-link={profile.websiteUrl} data-gallery-link-label={profile.website} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>)}</div>}
         </article>)}
       </div>
 </section>
@@ -454,29 +407,24 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <h2 id="artist-contact-title">{artistPageAny.contactHeading}</h2>
       <a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(hu ? "fotós foglalás" : "artist booking")}`}>{site.email}</a>
     </section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Rezidens alkotók galériája" : "Resident artists gallery"} data-studio-lightbox>
-      <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
-      <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
-      <img data-lightbox-image src={artistProfiles[0].image.src} alt={artistProfiles[0].image.alt} />
-      <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
-    </dialog>
+    <GalleryLightbox label={hu ? "Rezidens alkotók galériája" : "Resident artists gallery"} hu={hu} />
   </>
 ) : isMentoring ? (
   <>
-    <section class="service-hero" aria-labelledby="mentoring-title"><h1 id="mentoring-title">{page.h1}</h1><p>{mentoringPage.hero}</p></section>
+    <PageHero variant="service" headingId="mentoring-title" title={page.h1} lead={mentoringPage.hero} />
     <section class="service-copy service-copy--intro"><p>{mentoringPage.intro}</p></section>
     <section class="service-section service-mentoring"><h2>{mentoringPage.priceHeading}</h2><h3 class="mentoring-mentors__heading">{hu ? "profi mentorok" : "professional mentors"}</h3><div class="mentoring-mentors" aria-label={hu ? "Profi mentorok" : "Professional mentors"}>{mentoringImages.mentors.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" />)}</div><div class="service-mentor-grid">{mentoringPage.packages.map((packageItem: any, packageIndex: number) => <article class="service-package"><h3>{packageItem.title}</h3><p>{packageItem.description}</p><strong>{packageItem.price}</strong><h4>{hu ? "A csomag tartalmaz mindent, amire a kurzus során szükséged lehet:" : "The package includes everything you need to complete the course:"}</h4><ul>{packageItem.includes.map((item: string) => <li>{item}</li>)}</ul>{packageItem.lessons.map((lesson: any) => <div class="service-lesson"><h4>{lesson[0]}</h4><ul>{lesson[1].map((item: string) => <li>{item}</li>)}</ul></div>)}<p class="service-mentor-free">{packageItem.free}</p><p>{hu ? "Kapsz 2 ingyen órát a stúdióban, hogy önállóan fotózhass. A szomszéd szobában leszünk, ha mégis segítségre van szükséged." : "You can do your first shoot alone - we will be in the next room if you need help."}</p><div class="mentoring-gallery" aria-label={hu ? `${packageIndex === 0 ? "Digitális" : "Analóg"} mentorálási galéria` : `${packageIndex === 0 ? "Digital" : "Analogue"} mentoring gallery`}>{(packageIndex === 0 ? mentoringImages.digital : mentoringImages.analogue).map((imageData: any) => <button type="button" data-gallery-image data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</div></article>)}</div></section>
     <section class="service-contact"><h2>{mentoringPage.signHeading}</h2><p>{mentoringPage.signBody}</p><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(hu ? "mentor program" : "mentoring in aether art space")}`}>{site.email}</a></section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Mentorálási galéria" : "Mentoring gallery"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={mentoringImages.digital[0].src} alt={mentoringImages.digital[0].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>
+    <GalleryLightbox label={hu ? "Mentorálási galéria" : "Mentoring gallery"} hu={hu} />
   </>
 ) : seasonalType === "photoshoot" ? (
   <>
-    <section class="service-hero" aria-labelledby="seasonal-title"><h1 id="seasonal-title">{page.h1}</h1><p>{seasonalPage.hero}</p></section>
+    <PageHero variant="service" headingId="seasonal-title" title={page.h1} lead={seasonalPage.hero} />
     <section class="service-copy service-copy--intro"><p>{seasonalPage.intro}</p></section>
     <section class="service-gallery service-gallery--seasonal" aria-label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"}>{seasonalPageImages.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>
     <section class="service-section service-section--packages"><h2>{seasonalPage.packageHeading}</h2><p>{seasonalPage.packageLead}</p><div class="service-package-grid">{commonPhotoPackages[hu ? "hu" : "en"].map((packageItem: any) => <article class="service-package"><h3>{packageItem.title}</h3><p>{packageItem.description}</p><strong>{packageItem.price}</strong><ul>{packageItem.features.map((feature: string) => <li>{feature}</li>)}</ul></article>)}</div></section>
     <section class="service-section service-section--studio"><h2>{seasonalPage.studioHeading}</h2><p>{seasonalPage.studioIntro}</p><ul>{seasonalPage.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{seasonalPage.studioTail}</p></section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={seasonalPageImages[0].src} alt={seasonalPageImages[0].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>
+    <GalleryLightbox label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} hu={hu} />
   </>
 ) : seasonalType === "studio" ? (
   <>
@@ -487,7 +435,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section class="booking-intro"><p>{seasonalPage.packageIntro}</p></section><section class="booking-prices"><article><h2>{hu ? "Kedvezményes Studió Idősáv" : "Discounted Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig / 9:00 - 18:00" : "Monday to Thursday / 9:00 - 18:00"}</p><strong>{hu ? "6000 Ft / óra" : "6000 HUF / hour"}</strong></article><article><h2>{hu ? "Standard Studió Idősáv" : "Standard Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig 18:00 - 22:00; péntek és hétvége 9:00 - 22:00" : "Monday to Thursday 18:00 - 22:00; Friday & Weekend 9:00 - 22:00"}</p><strong>{hu ? "8000 Ft / óra" : "8000 HUF / hour"}</strong></article><article><h2>{hu ? "10 órás bérlet" : "10 hour Membership"}</h2><p>{hu ? "Bármelyik nap / óránként felbontható" : "Any day / can be broken up by the hour"}</p><strong>60.000. HUF</strong><span>SAVE UP TO 37%</span></article></section>
     <section class="seasonal-gallery seasonal-gallery--strip">{seasonalPageImages.slice(2).map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index + 1} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 2}` : `Open image ${index + 2}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</section>
     <section class="service-contact"><h2>{seasonalPage.contactHeading}</h2><p>{seasonalPage.contactBody}</p><a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a></section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Karácsonyi stúdió galériája" : "Christmas studio gallery"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={seasonalPageImages[2].src} alt={seasonalPageImages[2].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>
+    <GalleryLightbox label={hu ? "Karácsonyi stúdió galériája" : "Christmas studio gallery"} hu={hu} />
   </>
 ) : isProfile ? (
   <>
@@ -496,7 +444,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section class="service-gallery service-gallery--profile" aria-label={hu ? "Dániel portfólió galériája" : "Daniel photography portfolio"}>{profileImages.gallery.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</section>
     <section class="service-section service-section--packages"><h2>{profilePage.packageHeading}</h2><div class="service-package-grid">{profilePackages.map((packageItem: any) => <article class="service-package"><h3>{packageItem.title}</h3><p>{packageItem.description}</p><strong>{packageItem.price}</strong><ul>{packageItem.features.map((feature: string) => <li>{feature}</li>)}</ul></article>)}</div></section>
     <section class="service-contact"><h2>{profilePage.contactHeading}</h2><p><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(profilePage.contactEmailSubject)}`}>{site.email}</a><br /><a class="text-link" href={`tel:${site.phone.replaceAll(" ", "")}`}>{site.phone}</a></p></section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Dániel portfólió galériája" : "Daniel photography portfolio"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={profileImages.gallery[0].src} alt={profileImages.gallery[0].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>
+    <GalleryLightbox label={hu ? "Dániel portfólió galériája" : "Daniel photography portfolio"} hu={hu} />
   </>
 ) : isPostBooking ? (
   <>
@@ -513,7 +461,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section class="service-section wedding-photographers"><h2>{weddingPage.photographersHeading}</h2><p>{weddingPage.photographersIntro}</p><div class="wedding-people">{weddingPage.photographers.map((person: string[], index: number) => <article><img src={index === 0 ? weddingSectionImages.alexandra.src : weddingImages[1].src} alt={person[0]} width="612" height="630" loading="lazy" decoding="async" /><h3>{person[0]}</h3><strong>{person[1]}</strong><p>{person[2]}</p></article>)}</div></section>
     <section class="wedding-approach"><h2>{weddingPage.approachHeading}</h2><p>{weddingPage.approachIntro}</p><div class="wedding-source-gallery wedding-source-gallery--approach">{weddingSectionImages.approach.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" />)}</div><blockquote>{weddingPage.testimonial}</blockquote><img class="wedding-testimonial-image" src={weddingSectionImages.testimonial.src} alt={weddingSectionImages.testimonial.alt} width={weddingSectionImages.testimonial.width} height={weddingSectionImages.testimonial.height} loading="lazy" decoding="async" /><cite>{weddingPage.testimonialName}</cite><h2>{weddingPage.processHeading}</h2><p>{weddingPage.processIntro}</p></section>
     <section class="wedding-contact" id="wedding-contact"><h2>{weddingPage.formHeading}</h2><p>{weddingPage.formIntro}</p><p>{weddingPage.formBody}</p><form action={`mailto:${site.email}`} method="post" enctype="text/plain"><label>name *<input name="name" required /></label><label>Phone<input name="phone" type="tel" /></label><label>Email*<input name="email" type="email" required /></label><label>Wedding Date*<input name="date" type="date" required /></label><label>Location / Venue Address*<input name="location" required /></label><label>Tell us about your wedding<textarea name="message" rows="5"></textarea></label><button class="button" type="submit">Check Availability</button></form><p>We usually respond within 24 hours.</p></section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={weddingImages[0].src} alt={weddingImages[0].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>
+    <GalleryLightbox label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"} hu={hu} />
   </>
 ) : isIdPhoto ? (
   <>
@@ -521,11 +469,11 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section class="id-photo-prices" aria-label={hu ? "Igazolványkép árak" : "ID photo prices"}><article><h2>{hu ? "digitális igazolványkép / útlevélkép" : "digital ID / passport photo"}</h2><strong>5.000. HUF</strong></article><article><h2>{hu ? "digitális + nyomtatott igazolványkép / útlevélkép (4 db)" : "digital + printed ID / passport photo (x4)"}</h2><strong>7.000. HUF</strong></article></section>
     <section class="id-photo-booking"><a class="button" data-gtag-event="booking_click" data-gtag-location="id-photo" href="https://cal.com/aether-studio/id-shoot?overlayCalendar=true">{hu ? "foglalj időpontot" : "Book an ID shoot now"}</a><p><strong>{hu ? "Az igazolványképek készítéséhez előzetes foglalás szükséges!" : "Scheduled appointments required for the ID shoots!"}</strong></p><p>{hu ? "A nyomtatott igazolványképek 15 perc alatt készülnek el. Visszatérhetsz érte, amikor neked alkalmas, vagy megvárhatod studiónkban, míg elkészülnek." : "Printed ID photos take about 15min - you can come back to grab them whenever you wait in our studio for your pictures."}</p></section>
     <section class="service-gallery service-gallery--id" aria-label={hu ? "Fotóstúdió galéria" : "Photo studio gallery"}>{specialImages.id.slice(1).map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</section>
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Fotóstúdió galéria" : "Photo studio gallery"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={specialImages.id[1].src} alt={specialImages.id[1].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>
+    <GalleryLightbox label={hu ? "Fotóstúdió galéria" : "Photo studio gallery"} hu={hu} />
   </>
 ) : specialPage ? (
   <>
-    <section class="service-hero" aria-labelledby="special-title"><h1 id="special-title">{page.h1}</h1><p>{specialPageAny.hero}</p></section>
+    <PageHero variant="service" headingId="special-title" title={page.h1} lead={specialPageAny.hero} />
     <section class="service-copy service-copy--intro">{specialPageAny.intro.map((paragraph: string) => <p>{paragraph}</p>)}</section>
     {specialImagesAny?.length > 0 && <section class="service-gallery service-gallery--special" aria-label={hu ? "Fotózási galéria" : "Photography gallery"}>{specialImagesAny.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>}
     {specialType === "models" && <section class="service-section service-special-sections">{specialPageAny.sections.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}<div class="service-model-card"><div><h3>{specialPageAny.packageHeading}</h3><p>{specialPageAny.packageLead}</p><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(hu ? "modell fotózás" : "model photoshoot")}`}>{specialPageAny.offer}</a></div><img src={specialImages.modelCard.src} alt={specialImages.modelCard.alt} width={specialImages.modelCard.width} height={specialImages.modelCard.height} loading="lazy" decoding="async" /></div></section>}
@@ -534,14 +482,11 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     {specialType !== "pet" && <section class="service-upgrades"><h3>{hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"}</h3><p>{hu ? "vedd igénybe teljes kreatív csapatunkat" : "use our entire creative team"}</p><p>{hu ? "foglalj le mindent egyszerre fotózásodhoz" : "save the hassle and book everything in one go"}</p><div class="service-upgrade-grid">{commonUpgrades[hu ? "hu" : "en"].map((item: any) => <article><h4>{item.title}</h4><span>{item.priceLabel}</span><strong>{item.price}</strong></article>)}</div></section>}
     <section class="service-section service-section--studio"><h2>{specialPageAny.studioHeading}</h2><p>{specialPageAny.studioIntro}</p><ul>{specialPageAny.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{specialPageAny.studioTail}</p></section>
     {specialPageAny.faq && <section class="service-faq"><h2>{specialPageAny.faqHeading}</h2>{specialPageAny.faq.map((item: string[]) => <details><summary>{item[0]}</summary><p>{item[1]}</p></details>)}</section>}
-    {specialImagesAny?.length > 0 && <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Fotózási galéria" : "Photography gallery"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={specialImagesAny[0].src} alt={specialImagesAny[0].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>}
+    {specialImagesAny?.length > 0 && <GalleryLightbox label={hu ? "Fotózási galéria" : "Photography gallery"} hu={hu} />}
   </>
 ) : servicePage ? (
   <>
-    <section class="service-hero" aria-labelledby="service-title">
-      <h1 id="service-title">{page.h1}</h1>
-      <p>{servicePageAny.hero}</p>
-    </section>
+    <PageHero variant="service" headingId="service-title" title={page.h1} lead={servicePageAny.hero} />
     <section class="service-copy service-copy--intro">
       {servicePageAny.intro.map((paragraph: string) => <p>{paragraph}</p>)}
     </section>
@@ -574,7 +519,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     </>}
     {serviceType !== "commercial" && <section class="service-section service-section--studio"><h2>{servicePageAny.studioHeading}</h2><p>{servicePageAny.studioIntro}</p><ul>{servicePageAny.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{servicePageAny.studioTail}</p></section>}
     {serviceType === "corporate" && <><section class="service-section service-section--approach"><h2>{servicePageAny.approachHeading}</h2><p>{servicePageAny.approach}</p></section><section class="service-clients"><h2>{servicePageAny.clients}</h2><div>{serviceImages.clients.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width="150" height="150" loading="lazy" decoding="async" />)}</div></section><section class="service-faq"><h2>{servicePageAny.faqHeading}</h2>{servicePageAny.faq.map((item: string[]) => <details><summary>{item[0]}</summary><p>{item[1]}</p></details>)}</section></>}
-    <dialog class="studio-lightbox studio-lightbox--page" aria-label={hu ? "Szolgáltatási galéria" : "Service gallery"} data-studio-lightbox><button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button><button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button><img data-lightbox-image src={serviceImagesAny[0].src} alt={serviceImagesAny[0].alt} /><button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button></dialog>
+    <GalleryLightbox label={hu ? "Szolgáltatási galéria" : "Service gallery"} hu={hu} />
   </>
 ) : page.path === "/post-booking" || page.path === "/hu/post-booking" ? (
   <>
@@ -614,15 +559,67 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 <script>
   const lightbox = document.querySelector<HTMLDialogElement>("[data-studio-lightbox]");
   const image = lightbox?.querySelector<HTMLImageElement>("[data-lightbox-image]");
+  const title = lightbox?.querySelector<HTMLElement>("[data-lightbox-title]");
+  const description = lightbox?.querySelector<HTMLElement>("[data-lightbox-description]");
+  const price = lightbox?.querySelector<HTMLElement>("[data-lightbox-price]");
+  const link = lightbox?.querySelector<HTMLAnchorElement>("[data-lightbox-link]");
+  const counter = lightbox?.querySelector<HTMLElement>("[data-lightbox-counter]");
   const galleryItems = [...document.querySelectorAll<HTMLElement>("[data-gallery-image]")];
   let activeIndex = 0;
+  let lastTrigger: HTMLElement | null = null;
+
+  const cleanText = (value: string | undefined) => value?.trim() || "";
+  const setOptionalText = (element: HTMLElement | null | undefined, value: string) => {
+    if (!element) return;
+    element.textContent = value;
+    element.hidden = !value;
+  };
+
+  const metadataFor = (item: HTMLElement) => {
+    const figure = item.closest("figure");
+    const caption = figure?.querySelector("figcaption");
+    const profile = item.closest<HTMLElement>(".artist-profile");
+    const model = item.closest<HTMLElement>(".model-card");
+    const sourceImage = item.querySelector<HTMLImageElement>("img");
+    const captionTitle = cleanText(caption?.querySelector("strong")?.textContent || undefined);
+    const captionDetail = cleanText(caption?.querySelector("small")?.textContent || undefined);
+    const captionPrice = cleanText(caption?.querySelector("b")?.textContent || undefined);
+    const fallbackTitle = cleanText(profile?.querySelector("h3")?.textContent || model?.querySelector("h3")?.textContent || sourceImage?.alt || "");
+    const fallbackDescription = cleanText(profile?.querySelector(".artist-profile__description")?.textContent || "");
+
+    return {
+      title: cleanText(item.dataset.galleryTitle) || captionTitle || fallbackTitle,
+      description: cleanText(item.dataset.galleryDescription) || captionDetail || fallbackDescription,
+      price: cleanText(item.dataset.galleryPrice) || captionPrice,
+      link: cleanText(item.dataset.galleryLink) || cleanText(profile?.querySelector<HTMLAnchorElement>("a[href]")?.href),
+      linkLabel: cleanText(item.dataset.galleryLinkLabel) || cleanText(profile?.querySelector<HTMLAnchorElement>("a[href]")?.textContent || undefined)
+    };
+  };
 
   const showImage = (index: number) => {
     const item = galleryItems[index];
     if (!item || !image) return;
     activeIndex = index;
-    image.src = item.dataset.gallerySrc || "";
-    image.alt = item.dataset.galleryAlt || "";
+    const sourceImage = item.querySelector<HTMLImageElement>("img");
+    const metadata = metadataFor(item);
+    image.src = item.dataset.gallerySrc || sourceImage?.currentSrc || sourceImage?.src || "";
+    image.alt = item.dataset.galleryAlt || sourceImage?.alt || metadata.title;
+    image.style.objectPosition = sourceImage?.style.objectPosition || "50% 50%";
+    setOptionalText(title, metadata.title);
+    setOptionalText(description, metadata.description);
+    setOptionalText(price, metadata.price);
+    if (link) {
+      link.href = metadata.link;
+      link.textContent = metadata.linkLabel || (metadata.link ? "View more" : "");
+      link.hidden = !metadata.link;
+    }
+    if (counter) counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(galleryItems.length).padStart(2, "0")}`;
+  };
+
+  const closeLightbox = () => {
+    if (!(lightbox instanceof HTMLDialogElement)) return;
+    lightbox.close();
+    lastTrigger?.focus();
   };
 
   document.querySelectorAll<HTMLElement>("[data-model-card]").forEach((card) => {
@@ -633,6 +630,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       if (!main || !mainImage) return;
       main.dataset.gallerySrc = thumb.dataset.modelSrc || "";
       main.dataset.galleryAlt = thumb.dataset.modelAlt || "";
+      main.dataset.galleryTitle = thumb.dataset.modelTitle || main.dataset.galleryTitle || "";
       mainImage.src = thumb.dataset.modelSrc || "";
       mainImage.alt = thumb.dataset.modelAlt || "";
       mainImage.style.objectPosition = thumb.dataset.modelPosition || "50% 50%";
@@ -646,12 +644,24 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 
   galleryItems.forEach((item, index) => item.addEventListener("click", () => {
     if (!(lightbox instanceof HTMLDialogElement)) return;
+    lastTrigger = item;
     showImage(index);
     lightbox.showModal();
   }));
 
-  lightbox?.querySelector("[data-lightbox-close]")?.addEventListener("click", () => lightbox.close());
+  lightbox?.querySelector("[data-lightbox-close]")?.addEventListener("click", closeLightbox);
   lightbox?.querySelector("[data-lightbox-previous]")?.addEventListener("click", () => showImage((activeIndex - 1 + galleryItems.length) % galleryItems.length));
   lightbox?.querySelector("[data-lightbox-next]")?.addEventListener("click", () => showImage((activeIndex + 1) % galleryItems.length));
   lightbox?.addEventListener("click", (event) => { if (event.target === lightbox) lightbox.close(); });
+  lightbox?.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      showImage((activeIndex - 1 + galleryItems.length) % galleryItems.length);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      showImage((activeIndex + 1) % galleryItems.length);
+    }
+  });
+  lightbox?.addEventListener("cancel", () => window.setTimeout(() => lastTrigger?.focus(), 0));
 </script>

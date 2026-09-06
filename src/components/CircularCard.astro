@@ -1,0 +1,30 @@
+---
+type CircularCardVariant = "feature" | "artist" | "service";
+
+interface CardImage {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+interface Props {
+  variant: CircularCardVariant;
+  title: string;
+  image: CardImage;
+  copy?: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+const { variant, title, image, copy, href, linkLabel } = Astro.props;
+const imageWidth = image.width ?? (variant === "service" ? 150 : 181);
+const imageHeight = image.height ?? (variant === "service" ? 149 : 181);
+---
+
+<article class={`circular-card circular-card--${variant}`}>
+  <h3>{title}</h3>
+  <img src={image.src} alt={image.alt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" />
+  {copy && <p>{copy}</p>}
+  {href && linkLabel && <a class="text-link" href={href}>{linkLabel}</a>}
+</article>
