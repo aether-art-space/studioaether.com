@@ -77,21 +77,11 @@ const { images = [], label = "Image gallery" } = Astro.props;
         const column = document.createElement("div");
         column.className = "horizontal-masonry-gallery__column";
         const remaining = items.length - cursor;
-        const firstItem = items[cursor];
-        const firstRatio = imageRatio(firstItem);
-        const standaloneWidth = firstRatio * galleryHeight;
         const minimumColumnWidth = Math.max(150, pageWidth * 0.14);
-        const maximumColumnWidth = Math.min(pageWidth * 0.48, galleryHeight * 1.2);
-        const canStandAlone = remaining === 1 || (
-          firstRatio >= 0.34 &&
-          firstRatio <= 1.08 &&
-          standaloneWidth >= minimumColumnWidth &&
-          standaloneWidth <= maximumColumnWidth &&
-          (columnIndex % 3 === 1 || (columnIndex % 5 === 4 && firstRatio <= 0.78))
-        );
-        let groupSize = canStandAlone ? 1 : 2;
+        // Keep a predictable rhythm: every third column is one full-height image.
+        let groupSize = columnIndex % 3 === 2 ? 1 : 2;
 
-        if (!canStandAlone && remaining > 2) {
+        if (columnIndex % 3 !== 2 && remaining > 2) {
           const candidates = [2, 3]
             .filter((size) => size <= remaining)
             .map((size) => {
