@@ -272,9 +272,9 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         {selfieImages.process.map((image, index) => <button class="selfie-process__image" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>)}
       </div>
     </section>
-    <section class="selfie-gallery" data-gallery aria-labelledby="selfie-gallery-title">
+    <section class="selfie-gallery" aria-labelledby="selfie-gallery-title">
       <h2 id="selfie-gallery-title">{selfie.galleryHeading}</h2>
-      <div class="selfie-gallery__track">{selfieImages.gallery.map((image, index) => <button class="selfie-gallery__item" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>)}</div>
+      <HorizontalMasonryGallery images={selfieImages.gallery} label={hu ? "Szelfi stúdió galéria" : "Selfie studio gallery"} />
     </section>
     <section class="selfie-customize" aria-labelledby="selfie-customize-title">
       <div class="selfie-customize__intro">
