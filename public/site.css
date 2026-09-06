@@ -78,12 +78,12 @@ button, .button, .mobile-nav-book { border-radius: 5px; }
 .nav-dropdown a:last-child { margin-bottom: 0; }
 .header-actions { display: flex; align-items: center; gap: 12px; margin-right: 25px; }
 .header-book { width: 168px; min-width: 0; height: 45px; flex: 0 0 auto; padding: 0; font-size: 16px; white-space: nowrap; }
-.language-switch { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; width: 66px; height: 39px; padding: 0 12px; border: 0; background: var(--ink); color: var(--paper); font-weight: 700 !important; letter-spacing: 0 !important; cursor: pointer; }
+.language-switch { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; width: 66px; height: 45px; padding: 0 12px; border: 0; background: var(--ink); color: var(--paper); font-weight: 700 !important; letter-spacing: 0 !important; cursor: pointer; }
 .language-chevron { width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
 .language-switch[data-state="open"] .language-chevron { transform: rotate(225deg) translate(-1px, -1px); }
 .language-options { z-index: 25; width: 66px; padding: 0; border: 0; border-radius: 0; background: var(--ink); }
 .language-options[data-state="closed"] { display: none; }
-.language-options a { display: flex; align-items: center; width: 66px; height: 39px; padding-left: 12px; color: var(--paper); font: 700 14px/21px var(--sans); letter-spacing: 0; }
+.language-options a { display: flex; align-items: center; width: 66px; height: 45px; padding-left: 12px; color: var(--paper); font: 700 14px/21px var(--sans); letter-spacing: 0; }
 .language-options a:hover { background: #292929; text-decoration: none; }
 .nav-trigger:focus-visible, .nav-dropdown a:focus-visible, .header-book:focus-visible, .language-switch:focus-visible, .language-options a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .mobile-nav-trigger { display: none; }
@@ -165,7 +165,7 @@ main { width: 100%; }
   .main-nav { display: none; }
   .main-nav a, .nav-trigger, .header-actions a, .header-actions button { font-size: 16px; }
   .header-book { width: 148px; height: 45px; }
-  .language-switch, .language-options, .language-options a { width: 54px; height: 40px; }
+  .language-switch, .language-options, .language-options a { width: 54px; height: 45px; }
   .language-switch { padding: 0 10px; }
   .mobile-nav-trigger { display: grid; flex: 0 0 auto; width: 40px; height: 40px; padding: 0; border: 1px solid var(--ink); place-items: center; background: var(--paper); color: var(--ink); cursor: pointer; }
 }
