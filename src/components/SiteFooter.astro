@@ -2,7 +2,7 @@
 import { ClockIcon, InfoIcon, MapPinIcon, PhoneIcon } from "@phosphor-icons/react/ssr";
 import BookingFooter from "./BookingFooter.astro";
 import { site } from "../lib/site.mjs";
-const { page } = Astro.props;
+const { page, consentEnabled = false } = Astro.props;
 const hu = page.language === "hu";
 ---
 <footer class="site-footer">
@@ -26,6 +26,7 @@ const hu = page.language === "hu";
         <h2>{hu ? "Egyéb oldalak" : "Other pages"}</h2>
         <a href={hu ? "/hu/faq" : "/faq"}>FAQ</a>
         <a href={hu ? "/hu/privacy-policy" : "/privacy-policy"}>Privacy Policy</a>
+        {consentEnabled && <button class="cookie-settings-link" type="button" data-cookie-settings>{hu ? "Süti beállítások" : "Cookie settings"}</button>}
       </nav>
       <div class="footer-column footer-column--hours">
         <div class="footer-icon-slot" aria-hidden="true"><ClockIcon className="footer-icon footer-icon--clock" size={24} weight="regular" /></div>

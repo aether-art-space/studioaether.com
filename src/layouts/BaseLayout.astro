@@ -1,9 +1,13 @@
 ---
 import Seo from "../components/Seo.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import { site } from "../data/routes.mjs";
 
 const { page } = Astro.props;
+const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
+const consentEnabled = !preview && Boolean(site.tracking.googleTagId || site.tracking.ga4Id || site.tracking.googleAdsId);
 ---
 <!doctype html>
 <html lang={page.language}>
@@ -20,6 +24,7 @@ const { page } = Astro.props;
     <a class="skip-link" href="#main">{page.language === "hu" ? "Ugrás a tartalomhoz" : "Skip to content"}</a>
     <SiteHeader page={page} />
     <main id="main"><slot /></main>
-    <SiteFooter page={page} />
+    <SiteFooter page={page} consentEnabled={consentEnabled} />
+    <CookieConsent page={page} enabled={consentEnabled} />
   </body>
 </html>

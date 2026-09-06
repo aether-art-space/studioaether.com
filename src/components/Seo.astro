@@ -114,5 +114,4 @@ if (page.path.endsWith("photographer-daniel")) {
 <link rel="alternate" hreflang="x-default" href={xDefault} />
 {schemas.map((schema) => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />)}
 {trackingId && <script is:inline set:html={`window.siteTracking=${JSON.stringify(tracking)};`} />}
-{trackingId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(trackingId)}`} />}
 {trackingId && <script is:inline src="/tracking.js" defer />}
