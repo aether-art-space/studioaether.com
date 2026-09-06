@@ -4,19 +4,21 @@ type PageHeroVariant = "collection" | "artist" | "packages" | "models" | "servic
 interface Props {
   title: string;
   lead?: string;
+  subtitle?: string;
   headingId: string;
   variant: PageHeroVariant;
   eyebrow?: string;
   description?: string | string[];
 }
 
-const { title, lead, headingId, variant, eyebrow, description } = Astro.props;
+const { title, lead, subtitle, headingId, variant, eyebrow, description } = Astro.props;
 const descriptions = description ? (Array.isArray(description) ? description : [description]) : [];
 ---
 
 <section class={`page-hero page-hero--${variant}`} aria-labelledby={headingId}>
   {eyebrow && <p class="page-hero__eyebrow">{eyebrow}</p>}
   <h1 id={headingId}>{title}</h1>
+  {subtitle && <p class="page-hero__subtitle">{subtitle}</p>}
   {lead && <p class="page-hero__lead">{lead}</p>}
   {descriptions.length > 0 && <div class="page-hero__description">{descriptions.map((paragraph) => <p>{paragraph}</p>)}</div>}
   <slot />

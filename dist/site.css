@@ -4,6 +4,9 @@
   --muted: #606060;
   --line: #dedede;
   --accent: #f0f0f0;
+  --content-max: 1200px;
+  --content-reading-max: 820px;
+  --content-media-max: 1600px;
   --image-bottom-gradient: linear-gradient(to bottom, rgb(0 0 0 / 0%) 44%, rgb(0 0 0 / 18%) 68%, rgb(0 0 0 / 78%) 100%);
   --serif: "Jitter", Georgia, "Times New Roman", serif;
   --sans: "Jura", Arial, Helvetica, sans-serif;

@@ -56,9 +56,9 @@ const servicePage = serviceType ? serviceContent[serviceType][hu ? "hu" : "en"] 
 const servicePageAny = servicePage as any;
 const serviceImagesAny: any = serviceType ? (serviceImages as any)[serviceType] : null;
 const serviceHeroHeadingId = serviceType === "commercial" ? "commercial-title" : "service-title";
-const serviceHeroLead = serviceType === "commercial"
+const serviceHeroSubtitle = serviceType === "commercial"
   ? (hu ? "Bízd meg professzionális fotósainkat a kereskedelmi fotóprojekteddel" : "Hire our professional photographers for your commercial photo project")
-  : servicePageAny?.hero;
+  : undefined;
 const fitnessAudienceImages: any = serviceImages.fitnessAudience;
 const specialType = page.path.includes("glamour-boudoir") ? "glamour" : page.path.includes("model-polaroids") ? "models" : page.path.includes("pet-photography") ? "pet" : null;
 const specialPage = specialType ? (specialContent as any)[specialType][hu ? "hu" : "en"] : null;
@@ -454,7 +454,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : servicePage ? (
   <>
-    <PageHero variant="service" headingId={serviceHeroHeadingId} title={page.h1} lead={serviceHeroLead} description={servicePageAny.intro} />
+    <PageHero variant="service" headingId={serviceHeroHeadingId} title={page.h1} subtitle={serviceHeroSubtitle} lead={serviceType === "commercial" ? undefined : servicePageAny?.hero} description={servicePageAny.intro} />
     {serviceType === "commercial" && <>
       <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"}>
         <HorizontalMasonryGallery images={serviceImagesAny} label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"} />
