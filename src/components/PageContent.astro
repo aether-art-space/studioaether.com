@@ -464,6 +464,10 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Modell digitals fotózási galéria" : "Model digitals photography gallery"}>
         <HorizontalMasonryGallery images={specialImagesAny} label={hu ? "Modell digitals fotózási galéria" : "Model digitals photography gallery"} />
       </section>
+    ) : specialType === "pet" && specialImagesAny?.length > 0 ? (
+      <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Kisállat fotózási galéria" : "Pet photography gallery"}>
+        <HorizontalMasonryGallery images={specialImagesAny} label={hu ? "Kisállat fotózási galéria" : "Pet photography gallery"} />
+      </section>
     ) : specialImagesAny?.length > 0 ? (
       <section class="service-gallery service-gallery--special" aria-label={hu ? "Fotózási galéria" : "Photography gallery"}>{specialImagesAny.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>
     ) : null}

@@ -995,6 +995,19 @@ export const specialImages = {
     serviceImage("model-digital-13.jpg", 4000, 6000, "model portfolio photography in Budapest")
   ],
   modelCard: serviceImage("model-card.png", 324, 459, "digital model card"),
+  pet: [
+    serviceImage("pet-01.jpg", 1333, 2000, "brown dog sitting in a yellow wildflower meadow"),
+    serviceImage("pet-02.jpg", 1333, 2000, "small shaggy dog posing in a yellow flower meadow"),
+    serviceImage("pet-03.jpg", 1333, 2000, "couple posing with their dog in a flower meadow"),
+    serviceImage("pet-04.jpg", 1333, 2000, "close-up portrait of a black and white dog"),
+    serviceImage("pet-05.jpg", 1333, 2000, "woman posing with her dog in a studio"),
+    serviceImage("pet-06.jpg", 1333, 2000, "white and black dog running across a park lawn"),
+    serviceImage("pet-07.jpg", 1333, 2000, "woman walking with her dog on a city street"),
+    serviceImage("pet-08.jpg", 1333, 2000, "Dalmatian and tabby cat posing together"),
+    serviceImage("pet-09.jpg", 1333, 2000, "woman holding a small dog outdoors"),
+    serviceImage("pet-10.jpg", 1333, 2000, "small dog portrait against a dark studio background"),
+    serviceImage("pet-11.jpg", 1600, 2000, "woman holding a small dog in a dark studio")
+  ],
   id: [serviceImage("id-photo.jpg", 1000, 1002, "ID photo"), serviceImage("id-gallery-01.jpg", 3112, 3833, "portrait at aether art space"), serviceImage("id-gallery-02.jpg", 1338, 1648, "portrait at aether art space"), serviceImage("id-gallery-03.jpg", 5750, 3432, "portrait at aether art space")]
 };
 
