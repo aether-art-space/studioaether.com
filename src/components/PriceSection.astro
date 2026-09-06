@@ -35,7 +35,7 @@ const {
   gridClassName = ""
 } = Astro.props;
 
-const sectionClass = ["service-section", "service-section--packages", "price-section", className].filter(Boolean).join(" ");
+const sectionClass = ["service-section", "service-section--packages", "price-section", packages.length > 3 ? "price-section--wide" : "", className].filter(Boolean).join(" ");
 const gridClass = ["service-package-grid", gridClassName].filter(Boolean).join(" ");
 ---
 

@@ -841,13 +841,14 @@ export const packagesImages = {
 };
 
 const serviceImage = (name, width, height, alt = "") => ({ src: `/images/wix/service/${name}`, width, height, alt });
+const wixGalleryImage = (src, width, height, alt) => ({ src, width, height, alt });
 
 export const serviceImages = {
   commercial: [
     serviceImage("commercial-01.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-02.png", 1000, 800, "commercial photography at aether art space"), serviceImage("commercial-03.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-04.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-05.jpg", 1500, 1000, "commercial photography at aether art space"), serviceImage("commercial-06.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-07.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-08.jpg", 1500, 1000, "commercial photography at aether art space"), serviceImage("commercial-09.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-10.jpg", 1000, 1500, "commercial photography at aether art space")
   ],
   corporate: [
-    serviceImage("corporate-01.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-02.jpg", 666, 999, "corporate portrait photography"), serviceImage("corporate-03.png", 1000, 1500, "corporate team photography"), serviceImage("corporate-04.jpg", 666, 999, "corporate portrait photography"), serviceImage("corporate-05.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-06.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-07.jpg", 666, 999, "corporate team photography")
+    serviceImage("corporate-01.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-02.jpg", 666, 999, "corporate portrait photography"), serviceImage("corporate-03.png", 1000, 667, "corporate team photography"), serviceImage("corporate-04.jpg", 666, 999, "corporate portrait photography"), serviceImage("corporate-05.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-06.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-07.jpg", 666, 999, "corporate team photography")
   ],
   portrait: [
     serviceImage("portrait-01.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-02.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-03.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-04.jpg", 2688, 4033, "portrait photography in Budapest"), serviceImage("portrait-05.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-06.jpg", 2688, 4032, "portrait photography in Budapest"), serviceImage("portrait-07.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-08.jpg", 666, 999, "portrait photography in Budapest"), serviceImage("portrait-09.jpg", 1000, 1250, "portrait photography in Budapest")
@@ -862,6 +863,18 @@ export const serviceImages = {
     serviceImage("client-01.png", 360, 360, "Octomind logo"), serviceImage("client-02.png", 372, 372, "Arriva logo"), serviceImage("client-03.png", 372, 372, "Sunme logo"), serviceImage("client-04.png", 372, 372, "Orthograph logo"), serviceImage("client-05.png", 360, 360, "Valio Solutions logo")
   ]
 };
+
+export const corporateGalleryImages = [
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_569121fffedc4d7b8119daa1c355148f~mv2.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_6a5c27e748104ac0bc33d55ab146fd7b~mv2.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_d793951e82fc4a049cfb1db0b9bd20bf~mv2.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_c068249fb7204073b252927370be1638~mv2.jpg", 165, 247, "corporate portrait photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_7ebe9ffdf3a948768dc3db33bb52ea06~mv2.jpg", 165, 247, "office lifestyle photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_c53a6877244d4066a1a1c5a9d97a4e84~mv2.png", 335, 224, "corporate team photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_7075eca1d838480cbb9fdd561304e703~mv2.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_fd25a7d05efd4d3cbda5bdb349aaa3de~mv2.jpg", 317, 476, "event and team building photography"),
+  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_e62a6b652e354da39f019e3e24ea5d66~mv2.jpg", 317, 476, "office lifestyle photography")
+];
 
 // Package content is intentionally page-specific. PriceSection only provides the shared presentation.
 export const photoPackageSets = {

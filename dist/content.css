@@ -1070,8 +1070,6 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .service-gallery--commercial, .service-gallery--portrait { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-auto-rows: 190px; }
 .service-gallery--commercial button:nth-child(1), .service-gallery--commercial button:nth-child(4), .service-gallery--commercial button:nth-child(7), .service-gallery--commercial button:nth-child(10), .service-gallery--portrait button:nth-child(1), .service-gallery--portrait button:nth-child(4), .service-gallery--portrait button:nth-child(6), .service-gallery--portrait button:nth-child(8) { grid-row: span 2; }
 .service-gallery--commercial button:nth-child(5), .service-gallery--commercial button:nth-child(8), .service-gallery--portrait button:nth-child(3), .service-gallery--portrait button:nth-child(7) { grid-column: span 2; }
-.service-gallery--corporate { grid-template-columns: repeat(7, minmax(0, 1fr)); grid-auto-rows: 220px; }
-.service-gallery--corporate button:nth-child(1), .service-gallery--corporate button:nth-child(2), .service-gallery--corporate button:nth-child(4), .service-gallery--corporate button:nth-child(5), .service-gallery--corporate button:nth-child(7) { grid-row: span 2; }
 .service-gallery--fitness { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-auto-rows: 190px; }
 .service-gallery--fitness button:nth-child(2), .service-gallery--fitness button:nth-child(3), .service-gallery--fitness button:nth-child(5), .service-gallery--fitness button:nth-child(9) { grid-row: span 2; }
 .service-gallery--fitness button:nth-child(4), .service-gallery--fitness button:nth-child(8) { grid-column: span 2; }
@@ -1112,7 +1110,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .price-card__description { min-height: 4.5em; max-width: 34ch; margin: 0; color: rgba(255, 255, 255, .78); font: var(--text-small); }
 .price-card__details { display: flex; min-width: 0; flex-direction: column; padding-top: 22px; }
 .price-card__price { min-height: 2.16em; margin: 0; padding-bottom: 28px; }
-.price-card__price strong { display: block; font: 700 30px/1.08 var(--sans); letter-spacing: -.02em; }
+.price-card__price strong { display: block; font: 700 20px/1.08 var(--sans); letter-spacing: -.02em; }
 .price-card__features { margin: 0 -28px -30px; padding: 22px 28px 30px; border-top: 1px solid rgba(255, 255, 255, .12); background: rgba(255, 255, 255, .07); }
 .price-card ul { display: grid; gap: 8px; margin: 16px 0 0; padding-left: 22px; list-style: disc; }
 .price-card li { margin: 0; color: rgba(255, 255, 255, .9); font: var(--text-small); }
@@ -1127,13 +1125,13 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .price-card__description { min-height: 0; font-size: 14px; line-height: 1.4; }
   .price-card__details { padding-top: 18px; }
   .price-card__price { min-height: 0; padding-bottom: 20px; }
-  .price-card__price strong { font-size: 24px; }
   .price-card__features { margin-right: -22px; margin-left: -22px; padding: 18px 22px 24px; }
   .price-card__includes { font-size: 11px !important; }
   .price-card ul { gap: 6px; margin-top: 12px; padding-left: 18px; }
   .price-card li { font-size: 14px; line-height: 1.35; }
 }
 .service-section--corporate-packages { max-width: var(--content-max); }
+.price-section--wide { max-width: 1320px; }
 .service-upgrades { max-width: var(--content-max); padding-top: 32px; text-align: center; background: var(--paper); color: var(--ink); }
 .service-upgrades > p { margin-bottom: 0; }
 .service-upgrade-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
@@ -1150,8 +1148,10 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .service-info { margin-top: 38px; }
 .service-info h3 { margin: 0 0 12px; font: 400 30px/1.1 var(--serif); }
 .service-info p { margin: 0; font: var(--text-body); }
-.service-section--corporate-intro > ul { columns: 2; max-width: 760px; margin: 28px auto; }
-.service-section--corporate-intro > ul li { break-inside: avoid; margin: 8px 0; }
+.corporate-offering-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; width: min(960px, 100%); gap: 30px 24px; margin: 38px auto 6px; }
+.corporate-offering { min-width: 0; text-align: center; }
+.corporate-offering img { display: block; width: 100%; height: 250px; object-fit: cover; }
+.corporate-offering h3 { margin: 16px 5px 0; font: 400 22px/1.12 var(--serif); }
 .service-faq { padding-top: 0; }
 .service-faq details { border-top: 1px solid rgba(28, 27, 26, .25); padding: 18px 0; }
 .service-faq details:last-child { border-bottom: 1px solid rgba(28, 27, 26, .25); }
@@ -1213,7 +1213,6 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .booking-price-grid .price-card__description-line--bold { font-weight: 700 !important; }
 .booking-price-grid .price-card__details { min-width: 0; margin-top: auto; padding-top: 0; }
 .booking-price-grid .price-card__price { min-height: 0; margin: 0; padding: 0; }
-.booking-price-grid .price-card__price strong { font: 400 26px/1 var(--serif); letter-spacing: 0; }
 .booking-prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: var(--content-max); gap: 12px; margin: 0 auto; padding: 0 24px 60px; }
 .booking-prices article { display: flex; min-height: 240px; flex-direction: column; padding: 28px 22px; background: var(--ink); color: var(--paper); }
 .booking-prices h2 { margin: 0 0 18px; font: 400 30px/1.08 var(--serif); }
@@ -1338,7 +1337,8 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .service-upgrade-grid, .service-audience-grid { gap: 18px; }
   .service-upgrade-grid { margin-top: 20px; }
   .service-upgrade-grid article { aspect-ratio: auto; min-height: 0; padding: 34px 22px; }
-  .service-section--corporate-intro > ul { columns: 1; }
+.corporate-offering-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 28px; }
+  .corporate-offering h3 { font-size: 25px; }
   .service-clients > div { gap: 18px; }
   .service-clients img { width: 105px; height: 105px; }
   .service-gallery--special { grid-template-columns: repeat(2, minmax(0, 1fr)); }
