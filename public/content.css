@@ -1205,6 +1205,14 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .glamour-details .service-info { margin-top: 0; }
 .glamour-details .service-info h3 { margin-bottom: 22px; font: 400 30px/1.1 var(--serif); }
 .glamour-details .service-info p { font: var(--text-body); }
+.model-details { max-width: none; padding-top: 42px; background: #f5f5f5; }
+.model-details-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; width: var(--content-max); max-width: 100%; gap: clamp(24px, 4vw, 72px); margin: 0 auto; }
+.model-details .service-info { margin-top: 0; }
+.model-details .service-info h3, .model-face-card h3 { margin-bottom: 22px; font: 400 30px/1.1 var(--serif); }
+.model-details .service-info p, .model-face-card p { font: var(--text-body); }
+.model-face-card { display: grid; grid-column: span 2; grid-template-columns: minmax(170px, 220px) minmax(0, 1fr); align-items: center; gap: clamp(24px, 4vw, 56px); min-width: 0; padding: 0; }
+.model-face-card__copy { min-width: 0; }
+.model-face-card img { display: block; width: 100%; height: auto; max-height: 430px; object-fit: contain; object-position: top center; }
 .service-model-card { display: flex; justify-content: center; margin-top: 56px; }
 .service-model-card img { display: block; width: min(324px, 100%); height: auto; }
 .service-model-offer { max-width: 760px; margin: 28px auto 0; text-align: center; }
@@ -1382,6 +1390,9 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .corporate-offering img { height: 203px; }
   .corporate-details-grid { grid-template-columns: 1fr; gap: 34px; }
   .glamour-details-grid { grid-template-columns: 1fr; gap: 34px; }
+  .model-details-grid { grid-template-columns: 1fr; gap: 34px; }
+  .model-face-card { grid-column: auto; grid-template-columns: minmax(110px, 145px) minmax(0, 1fr); gap: 22px; }
+  .model-details .service-info h3, .model-face-card h3 { font-size: 28px; }
   .studio-section--split { grid-template-columns: 1fr; }
   .studio-section__copy { padding: 56px 18px; }
   .studio-section__copy h2 { font-size: 43px; }
