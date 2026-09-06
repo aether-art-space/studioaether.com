@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+  features: string[];
+  includesLabel?: string;
+  className?: string;
+}
+
+const {
+  title,
+  description,
+  price,
+  features,
+  includesLabel,
+  className = ""
+} = Astro.props;
+---
+
+<article class={`price-card ${className}`.trim()}>
+  <h3>{title}</h3>
+  <p class="price-card__description">{description}</p>
+  <strong class="price-card__price">{price}</strong>
+  {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
+  <ul>
+    {features.map((feature) => <li>{feature}</li>)}
+  </ul>
+</article>

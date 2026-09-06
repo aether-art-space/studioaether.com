@@ -6,8 +6,22 @@
   --accent: #f0f0f0;
   --serif: "Jitter", Georgia, "Times New Roman", serif;
   --sans: "Jura", Arial, Helvetica, sans-serif;
-  --text-body: 400 16px/24px var(--sans);
-  --text-small: 400 14px/21px var(--sans);
+  --font-display: 400 80px/1.05 var(--serif);
+  --font-page-title: 400 68px/1.1 var(--serif);
+  --font-hero: 400 42px/1 var(--serif);
+  --font-feature-title: 400 58px/1.1 var(--serif);
+  --font-service-title: 400 clamp(42px, 5vw, 72px)/1.05 var(--serif);
+  --font-section-title: 400 48px/1.1 var(--serif);
+  --font-subsection-title: 400 38px/1.1 var(--serif);
+  --font-card-title: 400 26px/1.1 var(--serif);
+  --font-lead: 400 20px/28px var(--sans);
+  --font-body: 400 16px/24px var(--sans);
+  --font-small: 400 15px/22.5px var(--sans);
+  --font-caption: 400 13px/18px var(--sans);
+  --font-ui: 400 16px/normal var(--sans);
+  --font-utility: 400 14px/21px var(--sans);
+  --text-body: var(--font-body);
+  --text-small: var(--font-small);
 }
 @font-face {
   font-family: "Jitter";
@@ -22,6 +36,7 @@
 @font-face { font-family: "Jura"; src: url("/fonts/Jura-600.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
 @font-face { font-family: "Jura"; src: url("/fonts/Jura-700.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
 * { box-sizing: border-box; }
+img { border-radius: 10px; }
 html { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.45; overflow-x: hidden; }
 body { margin: 0; min-width: 320px; overflow-x: hidden; }
 body:has(.mobile-nav-panel[data-state="open"]) { overflow: hidden; }
@@ -29,6 +44,7 @@ html:has(.mobile-nav-panel[data-state="open"]) { overflow: hidden; }
 a { color: inherit; }
 .skip-link { position: absolute; left: -9999px; }
 .skip-link:focus { left: 1rem; top: 1rem; z-index: 10; background: var(--ink); color: var(--paper); padding: .6rem 1rem; }
+button, .button, .mobile-nav-book { border-radius: 5px; }
 .button { --button-background: var(--ink); --button-border: var(--ink); --button-color: var(--paper); --button-hover-background: #292929; --button-hover-border: #292929; --button-hover-color: var(--paper); display: inline-flex; align-items: center; justify-content: center; min-width: 168px; height: 45px; padding: 0 18px; border: 1px solid var(--button-border); background: var(--button-background); color: var(--button-color); font: 400 16px/24px var(--sans); letter-spacing: 0; text-align: center; text-decoration: none; transition: border-color .4s ease, background-color .4s ease, color .4s ease, box-shadow .4s ease; }
 .button:hover { border-color: var(--button-hover-border); background: var(--button-hover-background); color: var(--button-hover-color); text-decoration: none; }
 .button--inverted { --button-background: var(--paper); --button-border: var(--paper); --button-color: var(--ink); --button-hover-background: var(--ink); --button-hover-border: var(--ink); --button-hover-color: var(--paper); }
@@ -43,8 +59,8 @@ a { color: inherit; }
 .header-interactive { min-width: 0; display: grid; grid-template-columns: 1fr auto; align-items: center; }
 .main-nav { display: flex; align-items: center; justify-content: flex-end; margin-left: 11px; white-space: nowrap; }
 .main-nav__list { display: flex; align-items: center; margin: 0; padding: 0; list-style: none; }
-.main-nav a, .nav-trigger { font: 400 14px/normal var(--sans); letter-spacing: .8px; text-decoration: none; }
-.header-actions a, .header-actions button { font: 400 14px/normal var(--sans); letter-spacing: .8px; text-decoration: none; }
+.main-nav a, .nav-trigger { font: var(--font-ui); letter-spacing: .8px; text-decoration: none; }
+.header-actions a, .header-actions button { font: var(--font-ui); letter-spacing: .8px; text-decoration: none; }
 .main-nav a, .nav-trigger, .header-actions a, .header-actions button, .site-footer a, .text-link { transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 180ms ease, text-decoration-color 160ms ease, transform 180ms ease; }
 .main-nav a:hover, .nav-trigger:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .header-actions .button:hover { text-decoration: none; }
@@ -61,13 +77,13 @@ a { color: inherit; }
 .nav-dropdown a { display: block; height: 39px; margin: 0 0 8px; padding: 10px; color: var(--paper); font: 400 16px/normal var(--sans); letter-spacing: .8px; transition: color 160ms ease, background-color 160ms ease, text-decoration-color 160ms ease; }
 .nav-dropdown a:last-child { margin-bottom: 0; }
 .header-actions { display: flex; align-items: center; gap: 12px; margin-right: 25px; }
-.header-book { width: 168px; min-width: 0; height: 45px; flex: 0 0 auto; padding: 0; font-size: 14px; white-space: nowrap; }
+.header-book { width: 168px; min-width: 0; height: 45px; flex: 0 0 auto; padding: 0; font-size: 16px; white-space: nowrap; }
 .language-switch { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; width: 66px; height: 39px; padding: 0 12px; border: 0; background: var(--ink); color: var(--paper); font-weight: 700 !important; letter-spacing: 0 !important; cursor: pointer; }
 .language-chevron { width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
 .language-switch[data-state="open"] .language-chevron { transform: rotate(225deg) translate(-1px, -1px); }
 .language-options { z-index: 25; width: 66px; padding: 0; border: 0; border-radius: 0; background: var(--ink); }
 .language-options[data-state="closed"] { display: none; }
-.language-options a { display: flex; align-items: center; width: 66px; height: 39px; padding-left: 12px; color: var(--paper); font: 700 14px/24px var(--sans); letter-spacing: 0; }
+.language-options a { display: flex; align-items: center; width: 66px; height: 39px; padding-left: 12px; color: var(--paper); font: 700 14px/21px var(--sans); letter-spacing: 0; }
 .language-options a:hover { background: #292929; text-decoration: none; }
 .nav-trigger:focus-visible, .nav-dropdown a:focus-visible, .header-book:focus-visible, .language-switch:focus-visible, .language-options a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .mobile-nav-trigger { display: none; }
@@ -135,8 +151,8 @@ main { width: 100%; }
 @media (max-width: 1150px) {
   .site-header__inner { max-width: none; padding: 0 24px; }
   .main-nav { margin-left: 0; }
-  .main-nav a, .nav-trigger, .header-actions a, .header-actions button { font-size: 14px; }
-  .header-book { width: 168px; font-size: 14px !important; }
+  .main-nav a, .nav-trigger, .header-actions a, .header-actions button { font-size: 16px; }
+  .header-book { width: 168px; font-size: 16px !important; }
   .language-switch, .language-options, .language-options a { width: 66px; }
 }
 @media (max-width: 1100px) {
@@ -147,7 +163,7 @@ main { width: 100%; }
   .header-interactive { display: block; }
   .header-actions { justify-content: flex-end; gap: 8px; margin-right: 0; }
   .main-nav { display: none; }
-  .main-nav a, .nav-trigger, .header-actions a, .header-actions button { font-size: 14px; }
+  .main-nav a, .nav-trigger, .header-actions a, .header-actions button { font-size: 16px; }
   .header-book { width: 148px; height: 45px; }
   .language-switch, .language-options, .language-options a { width: 54px; height: 40px; }
   .language-switch { padding: 0 10px; }
@@ -163,13 +179,13 @@ main { width: 100%; }
 }
 @media (max-width: 460px) {
   .site-footer__grid { grid-template-columns: 1fr; gap: 58px; }
-  .header-book { width: 124px; height: 40px; padding: 0 8px; font-size: 13px !important; }
+  .header-book { width: 124px; height: 40px; padding: 0 8px; font-size: 14px !important; }
 }
 @media (max-width: 360px) {
   .site-header__inner { padding-right: 8px; padding-left: 8px; grid-template-columns: 80px 1fr; }
   .brand, .brand img { width: 80px; }
   .header-actions { gap: 6px; }
-  .header-book { width: 112px; padding: 0 6px; font-size: 12px !important; }
+  .header-book { width: 112px; padding: 0 6px; font-size: 13px !important; }
   .language-switch, .language-options, .language-options a { width: 48px; }
   .language-switch { padding: 0 8px; }
   .language-options a { padding-left: 8px; }

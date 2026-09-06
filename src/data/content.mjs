@@ -9,7 +9,7 @@ export const homeContent = {
     studioShowcaseCta: "learn more about our studio",
     features: [
       ["spacious studio", "rent our studio for your creative projects and workshops for the best price in Budapest", "/studio", "more about the studio"],
-      ["flashes, cameras & films", "try out a new camera! We have a selection of digital and analogue cameras with some spare film too", "/equipment", "check out our equipment"],
+      ["cameras & gear", "try out a new camera! We have a selection of digital and analogue cameras with some spare film too", "/equipment", "check out our equipment"],
       ["unique furniture", "our space is equipped with all kinds of chairs, tables and more that you can use for your shoots", "/props", "check out our furniture"],
       ["clothes & accessories", "need a unique outfit for your idea? Browse our collection of clothes from the wardrobe", "/props", "check out our wearables"],
       ["props", "we are hoarding props — sunglasses, hats, swords and whatever can spice up your shoot", "/props", "check out our props"],
