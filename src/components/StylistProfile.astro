@@ -1,0 +1,50 @@
+---
+import { InstagramLogoIcon } from "@phosphor-icons/react/ssr";
+
+interface ArtistImage {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+interface ArtistProfile {
+  name: string;
+  role: string;
+  specialties: string;
+  image: ArtistImage;
+  gallery?: ArtistImage[];
+  socials?: Array<{ type: string; label: string; href: string }>;
+}
+
+interface Props {
+  profile: ArtistProfile;
+  email: string;
+  hu: boolean;
+}
+
+const { profile, email, hu } = Astro.props;
+const gallery = profile.gallery ?? [];
+const socials = profile.socials ?? [];
+---
+
+<div class="stylist-profile-wrap">
+  <article class="stylist-profile" aria-labelledby="stylist-profile-name">
+    <div class="stylist-profile__identity">
+      <div class="stylist-profile__portrait-wrap">
+        <img class="stylist-profile__portrait" src={profile.image.src} alt={profile.image.alt} width="200" height="200" loading="lazy" decoding="async" />
+        {socials.map((social) => social.type === "instagram" && <a class="stylist-profile__social" href={social.href} target="_blank" rel="noreferrer noopener" aria-label={social.label}>
+          <InstagramLogoIcon size={25} weight="regular" aria-hidden="true" />
+        </a>)}
+      </div>
+      <h2 id="stylist-profile-name">{profile.name}</h2>
+      <p class="stylist-profile__role">{profile.role}</p>
+      <p class="stylist-profile__specialties">{profile.specialties}</p>
+    </div>
+    {gallery.length > 0 && <div class="stylist-profile__gallery" aria-label={hu ? `${profile.name} galériája` : `${profile.name}'s gallery`}>
+    {gallery.map((image) => <button class="stylist-profile__gallery-item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} data-gallery-title={profile.name} data-gallery-description={profile.specialties} data-gallery-link={`mailto:${email}`} data-gallery-link-label={email} aria-label={hu ? "Kép megnyitása" : "Open image"}>
+      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+    </button>)}
+  </div>}
+</article>
+</div>

@@ -1,7 +1,10 @@
 ---
 interface Props {
   title: string;
+  titleLines?: string[];
+  titleAccent?: string;
   description?: string;
+  descriptionLines?: Array<{ text: string; bold?: boolean }>;
   price: string;
   features?: string[];
   includesLabel?: string;
@@ -10,20 +13,28 @@ interface Props {
 
 const {
   title,
+  titleLines = [],
+  titleAccent = "",
   description = "",
+  descriptionLines = [],
   price,
   features = [],
   includesLabel,
   className = ""
 } = Astro.props;
 
-const isSimpleCard = !description && !includesLabel && features.length === 0;
+const isSimpleCard = !description && descriptionLines.length === 0 && !includesLabel && features.length === 0;
 ---
 
 <article class={`price-card ${isSimpleCard ? "price-card--simple" : ""} ${className}`.trim()}>
   <header class="price-card__header">
-    <h3>{title}</h3>
-    {description && <p class="price-card__description">{description}</p>}
+    <h3>
+      {titleLines.length > 0 ? titleLines.map((line, index) => <span>{line}{index < titleLines.length - 1 && <br />}</span>) : title}
+      {titleAccent && <><br /><span class="price-card__accent">{titleAccent}</span></>}
+    </h3>
+    {descriptionLines.length > 0
+      ? <div class="price-card__description price-card__description--lines">{descriptionLines.map((line) => <p class={line.bold ? "price-card__description-line--bold" : ""}>{line.text || "\u00a0"}</p>)}</div>
+      : description && <p class="price-card__description">{description}</p>}
   </header>
   <div class="price-card__details">
     <p class="price-card__price"><strong>{price}</strong></p>

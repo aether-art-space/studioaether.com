@@ -47,9 +47,9 @@ export const homeContent = {
     bookingHeading: "Book the Studio",
     bookingLead: "Book our Budapest photo studio for your photoshoot, workshop or anything else:",
     bookingCards: [
-      ["Photo Studio", "Book the studio for your photo session here:", "Book the Photo Studio"],
-      ["Selfie Studio", "Book the studio for your selfie session here:", "Book the Selfie Studio"],
-      ["Contact Us", "Questions? You need a photographer? Write us on ", "Send us a Message via Email"]
+      ["Photo Studio", "Book the studio for your photoshoot, workshop, or creative project.", "Book the Photo Studio"],
+      ["Selfie Studio", "Shoot without a photographer! Book the selfie studio and take professional photos for yourself.", "Book the Selfie Studio"],
+      ["Contact Us", "Need a photographer, make-up artist, model, or stylist? Tell us what you need and we’ll help you put the right team together.", "Send us a Message via Email"]
     ]
   },
   hu: {
@@ -100,9 +100,9 @@ export const homeContent = {
     bookingHeading: "Foglald le a stúdiót",
     bookingLead: "Foglald le stúdiónkat egy fotózásra, vagy bármi másra.",
     bookingCards: [
-      ["Fotóstudió", "Itt lefoglalhatod a fotóstudiónkat a fotózásodhoz:", "Foglald le a fotóstúdiót"],
-      ["Szelfi Studió", "Itt lefoglalhatod a szelfi studiónkat és fotózhatod magad:", "Foglald le a szelfi studiót"],
-      ["Írj nekünk!", "Fotósra van szükséged? Kérdéseid vannak? Írj a ", "Email küldése"]
+      ["Fotóstudió", "Foglald le a stúdiót fotózáshoz, workshophoz vagy kreatív projektedhez.", "Foglald le a fotóstúdiót"],
+      ["Szelfi Studió", "Fotós nélkül fotóznál? Foglald le szelfi stúdiónkat, és készíts saját profi képeket.", "Foglald le a szelfi studiót"],
+      ["Írj nekünk!", "Fotósra, sminkesre, modellre vagy stylistre van szükséged? Írd meg, mire van szükséged, és segítünk összeállítani a csapatot.", "Email küldése"]
     ]
   }
 };
@@ -698,7 +698,7 @@ export const residentArtistContent = {
         { title: "Signature Styling Package", description: "For photoshoots with multiple outfits or a more defined visual direction. Best if you want a cohesive set of looks for portraits, model portfolio, branding, glamour or creative images.", price: "55.000. HUF", features: ["2-3 fully styled look", "outfit concept and direction", "clothing and accessory sourcing", "fitting and final styling on set"] },
         { title: "Personal Brand Design & Styling", description: "For clients who need a stronger, more strategic visual identity. Ideal for entrepreneurs, creatives, coaches, performers and personal brands who want images that feel consistent, intentional and aligned with their work.", price: "75.000. HUF", features: ["personal brand visual direction", "styling concept for the photoshoot", "outfit planning for multiple uses", "mood, color and image direction", "recommended for branding shoots and campaigns"] }
       ],
-      profiles: [{ name: "Szmilkó Lilla", role: "stylist", specialties: "visual identity design and fashion advisory for you or your clients", image: "profile", gallery: "gallery" }],
+      profiles: [{ name: "Szmilkó Lilla", role: "stylist", specialties: "visual identity design and fashion advisory for you or your clients", image: "profile", gallery: "gallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/szmilkolilla" }] }],
       contactHeading: "For booking one of our artists, drop a message:"
     },
     hu: {
@@ -708,7 +708,7 @@ export const residentArtistContent = {
         { title: "Signature Styling Package", description: "Több outfites fotózásokhoz vagy erősebb vizuális irányhoz. Akkor ajánlott, ha egységes, több lookból álló anyagot szeretnél portréhoz, modell portfólióhoz, brandinghez, glamour vagy kreatív képekhez.", price: "55.000. HUF", features: ["2–3 teljesen összeállított look", "outfit koncepció és vizuális irány", "ruhák és kiegészítők beszerzése", "próba és végső styling a fotózáson"] },
         { title: "Personal Brand Tervezés & Styling", description: "Azoknak, akiknek erősebb, stratégiaibb vizuális identitásra van szükségük. Ideális vállalkozóknak, kreatív szakembereknek, coachoknak, előadóknak és személyes márkáknak, akik következetes, tudatos és a munkájukhoz illeszkedő képeket szeretnének.", price: "75.000. HUF", features: ["énmárka vizuális irányának kialakítása", "styling koncepció a fotózáshoz", "outfit tervezés több felhasználási célra", "hangulat-, szín- és képi irány", "ajánlott branding fotózásokhoz és kampányokhoz"] }
       ],
-      profiles: [{ name: "Szmilkó Lilla", role: "stylist", specialties: "vizuális identitás tervezés és stílustanácsadás neked, klienseidnek", image: "profile", gallery: "gallery" }],
+      profiles: [{ name: "Szmilkó Lilla", role: "stylist", specialties: "vizuális identitás tervezés és stílustanácsadás neked, klienseidnek", image: "profile", gallery: "gallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/szmilkolilla" }] }],
       contactHeading: "Foglalj fotózást rezidens alkotóinkkal:"
     }
   },

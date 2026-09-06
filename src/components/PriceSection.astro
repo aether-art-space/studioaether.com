@@ -3,7 +3,10 @@ import PriceCard from "./PriceCard.astro";
 
 interface PriceItem {
   title: string;
+  titleLines?: string[];
+  titleAccent?: string;
   description?: string;
+  descriptionLines?: Array<{ text: string; bold?: boolean }>;
   price: string;
   features?: string[];
 }
@@ -41,6 +44,6 @@ const gridClass = ["service-package-grid", gridClassName].filter(Boolean).join("
   {heading && <h2 id={headingId}>{heading}</h2>}
   {lead && <p>{lead}</p>}
   <div class={gridClass}>
-    {packages.map((packageItem) => <PriceCard title={packageItem.title} description={packageItem.description} price={packageItem.price} includesLabel={includesLabel} features={packageItem.features} />)}
+    {packages.map((packageItem) => <PriceCard title={packageItem.title} titleLines={packageItem.titleLines} titleAccent={packageItem.titleAccent} description={packageItem.description} descriptionLines={packageItem.descriptionLines} price={packageItem.price} includesLabel={includesLabel} features={packageItem.features} />)}
   </div>
 </section>

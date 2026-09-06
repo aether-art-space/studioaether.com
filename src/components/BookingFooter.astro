@@ -14,13 +14,19 @@ const home = homeContent[hu ? "hu" : "en"];
   <div class="home-booking__grid">{home.bookingCards.map(([title, copy, cta], index) => {
     const href = index === 0 ? site.bookingUrl : index === 1 ? site.selfieBookingUrl : `mailto:${site.email}?subject=aether%20footer`;
     const event = index === 0 ? "booking_click" : index === 1 ? "selfie_booking_click" : "email_click";
-    return <article class="home-booking-card">
+    return <article class:list={["home-booking-card", { "home-booking-card--contact": index === 2 }]}>
       <h3>{title}</h3>
-      <p>{copy}{index === 2 && <a href={`mailto:${site.email}?subject=${hu ? "contact%20from%20aether%20footer" : "aether%20-%20footer"}`}>{site.email}</a>}</p>
-      <div class="home-booking-card__media">
-        <img class="home-booking-card__image" src={homeImages.booking[index].src} alt={hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt} width={homeImages.booking[index].width} height={homeImages.booking[index].height} loading="lazy" decoding="async" />
-      </div>
-      <a class="button button--dark home-booking-card__action" data-gtag-event={event} data-gtag-location="footer-booking" href={href}>{cta}</a>
+      {index === 2 ? <div class="home-booking-card__contact-copy">
+        <p>{copy}</p>
+        <p>{hu ? "Írj nekünk:" : "Write us on"}</p>
+        <a href={`mailto:${site.email}?subject=${hu ? "contact%20from%20aether%20footer" : "aether%20-%20footer"}`}>{site.email}</a>
+      </div> : <>
+        <p>{copy}</p>
+        <div class="home-booking-card__media">
+          <img class="home-booking-card__image" src={homeImages.booking[index].src} alt={hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt} width={homeImages.booking[index].width} height={homeImages.booking[index].height} loading="lazy" decoding="async" />
+        </div>
+      </>}
+      <a class:list={["button", index === 2 ? "button--secondary" : "button--dark", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" href={href}>{cta}</a>
     </article>;
   })}</div>
 </section>
