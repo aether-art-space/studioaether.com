@@ -651,7 +651,6 @@ export const residentArtistImages = {
   },
   makeup: {
     profiles: [
-      { image: artistImage("makeup", "makeup-02.jpg", "Szmilkó Lilla, stylist"), gallery: numbered("makeup", "makeup", 3, 8, "jpg", "Styling work by Szmilkó Lilla") },
       { image: artistImage("makeup", "makeup-09.png", "Csenge Katica Denes, hair and make-up artist"), gallery: artistGallery("makeup", ["makeup-10.jpg", "makeup-11.jpg", "makeup-12.png", "makeup-13.jpg", "makeup-14.jpg", "makeup-15.jpeg"], "Make-up work by Csenge Katica Denes") },
       { image: artistImage("makeup", "makeup-16.jpg", "Noémi Holczimmer, make-up artist"), gallery: artistGallery("makeup", ["makeup-17.jpeg", "makeup-18.jpeg", "makeup-19.jpeg", "makeup-20.jpg", "makeup-21.jpeg", "makeup-22.jpg"], "Make-up work by Noémi Holczimmer") },
       { image: artistImage("makeup", "makeup-23.jpg", "Anna Máté, make-up artist"), gallery: numbered("makeup", "makeup", 24, 29, "jpg", "Make-up work by Anna Máté") }
@@ -717,20 +716,18 @@ export const residentArtistContent = {
     en: {
       heroHeading: "resident make-up artists, hair stylists and fashion stylists", heroCopy: "our MUAs, stylists and hair stylists are available for booking", intro: ["Our skilled resident makeup artists at aether art space are available for hire, offering their expertise to both models and photographers renting the studio.", "Each artist brings a distinctive style, ensuring that every look is tailored to enhance the vision of the shoot, whether it's natural elegance or bold, creative expression. With an eye for detail and a commitment to flawless application, our makeup artists elevate any project, helping bring concepts to life with precision and artistry. Book today to add the perfect finishing touch to your next photoshoot."],
       profiles: [
-        { name: "Szmilkó Lilla", role: "stylist", specialties: "visual identity design and fashion advisory for you or your clients", price: "styling services from 35.000. HUF", imageIndex: 0 },
-        { name: "Csenge Katica Denes", role: "hair & make-up artist", specialties: "fashion, commercial - natural, skin like skin, soft touches", price: "make-ups from 15.000. HUF", imageIndex: 1 },
-        { name: "Noémi Holczimmer", role: "make-up artist", specialties: "glamour, natural, alternative, extreme, themed", price: "make-ups from 15.000. HUF", imageIndex: 2 },
-        { name: "Anna Máté", role: "make-up artist", specialties: "glamour, beauty, natural, everyday", price: "make-ups from 15.000. HUF", imageIndex: 3 }
+        { name: "Csenge Katica Denes", role: "hair & make-up artist", specialties: "fashion, commercial, natural, skin like skin", price: "make-ups from 15.000. HUF", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
+        { name: "Noémi Holczimmer", role: "make-up artist", specialties: "glamour, natural, alternative, extreme, themed", price: "make-ups from 15.000. HUF", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
+        { name: "Anna Máté", role: "make-up artist", specialties: "glamour, beauty, natural, everyday", price: "make-ups from 15.000. HUF", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }
       ],
       footerNote: "If you work with our make-up artists, you can use the studio for applying the makeup before your shoot.", contactHeading: "For booking one of our artists, drop a message:"
     },
     hu: {
       heroHeading: "rezidens sminkesek, fodrászok, stylistok", heroCopy: "foglald le sminkeseinket, stílustanácsadóinkat és hajszobrászainkat fotózásodhoz", intro: ["Az aether art space kiváló sminkesei és haj-stylistjai a modellek és a stúdiót bérlő fotósok számára is elérhetőek.", "Minden sminkesünk egyedi stílust képvisel, és gondoskodik arról, hogy a fotózás megjelenése tökéletesen tükrözze az elképzelt koncepciót – legyen szó természetes eleganciáról vagy merész, kreatív kifejezésről. Precíz munkájukkal és figyelmükkel sminkeseink bármely projektet magasabb szintre emelnek, hogy az elképzelések tökéletesen megvalósuljanak. Foglalj időpontot, és tedd teljessé a következő fotózásod megjelenését!"],
       profiles: [
-        { name: "Szmilkó Lilla", role: "stylist", specialties: "vizuális identitás tervezés és stílustanácsadás neked, klienseidnek", price: "styling 35.000. Ft-tól", imageIndex: 0 },
-        { name: "Csenge Katica Denes", role: "haj-stylist és sminkes", specialties: "divat, reklám - természetes, skin like skin, finom igazítások", price: "sminkek 15.000. Ft-tól", imageIndex: 1 },
-        { name: "Holczimmer Noémi", role: "sminkes", specialties: "glamour, természetes, alternatív, extrém, tematikus", price: "sminkek 15.000. Ft-tól", imageIndex: 2 },
-        { name: "Máté Anna", role: "sminkes", specialties: "glamour, beauty, természetes, mindennapi", price: "sminkek 15.000. Ft-tól", imageIndex: 3 }
+        { name: "Csenge Katica Denes", role: "haj-stylist és sminkes", specialties: "divat, reklám, természetes, skin like skin", price: "sminkek 15.000. Ft-tól", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
+        { name: "Holczimmer Noémi", role: "sminkes", specialties: "glamour, természetes, alternatív, extrém, tematikus", price: "sminkek 15.000. Ft-tól", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
+        { name: "Máté Anna", role: "sminkes", specialties: "glamour, beauty, természetes, mindennapi", price: "sminkek 15.000. Ft-tól", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }
       ],
       footerNote: "Ha sminkeseinkkel dolgozol, a sminkelésre ingyenesen használhatjátok a studiót a fotózásod előtt.", contactHeading: "Foglalj fotózást rezidens sminkeseinkkel:"
     }
