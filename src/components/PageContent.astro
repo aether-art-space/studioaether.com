@@ -23,6 +23,9 @@ const collectionPage = isEquipment ? equipmentContent[hu ? "hu" : "en"] : isProp
 const collectionImages = isEquipment ? equipmentImages : propsImages;
 const collectionImageMap = collectionImages as Record<string, Array<{ src: string; alt: string; width?: number; height?: number }>>;
 const collectionCaptionMap = (isEquipment ? equipmentCaptions[hu ? "hu" : "en"] : null) as Record<string, Array<{ title: string; detail: string; price: string }>> | null;
+const collectionAnchorIds = isEquipment
+  ? ["light-sources", "light-modifiers", "other-equipment", "cameras-for-rent", "lenses-for-rent"]
+  : ["wardrobe", "props-collection", "furniture-collection"];
 const collectionSections = collectionPage?.sections.map((section) => ({
   heading: section.heading,
   subheading: "subheading" in section ? section.subheading : "",
@@ -238,7 +241,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   <>
     <PageHero variant="collection" headingId="collection-title" title={collectionPage.heroHeading} lead={collectionPage.heroCopy} />
     {collectionSections.map((section, index) => (
-      <section class={`collection-section collection-section--${section.galleries[0].imageKey}`} aria-labelledby={`collection-section-${index}`}>
+      <section id={collectionAnchorIds[index]} class={`collection-section collection-section--${section.galleries[0].imageKey}`} aria-labelledby={`collection-section-${index}`}>
         <div class="collection-section__intro">
           <h2 id={`collection-section-${index}`}>{section.heading}</h2>
           {section.subheading && <h3>{section.subheading}</h3>}
@@ -661,6 +664,11 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   lightbox?.querySelector("[data-lightbox-next]")?.addEventListener("click", () => showImage((activeIndex + 1) % galleryItems.length));
   lightbox?.addEventListener("click", (event) => { if (event.target === lightbox) lightbox.close(); });
   lightbox?.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeLightbox();
+      return;
+    }
     if (event.key === "ArrowLeft") {
       event.preventDefault();
       showImage((activeIndex - 1 + galleryItems.length) % galleryItems.length);

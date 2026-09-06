@@ -13,7 +13,10 @@ export const localizedPath = (path, language) => {
 export const localizedNav = (language) => navGroups.map((group) => ({
   ...group,
   label: language === "hu" ? group.huLabel : group.label,
-  links: group.links.map(([path, label, huLabel]) => [localizedPath(path, language), language === "hu" ? huLabel : label])
+  links: group.links.map(([path, label, huLabel, anchor]) => [
+    `${localizedPath(path, language)}${anchor ? `#${anchor}` : ""}`,
+    language === "hu" ? huLabel : label
+  ])
 }));
 
 export const introFor = (page) => {

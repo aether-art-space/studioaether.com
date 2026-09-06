@@ -3,7 +3,9 @@ const { label, hu = false, variant = "page" } = Astro.props;
 ---
 <dialog class={`studio-lightbox${variant === "page" ? " studio-lightbox--page" : ""}`} aria-label={label} data-studio-lightbox>
   <button class="studio-lightbox__close" type="button" aria-label={hu ? "Galéria bezárása" : "Close gallery"} data-lightbox-close>×</button>
-  <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>←</button>
+  <button class="studio-lightbox__previous" type="button" aria-label={hu ? "Előző kép" : "Previous image"} data-lightbox-previous>
+    <svg class="studio-lightbox__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m0 0 6-6m-6 6 6 6" /></svg>
+  </button>
   <div class="studio-lightbox__content">
     <figure class="studio-lightbox__figure">
       <div class="studio-lightbox__image-wrap">
@@ -21,5 +23,7 @@ const { label, hu = false, variant = "page" } = Astro.props;
       </figcaption>
     </figure>
   </div>
-  <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>→</button>
+  <button class="studio-lightbox__next" type="button" aria-label={hu ? "Következő kép" : "Next image"} data-lightbox-next>
+    <svg class="studio-lightbox__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m0 0-6-6m6 6-6 6" /></svg>
+  </button>
 </dialog>

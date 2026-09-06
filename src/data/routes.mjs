@@ -108,10 +108,10 @@ export const navGroups = [
     links: [
       ["/studio", "photo studio", "fotóstúdió"],
       ["/selfie-studio-budapest", "selfie studio", "szelfi stúdió"],
-      ["/equipment", "lights & equipment", "fények és eszközök"],
-      ["/equipment", "cameras and lenses for rent", "bérelhető kamerák és lencsék"],
-      ["/props", "furniture & props", "bútorok és kellékek"],
-      ["/props", "outfits & accessories", "outfitek és kiegészítők"]
+      ["/equipment", "lights & equipment", "fények és eszközök", "light-sources"],
+      ["/equipment", "cameras and lenses for rent", "bérelhető kamerák és lencsék", "cameras-for-rent"],
+      ["/props", "furniture & props", "bútorok és kellékek", "props-collection"],
+      ["/props", "outfits & accessories", "outfitek és kiegészítők", "wardrobe"]
     ]
   },
   {
