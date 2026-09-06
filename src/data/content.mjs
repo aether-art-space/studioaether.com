@@ -181,7 +181,6 @@ export const selfieContent = {
     galleryHeading: "Selfies made in our studio",
     customizeHeading: "The only selfie studio in Budapest where you can customize your shoot",
     customizeCopy: "While most studios offer a fixed setup with little flexibility, we do things differently. At Aether Art Space, everything is designed around your vision. You’re not locked into a template — you choose the backdrop, the lighting, the framing. It’s your space, your rules.",
-    customizeCustom: "If you want something custom, you can also bring us a photo example and we will recreate it for you on the spot.",
     controls: [
       ["choose a background you like", ["Green built set", "Pure White", "Stone Grey", "Black", "Blue Mist", "Orchid", "Ultramarine", "Deep Yellow", "Orange", "Crimson", "Choral", "Egg Nog"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
       ["choose a lighting style that fits you", ["Moody for dramatic shots", "Rembrandt for a classic look", "High fashion for edgy pics", "Blacklight"], ["control-13", "control-14", "control-15", "control-16"]],
@@ -228,7 +227,6 @@ export const selfieContent = {
     galleryHeading: "Studiónkban készült szelfik",
     customizeHeading: "Az egyetlen szelfi-studió Budapesten, ahol személyre szabhatod a képeid",
     customizeCopy: "Ilyen hely nincs még egy Budapesten. Míg más stúdiók előre meghatározott, sablonos beállításokat kínálnak, mi teljesen mást képviselünk. Az Aether Selfie Stúdióban minden a te elképzeléseid köré épül. Te választod ki a hátteret, a világítást, a képkivágást – ez a te tered, a te szabályaid.",
-    customizeCustom: "... vagy kérj egyedi világítást mintakép után!",
     controls: [
       ["válassz háttérszínt tetszésed szerint", ["Épített sötétzöld díszlet", "Tiszta fehér", "Szikla szürke", "Fekete", "Világoskék", "Orchidea lila", "Sötétkék", "Élénk Sárga", "Narancs", "Bordó", "Világos rózsaszín", "Világos bézs"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
       ["válassz világítás stílust, ami megy hozzád", ["\"Moody\" a drámai hatásért", "\"Rembrandt\" a klasszikus világítás", "\"High fashion\" merész kinézetért", "vagy \"UV\""], ["control-13", "control-14", "control-15", "control-16"]],
@@ -278,7 +276,8 @@ export const selfieImages = {
     { src: "/images/selfie/gallery-06.jpeg", width: 1800, height: 1800, alt: "Selfie studio creative portrait" },
     { src: "/images/selfie/gallery-07.jpeg", width: 1800, height: 1200, alt: "Selfie studio portrait" },
     { src: "/images/selfie/gallery-08.jpeg", width: 1800, height: 1200, alt: "Selfie studio portrait with props" },
-    { src: "/images/selfie/gallery-09.jpeg", width: 1800, height: 1199, alt: "Selfie studio portrait" }
+    { src: "/images/selfie/gallery-09.jpeg", width: 1800, height: 1199, alt: "Selfie studio portrait" },
+    { src: "/images/selfie/gallery-10.jpeg", width: 3936, height: 2648, alt: "Selfie studio portrait with black backdrop" }
   ],
   controls: new Map([
     ["control-01", { src: "/images/selfie/control-01.jpg", width: 500, height: 333, alt: "Green built set" }],

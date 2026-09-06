@@ -22,6 +22,24 @@ const faqGroups = faqGroupsFor(page) as Array<[string, Array<[string, string]>]>
 const home = homeContent[hu ? "hu" : "en"];
 const studio = studioContent[hu ? "hu" : "en"];
 const selfie = selfieContent[hu ? "hu" : "en"];
+const selfiePackages = selfie.prices.map((priceItem) => ({
+  title: priceItem[0] as string,
+  descriptionLines: (priceItem[1] as string[]).map((text) => ({ text })),
+  price: priceItem[2] as string
+}));
+const splitSelfieBoldText = (text: string) => {
+  const parts: Array<{ text: string; bold?: boolean }> = [];
+  const quoted = /"([^"]+)"/g;
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+  while ((match = quoted.exec(text))) {
+    if (match.index > cursor) parts.push({ text: text.slice(cursor, match.index + 1) });
+    parts.push({ text: match[1], bold: true }, { text: '"' });
+    cursor = match.index + match[0].length;
+  }
+  if (cursor < text.length) parts.push({ text: text.slice(cursor) });
+  return parts;
+};
 const isEquipment = page.path === "/equipment" || page.path === "/hu/equipment";
 const isProps = page.path === "/props" || page.path === "/hu/props";
 const collectionPage = isEquipment ? equipmentContent[hu ? "hu" : "en"] : isProps ? propsContent[hu ? "hu" : "en"] : null;
@@ -245,13 +263,13 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <ImageHero variant="selfie" headingId="selfie-title" title={selfie.heroHeading} image={selfieImages.hero} subheading={selfie.heroSubheading} lead={selfie.heroCopy}>
       <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-hero" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.heroCta}</a>
     </ImageHero>
-    <section class="selfie-process" aria-labelledby="selfie-process-title">
+    <section class="selfie-process" data-gallery aria-labelledby="selfie-process-title">
       <h2 id="selfie-process-title">{selfie.processHeading}</h2>
       <ol class="selfie-process__list">
         {selfie.processSteps.map((step) => { const note = step.length === 3 ? step[1] : ""; return <li><span>{step[0]}</span>{note && <small>{note}</small>}</li>; })}
       </ol>
       <div class="selfie-process__images">
-        {selfieImages.process.map((image) => <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />)}
+        {selfieImages.process.map((image, index) => <button class="selfie-process__image" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>)}
       </div>
     </section>
     <section class="selfie-gallery" data-gallery aria-labelledby="selfie-gallery-title">
@@ -264,21 +282,19 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         <p>{selfie.customizeCopy}</p>
       </div>
       <div class="selfie-controls">
-        {selfie.controls.map((control, controlIndex) => { const label = control[0] as string; const options = control[1] as string[]; const ids = control[2] as string[]; return <article class={`selfie-control selfie-control--${controlIndex + 1}`} data-gallery><h3>{label}</h3><div class="selfie-control__images">{ids.map((id, index) => { const image = selfieImages.controls.get(id); return image && <figure><button class="selfie-control__image" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? `Kép megnyitása: ${options[index]}` : `Open ${options[index]}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button><figcaption>{options[index]}</figcaption></figure>; })}</div>{controlIndex === 1 ? <div class="selfie-control__options">{options.map((option) => <span>{option}</span>)}<span>{selfie.customizeCustom}</span></div> : <p class="selfie-control__options">{options.join(", ")}</p>}</article>; })}
+        {selfie.controls.map((control, controlIndex) => { const label = control[0] as string; const options = control[1] as string[]; const ids = control[2] as string[]; const optionsText = controlIndex === 2 ? (hu ? `Válassz "Portré", "Deréktól felfele" vagy "Teljes alakos" kivágásaink közül - az utóbbi csoportoknak is alkalmas.` : `Choose between "Portrait", "Waist up" or "Full body" - the latter is also good for larger groups`) : ""; return <article class={`selfie-control selfie-control--${controlIndex + 1}`} data-gallery><h3>{label}</h3><div class="selfie-control__images">{ids.map((id, index) => { const image = selfieImages.controls.get(id); return image && <figure><button class="selfie-control__image" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? `Kép megnyitása: ${options[index]}` : `Open ${options[index]}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button></figure>; })}</div>{controlIndex === 1 ? <div class="selfie-control__options">{options.map((option) => { const text = hu ? option : option === "Blacklight" ? `and "${option}"!` : (() => { const [name, ...rest] = option.split(" for "); return `"${name}" for ${rest.join(" for ")}`; })(); return <span>{splitSelfieBoldText(text).map((part) => part.bold ? <strong>{part.text}</strong> : part.text)}</span>; })}</div> : controlIndex === 2 ? <p class="selfie-control__options">{splitSelfieBoldText(optionsText).map((part) => part.bold ? <strong>{part.text}</strong> : part.text)}</p> : <p class="selfie-control__options">{options.join(", ")}</p>}</article>; })}
       </div>
     </section>
-    <section class="selfie-benefits" aria-labelledby="selfie-benefits-title">
-      <div class="selfie-benefits__intro"><h2 id="selfie-benefits-title">{selfie.benefitsHeading}</h2><p>{selfie.benefitsIntro}</p></div>
-      <div class="selfie-benefits__grid">{selfie.benefits.map(([title, copy], index) => { const image = selfieImages.benefits[index]; return <article class="selfie-benefit"><h3>{title}</h3><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><p>{copy}</p></article>; })}</div>
+    <section class="selfie-benefits home-favourite" aria-labelledby="selfie-benefits-title">
+      <div class="selfie-benefits__intro home-favourite__intro"><h2 id="selfie-benefits-title">{selfie.benefitsHeading}</h2><p>{selfie.benefitsIntro}</p></div>
+      <div class="selfie-benefits__grid home-feature-grid">{selfie.benefits.map(([title, copy], index) => { const image = selfieImages.benefits[index]; return <CircularCard variant="feature" className="selfie-benefit" title={title} copy={copy} image={image} />; })}</div>
     </section>
     <section class="selfie-prices" aria-labelledby="selfie-prices-title">
-      <div class="selfie-prices__intro"><h2 id="selfie-prices-title">{selfie.pricesHeading}</h2></div>
-      <div class="selfie-prices__grid">{selfie.prices.map((priceItem, index) => { const title = priceItem[0] as string; const details = priceItem[1] as string[]; const price = priceItem[2] as string; return <article class={`selfie-price selfie-price--${index + 1}`}><div class="selfie-price__copy"><h3>{title}</h3>{details.map((detail) => <p>{detail}</p>)}<strong>{price}</strong></div></article>; })}</div>
-      <div class="selfie-extras"><h3>{selfie.extrasHeading}</h3><div class="selfie-extras__grid">{selfie.extras.map(([title, price, note], index) => { const image = selfieImages.prices[index]; return <article class="selfie-extra"><button class="selfie-extra__image" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? `Kép megnyitása: ${title}` : `Open ${title}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button><div class="selfie-extra__copy"><p><strong>{title}</strong></p><p><span>{price}</span>{note && <small>{note}</small>}</p></div></article>; })}</div></div>
+      <PriceSection className="selfie-prices__packages" gridClassName="selfie-prices__grid" heading={selfie.pricesHeading} headingId="selfie-prices-title" packages={selfiePackages} />
       <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.reserveCta}</a></div>
     </section>
     <section class="selfie-location" aria-labelledby="selfie-location-title">
-      <div class="selfie-location__inner"><h2 id="selfie-location-title">{selfie.szegedHeading}</h2><div class="selfie-location__copy"><p>{selfie.szegedCopy}</p><a class="text-link" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div></div>
+      <div class="selfie-location__inner"><div class="selfie-location__visual"><h2 id="selfie-location-title">{selfie.szegedHeading}</h2></div><div class="selfie-location__copy"><img class="selfie-location__logo" src="/images/selfie/szeged-logo.avif" alt="aether art space" width="326" height="184" loading="lazy" decoding="async" /><p>{selfie.szegedCopy}</p><a class="button button--dark" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div></div>
     </section>
     <GalleryLightbox label={hu ? "Szelfi stúdió galéria" : "Selfie studio gallery"} hu={hu} />
   </>

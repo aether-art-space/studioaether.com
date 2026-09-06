@@ -15,14 +15,16 @@ interface Props {
   copy?: string;
   href?: string;
   linkLabel?: string;
+  className?: string;
 }
 
-const { variant, title, image, copy, href, linkLabel } = Astro.props;
+const { variant, title, image, copy, href, linkLabel, className = "" } = Astro.props;
 const imageWidth = image.width ?? (variant === "service" ? 150 : 181);
 const imageHeight = image.height ?? (variant === "service" ? 149 : 181);
+const cardClass = ["circular-card", `circular-card--${variant}`, className].filter(Boolean).join(" ");
 ---
 
-<article class={`circular-card circular-card--${variant}`}>
+<article class={cardClass}>
   <h3>{title}</h3>
   <img src={image.src} alt={image.alt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" />
   {copy && <p>{copy}</p>}
