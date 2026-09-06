@@ -13,6 +13,7 @@ import PageHero from "./PageHero.astro";
 import PriceCard from "./PriceCard.astro";
 import PriceSection from "./PriceSection.astro";
 import StylistProfile from "./StylistProfile.astro";
+import StudioSection from "./StudioSection.astro";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
@@ -58,6 +59,10 @@ const serviceImagesAny: any = serviceType ? (serviceImages as any)[serviceType] 
 const serviceHeroHeadingId = serviceType === "commercial" ? "commercial-title" : "service-title";
 const serviceHeroSubtitle = serviceType === "commercial"
   ? (hu ? "Bízd meg professzionális fotósainkat a kereskedelmi fotóprojekteddel" : "Hire our professional photographers for your commercial photo project")
+  : serviceType === "corporate"
+    ? servicePageAny?.hero
+  : serviceType === "portrait"
+    ? servicePageAny?.hero
   : undefined;
 const fitnessAudienceImages: any = serviceImages.fitnessAudience;
 const specialType = page.path.includes("glamour-boudoir") ? "glamour" : page.path.includes("model-polaroids") ? "models" : page.path.includes("pet-photography") ? "pet" : null;
@@ -454,7 +459,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : servicePage ? (
   <>
-    <PageHero variant="service" headingId={serviceHeroHeadingId} title={page.h1} subtitle={serviceHeroSubtitle} lead={serviceType === "commercial" ? undefined : servicePageAny?.hero} description={servicePageAny.intro} />
+    <PageHero variant="service" headingId={serviceHeroHeadingId} title={page.h1} subtitle={serviceHeroSubtitle} lead={serviceType === "commercial" || serviceType === "corporate" || serviceType === "portrait" ? undefined : servicePageAny?.hero} description={servicePageAny.intro} />
     {serviceType === "commercial" && <>
       <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"}>
         <HorizontalMasonryGallery images={serviceImagesAny} label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"} />
@@ -467,12 +472,16 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <section class="service-clients" aria-labelledby="service-clients-title"><h2 id="service-clients-title">{servicePageAny.clients}</h2><div>{serviceImages.clients.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width="150" height="150" loading="lazy" decoding="async" />)}</div></section>
     </>}
     {serviceType === "portrait" && <>
-      <section class="service-gallery service-gallery--portrait" aria-label={hu ? "Portréfotózási galéria" : "Portrait photography gallery"}>{serviceImagesAny.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>
+      <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Portréfotózási galéria" : "Portrait photography gallery"}>
+        <HorizontalMasonryGallery images={serviceImagesAny} label={hu ? "Portréfotózási galéria" : "Portrait photography gallery"} />
+      </section>
       <PriceSection note={servicePageAny.firstTimers} heading={servicePageAny.packageHeading} lead={servicePageAny.packageLead} packages={servicePackages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="portrait-packages-title" />
       <ExtrasSection heading={hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[hu ? "vedd igénybe teljes kreatív csapatunkat" : "use our entire creative team", hu ? "foglalj le mindent egyszerre fotózásodhoz" : "save the hassle and book everything in one go"]} items={serviceUpgradesWithLinks} showLinks headingId="portrait-extras-title" />
     </>}
     {serviceType === "fitness" && <>
-      <section class="service-gallery service-gallery--fitness" aria-label={hu ? "Fitness és jóga fotózási galéria" : "Fitness and yoga photography gallery"}>{serviceImagesAny.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 4 ? "eager" : "lazy"} decoding="async" /></button>)}</section>
+      <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Fitness és jóga fotózási galéria" : "Fitness and yoga photography gallery"}>
+        <HorizontalMasonryGallery images={serviceImagesAny} label={hu ? "Fitness és jóga fotózási galéria" : "Fitness and yoga photography gallery"} />
+      </section>
       <section class="service-section service-section--audience"><h2>{servicePageAny.audienceHeading}</h2><p>{servicePageAny.audienceIntro}</p><div class="service-audience-grid">{servicePageAny.audience.map((item: string[], index: number) => <article><img src={fitnessAudienceImages[index].src} alt={fitnessAudienceImages[index].alt} width="258" height="258" loading="lazy" decoding="async" /><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
       <PriceSection heading={servicePageAny.packageHeading} lead={servicePageAny.packageLead} packages={servicePageAny.packages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="fitness-packages-title" />
       <ExtrasSection heading={servicePageAny.upgradesHeading} intro={[servicePageAny.upgradesSubheading, servicePageAny.upgradesIntro]} items={serviceUpgrades} headingId="fitness-extras-title" />
@@ -487,7 +496,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     </>}
     {serviceType !== "commercial" && serviceType !== "corporate" && <section class="service-section service-section--studio"><h2>{servicePageAny.studioHeading}</h2><p>{servicePageAny.studioIntro}</p><ul>{servicePageAny.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{servicePageAny.studioTail}</p></section>}
     {serviceType === "corporate" && <>
-      <section class="corporate-studio"><div class="corporate-studio__copy"><h2>{servicePageAny.studioHeading}</h2><p>{servicePageAny.studioIntro}</p><ul>{servicePageAny.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{servicePageAny.studioTail}</p></div><div class="corporate-studio__image"><img src="/images/equipment/EFI08382-bnw.jpg" alt={hu ? "Budapesti fotóstúdió" : "Aether Art Space Budapest photo studio"} width="900" height="600" loading="lazy" decoding="async" /></div></section>
+      <StudioSection heading={servicePageAny.studioHeading} intro={servicePageAny.studioIntro} bullets={servicePageAny.studioBullets} tail={servicePageAny.studioTail} imageSrc="/images/equipment/EFI08382-bnw-highres.jpg" imageAlt={hu ? "Budapesti fotóstúdió" : "Aether Art Space Budapest photo studio"} emphasizeBulletLeadins />
       <section class="service-section service-section--approach"><h2>{servicePageAny.approachHeading}</h2><p>{servicePageAny.approach}</p></section>
       <section class="service-clients"><h2>{servicePageAny.clients}</h2><div>{serviceImages.clients.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width="150" height="150" loading="lazy" decoding="async" />)}</div></section>
       <section class="service-faq service-faq--corporate"><h2>{servicePageAny.faqHeading}</h2>{servicePageAny.faq.map((item: string[]) => <details><summary>{item[0]}</summary><p>{item[1]}</p></details>)}</section>

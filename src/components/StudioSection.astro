@@ -1,0 +1,44 @@
+---
+interface Props {
+  heading: string;
+  intro: string;
+  bullets: string[];
+  tail?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  emphasizeBulletLeadins?: boolean;
+  className?: string;
+}
+
+const {
+  heading,
+  intro,
+  bullets,
+  tail,
+  imageSrc,
+  imageAlt = "",
+  imageWidth = 5750,
+  imageHeight = 3833,
+  emphasizeBulletLeadins = false,
+  className = ""
+} = Astro.props;
+
+const sectionClass = ["studio-section", imageSrc ? "studio-section--split" : "", className].filter(Boolean).join(" ");
+---
+
+<section class={sectionClass}>
+  <div class="studio-section__copy">
+    <h2>{heading}</h2>
+    <p>{intro}</p>
+    <ul>
+      {bullets.map((bullet) => {
+        const [title, ...rest] = bullet.split(" – ");
+        return <li>{emphasizeBulletLeadins ? <><strong>{title}</strong>{rest.length > 0 ? ` – ${rest.join(" – ")}` : ""}</> : bullet}</li>;
+      })}
+    </ul>
+    {tail && <p>{tail}</p>}
+  </div>
+  {imageSrc && <div class="studio-section__image"><img src={imageSrc} alt={imageAlt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" /></div>}
+</section>
