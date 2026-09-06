@@ -29,7 +29,7 @@ const sectionClass = ["studio-section", imageSrc ? "studio-section--split" : "",
 ---
 
 <section class={sectionClass}>
-  <div class="studio-section__copy">
+  {imageSrc ? <div class="studio-section__copy">
     <h2>{heading}</h2>
     <p>{intro}</p>
     <ul>
@@ -39,6 +39,16 @@ const sectionClass = ["studio-section", imageSrc ? "studio-section--split" : "",
       })}
     </ul>
     {tail && <p>{tail}</p>}
-  </div>
+  </div> : <>
+    <h2>{heading}</h2>
+    <p>{intro}</p>
+    <ul>
+      {bullets.map((bullet) => {
+        const [title, ...rest] = bullet.split(" – ");
+        return <li>{emphasizeBulletLeadins ? <><strong>{title}</strong>{rest.length > 0 ? ` – ${rest.join(" – ")}` : ""}</> : bullet}</li>;
+      })}
+    </ul>
+    {tail && <p>{tail}</p>}
+  </>}
   {imageSrc && <div class="studio-section__image"><img src={imageSrc} alt={imageAlt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" /></div>}
 </section>

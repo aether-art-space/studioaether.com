@@ -9,6 +9,7 @@ import HorizontalMasonryGallery from "./HorizontalMasonryGallery.astro";
 import ImageHero from "./ImageHero.astro";
 import InfoBox from "./InfoBox.astro";
 import ExtrasSection from "./ExtrasSection.astro";
+import FaqSection from "./FaqSection.astro";
 import PageHero from "./PageHero.astro";
 import PriceCard from "./PriceCard.astro";
 import PriceSection from "./PriceSection.astro";
@@ -56,12 +57,16 @@ const serviceType = page.path.includes("commercial-photography") ? "commercial" 
 const servicePage = serviceType ? serviceContent[serviceType][hu ? "hu" : "en"] : null;
 const servicePageAny = servicePage as any;
 const serviceImagesAny: any = serviceType ? (serviceImages as any)[serviceType] : null;
+const studioSectionImage = "/images/equipment/EFI08382-bnw-highres.jpg";
+const studioSectionImageAlt = hu ? "Budapesti fotóstúdió" : "Aether Art Space Budapest photo studio";
 const serviceHeroHeadingId = serviceType === "commercial" ? "commercial-title" : "service-title";
 const serviceHeroSubtitle = serviceType === "commercial"
   ? (hu ? "Bízd meg professzionális fotósainkat a kereskedelmi fotóprojekteddel" : "Hire our professional photographers for your commercial photo project")
   : serviceType === "corporate"
     ? servicePageAny?.hero
   : serviceType === "portrait"
+    ? servicePageAny?.hero
+  : serviceType === "fitness"
     ? servicePageAny?.hero
   : undefined;
 const fitnessAudienceImages: any = serviceImages.fitnessAudience;
@@ -390,7 +395,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <PageHero variant="service" headingId="seasonal-title" title={page.h1} lead={seasonalPage.hero} description={seasonalPage.intro} />
     <section class="service-gallery service-gallery--seasonal" aria-label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"}>{seasonalPageImages.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>
     <PriceSection heading={seasonalPage.packageHeading} lead={seasonalPage.packageLead} packages={seasonalPackages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="seasonal-packages-title" />
-    <section class="service-section service-section--studio"><h2>{seasonalPage.studioHeading}</h2><p>{seasonalPage.studioIntro}</p><ul>{seasonalPage.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{seasonalPage.studioTail}</p></section>
+    <StudioSection heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
     <GalleryLightbox label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} hu={hu} />
   </>
 ) : seasonalType === "studio" ? (
@@ -398,7 +403,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <ImageHero variant="christmas" headingId="seasonal-title" title={page.h1} image={seasonalPageImages[0]} lead={seasonalPage.hero}>
       <a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a>
     </ImageHero>
-    <section class="service-section service-section--studio"><h2>{seasonalPage.introHeading}</h2><p>{seasonalPage.intro}</p><ul>{seasonalPage.introBullets.map((bullet: string) => <li>{bullet}</li>)}</ul></section>
+    <StudioSection heading={seasonalPage.introHeading} intro={seasonalPage.intro} bullets={seasonalPage.introBullets} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
     <section class="seasonal-gallery"><img src={seasonalPageImages[1].src} alt={seasonalPageImages[1].alt} width={seasonalPageImages[1].width} height={seasonalPageImages[1].height} loading="lazy" decoding="async" /><div><h2>{seasonalPage.sectionHeading}</h2><p>{seasonalPage.sectionIntro}</p><ul>{seasonalPage.sectionBullets.map((bullet: string) => <li>{bullet}</li>)}</ul></div></section>
     <section class="booking-intro"><p>{seasonalPage.packageIntro}</p></section><section class="booking-prices"><article><h2>{hu ? "Kedvezményes Studió Idősáv" : "Discounted Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig / 9:00 - 18:00" : "Monday to Thursday / 9:00 - 18:00"}</p><strong>{hu ? "6000 Ft / óra" : "6000 HUF / hour"}</strong></article><article><h2>{hu ? "Standard Studió Idősáv" : "Standard Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig 18:00 - 22:00; péntek és hétvége 9:00 - 22:00" : "Monday to Thursday 18:00 - 22:00; Friday & Weekend 9:00 - 22:00"}</p><strong>{hu ? "8000 Ft / óra" : "8000 HUF / hour"}</strong></article><article><h2>{hu ? "10 órás bérlet" : "10 hour Membership"}</h2><p>{hu ? "Bármelyik nap / óránként felbontható" : "Any day / can be broken up by the hour"}</p><strong>60.000. HUF</strong><span>SAVE UP TO 37%</span></article></section>
     <section class="seasonal-gallery seasonal-gallery--strip">{seasonalPageImages.slice(2).map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index + 1} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 2}` : `Open image ${index + 2}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</section>
@@ -446,20 +451,28 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : specialPage ? (
   <>
-    <PageHero variant="service" headingId="special-title" title={page.h1} lead={specialPageAny.hero} description={specialPageAny.intro} />
-    {specialImagesAny?.length > 0 && <section class="service-gallery service-gallery--special" aria-label={hu ? "Fotózási galéria" : "Photography gallery"}>{specialImagesAny.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>}
+    <PageHero variant="service" headingId="special-title" title={page.h1} subtitle={specialType === "glamour" ? specialPageAny.hero : undefined} lead={specialType === "glamour" ? undefined : specialPageAny.hero} description={specialPageAny.intro}>
+      {specialType === "glamour" && <p class="page-hero__note"><strong>{specialPageAny.firstTimers}</strong></p>}
+    </PageHero>
+    {specialType === "glamour" ? (
+      <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Glamour és boudoir fotózási galéria" : "Glamour and boudoir photography gallery"}>
+        <HorizontalMasonryGallery images={specialImagesAny} label={hu ? "Glamour és boudoir fotózási galéria" : "Glamour and boudoir photography gallery"} />
+      </section>
+    ) : specialImagesAny?.length > 0 ? (
+      <section class="service-gallery service-gallery--special" aria-label={hu ? "Fotózási galéria" : "Photography gallery"}>{specialImagesAny.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>
+    ) : null}
     {specialType === "models" && <section class="service-section service-special-sections">{specialPageAny.sections.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}<div class="service-model-card"><img src={specialImages.modelCard.src} alt={specialImages.modelCard.alt} width={specialImages.modelCard.width} height={specialImages.modelCard.height} loading="lazy" decoding="async" /></div></section>}
-    {specialType === "glamour" && <section class="service-section service-special-sections"><p class="service-note">{specialPageAny.firstTimers}</p>{specialPageAny.sections.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}</section>}
+    {specialType === "glamour" && <section class="service-section service-special-sections glamour-details"><div class="glamour-details-grid">{specialPageAny.sections.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}</div></section>}
     <PriceSection heading={specialPageAny.packageHeading} lead={specialPageAny.packageLead} packages={specialPackages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="special-packages-title" />
     {specialType === "models" && <p class="service-model-offer"><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(hu ? "modell fotózás" : "model photoshoot")}`}>{specialPageAny.offer}</a></p>}
     {specialType !== "pet" && <ExtrasSection heading={hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[hu ? "vedd igénybe teljes kreatív csapatunkat" : "use our entire creative team", hu ? "foglalj le mindent egyszerre fotózásodhoz" : "save the hassle and book everything in one go"]} items={commonUpgrades[hu ? "hu" : "en"]} headingId="special-extras-title" />}
-    <section class="service-section service-section--studio"><h2>{specialPageAny.studioHeading}</h2><p>{specialPageAny.studioIntro}</p><ul>{specialPageAny.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{specialPageAny.studioTail}</p></section>
-    {specialPageAny.faq && <section class="service-faq"><h2>{specialPageAny.faqHeading}</h2>{specialPageAny.faq.map((item: string[]) => <details><summary>{item[0]}</summary><p>{item[1]}</p></details>)}</section>}
+    <StudioSection heading={specialPageAny.studioHeading} intro={specialPageAny.studioIntro} bullets={specialPageAny.studioBullets} tail={specialPageAny.studioTail} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
+    {specialPageAny.faq && <FaqSection className="service-faq" heading={specialPageAny.faqHeading} items={specialPageAny.faq} headingId="special-faq-title" />}
     {specialImagesAny?.length > 0 && <GalleryLightbox label={hu ? "Fotózási galéria" : "Photography gallery"} hu={hu} />}
   </>
 ) : servicePage ? (
   <>
-    <PageHero variant="service" headingId={serviceHeroHeadingId} title={page.h1} subtitle={serviceHeroSubtitle} lead={serviceType === "commercial" || serviceType === "corporate" || serviceType === "portrait" ? undefined : servicePageAny?.hero} description={servicePageAny.intro} />
+    <PageHero variant="service" headingId={serviceHeroHeadingId} title={page.h1} subtitle={serviceHeroSubtitle} lead={serviceType === "commercial" || serviceType === "corporate" || serviceType === "portrait" || serviceType === "fitness" ? undefined : servicePageAny?.hero} description={servicePageAny.intro} />
     {serviceType === "commercial" && <>
       <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"}>
         <HorizontalMasonryGallery images={serviceImagesAny} label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"} />
@@ -494,12 +507,12 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       </section>
       <PriceSection className="service-section--corporate-packages" gridClassName="service-package-grid--corporate" heading={servicePageAny.packageHeading} lead={servicePageAny.packageLead} packages={servicePageAny.packages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="corporate-packages-title" />
     </>}
-    {serviceType !== "commercial" && serviceType !== "corporate" && <section class="service-section service-section--studio"><h2>{servicePageAny.studioHeading}</h2><p>{servicePageAny.studioIntro}</p><ul>{servicePageAny.studioBullets.map((bullet: string) => <li>{bullet}</li>)}</ul><p>{servicePageAny.studioTail}</p></section>}
+    {serviceType !== "commercial" && serviceType !== "corporate" && <StudioSection heading={servicePageAny.studioHeading} intro={servicePageAny.studioIntro} bullets={servicePageAny.studioBullets} tail={servicePageAny.studioTail} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />}
     {serviceType === "corporate" && <>
-      <StudioSection heading={servicePageAny.studioHeading} intro={servicePageAny.studioIntro} bullets={servicePageAny.studioBullets} tail={servicePageAny.studioTail} imageSrc="/images/equipment/EFI08382-bnw-highres.jpg" imageAlt={hu ? "Budapesti fotóstúdió" : "Aether Art Space Budapest photo studio"} emphasizeBulletLeadins />
+      <StudioSection heading={servicePageAny.studioHeading} intro={servicePageAny.studioIntro} bullets={servicePageAny.studioBullets} tail={servicePageAny.studioTail} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
       <section class="service-section service-section--approach"><h2>{servicePageAny.approachHeading}</h2><p>{servicePageAny.approach}</p></section>
       <section class="service-clients"><h2>{servicePageAny.clients}</h2><div>{serviceImages.clients.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width="150" height="150" loading="lazy" decoding="async" />)}</div></section>
-      <section class="service-faq service-faq--corporate"><h2>{servicePageAny.faqHeading}</h2>{servicePageAny.faq.map((item: string[]) => <details><summary>{item[0]}</summary><p>{item[1]}</p></details>)}</section>
+      <FaqSection className="service-faq service-faq--corporate" heading={servicePageAny.faqHeading} items={servicePageAny.faq} headingId="corporate-faq-title" />
     </>}
     <GalleryLightbox label={hu ? "Szolgáltatási galéria" : "Service gallery"} hu={hu} />
   </>
@@ -531,7 +544,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : page.section === "faq" ? (
   <>
     <PageHero variant="service" headingId="faq-title" title={page.h1} eyebrow={hu ? "gyakori kérdések" : "frequently asked questions"} lead={introFor(page)} />
-    <section class="faq-groups">{faqGroups.map(([heading, items]) => <section class="faq-group"><h2>{heading}</h2><div class="faq-list">{items.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div></section>)}</section>
+    <FaqSection groups={faqGroups} className="faq-section--standalone" />
   </>
 ) : page.section === "legal" ? (
   <>
