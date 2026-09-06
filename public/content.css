@@ -304,6 +304,7 @@
 .collection-section__intro p { margin: 0; text-align: left; font: var(--text-body); }
 .collection-section__intro p + p { margin-top: 28px; }
 .collection-gallery-wrap { margin-top: 57px; }
+.collection-gallery__title { width: min(630px, 100%); margin: 0 auto 24px; font: 400 22px/1.15 var(--serif); text-align: center; }
 .horizontal-masonry-gallery { position: relative; width: 100vw; max-height: clamp(320px, 52vw, 560px); margin-left: calc(50% - 50vw); }
 .horizontal-masonry-gallery__viewport { height: clamp(320px, 52vw, 560px); padding-inline: 24px; overflow-x: auto; overflow-y: hidden; border-radius: 0; scrollbar-width: none; overscroll-behavior-x: contain; outline: none; touch-action: pan-x pan-y; }
 .horizontal-masonry-gallery__viewport::-webkit-scrollbar { display: none; }
@@ -345,6 +346,7 @@
 .collection-gallery__note strong { display: block; margin-top: 7px; font-weight: 700; }
 .collection-gallery__info { width: min(700px, 100%); margin: 36px auto 0; text-align: left; }
 .collection-gallery__info p { margin: 0; font: var(--text-body); }
+.collection-gallery__info strong { display: block; margin-top: 7px; font-weight: 700; }
 .collection-section--wardrobe, .collection-section--collection, .collection-section--furniture { padding-bottom: 60px; }
 .collection-section--wardrobe .collection-gallery-wrap + .collection-gallery-wrap { margin-top: 52px; }
 .collection-section--wardrobeFree .collection-gallery__note { margin-top: 27px; }
@@ -360,6 +362,7 @@
   .collection-section__intro p { font: 400 15px/22.5px var(--sans); }
   .collection-section__intro p + p { margin-top: 24px; }
   .collection-gallery-wrap { margin-top: 40px; }
+  .collection-gallery__title { margin-bottom: 18px; font-size: 20px; }
   .horizontal-masonry-gallery-section { padding-right: 18px; padding-left: 18px; }
   .horizontal-masonry-gallery__viewport { padding-inline: 18px; -webkit-overflow-scrolling: touch; scroll-behavior: auto; }
   .horizontal-masonry-gallery__track { gap: 5px; }
@@ -372,6 +375,7 @@
   .collection-gallery__note { margin-top: 24px; font: 400 15px/22.5px var(--sans); }
   .collection-gallery__info { margin-top: 24px; }
   .collection-gallery__info p { font: 400 15px/22.5px var(--sans); }
+  .collection-gallery__info strong { margin-top: 5px; }
   .collection-section--wardrobe .collection-gallery-wrap + .collection-gallery-wrap { margin-top: 42px; }
 }
 
@@ -1081,9 +1085,9 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .price-card__header h3 { margin: 0 0 18px; font: 400 30px/1.06 var(--serif); text-wrap: balance; }
 .price-card__description { min-height: 4.5em; max-width: 34ch; margin: 0; color: rgba(255, 255, 255, .78); font: var(--text-small); }
 .price-card__details { display: flex; min-width: 0; flex: 1; flex-direction: column; padding-top: 22px; }
-.price-card__price { min-height: 2.16em; margin: 0; padding-bottom: 28px; }
+.price-card__price { min-height: 2.16em; margin: auto 0 0; padding-bottom: 28px; }
 .price-card__price strong { display: block; font: 700 30px/1.08 var(--sans); letter-spacing: -.02em; }
-.price-card__features { margin: auto -28px -30px; padding: 22px 28px 30px; border-top: 1px solid rgba(255, 255, 255, .12); background: rgba(255, 255, 255, .07); }
+.price-card__features { margin: 0 -28px -30px; padding: 22px 28px 30px; border-top: 1px solid rgba(255, 255, 255, .12); background: rgba(255, 255, 255, .07); }
 .price-card ul { display: grid; gap: 8px; margin: 16px 0 0; padding-left: 22px; list-style: disc; }
 .price-card li { margin: 0; color: rgba(255, 255, 255, .9); font: var(--text-small); }
 .price-card li::marker { color: #baf3e6; font-size: .8em; }

@@ -27,11 +27,11 @@ const isSimpleCard = !description && !includesLabel && features.length === 0;
   </header>
   <div class="price-card__details">
     <p class="price-card__price"><strong>{price}</strong></p>
-    {(includesLabel || features.length > 0) && <div class="price-card__features">
-      {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
-      <ul aria-label={includesLabel ?? "Package features"}>
-        {features.map((feature) => <li>{feature}</li>)}
-      </ul>
-    </div>}
   </div>
+  {(includesLabel || features.length > 0) && <div class="price-card__features">
+    {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
+    <ul aria-label={includesLabel ?? "Package features"}>
+      {features.map((feature) => <li>{feature}</li>)}
+    </ul>
+  </div>}
 </article>

@@ -42,34 +42,16 @@ export default function AetherHeaderNavigation({
 }: AetherHeaderNavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // The Wix mobile menu has a slightly richer tree than the desktop dropdowns:
-  // equipment and props each appear twice with different anchor intent, and the
-  // resident artist entries follow the order used by the source menu.
+  // The Wix mobile menu keeps a different resident-artist order, while the
+  // studio menu shares the same duplicate-destination section links as desktop.
   const mobileGroups = groups.map((group, index) => {
-    if (index === 0) {
-      const [photoStudio, selfieStudio, equipment, props] = group.links;
-      return {
-        ...group,
-        links: [
-          photoStudio,
-          selfieStudio,
-          equipment,
-          { ...equipment, label: languageLabel === "HU" ? "kamerák és objektívek bérlése" : "cameras and lenses for rent" },
-          props,
-          { ...props, label: languageLabel === "HU" ? "bútorok és kellékek" : "outfits & accessories" }
-        ]
-      };
-    }
     if (index === 1) {
       return {
         ...group,
         links: [group.links[0], group.links[3], group.links[2], group.links[1]]
       };
     }
-    return {
-      ...group,
-      links: group.links.map((link) => link.label === "packages" ? { ...link, label: "PACKAGES" } : link)
-    };
+    return group;
   });
 
   return (
@@ -83,8 +65,8 @@ export default function AetherHeaderNavigation({
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="nav-dropdown" forceMount>
                 <ul>
-                  {group.links.map((link) => (
-                    <li key={link.href}>
+                  {group.links.map((link, linkIndex) => (
+                    <li key={`${link.href}-${linkIndex}`}>
                       <a
                         href={link.href}
                         onPointerDown={(event) => {

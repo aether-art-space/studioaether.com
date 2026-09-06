@@ -27,7 +27,7 @@ const collectionSections = collectionPage?.sections.map((section) => ({
   heading: section.heading,
   subheading: "subheading" in section ? section.subheading : "",
   paragraphs: section.paragraphs,
-  galleries: section.galleries.map((gallery) => ({ imageKey: gallery.imageKey, note: ("note" in gallery ? gallery.note : null) as string[] | null, info: ("info" in gallery ? gallery.info : null) as string | null }))
+  galleries: section.galleries.map((gallery) => ({ imageKey: gallery.imageKey, title: ("title" in gallery ? gallery.title : null) as string | null, note: ("note" in gallery ? gallery.note : null) as string[] | null, info: ("info" in gallery ? gallery.info : null) as string | null, infoPrice: ("infoPrice" in gallery ? gallery.infoPrice : null) as string | null }))
 })) ?? [];
 const artistType = page.path.includes("photographers-budapest") ? "photographers" : page.path.includes("/stylists") ? "stylists" : page.path.includes("make-up-artists") ? "makeup" : null;
 const artistPage = artistType ? residentArtistContent[artistType][hu ? "hu" : "en"] : null;
@@ -245,11 +245,12 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
           {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
         </div>
         {section.galleries.map((gallery) => <div class="collection-gallery-wrap">
+          {gallery.title && <h3 class="collection-gallery__title">{gallery.title}</h3>}
           {isProps ? <HorizontalMasonryGallery images={collectionImageMap[gallery.imageKey].map((image, imageIndex) => ({ ...image, ...(collectionCaptionMap?.[gallery.imageKey]?.[imageIndex] ? { title: collectionCaptionMap[gallery.imageKey][imageIndex].title, description: collectionCaptionMap[gallery.imageKey][imageIndex].detail, price: collectionCaptionMap[gallery.imageKey][imageIndex].price } : {}) }))} label={hu ? `${section.heading} galéria` : `${section.heading} gallery`} /> : <div class={`collection-gallery collection-gallery--${gallery.imageKey}`}>
             {collectionImageMap[gallery.imageKey].map((image, imageIndex) => { const caption = collectionCaptionMap?.[gallery.imageKey]?.[imageIndex]; return <figure class={caption ? "collection-gallery__figure--captioned" : undefined}><img class="collection-gallery__item collection-gallery__item--static" src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />{caption && <figcaption><strong>{caption.title}</strong>{caption.detail && <small>{caption.detail}</small>}{caption.price && <b>{caption.price}</b>}</figcaption>}</figure>; })}
           </div>}
           {gallery.note && <div class="collection-gallery__note"><p>{gallery.note[0]}</p>{gallery.note[1] && <strong>{gallery.note[1]}</strong>}</div>}
-          {gallery.info && <InfoBox class="collection-gallery__info"><p>{gallery.info}</p></InfoBox>}
+          {gallery.info && <InfoBox class="collection-gallery__info"><p>{gallery.info}</p>{gallery.infoPrice && <strong>{gallery.infoPrice}</strong>}</InfoBox>}
         </div>)}
       </section>
     ))}

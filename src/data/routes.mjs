@@ -102,9 +102,43 @@ export const pages = [
 export const pageByPath = new Map(pages.map((page) => [page.path, page]));
 
 export const navGroups = [
-  { label: "the studio", links: [["/studio", "photo studio"], ["/selfie-studio-budapest", "selfie studio"], ["/equipment", "lights & equipment"], ["/props", "furniture & props"]] },
-  { label: "resident artists", links: [["/photographers-budapest", "photographers"], ["/models-budapest", "models"], ["/stylists", "stylists & brand designers"], ["/make-up-artists", "make-up artists and hair stylists"]] },
-  { label: "photography services", links: [["/packages", "packages"], ["/commercial-photography-budapest", "commercial photography"], ["/corporate-photography-budapest", "corporate photography"], ["/portrait-photography-budapest", "portrait photography"], ["/fitness", "fitness and yoga photography"], ["/glamour-boudoir-photography-budapest", "glamour / boudoir / art photography"], ["/model-polaroids-budapest", "model polaroids / digitals"], ["/pet-photography-budapest", "pet photography"], ["/id-photo", "ID photo"]] }
+  {
+    label: "the studio",
+    huLabel: "a stúdió",
+    links: [
+      ["/studio", "photo studio", "fotóstúdió"],
+      ["/selfie-studio-budapest", "selfie studio", "szelfi stúdió"],
+      ["/equipment", "lights & equipment", "fények és eszközök"],
+      ["/equipment", "cameras and lenses for rent", "bérelhető kamerák és lencsék"],
+      ["/props", "furniture & props", "bútorok és kellékek"],
+      ["/props", "outfits & accessories", "outfitek és kiegészítők"]
+    ]
+  },
+  {
+    label: "resident artists",
+    huLabel: "rezidens művészek",
+    links: [
+      ["/photographers-budapest", "photographers", "fotósaink"],
+      ["/models-budapest", "models", "modelleink"],
+      ["/stylists", "stylists & brand designers", "stylistjaink"],
+      ["/make-up-artists", "make-up artists and hair stylists", "sminkeseink"]
+    ]
+  },
+  {
+    label: "photography services",
+    huLabel: "fotós szolgáltatásaink",
+    links: [
+      ["/packages", "PACKAGES", "CSOMAGOK"],
+      ["/commercial-photography-budapest", "commercial photography", "reklámfotózás"],
+      ["/corporate-photography-budapest", "corporate photography", "vállalati fotózás"],
+      ["/portrait-photography-budapest", "portrait photography", "portré fotózás"],
+      ["/fitness", "fitness and yoga photography", "fitness és jóga fotózás"],
+      ["/glamour-boudoir-photography-budapest", "glamour / boudoir / art photography", "glamour, boudoir fotózás"],
+      ["/model-polaroids-budapest", "model polaroids / digitals", "model polaroidok / digitalok"],
+      ["/pet-photography-budapest", "pet photography", "kisállat fotózás"],
+      ["/id-photo", "ID photo", "igazolványkép"]
+    ]
+  }
 ];
 
 export const inventoryPaths = pages.map((page) => page.path);

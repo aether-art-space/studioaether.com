@@ -5,9 +5,8 @@ const { page } = Astro.props;
 const hu = page.language === "hu";
 const languageHref = page.counterpartPath || (hu ? "/" : "/hu");
 const groups = localizedNav(page.language);
-const topLabels = hu ? ["a stúdió", "rezidens művészek", "fotózási szolgáltatások"] : ["the studio", "resident artists", "photography services"];
-const navigationGroups = groups.map((group, index) => ({
-  label: topLabels[index],
+const navigationGroups = groups.map((group) => ({
+  label: group.label,
   links: group.links.map(([href, label]) => ({ href, label }))
 }));
 ---
