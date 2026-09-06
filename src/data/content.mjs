@@ -1125,18 +1125,33 @@ export const mentoringImages = {
     { src: "/images/wix/mentoring/mentoring-04.jpg", width: 1000, height: 1000, alt: "Photography mentor" }
   ],
   digital: [
-    { src: "/images/wix/mentoring/mentoring-05.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-06.jpg", width: 1000, height: 1250, alt: "Digital photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-07.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-08.jpg", width: 4191, height: 5240, alt: "Digital photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-09.jpg", width: 1000, height: 1500, alt: "Digital photography mentoring" }
+    { src: "/images/wix/mentoring/digital-01.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-02.jpg", width: 1000, height: 1250, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-03.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-04.jpg", width: 4191, height: 5240, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-05.jpg", width: 1000, height: 1500, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-06.jpg", width: 1000, height: 1500, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-07.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-08.jpg", width: 1000, height: 1500, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-09.jpg", width: 1000, height: 1500, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-10.jpg", width: 3923, height: 4904, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-11.jpg", width: 3467, height: 4334, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-12.jpg", width: 6000, height: 4000, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-13.jpg", width: 666, height: 999, alt: "Digital photography mentoring" },
+    { src: "/images/wix/mentoring/digital-14.jpg", width: 1500, height: 1000, alt: "Digital photography mentoring" }
   ],
   analogue: [
-    { src: "/images/wix/mentoring/mentoring-10.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-11.jpg", width: 1500, height: 1000, alt: "Analogue photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-12.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-13.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
-    { src: "/images/wix/mentoring/mentoring-14.jpg", width: 3923, height: 4904, alt: "Analogue photography mentoring" }
+    { src: "/images/wix/mentoring/analogue-01.jpg", width: 3607, height: 5411, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-02.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-03.jpg", width: 3505, height: 4381, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-04.jpg", width: 3271, height: 4090, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-05.jpg", width: 1500, height: 1000, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-06.jpg", width: 2937, height: 4426, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-07.jpg", width: 2759, height: 3448, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-08.jpg", width: 3696, height: 4620, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-09.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-10.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" },
+    { src: "/images/wix/mentoring/analogue-11.jpg", width: 1000, height: 1500, alt: "Analogue photography mentoring" }
   ]
 };
 

@@ -91,6 +91,26 @@ const idPhotoPackages = isIdPhoto ? [
 ] : [];
 const isMentoring = page.path === "/photographer-mentoring-budapest" || page.path === "/hu/photographer-mentoring-budapest";
 const mentoringPage: any = isMentoring ? mentoringContent[hu ? "hu" : "en"] : null;
+const mentoringBenefits = hu ? [
+  { title: "profi mentorok", copy: "Profi fotósok tanítanak türelmesen digitális és analóg fotózásra.", image: mentoringImages.mentors[0] },
+  { title: "profi modellek", copy: "Profi modellekkel dolgozhatsz, akik segítenek a saját projekted megformálásában.", image: mentoringImages.mentors[1] },
+  { title: "felszerelés a csomagban", copy: "Ha nincs megfelelő felszerelésed, minden szükséges eszközt biztosítunk, vegyszerekkel és laborfelszereléssel együtt.", image: mentoringImages.mentors[2] },
+  { title: "rugalmas órák", copy: "A saját tempódban haladhatsz, az órák témáit pedig az igényeidhez igazítjuk.", image: mentoringImages.mentors[3] }
+] : [
+  { title: "professional mentors", copy: "Our mentors are professional photographers who will teach you with patience about digital and analogue photography.", image: mentoringImages.mentors[0] },
+  { title: "pro models", copy: "You can work with professional models who will help you formulate your own projects and bring their ideas to the table.", image: mentoringImages.mentors[1] },
+  { title: "gear included", copy: "If you don't have proper gear or just want to try out a different setup, we got you covered. Chemicals and lab equipment is also available.", image: mentoringImages.mentors[2] },
+  { title: "flexible classes", copy: "Take your classes whenever you feel like and at the pace you want. If you need something else, we will modify the topics for you.", image: mentoringImages.mentors[3] }
+];
+const mentoringLessonIntroductions = hu ? [
+  "A stúdióban találkozunk, és a valódi fotózás előtt együtt gyakorlunk. Ezt fogod megtanulni:",
+  "Együtt fotózunk a stúdióban. Ezt fogod megtanulni:",
+  "Együtt digitalizáljuk és fejezzük be a képeidet. Ezt fogod megtanulni:"
+] : [
+  "We meet you in the studio and practice before the real shoot. You will learn:",
+  "We do a photoshoot together in the studio. You will learn:",
+  "We will sit together and finish up your images. You will learn:"
+];
 const seasonalType = page.path.includes("christmas-photoshoot") ? "photoshoot" : page.path.includes("christmas-studio") ? "studio" : null;
 const seasonalPage: any = seasonalType ? (seasonalContent as any)[seasonalType][hu ? "hu" : "en"] : null;
 const seasonalPageImages: any = seasonalType ? (seasonalImages as any)[seasonalType] : null;
@@ -387,8 +407,45 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : isMentoring ? (
   <>
-    <PageHero variant="service" headingId="mentoring-title" title={page.h1} lead={mentoringPage.hero} description={mentoringPage.intro} />
-    <section class="service-section service-mentoring"><h2>{mentoringPage.priceHeading}</h2><h3 class="mentoring-mentors__heading">{hu ? "profi mentorok" : "professional mentors"}</h3><div class="mentoring-mentors" aria-label={hu ? "Profi mentorok" : "Professional mentors"}>{mentoringImages.mentors.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" />)}</div><div class="service-mentor-grid">{mentoringPage.packages.map((packageItem: any, packageIndex: number) => <article class="service-package"><h3>{packageItem.title}</h3><p>{packageItem.description}</p><strong>{packageItem.price}</strong><h4>{hu ? "A csomag tartalmaz mindent, amire a kurzus során szükséged lehet:" : "The package includes everything you need to complete the course:"}</h4><ul>{packageItem.includes.map((item: string) => <li>{item}</li>)}</ul>{packageItem.lessons.map((lesson: any) => <div class="service-lesson"><h4>{lesson[0]}</h4><ul>{lesson[1].map((item: string) => <li>{item}</li>)}</ul></div>)}<p class="service-mentor-free">{packageItem.free}</p><p>{hu ? "Kapsz 2 ingyen órát a stúdióban, hogy önállóan fotózhass. A szomszéd szobában leszünk, ha mégis segítségre van szükséged." : "You can do your first shoot alone - we will be in the next room if you need help."}</p><div class="mentoring-gallery" aria-label={hu ? `${packageIndex === 0 ? "Digitális" : "Analóg"} mentorálási galéria` : `${packageIndex === 0 ? "Digital" : "Analogue"} mentoring gallery`}>{(packageIndex === 0 ? mentoringImages.digital : mentoringImages.analogue).map((imageData: any) => <button type="button" data-gallery-image data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</div></article>)}</div></section>
+    <PageHero variant="service" headingId="mentoring-title" title={page.h1} subtitle={mentoringPage.hero} description={mentoringPage.intro} />
+    <section class="mentoring-content" aria-labelledby="mentoring-packages-title">
+      <h2 id="mentoring-packages-title" class="mentoring-packages__heading">{mentoringPage.priceHeading}</h2>
+      <div class="mentoring-benefits" aria-label={hu ? "A mentorálás előnyei" : "Mentoring benefits"}>
+        {mentoringBenefits.map((benefit: any) => <article class="mentoring-benefit">
+          <h3>{benefit.title}</h3>
+          <img src={benefit.image.src} alt={benefit.image.alt} width={benefit.image.width} height={benefit.image.height} loading="eager" decoding="async" />
+          <p>{benefit.copy}</p>
+        </article>)}
+      </div>
+      {mentoringPage.packages.map((packageItem: any, packageIndex: number) => {
+        const gallery = packageIndex === 0 ? mentoringImages.digital : mentoringImages.analogue;
+        return <>
+          <section class:list={["mentoring-package", packageIndex === 0 ? "mentoring-package--digital" : "mentoring-package--analogue"]} aria-labelledby={`mentoring-package-${packageIndex}-title`}>
+            <div class="mentoring-package__overview">
+              <h2 id={`mentoring-package-${packageIndex}-title`}>{packageItem.title}</h2>
+              <p>{packageItem.description}</p>
+              <strong>{packageItem.price}</strong>
+              <h3>{hu ? "A csomag tartalmaz mindent, amire a kurzus során szükséged lehet:" : "The package includes everything you need to complete the course:"}</h3>
+              <ul>{packageItem.includes.map((item: string) => <li>{item}</li>)}</ul>
+            </div>
+            <div class="mentoring-package__lessons">
+              {packageItem.lessons.map((lesson: any, lessonIndex: number) => <section class="mentoring-lesson">
+                <h3>{lesson[0]}</h3>
+                <p>{mentoringLessonIntroductions[lessonIndex]}</p>
+                <ul>{lesson[1].map((item: string) => <li>{item}</li>)}</ul>
+              </section>)}
+              <section class="mentoring-lesson mentoring-lesson--free">
+                <h3>{packageItem.free}</h3>
+                <p>{hu ? "Kapsz 2 ingyen órát a stúdióban, hogy önállóan fotózhass. A szomszéd szobában leszünk, ha mégis segítségre van szükséged." : "You can do your first shoot alone - we will be in the next room if you need help."}</p>
+              </section>
+            </div>
+          </section>
+          <section class="horizontal-masonry-gallery-section mentoring-gallery-section" aria-label={hu ? `${packageIndex === 0 ? "Digitális" : "Analóg"} mentorálási galéria` : `${packageIndex === 0 ? "Digital" : "Analogue"} mentoring gallery`}>
+            <HorizontalMasonryGallery images={gallery} label={hu ? `${packageIndex === 0 ? "Digitális" : "Analóg"} mentorálási galéria` : `${packageIndex === 0 ? "Digital" : "Analogue"} mentoring gallery`} />
+          </section>
+        </>;
+      })}
+    </section>
     <section class="service-contact"><h2>{mentoringPage.signHeading}</h2><p>{mentoringPage.signBody}</p><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(hu ? "mentor program" : "mentoring in aether art space")}`}>{site.email}</a></section>
     <GalleryLightbox label={hu ? "Mentorálási galéria" : "Mentoring gallery"} hu={hu} />
   </>
