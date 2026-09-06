@@ -1,0 +1,14 @@
+---
+import { InfoIcon } from "@phosphor-icons/react/ssr";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class:list={["info-box", className]} role="note">
+  <InfoIcon className="info-box__icon" size={25} weight="regular" aria-hidden="true" />
+  <div class="info-box__content"><slot /></div>
+</div>

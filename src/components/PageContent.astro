@@ -6,6 +6,7 @@ import CircularCard from "./CircularCard.astro";
 import GalleryLightbox from "./GalleryLightbox.astro";
 import HorizontalMasonryGallery from "./HorizontalMasonryGallery.astro";
 import ImageHero from "./ImageHero.astro";
+import InfoBox from "./InfoBox.astro";
 import ExtrasSection from "./ExtrasSection.astro";
 import PageHero from "./PageHero.astro";
 import PriceSection from "./PriceSection.astro";
@@ -48,6 +49,10 @@ const serviceType = page.path.includes("commercial-photography") ? "commercial" 
 const servicePage = serviceType ? serviceContent[serviceType][hu ? "hu" : "en"] : null;
 const servicePageAny = servicePage as any;
 const serviceImagesAny: any = serviceType ? (serviceImages as any)[serviceType] : null;
+const serviceHeroHeadingId = serviceType === "commercial" ? "commercial-title" : "service-title";
+const serviceHeroLead = serviceType === "commercial"
+  ? (hu ? "Bízd meg professzionális fotósainkat a kereskedelmi fotóprojekteddel" : "Hire our professional photographers for your commercial photo project")
+  : servicePageAny?.hero;
 const fitnessAudienceImages: any = serviceImages.fitnessAudience;
 const specialType = page.path.includes("glamour-boudoir") ? "glamour" : page.path.includes("model-polaroids") ? "models" : page.path.includes("pet-photography") ? "pet" : null;
 const specialPage = specialType ? (specialContent as any)[specialType][hu ? "hu" : "en"] : null;
@@ -167,38 +172,22 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <div class="studio-overview__floorplan"><img src={studioImages[0].src} alt={hu ? "fotóstúdió alaprajz" : studioImages[0].alt} width={studioImages[0].width} height={studioImages[0].height} loading="lazy" decoding="async" /></div>
       <div class="studio-overview__facts">
         <h2 id="studio-facts-title">{studio.heading}</h2>
-        <ul>{studio.facts.map((fact) => <li>{fact}</li>)}</ul>
+        <ul>{studio.facts.map((fact) => <li><strong>{fact.lead}</strong>{fact.tail}</li>)}</ul>
       </div>
     </section>
-    <section class="studio-gallery" data-gallery aria-label={hu ? "Képgaléria a stúdióról" : "Photo gallery of the studio"}>
-      <div class="studio-gallery__track">
-        <div class="studio-gallery__column studio-gallery__column--wide">
-          {[0, 1, 2].map((index) => <button class={`studio-gallery__item studio-gallery__item--${studioGalleryImages[index].layout}`} type="button" data-gallery-image data-gallery-index={index} data-gallery-src={studioGalleryImages[index].src} data-gallery-alt={studioGalleryImages[index].alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={studioGalleryImages[index].src} alt={studioGalleryImages[index].alt} width={studioGalleryImages[index].width} height={studioGalleryImages[index].height} loading="eager" decoding="async" /></button>)}
-        </div>
-        <div class="studio-gallery__column studio-gallery__column--medium">
-          {[3, 4].map((index) => <button class={`studio-gallery__item studio-gallery__item--${studioGalleryImages[index].layout}`} type="button" data-gallery-image data-gallery-index={index} data-gallery-src={studioGalleryImages[index].src} data-gallery-alt={studioGalleryImages[index].alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={studioGalleryImages[index].src} alt={studioGalleryImages[index].alt} width={studioGalleryImages[index].width} height={studioGalleryImages[index].height} loading="eager" decoding="async" /></button>)}
-        </div>
-        <div class="studio-gallery__column studio-gallery__column--narrow">
-          {[5, 6].map((index) => <button class={`studio-gallery__item studio-gallery__item--${studioGalleryImages[index].layout}`} type="button" data-gallery-image data-gallery-index={index} data-gallery-src={studioGalleryImages[index].src} data-gallery-alt={studioGalleryImages[index].alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={studioGalleryImages[index].src} alt={studioGalleryImages[index].alt} width={studioGalleryImages[index].width} height={studioGalleryImages[index].height} loading="eager" decoding="async" /></button>)}
-        </div>
-        {studioGalleryImages.slice(7, 19).map((image, offset) => { const index = offset + 7; return <div class="studio-gallery__column studio-gallery__column--portrait"><button class="studio-gallery__item studio-gallery__item--portrait" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="eager" decoding="async" /></button></div>; })}
-        <div class="studio-gallery__column studio-gallery__column--final">
-          {[19, 20, 21].map((index) => <button class={`studio-gallery__item studio-gallery__item--${studioGalleryImages[index].layout}`} type="button" data-gallery-image data-gallery-index={index} data-gallery-src={studioGalleryImages[index].src} data-gallery-alt={studioGalleryImages[index].alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={studioGalleryImages[index].src} alt={studioGalleryImages[index].alt} width={studioGalleryImages[index].width} height={studioGalleryImages[index].height} loading="eager" decoding="async" /></button>)}
-        </div>
-        <div class="studio-gallery__column studio-gallery__column--extra"><button class="studio-gallery__item studio-gallery__item--extra-wide" type="button" data-gallery-image data-gallery-index="22" data-gallery-src={studioGalleryImages[22].src} data-gallery-alt={studioGalleryImages[22].alt} aria-label={hu ? "Kép megnyitása: 23" : "Open image 23"}><img src={studioGalleryImages[22].src} alt={studioGalleryImages[22].alt} width={studioGalleryImages[22].width} height={studioGalleryImages[22].height} loading="eager" decoding="async" /></button></div>
-      </div>
+    <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Képgaléria a stúdióról" : "Photo gallery of the studio"}>
+      <HorizontalMasonryGallery images={studioGalleryImages} label={hu ? "Képgaléria a stúdióról" : "Photo gallery of the studio"} />
     </section>
     <section class="studio-backdrops" aria-labelledby="backdrops-title">
       <div class="studio-backdrops__intro">
         <h2 id="backdrops-title">{studio.backdropHeading}</h2>
-        <span class="studio-backdrops__rule" aria-hidden="true"></span>
         <p>{studio.backdropCopy}</p>
         <p><strong>{studio.backdropCta}</strong></p>
       </div>
       <div class="studio-backdrops__grid">
         {studioBackdropImages.map((backdrop, index) => <figure><img src={backdrop.src} alt={hu ? `${studio.backdropList[index]} háttér` : backdrop.alt} width="152" height="152" loading="lazy" decoding="async" /><figcaption>{studio.backdropList[index]}</figcaption></figure>)}
       </div>
-      <p class="studio-backdrops__note">{studio.backdropNote}</p>
+      <InfoBox class="studio-backdrops__note"><p>{studio.backdropNote}</p></InfoBox>
     </section>
     <BookingFooter page={page} />
     <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} />
@@ -241,7 +230,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.reserveCta}</a></div>
     </section>
     <section class="selfie-location" aria-labelledby="selfie-location-title">
-      <div><h2 id="selfie-location-title">{selfie.szegedHeading}</h2><p>{selfie.szegedCopy}</p><a class="text-link" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div>
+      <div class="selfie-location__inner"><h2 id="selfie-location-title">{selfie.szegedHeading}</h2><div class="selfie-location__copy"><p>{selfie.szegedCopy}</p><a class="text-link" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div></div>
     </section>
     <GalleryLightbox label={hu ? "Szelfi stúdió galéria" : "Selfie studio gallery"} hu={hu} />
   </>
@@ -482,10 +471,10 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : servicePage ? (
   <>
-    <PageHero variant="service" headingId="service-title" title={page.h1} lead={servicePageAny.hero} description={servicePageAny.intro} />
+    <PageHero variant="service" headingId={serviceHeroHeadingId} title={page.h1} lead={serviceHeroLead} description={servicePageAny.intro} />
     {serviceType === "commercial" && <>
-      <section class="service-gallery service-gallery--commercial" aria-label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"}>
-        {serviceImagesAny.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 4 ? "eager" : "lazy"} decoding="async" /></button>)}
+      <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"}>
+        <HorizontalMasonryGallery images={serviceImagesAny} label={hu ? "Reklámfotózási galéria" : "Commercial photography gallery"} />
       </section>
       <section class="service-section service-section--commercial" aria-labelledby="commercial-services-title">
         <h2 id="commercial-services-title">{servicePageAny.servicesHeading}</h2><p>{servicePageAny.servicesLead}</p>

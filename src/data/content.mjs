@@ -115,12 +115,25 @@ export const studioContent = {
       "The photo studio consists of two rooms with plenty of open space for creative work. With a ceiling height of 4+ meters, ideal for overhead shots, and 10 meters of distance from the background, you can take full-body shots even with a 105 mm focal length.",
       "If you arrive early, you can sit down in our reception area and have a coffee on us while you browse some photo books or prepare for your shoot. The studio opens from an enclosed court where smoking is allowed for guests."
     ],
-    facts: ["two rooms (both included in rental)", "central location, 1 minute from public transport", "easy to find, entrance from the court, ground floor", "high ceiling — 4.2m with strong suspension points", "large shooting distance — 10m from the backdrop", "spacious rooms — 60m2 shooting area", "separate model dresser room with make-up desk", "coffee and drinks are available", "pet friendly", "music on high quality sound system with bluetooth", "shower available for use", "lots of props, clothes and furniture available for free"],
+    facts: [
+      { lead: "two rooms", tail: " (both included in rental)" },
+      { lead: "central location", tail: ", 1 minute from public transport" },
+      { lead: "easy to find", tail: ", entrance from the court, ground floor" },
+      { lead: "high ceiling", tail: " — 4.2m with strong suspension points" },
+      { lead: "large shooting distance", tail: " — 10m from the backdrop" },
+      { lead: "spacious rooms", tail: " — 60m2 shooting area" },
+      { lead: "separate model dresser room", tail: " with make-up desk" },
+      { lead: "coffee and drinks", tail: " are available" },
+      { lead: "pet friendly", tail: "" },
+      { lead: "music", tail: " on high quality sound system with bluetooth" },
+      { lead: "shower", tail: " available for use" },
+      { lead: "lots of props, clothes and furniture", tail: " available for free" }
+    ],
     backdropHeading: "Backdrops",
     backdropCopy: "We offer a wide range of high-quality color paper backdrops, carefully maintained and frequently replaced to ensure they always look fresh. In addition, we have a selection of textile backdrops and a custom-built backdrop to suit any creative vision.",
     backdropCta: "Want something unique? Ask us to build the perfect set for you and with you — just share your vision, and we’ll bring it to life!",
     backdropList: ["Pure White", "Stone Grey", "Ultra Black", "Crimson", "Orange", "Deep Yellow", "Blue Mist", "Ultramarine", "Orchid", "Coral", "Eggnog", "Dark Green Wall — 4m x 4m", "Moveable Crimson Wall — 2m x 1.2m", "Moveable Black Wall — 2m x 1.2m", "Crimson Textile Backdrop", "Teal Textile Backdrop", "Mustard Textile Backdrop x2", "Dark Blue Textile Backdrop x2"],
-    backdropNote: "Our paper backdrops are 2.7m wide. On request we can order any color that you wish."
+    backdropNote: "Our paper backdrops are 2.7m wide.\nOn request we can order any color that you wish."
   },
   hu: {
     eyebrow: "a helyiség és háttereink",
@@ -129,12 +142,25 @@ export const studioContent = {
       "A fotóstúdió két szobából áll, rengeteg szabad térrel a kreatív munkához. A 4+ méteres belmagasság ideális felülnézeti felvételekhez, és a háttértől mért 10 méteres távolság lehetővé teszi, hogy teljes alakos képeket készíts akár 105 mm-es fókusztávolsággal is.",
       "Ha korábban érkezel, ihatsz egy kávét előterünkben míg fotókönyveket lapozol, vagy készülsz fotózásodra. A studió egy zárt udvarból nyílik, ahol a vendégeknek megengedett a dohányzás."
     ],
-    facts: ["két szoba (mindkettő része a bérlésnek)", "központi elhelyezkedés, 1 percre a tömegközlekedéstől", "könnyen megközelíthető, földszinti bejárat az udvaron", "nagy belmagasság — 4.2m magas, függesztési pontokkal", "hosszú lőtávolság — 10m a háttértől", "tágas szobák — 60m2 studió terület", "külön öltöző a modellnek sminkasztallal", "kávé és italok", "állatbarát", "zene bakelitről vagy bluetoothos hangrendszerről", "zuhanyzási lehetőség", "sok kellék, ruha és bútor áll rendelkezésre ingyenesen"],
+    facts: [
+      { lead: "két szoba", tail: " (mindkettő része a bérlésnek)" },
+      { lead: "központi elhelyezkedés", tail: ", 1 percre a tömegközlekedéstől" },
+      { lead: "könnyen megközelíthető", tail: ", földszinti bejárat az udvaron" },
+      { lead: "nagy belmagasság", tail: " — 4.2m magas, függesztési pontokkal" },
+      { lead: "hosszú lőtávolság", tail: " — 10m a háttértől" },
+      { lead: "tágas szobák", tail: " — 60m2 studió terület" },
+      { lead: "külön öltöző a modellnek", tail: " sminkasztallal" },
+      { lead: "kávé és italok", tail: "" },
+      { lead: "állatbarát", tail: "" },
+      { lead: "zene", tail: " bakelitről vagy bluetoothos hangrendszerről" },
+      { lead: "zuhanyzási lehetőség", tail: "" },
+      { lead: "sok kellék, ruha és bútor", tail: " áll rendelkezésre ingyenesen" }
+    ],
     backdropHeading: "Hátterek",
     backdropCopy: "Széles választékban kínálunk kiváló minőségű színes papír háttereket, amelyeket gondosan karbantartunk és gyakran cserélünk, hogy mindig frissnek tűnjenek. Ezen kívül többféle textil hátteret és egyedi építésű hátteret is kínálunk, hogy bármilyen kreatív víziót megvalósíthass.",
     backdropCta: "Szeretnél valami egyedit? Mi megépítjük a tökéletes szettet veled együttműködve — oszd meg velünk az elképzeléseidet, és mi életre keltjük!",
     backdropList: ["Pure White (Tiszta fehér)", "Stone Grey (Szikla szürke)", "Ultra Black (Ultra Fekete)", "Crimson (Bordó)", "Orange (Narancs)", "Deep Yellow (Mély-sárga)", "Blue Mist (Kék Köd)", "Ultramarine (Ultramarin)", "Orchid (Orchidea)", "Coral (Korall)", "Eggnog (Tojáslikőr)", "Sötétzöld ál-fal — 4m x 4m", "Bordó ál-fal — 2m x 1,2m", "Fekete ál-fal — 2m x 1,2m", "Bordó textil háttér", "Türkiz textil háttér", "Mustársárga textil háttér", "Sötétkék textil háttér"],
-    backdropNote: "Papír háttereink 2,7m szélesek. Igény szerint bármilyen további színt be tudunk szerezni."
+    backdropNote: "Papír háttereink 2,7m szélesek.\nIgény szerint bármilyen további színt be tudunk szerezni."
   }
 };
 
