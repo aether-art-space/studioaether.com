@@ -1,0 +1,240 @@
+---
+const { images = [], label = "Image gallery" } = Astro.props;
+---
+
+<div class="horizontal-masonry-gallery" data-horizontal-gallery data-gallery>
+  <button class="horizontal-masonry-gallery__previous" type="button" aria-label="Previous images" data-horizontal-gallery-previous hidden>←</button>
+  <div class="horizontal-masonry-gallery__viewport" data-horizontal-gallery-viewport tabindex="0" role="region" aria-label={label}>
+    <div class="horizontal-masonry-gallery__track" data-horizontal-gallery-track>
+      {images.map((image: any, index: number) => <button class="horizontal-masonry-gallery__item" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} data-gallery-title={image.title} data-gallery-description={image.description} data-gallery-price={image.price} data-gallery-link={image.link} data-gallery-link-label={image.linkLabel} aria-label={`Open image ${index + 1}`}>
+        <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading={index < 5 ? "eager" : "lazy"} decoding="async" />
+      </button>)}
+    </div>
+  </div>
+  <button class="horizontal-masonry-gallery__next" type="button" aria-label="Next images" data-horizontal-gallery-next hidden>→</button>
+</div>
+
+<script>
+  const galleries = document.querySelectorAll<HTMLElement>("[data-horizontal-gallery]");
+
+  galleries.forEach((gallery) => {
+    const viewport = gallery.querySelector<HTMLElement>("[data-horizontal-gallery-viewport]");
+    const track = gallery.querySelector<HTMLElement>("[data-horizontal-gallery-track]");
+    const previous = gallery.querySelector<HTMLButtonElement>("[data-horizontal-gallery-previous]");
+    const next = gallery.querySelector<HTMLButtonElement>("[data-horizontal-gallery-next]");
+    if (!viewport || !track || !previous || !next) return;
+
+    let direction = 1;
+    let lastTime = 0;
+    let edgePauseUntil = 0;
+    let animationTimer = 0;
+    let paused = false;
+    let scrollPosition = 0;
+    let isAutoScrolling = false;
+    let isLayingOut = false;
+    let isPointerDown = false;
+    let resumeTimer = 0;
+
+    const updateImageRatio = (image: HTMLImageElement) => {
+      if (!image.naturalWidth || !image.naturalHeight) return;
+      const item = image.closest<HTMLElement>("[data-horizontal-gallery-item], .horizontal-masonry-gallery__item");
+      item?.style.setProperty("--gallery-image-ratio", String(image.naturalWidth / image.naturalHeight));
+    };
+
+    const imageRatio = (item: HTMLElement) => {
+      const measuredRatio = Number(item.style.getPropertyValue("--gallery-image-ratio"));
+      if (measuredRatio) return measuredRatio;
+      const image = item.querySelector<HTMLImageElement>("img");
+      const width = Number(image?.getAttribute("width"));
+      const height = Number(image?.getAttribute("height"));
+      return width && height ? width / height : 1;
+    };
+
+    const columnWidthFor = (columnItems: HTMLElement[], galleryHeight: number, itemGap: number) => {
+      const inverseRatio = columnItems.reduce((sum, item) => sum + (1 / imageRatio(item)), 0);
+      return inverseRatio ? (galleryHeight - itemGap * (columnItems.length - 1)) / inverseRatio : 0;
+    };
+
+    const layoutGallery = () => {
+      if (isLayingOut) return;
+      const items = Array.from(track.querySelectorAll<HTMLElement>(".horizontal-masonry-gallery__item"));
+      if (!items.length || !viewport.clientWidth) return;
+
+      isLayingOut = true;
+      const oldMaxScroll = viewport.scrollWidth - viewport.clientWidth;
+      const scrollRatio = oldMaxScroll > 2 ? viewport.scrollLeft / oldMaxScroll : 0;
+      const pageWidth = viewport.clientWidth;
+      const itemGap = 5;
+      const galleryHeight = Math.max(320, Math.min(560, pageWidth * 0.52));
+      const targetColumnWidth = Math.max(150, Math.min(300, pageWidth * 0.22));
+      let cursor = 0;
+      let columnIndex = 0;
+
+      track.style.height = `${galleryHeight}px`;
+      track.replaceChildren();
+
+      while (cursor < items.length) {
+        const column = document.createElement("div");
+        column.className = "horizontal-masonry-gallery__column";
+        const remaining = items.length - cursor;
+        const firstItem = items[cursor];
+        const firstRatio = imageRatio(firstItem);
+        const standaloneWidth = firstRatio * galleryHeight;
+        const minimumColumnWidth = Math.max(150, pageWidth * 0.14);
+        const maximumColumnWidth = Math.min(pageWidth * 0.48, galleryHeight * 1.2);
+        const canStandAlone = remaining === 1 || (
+          firstRatio >= 0.34 &&
+          firstRatio <= 1.08 &&
+          standaloneWidth >= minimumColumnWidth &&
+          standaloneWidth <= maximumColumnWidth &&
+          (columnIndex % 3 === 1 || (columnIndex % 5 === 4 && firstRatio <= 0.78))
+        );
+        let groupSize = canStandAlone ? 1 : 2;
+
+        if (!canStandAlone && remaining > 2) {
+          const candidates = [2, 3]
+            .filter((size) => size <= remaining)
+            .map((size) => {
+              const candidateItems = items.slice(cursor, cursor + size);
+              const candidateWidth = columnWidthFor(candidateItems, galleryHeight, itemGap);
+              const widthError = Math.abs(candidateWidth - targetColumnWidth) / targetColumnWidth;
+              const narrowColumnPenalty = candidateWidth < minimumColumnWidth ? 0.8 : 0;
+              const extraItemPenalty = size === 3 ? 0.12 : 0;
+              return { size, score: widthError + narrowColumnPenalty + extraItemPenalty };
+            });
+          groupSize = candidates.sort((a, b) => a.score - b.score)[0]?.size ?? 2;
+        }
+
+        const columnItems = items.slice(cursor, cursor + Math.min(groupSize, remaining));
+        const columnWidth = columnWidthFor(columnItems, galleryHeight, itemGap);
+        columnItems.forEach((item) => {
+          const itemHeight = columnWidth / imageRatio(item);
+          item.style.width = `${columnWidth}px`;
+          item.style.height = `${itemHeight}px`;
+          item.style.flexBasis = `${itemHeight}px`;
+          column.append(item);
+        });
+        track.append(column);
+        cursor += columnItems.length;
+        columnIndex += 1;
+      }
+
+      const newMaxScroll = track.scrollWidth - viewport.clientWidth;
+      viewport.scrollLeft = newMaxScroll > 2 ? scrollRatio * newMaxScroll : 0;
+      scrollPosition = viewport.scrollLeft;
+      isAutoScrolling = false;
+      isLayingOut = false;
+      gallery.dataset.horizontalGalleryReady = "true";
+      updateControls();
+    };
+
+    const updateControls = () => {
+      const hasOverflow = viewport.scrollWidth > viewport.clientWidth + 2;
+      previous.hidden = !hasOverflow;
+      next.hidden = !hasOverflow;
+      if (!hasOverflow) viewport.scrollLeft = 0;
+    };
+
+    const animate = () => {
+      const time = performance.now();
+      if (!lastTime) lastTime = time;
+      const elapsed = Math.min(time - lastTime, 80);
+      lastTime = time;
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      if (!paused && maxScroll > 2 && time >= edgePauseUntil) {
+        if (!isAutoScrolling) {
+          scrollPosition = viewport.scrollLeft;
+          isAutoScrolling = true;
+        }
+        scrollPosition += direction * elapsed * 0.012;
+        if (scrollPosition >= maxScroll - 1) {
+          scrollPosition = maxScroll;
+          viewport.scrollLeft = maxScroll;
+          direction = -1;
+          edgePauseUntil = time + 900;
+        } else if (scrollPosition <= 1) {
+          scrollPosition = 0;
+          viewport.scrollLeft = 0;
+          direction = 1;
+          edgePauseUntil = time + 900;
+        } else {
+          viewport.scrollLeft = scrollPosition;
+        }
+      }
+    };
+
+    const startAnimation = () => {
+      if (
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        !window.matchMedia("(hover: hover) and (pointer: fine)").matches ||
+        animationTimer
+      ) return;
+      lastTime = performance.now();
+      animationTimer = window.setInterval(animate, 32);
+    };
+
+    const moveBy = (amount: number) => {
+      paused = true;
+      isAutoScrolling = false;
+      scrollPosition = viewport.scrollLeft;
+      viewport.scrollBy({ left: amount, behavior: "smooth" });
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => {
+        scrollPosition = viewport.scrollLeft;
+        paused = false;
+      }, 1600);
+    };
+
+    const pauseAtCurrentPosition = () => {
+      window.clearTimeout(resumeTimer);
+      paused = true;
+      isAutoScrolling = false;
+      scrollPosition = viewport.scrollLeft;
+    };
+
+    const resumeAfterInteraction = () => {
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => {
+        scrollPosition = viewport.scrollLeft;
+        paused = false;
+      }, 1600);
+    };
+
+    track.querySelectorAll<HTMLImageElement>("img").forEach((image) => {
+      image.addEventListener("load", () => {
+        updateImageRatio(image);
+        if (!gallery.dataset.horizontalGalleryReady) layoutGallery();
+      });
+      updateImageRatio(image);
+    });
+
+    previous.addEventListener("click", () => moveBy(-(viewport.clientWidth * 0.82)));
+    next.addEventListener("click", () => moveBy(viewport.clientWidth * 0.82));
+    viewport.addEventListener("pointerenter", pauseAtCurrentPosition);
+    viewport.addEventListener("pointerleave", () => { if (!isPointerDown) paused = false; });
+    viewport.addEventListener("pointerdown", () => {
+      isPointerDown = true;
+      pauseAtCurrentPosition();
+    });
+    viewport.addEventListener("pointerup", () => {
+      isPointerDown = false;
+      resumeAfterInteraction();
+    });
+    viewport.addEventListener("pointercancel", () => {
+      isPointerDown = false;
+      resumeAfterInteraction();
+    });
+    viewport.addEventListener("focusin", pauseAtCurrentPosition);
+    viewport.addEventListener("focusout", () => { paused = false; });
+    viewport.addEventListener("wheel", () => {
+      pauseAtCurrentPosition();
+      resumeAfterInteraction();
+    }, { passive: true });
+    viewport.addEventListener("scroll", () => {
+      if (!isAutoScrolling) scrollPosition = viewport.scrollLeft;
+    }, { passive: true });
+    window.addEventListener("resize", layoutGallery);
+    layoutGallery();
+    startAnimation();
+  });
+</script>

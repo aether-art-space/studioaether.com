@@ -522,12 +522,69 @@ export const equipmentContent = {
   }
 };
 
-const propsImageSet = (start, count, alt) => Array.from({ length: count }, (_, index) => ({ src: `/images/props/image-${start + index}.jpg`, alt }));
+const propsImageDimensions = {
+  4: [720, 900], 8: [600, 900], 9: [600, 900], 10: [600, 900], 11: [720, 900],
+  14: [600, 900], 17: [600, 900], 18: [600, 900], 20: [731, 900], 21: [900, 899],
+  31: [899, 900], 36: [720, 900], 37: [720, 900], 39: [600, 900], 40: [720, 900],
+  41: [900, 600], 42: [600, 900], 43: [600, 900], 48: [720, 900], 50: [600, 900],
+  51: [600, 900], 52: [600, 900], 54: [600, 900], 55: [720, 900], 57: [720, 900],
+  58: [720, 900], 59: [720, 900], 60: [720, 900], 69: [900, 899], 72: [720, 900],
+  77: [720, 900], 82: [720, 900], 83: [720, 900], 84: [719, 900], 85: [720, 900]
+};
+const propsWardrobeCaptions = [
+  ["Wedding Dress", "XS-M size\nYou can rent the dress for 9000HUF in studio.\n\nIncludes a veil and a satin or lace gloves."],
+  ["Chinese Qipao", "XS-M size\nYou can rent the qipao for 5000HUF in studio."],
+  ["100 year old hungarian folk dress", "XS-M size\nYou can rent the dress for 9000HUF in studio."],
+  ["Moroccan Dfina - gold and translucent", "S-L size\nYou can rent the dfina for 5000HUF in studio."],
+  ["hungarian folk outfit for males", "S-M\nYou can rent the outfit for 5000HUF."],
+  ["hungarian folk dress", "XS-M size\nYou can rent the dress for 5000HUF in studio."],
+  ["hungarian folk dress", "XS-M size\nYou can rent the dress for 5000HUF in studio."],
+  ["", ""],
+  ["", ""],
+  ["", "You can rent the dress for 5000HUF in studio."],
+  ["", ""],
+  ["long latex coat", "You can use this outfit in the studio for FREE!"],
+  ["holo jacket", "You can use this outfit in the studio for FREE!"],
+  ["neon miniskirt", "You can use this outfit in the studio for FREE!"],
+  ["silver jacket", "You can use this outfit in the studio for FREE!"],
+  ["snake pattern jumper", "You can use this outfit in the studio for FREE!"],
+  ["black tulle miniskirt", "You can use this outfit in the studio for FREE!"],
+  ["long dark coloured skirt", "You can use this outfit in the studio for FREE!"],
+  ["silver dress", "You can use this outfit in the studio for FREE!"],
+  ["", ""],
+  ["golden top", "You can use this outfit in the studio for FREE!"],
+  ["retro blazer", "You can use this outfit in the studio for FREE!"],
+  ["silver dress", "You can use this outfit in the studio for FREE!"],
+  ["vintage folk male outfit", "You can use this outfit in the studio for FREE!"],
+  ["see-through black dress", "You can use this outfit in the studio for FREE!"],
+  ["leather biker jacket", "You can use this outfit in the studio for FREE!"],
+  ["translucent top", "You can use this outfit in the studio for FREE!"],
+  ["finger armor", "You can use this outfit in the studio for FREE!"],
+  ["silver handbag", "You can use this outfit in the studio for FREE!"],
+  ["lace shoulder accessory", "You can use this outfit in the studio for FREE!"],
+  ["bunny ears", "You can use this outfit in the studio for FREE!"],
+  ["rococo handfan", "You can use this outfit in the studio for FREE!"],
+  ["large black handfan", "You can use this outfit in the studio for FREE!"],
+  ["white lace chokers", "You can use this outfit in the studio for FREE!"],
+  ["white lacy handfan", "You can use this outfit in the studio for FREE!"]
+];
+const emptyPropsCaptions = Array.from({ length: 25 }, () => ["", ""]);
+const propsImageSet = (start, count, alt, captions = null) => Array.from({ length: count }, (_, index) => {
+  const [width, height] = propsImageDimensions[start + index] ?? [900, 900];
+  const caption = captions?.[index];
+  return {
+    src: `/images/props/image-${start + index}.jpg`,
+    alt: caption?.[0] || alt,
+    ...(captions ? { title: caption?.[0] || "", description: caption?.[1] || "" } : {}),
+    width,
+    height
+  };
+});
 export const propsImages = {
-  wardrobe: propsImageSet(1, 10, "Wardrobe piece at aether art space"),
-  wardrobeFree: propsImageSet(11, 25, "Clothing item available in the studio"),
-  collection: propsImageSet(36, 25, "Photo prop at aether art space"),
-  furniture: propsImageSet(61, 25, "Furniture piece at aether art space")
+  wardrobe: propsImageSet(1, 10, "Wardrobe piece at aether art space", propsWardrobeCaptions.slice(0, 10)),
+  wardrobeFree: propsImageSet(11, 25, "Clothing item available in the studio", propsWardrobeCaptions.slice(10, 35)),
+  collection: propsImageSet(36, 25, "Photo prop at aether art space", emptyPropsCaptions),
+  furniture: propsImageSet(61, 25, "Furniture piece at aether art space", emptyPropsCaptions)
 };
 
 export const propsContent = {
@@ -794,6 +851,70 @@ export const commonPhotoPackages = {
     { title: "Standard Fotózás csomag", description: "Tökéletes stúdiós felvételekhez többféle öltözékkel vagy stílussal. Pároknak vagy barátoknak is jó megoldás.", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 ruha", "akár 3 stúdióbeállítás", "1-2 modell"] },
     { title: "All-inclusive Fotózás csomag", description: "Ha egy szép, a megszokotton túlmutató képsorozatra vágysz, ez az ajánlat neked szól.", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "akár 3 ruha", "akár 3 stúdióbeállítás", "egyetlen modelltől csoportokig"] }
   ]
+};
+
+// Package content is intentionally page-specific. PriceSection only provides the shared presentation.
+export const photoPackageSets = {
+  christmas: {
+    en: [
+      { title: "Small Christmas Photoshoot Package", description: "get a couple of photos together with your significant other", price: "39.000. HUF", features: ["studio rent included", "6 high quality photographs", "single outfit", "couples"] },
+      { title: "Medium Christmas Photoshoot Package", description: "a good choice for families for their yearly holiday photos", price: "59.000. HUF", features: ["studio rent included", "15 high quality photographs", "up to 3 outfits", "2 adults + children"] },
+      { title: "Large Christmas Photoshoot Package", description: "perfect for large families and groups for holiday photos", price: "79.000. HUF", features: ["studio rent included", "21 high quality photographs", "up to 3 outfits", "2+ adults + children"] }
+    ],
+    hu: [
+      { title: "Kis Karácsonyi Fotózás Csomag", description: "készítsetek néhány közös képet a pároddal", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magas minőségű fénykép", "1 outfit", "párok"] },
+      { title: "Közepes Karácsonyi Fotózás Csomag", description: "jó választás családok éves ünnepi fotózásához", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magas minőségű fénykép", "akár 3 outfit", "2 felnőtt + gyerekek"] },
+      { title: "Nagy Karácsonyi Fotózás Csomag", description: "tökéletes nagy családok és csoportok ünnepi fotózásához", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magas minőségű fénykép", "akár 3 outfit", "2+ felnőtt + gyerekek"] }
+    ]
+  },
+  portrait: {
+    en: [
+      { title: "Small Portrait Photoshoot Package", description: "try out a photoshoot with a couple of strong pictures", price: "from 39.000. HUF / person", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] },
+      { title: "Medium Portrait Photoshoot Package", description: "a good choice for a standard photoshoot with a mix of pictures", price: "from 59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] },
+      { title: "Large Portrait Photoshoot Package", description: "creative, powerful pictures, crazy concepts or just lots of pictures", price: "from 79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }
+    ],
+    hu: [
+      { title: "Kis Portré Fotózás Csomag", description: "próbáld ki a fotózást néhány erős képpel", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] },
+      { title: "Közepes Portré Fotózás Csomag", description: "ideális választás egy standard fotózáshoz diverz fotókkal", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "akár 3 öltözet", "akár 3 stúdió beállítás", "1-2 modell"] },
+      { title: "Nagy Portré Fotózás Csomag", description: "kreatív, erőteljes fotók, elrugaszkodott koncepciók vagy még több kép", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "akár 3 öltözet", "akár 3 stúdió beállítás", "1 modelltől csoportokig"] }
+    ]
+  },
+  glamour: {
+    en: [
+      { title: "Small Glamour Photoshoot Package", description: "try out a photoshoot with a couple of strong pictures", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] },
+      { title: "Medium Glamour Photoshoot Package", description: "a good choice for a standard photoshoot with a mix of pictures", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] },
+      { title: "Large Glamour Photoshoot Package", description: "creative, powerful pictures, crazy concepts or just lots of pictures", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }
+    ],
+    hu: [
+      { title: "Kis Glamour Fotózás Csomag", description: "próbáld ki a fotózást pár hatásos képpel", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "5 magazin minőségű fénykép", "1 öltözet", "1 stúdió beállítás", "1 modell"] },
+      { title: "Közepes Glamour Fotózás Csomag", description: "jó választás egy glamour, boudoir, vagy akt fotózáshoz", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "akár 3 öltözet", "akár 3 stúdió beállítás", "1-2 modell"] },
+      { title: "Nagy Glamour Fotózás Csomag", description: "kreatív, látványos és nagyszabású ötletekhez, vagy csak sok képhez", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "akár 3 öltözet", "akár 3 stúdió beállítás", "1 modelltől csoportokig"] }
+    ]
+  },
+  models: {
+    en: [
+      { title: "Model Polaroids / Digitals Photoshoot Package", description: "the first step in your modelling career", price: "39.000. HUF", features: ["4 standard model digital picture", "standard pdf model polaroid card", "single outfit", "single studio setting", "studio rent included"] },
+      { title: "Model Portfolio Starter Photoshoot Package", description: "start your modelling carreer with a couple of strong shots that shows you are suitable for different styles", price: "79.000. HUF", features: ["4 standard model digital picture", "standard pdf model polaroid card", "additional 15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "studio rent included"] },
+      { title: "Complete Model Portfolio Photoshoot Package", description: "present yourself in the most professional way with a printed lookbook and a diverse portfolio", price: "149.000. HUF", features: ["4 standard model digital picture", "standard pdf model polaroid card", "enough pictures to fill your 30 page lookbook", "up to 3 outfits", "up to 3 studio settings", "studio rent included"] }
+    ],
+    hu: [
+      { title: "Modell Polaroid / Digitals Fotózás Csomag", description: "modellkarriered első lépése", price: "39.000. HUF", features: ["4 standard modell digitals kép", "standard pdf modell polaroid kártya", "1 outfit", "1 stúdióbeállítás", "stúdióbérlet"] },
+      { title: "Modell Portfólió Starter Fotózás Csomag", description: "kezdd el modellkarriered néhány erős képpel, amelyek megmutatják, hogy különböző stílusokhoz is alkalmas vagy", price: "79.000. HUF", features: ["4 standard modell digitals kép", "standard pdf modell polaroid kártya", "további 15 magazin minőségű fénykép", "akár 3 outfit", "akár 3 stúdióbeállítás", "stúdióbérlet"] },
+      { title: "Teljes Modell Portfólió Fotózás Csomag", description: "mutasd be magad a legprofesszionálisabb módon nyomtatott lookbookkal és sokszínű portfólióval", price: "149.000. HUF", features: ["4 standard modell digitals kép", "standard pdf modell polaroid kártya", "elegendő kép egy 30 oldalas lookbook kitöltéséhez", "akár 3 outfit", "akár 3 stúdióbeállítás", "stúdióbérlet"] }
+    ]
+  },
+  pet: {
+    en: [
+      { title: "Small Pet Photoshoot Package", description: "get a couple of nice pictures about your pet in the studio", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "one pet"] },
+      { title: "Medium Pet Photoshoot Package", description: "get a photograph together with your pet(s)", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "multiple pets or together with owner"] },
+      { title: "Large Pet Photoshoot Package", description: "creative, powerful pictures, crazy concepts or just lots of pictures", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "many pets or group shots"] }
+    ],
+    hu: [
+      { title: "Kis Háziállat Fotózási Csomag", description: "készíttes néhány szép képet kedvencedről a stúdióban", price: "39.000. HUF", features: ["stúdió bérleti díj", "6 magazinminőségű fénykép", "1 stúdióbeállítás", "1 háziállat"] },
+      { title: "Közepes Háziállat Fotózási Csomag", description: "készíttes közös képeket kedvenceddel vagy több kisállattal", price: "59.000. HUF", features: ["stúdió bérleti díj", "15 magazinminőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "több háziállat vagy közös fotózás a gazdival"] },
+      { title: "Nagy Háziállat Fotózási Csomag", description: "kreatív képek, különleges koncepciók vagy egyszerűen sok fotó", price: "79.000. HUF", features: ["stúdió bérleti díj", "21 magazinminőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "több háziállat vagy közös fotózás a gazdival, akár csoportosan"] }
+    ]
+  }
 };
 
 export const commonUpgrades = {

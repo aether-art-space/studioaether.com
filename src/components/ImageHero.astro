@@ -1,0 +1,44 @@
+---
+type ImageHeroVariant = "home" | "selfie" | "christmas";
+
+interface HeroImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+interface HeroIcon {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+interface Props {
+  variant: ImageHeroVariant;
+  title: string;
+  headingId: string;
+  image: HeroImage;
+  icon?: HeroIcon;
+  subheading?: string;
+  lead?: string;
+}
+
+const { variant, title, headingId, image, icon, subheading, lead } = Astro.props;
+const lines = title.split("\n");
+---
+
+<section class={`image-hero image-hero--${variant}`} aria-labelledby={headingId}>
+  <div class="image-hero__image-wrap">
+    <img class="image-hero__image" src={image.src} alt={image.alt} width={image.width} height={image.height} fetchpriority="high" decoding="async" />
+    <div class="image-hero__veil" aria-hidden="true"></div>
+    {icon && <img class="image-hero__icon" src={icon.src} alt={icon.alt} width={icon.width} height={icon.height} decoding="async" />}
+    <div class="image-hero__content">
+      <h1 id={headingId}>{lines.map((line) => <span>{line}</span>)}</h1>
+      {subheading && <h2>{subheading}</h2>}
+      {lead && <p>{lead}</p>}
+      <slot />
+    </div>
+  </div>
+</section>

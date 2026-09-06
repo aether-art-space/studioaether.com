@@ -1,29 +1,37 @@
 ---
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   price: string;
-  features: string[];
+  features?: string[];
   includesLabel?: string;
   className?: string;
 }
 
 const {
   title,
-  description,
+  description = "",
   price,
-  features,
+  features = [],
   includesLabel,
   className = ""
 } = Astro.props;
+
+const isSimpleCard = !description && !includesLabel && features.length === 0;
 ---
 
-<article class={`price-card ${className}`.trim()}>
-  <h3>{title}</h3>
-  <p class="price-card__description">{description}</p>
-  <strong class="price-card__price">{price}</strong>
-  {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
-  <ul>
-    {features.map((feature) => <li>{feature}</li>)}
-  </ul>
+<article class={`price-card ${isSimpleCard ? "price-card--simple" : ""} ${className}`.trim()}>
+  <header class="price-card__header">
+    <h3>{title}</h3>
+    {description && <p class="price-card__description">{description}</p>}
+  </header>
+  <div class="price-card__details">
+    <p class="price-card__price"><strong>{price}</strong></p>
+    {(includesLabel || features.length > 0) && <div class="price-card__features">
+      {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
+      <ul aria-label={includesLabel ?? "Package features"}>
+        {features.map((feature) => <li>{feature}</li>)}
+      </ul>
+    </div>}
+  </div>
 </article>

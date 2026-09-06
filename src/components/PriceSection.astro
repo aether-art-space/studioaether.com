@@ -1,0 +1,46 @@
+---
+import PriceCard from "./PriceCard.astro";
+
+interface PriceItem {
+  title: string;
+  description?: string;
+  price: string;
+  features?: string[];
+}
+
+interface Props {
+  heading?: string;
+  packages: PriceItem[];
+  lead?: string;
+  note?: string;
+  includesLabel?: string;
+  headingId?: string;
+  ariaLabel?: string;
+  className?: string;
+  gridClassName?: string;
+}
+
+const {
+  heading,
+  packages,
+  lead,
+  note,
+  includesLabel,
+  headingId = "price-section-title",
+  ariaLabel = "Pricing",
+  className = "",
+  gridClassName = ""
+} = Astro.props;
+
+const sectionClass = ["service-section", "service-section--packages", "price-section", className].filter(Boolean).join(" ");
+const gridClass = ["service-package-grid", gridClassName].filter(Boolean).join(" ");
+---
+
+<section class={sectionClass} aria-labelledby={heading ? headingId : undefined} aria-label={!heading ? ariaLabel : undefined}>
+  {note && <p class="service-note">{note}</p>}
+  {heading && <h2 id={headingId}>{heading}</h2>}
+  {lead && <p>{lead}</p>}
+  <div class={gridClass}>
+    {packages.map((packageItem) => <PriceCard title={packageItem.title} description={packageItem.description} price={packageItem.price} includesLabel={includesLabel} features={packageItem.features} />)}
+  </div>
+</section>
