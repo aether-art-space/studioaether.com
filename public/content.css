@@ -328,7 +328,7 @@
 .collection-gallery__item { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
 .collection-gallery__item--static { cursor: default; }
 .collection-gallery img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform 320ms ease; }
-.collection-gallery__figure--captioned::after { content: ""; position: absolute; inset: 35% 0 0; border-radius: inherit; background: linear-gradient(to bottom, rgb(0 0 0 / 0%), rgb(0 0 0 / 78%)); pointer-events: none; }
+.collection-gallery__figure--captioned::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--image-bottom-gradient); pointer-events: none; }
 .collection-gallery figcaption { margin-top: 14px; text-align: left; font: 400 16px/20px var(--serif); }
 .collection-gallery__figure--captioned figcaption { position: absolute; inset: auto 0 0; z-index: 1; margin: 0; padding: 27px 12px 11px; color: var(--paper); font: var(--text-small); line-height: 1.25; }
 .collection-gallery figcaption strong { display: block; font: inherit; font-weight: 400; }
@@ -393,23 +393,37 @@
 .artist-profiles { padding: 48px 24px 62px; text-align: center; }
 .artist-profiles > h2 { margin: 0 0 37px; font: var(--font-subsection-title); }
 .artist-profiles__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; width: min(1415px, 100%); margin: 0 auto; }
-.artist-profiles--photographers .artist-profiles__grid { grid-template-columns: repeat(2, 368px); justify-content: center; }
+.artist-profiles--photographers .artist-profiles__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; width: min(980px, 100%); justify-content: center; }
 .artist-profiles--stylists .artist-profiles__grid { grid-template-columns: minmax(0, 686px); justify-content: center; }
 .artist-profile { min-width: 0; background: #f5f5f5; }
-.artist-profile__image { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
-.artist-profile__image img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(.45); transition: filter 220ms ease; }
-.artist-profile__image:hover img, .artist-profile__image:focus-visible img { filter: grayscale(0); }
-.artist-profile__image:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.artist-profiles--photographers .artist-profile { border-radius: 20px; overflow: hidden; }
+.artist-profile__image { position: relative; width: 100%; }
+.artist-profile__image::after { position: absolute; z-index: 1; inset: 0; background: var(--image-bottom-gradient); content: ""; pointer-events: none; }
+.artist-profile__image img { display: block; width: 100%; aspect-ratio: 1; border-radius: 0; object-fit: cover; object-position: center top; filter: grayscale(.45); }
+.artist-profile__image-copy { position: absolute; right: 0; bottom: 25px; left: 38px; z-index: 2; color: var(--paper); text-align: left; text-shadow: 0 1px 10px rgb(0 0 0 / 22%); }
+.artist-profile__image-name { margin: 0; color: inherit; font: var(--font-card-title); text-align: left; }
+.artist-profile__image-role { margin: 2px 0 0; color: inherit; font: var(--text-small); }
+.artist-profile__image-role strong { font: inherit; font-weight: 700; }
 .artist-profile__body { min-height: 309px; padding: 26px 18px 21px; }
-.artist-profile__body h3 { margin: 0; font: var(--font-card-title); }
+.artist-profiles--photographers .artist-profile { display: flex; flex-direction: column; }
+.artist-profiles--photographers .artist-profile__body { display: flex; min-height: 0; flex: 1 1 auto; flex-direction: column; text-align: left; }
 .artist-profile__body p { margin: 12px 0 0; font: var(--text-small); }
-.artist-profile__body .artist-profile__role { font-size: 17px; }
+.artist-profile__specialties { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.artist-profile__specialties span { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; font: var(--text-small); }
+.artist-profiles--photographers .artist-profile__body .artist-profile__description { margin-top: 16px; }
 .artist-profile__body strong { display: block; margin-top: 18px; font: 400 18px/1.15 var(--serif); }
 .artist-profile__body .text-link { display: inline-block; margin-top: 19px; font-weight: 700; }
-.artist-profile__more { display: block; margin-top: 22px; padding: 10px 8px; border: 1px solid var(--ink); font: var(--text-small); }
+.artist-profile__links { display: flex; min-height: 32px; align-items: center; gap: 18px; margin-top: 22px; margin-bottom: 24px; }
+.artist-profile__website, .artist-profile__website-placeholder { font: var(--text-small); }
+.artist-profile__website { margin-top: 0 !important; }
+.artist-profile__socials { position: absolute; right: 29px; bottom: 25px; z-index: 2; display: flex; align-items: center; gap: 17px; }
+.artist-profile__social { display: inline-flex; align-items: center; justify-content: center; color: var(--paper); }
+.artist-profile__social svg { display: block; }
+.artist-profile__social:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
+.artist-profile__more { width: 100%; min-width: 0; margin-top: auto; }
 .artist-profile__gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; }
 .artist-profile__gallery-item { display: block; min-width: 0; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
-.artist-profile__gallery-item img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.artist-profile__gallery-item img { display: block; width: 100%; aspect-ratio: 1; border-radius: 0; object-fit: cover; }
 .artist-note { width: min(980px, calc(100% - 48px)); margin: 0 auto 48px; text-align: center; font: var(--text-body); }
 .artist-contact { padding: 72px 24px; background: var(--ink); color: var(--paper); text-align: center; }
 .artist-contact h2 { width: min(600px, 100%); margin: 0 auto 26px; font: 400 38px/1.1 var(--serif); }
@@ -430,9 +444,14 @@
   .artist-profiles > h2 { margin-bottom: 28px; font-size: 32px; }
   .artist-profiles__grid, .artist-profiles--photographers .artist-profiles__grid, .artist-profiles--stylists .artist-profiles__grid { grid-template-columns: 1fr; width: 100%; }
   .artist-profile__body { min-height: 0; padding: 24px 18px 22px; }
-  .artist-profile__body h3 { font-size: 25px; }
+  .artist-profiles--photographers .artist-profile__body { min-height: 0; padding: 24px 18px 22px; }
+  .artist-profile__image-copy { bottom: 15px; left: 22px; }
   .artist-profile__body p { font: 400 15px/22.5px var(--sans); }
   .artist-profile__body .artist-profile__role { font-size: 16px; }
+  .artist-profiles--photographers .artist-profile__body .artist-profile__description { margin-top: 12px; }
+  .artist-profile__links { margin-top: 24px; margin-bottom: 18px; }
+  .artist-profile__socials { right: 17px; bottom: 15px; gap: 12px; }
+  .artist-profile__social svg { width: 28px; height: 28px; }
   .artist-profile__gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .artist-note { width: calc(100% - 36px); margin-bottom: 38px; font: 400 15px/22.5px var(--sans); }
   .artist-contact { padding: 58px 18px; }
@@ -596,7 +615,7 @@
 .studio-backdrops__grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 18px; width: min(1522px, 100%); margin: 70px auto 0; }
 .studio-backdrops figure { position: relative; min-width: 0; margin: 0; overflow: hidden; border-radius: 10px; text-align: left; }
 .studio-backdrops figure img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; outline: 1px solid rgba(0, 0, 0, .16); outline-offset: -1px; }
-.studio-backdrops figure::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(to bottom, rgb(0 0 0 / 0%) 44%, rgb(0 0 0 / 18%) 68%, rgb(0 0 0 / 78%) 100%); pointer-events: none; }
+.studio-backdrops figure::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--image-bottom-gradient); pointer-events: none; }
 .studio-backdrops figcaption { position: absolute; inset: auto 0 0; z-index: 1; margin: 0; padding: 27px 12px 11px; color: var(--paper); font: var(--text-small); line-height: 1.25; }
 .info-box { display: flex; align-items: flex-start; gap: 14px; padding: 18px 24px; border: 1px solid rgb(0 0 0 / 12%); border-radius: 10px; background: rgb(0 0 0 / 2%); }
 .info-box__icon { flex: 0 0 auto; margin-top: 2px; }
