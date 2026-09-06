@@ -53,8 +53,8 @@ button, .button, .mobile-nav-book { border-radius: 5px; }
 .button--secondary:hover { box-shadow: 0 0 0 3px rgb(186 243 230 / 22%), 0 10px 24px rgb(186 243 230 / 50%); }
 .button--secondary:active { box-shadow: 0 0 0 2px rgb(186 243 230 / 18%), 0 4px 12px rgb(186 243 230 / 38%); }
 .button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-.site-header { height: 92px; background: var(--paper); }
-.site-header__inner { max-width: 1158px; height: 100%; margin: 0 auto; display: grid; grid-template-columns: 163px 1fr; align-items: center; gap: 0; }
+.site-header { position: sticky; top: 0; z-index: 30; height: 92px; background: rgb(255 255 255 / 88%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.site-header__inner { width: 100%; max-width: none; height: 100%; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 163px 1fr; align-items: center; gap: 0; }
 .brand { display: block; width: 163px; height: 92px; }
 .brand img { display: block; width: 163px; height: 92px; object-fit: contain; }
 .header-interactive { min-width: 0; display: grid; grid-template-columns: 1fr auto; align-items: center; }
