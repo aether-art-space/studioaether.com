@@ -393,6 +393,110 @@ export const equipmentImages = {
   ]
 };
 
+const equipmentCaption = (title, detail = "", price = "") => ({ title, detail, price });
+export const equipmentCaptions = {
+  en: {
+    lightSources: [
+      equipmentCaption("Godox DP600iii", "flash strobe"),
+      equipmentCaption("2x Godox DP400iii", "flash strobe"),
+      equipmentCaption("Godox MS300", "flash strobe"),
+      equipmentCaption("Nanlite FS-300C", "RGB LED constant light lamp"),
+      equipmentCaption("2x Godox SL200ii", "LED constant light lamp")
+    ],
+    modifiers: [
+      equipmentCaption("Beauty Dish", "with diffuser & honeycomb grid"),
+      equipmentCaption("Gobo", "with lots of masks and filters"),
+      equipmentCaption("Large Octabox", "150cm with diffuser"),
+      equipmentCaption("Medium Octabox", "with diffuser & grid"),
+      equipmentCaption("Medium Softbox x2", "with diffuser"),
+      equipmentCaption("Strip x2", "with diffuser & grid"),
+      equipmentCaption("Snoot", "with honeycomb grid"),
+      equipmentCaption("Reflector Dish x4", "with color gels & barn door"),
+      equipmentCaption("Reflector Sheets", "in various sizes"),
+      equipmentCaption("Reflector Accessories", "color gels"),
+      equipmentCaption("Reflective Umbrella", "-"),
+      equipmentCaption("Translucent Umbrella", "-")
+    ],
+    other: [
+      equipmentCaption("Tripods & stands", "free"),
+      equipmentCaption("Wind machine", "free"),
+      equipmentCaption("Fog machine", "5000 HUF / hour"),
+      equipmentCaption("Tools for prep", "free"),
+      equipmentCaption("Blacklight", "free")
+    ],
+    cameras: [
+      equipmentCaption("Sony A7III", "full frame mirrorless digital camera", "9000 HUF"),
+      equipmentCaption("Canon 6D MKII", "full frame mirror digital camera", "9000 HUF"),
+      equipmentCaption("Leica R3 - Safari E,", "35mm film mirror camera", "9000 HUF"),
+      equipmentCaption("Hasselblad 500C", "medium format camera", "9000 HUF"),
+      equipmentCaption("Nikon EM", "35mm film mirror camera", "5000 HUF"),
+      equipmentCaption("Chinon CE-4", "35mm film mirror camera", "5000 HUF"),
+      equipmentCaption("Yashica FX-100", "35mm film mirror camera", "5000 HUF"),
+      equipmentCaption("Yashica Lynx 5000E", "35mm film rangefinder camera", "5000 HUF"),
+      equipmentCaption("FED2", "35mm film rangefinder camera", "5000 HUF"),
+      equipmentCaption("Olympus MJU2", "35mm film compact camera", "5000 HUF"),
+      equipmentCaption("Super 8", "8mm film videocamera", "9000 HUF")
+    ],
+    lenses: [
+      equipmentCaption("Nikon mount lenses", "28mm f/1.8, 85mm f/1.8, 50mm f/1.8, and other lenses."),
+      equipmentCaption("M42 mount lenses", "28mm f/2.8, 50mm f/1.8, 135mm f/3.5, and other lenses."),
+      equipmentCaption("Pentax K mount lenses", "50mm 1.7 and Zoom Lens"),
+      equipmentCaption("Canon mount lenses", "Zoom Lens"),
+      equipmentCaption("Canon mount lenses", "Sigma 85mm\nCanon to Sony converter")
+    ]
+  },
+  hu: {
+    lightSources: [
+      equipmentCaption("Godox DP600iii", "villanó vaku"),
+      equipmentCaption("2x Godox DP400iii", "villanó vaku"),
+      equipmentCaption("Godox MS300", "villanó vaku"),
+      equipmentCaption("Nanlite FS-300C", "RGB LED - folyamatos fényű"),
+      equipmentCaption("2x Godox SL200ii", "LED - folyamatos fényű")
+    ],
+    modifiers: [
+      equipmentCaption("Beauty Dish", "diffúzorral és méhsejtráccsal"),
+      equipmentCaption("Gobo", "rengeteg maszkkal és filterrel"),
+      equipmentCaption("Nagy Octabox", "150cm-es diffúzorral"),
+      equipmentCaption("Közepes Octabox", "diffúzorral és ráccsal"),
+      equipmentCaption("Közepes Softbox - 2db", "diffúzorral"),
+      equipmentCaption("Strip- 2db", "diffúzorral és ráccsal"),
+      equipmentCaption("Snoot", "méhsejtráccsal"),
+      equipmentCaption("Reflektor- 4db", "színes fóliákkal és fényterelőkkel"),
+      equipmentCaption("Derítő", "különböző méretekben"),
+      equipmentCaption("Reflektor kiegészítők", "színes fóliák"),
+      equipmentCaption("Reflektív ernyő", "-"),
+      equipmentCaption("Áttetsző ernyő", "-")
+    ],
+    other: [
+      equipmentCaption("Tripodok és állványok", "ingyenes"),
+      equipmentCaption("Szélgép", "ingyenes"),
+      equipmentCaption("Ködgép", "5000 HUF / óra"),
+      equipmentCaption("Eszközök készülődéshez", "ingyenes"),
+      equipmentCaption("UV lámpa", "ingyenes")
+    ],
+    cameras: [
+      equipmentCaption("Sony A7III", "full frame mirrorless digitális fényképező", "9000 HUF"),
+      equipmentCaption("Canon 6D MKII", "full frame tükörreflexes digitális fényképező", "9000 HUF"),
+      equipmentCaption("Leica R3 - Safari E.", "35mm film kamera", "9000 HUF"),
+      equipmentCaption("Hasselblad 500C", "középformátum", "9000 HUF"),
+      equipmentCaption("Nikon EM", "35mm-es kamera", "5000 HUF"),
+      equipmentCaption("Chinon CE-4", "35mm-es kamera", "5000 HUF"),
+      equipmentCaption("Yashica FX-100", "35mm-es kamera", "5000 HUF"),
+      equipmentCaption("Yashica Lynx 5000E", "35mm-es rangefinder kamera", "5000 HUF"),
+      equipmentCaption("FED2", "35mm-es kamera", "5000 HUF"),
+      equipmentCaption("Olympus MJU2", "kompakt 35mm-es", "5000 HUF"),
+      equipmentCaption("Super 8", "8mm film kamera", "9000 HUF")
+    ],
+    lenses: [
+      equipmentCaption("Nikon bajonettes objektívek", "28mm f/1.8, 85mm f/1.8, 50mm f/1.8, és más objektívek."),
+      equipmentCaption("M42 bajonettes lencsék", "28mm f/2.8, 50mm f/1.8, 135mm f/3.5, és más objektívek"),
+      equipmentCaption("Pentax K bajonettes objektívek", "50mm 1.7 és zoom objektív"),
+      equipmentCaption("Canon bajonettes lencsék", "Zoom objektív"),
+      equipmentCaption("Canon objektívek", "Sigma 85mm\nCanon to Sony konverter")
+    ]
+  }
+};
+
 export const equipmentContent = {
   en: {
     heroHeading: "equipment",

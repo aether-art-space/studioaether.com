@@ -1,6 +1,6 @@
 ---
 import { faqGroupsFor, introFor, site, localizedNav } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, propsContent, propsImages, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, packagesImages, commonPhotoPackages, commonUpgrades, serviceContent, serviceImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, packagesImages, commonPhotoPackages, commonUpgrades, serviceContent, serviceImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
 import BookingFooter from "./BookingFooter.astro";
 
 const { page } = Astro.props;
@@ -14,6 +14,7 @@ const isProps = page.path === "/props" || page.path === "/hu/props";
 const collectionPage = isEquipment ? equipmentContent[hu ? "hu" : "en"] : isProps ? propsContent[hu ? "hu" : "en"] : null;
 const collectionImages = isEquipment ? equipmentImages : propsImages;
 const collectionImageMap = collectionImages as Record<string, Array<{ src: string; alt: string; width?: number; height?: number }>>;
+const collectionCaptionMap = (isEquipment ? equipmentCaptions[hu ? "hu" : "en"] : null) as Record<string, Array<{ title: string; detail: string; price: string }>> | null;
 const collectionSections = collectionPage?.sections.map((section) => ({
   heading: section.heading,
   subheading: "subheading" in section ? section.subheading : "",
@@ -280,7 +281,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         </div>
         {section.galleries.map((gallery) => <div class="collection-gallery-wrap">
           <div class={`collection-gallery collection-gallery--${gallery.imageKey}`}>
-            {collectionImageMap[gallery.imageKey].map((image) => <figure><button class="collection-gallery__item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button></figure>)}
+            {collectionImageMap[gallery.imageKey].map((image, imageIndex) => { const caption = collectionCaptionMap?.[gallery.imageKey]?.[imageIndex]; return <figure><button class="collection-gallery__item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} aria-label={hu ? "Kép megnyitása" : "Open image"}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></button>{caption && <figcaption><strong>{caption.title}</strong>{caption.detail && <small>{caption.detail}</small>}{caption.price && <b>{caption.price}</b>}</figcaption>}</figure>; })}
           </div>
           {gallery.note && <div class="collection-gallery__note"><p>{gallery.note[0]}</p>{gallery.note[1] && <strong>{gallery.note[1]}</strong>}</div>}
         </div>)}
