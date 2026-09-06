@@ -17,7 +17,7 @@ const home = homeContent[hu ? "hu" : "en"];
     return <article class:list={["home-booking-card", { "home-booking-card--contact": index === 2 }]}>
       <h3>{title}</h3>
       {index === 2 ? <div class="home-booking-card__contact-copy">
-        <p>{copy}</p>
+        <p><strong>{copy.slice(0, copy.indexOf("?") + 1)}</strong>{copy.slice(copy.indexOf("?") + 1)}</p>
         <p>{hu ? "Írj nekünk:" : "Write us on"}</p>
         <a href={`mailto:${site.email}?subject=${hu ? "contact%20from%20aether%20footer" : "aether%20-%20footer"}`}>{site.email}</a>
       </div> : <>

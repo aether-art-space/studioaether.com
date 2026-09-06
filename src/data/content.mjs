@@ -48,7 +48,7 @@ export const homeContent = {
     bookingLead: "Book our Budapest photo studio for your photoshoot, workshop or anything else:",
     bookingCards: [
       ["Photo Studio", "Book the studio for your photoshoot, workshop, or creative project.", "Book the Photo Studio"],
-      ["Selfie Studio", "Shoot without a photographer! Book the selfie studio and take professional photos for yourself.", "Book the Selfie Studio"],
+      ["Selfie Studio", "Shoot without a photographer! Book the selfie studio for yourself.", "Book the Selfie Studio"],
       ["Contact Us", "Need a photographer, make-up artist, model, or stylist? Tell us what you need and we’ll help you put the right team together.", "Send us a Message via Email"]
     ]
   },
