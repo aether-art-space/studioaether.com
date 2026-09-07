@@ -25,6 +25,7 @@ type AetherHeaderNavigationProps = {
   mentoringLabel: string;
   navigationLabel: string;
   bookingExternalHref: string;
+  selfieBookingExternalHref: string;
   homeHref: string;
 };
 
@@ -39,6 +40,7 @@ export default function AetherHeaderNavigation({
   mentoringLabel,
   navigationLabel,
   bookingExternalHref,
+  selfieBookingExternalHref,
   homeHref
 }: AetherHeaderNavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -145,7 +147,20 @@ export default function AetherHeaderNavigation({
                 </Accordion.Root>
                 <a className="mobile-nav-link mobile-nav-link--strong" href={mentoringHref}>{mentoringLabel}</a>
                 <a className="mobile-nav-link mobile-nav-link--strong" href={bookingHref}>{languageLabel === "HU" ? "ÁRAK" : "PRICING"}</a>
-                <a className="mobile-nav-book" data-gtag-event="booking_click" data-gtag-location="mobile-navigation" href={bookingExternalHref}>{languageLabel === "HU" ? "foglalás" : "Book Now"}</a>
+                <a className="mobile-nav-book" data-gtag-event="booking_click" data-gtag-location="mobile-navigation" href={bookingExternalHref}>{languageLabel === "HU" ? "fotóstúdió foglalása" : "book the photostudio"}</a>
+                <a className="mobile-nav-book" data-gtag-event="selfie_booking_click" data-gtag-location="mobile-navigation" href={selfieBookingExternalHref}>{languageLabel === "HU" ? "szelfi stúdió foglalása" : "book the selfie studio"}</a>
+                <button
+                  className="mobile-nav-book mobile-nav-book--secondary"
+                  data-gtag-event="email_click"
+                  data-gtag-location="mobile-navigation"
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    window.setTimeout(() => document.querySelector<HTMLDialogElement>("[data-site-contact-modal]")?.showModal(), 0);
+                  }}
+                >
+                  {languageLabel === "HU" ? "írj nekünk" : "message us"}
+                </button>
               </nav>
             </Dialog.Content>
           </Dialog.Portal>

@@ -250,12 +250,12 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         </div>
         <aside class="studio-showcase__rent">
           <h3>{hu ? "Stúdióbérlés" : "Studio Rent"}</h3>
-          <p>{hu ? <>7.000 HUF<br />/ órától</> : <>starting from<br />7.000. HUF / hour</>}</p>
+          <p>{hu ? "7.000 HUF / órától" : "starting from 7.000. HUF / hour"}</p>
           <a class="button button--dark studio-showcase__book" data-gtag-event="booking_click" data-gtag-location="home-studio-showcase" href={site.bookingUrl}>{hu ? "foglald le a stúdiót" : "book the photostudio"}</a>
         </aside>
       </div>
     </section>
-    <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} variant="home" />
+    <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} />
     <section class="beginner-section" aria-labelledby="beginner-title">
       <div class="beginner-section__main">
         <h2 id="beginner-title">{home.beginnerHeading}</h2>
@@ -736,6 +736,8 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   const price = lightbox?.querySelector<HTMLElement>("[data-lightbox-price]");
   const link = lightbox?.querySelector<HTMLAnchorElement>("[data-lightbox-link]");
   const counter = lightbox?.querySelector<HTMLElement>("[data-lightbox-counter]");
+  const previous = lightbox?.querySelector<HTMLButtonElement>("[data-lightbox-previous]");
+  const next = lightbox?.querySelector<HTMLButtonElement>("[data-lightbox-next]");
   let galleryItems: HTMLElement[] = [];
   let activeIndex = 0;
   let lastTrigger: HTMLElement | null = null;
@@ -755,6 +757,12 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     if (!element) return;
     element.textContent = value;
     element.hidden = !value;
+  };
+
+  const updateNavigation = () => {
+    const hidden = galleryItems.length < 2;
+    if (previous) previous.hidden = hidden;
+    if (next) next.hidden = hidden;
   };
 
   const metadataFor = (item: HTMLElement) => {
@@ -809,12 +817,12 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       }
     }
     if (counter) counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(galleryItems.length).padStart(2, "0")}`;
+    updateNavigation();
   };
 
   const closeLightbox = () => {
     if (!(lightbox instanceof HTMLDialogElement)) return;
     lightbox.close();
-    lastTrigger?.focus();
   };
 
   document.querySelectorAll<HTMLElement>("[data-model-card]").forEach((card) => {
@@ -854,12 +862,14 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     const matchingIndex = requestedSrc ? galleryItems.findIndex((galleryItem) => galleryItem.dataset.gallerySrc === requestedSrc) : -1;
     showImage(matchingIndex >= 0 ? matchingIndex : 0);
     lightbox.showModal();
+    lightbox.querySelector<HTMLButtonElement>("[data-lightbox-close]")?.focus();
   }));
 
   lightbox?.querySelector("[data-lightbox-close]")?.addEventListener("click", closeLightbox);
-  lightbox?.querySelector("[data-lightbox-previous]")?.addEventListener("click", () => showImage((activeIndex - 1 + galleryItems.length) % galleryItems.length));
-  lightbox?.querySelector("[data-lightbox-next]")?.addEventListener("click", () => showImage((activeIndex + 1) % galleryItems.length));
-  lightbox?.addEventListener("click", (event) => { if (event.target === lightbox) lightbox.close(); });
+  previous?.addEventListener("click", () => showImage((activeIndex - 1 + galleryItems.length) % galleryItems.length));
+  next?.addEventListener("click", () => showImage((activeIndex + 1) % galleryItems.length));
+  lightbox?.addEventListener("click", (event) => { if (event.target === lightbox) closeLightbox(); });
+  lightbox?.addEventListener("close", () => window.setTimeout(() => lastTrigger?.focus(), 0));
   lightbox?.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       event.preventDefault();

@@ -73,7 +73,10 @@ const { images = [], label = "Image gallery", previousLabel = "Previous images",
       const scrollRatio = oldMaxScroll > 2 ? viewport.scrollLeft / oldMaxScroll : 0;
       const pageWidth = viewport.clientWidth;
       const itemGap = 5;
-      const galleryHeight = Math.max(320, Math.min(560, pageWidth * 0.52));
+      const isMobile = window.matchMedia("(max-width: 760px)").matches;
+      const galleryHeight = isMobile
+        ? Math.max(480, Math.min(840, pageWidth * 0.78))
+        : Math.max(320, Math.min(560, pageWidth * 0.52));
       const targetColumnWidth = Math.max(150, Math.min(300, pageWidth * 0.22));
       let cursor = 0;
       let columnIndex = 0;

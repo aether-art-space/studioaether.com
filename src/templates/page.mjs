@@ -63,7 +63,7 @@ const renderHome = (page) => {
         <p class="eyebrow">${hu ? "budapesti fotóstúdió" : "photo studio in Budapest"}</p>
         <h1>${escapeHtml(page.h1)}</h1>
         <p class="hero-lead">${escapeHtml(introFor(page))}</p>
-        <div class="actions"><a class="button" data-gtag-event="booking_click" data-gtag-location="home" href="${site.bookingUrl}">${hu ? "stúdió foglalása" : "book the studio"}</a><a class="text-link" href="${hu ? "/hu/studio" : "/studio"}">${hu ? "többet a stúdióról" : "more about the studio"}</a></div>
+        <div class="actions"><a class="button" data-gtag-event="booking_click" data-gtag-location="home" href="${site.bookingUrl}">${hu ? "stúdió foglalása" : "book the studio"}</a><a class="text-link" href="${hu ? "/hu/studio" : "/studio"}">${hu ? "bővebben a stúdióról" : "more about the studio"}</a></div>
       </div>
       <div class="hero-mark" aria-hidden="true"><span>aether</span><i>art space</i></div>
     </section>

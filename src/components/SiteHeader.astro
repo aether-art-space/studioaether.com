@@ -14,12 +14,13 @@ const navigationGroups = groups.map((group) => ({
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href={hu ? "/hu" : "/"} aria-label={site.name}>
-      <ResponsiveImage image={{ src: "/images/wix/jpg/logo-full.jpg", alt: site.name, width: 326, height: 184 }} role="logo" loading="eager" />
+      <ResponsiveImage image={{ src: "/images/generated/wix/jpg/logo-full-transparent.png", alt: site.name, width: 326, height: 184 }} role="logo" loading="eager" />
     </a>
     <AetherHeaderNavigation
       client:load
       bookingHref={localizedPath("/booking", page.language)}
       bookingExternalHref={site.bookingUrl}
+      selfieBookingExternalHref={site.selfieBookingUrl}
       homeHref={sitePath(hu ? "/hu" : "/")}
       bookingLabel={hu ? "árak és foglalás" : "prices & booking"}
       groups={navigationGroups}

@@ -79,7 +79,7 @@ export const homeContent = {
     studioShowcaseTitle: "tér az alkotáshoz",
     studioShowcaseIntro: "Akár profi fotós, akár amatőr vagy, aki olyan helyet keres, ahol megvalósíthatod elképzeléseid, stúdiónk a tökéletes hely számodra.",
     studioShowcaseBody: "Fotóstúdiónkat úgy alakítottuk ki, hogy a teljes alkotási folyamatot támogassa és megkönnyítse. Találsz nálunk projektedhez ajánlott modelleket, ruhákat, kiegészítőket és természetesen szükséges technikai eszközöket, mint vakuk, fényformálók és kamerák.",
-    studioShowcaseCta: "többet a stúdióról",
+    studioShowcaseCta: "bővebben a stúdióról",
     features: [
       ["tágas stúdiótér", "béreld ki stúdiónkat projektedhez vagy workshophoz a legjobb áron Budapesten", "/hu/studio", "bővebben a stúdióról"],
       ["vakuk, kamerák és filmek", "próbálj ki egy új fényképezőgépet! Vakuk, digitális és analóg kamerák választékát kínáljuk helyben", "/hu/equipment", "nézd meg felszerelésünket"],

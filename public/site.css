@@ -127,8 +127,10 @@ button, .button, .mobile-nav-book { border-radius: 5px; }
 .mobile-nav-accordion__trigger:hover,
 .mobile-nav-accordion__content a:hover { background: rgb(255 255 255 / 8%); color: var(--paper); text-decoration: none; }
 .mobile-nav-links a:focus-visible, .mobile-nav-accordion__trigger:focus-visible, .mobile-nav-close:focus-visible, .mobile-nav-trigger:focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; }
-.mobile-nav-book { display: flex; width: 100%; height: 40px; margin-top: 20px; align-items: center; justify-content: center; background: var(--paper); color: var(--ink); font: 700 15px/18px var(--sans); text-decoration: none; transition: background-color 160ms ease, color 160ms ease; }
+.mobile-nav-book { display: flex; width: 100%; height: 40px; margin-top: 20px; align-items: center; justify-content: center; border: 1px solid transparent; background: var(--paper); color: var(--ink); font: 700 15px/18px var(--sans); text-decoration: none; transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease; }
 .mobile-nav-book:hover, .mobile-nav-book:focus-visible { background: rgb(186 243 230); color: var(--ink); text-decoration: none; }
+.mobile-nav-book--secondary { border-color: rgb(245 245 245 / 88%); background: transparent; color: var(--paper); }
+.mobile-nav-book--secondary:hover, .mobile-nav-book--secondary:focus-visible { border-color: rgb(186 243 230); background: rgb(255 255 255 / 8%); color: var(--paper); }
 @keyframes mobile-nav-fade { from { opacity: 0; } }
 @keyframes mobile-nav-slide { from { transform: translateX(100%); } }
 @keyframes mobile-nav-accordion-open { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
@@ -218,6 +220,7 @@ main { width: 100%; }
   }
   .brand {
     position: absolute;
+    z-index: 1;
     top: 2px;
     left: 50%;
     width: 140px;
@@ -242,7 +245,9 @@ main { width: 100%; }
     margin-top: 13px;
     padding: 0 16px;
   }
-  .language-options { width: 82px; }
+  .language-menu { margin-left: 18px; }
+  .language-menu::after { top: 58px; }
+  .language-options { top: 66px; width: 82px; }
   .mobile-nav-trigger {
     position: absolute;
     top: 13px;
