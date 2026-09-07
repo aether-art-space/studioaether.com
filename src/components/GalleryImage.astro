@@ -1,0 +1,42 @@
+---
+import { resolveImage } from "../lib/images.mjs";
+import ResponsiveImage from "./ResponsiveImage.astro";
+
+interface Props {
+  image: { src?: string; source?: string; alt?: string; width?: number; height?: number };
+  index?: number;
+  label: string;
+  className?: string;
+  imageClassName?: string;
+  title?: string;
+  description?: string;
+  price?: string;
+  link?: string;
+  linkLabel?: string;
+  objectPosition?: string;
+}
+
+const { image, index, label, className = "", imageClassName = "", title, description, price, link, linkLabel, objectPosition } = Astro.props;
+const asset = resolveImage(image, "gallery");
+---
+<button
+  class={className}
+  type="button"
+  data-gallery-image
+  data-gallery-index={index}
+  data-gallery-src={asset.lightbox.fallback}
+  data-gallery-avif={asset.lightbox.avif}
+  data-gallery-webp={asset.lightbox.webp}
+  data-gallery-fallback={asset.lightbox.fallback}
+  data-gallery-width={asset.lightbox.width}
+  data-gallery-height={asset.lightbox.height}
+  data-gallery-alt={image.alt}
+  data-gallery-title={title}
+  data-gallery-description={description}
+  data-gallery-price={price}
+  data-gallery-link={link}
+  data-gallery-link-label={linkLabel}
+  aria-label={label}
+>
+  <ResponsiveImage image={image} role="gallery" className={imageClassName} loading="lazy" objectPosition={objectPosition} />
+</button>

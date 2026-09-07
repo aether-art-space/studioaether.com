@@ -40,10 +40,11 @@ export const homeContent = {
       ["corporate\n& event", "/corporate-photography-budapest", "learn more"],
       ["business &\ncasual portrait", "/portrait-photography-budapest", "learn more"],
       ["fitness\n& yoga", "/fitness", "learn more"],
-      ["glamour &\nboudoir", "/glamour-boudoir-photography-budapest", "learn more"],
-      ["model digitals & portfolio", "/model-polaroids-budapest", "learn more"]
+      ["glamour\n& boudoir", "/glamour-boudoir-photography-budapest", "learn more"],
+      ["model digitals & portfolio", "/model-polaroids-budapest", "learn more"],
+      ["wedding\nphotography", "/wedding-photography", "learn more"]
     ],
-    packagesCopy: "photoshoots packages of all sizes starting from 39.000. HUF",
+    packagesCopy: "photoshoot packages of all sizes starting from 39.000. HUF",
     bookingHeading: "Book the Studio",
     bookingLead: "Book our Budapest photo studio for your photoshoot, workshop or anything else:",
     bookingCards: [
@@ -73,14 +74,14 @@ export const homeContent = {
   },
   hu: {
     eyebrow: "az új kedvenc fotóstudiód",
-    introHeading: "a studiótér az alkotási folyamat köré van tökéletesítve elejétől végéig",
+    introHeading: "a stúdiótér az alkotási folyamat köré van tökéletesítve elejétől végéig",
     introCopy: "Akár profi fotós, akár amatőr vagy, aki olyan helyet keres, ahol megvalósíthatod elképzeléseid, stúdiónk a tökéletes hely számodra. Fotóstúdiónkat úgy alakítottuk ki, hogy a teljes alkotási folyamatot támogassa és megkönnyítse. Találsz nálunk projektedhez ajánlott modelleket, ruhákat, kiegészítőket és természetesen szükséges technikai eszközöket, mint vakuk, fényformálók és kamerák.",
     studioShowcaseTitle: "tér az alkotáshoz",
     studioShowcaseIntro: "Akár profi fotós, akár amatőr vagy, aki olyan helyet keres, ahol megvalósíthatod elképzeléseid, stúdiónk a tökéletes hely számodra.",
     studioShowcaseBody: "Fotóstúdiónkat úgy alakítottuk ki, hogy a teljes alkotási folyamatot támogassa és megkönnyítse. Találsz nálunk projektedhez ajánlott modelleket, ruhákat, kiegészítőket és természetesen szükséges technikai eszközöket, mint vakuk, fényformálók és kamerák.",
     studioShowcaseCta: "többet a stúdióról",
     features: [
-      ["tágas studiótér", "béreld ki stúdiónkat projektedhez, vagy workshophoz a legjobb áron Budapesten", "/hu/studio", "bővebben a studióról"],
+      ["tágas stúdiótér", "béreld ki stúdiónkat projektedhez vagy workshophoz a legjobb áron Budapesten", "/hu/studio", "bővebben a stúdióról"],
       ["vakuk, kamerák és filmek", "próbálj ki egy új fényképezőgépet! Vakuk, digitális és analóg kamerák választékát kínáljuk helyben", "/hu/equipment", "nézd meg felszerelésünket"],
       ["különleges bútorok", "terünk fel van szerelkezve változatos bútorokkal, amelyeket felhasználhatsz a fotózásokhoz", "/hu/props", "nézd meg bútorainkat"],
       ["ruhák és kiegészítők", "egyedi ruhára, ékszerre van szükséged ötletedhez? Böngéssz a ruhatárunkból", "/hu/props", "válogass ruhatárunkból"],
@@ -100,27 +101,28 @@ export const homeContent = {
     artistsHeading: "alkotóink",
     artistsLead: "Rezidens művészeink segítenek megvalósítani az elképzeléseid stúdiónkban.",
     artists: [
-      ["fotósaink", "rezidens fotósok különféle stílusokban és műfajokban állnak rendelkezésedre a studióban", "/hu/photographers-budapest", "ismerd meg fotósainkat"],
+      ["fotósaink", "rezidens fotósok különféle stílusokban és műfajokban állnak rendelkezésedre a stúdióban", "/hu/photographers-budapest", "ismerd meg fotósainkat"],
       ["modelleink", "listánk megbízható modellekről, akikkel kedvezményes áron dolgozhatsz stúdiónkban", "/hu/models-budapest", "ismerd meg modelleinket"],
       ["sminkeseink", "házon belül kérhetsz sminkeset a fotózásodra. Sminkeseink különféle stílusokat fednek le", "/hu/make-up-artists", "ismerd meg sminkeseinket"],
       ["stylistjaink", "dolgozz stylistjeink, énmárka tervezőinkkel a következő fotózásodon", "/hu/stylists", "ismerd meg stylistjainkat"]
     ],
     photographersHeading: "foglald le fotósainkat fotózásodhoz",
-    photographersCopy: "Professzionális rezidens fotósaink segítenek megvalósítani ötleteid a Budapesti studiónkban az alábbi műfajokban:",
+    photographersCopy: "Professzionális rezidens fotósaink segítenek megvalósítani ötleteid budapesti stúdiónkban az alábbi műfajokban:",
     photographyServices: [
       ["reklám és termékfotózás", "/hu/commercial-photography-budapest", "bővebben..."],
       ["vállati és eseményfotózás", "/hu/corporate-photography-budapest", "bővebben..."],
       ["üzleti és személyes portré", "/hu/portrait-photography-budapest", "bővebben..."],
       ["fitnessz és jóga fotózás", "/hu/fitness", "bővebben..."],
-      ["glamour és boudoir", "/hu/glamour-boudoir-photography-budapest", "bővebben..."],
-      ["model polaroidok és portfólió", "/hu/model-polaroids-budapest", "bővebben..."]
+      ["glamour\nés boudoir", "/hu/glamour-boudoir-photography-budapest", "bővebben..."],
+      ["model polaroidok és portfólió", "/hu/model-polaroids-budapest", "bővebben..."],
+      ["esküvői\nfotózás", "/hu/wedding-photography", "bővebben..."]
     ],
     packagesCopy: "Fotózás csomagok minden méretben 39.000.Ft-tól elérhetőek fotósainkkal",
     bookingHeading: "Foglald le a stúdiót",
     bookingLead: "Foglald le stúdiónkat egy fotózásra, vagy bármi másra.",
     bookingCards: [
       ["Fotóstudió", "Foglald le a stúdiót fotózáshoz, workshophoz vagy kreatív projektedhez.", "Foglald le a fotóstúdiót"],
-      ["Szelfi Studió", "Fotós nélkül fotóznál? Foglald le szelfi stúdiónkat, és készíts saját profi képeket.", "Foglald le a szelfi studiót"],
+      ["Szelfi stúdió", "Fotós nélkül fotóznál? Foglald le szelfi stúdiónkat, és készíts saját profi képeket.", "Foglald le a szelfi stúdiót"],
       ["Írj nekünk!", "Fotósra, sminkesre, modellre vagy stylistre van szükséged? Küldj üzenetet az űrlapon, és segítünk összeállítani a megfelelő csapatot.", "Üzenet küldése"]
     ],
     bookingVariants: {
@@ -178,7 +180,7 @@ export const studioContent = {
     heading: "Stúdiónk dióhéjban:",
     paragraphs: [
       "A fotóstúdió két szobából áll, rengeteg szabad térrel a kreatív munkához. A 4+ méteres belmagasság ideális felülnézeti felvételekhez, és a háttértől mért 10 méteres távolság lehetővé teszi, hogy teljes alakos képeket készíts akár 105 mm-es fókusztávolsággal is.",
-      "Ha korábban érkezel, ihatsz egy kávét előterünkben míg fotókönyveket lapozol, vagy készülsz fotózásodra. A studió egy zárt udvarból nyílik, ahol a vendégeknek megengedett a dohányzás."
+      "Ha korábban érkezel, ihatsz egy kávét előterünkben, míg fotókönyveket lapozol vagy készülsz a fotózásodra. A stúdió egy zárt udvarból nyílik, ahol a vendégek számára engedélyezett a dohányzás."
     ],
     facts: [
       { lead: "két szoba", tail: " (mindkettő része a bérlésnek)" },
@@ -186,7 +188,7 @@ export const studioContent = {
       { lead: "könnyen megközelíthető", tail: ", földszinti bejárat az udvaron" },
       { lead: "nagy belmagasság", tail: " — 4.2m magas, függesztési pontokkal" },
       { lead: "hosszú lőtávolság", tail: " — 10m a háttértől" },
-      { lead: "tágas szobák", tail: " — 60m2 studió terület" },
+      { lead: "tágas szobák", tail: " — 60 m² stúdióterület" },
       { lead: "külön öltöző a modellnek", tail: " sminkasztallal" },
       { lead: "kávé és italok", tail: "" },
       { lead: "állatbarát", tail: "" },
@@ -212,7 +214,7 @@ export const selfieContent = {
     processSteps: [
       ["You choose a backdrop and style", "process-01"],
       ["You watch yourself on the TV", "process-02"],
-      ["You press a remote controller", "(there is a 2 second delay, so it's not visible on the pictures)", "process-03"],
+      ["You press a remote controller", "(there is a 2-second delay, so it's not visible in the pictures)", "process-03"],
       ["You see your photos instantly on the TV", "process-04"],
       ["You get all the pictures online before you arrive home", "process-03"]
     ],
@@ -220,7 +222,7 @@ export const selfieContent = {
     customizeHeading: "The only selfie studio in Budapest where you can customize your shoot",
     customizeCopy: "While most studios offer a fixed setup with little flexibility, we do things differently. At Aether Art Space, everything is designed around your vision. You’re not locked into a template — you choose the backdrop, the lighting, the framing. It’s your space, your rules.",
     controls: [
-      ["choose a background you like", ["Green built set", "Pure White", "Stone Grey", "Black", "Blue Mist", "Orchid", "Ultramarine", "Deep Yellow", "Orange", "Crimson", "Choral", "Egg Nog"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
+      ["choose a background you like", ["Green built set", "Pure White", "Stone Grey", "Black", "Blue Mist", "Orchid", "Ultramarine", "Deep Yellow", "Orange", "Crimson", "Coral", "Eggnog"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
       ["choose a lighting style that fits you", ["Moody for dramatic shots", "Rembrandt for a classic look", "High fashion for edgy pics", "Blacklight"], ["control-13", "control-14", "control-15", "control-16"]],
       ["close ups or full body as you need", ["Portrait", "Waist up", "Full body"], ["control-17", "control-18", "control-19"]]
     ],
@@ -245,8 +247,8 @@ export const selfieContent = {
     reserveHeading: "Reserve your spot",
     reserveCopy: "Don’t miss your chance to experience Budapest’s most creative photo studio.",
     reserveCta: "Book Now",
-    szegedHeading: "Check out our Location in Szeged city!",
-    szegedCopy: "Our Szeged mini selfie studio is the first one in the city.\n\nSame prices, same friendly atmosphere and same attention to detail - go check it out!",
+    szegedHeading: "Check out our location in Szeged!",
+    szegedCopy: "Our Szeged mini selfie studio is the first one in the city.\n\nSame prices, same friendly atmosphere, and the same attention to detail—go check it out!",
     szegedCta: "Szeged Selfie Space"
   },
   hu: {
@@ -254,7 +256,7 @@ export const selfieContent = {
     heroSubheading: "Vedd át az irányítást fotózásod felett",
     heroCopy: "Az Aether Art Space Selfie Stúdió Budapest szívében egyedülálló, önkiszolgáló fotózási élményt kínál. Legyen szó tartalomgyártóról, influenszerről, párokról, turistákról vagy bárkiről, aki csak szórakozni szeretne – ez a legjobb hely Budapesten, ahol fotós nélkül is professzionális minőségű szelfiket és portrékat készíthetsz.",
     heroCta: "Foglalj most",
-    processHeading: "Így működik a szelfi studiónk",
+    processHeading: "Így működik a szelfi stúdiónk",
     processSteps: [
       ["Választasz háttért és stílust", "process-01"],
       ["Látod magad a TV-n", "process-02"],
@@ -263,21 +265,21 @@ export const selfieContent = {
       ["Megkapod az összes fotód mielőtt hazaérsz", "process-03"]
     ],
     galleryHeading: "Studiónkban készült szelfik",
-    customizeHeading: "Az egyetlen szelfi-studió Budapesten, ahol személyre szabhatod a képeid",
+    customizeHeading: "Az egyetlen szelfistúdió Budapesten, ahol személyre szabhatod a képeidet",
     customizeCopy: "Ilyen hely nincs még egy Budapesten. Míg más stúdiók előre meghatározott, sablonos beállításokat kínálnak, mi teljesen mást képviselünk. Az Aether Selfie Stúdióban minden a te elképzeléseid köré épül. Te választod ki a hátteret, a világítást, a képkivágást – ez a te tered, a te szabályaid.",
     controls: [
       ["válassz háttérszínt tetszésed szerint", ["Épített sötétzöld díszlet", "Tiszta fehér", "Szikla szürke", "Fekete", "Világoskék", "Orchidea lila", "Sötétkék", "Élénk Sárga", "Narancs", "Bordó", "Világos rózsaszín", "Világos bézs"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
       ["válassz világítás stílust, ami megy hozzád", ["\"Moody\" a drámai hatásért", "\"Rembrandt\" a klasszikus világítás", "\"High fashion\" merész kinézetért", "vagy \"UV\""], ["control-13", "control-14", "control-15", "control-16"]],
-      ["válassz közeli vagy teljes alakos képek közül", ["Válassz \"Portré\"", "\"Deréktól felfele\"", "\"Teljes alakos\" kivágásaink közül - az utóbbi csoportoknak is alkalmas."], ["control-17", "control-18", "control-19"]]
+      ["válassz képkivágást", ["Válassz \"Portré\"", "\"Deréktól felfele\"", "\"Teljes alakos\" kivágásaink közül - az utóbbi csoportoknak is alkalmas."], ["control-17", "control-18", "control-19"]]
     ],
     benefitsHeading: "Miért minket válassz a képeidhez?",
-    benefitsIntro: "Automatikus studiónkban mindent megtalálsz, hogy kreatív és profi képek készüljenek rólad.",
+    benefitsIntro: "Automatizált stúdiónkban mindent megtalálsz, hogy kreatív és profi képek készüljenek rólad.",
     benefits: [
       ["színes hátterek, egyedi kellékek", "Válassz több mint 10 színes háttér közül, és használd változatos bútor- és kellékválasztékunkat!"],
       ["sminkasztal és öltöző szoba", "Készülj fel kényelmesen a fotózásra sminkasztalunknál! Hajlakk, hajszárító és sok más hasznos eszköz biztosított."],
       ["profi világítás és automatikus technika", "Prémium minőségű lámpák, hogy a legjobb formádat hozd. Előre be vannak állítva, így neked semmit sem kell tenned."],
       ["távirányítóval működő kamera", "A kameránk állványra van rögzítve, és egy tenyérben elrejthető távirányítóval tudsz fotózni."],
-      ["privát és diszkrét tér", "A fotózás alatt teljesen egyedül leszel a stúdióban, és akár láthatatlanul továbbküldjük a képeket neked."],
+      ["privát és\ndiszkrét tér", "A fotózás alatt teljesen egyedül leszel a stúdióban, és akár láthatatlanul továbbküldjük a képeket neked."],
       ["megkapod a képeid mielőtt hazaérnél", "A fotózás után gyorsan exportáljuk és továbbítjuk a képeidet, így néhány percen belül már hozzáférhetsz."]
     ],
     pricesHeading: "Legjobb árak Budapesten",
@@ -291,8 +293,8 @@ export const selfieContent = {
     reserveHeading: "Foglald le a helyed",
     reserveCopy: "Ne hagyd ki a lehetőséget, hogy kipróbáld Budapest legkreatívabb fotóstúdióját!",
     reserveCta: "Foglalj Most",
-    szegedHeading: "Nézd meg a Szegedi studiónkat is!",
-    szegedCopy: "Megnyitottuk Szeged első szelfi studióját!\n\nUgyanazok az árak, barátságos atmoszfére és a figyelem a részletekre, mint első lokációnkban. Nézd meg:",
+    szegedHeading: "Nézd meg a szegedi stúdiónkat is!",
+    szegedCopy: "Megnyitottuk Szeged első szelfistúdióját!\n\nUgyanazok az árak, barátságos atmoszféra és a részletekre fordított figyelem vár, mint az első helyszínünkön. Nézd meg:",
     szegedCta: "Szeged Selfie Space"
   }
 };
@@ -565,11 +567,11 @@ export const equipmentContent = {
     heroHeading: "equipment",
     heroCopy: "our lights, cameras, lenses and other electronics that you can use for your studio session",
     sections: [
-      { heading: "Light Sources", paragraphs: ["We chose powerful studio flash strobes and LED lights designed to provide consistent, professional lighting for every shot. They offer precise control over light intensity and direction, helping you create dramatic effects, highlight details, and shape the mood of your scene.", "Whether you're working with portraits, products, or creative compositions, our light sources ensure you get the perfect lighting every time—giving your photos that polished, studio-quality finish.", "If you don't have experience with this equipment yet, we are happy to help you!", "We keep on-camera flash triggers compatible with any brand of camera you may bring ...and some sync-cables for the oldschool types."], galleries: [{ imageKey: "lightSources", info: "All light sources are included in the studio rent." }] },
+      { heading: "Light Sources", paragraphs: ["We chose powerful studio flash strobes and LED lights designed to provide consistent, professional lighting for every shot. They offer precise control over light intensity and direction, helping you create dramatic effects, highlight details, and shape the mood of your scene.", "Whether you're working with portraits, products, or creative compositions, our light sources ensure you get the perfect lighting every time—giving your photos that polished, studio-quality finish.", "If you don't have experience with this equipment yet, we are happy to help you!", "We keep on-camera flash triggers compatible with any brand of camera you may bring …and some sync cables for the old-school types."], galleries: [{ imageKey: "lightSources", info: "All light sources are included in the studio rent." }] },
       { heading: "Light Modifiers", paragraphs: ["Enhance your lighting with our wide range of modifiers, designed to control and soften light, create shadows, or add special effects. From softboxes to umbrellas, they allow you to shape the perfect lighting for any photoshoot."], galleries: [{ imageKey: "modifiers", info: "All light modifiers are included in the studio rent." }] },
-      { heading: "Other equpiment", paragraphs: ["We also offer a variety of additional equipment to complete your setup in our studio - including fog machines for atmospheric effects and sturdy tripods for steady shots."], galleries: [{ imageKey: "other" }] },
-      { heading: "Cameras for Rent", paragraphs: ["Capture your vision with our selection of analog and digital cameras, lenses, and accessories, all available for your shoot. Whether you prefer the timeless charm of film or the flexibility of digital, we’ve got you covered. Choose from 35mm, medium format, and instant cameras, including our flagship Hasselblad 500C and Leica R3—icons of photographic excellence.", "With a variety of lenses and essential gear at your disposal, you can experiment freely and bring your creative ideas to life.", "available for you to use in the studio - assistance included"], galleries: [{ imageKey: "cameras" }] },
-      { heading: "Lenses for rent", paragraphs: ["You can use lenses in the studio either with a rented camera or on your own camera."], galleries: [{ imageKey: "lenses" }] }
+      { heading: "Other equipment", paragraphs: ["We also offer a variety of additional equipment to complete your setup in our studio—including fog machines for atmospheric effects and sturdy tripods for steady shots."], galleries: [{ imageKey: "other" }] },
+      { heading: "Cameras for Rent", paragraphs: ["Capture your vision with our selection of analog and digital cameras, lenses, and accessories, all available for your shoot. Whether you prefer the timeless charm of film or the flexibility of digital, we’ve got you covered. Choose from 35mm, medium format, and instant cameras, including our flagship Hasselblad 500C and Leica R3—icons of photographic excellence.", "With a variety of lenses and essential gear at your disposal, you can experiment freely and bring your creative ideas to life.", "Available for use in the studio, with assistance included."], galleries: [{ imageKey: "cameras" }] },
+      { heading: "Lenses for Rent", paragraphs: ["You can use lenses in the studio either with a rented camera or on your own camera."], galleries: [{ imageKey: "lenses" }] }
     ]
   },
   hu: {
@@ -653,20 +655,20 @@ export const propsImages = {
 export const propsContent = {
   en: {
     heroHeading: "props",
-    heroCopy: "furniture, unique clothing items, jewellery and small to medium size props that you can use for your creative shoots in our studio",
+    heroCopy: "furniture, unique clothing items, jewellery and small- to medium-sized props that you can use for your creative shoots in our studio",
     sections: [
       { heading: "The Wardrobe", subheading: "Unique Outfits & Accessories for Your Photoshoot", paragraphs: ["Unlock endless creative possibilities with our carefully curated wardrobe, available for all photoshoots at our Budapest studio. From vintage gowns and avant-garde fashion to statement jewelry and unique accessories, our collection is designed to inspire and enhance your visual storytelling.", "Whether you're a photographer, model, or artist, you can freely explore and use these pieces to bring your vision to life. No limits, just pure creative freedom—step in and transform your shoot."], galleries: [{ imageKey: "wardrobe", title: "Unique outfits for rent", info: "unique clothing items are available for rent in the studio - or even to take away", infoPrice: "5000-9000 HUF" }, { imageKey: "wardrobeFree", title: "More outfits in the studio", info: "these outfits can be used for free in the studio - or as a rental to take away" }] },
       { heading: "The Prop Collection", subheading: "Unique Props to Elevate Your Photoshoot", paragraphs: ["Take your photoshoot to the next level with our curated collection of unique props. Whether it’s a dramatic sword, a red devil’s pitchfork, vintage suitcases, or other unexpected treasures, these pieces are here to add depth, storytelling, and personality to your shots.", "Whether you're crafting a fantasy-inspired portrait, a cinematic scene, or a bold artistic statement, these props are yours to explore. Let your imagination run wild and bring your vision to life!"], galleries: [{ imageKey: "collection", note: ["you can use all items for your photoshoot for free"] }] },
-      { heading: "The Furniture Collection", subheading: "Authentic Pieces with Character", paragraphs: ["Set the perfect mood for your photoshoot with our diverse furniture collection. From sleek modern designs to retro gems and original antique pieces, each item carries its own story and atmosphere. No replicas—just real, character-filled pieces that add depth, texture, and emotion to your scene.", "If you're going for timeless elegance, vintage nostalgia, or contemporary edge, our furniture is here to help shape your vision."], galleries: [{ imageKey: "furniture", info: "furnitures are available in the studio for free" }] }
+      { heading: "The Furniture Collection", subheading: "Authentic Pieces with Character", paragraphs: ["Set the perfect mood for your photoshoot with our diverse furniture collection. From sleek modern designs to retro gems and original antique pieces, each item carries its own story and atmosphere. No replicas—just real, character-filled pieces that add depth, texture, and emotion to your scene.", "If you're going for timeless elegance, vintage nostalgia, or contemporary edge, our furniture is here to help shape your vision."], galleries: [{ imageKey: "furniture", info: "Furniture is available in the studio free of charge." }] }
     ]
   },
   hu: {
     heroHeading: "kellékek",
     heroCopy: "bútorok, egyedi ruházati cikkek, ékszerek és kis méretű kellékek, amelyeket stúdiónkban felhasználhatsz kreatív fotózásaidhoz",
     sections: [
-      { heading: "A ruhatár", subheading: "Egyedi ruhák és kiegészítők a fotózáshoz", paragraphs: ["Vintage ruhák, avantgárd divat, látványos ékszerek és egyedi kiegészítők – a kollekciónk azért van, hogy inspiráljon és segítsen életre kelteni a vizuális történetmesélésedet.", "Legyél fotós, modell vagy művész, bátran válogathatsz és használhatod ezeket a darabokat, hogy megvalósítsd a víziódat. Nincsenek szabályok, csak tiszta kreatív szabadság – lépj be, és alakítsd át a fotózásodat!"], galleries: [{ imageKey: "wardrobe" }, { imageKey: "wardrobeFree", note: ["prémium ruháinkat kibérelheted fotózásodhoz", "5000-9000 HUF"] }] },
-      { heading: "A kellékgyűjtemény", subheading: "Egyedi kellékek a fotózáshoz", paragraphs: ["Legyen szó egy drámai kardról, egy vörös ördögvilláról, vintage bőröndökről vagy más váratlan kincsekről, ezek a darabok mélységet, történetet és karaktert adnak a képeidhez.", "Akár egy fantasy ihlette portrét, egy filmes jelenetet vagy egy merész művészi kompozíciót alkotsz, a kellékeinket szabadon használhatod, hogy tökéletessé tedd víziódat!"], galleries: [{ imageKey: "collection", note: ["a kiegészítőinket ingyenesen használatod fotózásodhoz"] }] },
-      { heading: "A bútorkollekció", subheading: "Authentikus darabok karakterrel", paragraphs: ["Letisztult modern darabok, retró különlegességek és eredeti antik bútorok – mindegyiknek megvan a maga története és atmoszférája. Nincsenek utánzatok, csak valódi, karakteres darabok, amelyek mélységet, textúrát és érzelmet adnak a kompozícióidhoz.", "bútoraink elérhetőek a studióban ingyenesen"], galleries: [{ imageKey: "furniture" }] }
+      { heading: "A ruhatár", subheading: "Egyedi ruhák és kiegészítők a fotózáshoz", paragraphs: ["Vintage ruhák, avantgárd divat, látványos ékszerek és egyedi kiegészítők – a kollekciónk azért van, hogy inspiráljon és segítsen életre kelteni a vizuális történetmesélésedet.", "Legyél fotós, modell vagy művész, bátran válogathatsz és használhatod ezeket a darabokat, hogy megvalósítsd a víziódat. Nincsenek szabályok, csak tiszta kreatív szabadság – lépj be, és alakítsd át a fotózásodat!"], galleries: [{ imageKey: "wardrobe", title: "Egyedi ruhák bérlésre", info: "Egyedi ruháinkat a stúdióban bérelheted, vagy akár el is viheted.", infoPrice: "5000–9000 HUF" }, { imageKey: "wardrobeFree", title: "További ruhák a stúdióban", info: "Ezeket a ruhákat ingyenesen használhatod a stúdióban, vagy bérlésre el is viheted." }] },
+      { heading: "A kellékgyűjtemény", subheading: "Egyedi kellékek a fotózáshoz", paragraphs: ["Legyen szó egy drámai kardról, egy vörös ördögvilláról, vintage bőröndökről vagy más váratlan kincsekről, ezek a darabok mélységet, történetet és karaktert adnak a képeidhez.", "Akár egy fantasy ihlette portrét, egy filmes jelenetet vagy egy merész művészi kompozíciót alkotsz, a kellékeinket szabadon használhatod, hogy tökéletessé tedd a víziódat!"], galleries: [{ imageKey: "collection", note: ["Kiegészítőinket ingyenesen használhatod a fotózásodhoz."] }] },
+      { heading: "A bútorkollekció", subheading: "Autentikus, karakteres darabok", paragraphs: ["Letisztult modern darabok, retró különlegességek és eredeti antik bútorok – mindegyiknek megvan a maga története és atmoszférája. Nincsenek utánzatok, csak valódi, karakteres darabok, amelyek mélységet, textúrát és érzelmet adnak a kompozícióidhoz.", "Bútorainkat ingyenesen használhatod a stúdióban."], galleries: [{ imageKey: "furniture" }] }
     ]
   }
 };
@@ -696,9 +698,9 @@ export const residentArtistImages = {
 };
 
 const photographerPackagesEn = [
-  { title: "Small Studio Photoshoot", description: "Pick this package if you want some new profile pictures, CV pictures or just want to try out a simple studio shoot.", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] },
-  { title: "Standard Studio Photoshoot", description: "Perfect for a studio shoot with multiple outfits or styles. Also a good solution for couples or friends.", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] },
-  { title: "All-inclusive Studio Photoshoot", description: "If you want a nice set of perfect pictures that are beyond the usual, this offer is for you. Including complicated sets, special lighting or group photos - we can do anything you can imagine!", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }
+  { title: "Small Studio Photoshoot", description: "Pick this package if you want some new profile pictures, CV pictures, or just want to try out a simple studio shoot.", price: "39.000. HUF", features: ["studio rent included", "6 magazine-quality photographs", "single outfit", "single studio setting", "single model"] },
+  { title: "Standard Studio Photoshoot", description: "Perfect for a studio shoot with multiple outfits or styles. Also a good solution for couples or friends.", price: "59.000. HUF", features: ["studio rent included", "15 magazine-quality photographs", "up to 3 outfits", "up to 3 studio settings", "1–2 models"] },
+  { title: "All-inclusive Studio Photoshoot", description: "If you want a strong set of images that goes beyond the usual, this offer is for you. We can create complicated sets, use special lighting, and photograph groups—whatever you can imagine.", price: "79.000. HUF", features: ["studio rent included", "21 magazine-quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }
 ];
 const photographerPackagesHu = [
   { title: "Kis Studiós Fotózás csomag", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretne kipróbálni.", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] },
@@ -791,27 +793,27 @@ export const modelImages = {
 };
 
 const modelProfilesEn = [
-  { name: "Grinnie", imageIndex: 0, measurements: [["Height: 170cm / 5'7\"", "Size: S"], ["Eyes: blue", "Hair: black and green dreadlocks"], ["Bust: 87cm / 5'77\"", "Waist: 64cm / 2'1\"", "Hips: 82cm / 2'8\""], ["Shoe size: 37 (EU)"], ["Tattoos: a lot", "Piercings: a lot"]] },
-  { name: "Wendy", imageIndex: 1, measurements: [["Height: 160cm / 4'2\"", "Dress size: XS-S"], ["Eyes: Brown", "Hair: Black"], ["Bust: 68cm / 26\"", "Waist: 37cm / 14\"", "Hips: 76cm / 76\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: a lot", "Piercings: a lot"]] },
-  { name: "Orsolya", imageIndex: 2, measurements: [["Height: 158cm / 5'2\"", "Dress size: XS"], ["Eyes: Brown", "Hair: Red"], ["Bust: 83cm / 32\"", "Waist: 59cm / 123\"", "Hips: 83cm / 32\""], ["Shoe size: 36 (EU) / 5.5 (US)"], ["Tattoos: none", "Piercings: none"]] },
-  { name: "Vuk", imageIndex: 3, measurements: [["Height: 160cm / 5'5\"", "Dress size: XS"], ["Eyes: Brown", "Hair: Red"], ["Bust: 79cm / 31\"", "Waist: 61cm / 24\"", "Hips: 78cm / 31\""], ["Shoe size: 38 (EU) / 5.5 (US)"], ["Tattoos: back, thies, collarbone", "Piercings: bellybutton"]] },
+  { name: "Grinnie", imageIndex: 0, measurements: [["Height: 170cm / 5'7\"", "Size: S"], ["Eyes: Blue", "Hair: Black and green dreadlocks"], ["Bust: 87cm / 34\"", "Waist: 64cm / 25\"", "Hips: 82cm / 32\""], ["Shoe size: 37 (EU)"], ["Tattoos: A lot", "Piercings: A lot"]] },
+  { name: "Wendy", imageIndex: 1, measurements: [["Height: 160cm / 5'3\"", "Dress size: XS-S"], ["Eyes: Brown", "Hair: Black"], ["Bust: 68cm / 26\"", "Waist: 37cm / 14\"", "Hips: 76cm / 30\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: A lot", "Piercings: A lot"]] },
+  { name: "Orsolya", imageIndex: 2, measurements: [["Height: 158cm / 5'2\"", "Dress size: XS"], ["Eyes: Brown", "Hair: Red"], ["Bust: 83cm / 32\"", "Waist: 59cm / 23\"", "Hips: 83cm / 32\""], ["Shoe size: 36 (EU) / 5.5 (US)"], ["Tattoos: None", "Piercings: None"]] },
+  { name: "Vuk", imageIndex: 3, measurements: [["Height: 160cm / 5'3\"", "Dress size: XS"], ["Eyes: Brown", "Hair: Red"], ["Bust: 79cm / 31\"", "Waist: 61cm / 24\"", "Hips: 78cm / 31\""], ["Shoe size: 38 (EU) / 5.5 (US)"], ["Tattoos: Back, thighs, collarbone", "Piercings: Belly button"]] },
   { name: "Szeder", imageIndex: 4, measurements: [["Height: 161cm / 5'3\"", "Dress size: S"], ["Eyes: Grey-Blue", "Hair: Blonde"], ["Bust: 76cm / 30\"", "Waist: 64cm / 24\"", "Hips: 80cm / 31\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: 1", "Piercings: 2 on face "]] },
   { name: "Nome", imageIndex: 5, measurements: [["Height: 168cm / 5'5\"", "Dress size: S"], ["Eyes: Grey", "Hair: Black"], ["Bust: 105cm / 41\"", "Waist: 81cm / 32\"", "Hips: 108 / 42\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: 12 small tattoos", "Piercings: on nipples and ears"]] },
   { name: "Ezra", imageIndex: 6, measurements: [["Height: 164cm / 5'4\"", "Dress size: XS-S"], ["Eyes: Dark brown", "Hair: Black"], ["Bust: 78cm / 30\"", "Waist: 65cm / 25\"", "Hips: 78 / 30\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 14 all over", "Piercings: 3 on face, 1 on ear"]] },
   { name: "Luca", imageIndex: 7, measurements: [["Height: 175cm / 5'9\"", "Dress size: S-M"], ["Eyes: Green", "Hair: Platinum Blonde"], ["Bust: 86cm / 34\"", "Waist: 67cm / 26\"", "Hips: 92 / 36\""], ["Shoe size: 39,5 (EU) / 8 (US)"], ["Tattoos: 2 small linework", "Piercings: ear stretchers and rings"]] },
-  { name: "Csuri", imageIndex: 8, measurements: [["Height: 170 / 5'7\"", "Dress size: S"], ["Eyes: Green", "Hair: Blonde, light blue"], ["Bust: 78cm / 31\"", "Waist: 67cm / 26\"", "Hips: 90cm / 35,5\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 2 small ones", "Piercings: in nose"]] }
+  { name: "Csuri", imageIndex: 8, measurements: [["Height: 170cm / 5'7\"", "Dress size: S"], ["Eyes: Green", "Hair: Blonde, light blue"], ["Bust: 78cm / 31\"", "Waist: 67cm / 26\"", "Hips: 90cm / 35.5\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 2 small ones", "Piercings: In nose"]] }
 ];
 
 const modelProfilesHu = [
-  { name: "Grinnie", imageIndex: 0, measurements: [["Magasság: 170cm / 5'7\"", "Ruhaméret: S"], ["Szemszín: blue", "Hajszín: fekete és zöld raszta"], ["Mellbőség: 87cm / 5'77\"", "Derék: 64cm / 2'1\"", "Csípő: 82cm / 2'8\""], ["Cipőméret: 37 (EU)"], ["Tetoválások: a lot", "Piercingek: a lot"]] },
-  { name: "Wendy", imageIndex: 1, measurements: [["Magasság: 160cm / 4'24\"", "Ruhaméret: XS-S"], ["Szemszín: Barna", "Hajszín: Fekete"], ["Mellbőség: 68cm / 26\"", "Derék: 37cm / 14\"", "Csípő: 76cm / 76\""], ["Cipőméret: 37 (EU) / 6.5 (US)"], ["Tetoválás: sok", "Piercingek: sok"]] },
-  { name: "Orsolya", imageIndex: 2, measurements: [["Magasság: 158cm / 5'2\"", "Ruhaméret: XS"], ["Szemszín: Barna", "Hajszín: Vörös"], ["Mellbőség: 83cm / 32\"", "Derék: 59cm / 123\"", "Csípő: 83cm / 32\""], ["Cipőméret: 36 (EU) / 5.5 (US)"], ["Tetoválások: nincs", "Piercingek: nincs"]] },
-  { name: "Vuk", imageIndex: 3, measurements: [["Magasság: 160cm / 5'5\"", "Ruhaméret: XS"], ["Szemszín: Barna", "Hajszín: Vörös"], ["Mellbőség: 79cm / 31\"", "Derék: 61cm / 24\"", "Csípő: 78cm / 31\""], ["Cipőméret: 38 (EU) / 5.5 (US)"], ["Tetoválások: hát, combok, kulccsont", "Piercingek: köldök"]] },
-  { name: "Szeder", imageIndex: 4, measurements: [["Magasság: 161cm / 5'3\"", "Ruhaméret: S"], ["Szemszín: Grey-Blue", "Hajszín: Blonde"], ["Mellbőség: 76cm / 30\"", "Derék: 64cm / 24\"", "Csípő: 80cm / 31\""], ["Cipőméret: 37 (EU) / 6.5 (US)"], ["Tetoválások: 1", "Piercingek: 2 arcon"]] },
+  { name: "Grinnie", imageIndex: 0, measurements: [["Magasság: 170 cm / 5'7\"", "Ruhaméret: S"], ["Szemszín: kék", "Hajszín: fekete és zöld raszta"], ["Mellbőség: 87 cm / 34\"", "Derék: 64 cm / 25\"", "Csípő: 82 cm / 32\""], ["Cipőméret: 37 (EU)"], ["Tetoválások: sok", "Piercingek: sok"]] },
+  { name: "Wendy", imageIndex: 1, measurements: [["Magasság: 160 cm / 5'3\"", "Ruhaméret: XS–S"], ["Szemszín: barna", "Hajszín: fekete"], ["Mellbőség: 68 cm / 26\"", "Derék: 37 cm / 14\"", "Csípő: 76 cm / 30\""], ["Cipőméret: 37 (EU) / 6,5 (US)"], ["Tetoválás: sok", "Piercingek: sok"]] },
+  { name: "Orsolya", imageIndex: 2, measurements: [["Magasság: 158 cm / 5'2\"", "Ruhaméret: XS"], ["Szemszín: barna", "Hajszín: vörös"], ["Mellbőség: 83 cm / 32\"", "Derék: 59 cm / 23\"", "Csípő: 83 cm / 32\""], ["Cipőméret: 36 (EU) / 5,5 (US)"], ["Tetoválások: nincs", "Piercingek: nincs"]] },
+  { name: "Vuk", imageIndex: 3, measurements: [["Magasság: 160 cm / 5'3\"", "Ruhaméret: XS"], ["Szemszín: barna", "Hajszín: vörös"], ["Mellbőség: 79 cm / 31\"", "Derék: 61 cm / 24\"", "Csípő: 78 cm / 31\""], ["Cipőméret: 38 (EU) / 5,5 (US)"], ["Tetoválások: hát, combok, kulcscsont", "Piercingek: köldök"]] },
+  { name: "Szeder", imageIndex: 4, measurements: [["Magasság: 161 cm / 5'3\"", "Ruhaméret: S"], ["Szemszín: szürkéskék", "Hajszín: szőke"], ["Mellbőség: 76 cm / 30\"", "Derék: 64 cm / 24\"", "Csípő: 80 cm / 31\""], ["Cipőméret: 37 (EU) / 6,5 (US)"], ["Tetoválások: 1", "Piercingek: 2 az arcon"]] },
   { name: "Nome", imageIndex: 5, measurements: [["Magasság: 168 cm / 5'5\"", "Ruhamérete: S"], ["Szemszín: Szürke", "Hajszín: fekete"], ["Mellbőség: 105 cm / 41\"", "Derék: 81 cm / 32\"", "Csípő: 108/42\""], ["Cipőméret: 37 (EU) / 6,5 (USA)"], ["Tetoválások: 12 kis tetoválás", "Piercingek: mellbimbón és fülekben"]] },
   { name: "Ezra", imageIndex: 6, measurements: [["Magasság: 164cm / 5'4\"", "Ruhaméret: XS-S"], ["Szemszín: Sötétbarna", "Hajszín: Fekete"], ["Mellbőség: 78cm / 30\"", "Derék: 65cm / 25\"", "Csípő: 78 / 30\""], ["Cipőméret: 38 (EU) / 7.5 (US)"], ["Tetoválások: 14", "Piercingek: 3 arcon, 1 fülben"]] },
   { name: "Luca", imageIndex: 7, measurements: [["Magasság: 175cm / 5'9\"", "Ruhaméret: S-M"], ["Szemszín: Zöld", "Hajszín: Platinaszőke"], ["Mellbőség: 86cm / 34\"", "Derék: 67cm / 26\"", "Csípő: 92 / 36\""], ["Cipőméret: 39,5 (EU) / 8 (US)"], ["Tetoválások: 2 kicsi linework", "Piercingek: fültágító és fülbevalók"]] },
-  { name: "Csuri", imageIndex: 8, measurements: [["Magasság: 170 / 5'7\"", "Ruhaméret: S"], ["Szemszín: Zöld", "Hajszín: Szőke / Világoskék"], ["Mellbőség: 78cm / 31\"", "Csípő: 67cm / 26\"", "Derék: 90cm / 35,5\""], ["Cipőméret: 38 (EU) / 7.5 (US)"], ["Tetoválások: 2 kicsi", "Piercingek: 1db - bal orrcimpán"]] }
+  { name: "Csuri", imageIndex: 8, measurements: [["Magasság: 170 cm / 5'7\"", "Ruhaméret: S"], ["Szemszín: zöld", "Hajszín: szőke / világoskék"], ["Mellbőség: 78 cm / 31\"", "Derék: 67 cm / 26\"", "Csípő: 90 cm / 35,5\""], ["Cipőméret: 38 (EU) / 7,5 (US)"], ["Tetoválások: 2 kicsi", "Piercing: 1 db – a bal orrcimpán"]] }
 ];
 const modelProfilesEnWithContact = modelProfilesEn.map((profile) => ({ ...profile, contact: `Want to shoot with ${profile.name}?` }));
 const modelContactsHu = ["Szeretnél Grinnievel dolgozni?", "Szeretnél Wendyvel dolgozni?", "Szeretnél Orsolyával dolgozni?", "Szeretnél Vukkal dolgozni?", "Szeretnél Szederrel dolgozni?", "Szeretnél Noméval dolgozni?", "Szeretnél Ezrával dolgozni?", "Szeretnél Lucával dolgozni?", "Szeretnél Csurival dolgozni?"];
@@ -829,12 +831,12 @@ export const modelsContent = {
   },
   hu: {
     heroHeading: "kedvenc modelleink", heroCopy: "megbízható és professzionális fotómodelleink, akikkel budapesti stúdiónkban fix áron alkothatsz",
-    intro: ["Az aetherart spaceben, ha modellt keresel a fotózásodhoz, megtalálod a legjobb megbízható, profi modelleket, akikkel mi is szívesen dolgozunk együtt. Tapasztalt modelleink pontosan tudják, hogyan hozzák ki a legtöbbet egy fotózásból, legyen szó divatfotókról, portrékról vagy kreatív projektekről.", "Ha együtt foglalod le a modellt és a stúdiót, kedvezőbb árat kapsz – mivel nem vagyunk ügynökség, nincs a foglaláson extra költség. Célunk, hogy a kreatív folyamatod gördülékenyebb és megfizethetőbb legyen."],
-    feeTitle: "alap modell díj", feePrice: "15.000. HUF", contactLabel: "Kontakt", measurementsTitle: "Méretek", contactPrefix: "Szeretnél", contactSuffix: "-vel dolgozni?",
+    intro: ["Az aether art space-ben, ha modellt keresel a fotózásodhoz, megbízható és profi modellek közül választhatsz, akikkel mi is szívesen dolgozunk együtt. Tapasztalt modelljeink pontosan tudják, hogyan hozzák ki a legtöbbet egy fotózásból, legyen szó divatfotókról, portrékról vagy kreatív projektekről.", "Ha együtt foglalod le a modellt és a stúdiót, kedvezőbb árat kapsz – mivel nem vagyunk ügynökség, nincs a foglaláson extra költség. Célunk, hogy a kreatív folyamatod gördülékenyebb és megfizethetőbb legyen."],
+    feeTitle: "alap modell-díj", feePrice: "15.000 HUF / óra", contactLabel: "Kapcsolat", measurementsTitle: "Méretek", contactPrefix: "Szeretnél", contactSuffix: "-vel dolgozni?",
     people: modelProfilesHuWithContact,
     animalHeading: "állat modelleink", animalIntro: ["Ha együtt foglalsz egy állatot és a stúdiót, még jobb árat kapsz – mivel nem vagyunk ügynökség, ezeknek a kisállatoknak a lefoglalása nem jár plusz költséggel. Célunk az, hogy kreatív folyamatod gördülékenyebbé és megfizethetővé tegyük."],
     animal: { name: "Lucifer", description: "egy nyugis fehér patkánykígyó", priceLabel: "kezdő ár:", price: "16.000. HUF / alkalom", measurementsTitle: "Méretek", measurements: [["hossz: 150cm"], ["szín: törtfehér"], ["lábak: nincs"]], contactPrefix: "Szeretnél Luciferrel dolgozni", contactSuffix: "?" },
-    platform: { heading: "Még mindig modellt keresel?", subheading: "Próbáld ki az ingyenes platformunkat, ahol modellt / fotóst és további kreatívokat tudsz találni!", paragraphs: ["Egy ingyenes online platformot építünk, ahol könnyedén megtalálhatod a következő kreatív partneredet a fotózásodhoz. TFP vagy fizetett munka, kezdőknek és profiknak egyaránt.", "Böngéssz a környékeden lévő kreatívok között, vagy hozz létre egy projektet, és várd meg, amíg csatlakoznak.", "Próbáld ki ingyen!"], cta: "tovább a naebula.app - ra" }
+    platform: { heading: "Még mindig modellt keresel?", subheading: "Próbáld ki ingyenes platformunkat, ahol modelleket, fotósokat és további kreatívokat találhatsz!", paragraphs: ["Egy ingyenes online platformot építünk, ahol könnyedén megtalálhatod a következő kreatív partneredet a fotózásodhoz. TFP vagy fizetett munka, kezdőknek és profiknak egyaránt.", "Böngéssz a környékeden lévő kreatívok között, vagy hozz létre egy projektet, és várd meg, amíg csatlakoznak.", "Próbáld ki ingyen!"], cta: "tovább a naebula.app-ra" }
   }
 };
 
@@ -903,15 +905,15 @@ export const serviceImages = {
 };
 
 export const corporateGalleryImages = [
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_569121fffedc4d7b8119daa1c355148f~mv2.jpg", 317, 476, "corporate portrait photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_6a5c27e748104ac0bc33d55ab146fd7b~mv2.jpg", 317, 476, "corporate portrait photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_d793951e82fc4a049cfb1db0b9bd20bf~mv2.jpg", 317, 476, "corporate portrait photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_c068249fb7204073b252927370be1638~mv2.jpg", 165, 247, "corporate portrait photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_7ebe9ffdf3a948768dc3db33bb52ea06~mv2.jpg", 165, 247, "office lifestyle photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_c53a6877244d4066a1a1c5a9d97a4e84~mv2.png", 335, 224, "corporate team photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_7075eca1d838480cbb9fdd561304e703~mv2.jpg", 317, 476, "corporate portrait photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_fd25a7d05efd4d3cbda5bdb349aaa3de~mv2.jpg", 317, 476, "event and team building photography"),
-  wixGalleryImage("https://static.wixstatic.com/media/94c0c9_e62a6b652e354da39f019e3e24ea5d66~mv2.jpg", 317, 476, "office lifestyle photography"),
+  wixGalleryImage("/images/wix/corporate/external-01.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("/images/wix/corporate/external-02.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("/images/wix/corporate/external-03.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("/images/wix/corporate/external-04.jpg", 165, 247, "corporate portrait photography"),
+  wixGalleryImage("/images/wix/corporate/external-05.jpg", 165, 247, "office lifestyle photography"),
+  wixGalleryImage("/images/wix/corporate/external-06.png", 335, 224, "corporate team photography"),
+  wixGalleryImage("/images/wix/corporate/external-07.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("/images/wix/corporate/external-08.jpg", 317, 476, "event and team building photography"),
+  wixGalleryImage("/images/wix/corporate/external-09.jpg", 317, 476, "office lifestyle photography"),
   wixGalleryImage("/images/corporate-octomind-daniel.jpg", 4000, 6000, "Octomind executive portrait"),
   wixGalleryImage("/images/corporate-octomind-team.jpg", 3884, 2589, "Octomind team lifestyle portrait")
 ];
@@ -957,7 +959,7 @@ export const photoPackageSets = {
   models: {
     en: [
       { title: "Model Polaroids / Digitals Photoshoot Package", description: "the first step in your modelling career", price: "39.000. HUF", features: ["4 standard model digital picture", "standard pdf model polaroid card", "single outfit", "single studio setting", "studio rent included"] },
-      { title: "Model Portfolio Starter Photoshoot Package", description: "start your modelling carreer with a couple of strong shots that shows you are suitable for different styles", price: "79.000. HUF", features: ["4 standard model digital picture", "standard pdf model polaroid card", "additional 15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "studio rent included"] },
+      { title: "Model Portfolio Starter Photoshoot Package", description: "start your modelling career with a couple of strong shots that show you are suitable for different styles", price: "79.000. HUF", features: ["4 standard model digital pictures", "standard PDF model polaroid card", "additional 15 magazine-quality photographs", "up to 3 outfits", "up to 3 studio settings", "studio rent included"] },
       { title: "Complete Model Portfolio Photoshoot Package", description: "present yourself in the most professional way with a printed lookbook and a diverse portfolio", price: "149.000. HUF", features: ["4 standard model digital picture", "standard pdf model polaroid card", "enough pictures to fill your 30 page lookbook", "up to 3 outfits", "up to 3 studio settings", "studio rent included"] }
     ],
     hu: [
@@ -968,7 +970,7 @@ export const photoPackageSets = {
   },
   pet: {
     en: [
-      { title: "Small Pet Photoshoot Package", description: "get a couple of nice pictures about your pet in the studio", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "one pet"] },
+      { title: "Small Pet Photoshoot Package", description: "get a couple of nice pictures of your pet in the studio", price: "39.000. HUF", features: ["studio rent included", "6 magazine-quality photographs", "single outfit", "single studio setting", "one pet"] },
       { title: "Medium Pet Photoshoot Package", description: "get a photograph together with your pet(s)", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "multiple pets or together with owner"] },
       { title: "Large Pet Photoshoot Package", description: "creative, powerful pictures, crazy concepts or just lots of pictures", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "many pets or group shots"] }
     ],
@@ -987,9 +989,9 @@ export const commonUpgrades = {
     { title: "Complete Creative Team", priceLabel: "starting at", price: "48.000. HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
   ],
   hu: [
-    { title: "Add Make up & Hair", priceLabel: "starting at", price: "15.000. HUF", href: "/hu/make-up-artists" },
-    { title: "Add Styling", priceLabel: "starting at", price: "35.000. HUF", href: "/hu/stylists" },
-    { title: "Complete Creative Team", priceLabel: "starting at", price: "48.000. HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+    { title: "Smink és haj", priceLabel: "kezdőár", price: "15.000 HUF", href: "/hu/make-up-artists" },
+    { title: "Styling", priceLabel: "kezdőár", price: "35.000 HUF", href: "/hu/stylists" },
+    { title: "Teljes kreatív csapat", priceLabel: "kezdőár", price: "48.000 HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
   ]
 };
 
@@ -1000,7 +1002,7 @@ export const serviceContent = {
   },
   portrait: {
     en: { hero: "business, casual or artistic portraits for private or commercial use", intro: ["At Aether Art Space, we specialize in professional portrait photography that captures personality, style, and confidence. Whether you need polished business portraits, relaxed casual images, engaging dating profile photos, or creative portraits for private and commercial use, we create refined, high-quality visuals that reflect who you are and how you want to be seen."], packageHeading: "Portrait Photography Packages", packageLead: "studio rent price included in all packages", firstTimers: "First timers are welcome!", studioHeading: "our Budapest photo studio", studioIntro: "The Aether Art Space studio is designed to be both professional and welcoming, creating the perfect atmosphere for all types of portrait photoshoots. We know that a comfortable, supportive environment helps every client feel relaxed and confident in front of the camera, so we’ve built a space that balances professionalism, comfort, and creativity.", studioBullets: ["Professional Setup – equipped with high-end lighting, versatile backdrops, and creative sets to capture every style of portrait", "Comfort First – a private, cozy lounge where you can relax and prepare before your session", "Makeup & Styling Station – a dedicated desk with perfect lighting for touch-ups, hair, and professional makeup", "Coffee & Refreshments – because feeling comfortable starts with thoughtful details and warm hospitality", "Spacious & Flexible – designed to accommodate business headshots, lifestyle portraits, dating photos, or creative commercial sessions with ease"], studioTail: "Whether you’re booking a professional business portrait, a casual lifestyle session, or personal portraits for dating or private use, our studio ensures a smooth and enjoyable experience from start to finish. It’s a safe and inspiring space where you can express yourself freely — with every detail optimized for timeless, high-quality results." },
-    hu: { hero: "üzleti-, társkereső-, vagy bármilyen felhasználású portrék magánszemélyeknek, vagy üzleti célra", intro: ["Az Aether Art Space professzionális portréfotózásra specializálódott, amely megragadja a személyiséget, a stílust és a magabiztosságot. Legyen szó igényes üzleti portrékról, laza, hétköznapi fotókról, figyelemfelkeltő társkereső profilképekről vagy kreatív portrékról magán- és kereskedelmi felhasználásra, mi kifinomult, magas minőségű vizuális anyagokat készítünk, amelyek visszaadják, ki vagy, és azt is, hogyan szeretnéd, hogy mások lássanak."], packageHeading: "Portré Fotózás Csomagjaink", packageLead: "minden csomag tartalmazza a studióbérlést is", firstTimers: "Első alkalmasoknak is!", studioHeading: "Budapesti studiónk", studioIntro: "Az Aether Art Space stúdiót úgy alakítottuk ki, hogy egyszerre legyen professzionális és barátságos, megteremtve a tökéletes hangulatot minden típusú portréfotózáshoz. Tudjuk, hogy a kényelmes és támogató környezet segít abban, hogy minden ügyfél nyugodtnak és magabiztosnak érezze magát a kamera előtt, ezért egy olyan teret hoztunk létre, amely a professzionalizmust, a kényelmet és a kreativitást egyensúlyba hozza.", studioBullets: ["Professzionális felszerelés – csúcskategóriás világítás, sokoldalú hátterek és kreatív díszletek, hogy minden portréstílust megörökítsünk", "Kényelem mindenekelőtt – privát, hangulatos lounge, ahol ellazulhatsz és felkészülhetsz a fotózásra", "Smink- és styling sarok – külön asztal tökéletes világítással a smink, a haj és a kisebb igazítások számára", "Kávé és frissítők – mert a komfortérzet a figyelmes részletekkel és a meleg vendégszeretettel kezdődik", "Tágas és rugalmas tér – üzleti portrékhoz, lifestyle fotókhoz, társkereső profilképekhez vagy kreatív, kereskedelmi célú fotózásokhoz egyaránt"], studioTail: "Akár egy üzleti portrét, egy laza lifestyle fotózást, vagy személyes portrékat szeretnél társkeresőhöz vagy magáncélra, stúdiónk elejétől a végéig gördülékeny és élvezetes élményt nyújt. Ez egy biztonságos és inspiráló hely, ahol szabadon kifejezheted önmagad – minden részlet úgy van megtervezve, hogy időtálló, magas minőségű eredményt adjon." }
+    hu: { hero: "üzleti, társkereső vagy bármilyen felhasználásra szánt portrék magánszemélyeknek és vállalkozásoknak", intro: ["Az Aether Art Space professzionális portréfotózásra specializálódott, amely megragadja a személyiséget, a stílust és a magabiztosságot. Legyen szó igényes üzleti portrékról, laza, hétköznapi fotókról, figyelemfelkeltő társkereső profilképekről vagy kreatív portrékról magán- és kereskedelmi felhasználásra, mi kifinomult, magas minőségű vizuális anyagokat készítünk, amelyek visszaadják, ki vagy, és azt is, hogyan szeretnéd, hogy mások lássanak."], packageHeading: "Portréfotózási csomagjaink", packageLead: "minden csomag tartalmazza a stúdióbérlést is", firstTimers: "Első alkalommal is!", studioHeading: "Budapesti stúdiónk", studioIntro: "Az Aether Art Space stúdiót úgy alakítottuk ki, hogy egyszerre legyen professzionális és barátságos, megteremtve a tökéletes hangulatot minden típusú portréfotózáshoz. Tudjuk, hogy a kényelmes és támogató környezet segít abban, hogy minden ügyfél nyugodtnak és magabiztosnak érezze magát a kamera előtt, ezért egy olyan teret hoztunk létre, amely a professzionalizmust, a kényelmet és a kreativitást egyensúlyba hozza.", studioBullets: ["Professzionális felszerelés – csúcskategóriás világítás, sokoldalú hátterek és kreatív díszletek, hogy minden portréstílust megörökítsünk", "Kényelem mindenekelőtt – privát, hangulatos lounge, ahol ellazulhatsz és felkészülhetsz a fotózásra", "Smink- és styling sarok – külön asztal tökéletes világítással a smink, a haj és a kisebb igazítások számára", "Kávé és frissítők – mert a komfortérzet a figyelmes részletekkel és a meleg vendégszeretettel kezdődik", "Tágas és rugalmas tér – üzleti portrékhoz, lifestyle fotókhoz, társkereső profilképekhez vagy kreatív, kereskedelmi célú fotózásokhoz egyaránt"], studioTail: "Akár egy üzleti portrét, egy laza lifestyle fotózást vagy személyes portrékat szeretnél társkeresőhöz vagy magáncélra, stúdiónk elejétől a végéig gördülékeny és élvezetes élményt nyújt. Ez egy biztonságos és inspiráló hely, ahol szabadon kifejezheted önmagad – minden részlet úgy van megtervezve, hogy időtálló, magas minőségű eredményt adjon." }
   },
   corporate: {
     en: { hero: "business portraits in Budapest for individuals, teams or the entire company", intro: ["At Aether Art Space, we specialize in professional corporate photography that helps your business put its best image forward. Whether you need executive headshots, team portraits, or branding photos for marketing campaigns, we create polished, high-quality visuals that reflect your company’s identity."], whatHeading: "What we can create for your business", whatIntro: "We start by understanding how many people need to be photographed, where the images will be used, and whether the session should happen in the studio or at your office. After the shoot, selected images are edited in a consistent style and delivered for web, LinkedIn, press, or internal use.", services: ["LinkedIn and CV headshots", "Executive, leadership and founder portraits", "Team photos", "Office lifestyle images", "Website and about page images", "Event and team building photography"], sections: [["Corporate Headshots and Team Photos", "We create professional corporate headshots, team photos, and business portraits for companies in Budapest. The goal is a consistent, polished visual identity across LinkedIn profiles, company websites, press materials, internal directories, and employer branding campaigns."], ["For Small Teams and Larger Companies", "If you need portraits for a founder team, a few new employees, or a full company photo day, we can plan the session around your team size and schedule. Sessions can also be organized in our Budapest studio or, depending on the project, on-site at your office."], ["Consistent Look for Every Employee", "Corporate portraits work best when the lighting, background, framing, and editing style are consistent. We help define a clean visual direction before the shoot, then guide each person quickly and calmly so the final images feel professional without looking stiff."]], packageHeading: "Our Corporate Photography Packages", packageLead: "tailored to your needs and company size", packages: [{title:"Executive Portrait Package",description:"powerful portraits that fits your companies brand",price:"from 49.000. HUF / person",features:["5 magazine quality photos of each person","studio rent if needed"]},{title:"Small Business Package",description:"ideal for 2-10 people",price:"from 89.000. HUF",features:["high quality photo of each person","group photo","studio rent if needed"]},{title:"Medium Business Package",description:"ideal for 10-40 people",price:"from 159.000. HUF",features:["high quality photo of each person","group photo","studio rent if needed"]},{title:"Large Corporate package",description:"ideal for 40+ people",price:"ask for an offer",features:["high quality photo of each person","group photo","studio rent if needed"]},{title:"Office or Lifestyle Shots",description:"gallery to showcase your company culture and workplace",price:"129.000. / half day",features:["includes 50-100 edited photos at your location"]}], studioHeading: "our Budapest photo studio", studioIntro: "The Aether Art Space studio is designed to be both professional and welcoming, making it the perfect setting for corporate photoshoots of any size. We know that a comfortable atmosphere helps people look and feel their best in front of the camera, so we’ve created an environment that supports both efficiency and ease.", studioBullets: ["Professional Setup – equipped with high-end lighting, backdrops, and photography gear", "Comfort First – a cozy waiting area where teams can relax before their session", "Makeup & Styling Station – a dedicated desk with good lighting for touch-ups and preparation", "Coffee & Refreshments – because a great shoot often starts with great coffee", "Spacious & Flexible – designed to accommodate both individuals and larger groups comfortably"], studioTail: "Whether you’re booking headshots for executives or a full corporate branding session, our studio provides a smooth experience from start to finish. It’s a space where teams feel taken care of and where every detail is optimized for high-quality results.", approachHeading: "Our approach", approach: "Our photographers blend artistic vision with professional precision. We bring mobile studio setups directly to your office or welcome teams to our creative studio environment. With an emphasis on lighting, composition, and retouching, we ensure every image communicates confidence and credibility.", clients: "Our Clients", faqHeading: "FAQ", faq: [["Can you photograph our whole team?", "Yes. We can photograph small teams, leadership groups, or larger company teams. For bigger groups, we plan the timing in advance so the process stays efficient."], ["Can you come to our office?", "Yes, depending on the project. Corporate sessions can be arranged in our Budapest studio or on-site at your office if that works better for your team."], ["Can all employee portraits have the same style?", "Yes. We can use consistent lighting, background, framing, and editing so the final portraits work together on your website, LinkedIn, or internal company materials."], ["How should employees prepare?", "We recommend clean, simple clothing that matches your company image. Before the shoot, we can give basic guidance on outfits, colors, and what to avoid."], ["Can you provide images for LinkedIn and our website?", "Yes. Final images can be delivered in formats suitable for LinkedIn, company websites, press materials, and internal profiles."]] },
@@ -1216,9 +1218,6 @@ export const weddingContent = {
   }
 };
 
-weddingContent.hu.photographersIntro = "Two distinct personalities. Two different perspectives. One shared vision. We notice different details and respond to different moments. Working together allows us to tell a richer, more complete story of your wedding—while giving you the freedom to experience the day naturally.";
-weddingContent.hu.photographers[1][2] = "Dániel combines precise composition and creative lighting with an editorial perspective. Together, we balance careful direction with unobtrusive observation—stepping in when guidance is helpful and disappearing into the background when the moment should simply unfold.";
-
 const weddingPackages = [
   { titleLines: ["Ceremony", "Photography Package"], description: "High quality photographs of your ceremony in a church, private venue or wherever you are holding it.", price: "109.000. HUF", features: ["ceremony", "group pictures", "2 photographers", "up to 2 hours", "one location", "100-300 photographs", "travel included within 50km"] },
   { titleLines: ["Ceremony & Celebration", "Photography Package"], description: "Get great pictures of your most important events during the day - from the ceremony to the party.", price: "269.000. HUF", features: ["ceremony", "group pictures", "reception", "party", "2 photographers", "up to 6 hours", "up to 2 locations", "400-800 photographs", "travel included within 50km"] },
@@ -1258,8 +1257,66 @@ const weddingFaq = [
   ["How do we reserve our wedding date?", "Contact us to check availability and discuss your plans. Once the details and tailored offer are agreed, we will guide you through the steps required to confirm your booking."]
 ];
 
+const weddingPackagesHu = [
+  { titleLines: ["Szertartás", "fotózási csomag"], description: "Magas minőségű képek a templomi, helyszíni vagy bármilyen más helyen tartott szertartásotokról.", price: "109.000 HUF", features: ["szertartás", "csoportképek", "2 fotós", "legfeljebb 2 óra", "egy helyszín", "100–300 fénykép", "utazás 50 km-en belül"] },
+  { titleLines: ["Szertartás és ünneplés", "fotózási csomag"], description: "Megörökítjük a nap legfontosabb eseményeit a szertartástól a mulatságig.", price: "269.000 HUF", features: ["szertartás", "csoportképek", "fogadás", "mulatság", "2 fotós", "legfeljebb 6 óra", "legfeljebb 2 helyszín", "400–800 fénykép", "utazás 50 km-en belül"] },
+  { titleLines: ["Egész napos esküvői", "fotózási csomag"], description: "A teljes esküvői napot lefedő csomag, amely az előkészületek kulisszák mögötti pillanatait és egy kreatív páros fotózást is tartalmaz.", price: "319.000 HUF", features: ["szertartás", "csoportképek", "fogadás", "mulatság", "előkészületek", "kreatív páros fotózás", "2 fotós", "legfeljebb 10 óra", "több helyszín", "600–1000 fénykép", "utazás 50 km-en belül"] }
+];
+
+const weddingIncludedHu = [
+  ["Ingyenes konzultáció", "Egy videóhívás vagy személyes találkozó során megismerünk benneteket és átbeszéljük a terveiteket, mielőtt elkészítjük személyre szabott ajánlatotokat."],
+  ["Gyors átadás", "Egy héten belül küldünk egy előzetes válogatást, a teljes esküvői galériát pedig egy hónapon belül átadjuk."],
+  ["Privát online galéria", "A fényképeket privát online galérián keresztül adjuk át, ahonnan megtekinthetitek, letölthetitek és megoszthatjátok őket."],
+  ["Magas minőségű fényképek", "Minden átadott képet gondosan kiválasztunk, professzionálisan retusálunk és nagy felbontásban adunk át."]
+];
+
+const weddingApproachHu = [
+  ["Természetes pillanatok", "Őszinte reakciókat és kapcsolatokat örökítünk meg anélkül, hogy az esküvőt beállított jelenetek sorozatává változtatnánk."],
+  ["Elegáns portrék", "Egyszerű, nyugodt irányítással készítünk kifinomult páros és családi portrékat."],
+  ["Diszkrét jelenlét", "Figyelünk a fontos pillanatokra, de nem vesszük át az irányítást, így végig jelen lehettek az ünneplésben."]
+];
+
+const weddingProcessHu = [
+  ["Küldjétek el a dátumot és a helyszínt", "Írjátok meg, mikor és hol lesz az esküvőtök."],
+  ["Tervezzük meg a fotózást", "Személyes konzultáción átbeszéljük az időbeosztást, a prioritásaitokat és a megfelelő csomagot."],
+  ["Véglegesítsük a foglalást", "Fogadjátok el a személyre szabott ajánlatot, és fizessétek be az egyeztetett előleget a dátum lefoglalásához."],
+  ["Megkapjátok a galériát", "A fényképeket gondosan kiválasztjuk, retusáljuk, majd privát online galérián keresztül adjuk át."]
+];
+
+const weddingFaqHu = [
+  ["Budapesten kívül is vállaltok esküvőket?", "Igen. Budapesten dolgozunk, de Magyarország egész területén vállalunk esküvőket. Az ajánlatkéréskor írjátok meg a helyszínt, hogy az esetleges utazási költségeket is figyelembe vehessük."],
+  ["Mindegyik csomaghoz jár két fotós?", "Igen. Esküvői fotózási csomagjaink két fotóst tartalmaznak, így a fontos pillanatokat, reakciókat és részleteket több nézőpontból is meg tudjuk örökíteni."],
+  ["Személyre szabhatjuk a csomagot?", "Igen. A felsorolt csomagok kiindulópontok. Az időbeosztásotok, a helyszín és a prioritásaitok alapján a fotózást és az opcionális szolgáltatásokat az esküvőtökhöz igazítjuk."],
+  ["Az esküvő mely részeit fotózzátok?", "A választott csomagtól függően az előkészületeket, a szertartást, a családi és csoportképeket, a kreatív páros portrékat, a fogadást, a vacsorát és a mulatságot is fotózhatjuk."],
+  ["Vállaltok analóg esküvői fotózást?", "Igen. A digitális fotózás mellett kiválasztott pillanatokat 35 mm-es filmre is rögzíthetünk. Az analóg képek természetes szemcsézettséget, gazdag tónusokat és nosztalgikus, szépen tökéletlen karaktert adnak a kollekciótokhoz."],
+  ["Foglalhatunk külön kreatív páros fotózást?", "Igen. A kreatív páros portrék készülhetnek az esküvő napján, illetve külön jegyes- vagy utólagos fotózás keretében is. Segítünk kiválasztani az időbeosztásotokhoz és a kívánt hangulathoz legjobban illő lehetőséget."],
+  ["Vállaltok menyasszonyi boudoir fotózást?", "Igen. A menyasszonyi boudoir fotózás hozzáadható az esküvői csomaghoz, és történhet az előkészületek alatt vagy külön, privát stúdiófotózásként az aether art space-ben."],
+  ["Milyen a fotózási stílusotok?", "A természetes dokumentarista fotózást elegáns, gondosan komponált portrékkal ötvözzük. Megörökítjük az őszinte pillanatokat, és nyugodt iránymutatást adunk, amikor az segít erősebb képet készíteni."],
+  ["Hogyan válasszuk ki a megfelelő csomagot?", "Küldjétek el az esküvő dátumát, helyszínét és hozzávetőleges időbeosztását, valamint írjátok meg, mely pillanatokat szeretnétek leginkább megörökíteni. Ezek alapján a legmegfelelőbb csomagot ajánljuk."],
+  ["Hogyan foglalhatjuk le az esküvő dátumát?", "Írjatok nekünk az elérhetőség ellenőrzéséhez és a tervek átbeszéléséhez. A részletek és a személyre szabott ajánlat elfogadása után végigvezetünk benneteket a foglalás véglegesítésén."]
+];
+
+Object.assign(weddingContent.hu, {
+  hero: "Természetes, elegáns esküvői képek – a készülődéstől az utolsó táncig",
+  intro: "Az esküvőket őszinte dokumentarista pillanatok és kifinomult, szerkesztői stílusú portrék egyensúlyával fotózzuk. Budapesten dolgozunk, és Magyarország egész területén elérhetők vagyunk, hogy megőrizzük az ünneplésetek hangulatát, érzelmeit és egyedi részleteit.",
+  subIntro: "Rugalmas fotózás meghitt szertartásokhoz, egész napos esküvőkhöz és Magyarország bármely pontján tartott ünnepléshez.",
+  glanceHeading: "Esküvői fotózás röviden", glanceIntro: "Rugalmas esküvői fotózás meghitt szertartásokhoz, ünneplésekhez és teljes esküvői napokhoz Budapesten és Magyarország egész területén.",
+  glance: ["Minden csomaghoz két fotós jár", "Legfeljebb 10 óra esküvőnapi fotózás", "100–1000 retusált fénykép a csomagtól függően", "Előzetes válogatás egy héten belül", "Teljes privát galéria egy hónapon belül", "Utazás 50 km-en belül Budapestről", "Digitális és analóg fotózás", "Személyes konzultáció után személyre szabott csomagok"],
+  packagesHeading: "Esküvői fotózási csomagjaink", packagesIntro: "Esküvői fotózási csomagok meghitt szertartásokhoz, egész napos ünnepléshez, kreatív páros portrékhoz és esküvő utáni fotózásokhoz.",
+  packageCards: weddingPackagesHu, includedHeading: "Minden esküvői csomag tartalmazza", included: weddingIncludedHu,
+  buildHeading: "Állítsátok össze a fotózást", buildIntro: "Válasszatok egy esküvői fotózási csomagot, majd igazítsuk a lefedettséget az ünneplésetekhez. A konzultáción segítünk kiválasztani a legfontosabb pillanatokat és opcionális szolgáltatásokat.",
+  coverage: [["Előkészületek", "Természetes kulisszák mögötti képek a reggeli készülődésről, az utolsó részletektől a szertartás előtti izgatott várakozásig.", "az egész napos esküvői csomag része"], ["Kreatív páros portrék", "Laza portréfotózás kettőtökről, személyes, intim és romantikus képekkel.", "az egész napos esküvői csomag része"], ["Szertartás", "Időtálló képek a fogadalmakról, az érzelmekről, a részletekről és azokról a csendes pillanatokról, amelyek igazán a tietek.", "minden csomag része"], ["Fogadás", "Meleg, őszinte képek a fogadásról, a köszöntésekről, a beszédekről, a vacsoráról, a dekorációról és az ünneplés hangulatáról.", "a szertartás és ünneplés csomagtól"], ["Családi és csoportportrék", "Gondosan komponált családi és vendégportrék, hogy minden fontos ember szerepeljen az emlékeitekben.", "minden csomag része"], ["Mulatság", "Energikus képek az esti ünneplésről, az első tánctól a táncparkettig, nevetéssel, mozgással és késő esti emlékekkel.", "a szertartás és ünneplés csomagtól"]],
+  optionalHeading: "Opcionális fotózások", optionalIntro: "További fotózási lehetőségek, amelyek még személyesebbé teszik az esküvői kollekciótokat.",
+  options: [["Jegyesfotózás", "Laza portréfotózás az esküvő előtt, amely természetes és romantikus képeket ad, miközben segít megszokni a kamera előtti közös szereplést. Válasszatok jelentőségteljes helyszínt, vagy csatlakozzatok hozzánk a budapesti stúdióban.", "bármely csomaghoz hozzáadható 59.000 HUF-ért"], ["Menyasszonyi boudoir fotózás", "Elegáns és intim menyasszonyi portréfotózás érzékeny, önbizalmat adó és kifinomult megközelítéssel. Történhet a helyszínen vagy külön stúdiófotózásként.", "bármely csomaghoz hozzáadható 59.000 HUF-ért"], ["Analóg esküvői fotózás", "Az analóg fényképek gazdag tónusokat és nosztalgikus hangulatot adnak, így intim, hiteles és szépen tökéletlen képek születnek.", "bármely csomaghoz hozzáadható 39.000 HUF-ért"], ["Polaroid fényképezőgép bérlése", "A vendégeitek spontán pillanatokat örökíthetnek meg, és instant emlékeket készíthetnek egy klasszikus fényképezőgéppel.", "bármely csomaghoz hozzáadható 59.000 HUF-ért"], ["Szelfisarok bérlése", "Önkiszolgáló fotósarok, ahol a vendégek fotós nélkül készíthetnek laza, játékos portrékat az ünneplés során.", "bármely csomaghoz hozzáadható 69.000 HUF-ért"]],
+  photographersHeading: "Ismerjétek meg esküvői fotósainkat", photographersIntro: "Két különböző személyiség. Két eltérő nézőpont. Egy közös vízió. Más részleteket veszünk észre, és más pillanatokra reagálunk. Együtt gazdagabb, teljesebb történetet mesélünk el az esküvőtökről, miközben szabadon átélhetitek a napot.", photographers: [["Alexandra Kulcsár-Horváth", "Esküvői, portré- és lifestyle fotós", "Alexandra érzékeny, intuitív megközelítéssel fotóz, a természetes gesztusokra, személyes kapcsolatokra és a könnyen elszalasztható csendes pillanatokra figyelve."], ["Aczél Dániel Zoltán", "Fotós és az Aether Art Space alapítója", "Dániel a pontos kompozíciót és a kreatív világítást szerkesztői szemlélettel ötvözi. Digitális és analóg fotózásban egyaránt otthonosan mozog, így minden esküvői történetnek egyedi vizuális karaktert ad."]],
+  approachHeading: "A hozzáállásunk az esküvő napjához", approachIntro: "Figyelmes fotózás, amely lehetővé teszi, hogy jelen legyetek a pillanatban.", approach: weddingApproachHu,
+  testimonialHeading: "Vélemények", testimonialIntro: "Párok kedves szavai, akiket fotóztunk", testimonial: "Szandi fantasztikus munkát végzett az esküvőnkön. Már az első kapcsolatfelvételtől kezdve rugalmas, támogató és őszintén elkötelezett volt amellett, hogy minden gördülékenyen menjen. Több tervezési egyeztetés során együtt véglegesítettük a részleteket, és mindig azt éreztette velünk, hogy meghallgatnak bennünket, és magabiztosan dönthetünk.\n\nMagán a napon különösen nagyra értékeltük az időzítéssel, pózokkal és helyszínválasztással kapcsolatos ötleteit. Nyugodt kommunikációja és egyértelmű instrukciói segítettek ellazulni a kamera előtt, miközben olyan pillanatokat is megörökített, amelyekről észre sem vettük, hogy megtörténnek. A galéria természetes, érzelmes és igazán rólunk szól.\n\nSzandinál jobb fotóst nehéz lenne ajánlani annak a párnak, aki tehetséges és könnyen együttműködő fotóst keres.", testimonialName: "Martin és Chris",
+  processHeading: "Hogyan foglaljátok le az esküvői fotózást?", processIntro: "Egyszerű, személyes folyamat az első üzenettől a végleges galériáig.", process: weddingProcessHu,
+  faqHeading: "Esküvői fotózás – gyakori kérdések", faq: weddingFaqHu,
+  formHeading: "Meséljetek az esküvőtökről", formIntro: "Állítsunk össze a terveitekhez illő fotózási csomagot", formBody: "Budapesten vagy Magyarország más részén tervezitek az esküvőtöket? Küldjétek el a dátumot, a helyszínt és néhány részletet az ünneplésről. Ellenőrizzük az elérhetőséget, és a terveitekhez igazított ajánlatot készítünk."
+});
+
 Object.assign(weddingContent.en, { packageCards: weddingPackages, includedHeading: "Included With Every Wedding Package", included: weddingIncluded, approach: weddingApproach, process: weddingProcess, faqHeading: "Wedding Photography FAQ", faq: weddingFaq });
-Object.assign(weddingContent.hu, { packageCards: weddingPackages, includedHeading: "Included With Every Wedding Package", included: weddingIncluded, approach: weddingApproach, process: weddingProcess, faqHeading: "Wedding Photography FAQ", faq: weddingFaq });
 
 export const weddingImages = [
   { src: "/images/wix/wedding/wedding-01.jpg", width: 1500, height: 1000, alt: "Wedding photography in Hungary" },
@@ -1314,13 +1371,29 @@ const privacySections = [
   ["Contact Us", ["If you have any questions about this Privacy Policy, You can contact us by email: photostudio.aether@gmail.com"]]
 ];
 
+const privacySectionsHu = [
+  ["Értelmezés és fogalommeghatározások", ["A nagy kezdőbetűvel írt kifejezések jelentését az alábbiakban határozzuk meg. A fogalmak jelentése az egyes és a többes számú használat esetén is azonos.", "Jelen adatkezelési tájékoztató alkalmazásában:", "A fiók a szolgáltatásunk vagy annak egyes részei eléréséhez létrehozott egyedi fiók.", "A kapcsolt vállalkozás olyan gazdasági társaság, amely valamely felet ellenőrzi, amely felett valamely fél ellenőrzést gyakorol, vagy amely valamely féllel közös irányítás alatt áll.", "A társaság, illetve az „aether art space”, „mi”, „minket” és „miénk” kifejezések az aether art space-re, Budapest, Tátra utca 29b címre utalnak.", "A sütik olyan kis fájlok, amelyeket a weboldal helyez el a számítógépeden, mobileszközödön vagy más eszközödön, és amelyek többek között böngészési adatokat tárolhatnak.", "Az ország: Magyarország.", "Az eszköz a szolgáltatás elérésére alkalmas eszköz, például számítógép, mobiltelefon vagy táblagép.", "A személyes adat az azonosított vagy azonosítható természetes személyhez kapcsolódó bármely információ.", "A szolgáltatás a weboldalt jelenti.", "A szolgáltató az a természetes vagy jogi személy, aki a társaság nevében adatokat kezel, illetve a szolgáltatás biztosítását, teljesítését vagy elemzését segíti.", "A használati adatok automatikusan gyűjtött adatok, például egy oldal megtekintésének időtartama.", "A weboldal az aether art space, amely a https://studioaether.com címen érhető el.", "A felhasználó a szolgáltatást elérő vagy használó természetes személyt, illetve az őt megbízó társaságot vagy más jogi személyt jelenti."]],
+  ["Személyes adatok gyűjtése és felhasználása", ["A szolgáltatás használata során bizonyos, azonosításra alkalmas adatokat kérhetünk, amelyekkel kapcsolatba léphetünk veled vagy azonosíthatunk téged. Ilyen adat lehet többek között az e-mail-cím.", "A használati adatokat a szolgáltatás igénybevétele során automatikusan gyűjtjük. Ide tartozhat például az IP-cím, a böngésző típusa és verziója, a megtekintett oldalak, a látogatás időpontja és időtartama, valamint egyéb diagnosztikai adat.", "Mobileszközről történő hozzáférés esetén további technikai adatokat is gyűjthetünk, például az eszköz típusát, egyedi azonosítóját, IP-címét, operációs rendszerét és mobilböngészőjét."]],
+  ["Nyomkövetési technológiák és sütik", ["Sütiket és hasonló nyomkövetési technológiákat használunk a szolgáltatás működésének, használatának és fejlesztésének támogatására.", "A sütik olyan kis fájlok, amelyeket az eszközödön helyezünk el. A böngésződ beállításaiban letilthatod őket, azonban ez a szolgáltatás egyes részeinek használatát korlátozhatja.", "Webjelzőket és hasonló technológiákat is használhatunk az oldalak és e-mailek használatának mérésére.", "Az állandó sütik az eszközödön maradnak, amíg törlöd őket, a munkamenet-sütik pedig a böngésző bezárásakor törlődnek.", "Szükséges sütik: a weboldal alapvető működéséhez és funkcióinak használatához szükséges munkamenet-sütik.", "Sütielfogadási sütik: annak megjegyzésére szolgálnak, hogy elfogadtad-e a sütik használatát.", "Funkcionális sütik: például a nyelvi beállítások megjegyzését teszik lehetővé."]],
+  ["Személyes adataid felhasználása", ["A társaság a személyes adatokat a szolgáltatás biztosítására és fenntartására, a használat figyelésére, a foglalások kezelésére, a megkeresések megválaszolására, a szolgáltatással kapcsolatos tájékoztatás küldésére, valamint a szolgáltatás és a felhasználói élmény fejlesztésére használhatja.", "Személyes adataidat megoszthatjuk szolgáltatókkal a szolgáltatás működtetése és elemzése érdekében, jogszabályi vagy üzleti okból, illetve az általad adott hozzájárulás alapján."]],
+  ["Személyes adatok megőrzése", ["Személyes adataidat csak addig őrizzük meg, ameddig az adatkezelési célok teljesítéséhez szükséges, illetve ameddig jogi kötelezettségeink, jogviták rendezése vagy megállapodások érvényesítése ezt indokolja.", "A használati adatokat általában rövidebb ideig őrizzük meg, kivéve, ha biztonsági vagy működési okból, illetve jogszabály alapján hosszabb megőrzés szükséges."]],
+  ["Személyes adatok továbbítása", ["Adataidat az adatkezelésben részt vevő felek működési helyein és más olyan helyeken kezelhetjük, ahol az adatvédelmi szabályok eltérhetnek. A szolgáltatás használatával és adataid megadásával elfogadod az ilyen továbbítást.", "Minden észszerűen elvárható lépést megteszünk adataid biztonságos, jelen tájékoztatóval összhangban történő kezeléséért."]],
+  ["Személyes adatok törlése", ["Jogod van kérni a rólad gyűjtött személyes adatok törlését, illetve segítséget kérni azok törléséhez.", "Adataidhoz való hozzáférést, azok helyesbítését vagy törlését bármikor kérheted a fiókodon keresztül, ha rendelkezel ilyennel, vagy az alábbi elérhetőségen.", "Bizonyos adatokat jogszabályi kötelezettség vagy jogszerű adatkezelési alap miatt továbbra is meg kell őriznünk."]],
+  ["Személyes adatok közzététele", ["Egyesülés, felvásárlás vagy eszközértékesítés esetén a személyes adatok átkerülhetnek az ügyletben részt vevő félhez. Erről az adatkezelés változása előtt tájékoztatást adunk.", "Jogszabály alapján vagy hatósági megkeresésre kötelesek lehetünk személyes adatokat átadni.", "Személyes adatokat akkor is átadhatunk, ha ez jogi kötelezettség teljesítéséhez, jogaink vagy tulajdonunk védelméhez, jogellenes cselekmény megelőzéséhez vagy a felhasználók biztonságához szükséges."]],
+  ["Személyes adataid biztonsága", ["Személyes adataid biztonsága fontos számunkra, azonban az internetes továbbítás és az elektronikus tárolás egyetlen módszere sem garantál teljes biztonságot. Igyekszünk üzletileg elfogadható eszközökkel védeni adataidat, de abszolút biztonságot nem tudunk garantálni."]],
+  ["Gyermekek adatainak védelme", ["Szolgáltatásunk nem irányul 13 év alatti személyekhez, és tudatosan nem gyűjtünk tőlük azonosításra alkalmas adatokat. Ha tudomásodra jut, hogy gyermek személyes adatot adott meg, kérjük, jelezd nekünk. Ellenőrzött szülői hozzájárulás nélkül gyűjtött adat esetén intézkedünk annak törléséről."]],
+  ["Más weboldalakra mutató hivatkozások", ["A szolgáltatás harmadik felek által üzemeltetett weboldalakra mutató hivatkozásokat tartalmazhat. Ezekre kattintva az adott fél weboldalára kerülsz. Javasoljuk, hogy tekintsd át az érintett weboldalak adatkezelési tájékoztatóit; azok tartalmáért és gyakorlatáért nem vállalunk felelősséget."]],
+  ["Az adatkezelési tájékoztató módosítása", ["Az adatkezelési tájékoztatót időről időre módosíthatjuk. A módosításokat ezen az oldalon tesszük közzé, és szükség esetén e-mailben vagy jól látható értesítésben is jelezzük. A módosítások közzétételkor lépnek hatályba."]],
+  ["Kapcsolat", ["Ha kérdésed van az adatkezelési tájékoztatóval kapcsolatban, e-mailben léphetsz velünk kapcsolatba: photostudio.aether@gmail.com"]]
+];
+
 export const legalContent = {
-  en: { lastUpdated: "Last updated: October 19, 2024", intro: "This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You. We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the Privacy Policy Generator.", sections: privacySections },
-  hu: { lastUpdated: "Last updated: October 19, 2024", intro: "This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You. We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the Privacy Policy Generator.", sections: privacySections }
+  en: { lastUpdated: "Last updated: October 19, 2024", intro: "This Privacy Policy describes how we collect, use, and disclose your information when you use the Service. It explains your privacy rights and how the law protects you. We use your personal data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy.", sections: privacySections },
+  hu: { lastUpdated: "Frissítve: 2024. október 19.", intro: "Ez az adatkezelési tájékoztató bemutatja, hogyan gyűjtjük, használjuk fel és adjuk át az adataidat a szolgáltatás használata során. Ismerteti az adatvédelmi jogaidat és azt, hogyan védi ezeket a jog a vonatkozó jogszabályok alapján. Személyes adataidat a szolgáltatás biztosítására és fejlesztésére használjuk.", sections: privacySectionsHu }
 };
 
 export const homeImages = {
-  hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
+  hero: { src: "/images/wix/jpg/hero.jpg", width: 2560, height: 1332, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },
   features: [
     { src: "/images/wix/reference/feature-studio.jpg", alt: "photostudio interior" },
@@ -1348,7 +1421,8 @@ export const homeImages = {
     { src: "/images/wix/reference/service-portrait.jpg", width: 300, height: 298, alt: "business and casual portrait photography" },
     { src: "/images/wix/reference/service-fitness.jpg", width: 300, height: 298, alt: "fitness and yoga photography" },
     { src: "/images/wix/reference/service-glamour.jpg", width: 300, height: 298, alt: "glamour and boudoir photography" },
-    { src: "/images/wix/reference/service-models.jpg", width: 300, height: 298, alt: "model digitals and portfolio photography" }
+    { src: "/images/wix/reference/service-models.jpg", width: 300, height: 298, alt: "model digitals and portfolio photography" },
+    { src: "/images/wix/wedding/wedding-01.jpg", width: 1500, height: 1000, alt: "wedding photography in Budapest and Hungary" }
   ],
   booking: [
     { src: "/images/wix/reference/booking-photo-studio.jpg", width: 640, height: 382, alt: "aether photo studio interior", altHu: "az aether fotóstúdió belső tere" },
@@ -1356,3 +1430,43 @@ export const homeImages = {
     { src: "/images/wix/reference/booking-contact.jpg", width: 640, height: 382, alt: "photoshoot in the aether studio", altHu: "fotózás az aether stúdióban" }
   ]
 };
+
+// Keep legacy content blocks consistent until they are fully migrated to structured, localized fields.
+const copyFixes = [
+  ["studió", "stúdió"],
+  ["15.000.Ft", "15.000 Ft"],
+  ["8.000.Ft", "8.000 Ft"],
+  ["39.000.Ft", "39.000 Ft"],
+  ["5000Ft", "5.000 Ft"],
+  ["elérhetőek", "elérhetők"],
+  ["használatod", "használhatod"],
+  ["használhatjátok", "használhatod"],
+  ["Authentikus", "Autentikus"],
+  ["eszközeink lehetővé teszi", "eszközeink lehetővé teszik"],
+  ["haj-stylistjai", "hajstylistjai"],
+  ["kérjen ajánlatot", "kérj ajánlatot"],
+  ["Esemény- és csapatépítés fotózás", "Esemény- és csapatépítő fotózás"],
+  ["igényeire és méretéhez szabva", "igényeihez és méretéhez szabva"],
+  ["egy galéria ami", "egy galéria, amely"],
+  ["photoshoots packages", "photoshoot packages"],
+  ["magazine quality", "magazine-quality"],
+  ["modelling carreer", "modelling career"],
+  ["pictures that shows", "pictures that show"],
+  ["pictures about your pet", "pictures of your pet"],
+  ["make up", "make-up"],
+  ["high end", "high-end"]
+];
+
+const applyCopyFixes = (value) => {
+  if (typeof value === "string") return copyFixes.reduce((text, [from, to]) => text.replaceAll(from, to), value);
+  if (Array.isArray(value)) {
+    for (let index = 0; index < value.length; index += 1) value[index] = applyCopyFixes(value[index]);
+    return value;
+  }
+  if (value && typeof value === "object") {
+    for (const key of Object.keys(value)) value[key] = applyCopyFixes(value[key]);
+  }
+  return value;
+};
+
+[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyCopyFixes);

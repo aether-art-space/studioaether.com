@@ -12,7 +12,7 @@ const bookingFooterVariant = bookingFooterVariantFor(page);
     <div class="site-footer__grid">
       <div class="footer-column footer-column--contact">
         <div class="footer-icon-slot" aria-hidden="true"><PhoneIcon className="footer-icon footer-icon--phone" size={23} weight="regular" /></div>
-        <h2>{hu ? "Kontakt és Social media" : "Contact & Socials"}</h2>
+        <h2>{hu ? "Kapcsolat és közösségi média" : "Contact & Socials"}</h2>
         <div class="footer-contact-group">
           <a href="tel:+36703861739">HU / EN:&nbsp;<strong>+36/70-386-17-39</strong></a>
           <a href={`mailto:${site.email}?subject=contact%20from%20website%20footer`}>{site.email}</a>
@@ -26,7 +26,7 @@ const bookingFooterVariant = bookingFooterVariantFor(page);
         <div class="footer-icon-slot" aria-hidden="true"><InfoIcon className="footer-icon footer-icon--info" size={25} weight="regular" /></div>
         <h2>{hu ? "Egyéb oldalak" : "Other pages"}</h2>
         <a href={hu ? "/hu/faq" : "/faq"}>FAQ</a>
-        <a href={hu ? "/hu/privacy-policy" : "/privacy-policy"}>Privacy Policy</a>
+        <a href={hu ? "/hu/privacy-policy" : "/privacy-policy"}>{hu ? "Adatkezelési tájékoztató" : "Privacy Policy"}</a>
         {consentEnabled && <button class="cookie-settings-link" type="button" data-cookie-settings>{hu ? "Süti beállítások" : "Cookie settings"}</button>}
       </nav>
       <div class="footer-column footer-column--hours">

@@ -1,4 +1,6 @@
 ---
+import ResponsiveImage from "./ResponsiveImage.astro";
+
 type ImageHeroVariant = "home" | "selfie" | "christmas";
 
 interface HeroImage {
@@ -31,9 +33,9 @@ const lines = title.split("\n");
 
 <section class={`image-hero image-hero--${variant}`} aria-labelledby={headingId}>
   <div class="image-hero__image-wrap">
-    <img class="image-hero__image" src={image.src} alt={image.alt} width={image.width} height={image.height} fetchpriority="high" decoding="async" />
+    <ResponsiveImage image={image} role="hero" className="image-hero__image" loading="eager" fetchpriority="high" />
     <div class="image-hero__veil" aria-hidden="true"></div>
-    {icon && <img class="image-hero__icon" src={icon.src} alt={icon.alt} width={icon.width} height={icon.height} decoding="async" />}
+    {icon && <ResponsiveImage image={icon} role="decorative" className="image-hero__icon" loading="eager" />}
     <div class="image-hero__content">
       <h1 id={headingId}>{lines.map((line) => <span>{line}</span>)}</h1>
       {subheading && <h2>{subheading}</h2>}

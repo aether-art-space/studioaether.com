@@ -4,9 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "node scripts/generate-images.mjs",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "precheck": "node scripts/generate-images.mjs",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && node scripts/validate.mjs",
     "baseline:visual": "node scripts/capture-visual-baseline.mjs",
+    "predev": "node scripts/generate-images.mjs",
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
   },

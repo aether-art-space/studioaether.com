@@ -1,6 +1,7 @@
 ---
 import { site, localizedPath, localizedNav } from "../lib/site.mjs";
 import AetherHeaderNavigation from "./AetherHeaderNavigation";
+import ResponsiveImage from "./ResponsiveImage.astro";
 const { page } = Astro.props;
 const hu = page.language === "hu";
 const languageHref = page.counterpartPath || (hu ? "/" : "/hu");
@@ -13,7 +14,7 @@ const navigationGroups = groups.map((group) => ({
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href={hu ? "/hu" : "/"} aria-label={site.name}>
-      <img src="/images/wix/jpg/logo-full.jpg" alt={site.name} width="326" height="184" />
+      <ResponsiveImage image={{ src: "/images/wix/jpg/logo-full.jpg", alt: site.name, width: 326, height: 184 }} role="logo" loading="eager" />
     </a>
     <AetherHeaderNavigation
       client:load

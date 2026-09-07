@@ -1,4 +1,6 @@
 ---
+import ResponsiveImage from "./ResponsiveImage.astro";
+
 type CircularCardVariant = "feature" | "artist" | "service";
 
 interface CardImage {
@@ -25,8 +27,14 @@ const cardClass = ["circular-card", `circular-card--${variant}`, className].filt
 ---
 
 <article class={cardClass}>
-  <h3>{title}</h3>
-  <img src={image.src} alt={image.alt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" />
-  {copy && <p>{copy}</p>}
-  {href && linkLabel && <a class="text-link" href={href}>{linkLabel}</a>}
+  {href ? <a class="circular-card__link" href={href}>
+    <h3>{title}</h3>
+    <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />
+    {copy && <p>{copy}</p>}
+    {linkLabel && <span class="text-link">{linkLabel}</span>}
+  </a> : <>
+    <h3>{title}</h3>
+    <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />
+    {copy && <p>{copy}</p>}
+  </>}
 </article>

@@ -10,7 +10,7 @@ Astro generates clean URL paths as directory-index documents. Production hosting
 
 Content migration status: all production routes in the route contract have now been compared against fresh Wix HTML in the connected Chrome reference for titles, descriptions, headings, source copy, images/crops, links and responsive behavior. The homepage remains unchanged after its committed migration. The remaining source discrepancies and pre-cutover decisions are recorded below.
 
-Follow-up parity audit (September 5, 2026): all rendered source image sets are now represented locally, including the mentoring galleries and the additional wedding section images; the generated site has no unresolved local image references. LocalBusiness/ProfessionalService, opening hours, social profiles and price range are retained in JSON-LD, with WebPage, BreadcrumbList and relevant Service/Person nodes added for the V2 document model. FAQPage remains intentionally omitted pending approval. Hungarian copy was checked against the live Wix source with only small grammar/typography corrections; the source’s English legal policy and mixed-language Hungarian wedding page remain preserved and are still explicit pre-cutover review items. `/hu/post-booking` intentionally has no description meta tag because the live Wix source has none.
+Follow-up parity audit (September 7, 2026): all rendered source image sets are now represented locally, including the mentoring galleries and the additional wedding section images; the generated site has no unresolved local image references. Page titles, descriptions, canonicals, hreflang, Open Graph/Twitter tags, robots directives and social images are generated for every indexable route. LocalBusiness/ProfessionalService, opening hours, social profiles, price range, image/logo, map and contact fields are retained in JSON-LD, with WebPage, BreadcrumbList, FAQPage on the two FAQ routes, and relevant Service/Person nodes added for the V2 document model. The ID-photo routes intentionally do not receive FAQPage because they have no visible FAQ content. Hungarian copy and metadata were checked against the live Wix source with grammar/typography corrections; the legal address is intentionally `Tátra utca 29b`, while the public studio/office address is intentionally `Lónyay utca 60., 1093 Budapest`. `/hu/post-booking` intentionally has no description meta tag because the live Wix source has none.
 
 | Route group | Initial V2 treatment |
 | --- | --- |
@@ -18,9 +18,9 @@ Follow-up parity audit (September 5, 2026): all rendered source image sets are n
 | `/mentoring` | Match the observed Wix behavior with one direct 301 to `/photographer-mentoring-budapest`; keep the source out of the sitemap and internal links. |
 | `/photographer-daniel` | Preserve and keep indexable pending Search Console/backlink review; its sitemap-discovered Hungarian counterpart is also represented. |
 | `/hu/fitness` | Preserve URL and correct the known corporate-photography title mismatch to fitness/yoga wording after baseline capture. |
-| FAQ | Preserve URL and verified 18-question bilingual accordion content. FAQPage schema is intentionally omitted pending approval. The Wix FAQ contains stale hourly pricing that must not override the audited booking page. |
-| Privacy policy | Preserve URL and the audited generated-policy text dated October 19, 2024. The source identifies the legal provider as `aether art space, Budapest, Tátra utca 29b`, while the public studio address remains `Lónyay utca 60., 1093 Budapest`; legal owner/address, contact-email presentation and policy update require review before cutover. |
-| `/wedding-photography` and `/hu/wedding-photography` | Preserve both URLs and the audited wedding source assets. The Hungarian source currently carries a glamour/boudoir title and introductory copy before wedding sections; resolve whether to preserve or editorially correct that mismatch before cutover. Wedding package prices are consultation-led in the current source. |
+| FAQ | Preserve URL and bilingual accordion content. FAQPage schema is emitted on the two FAQ routes and mirrors the 21 visible questions and answers. |
+| Privacy policy | Preserve URL and the audited generated-policy text dated October 19, 2024. The legal provider address is `Tátra utca 29b`; the public studio/office address is `Lónyay utca 60., 1093 Budapest`. Both are intentionally retained in their respective contexts. |
+| `/wedding-photography` and `/hu/wedding-photography` | Preserve both URLs and the audited wedding source assets. The Hungarian metadata and introductory copy are aligned with the wedding page; package prices remain consultation-led in the current source. |
 
 ## Required source-level inputs before cutover
 
@@ -29,7 +29,7 @@ Follow-up parity audit (September 5, 2026): all rendered source image sets are n
 - Export backlinks and Google Ads final landing-page URLs.
 - Record current GA4 property, Google tag, Ads conversion actions, Consent Mode and enhanced conversions configuration.
 - Confirm current redirects, hostname behavior, HTTPS and sitemap.
-- Confirm FAQ prices, cancellation policy, phone number(s), artist packages and legal address.
+- Keep FAQ prices, cancellation policy, phone number(s), artist packages and legal address synchronized if any of those facts change.
 - Resolve the Hungarian wedding-page title/content mismatch and confirm the wedding package/form submission destination.
 - Review the generated privacy policy with the legal owner before publishing; do not substitute the public studio address for the source legal provider address without approval.
 

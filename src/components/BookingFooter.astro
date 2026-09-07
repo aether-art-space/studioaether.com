@@ -1,6 +1,7 @@
 ---
 import { homeContent, homeImages } from "../data/content.mjs";
 import { site } from "../lib/site.mjs";
+import ResponsiveImage from "./ResponsiveImage.astro";
 
 const { page, variant = "all", includeContactModal = true } = Astro.props;
 const hu = page.language === "hu";
@@ -29,7 +30,7 @@ const headingId = `footer-booking-title-${variantKey}`;
       </div> : <>
         <p>{copy}</p>
         <div class="home-booking-card__media">
-          <img class="home-booking-card__image" src={homeImages.booking[index].src} alt={hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt} width={homeImages.booking[index].width} height={homeImages.booking[index].height} loading="lazy" decoding="async" />
+          <ResponsiveImage className="home-booking-card__image" image={{ ...homeImages.booking[index], alt: hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt }} role="card" loading="lazy" />
         </div>
       </>}
       {index === 2 ? <button class:list={["button", "button--secondary", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" type="button" data-contact-open aria-controls="footer-contact-modal">{cta}</button> : <a class:list={["button", "button--dark", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" href={href}>{cta}</a>}

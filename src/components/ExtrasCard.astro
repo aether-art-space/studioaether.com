@@ -1,4 +1,6 @@
 ---
+import ResponsiveImage from "./ResponsiveImage.astro";
+
 interface CardImage {
   src: string;
   alt: string;
@@ -34,7 +36,7 @@ const cardClass = ["extras-card", image ? "extras-card--image" : "", className].
 ---
 
 <article class={cardClass}>
-  {image && <img class="extras-card__image" src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />}
+  {image && <ResponsiveImage image={image} role="card" className="extras-card__image" loading="lazy" />}
   {image ? <div class="extras-card__body">
     <h4>{title}</h4>
     {description && <p class="extras-card__description">{description}</p>}

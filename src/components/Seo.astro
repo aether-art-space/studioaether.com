@@ -1,9 +1,44 @@
 ---
-import { absoluteUrl, pageByPath, site, siteUrl } from "../lib/site.mjs";
+import { absoluteUrl, faqItemsFor, pageByPath, site, siteUrl } from "../lib/site.mjs";
+import { resolveImage } from "../lib/images.mjs";
 
 const { page } = Astro.props;
 const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
 const canonicalUrl = absoluteUrl(page.path);
+const socialImageSources: Record<string, string> = {
+  "Studio rental / space": "/images/wix/reference/feature-studio.jpg",
+  "Selfie studio": "/images/selfie/hero.jpg",
+  "Studio pricing / booking": "/images/wix/reference/booking-photo-studio.jpg",
+  "Equipment / camera rental": "/images/wix/reference/feature-camera.jpg",
+  "Props, wardrobe, furniture": "/images/wix/reference/feature-props.jpg",
+  "Resident models": "/images/wix/reference/artist-models.jpg",
+  "Resident photographers": "/images/wix/reference/artist-photographers.jpg",
+  "Make-up / hair artists": "/images/wix/reference/artist-makeup.jpg",
+  "Stylists / brand designers": "/images/wix/reference/artist-stylists.jpg",
+  "Model polaroids / digitals": "/images/wix/service/model-digital-01.jpg",
+  "Passport / ID photos": "/images/wix/service/id-photo.jpg",
+  "Pet photography": "/images/wix/service/pet-01.jpg",
+  "Photography mentoring - current nav URL": "/images/wix/mentoring/digital-01.jpg",
+  "Photography packages": "/images/wix/reference/artist-photographers.jpg",
+  "Portrait photography": "/images/wix/service/portrait-01.jpg",
+  "Fitness & yoga photography": "/images/wix/service/fitness-01.jpg",
+  "Glamour / boudoir / fine-art nude": "/images/wix/service/glamour-01.jpg",
+  "Commercial photography": "/images/wix/service/commercial-01.jpg",
+  "Corporate photography": "/images/wix/service/corporate-01.jpg",
+  "Christmas photoshoot": "/images/wix/seasonal/christmas-01.jpg",
+  "Christmas studio": "/images/wix/seasonal/christmas-studio-hero.jpg",
+  "Wedding photography": "/images/wix/wedding/source-sections/photographer-alexandra.jpg",
+  "Photographer profile - Dániel": "/images/wix/profile/daniel-portrait.jpg"
+};
+const socialImage = resolveImage({
+  src: socialImageSources[page.purpose] || "/images/wix/reference/hero-main.jpg",
+  alt: page.h1
+}, "content");
+const socialImageUrl = absoluteUrl(socialImage.lightbox.fallback);
+const logoImage = resolveImage({ src: "/images/wix/jpg/logo-full.jpg", alt: site.name }, "content");
+const logoImageUrl = absoluteUrl(logoImage.lightbox.fallback);
+const iconImage = resolveImage({ src: "/images/wix/jpg/logo-icon.jpg", alt: site.name }, "thumb");
+const iconImageUrl = absoluteUrl(iconImage.lightbox.fallback);
 const counterpart = page.counterpartPath ? pageByPath.get(page.counterpartPath) : null;
 const alternates = [
   { hreflang: page.language === "hu" ? "hu-hu" : "en-us", href: canonicalUrl },
@@ -11,6 +46,48 @@ const alternates = [
 ];
 const englishPage = page.language === "en" ? page : counterpart?.language === "en" ? counterpart : null;
 const xDefault = absoluteUrl(englishPage?.path || "/");
+const locale = page.language === "hu" ? "hu_HU" : "en_US";
+const alternateLocale = page.language === "hu" ? "en_US" : "hu_HU";
+const socialSiteName = "Aether Art Space";
+const serviceTypeLabels: Record<string, { en: string; hu: string }> = {
+  "Studio rental / space": { en: "Photo studio rental", hu: "Fotóstúdió-bérlés" },
+  "Selfie studio": { en: "Selfie studio rental", hu: "Szelfistúdió-bérlés" },
+  "Equipment / camera rental": { en: "Photography equipment rental", hu: "Fotózási felszerelés- és kamerabérlés" },
+  "Props, wardrobe, furniture": { en: "Photo studio props and wardrobe rental", hu: "Fotóstúdió-kellékek és ruhatár bérlése" },
+  "Resident models": { en: "Photo model booking", hu: "Fotómodell-foglalás" },
+  "Resident photographers": { en: "Photographer booking", hu: "Fotósfoglalás" },
+  "Make-up / hair artists": { en: "Make-up and hair styling", hu: "Smink- és hajstyling" },
+  "Stylists / brand designers": { en: "Styling and brand design", hu: "Styling és márkadesign" },
+  "Model polaroids / digitals": { en: "Model digitals photography", hu: "Modell digitals fotózás" },
+  "Passport / ID photos": { en: "Passport and ID photography", hu: "Igazolvány- és útlevélkép készítés" },
+  "Pet photography": { en: "Pet photography", hu: "Kisállatfotózás" },
+  "Photography mentoring - current nav URL": { en: "Photography mentoring", hu: "Fotográfiai mentorálás" },
+  "Photography packages": { en: "Photography packages", hu: "Fotózási csomagok" },
+  "Portrait photography": { en: "Portrait photography", hu: "Portréfotózás" },
+  "Fitness & yoga photography": { en: "Fitness and yoga photography", hu: "Fitness- és jóga-fotózás" },
+  "Glamour / boudoir / fine-art nude": { en: "Glamour, boudoir and fine-art nude photography", hu: "Glamour-, boudoir- és fine art aktfotózás" },
+  "Commercial photography": { en: "Commercial photography", hu: "Reklámfotózás" },
+  "Corporate photography": { en: "Corporate photography", hu: "Vállalati fotózás" },
+  "Christmas photoshoot": { en: "Christmas photography", hu: "Karácsonyi fotózás" },
+  "Christmas studio": { en: "Christmas studio rental", hu: "Karácsonyi stúdióbérlés" },
+  "Wedding photography": { en: "Wedding photography", hu: "Esküvői fotózás" }
+};
+const localizedServiceType = serviceTypeLabels[page.purpose]?.[page.language === "hu" ? "hu" : "en"] || page.purpose;
+const businessDescription = page.language === "hu"
+  ? "Kreatív fotóstúdió Budapesten stúdióbérléshez, fotózási szolgáltatásokhoz, felszereléshez és kreatív produkciókhoz."
+  : "A creative photo studio in Budapest for studio rental, photography services, equipment and creative productions.";
+const serviceArea = page.purpose === "Wedding photography"
+  ? [
+      { "@type": "City", name: "Budapest" },
+      { "@type": "Country", name: page.language === "hu" ? "Magyarország" : "Hungary" }
+    ]
+  : { "@type": "City", name: "Budapest" };
+const faqAnswerText = (answer: unknown) => {
+  const blocks = typeof answer === "string" ? [{ type: "paragraph", text: answer }] : answer as Array<any>;
+  return blocks.flatMap((block) => block.type === "list"
+    ? block.items.map((item: any) => [typeof item === "string" ? item : item.text, ...(item.children || [])].join(" "))
+    : [block.text]).join(" ");
+};
 const tracking = preview ? { googleTagId: "", ga4Id: "", googleAdsId: "" } : site.tracking;
 const trackingId = tracking.googleTagId || tracking.ga4Id || tracking.googleAdsId;
 const schemas: Record<string, unknown>[] = [
@@ -23,7 +100,19 @@ const schemas: Record<string, unknown>[] = [
     email: site.email,
     telephone: site.phone,
     priceRange: "$",
+    image: socialImageUrl,
+    logo: logoImageUrl,
+    description: businessDescription,
     sameAs: [site.instagramUrl, site.facebookUrl],
+    hasMap: site.mapsUrl,
+    areaServed: { "@type": "Country", name: "Hungary" },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: site.email,
+      telephone: site.phone,
+      availableLanguage: ["en", "hu"]
+    },
     openingHoursSpecification: [
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "22:00" },
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday", "Sunday"], opens: "10:00", closes: "22:00" }
@@ -43,6 +132,8 @@ const schemas: Record<string, unknown>[] = [
     name: page.title,
     url: canonicalUrl,
     inLanguage: page.language,
+    ...(page.description ? { description: page.description } : {}),
+    image: socialImageUrl,
     isPartOf: { "@id": `${siteUrl()}/#website` }
   },
   {
@@ -76,15 +167,36 @@ if (page.section === "home" && page.path === "/") {
   });
 }
 
-if (page.section === "service") {
+if (page.section === "faq") {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#faq`,
+    url: canonicalUrl,
+    inLanguage: page.language,
+    mainEntity: faqItemsFor(page).map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faqAnswerText(answer)
+      }
+    }))
+  });
+}
+
+if (page.section === "service" && page.purpose !== "Photographer profile - Dániel") {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${canonicalUrl}#service`,
     name: page.h1,
-    serviceType: page.purpose,
+    serviceType: localizedServiceType,
+    ...(page.description ? { description: page.description } : {}),
+    image: socialImageUrl,
+    url: canonicalUrl,
     provider: { "@id": `${siteUrl()}/#business` },
-    areaServed: { "@type": "City", name: "Budapest" }
+    areaServed: serviceArea
   });
 }
 
@@ -94,8 +206,10 @@ if (page.path.endsWith("photographer-daniel")) {
     "@type": "Person",
     "@id": `${canonicalUrl}#person`,
     name: "Dániel Z. Aczél",
-    jobTitle: "Photographer",
+    jobTitle: page.language === "hu" ? "Fotós" : "Photographer",
     worksFor: { "@id": `${siteUrl()}/#business` },
+    image: socialImageUrl,
+    sameAs: ["https://www.aczel.pictures", "https://instagram.com/aczel_aethereal", "https://x.com/aczel_pictures"],
     url: canonicalUrl
   });
 }
@@ -107,8 +221,24 @@ if (page.path.endsWith("photographer-daniel")) {
 <meta property="og:title" content={page.title} />
 {page.description && <meta property="og:description" content={page.description} />}
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content={socialSiteName} />
+<meta property="og:locale" content={locale} />
+<meta property="og:locale:alternate" content={alternateLocale} />
 <meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={socialImageUrl} />
+<meta property="og:image:secure_url" content={socialImageUrl} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content={String(socialImage.lightbox.width || "")} />
+<meta property="og:image:height" content={String(socialImage.lightbox.height || "")} />
+<meta property="og:image:alt" content={page.h1} />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={page.title} />
+{page.description && <meta name="twitter:description" content={page.description} />}
+<meta name="twitter:image" content={socialImageUrl} />
+<meta name="twitter:image:alt" content={page.h1} />
+<meta name="twitter:url" content={canonicalUrl} />
+<link rel="icon" type="image/png" href={iconImageUrl} />
+<link rel="apple-touch-icon" href={iconImageUrl} />
 <link rel="canonical" href={canonicalUrl} />
 {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />)}
 <link rel="alternate" hreflang="x-default" href={xDefault} />

@@ -1,17 +1,25 @@
 ---
-const { images = [], label = "Image gallery" } = Astro.props;
+import { resolveImage } from "../lib/images.mjs";
+import ResponsiveImage from "./ResponsiveImage.astro";
+
+const { images = [], label = "Image gallery", previousLabel = "Previous images", nextLabel = "Next images", openLabel = "Open image" } = Astro.props;
 ---
 
 <div class="horizontal-masonry-gallery" data-horizontal-gallery data-gallery>
-  <button class="horizontal-masonry-gallery__previous" type="button" aria-label="Previous images" data-horizontal-gallery-previous hidden>←</button>
+  <button class="horizontal-masonry-gallery__previous" type="button" aria-label={previousLabel} data-horizontal-gallery-previous hidden>←</button>
   <div class="horizontal-masonry-gallery__viewport" data-horizontal-gallery-viewport tabindex="0" role="region" aria-label={label}>
     <div class="horizontal-masonry-gallery__track" data-horizontal-gallery-track>
-      {images.map((image: any, index: number) => <button class="horizontal-masonry-gallery__item" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={image.src} data-gallery-alt={image.alt} data-gallery-title={image.title} data-gallery-description={image.description} data-gallery-price={image.price} data-gallery-link={image.link} data-gallery-link-label={image.linkLabel} aria-label={`Open image ${index + 1}`}>
-        <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading={index < 5 ? "eager" : "lazy"} decoding="async" />
-      </button>)}
+      {images.map((image: any, index: number) => {
+        const asset = resolveImage(image, "gallery");
+        return (
+          <button class="horizontal-masonry-gallery__item" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={asset.lightbox.fallback} data-gallery-avif={asset.lightbox.avif} data-gallery-webp={asset.lightbox.webp} data-gallery-fallback={asset.lightbox.fallback} data-gallery-width={asset.lightbox.width} data-gallery-height={asset.lightbox.height} data-gallery-alt={image.alt} data-gallery-title={image.title} data-gallery-description={image.description} data-gallery-price={image.price} data-gallery-link={image.link} data-gallery-link-label={image.linkLabel} aria-label={`${openLabel} ${index + 1}`}>
+            <ResponsiveImage image={image} role="gallery" loading="lazy" />
+          </button>
+        );
+      })}
     </div>
   </div>
-  <button class="horizontal-masonry-gallery__next" type="button" aria-label="Next images" data-horizontal-gallery-next hidden>→</button>
+  <button class="horizontal-masonry-gallery__next" type="button" aria-label={nextLabel} data-horizontal-gallery-next hidden>→</button>
 </div>
 
 <script>

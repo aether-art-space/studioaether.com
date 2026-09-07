@@ -9,7 +9,11 @@ const { label, hu = false, variant = "page" } = Astro.props;
   <div class="studio-lightbox__content">
     <figure class="studio-lightbox__figure">
       <div class="studio-lightbox__image-wrap">
-        <img data-lightbox-image src="" alt="" />
+        <picture>
+          <source data-lightbox-avif type="image/avif" />
+          <source data-lightbox-webp type="image/webp" />
+          <img data-lightbox-image src="" alt="" decoding="async" />
+        </picture>
       </div>
       <figcaption class="studio-lightbox__caption" data-lightbox-caption>
         <div class="studio-lightbox__caption-head">

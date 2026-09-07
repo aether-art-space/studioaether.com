@@ -1,5 +1,7 @@
 ---
 import { InstagramLogoIcon } from "@phosphor-icons/react/ssr";
+import ResponsiveImage from "./ResponsiveImage.astro";
+import GalleryImage from "./GalleryImage.astro";
 
 interface ArtistImage {
   src: string;
@@ -32,7 +34,7 @@ const socials = profile.socials ?? [];
   <article class="stylist-profile" aria-labelledby="stylist-profile-name">
     <div class="stylist-profile__identity">
       <div class="stylist-profile__portrait-wrap">
-        <img class="stylist-profile__portrait" src={profile.image.src} alt={profile.image.alt} width="200" height="200" loading="lazy" decoding="async" />
+        <ResponsiveImage image={{ ...profile.image, width: 200, height: 200 }} role="card" className="stylist-profile__portrait" loading="lazy" />
         {socials.map((social) => social.type === "instagram" && <a class="stylist-profile__social" href={social.href} target="_blank" rel="noreferrer noopener" aria-label={social.label}>
           <InstagramLogoIcon size={25} weight="regular" aria-hidden="true" />
         </a>)}
@@ -42,9 +44,7 @@ const socials = profile.socials ?? [];
       <p class="stylist-profile__specialties">{profile.specialties}</p>
     </div>
     {gallery.length > 0 && <div class="stylist-profile__gallery" aria-label={hu ? `${profile.name} galériája` : `${profile.name}'s gallery`}>
-    {gallery.map((image) => <button class="stylist-profile__gallery-item" type="button" data-gallery-image data-gallery-src={image.src} data-gallery-alt={image.alt} data-gallery-title={profile.name} data-gallery-description={profile.specialties} data-gallery-link={`mailto:${email}`} data-gallery-link-label={email} aria-label={hu ? "Kép megnyitása" : "Open image"}>
-      <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
-    </button>)}
+    {gallery.map((image) => <GalleryImage image={image} className="stylist-profile__gallery-item" label={hu ? "Kép megnyitása" : "Open image"} title={profile.name} description={profile.specialties} link={`mailto:${email}`} linkLabel={email} />)}
   </div>}
 </article>
 </div>

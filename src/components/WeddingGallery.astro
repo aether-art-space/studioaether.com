@@ -1,0 +1,25 @@
+---
+import GalleryImage from "./GalleryImage.astro";
+
+interface Props {
+  images: Array<{ src?: string; alt?: string; width?: number; height?: number }>;
+  hu: boolean;
+}
+
+const { images, hu } = Astro.props;
+const label = (index: number) => hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`;
+---
+<section class="wedding-gallery" aria-label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"}>
+  <div class="wedding-gallery__group wedding-gallery__group--wide">
+    {[images[0], images[1], images[2]].map((image, index) => <GalleryImage image={image} index={index} className={`wedding-gallery__item wedding-gallery__item--${index === 0 ? "wide" : "half"}`} label={label(index)} />)}
+  </div>
+  <div class="wedding-gallery__group">
+    {[images[3], images[4]].map((image, index) => <GalleryImage image={image} index={index + 3} className={`wedding-gallery__item wedding-gallery__item--${index === 0 ? "tall" : "short"}`} label={label(index + 3)} />)}
+  </div>
+  <div class="wedding-gallery__group">
+    {[images[5], images[6]].map((image, index) => <GalleryImage image={image} index={index + 5} className={`wedding-gallery__item wedding-gallery__item--${index === 0 ? "tall" : "short"}`} label={label(index + 5)} />)}
+  </div>
+  <div class="wedding-gallery__group wedding-gallery__group--feature">
+    <GalleryImage image={images[7]} index={7} className="wedding-gallery__item wedding-gallery__item--feature" label={label(7)} />
+  </div>
+</section>

@@ -1,4 +1,6 @@
 ---
+import ResponsiveImage from "./ResponsiveImage.astro";
+
 interface Props {
   heading: string;
   intro: string;
@@ -50,5 +52,5 @@ const sectionClass = ["studio-section", imageSrc ? "studio-section--split" : "",
     </ul>
     {tail && <p>{tail}</p>}
   </>}
-  {imageSrc && <div class="studio-section__image"><img src={imageSrc} alt={imageAlt} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" /></div>}
+  {imageSrc && <div class="studio-section__image"><ResponsiveImage image={{ src: imageSrc, alt: imageAlt, width: imageWidth, height: imageHeight }} role="content" loading="lazy" /></div>}
 </section>
