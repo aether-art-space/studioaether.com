@@ -1,0 +1,23 @@
+---
+interface Props {
+  language: "en" | "hu";
+  active: "studio" | "selfie" | "photographer" | "makeup" | "stylist";
+}
+
+const { language, active } = Astro.props;
+const hu = language === "hu";
+const tabAnchor = (key: string) => `#${key}-pricing-tabs`;
+const tabs = [
+  { key: "studio", label: hu ? "stúdió árak" : "studio pricing", path: hu ? "/hu/booking" : "/booking" },
+  { key: "selfie", label: hu ? "szelfi stúdió árak" : "selfie studio pricing", path: hu ? "/hu/selfie-studio-budapest" : "/selfie-studio-budapest" },
+  { key: "photographer", label: hu ? "fotós árak" : "photographer prices", path: hu ? "/hu/photographers-budapest" : "/photographers-budapest" },
+  { key: "makeup", label: hu ? "sminkes árak" : "make up artist prices", path: hu ? "/hu/make-up-artists" : "/make-up-artists" },
+  { key: "stylist", label: hu ? "stylist árak" : "stylist prices", path: hu ? "/hu/stylists" : "/stylists" }
+];
+---
+
+<nav id={`${active}-pricing-tabs`} class="pricing-tabs" aria-label={hu ? "Árak" : "Pricing pages"}>
+  <div class="pricing-tabs__list">
+    {tabs.map((tab) => <a class:list={["pricing-tabs__tab", { "pricing-tabs__tab--active": tab.key === active }]} href={`${tab.path}${tabAnchor(tab.key)}`} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>)}
+  </div>
+</nav>

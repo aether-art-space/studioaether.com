@@ -1323,6 +1323,9 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .pricing-tabs__tab--active { color: var(--ink); font-weight: 700; }
 .pricing-tabs__tab--active::after { background: var(--ink); }
 .pricing-tabs__tab:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.price-section > .pricing-tabs { padding-top: 0; }
+.pricing-tabs + .artist-profiles--makeup { padding-top: 36px; }
+.pricing-tabs, .selfie-prices, #studio-pricing, #photographer-pricing, #makeup-pricing, #stylist-pricing { scroll-margin-top: 104px; }
 .booking-price-section { max-width: var(--content-max); padding-top: 28px; }
 .booking-price-grid { max-width: var(--content-max); margin-right: auto; margin-left: auto; }
 .booking-price-grid .price-card { display: flex; min-height: 300px; flex-direction: column; }

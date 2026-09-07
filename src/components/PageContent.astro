@@ -13,6 +13,7 @@ import FaqSection from "./FaqSection.astro";
 import PageHero from "./PageHero.astro";
 import PriceCard from "./PriceCard.astro";
 import PriceSection from "./PriceSection.astro";
+import PricingTabs from "./PricingTabs.astro";
 import StylistProfile from "./StylistProfile.astro";
 import StudioSection from "./StudioSection.astro";
 
@@ -303,8 +304,10 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <div class="selfie-benefits__intro home-favourite__intro"><h2 id="selfie-benefits-title">{selfie.benefitsHeading}</h2><p>{selfie.benefitsIntro}</p></div>
       <div class="selfie-benefits__grid home-feature-grid">{selfie.benefits.map(([title, copy], index) => { const image = selfieImages.benefits[index]; return <CircularCard variant="feature" className="selfie-benefit" title={title} copy={copy} image={image} />; })}</div>
     </section>
-    <section class="selfie-prices" aria-labelledby="selfie-prices-title">
-      <PriceSection className="selfie-prices__packages" gridClassName="selfie-prices__grid" heading={selfie.pricesHeading} headingId="selfie-prices-title" packages={selfiePackages} />
+    <section id="selfie-pricing" class="selfie-prices" aria-labelledby="selfie-prices-title">
+      <PriceSection className="selfie-prices__packages" gridClassName="selfie-prices__grid" heading={selfie.pricesHeading} headingId="selfie-prices-title" packages={selfiePackages}>
+        <PricingTabs slot="tabs" language={page.language} active="selfie" />
+      </PriceSection>
       <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.reserveCta}</a></div>
     </section>
     <section class="selfie-location" aria-labelledby="selfie-location-title">
@@ -423,9 +426,14 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : artistPage ? (
   <>
     <PageHero variant="artist" headingId="artist-title" title={artistPageAny.heroHeading} lead={artistPageAny.heroCopy} description={artistPageAny.intro} />
-    {artistType === "photographers" && artistPageAny.packages?.length > 0 && <PriceSection ariaLabel={hu ? "Rezidens fotós csomagok" : "Resident photographer packages"} packages={artistPageAny.packages} />}
-    {artistType === "stylists" && artistPageAny.packages?.length > 0 && <PriceSection ariaLabel={hu ? "Styling csomagok" : "Styling packages"} packages={artistPageAny.packages} />}
-    <section class={`artist-profiles artist-profiles--${artistType}`} aria-label={hu ? "Rezidens alkotók" : "Resident artists"}>
+    {artistType === "photographers" && artistPageAny.packages?.length > 0 && <PriceSection id="photographer-pricing" ariaLabel={hu ? "Rezidens fotós csomagok" : "Resident photographer packages"} packages={artistPageAny.packages}>
+      <PricingTabs slot="tabs" language={page.language} active="photographer" />
+    </PriceSection>}
+    {artistType === "stylists" && artistPageAny.packages?.length > 0 && <PriceSection id="stylist-pricing" ariaLabel={hu ? "Styling csomagok" : "Styling packages"} packages={artistPageAny.packages}>
+      <PricingTabs slot="tabs" language={page.language} active="stylist" />
+    </PriceSection>}
+    {artistType === "makeup" && <PricingTabs language={page.language} active="makeup" />}
+    <section id={artistType === "makeup" ? "makeup-pricing" : undefined} class={`artist-profiles artist-profiles--${artistType}`} aria-label={hu ? "Rezidens alkotók" : "Resident artists"}>
       <div class="artist-profiles__grid">
         {artistType === "stylists"
           ? artistProfiles.map((profile: any) => <StylistProfile profile={profile} email={site.email} hu={hu} />)
@@ -623,17 +631,10 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : page.section === "booking" ? (
   <>
-    <nav class="pricing-tabs" aria-label={hu ? "Árak" : "Pricing pages"}>
-      <div class="pricing-tabs__list">
-        <a class="pricing-tabs__tab pricing-tabs__tab--active" href={hu ? "/hu/booking" : "/booking"} aria-current="page">{hu ? "stúdió árak" : "studio pricing"}</a>
-        <a class="pricing-tabs__tab" href={hu ? "/hu/selfie-studio-budapest" : "/selfie-studio-budapest"}>{hu ? "szelfi stúdió árak" : "selfie studio pricing"}</a>
-        <a class="pricing-tabs__tab" href={hu ? "/hu/photographers-budapest" : "/photographers-budapest"}>{hu ? "fotós árak" : "photographer prices"}</a>
-        <a class="pricing-tabs__tab" href={hu ? "/hu/make-up-artists" : "/make-up-artists"}>{hu ? "sminkes árak" : "make up artist prices"}</a>
-        <a class="pricing-tabs__tab" href={hu ? "/hu/stylists" : "/stylists"}>{hu ? "stylist árak" : "stylist prices"}</a>
-      </div>
-    </nav>
     <PageHero variant="service" headingId="booking-title" title={page.h1} description={[hu ? "Az Aether Art Space-ben igyekszünk elérhető árakat kínálni, hogy te az igazán fontos dolgokra koncentrálhass – a fotózás mögötti kreativitásra." : "At aether art space, we offer fair and affordable pricing, so you can focus on what matters most – the creativity behind your shoot.", hu ? "Stúdiónk úgy van kialakítva, hogy támogassa a kreatív folyamatot, rugalmas csomagokat kínálva, amelyek különböző igényekhez igazodnak, legyen szó modellről, fotósról vagy vállalkozásról, aki lenyűgöző vizuális anyagot szeretne készíteni." : "Our studio is designed to elevate the creative process, with flexible packages that cater to different needs, whether you're a model, photographer, or business looking to capture stunning visuals.", hu ? "Ezen kívül számos kiegészítőt kínálunk helyben, kizárólag a budapesti stúdiónkban, mint például analóg fényképezőgép bérlés, ruhák, filmek és még sok más, hogy segítsünk életre kelteni a víziódat." : "We also offer a variety of extras on-site exclusive to our studio in Budapest, including analogue camera rentals, clothing, film, and more, to help bring your vision to life."]} />
-    <PriceSection className="booking-price-section" gridClassName="booking-price-grid" packages={bookingPackages} headingId="booking-prices-title" ariaLabel={hu ? "Stúdióbérlés árak" : "Studio rental rates"} />
+    <PriceSection id="studio-pricing" className="booking-price-section" gridClassName="booking-price-grid" packages={bookingPackages} headingId="booking-prices-title" ariaLabel={hu ? "Stúdióbérlés árak" : "Studio rental rates"}>
+      <PricingTabs slot="tabs" language={page.language} active="studio" />
+    </PriceSection>
     <InfoBox class="booking-note">
       <ul>
         {hu ? <>
