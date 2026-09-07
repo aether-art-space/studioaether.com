@@ -1,5 +1,5 @@
 ---
-import { absoluteUrl, faqItemsFor, pageByPath, site, siteUrl } from "../lib/site.mjs";
+import { absoluteUrl, faqItemsFor, pageByPath, site } from "../lib/site.mjs";
 import { resolveImage } from "../lib/images.mjs";
 
 const { page } = Astro.props;
@@ -103,13 +103,16 @@ const faqAnswerText = (answer: unknown) => {
 };
 const tracking = preview ? { googleTagId: "", ga4Id: "", googleAdsId: "" } : site.tracking;
 const trackingId = tracking.googleTagId || tracking.ga4Id || tracking.googleAdsId;
+const businessUrl = absoluteUrl("/");
+const businessId = `${businessUrl}#business`;
+const websiteId = `${businessUrl}#website`;
 const schemas: Record<string, unknown>[] = [
   {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
-    "@id": `${siteUrl()}/#business`,
+    "@id": businessId,
     name: site.name,
-    url: `${siteUrl()}/`,
+    url: businessUrl,
     email: site.email,
     telephone: schemaPhone,
     priceRange: "$",
@@ -147,7 +150,7 @@ const schemas: Record<string, unknown>[] = [
     inLanguage: page.language,
     ...(page.description ? { description: page.description } : {}),
     image: socialImageUrl,
-    isPartOf: { "@id": `${siteUrl()}/#website` }
+    isPartOf: { "@id": websiteId }
   },
   {
     "@context": "https://schema.org",
@@ -173,9 +176,9 @@ if (page.section === "home" && page.path === "/") {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${siteUrl()}/#website`,
+    "@id": websiteId,
     name: site.name,
-    url: siteUrl(),
+    url: businessUrl,
     inLanguage: ["en", "hu"]
   });
 }
@@ -210,7 +213,7 @@ if (page.section === "service" && page.purpose !== "Photographer profile - Dáni
     url: canonicalUrl,
     inLanguage: page.language === "hu" ? "hu-HU" : "en-US",
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-    provider: { "@id": `${siteUrl()}/#business` },
+    provider: { "@id": businessId },
     areaServed: serviceArea
   });
 }
@@ -227,7 +230,7 @@ if (page.path.endsWith("photographer-daniel")) {
       ? ["Portréfotózás", "Boudoir fotózás", "Glamour fotózás", "Akt fotózás", "Fitness fotózás", "Kreatív fotózás"]
       : ["Portrait photography", "Boudoir photography", "Glamour photography", "Fine art nude photography", "Fitness photography", "Creative photography"],
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-    worksFor: { "@id": `${siteUrl()}/#business` },
+    worksFor: { "@id": businessId },
     image: socialImageUrl,
     sameAs: ["https://www.aczel.pictures", "https://instagram.com/aczel_aethereal", "https://x.com/aczel_pictures"],
     url: canonicalUrl

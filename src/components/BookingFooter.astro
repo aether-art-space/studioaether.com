@@ -1,6 +1,6 @@
 ---
 import { homeContent, homeImages } from "../data/content.mjs";
-import { site } from "../lib/site.mjs";
+import { absoluteUrl, site } from "../lib/site.mjs";
 import ResponsiveImage from "./ResponsiveImage.astro";
 
 const { page, variant = "all", includeContactModal = true } = Astro.props;
@@ -11,7 +11,7 @@ const bookingVariant = home.bookingVariants[variantKey];
 const customContactCard = (bookingVariant as any).contactCard;
 const cardIndexes = variantKey === "all" ? [0, 1, 2] : variantKey === "selfieContact" ? [1, 2] : [2];
 const web3FormsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "eb32865d-ef18-44d3-bdcf-6bb6eb19ae2a";
-const contactSuccessUrl = `${site.domain}${page.path}?contact=success#footer-contact-form`;
+const contactSuccessUrl = `${absoluteUrl(page.path)}?contact=success#footer-contact-form`;
 const headingId = `footer-booking-title-${variantKey}`;
 ---
 <section class:list={["home-booking", `home-booking--${variantKey}`]} id={page.path.includes("models-budapest") && variantKey === "all" ? "models-contact" : undefined} aria-labelledby={headingId}>

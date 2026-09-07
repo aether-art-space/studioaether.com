@@ -25,6 +25,7 @@ type AetherHeaderNavigationProps = {
   mentoringLabel: string;
   navigationLabel: string;
   bookingExternalHref: string;
+  homeHref: string;
 };
 
 export default function AetherHeaderNavigation({
@@ -37,7 +38,8 @@ export default function AetherHeaderNavigation({
   mentoringHref,
   mentoringLabel,
   navigationLabel,
-  bookingExternalHref
+  bookingExternalHref,
+  homeHref
 }: AetherHeaderNavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -123,7 +125,7 @@ export default function AetherHeaderNavigation({
                 {languageLabel === "HU" ? "A webhely fő oldalai" : "Main pages of the website"}
               </Dialog.Description>
               <nav className="mobile-nav-links" aria-label={navigationLabel}>
-                <a className="mobile-nav-link mobile-nav-link--home" href={languageLabel === "HU" ? "/hu" : "/"}>{languageLabel === "HU" ? "kezdőlap" : "home"}</a>
+                <a className="mobile-nav-link mobile-nav-link--home" href={homeHref}>{languageLabel === "HU" ? "kezdőlap" : "home"}</a>
                 <Accordion.Root className="mobile-nav-accordions" type="multiple">
                   {mobileGroups.map((group) => (
                     <Accordion.Item className="mobile-nav-accordion" value={group.label} key={group.label}>

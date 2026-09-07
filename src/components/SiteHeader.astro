@@ -1,5 +1,5 @@
 ---
-import { site, localizedPath, localizedNav } from "../lib/site.mjs";
+import { site, localizedPath, localizedNav, sitePath } from "../lib/site.mjs";
 import AetherHeaderNavigation from "./AetherHeaderNavigation";
 import ResponsiveImage from "./ResponsiveImage.astro";
 const { page } = Astro.props;
@@ -20,6 +20,7 @@ const navigationGroups = groups.map((group) => ({
       client:load
       bookingHref={localizedPath("/booking", page.language)}
       bookingExternalHref={site.bookingUrl}
+      homeHref={sitePath(hu ? "/hu" : "/")}
       bookingLabel={hu ? "árak és foglalás" : "prices & booking"}
       groups={navigationGroups}
       languageHref={languageHref}

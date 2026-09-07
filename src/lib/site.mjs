@@ -2,7 +2,15 @@ import { navGroups, pageByPath, site } from "../data/routes.mjs";
 
 export const siteUrl = () => (import.meta.env.PUBLIC_SITE_URL || site.domain).replace(/\/+$/, "");
 
-export const absoluteUrl = (path) => new URL(path, `${siteUrl()}/`).toString();
+const basePath = (import.meta.env.PUBLIC_BASE_PATH || "").replace(/^\/+|\/+$/g, "");
+const basePrefix = basePath ? `/${basePath}` : "";
+
+export const sitePath = (path) => {
+  if (!path || /^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(path) || !path.startsWith("/")) return path;
+  return `${basePrefix}${path}`;
+};
+
+export const absoluteUrl = (path) => new URL(sitePath(path), `${siteUrl()}/`).toString();
 
 const bookingFooterDecisions = {
   all: new Set([
@@ -51,8 +59,10 @@ export const bookingFooterVariantFor = (page) => {
 
 export const localizedPath = (path, language) => {
   const page = pageByPath.get(path);
-  if (!page) return path;
-  return language === "hu" && page.language === "en" ? (page.counterpartPath || path) : path;
+  const localized = !page
+    ? path
+    : language === "hu" && page.language === "en" ? (page.counterpartPath || path) : path;
+  return sitePath(localized);
 };
 
 export const localizedNav = (language) => navGroups.map((group) => ({
