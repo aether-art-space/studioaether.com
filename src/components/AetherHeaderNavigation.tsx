@@ -1,5 +1,4 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import * as Accordion from "@radix-ui/react-accordion";
 import { CaretDownIcon, ListIcon, XIcon } from "@phosphor-icons/react";
@@ -97,18 +96,14 @@ export default function AetherHeaderNavigation({
 
       <nav className="header-actions" aria-label={languageMenuLabel}>
         <a className="button button--secondary header-book" data-gtag-event="booking_click" data-gtag-location="header" href={bookingHref}>{bookingLabel}</a>
-        <DropdownMenu.Root modal={false}>
-          <DropdownMenu.Trigger asChild>
-            <button className="language-switch" type="button" aria-label={languageMenuLabel}>
-              <span>{languageLabel}</span><span className="language-chevron" aria-hidden="true" />
-            </button>
-          </DropdownMenu.Trigger>
-          <DropdownMenu.Content className="language-options" align="start" side="bottom" sideOffset={0} forceMount>
-            <DropdownMenu.Item asChild>
-              <a href={languageHref}>{languageLabel === "HU" ? "EN" : "HU"}</a>
-            </DropdownMenu.Item>
-          </DropdownMenu.Content>
-        </DropdownMenu.Root>
+        <details className="language-menu">
+          <summary className="language-switch" aria-label={languageMenuLabel}>
+            <span>{languageLabel}</span><span className="language-chevron" aria-hidden="true" />
+          </summary>
+          <div className="language-options">
+            <a href={languageHref}>{languageLabel === "HU" ? "EN" : "HU"}</a>
+          </div>
+        </details>
         <Dialog.Root open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <Dialog.Trigger asChild>
             <button className="mobile-nav-trigger" type="button" aria-label={mobileMenuOpen ? (languageLabel === "HU" ? "Menü bezárása" : "Close menu") : navigationLabel}>
