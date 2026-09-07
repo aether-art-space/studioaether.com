@@ -10,7 +10,7 @@ if (!prefix || !fs.existsSync(dist)) process.exit(0);
 const escapedPrefix = prefix.slice(1).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const prefixRootRelative = (value) => value.replace(new RegExp(`(^|,\\s*)/(?!/)(?!${escapedPrefix}(?:/|$))`, "g"), `$1${prefix}/`);
 const rewriteHtml = (source) => source.replace(
-  /\b(?:href|src|srcset|poster|action|data-[\w-]+)="([^"]*)"/g,
+  /\b(?:href|src|srcset|poster|action|component-url|renderer-url|before-hydration-url|data-[\w-]+)="([^"]*)"/g,
   (match, value) => {
     const rewritten = prefixRootRelative(value);
     return rewritten === value ? match : match.replace(value, rewritten);
