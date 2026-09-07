@@ -95,7 +95,7 @@ export default function AetherHeaderNavigation({
       </NavigationMenu.Root>
 
       <nav className="header-actions" aria-label={languageMenuLabel}>
-        <a className="button button--secondary header-book" data-gtag-event="booking_click" data-gtag-location="header" href={bookingHref}>{bookingLabel}</a>
+        <a className="button button--dark header-book" data-gtag-event="booking_click" data-gtag-location="header" href={bookingHref}>{bookingLabel}</a>
         <details className="language-menu">
           <summary className="language-switch" aria-label={languageMenuLabel}>
             <span>{languageLabel}</span><span className="language-chevron" aria-hidden="true" />

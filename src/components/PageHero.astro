@@ -19,7 +19,7 @@ const descriptions = description ? (Array.isArray(description) ? description : [
   {eyebrow && <p class="page-hero__eyebrow">{eyebrow}</p>}
   <h1 id={headingId}>{title}</h1>
   {subtitle && <p class="page-hero__subtitle">{subtitle}</p>}
-  {lead && <p class="page-hero__lead">{lead}</p>}
+  {lead && <p class="page-hero__subtitle page-hero__lead">{lead}</p>}
   {descriptions.length > 0 && <div class="page-hero__description">{descriptions.map((paragraph) => <p>{paragraph}</p>)}</div>}
   <slot />
 </section>

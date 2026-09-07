@@ -183,10 +183,10 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <ImageHero variant="home" headingId="home-title" title={page.h1} image={homeImages.hero} icon={{ ...homeImages.icon, width: 450, height: 436 }}>
       <a class="button button--inverted" data-gtag-event="booking_click" data-gtag-location="home" href={site.bookingUrl}><span class="home-hero__cta-desktop">{hu ? "foglalás" : "book the studio"}</span><span class="home-hero__cta-mobile">{hu ? "foglalás" : "book the photostudio"}</span></a>
     </ImageHero>
-    <section class="home-favourite" aria-labelledby="favourite-title">
+    <section class="home-favourite home-favourite--home" aria-labelledby="favourite-title">
       <div class="home-favourite__intro">
         <h2 id="favourite-title">{hu ? <>az új kedvenc<br class="home-mobile-break" />{" "}fotóstúdiód</> : <>your new favourite<br class="home-mobile-break" />{" "}photostudio</>}</h2>
-        <p>{home.introHeading}</p>
+        <p class="home-favourite__subtitle">{home.introHeading}</p>
       </div>
       <div class="home-feature-grid">
         {home.features.map(([title, copy, href, label], index) => <CircularCard variant="feature" title={title} copy={copy} href={href} linkLabel={label} image={homeImages.features[index]} />)}

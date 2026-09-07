@@ -70,6 +70,7 @@ button, .button, .mobile-nav-book { border-radius: 5px; }
 .header-actions a, .header-actions button, .language-menu summary { font: var(--font-ui); letter-spacing: .8px; text-decoration: none; }
 .main-nav a, .nav-trigger, .header-actions a, .header-actions button, .site-footer a, .text-link { transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 180ms ease, text-decoration-color 160ms ease, transform 180ms ease; }
 .main-nav a:hover, .nav-trigger:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.main-nav a:hover, .main-nav a:focus-visible, .nav-trigger:hover, .nav-trigger:focus-visible { text-shadow: 0 0 12px rgb(186 243 230 / 85%); }
 .header-actions .button:hover { text-decoration: none; }
 .nav-menu { position: relative; height: 47px; }
 .nav-trigger { display: block; height: 39px; margin: 4px 25px; padding: 10px 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
@@ -85,8 +86,9 @@ button, .button, .mobile-nav-book { border-radius: 5px; }
 .nav-dropdown a:last-child { margin-bottom: 0; }
 .header-actions { display: flex; align-items: center; gap: 12px; margin-right: 25px; }
 .header-book { width: 168px; min-width: 0; height: 45px; flex: 0 0 auto; padding: 0; font-size: 16px; white-space: nowrap; }
-.language-menu { position: relative; display: block; flex: 0 0 auto; }
-.language-switch { display: flex; align-items: center; justify-content: space-between; width: 66px; height: 45px; margin: 0; padding: 0 12px; border: 0; border-radius: 5px; appearance: none; -webkit-appearance: none; background: var(--ink); color: var(--paper); font: 700 16px/24px var(--sans); letter-spacing: 0 !important; cursor: pointer; list-style: none; }
+.header-book:hover, .header-book:focus-visible { box-shadow: 0 0 0 4px rgb(186 243 230 / 40%), 0 0 36px rgb(186 243 230 / 78%); }
+.language-menu { position: relative; display: block; flex: 0 0 auto; padding: 0; border-bottom: 0; }
+.language-switch { display: flex; align-items: center; justify-content: space-between; width: 66px; height: 45px; margin: 0; padding: 0 12px; border: 1px solid var(--ink); border-radius: 5px; appearance: none; -webkit-appearance: none; background: var(--paper); color: var(--ink); font: 700 16px/24px var(--sans); letter-spacing: 0 !important; cursor: pointer; list-style: none; }
 .language-switch::-webkit-details-marker { display: none; }
 .language-switch::marker { display: none; }
 .language-chevron { width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
@@ -94,12 +96,12 @@ button, .button, .mobile-nav-book { border-radius: 5px; }
 .language-menu[open] .language-chevron,
 .language-menu:hover .language-chevron,
 .language-menu:focus-within .language-chevron { transform: rotate(225deg) translate(-1px, -1px); }
-.language-options { position: absolute; top: 53px; left: 0; z-index: 25; display: none; width: 66px; padding: 5px; border: 0; border-radius: 5px; background: var(--ink); }
+.language-options { position: absolute; top: 53px; left: 0; z-index: 25; display: none; width: 66px; padding: 5px; border: 1px solid var(--ink); border-radius: 5px; background: var(--paper); }
 .language-menu[open] .language-options,
 .language-menu:hover .language-options,
 .language-menu:focus-within .language-options { display: block; }
-.language-options a { display: block; width: 100%; height: 39px; padding: 8px 7px; color: var(--paper); font: 700 16px/23px var(--sans); letter-spacing: 0; text-decoration: none; }
-.language-options a:hover { background: #292929; text-decoration: none; }
+.language-options a { display: block; width: 100%; height: 39px; padding: 8px 7px; color: var(--ink); font: 700 16px/23px var(--sans); letter-spacing: 0; text-decoration: none; }
+.language-options a:hover { background: var(--accent); text-decoration: none; }
 .nav-trigger:focus-visible, .nav-dropdown a:focus-visible, .header-book:focus-visible, .language-switch:focus-visible, .language-options a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .mobile-nav-trigger { display: none; }
 .mobile-nav-overlay { position: fixed; z-index: 40; inset: 0; background: rgb(0 0 0 / 42%); animation: mobile-nav-fade 180ms ease-out; }
