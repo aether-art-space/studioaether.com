@@ -30,13 +30,13 @@ const socialImageSources: Record<string, string> = {
   "Wedding photography": "/images/wix/wedding/source-sections/photographer-alexandra.jpg",
   "Photographer profile - Dániel": "/images/wix/profile/daniel-portrait.jpg"
 };
+const logoImage = resolveImage({ src: "/images/wix/jpg/logo-full.jpg", alt: site.name }, "content");
+const logoImageUrl = absoluteUrl(logoImage.lightbox.fallback);
 const socialImage = resolveImage({
   src: socialImageSources[page.purpose] || "/images/wix/reference/hero-main.jpg",
   alt: page.h1
 }, "content");
 const socialImageUrl = absoluteUrl(socialImage.lightbox.fallback);
-const logoImage = resolveImage({ src: "/images/wix/jpg/logo-full.jpg", alt: site.name }, "content");
-const logoImageUrl = absoluteUrl(logoImage.lightbox.fallback);
 const iconImage = resolveImage({ src: "/images/wix/jpg/logo-icon.jpg", alt: site.name }, "thumb");
 const iconImageUrl = absoluteUrl(iconImage.lightbox.fallback);
 const counterpart = page.counterpartPath ? pageByPath.get(page.counterpartPath) : null;
@@ -49,6 +49,19 @@ const xDefault = absoluteUrl(englishPage?.path || "/");
 const locale = page.language === "hu" ? "hu_HU" : "en_US";
 const alternateLocale = page.language === "hu" ? "en_US" : "hu_HU";
 const socialSiteName = "Aether Art Space";
+const socialMeta = page.purpose === "Studio rental / space"
+  ? page.language === "hu"
+    ? {
+        title: "Fotóstúdió Budapesten | aether art space",
+        description: "Kreatív fotóstúdió Budapesten vakukkal, fényformálókkal, papírhátterekkel, bérelhető kamerákkal, outfitekkel, bútorokkal és kellékekkel."
+      }
+    : {
+        title: "Photo Studio in Budapest | aether art space",
+        description: "Creative photo studio in Budapest with strobes, light modifiers, paper backdrops, rental cameras, outfits, furniture, and props for photo shoots."
+      }
+  : { title: page.title, description: page.description };
+const schemaPhone = "+36 70 386 1739";
+const schemaFacebookUrl = "https://www.facebook.com/aetherbudapest/";
 const serviceTypeLabels: Record<string, { en: string; hu: string }> = {
   "Studio rental / space": { en: "Photo studio rental", hu: "Fotóstúdió-bérlés" },
   "Selfie studio": { en: "Selfie studio rental", hu: "Szelfistúdió-bérlés" },
@@ -96,21 +109,21 @@ const schemas: Record<string, unknown>[] = [
     "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": `${siteUrl()}/#business`,
     name: site.name,
-    url: siteUrl(),
+    url: `${siteUrl()}/`,
     email: site.email,
-    telephone: site.phone,
+    telephone: schemaPhone,
     priceRange: "$",
     image: socialImageUrl,
     logo: logoImageUrl,
     description: businessDescription,
-    sameAs: [site.instagramUrl, site.facebookUrl],
+    sameAs: [site.instagramUrl, schemaFacebookUrl],
     hasMap: site.mapsUrl,
     areaServed: { "@type": "Country", name: "Hungary" },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: site.email,
-      telephone: site.phone,
+      telephone: schemaPhone,
       availableLanguage: ["en", "hu"]
     },
     openingHoursSpecification: [
@@ -190,11 +203,13 @@ if (page.section === "service" && page.purpose !== "Photographer profile - Dáni
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${canonicalUrl}#service`,
-    name: page.h1,
+    name: page.title.split(" | ")[0],
     serviceType: localizedServiceType,
-    ...(page.description ? { description: page.description } : {}),
+    ...(socialMeta.description ? { description: socialMeta.description } : {}),
     image: socialImageUrl,
     url: canonicalUrl,
+    inLanguage: page.language === "hu" ? "hu-HU" : "en-US",
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     provider: { "@id": `${siteUrl()}/#business` },
     areaServed: serviceArea
   });
@@ -206,7 +221,12 @@ if (page.path.endsWith("photographer-daniel")) {
     "@type": "Person",
     "@id": `${canonicalUrl}#person`,
     name: "Dániel Z. Aczél",
-    jobTitle: page.language === "hu" ? "Fotós" : "Photographer",
+    jobTitle: page.language === "hu" ? "Fotós és stúdió tulajdonos" : "Photographer and studio owner",
+    description: page.description,
+    knowsAbout: page.language === "hu"
+      ? ["Portréfotózás", "Boudoir fotózás", "Glamour fotózás", "Akt fotózás", "Fitness fotózás", "Kreatív fotózás"]
+      : ["Portrait photography", "Boudoir photography", "Glamour photography", "Fine art nude photography", "Fitness photography", "Creative photography"],
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     worksFor: { "@id": `${siteUrl()}/#business` },
     image: socialImageUrl,
     sameAs: ["https://www.aczel.pictures", "https://instagram.com/aczel_aethereal", "https://x.com/aczel_pictures"],
@@ -218,8 +238,8 @@ if (page.path.endsWith("photographer-daniel")) {
 {page.description && <meta name="description" content={page.description} />}
 <meta name="robots" content={preview ? "noindex,nofollow" : "index,follow"} />
 {preview && <meta name="googlebot" content="noindex,nofollow" />}
-<meta property="og:title" content={page.title} />
-{page.description && <meta property="og:description" content={page.description} />}
+<meta property="og:title" content={socialMeta.title} />
+{socialMeta.description && <meta property="og:description" content={socialMeta.description} />}
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={socialSiteName} />
 <meta property="og:locale" content={locale} />
@@ -232,8 +252,8 @@ if (page.path.endsWith("photographer-daniel")) {
 <meta property="og:image:height" content={String(socialImage.lightbox.height || "")} />
 <meta property="og:image:alt" content={page.h1} />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={page.title} />
-{page.description && <meta name="twitter:description" content={page.description} />}
+<meta name="twitter:title" content={socialMeta.title} />
+{socialMeta.description && <meta name="twitter:description" content={socialMeta.description} />}
 <meta name="twitter:image" content={socialImageUrl} />
 <meta name="twitter:image:alt" content={page.h1} />
 <meta name="twitter:url" content={canonicalUrl} />
