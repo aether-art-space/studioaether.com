@@ -2,31 +2,116 @@
 import { homeContent, homeImages } from "../data/content.mjs";
 import { site } from "../lib/site.mjs";
 
-const { page } = Astro.props;
+const { page, variant = "all", includeContactModal = true } = Astro.props;
 const hu = page.language === "hu";
 const home = homeContent[hu ? "hu" : "en"];
+const variantKey = variant === "selfie-contact" ? "selfieContact" : variant === "artists" ? "artists" : "all";
+const bookingVariant = home.bookingVariants[variantKey];
+const cardIndexes = variantKey === "all" ? [0, 1, 2] : variantKey === "selfieContact" ? [1, 2] : [2];
+const web3FormsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "eb32865d-ef18-44d3-bdcf-6bb6eb19ae2a";
+const contactSuccessUrl = `${site.domain}${page.path}?contact=success#footer-contact-form`;
+const headingId = `footer-booking-title-${variantKey}`;
 ---
-<section class="home-booking" id={page.path.includes("models-budapest") ? "models-contact" : undefined} aria-labelledby="footer-booking-title">
+<section class:list={["home-booking", `home-booking--${variantKey}`]} id={page.path.includes("models-budapest") && variantKey === "all" ? "models-contact" : undefined} aria-labelledby={headingId}>
   <div class="home-booking__intro">
-    <h2 id="footer-booking-title">{home.bookingHeading}</h2>
-    <p>{home.bookingLead}</p>
+    <h2 id={headingId}>{bookingVariant.heading}</h2>
+    <p>{bookingVariant.lead}</p>
   </div>
-  <div class="home-booking__grid">{home.bookingCards.map(([title, copy, cta], index) => {
-    const href = index === 0 ? site.bookingUrl : index === 1 ? site.selfieBookingUrl : `mailto:${site.email}?subject=aether%20footer`;
+  <div class="home-booking__grid">{cardIndexes.map((index) => { const [title, copy, cta] = home.bookingCards[index];
+    const href = index === 0 ? site.bookingUrl : site.selfieBookingUrl;
     const event = index === 0 ? "booking_click" : index === 1 ? "selfie_booking_click" : "email_click";
     return <article class:list={["home-booking-card", { "home-booking-card--contact": index === 2 }]}>
       <h3>{title}</h3>
       {index === 2 ? <div class="home-booking-card__contact-copy">
-        <p><strong>{copy.slice(0, copy.indexOf("?") + 1)}</strong>{copy.slice(copy.indexOf("?") + 1)}</p>
-        <p>{hu ? "Írj nekünk:" : "Write us on"}</p>
-        <a href={`mailto:${site.email}?subject=${hu ? "contact%20from%20aether%20footer" : "aether%20-%20footer"}`}>{site.email}</a>
+        <p><strong>{copy.slice(0, copy.indexOf("?") + 1)}</strong></p>
+        <p>{copy.slice(copy.indexOf("?") + 1).trim()}</p>
       </div> : <>
         <p>{copy}</p>
         <div class="home-booking-card__media">
           <img class="home-booking-card__image" src={homeImages.booking[index].src} alt={hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt} width={homeImages.booking[index].width} height={homeImages.booking[index].height} loading="lazy" decoding="async" />
         </div>
       </>}
-      <a class:list={["button", index === 2 ? "button--secondary" : "button--dark", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" href={href}>{cta}</a>
+      {index === 2 ? <button class:list={["button", "button--secondary", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" type="button" data-contact-open aria-controls="footer-contact-modal">{cta}</button> : <a class:list={["button", "button--dark", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" href={href}>{cta}</a>}
     </article>;
   })}</div>
 </section>
+
+{includeContactModal && <dialog class="contact-modal" id="footer-contact-modal" data-contact-modal aria-labelledby="footer-contact-modal-title">
+  <div class="contact-modal__header">
+    <h2 id="footer-contact-modal-title">{hu ? "Írj nekünk" : "Send us a message"}</h2>
+    <button class="contact-modal__close" type="button" data-contact-close aria-label={hu ? "Bezárás" : "Close"}>×</button>
+  </div>
+  <form class="contact-form" id="footer-contact-form" action="https://api.web3forms.com/submit" method="POST" data-web3forms>
+    <input type="hidden" name="access_key" value={web3FormsAccessKey} />
+    <input type="hidden" name="subject" value={hu ? "Új kapcsolatfelvétel az aether weboldaláról" : "New contact from the aether website"} />
+    <input type="hidden" name="page" value={page.path} />
+    <input type="hidden" name="redirect" value={contactSuccessUrl} />
+    <input type="checkbox" name="botcheck" class="contact-form__botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <label>
+      <span>{hu ? "Név" : "Name"}</span>
+      <input type="text" name="name" autocomplete="name" required />
+    </label>
+    <label>
+      <span>{hu ? "E-mail" : "Email"}</span>
+      <input type="email" name="email" autocomplete="email" required />
+    </label>
+    <label>
+      <span>{hu ? "Üzenet" : "Message"}</span>
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+    <button class="contact-form__submit" type="submit">{hu ? "Üzenet küldése" : "Send message"}</button>
+    <p class="contact-form__status" data-contact-status role="status" aria-live="polite"></p>
+  </form>
+</dialog>}
+
+{includeContactModal && <script>
+  const contactModal = document.querySelector<HTMLDialogElement>("[data-contact-modal]");
+  const contactOpens = [...document.querySelectorAll<HTMLButtonElement>("[data-contact-open]")];
+  const contactClose = contactModal?.querySelector<HTMLButtonElement>("[data-contact-close]");
+  const contactForm = document.querySelector<HTMLFormElement>("[data-web3forms]");
+  const contactStatus = contactForm?.querySelector<HTMLElement>("[data-contact-status]");
+
+  const setContactStatus = (message: string, isError = false) => {
+    if (!contactStatus) return;
+    contactStatus.textContent = message;
+    contactStatus.dataset.error = isError ? "true" : "false";
+  };
+
+  contactOpens.forEach((contactOpen) => contactOpen.addEventListener("click", () => contactModal?.showModal()));
+  contactClose?.addEventListener("click", () => contactModal?.close());
+  contactModal?.addEventListener("click", (event) => {
+    if (event.target === contactModal) contactModal.close();
+  });
+
+  if (contactForm && contactStatus) {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("contact") === "success") {
+      setContactStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
+      contactModal?.showModal();
+      window.history.replaceState({}, document.title, `${window.location.pathname}#footer-contact-form`);
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitButton = contactForm.querySelector<HTMLButtonElement>("[type=submit]");
+      if (submitButton) submitButton.disabled = true;
+      setContactStatus(document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
+        contactForm.reset();
+        setContactStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
+      } catch {
+        setContactStatus(document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
+    });
+  }
+</script>}

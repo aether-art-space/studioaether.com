@@ -7,6 +7,7 @@ interface Props {
   descriptionLines?: Array<{ text: string; bold?: boolean }>;
   price: string;
   features?: string[];
+  featureBreaks?: number[];
   includesLabel?: string;
   className?: string;
 }
@@ -19,6 +20,7 @@ const {
   descriptionLines = [],
   price,
   features = [],
+  featureBreaks = [],
   includesLabel,
   className = ""
 } = Astro.props;
@@ -42,7 +44,7 @@ const isSimpleCard = !description && descriptionLines.length === 0 && !includesL
   {(includesLabel || features.length > 0) && <div class="price-card__features">
     {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
     <ul aria-label={includesLabel ?? "Package features"}>
-      {features.map((feature) => <li>{feature}</li>)}
+      {features.map((feature, index) => <li class={featureBreaks.includes(index) ? "price-card__feature-break" : undefined}>{feature}</li>)}
     </ul>
   </div>}
 </article>

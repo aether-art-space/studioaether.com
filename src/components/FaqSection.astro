@@ -1,11 +1,14 @@
 ---
-type FaqItem = [string, string];
-type FaqGroup = [string, FaqItem[]];
+type FaqListItem = string | { text: string; href?: string; children?: string[] };
+type FaqAnswerBlock = { type: "paragraph"; text: string } | { type: "list"; items: FaqListItem[] };
+type RichFaqItem = [string, string | FaqAnswerBlock[]];
+type FaqGroup = [string, RichFaqItem[]];
 
 interface Props {
   heading?: string;
-  items?: FaqItem[];
+  items?: RichFaqItem[];
   groups?: FaqGroup[];
+  continuous?: boolean;
   headingId?: string;
   className?: string;
 }
@@ -14,21 +17,32 @@ const {
   heading,
   items = [],
   groups = [],
+  continuous = false,
   headingId = "faq-section-title",
   className = ""
 } = Astro.props;
 
 const sectionClass = ["faq-section", groups.length > 0 ? "faq-section--grouped" : "", className].filter(Boolean).join(" ");
+const continuousGroups: Array<[string, RichFaqItem[]]> = groups.length > 0 ? groups : [["", items]];
+const answerBlocksFor = (answer: RichFaqItem[1]): FaqAnswerBlock[] => typeof answer === "string" ? [{ type: "paragraph", text: answer }] : answer;
 ---
 
 <section class={sectionClass} aria-labelledby={heading ? headingId : undefined}>
   {heading && <h2 id={headingId}>{heading}</h2>}
-  {groups.length > 0 ? groups.map(([groupHeading, groupItems]) => <section class="faq-group">
+  {continuous ? <article class="faq-article">
+    {continuousGroups.map(([groupHeading, groupItems]) => <section class="faq-group">
+      {groupHeading && <h2>{groupHeading}</h2>}
+      {groupItems.map(([question, answer]) => <section class="faq-item">
+        <h3>{question}</h3>
+        {answerBlocksFor(answer).map((block) => block.type === "paragraph" ? <p>{block.text}</p> : <ul>{block.items.map((item) => typeof item === "string" ? <li>{item}</li> : <li>{item.href ? <a href={item.href}>{item.text}</a> : item.text}{item.children && <ul>{item.children.map((child) => <li>{child}</li>)}</ul>}</li>)}</ul>)}
+      </section>)}
+    </section>)}
+  </article> : groups.length > 0 ? groups.map(([groupHeading, groupItems]) => <section class="faq-group">
     <h2>{groupHeading}</h2>
     <div class="faq-grid">
-      {groupItems.map(([question, answer]) => <article class="faq-item"><h3>{question}</h3><p>{answer}</p></article>)}
+      {groupItems.map(([question, answer]) => <article class="faq-item"><h3>{question}</h3>{answerBlocksFor(answer).map((block) => block.type === "paragraph" ? <p>{block.text}</p> : <ul>{block.items.map((item) => typeof item === "string" ? <li>{item}</li> : <li>{item.href ? <a href={item.href}>{item.text}</a> : item.text}</li>)}</ul>)}</article>)}
     </div>
   </section>) : <div class="faq-grid">
-    {items.map(([question, answer]) => <article class="faq-item"><h3>{question}</h3><p>{answer}</p></article>)}
+    {items.map(([question, answer]) => <article class="faq-item"><h3>{question}</h3>{answerBlocksFor(answer).map((block) => block.type === "paragraph" ? <p>{block.text}</p> : <ul>{block.items.map((item) => typeof item === "string" ? <li>{item}</li> : <li>{item.href ? <a href={item.href}>{item.text}</a> : item.text}</li>)}</ul>)}</article>)}
   </div>}
 </section>

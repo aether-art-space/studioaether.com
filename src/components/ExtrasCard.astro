@@ -1,0 +1,55 @@
+---
+interface CardImage {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  priceLabel?: string;
+  price?: string;
+  href?: string;
+  linkLabel?: string;
+  showLink?: boolean;
+  image?: CardImage;
+  className?: string;
+}
+
+const {
+  title,
+  description = "",
+  priceLabel = "",
+  price = "",
+  href,
+  linkLabel = "learn more",
+  showLink = false,
+  image,
+  className = ""
+} = Astro.props;
+
+const cardClass = ["extras-card", image ? "extras-card--image" : "", className].filter(Boolean).join(" ");
+---
+
+<article class={cardClass}>
+  {image && <img class="extras-card__image" src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />}
+  {image ? <div class="extras-card__body">
+    <h4>{title}</h4>
+    {description && <p class="extras-card__description">{description}</p>}
+    {(priceLabel || price) && <div class="extras-card__price">
+      {priceLabel && <span>{priceLabel}</span>}
+      {price && <strong>{price}</strong>}
+    </div>}
+    {showLink && href && <a class="text-link" href={href}>{linkLabel}</a>}
+  </div> : <>
+    <h4>{title}</h4>
+    {description && <p class="extras-card__description">{description}</p>}
+    {(priceLabel || price) && <div class="extras-card__price">
+      {priceLabel && <span>{priceLabel}</span>}
+      {price && <strong>{price}</strong>}
+    </div>}
+    {showLink && href && <a class="text-link" href={href}>{linkLabel}</a>}
+  </>}
+</article>

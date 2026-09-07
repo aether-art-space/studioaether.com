@@ -81,7 +81,7 @@ export const pages = [
   route("/booking", "en", "Studio pricing / booking", "Booking & Prices | aether art space Budapest", "Booking & Prices", "/hu/booking", { priority: "Critical", section: "booking", description: "Book a creative photo studio in Budapest for portraits, commercial shoots, self photo sessions, content creation, and private photo shoots." }),
   route("/hu/booking", "hu", "Studio pricing / booking", "Foglalás és árak | aether art space fotóstúdió Budapest", "Foglalás és árak", "/booking", { priority: "Critical", section: "booking", description: "Foglalj kreatív fotóstúdiót Budapesten portré-, reklám-, szelfi-, tartalomkészítő és privát fotózásokhoz." }),
   route("/faq", "en", "FAQ", "Photo Studio FAQ in Budapest | Booking, Equipment & Photoshoots | aether", "Frequently Asked Questions", "/hu/faq", { nav: false, priority: "High", action: "KEEP EXACT URL; audit stale content", section: "faq", description: "Answers about booking aether art space in Budapest, including studio rental, equipment, backdrops, props, pets, payments, rescheduling, and photoshoots." }),
-  route("/hu/faq", "hu", "FAQ", "GYIK | Aether Art Space", "Gyakran Idézett Kérdések", "/faq", { nav: false, priority: "High", action: "KEEP EXACT URL; audit stale content", section: "faq", description: "Válaszok a foglalásról, stúdiófelszerelésről, hátterekről, kisállatokról, fizetésről és az aether art space budapesti fotóstúdió használatáról." }),
+  route("/hu/faq", "hu", "FAQ", "GYIK | Aether Art Space", "Gyakran Ismételt Kérdések", "/faq", { nav: false, priority: "High", action: "KEEP EXACT URL; audit stale content", section: "faq", description: "Válaszok a foglalásról, stúdiófelszerelésről, hátterekről, kisállatokról, fizetésről és az aether art space budapesti fotóstúdió használatáról." }),
   route("/privacy-policy", "en", "Privacy policy", "Privacy Policy | aether art space", "Privacy Policy", "/hu/privacy-policy", { nav: false, priority: "High", action: "KEEP EXACT URL; legal review", section: "legal", description: "Privacy policy for aether art space, a creative photo studio in Budapest, covering website use, bookings, contact forms, and services." }),
   route("/hu/privacy-policy", "hu", "Privacy policy", "Privacy Policy | Aether Art Space", "Privacy Policy", "/privacy-policy", { nav: false, priority: "High", action: "KEEP EXACT URL; legal review", section: "legal", description: "This is the privacy policy for aether art space, a photostudio in Budapest" }),
   route("/mentoring", "en", "LEGACY mentoring URL", "Digital and Analogue Photography Mentoring | Aether Art Space", "Photography Mentoring in Budapest", null, { nav: false, priority: "High", action: "DIRECT 301 TO CURRENT MENTORING URL", disposition: "redirect", redirectTo: "/photographer-mentoring-budapest" }),
@@ -129,6 +129,7 @@ export const navGroups = [
     huLabel: "fotós szolgáltatásaink",
     links: [
       ["/packages", "PACKAGES", "CSOMAGOK"],
+      ["/wedding-photography", "wedding photography", "esküvői fotózás"],
       ["/commercial-photography-budapest", "commercial photography", "reklámfotózás"],
       ["/corporate-photography-budapest", "corporate photography", "vállalati fotózás"],
       ["/portrait-photography-budapest", "portrait photography", "portré fotózás"],

@@ -1,4 +1,6 @@
 ---
+import ExtrasCard from "./ExtrasCard.astro";
+
 interface ExtraItem {
   title: string;
   priceLabel: string;
@@ -32,11 +34,6 @@ const sectionClass = ["service-upgrades", "extras-section", className].filter(Bo
   <h3 id={headingId}>{heading}</h3>
   {intro.map((paragraph) => <p>{paragraph}</p>)}
   <div class="service-upgrade-grid">
-    {items.map((item) => <article>
-      <h4>{item.title}</h4>
-      <span>{item.priceLabel}</span>
-      <strong>{item.price}</strong>
-      {showLinks && item.href && <a class="text-link" href={item.href}>{item.linkLabel ?? "learn more"}</a>}
-    </article>)}
+    {items.map((item) => <ExtrasCard title={item.title} priceLabel={item.priceLabel} price={item.price} href={item.href} linkLabel={item.linkLabel} showLink={showLinks} />)}
   </div>
 </section>

@@ -4,6 +4,7 @@ import { homeContent, studioContent, studioImages, studioGalleryImages, studioBa
 import ArtistCard from "./ArtistCard.astro";
 import BookingFooter from "./BookingFooter.astro";
 import CircularCard from "./CircularCard.astro";
+import ExtrasCard from "./ExtrasCard.astro";
 import GalleryLightbox from "./GalleryLightbox.astro";
 import HorizontalMasonryGallery from "./HorizontalMasonryGallery.astro";
 import ImageHero from "./ImageHero.astro";
@@ -18,7 +19,7 @@ import StudioSection from "./StudioSection.astro";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
-const faqGroups = faqGroupsFor(page) as Array<[string, Array<[string, string]>]>;
+const faqGroups = faqGroupsFor(page) as Array<[string, any[]]>;
 const home = homeContent[hu ? "hu" : "en"];
 const studio = studioContent[hu ? "hu" : "en"];
 const selfie = selfieContent[hu ? "hu" : "en"];
@@ -139,6 +140,21 @@ const isPostBooking = page.path.includes("post-booking");
 const postBookingPage: any = isPostBooking ? (postBookingContent as any)[hu ? "hu" : "en"] : null;
 const isWedding = page.path.includes("wedding-photography");
 const weddingPage: any = isWedding ? (weddingContent as any)[hu ? "hu" : "en"] : null;
+const weddingWeb3FormsAccessKey = import.meta.env.PUBLIC_WEDDING_WEB3FORMS_ACCESS_KEY || "d92ec586-0336-439d-a756-005f41e36de4";
+const weddingContactSuccessUrl = `${site.domain}${page.path}?wedding=success#wedding-contact-form`;
+const splitWeddingCoverage = (text: string) => {
+  const match = text.match(/^included\s+(in|from)\s+(?:the\s+)?(.+)$/i);
+  if (!match) return { priceLabel: "included in:", price: text };
+  return { priceLabel: `included ${match[1]}:`, price: `${match[2].charAt(0).toUpperCase()}${match[2].slice(1)}` };
+};
+const splitWeddingOptionPrice = (text: string) => {
+  const match = text.match(/^add(?:\s+this)?\s+to\s+any\s+package\s+for\s+(.+)$/i);
+  return { priceLabel: "add to any package for", price: match?.[1] ?? text };
+};
+const weddingCoverageCards = isWedding ? weddingPage.coverage.map((item: string[], index: number) => ({ title: item[0], description: item[1], ...splitWeddingCoverage(item[2]), image: weddingSectionImages.coverage[index] })) : [];
+const weddingPrimaryOptionCards = isWedding ? weddingPage.options.slice(0, 2).map((item: string[], index: number) => ({ title: item[0], description: item[1], ...splitWeddingOptionPrice(item[2]), image: weddingSectionImages.options[index] })) : [];
+const weddingAddonCards = isWedding ? weddingPage.options.slice(2).map((item: string[], index: number) => ({ title: item[0], description: item[1], ...splitWeddingOptionPrice(item[2]), image: weddingSectionImages.options[index + 2] })) : [];
+const weddingPackageFeatureBreaks = [[2], [4], [6]];
 const legalPage: any = page.section === "legal" ? (legalContent as any)[hu ? "hu" : "en"] : null;
 const bookingExtras = hu ? [["Papír háttér", "csak ha ráléptek", "3000 Ft"], ["Smink", "profi sminkeseinktől", "15.000.Ft-tól"], ["Nagy Angyal Szárnyak", "fehér, vagy fekete / 1m+", "8.000.Ft"], ["Asszisztencia", "segítünk magyarul, vagy angolul", "4.000.Ft / óra"], ["Styling", "dolgozz profi stylistjainkkal", "35.000.Ft-tól"], ["Különleges Ruhák", "Menyasszonyi ruha, Népviselet, stb...", "5000Ft-tól"], ["Kamera bérlés", "analóg vagy digitális kamerák és filmek", "4000-9000 Ft"], ["Fotómodellek", "tapasztalt modellek", "15.000.Ft / órától"], ["Füstgép", "folyadékkal együtt", "5000Ft"], ["Akvárium", "bele fér egy ember - vízzel töltve", "39.000.Ft"]] : [["Paper Backdrop", "applies if you step on it", "3.000. HUF"], ["Make-up", "work with our pro make-up artists", "from 15.000. HUF"], ["Large Angel Wings", "black or white / 1m+", "8.000. HUF"], ["Assistance", "we help you in Hungarian or English", "4.000. HUF / hour"], ["Styling", "work with our pro stylist", "from 35.000. HUF"], ["Unique Outfits", "Bridal Dress, Folk Dress, etc.", "from 5.000. HUF"], ["Camera Rental", "analog or digital cameras and films", "4.000.-9.000. HUF"], ["Photo Models", "work with our pro models", "from 15.000. HUF / hour"], ["Fog Machine", "with fog juice included", "5.000. HUF"], ["Aquarium", "fits a human - filled with water", "39.000. HUF"]];
 const bookingExtraItems = bookingExtras.map(([title, priceLabel, price]) => ({ title, priceLabel, price }));
@@ -255,7 +271,11 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       </div>
       <InfoBox class="studio-backdrops__note"><p>{studio.backdropNote}</p></InfoBox>
     </section>
-    <BookingFooter page={page} />
+    <div class="booking-footer-variants">
+      <BookingFooter page={page} variant="all" />
+      <BookingFooter page={page} variant="selfie-contact" includeContactModal={false} />
+      <BookingFooter page={page} variant="artists" includeContactModal={false} />
+    </div>
     <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} />
   </>
 ) : page.path === "/selfie-studio-budapest" || page.path === "/hu/selfie-studio-budapest" ? (
@@ -504,15 +524,18 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : isWedding ? (
   <>
-    <section class="wedding-hero"><h1>{page.h1}</h1><p>{weddingPage.hero}</p><p>{weddingPage.intro}</p><p>{weddingPage.subIntro || ""}</p><div class="actions"><a class="button" href="#wedding-contact">Check Availability</a><a class="text-link" href={hu ? "/hu/packages" : "/packages"}>View Packages</a></div></section>
-    <section class="wedding-glance"><div><img src={weddingSectionImages.glance.src} alt={weddingSectionImages.glance.alt} width={weddingSectionImages.glance.width} height={weddingSectionImages.glance.height} loading="lazy" decoding="async" /><h2>{weddingPage.glanceHeading}</h2><p>{weddingPage.glanceIntro}</p></div><ul>{weddingPage.glance.map((item: string) => <li>{item}</li>)}</ul></section>
-    <section class="service-gallery service-gallery--wedding" aria-label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"}>{weddingImages.map((imageData: any, index: number) => <button type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</section>
-    <section class="service-section service-section--packages"><h2>{weddingPage.packagesHeading}</h2><p>{weddingPage.packagesIntro}</p></section>
-    <section class="service-section wedding-build"><h2>{weddingPage.buildHeading}</h2><p>{weddingPage.buildIntro}</p><div class="wedding-source-gallery wedding-source-gallery--coverage">{weddingSectionImages.coverage.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" />)}</div><div class="wedding-feature-grid">{weddingPage.coverage.map((item: string[]) => <article><h3>{item[0]}</h3><p>{item[1]}</p><strong>{item[2]}</strong></article>)}</div></section>
-    <section class="service-section wedding-options"><h2>{weddingPage.optionalHeading}</h2><p>{weddingPage.optionalIntro}</p><div class="wedding-source-gallery wedding-source-gallery--options">{weddingSectionImages.options.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" />)}</div><div class="wedding-feature-grid">{weddingPage.options.map((item: string[]) => <article><h3>{item[0]}</h3><p>{item[1]}</p><strong>{item[2]}</strong></article>)}</div></section>
-    <section class="service-section wedding-photographers"><h2>{weddingPage.photographersHeading}</h2><p>{weddingPage.photographersIntro}</p><div class="wedding-people">{weddingPage.photographers.map((person: string[], index: number) => <article><img src={index === 0 ? weddingSectionImages.alexandra.src : weddingImages[1].src} alt={person[0]} width="612" height="630" loading="lazy" decoding="async" /><h3>{person[0]}</h3><strong>{person[1]}</strong><p>{person[2]}</p></article>)}</div></section>
-    <section class="wedding-approach"><h2>{weddingPage.approachHeading}</h2><p>{weddingPage.approachIntro}</p><div class="wedding-source-gallery wedding-source-gallery--approach">{weddingSectionImages.approach.map((imageData: any) => <img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" />)}</div><blockquote>{weddingPage.testimonial}</blockquote><img class="wedding-testimonial-image" src={weddingSectionImages.testimonial.src} alt={weddingSectionImages.testimonial.alt} width={weddingSectionImages.testimonial.width} height={weddingSectionImages.testimonial.height} loading="lazy" decoding="async" /><cite>{weddingPage.testimonialName}</cite><h2>{weddingPage.processHeading}</h2><p>{weddingPage.processIntro}</p></section>
-    <section class="wedding-contact" id="wedding-contact"><h2>{weddingPage.formHeading}</h2><p>{weddingPage.formIntro}</p><p>{weddingPage.formBody}</p><form action={`mailto:${site.email}`} method="post" enctype="text/plain"><label>name *<input name="name" required /></label><label>Phone<input name="phone" type="tel" /></label><label>Email*<input name="email" type="email" required /></label><label>Wedding Date*<input name="date" type="date" required /></label><label>Location / Venue Address*<input name="location" required /></label><label>Tell us about your wedding<textarea name="message" rows="5"></textarea></label><button class="button" type="submit">Check Availability</button></form><p>We usually respond within 24 hours.</p></section>
+    <section class="wedding-hero"><h1>{hu ? page.h1 : <>Wedding Photography in<br />Budapest &amp; Across Hungary</>}</h1><p>{weddingPage.hero}</p><p>{weddingPage.intro}</p><p>{weddingPage.subIntro || ""}</p><div class="actions"><a class="button" href="#wedding-contact">Check Availability</a><a class="button button--secondary" href="#wedding-packages">View Packages</a></div></section>
+    <section class="wedding-gallery" aria-label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"}><div class="wedding-gallery__group wedding-gallery__group--wide">{[weddingImages[0], weddingImages[1], weddingImages[2]].map((imageData: any, index: number) => <button class={`wedding-gallery__item wedding-gallery__item--${index === 0 ? "wide" : "half"}`} type="button" data-gallery-image data-gallery-index={index} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading={index < 3 ? "eager" : "lazy"} decoding="async" /></button>)}</div><div class="wedding-gallery__group">{[weddingImages[3], weddingImages[4]].map((imageData: any, index: number) => <button class={`wedding-gallery__item wedding-gallery__item--${index === 0 ? "tall" : "short"}`} type="button" data-gallery-image data-gallery-index={index + 3} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 4}` : `Open image ${index + 4}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</div><div class="wedding-gallery__group">{[weddingImages[5], weddingImages[6]].map((imageData: any, index: number) => <button class={`wedding-gallery__item wedding-gallery__item--${index === 0 ? "tall" : "short"}`} type="button" data-gallery-image data-gallery-index={index + 5} data-gallery-src={imageData.src} data-gallery-alt={imageData.alt} aria-label={hu ? `Kép megnyitása: ${index + 6}` : `Open image ${index + 6}`}><img src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} loading="lazy" decoding="async" /></button>)}</div><div class="wedding-gallery__group wedding-gallery__group--feature"><button class="wedding-gallery__item wedding-gallery__item--feature" type="button" data-gallery-image data-gallery-index="7" data-gallery-src={weddingImages[7].src} data-gallery-alt={weddingImages[7].alt} aria-label={hu ? "Kép megnyitása: 8" : "Open image 8"}><img src={weddingImages[7].src} alt={weddingImages[7].alt} width={weddingImages[7].width} height={weddingImages[7].height} loading="lazy" decoding="async" /></button></div></section>
+    <section class="wedding-glance"><div class="wedding-glance__copy"><h2>{weddingPage.glanceHeading}</h2><p>{weddingPage.glanceIntro}</p><ul>{weddingPage.glance.map((item: string) => <li>{item}</li>)}</ul></div><img src={weddingSectionImages.glance.src} alt={weddingSectionImages.glance.alt} width={weddingSectionImages.glance.width} height={weddingSectionImages.glance.height} loading="lazy" decoding="async" /></section>
+    <section id="wedding-packages" class="wedding-packages"><h2>{weddingPage.packagesHeading}</h2><p>{weddingPage.packagesIntro}</p><div class="service-package-grid wedding-package-grid">{weddingPage.packageCards.map((packageItem: any, index: number) => <PriceCard className="wedding-package-card" title="" titleLines={packageItem.titleLines} description={packageItem.description} price={packageItem.price} includesLabel="This package includes:" features={packageItem.features} featureBreaks={weddingPackageFeatureBreaks[index]} />)}</div><h2 class="wedding-included-heading">{weddingPage.includedHeading}</h2><div class="wedding-included-grid">{weddingPage.included.map((item: string[]) => <article><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
+    <section class="wedding-build"><h2>{weddingPage.buildHeading}</h2><p>{weddingPage.buildIntro}</p><div class="service-upgrade-grid wedding-feature-grid">{weddingCoverageCards.map((card: any) => <ExtrasCard className="wedding-feature-card" title={card.title} description={card.description} priceLabel={card.priceLabel} price={card.price} image={card.image} />)}</div><p class="wedding-choice-note">Not sure which package fits your plans?</p><p class="wedding-choice-note wedding-choice-note--followup"><a class="text-link" href="#wedding-contact">Tell us about your wedding</a> and we’ll help you choose.</p></section>
+    <section class="wedding-options"><h2>{weddingPage.optionalHeading}</h2><p>{weddingPage.optionalIntro}</p><div class="service-upgrade-grid wedding-option-grid wedding-option-grid--primary">{weddingPrimaryOptionCards.map((card: any) => <ExtrasCard className="wedding-option-card" title={card.title} description={card.description} priceLabel={card.priceLabel} price={card.price} image={card.image} />)}</div><h2 class="wedding-addons-heading">Style and Guest Experience Add-ons</h2><p>Creative ways for your guests to take part and make their own memories.</p><div class="service-upgrade-grid wedding-option-grid wedding-option-grid--addons">{weddingAddonCards.map((card: any) => <ExtrasCard className="wedding-option-card" title={card.title} description={card.description} priceLabel={card.priceLabel} price={card.price} image={card.image} />)}</div><p class="wedding-choice-note">Not sure which package fits your plans?</p><p class="wedding-choice-note wedding-choice-note--followup"><a class="text-link" href="#wedding-contact">Tell us about your wedding</a> and we’ll help you choose.</p></section>
+    <section class="wedding-photographers"><div class="wedding-photographers__copy"><h2>{weddingPage.photographersHeading}</h2><p class="wedding-photographers__intro">Two distinct personalities. Two different perspectives. One shared vision.</p><p>{weddingPage.photographersIntro.replace("Two distinct personalities. Two different perspectives. One shared vision. ", "")}</p>{weddingPage.photographers.map((person: string[]) => <div class="wedding-photographer"><h3>{person[0]}</h3><strong>{person[1]}</strong><p>{person[2]}</p></div>)}<p class="wedding-photographers__tail">Together, we balance careful direction with unobtrusive observation—stepping in when guidance is helpful and disappearing into the background when the moment should simply unfold.</p></div><div class="wedding-photographers__image"><img src={weddingImages[0].src} alt="Wedding photography in Hungary" width={weddingImages[0].width} height={weddingImages[0].height} loading="lazy" decoding="async" /></div></section>
+    <section class="wedding-approach"><h2>{weddingPage.approachHeading}</h2><p>{weddingPage.approachIntro}</p><div class="wedding-approach-grid">{weddingPage.approach.map((item: string[], index: number) => <CircularCard variant="feature" className="wedding-approach-card" title={item[0]} copy={item[1]} image={weddingSectionImages.approach[index]} />)}</div></section>
+    <section class="wedding-testimonials"><h2>{weddingPage.testimonialHeading}</h2><div class="wedding-testimonial"><img src={weddingSectionImages.testimonial.src} alt={weddingSectionImages.testimonial.alt} width={weddingSectionImages.testimonial.width} height={weddingSectionImages.testimonial.height} loading="lazy" decoding="async" /><div><blockquote>{weddingPage.testimonial}</blockquote><cite>{weddingPage.testimonialName}</cite></div></div></section>
+    <section class="wedding-process"><h2>{weddingPage.processHeading}</h2><p>{weddingPage.processIntro}</p><div class="wedding-process-grid">{weddingPage.process.map((item: string[], index: number) => <article><span class="wedding-process__number" aria-hidden="true">{index + 1}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
+    <FaqSection heading={weddingPage.faqHeading} items={weddingPage.faq} className="service-faq" />
+    <section class="wedding-contact" id="wedding-contact"><div class="wedding-contact__inner"><div class="wedding-contact__intro"><h2>{weddingPage.formHeading}</h2><p class="wedding-contact__lead">{weddingPage.formIntro}</p><p>{weddingPage.formBody}</p></div><div class="wedding-contact__form"><form class="contact-form" id="wedding-contact-form" action="https://api.web3forms.com/submit" method="POST" data-wedding-web3forms><input type="hidden" name="access_key" value={weddingWeb3FormsAccessKey} /><input type="hidden" name="subject" value={hu ? "Új esküvői érdeklődés az aether weboldaláról" : "New wedding enquiry from the aether website"} /><input type="hidden" name="page" value={page.path} /><input type="hidden" name="redirect" value={weddingContactSuccessUrl} /><input type="checkbox" name="botcheck" class="contact-form__botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" /><label>{hu ? "név *" : "name *"}<input name="name" autocomplete="name" required /></label><label>{hu ? "e-mail *" : "Email *"}<input name="email" type="email" autocomplete="email" required /></label><label>{hu ? "esküvő dátuma" : "Wedding Date"}<input name="date" type="date" /></label><label>{hu ? "helyszín / cím" : "Location / Venue Address"}<input name="location" autocomplete="street-address" /></label><label>{hu ? "Mesélj az esküvőtökről" : "Tell us about your wedding"}<textarea name="message" rows="5"></textarea></label><div class="wedding-contact__submit"><button class="button" type="submit">{hu ? "Elérhetőség ellenőrzése" : "Check Availability"}</button><p data-wedding-status>{hu ? "Általában 24 órán belül válaszolunk." : "We usually respond within 24 hours."}</p></div></form></div></div></section>
     <GalleryLightbox label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"} hu={hu} />
   </>
 ) : isIdPhoto ? (
@@ -626,8 +649,8 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : page.section === "faq" ? (
   <>
-    <PageHero variant="service" headingId="faq-title" title={page.h1} eyebrow={hu ? "gyakori kérdések" : "frequently asked questions"} lead={introFor(page)} />
-    <FaqSection groups={faqGroups} className="faq-section--standalone" />
+    <PageHero variant="service" headingId="faq-title" title={page.h1} subtitle={introFor(page)} />
+    <FaqSection groups={faqGroups} continuous className="faq-section--standalone" />
   </>
 ) : page.section === "legal" ? (
   <>
@@ -784,4 +807,43 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     }
   });
   lightbox?.addEventListener("cancel", () => window.setTimeout(() => lastTrigger?.focus(), 0));
+
+  const weddingForm = document.querySelector<HTMLFormElement>("[data-wedding-web3forms]");
+  const weddingStatus = weddingForm?.querySelector<HTMLElement>("[data-wedding-status]");
+  const setWeddingStatus = (message: string, isError = false) => {
+    if (!weddingStatus) return;
+    weddingStatus.textContent = message;
+    weddingStatus.dataset.error = isError ? "true" : "false";
+  };
+
+  if (weddingForm && weddingStatus) {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("wedding") === "success") {
+      setWeddingStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk az elérhetőséggel." : "Thank you, we’ll be in touch soon about availability.");
+      window.history.replaceState({}, document.title, `${window.location.pathname}#wedding-contact-form`);
+    }
+
+    weddingForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitButton = weddingForm.querySelector<HTMLButtonElement>("[type=submit]");
+      if (submitButton) submitButton.disabled = true;
+      setWeddingStatus(document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
+
+      try {
+        const response = await fetch(weddingForm.action, {
+          method: "POST",
+          body: new FormData(weddingForm),
+          headers: { Accept: "application/json" }
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
+        weddingForm.reset();
+        setWeddingStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk az elérhetőséggel." : "Thank you, we’ll be in touch soon about availability.");
+      } catch {
+        setWeddingStatus(document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your enquiry. Please email us instead.", true);
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
+    });
+  }
 </script>
