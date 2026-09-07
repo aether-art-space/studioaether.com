@@ -4,6 +4,49 @@ export const siteUrl = () => (import.meta.env.PUBLIC_SITE_URL || site.domain).re
 
 export const absoluteUrl = (path) => new URL(path, `${siteUrl()}/`).toString();
 
+const bookingFooterDecisions = {
+  all: new Set([
+    "/", "/hu",
+    "/studio", "/hu/studio",
+    "/equipment", "/hu/equipment",
+    "/props", "/hu/props",
+    "/booking", "/hu/booking",
+    "/faq", "/hu/faq",
+    "/christmas-studio", "/hu/christmas-studio"
+  ]),
+  selfieContact: new Set(["/selfie-studio-budapest", "/hu/selfie-studio-budapest"]),
+  artists: new Set([
+    "/photographers-budapest", "/hu/photographers-budapest",
+    "/models-budapest", "/hu/models-budapest",
+    "/stylists", "/hu/stylists",
+    "/make-up-artists", "/hu/make-up-artists",
+    "/packages", "/hu/packages",
+    "/commercial-photography-budapest", "/hu/commercial-photography-budapest",
+    "/corporate-photography-budapest", "/hu/corporate-photography-budapest",
+    "/portrait-photography-budapest", "/hu/portrait-photography-budapest",
+    "/fitness", "/hu/fitness",
+    "/glamour-boudoir-photography-budapest", "/hu/glamour-boudoir-photography-budapest",
+    "/model-polaroids-budapest", "/hu/model-polaroids-budapest",
+    "/pet-photography-budapest", "/hu/pet-photography-budapest",
+    "/photographer-mentoring-budapest", "/hu/photographer-mentoring-budapest",
+    "/photographer-daniel", "/hu/photographer-daniel",
+    "/christmas-photoshoot", "/hu/christmas-photoshoot"
+  ]),
+  none: new Set([
+    "/id-photo", "/hu/id-photo",
+    "/privacy-policy", "/hu/privacy-policy",
+    "/post-booking", "/hu/post-booking",
+    "/wedding-photography", "/hu/wedding-photography"
+  ])
+};
+
+export const bookingFooterVariantFor = (page) => {
+  for (const [variant, paths] of Object.entries(bookingFooterDecisions)) {
+    if (paths.has(page.path)) return variant === "none" ? null : variant;
+  }
+  return null;
+};
+
 export const localizedPath = (path, language) => {
   const page = pageByPath.get(path);
   if (!page) return path;

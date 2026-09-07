@@ -105,7 +105,46 @@
 .home-booking__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 23px; max-width: var(--content-max); margin: 39.6px auto 0; }
 .home-booking--selfieContact .home-booking__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 660px; }
 .home-booking--artists .home-booking__grid { grid-template-columns: minmax(0, 1fr); max-width: 330px; }
-.booking-footer-variants { display: grid; gap: 1px; }
+@media (min-width: 1051px) {
+  .home-booking--all {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .home-booking--selfieContact,
+  .home-booking--artists {
+    display: grid;
+    min-height: 0;
+    grid-template-columns: minmax(240px, 360px) minmax(0, 660px);
+    column-gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+    justify-content: center;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    text-align: left;
+  }
+  .home-booking--artists {
+    grid-template-columns: repeat(2, minmax(0, 520px));
+  }
+  .home-booking--selfieContact .home-booking__intro,
+  .home-booking--artists .home-booking__intro {
+    width: auto;
+    margin: 0;
+  }
+  .home-booking--selfieContact .home-booking__grid,
+  .home-booking--artists .home-booking__grid {
+    width: 100%;
+    margin: 0;
+  }
+  .home-booking--artists .home-booking__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 660px;
+  }
+  .home-booking--artists .home-booking-card {
+    grid-column: 1 / -1;
+  }
+}
 .home-booking-card { position: relative; min-width: 0; min-height: 303px; padding: 13px 11px 19px; overflow: visible; border-radius: 20px; background: var(--paper); }
 .home-booking-card h3 { margin: 0; padding-top: 8px; font: 400 22px/22px var(--serif); letter-spacing: 0; }
 .home-booking-card p { width: 288px; max-width: 100%; margin: 9px auto 0; overflow-wrap: anywhere; font: var(--text-small); }
@@ -117,6 +156,8 @@
 .home-booking-card__action { position: absolute; z-index: 1; right: 23px; bottom: 19px; left: 23px; width: auto; min-width: 0; height: 40px; padding: 0 8px; font-size: 16px; line-height: 24px; transition: border-color 400ms ease-in-out, background-color 400ms ease-in-out, color 400ms ease-in-out; }
 .home-booking-card:hover .home-booking-card__action, .home-booking-card:focus-within .home-booking-card__action { border-color: var(--paper); background: var(--paper); color: var(--ink); }
 .home-booking-card--contact { display: flex; min-height: 303px; flex-direction: column; padding: 13px 23px 19px; background: var(--paper); }
+.home-booking--artists .home-booking-card--contact { text-align: left; }
+.home-booking--artists .home-booking-card--contact .home-booking-card__contact-copy p { margin-right: 0; margin-left: 0; }
 .home-booking-card--contact h3 { font-size: 24px; line-height: 24px; }
 .home-booking-card--contact .home-booking-card__contact-copy { display: flex; flex: 1 1 auto; flex-direction: column; justify-content: flex-start; gap: 0; }
 .home-booking-card--contact .home-booking-card__contact-copy p { width: auto; margin: 9px auto 0; }

@@ -1,12 +1,13 @@
 ---
 import { ClockIcon, InfoIcon, MapPinIcon, PhoneIcon } from "@phosphor-icons/react/ssr";
 import BookingFooter from "./BookingFooter.astro";
-import { site } from "../lib/site.mjs";
+import { bookingFooterVariantFor, site } from "../lib/site.mjs";
 const { page, consentEnabled = false } = Astro.props;
 const hu = page.language === "hu";
+const bookingFooterVariant = bookingFooterVariantFor(page);
 ---
 <footer class="site-footer">
-  {page.path !== "/studio" && page.path !== "/hu/studio" && <BookingFooter page={page} />}
+  {bookingFooterVariant && <BookingFooter page={page} variant={bookingFooterVariant} />}
   <section class="site-footer__details" aria-label={hu ? "Kapcsolat és stúdióinformációk" : "Contact and studio information"}>
     <div class="site-footer__grid">
       <div class="footer-column footer-column--contact">

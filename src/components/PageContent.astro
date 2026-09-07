@@ -2,7 +2,6 @@
 import { faqGroupsFor, introFor, site, localizedNav } from "../lib/site.mjs";
 import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, photoPackageSets, commonUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
 import ArtistCard from "./ArtistCard.astro";
-import BookingFooter from "./BookingFooter.astro";
 import CircularCard from "./CircularCard.astro";
 import ExtrasCard from "./ExtrasCard.astro";
 import GalleryLightbox from "./GalleryLightbox.astro";
@@ -271,11 +270,6 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       </div>
       <InfoBox class="studio-backdrops__note"><p>{studio.backdropNote}</p></InfoBox>
     </section>
-    <div class="booking-footer-variants">
-      <BookingFooter page={page} variant="all" />
-      <BookingFooter page={page} variant="selfie-contact" includeContactModal={false} />
-      <BookingFooter page={page} variant="artists" includeContactModal={false} />
-    </div>
     <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} />
   </>
 ) : page.path === "/selfie-studio-budapest" || page.path === "/hu/selfie-studio-budapest" ? (
