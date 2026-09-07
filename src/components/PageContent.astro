@@ -19,7 +19,6 @@ import StudioSection from "./StudioSection.astro";
 import ResponsiveImage from "./ResponsiveImage.astro";
 import GalleryImage from "./GalleryImage.astro";
 import { resolveImage } from "../lib/images.mjs";
-import WeddingGallery from "./WeddingGallery.astro";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
@@ -574,7 +573,9 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : isWedding ? (
   <>
     <section class="wedding-hero"><h1>{hu ? page.h1 : <>Wedding Photography in<br />Budapest &amp; Across Hungary</>}</h1><p>{weddingPage.hero}</p><p>{weddingPage.intro}</p><p>{weddingPage.subIntro || ""}</p><div class="actions"><a class="button" href="#wedding-contact">{weddingUi.availability}</a><a class="button button--secondary" href="#wedding-packages">{weddingUi.packages}</a></div></section>
-    <WeddingGallery images={weddingImages} hu={hu} />
+    <section class="horizontal-masonry-gallery-section wedding-gallery-section" aria-label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"}>
+      <HorizontalMasonryGallery {...galleryA11y} images={weddingImages} label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"} />
+    </section>
     <section class="wedding-glance"><div class="wedding-glance__copy"><h2>{weddingPage.glanceHeading}</h2><p>{weddingPage.glanceIntro}</p><ul>{weddingPage.glance.map((item: string) => <li>{item}</li>)}</ul></div><ResponsiveImage image={weddingSectionImages.glance} role="content" loading="lazy" /></section>
     <section id="wedding-packages" class="wedding-packages"><h2>{weddingPage.packagesHeading}</h2><p>{weddingPage.packagesIntro}</p><div class="service-package-grid wedding-package-grid">{weddingPage.packageCards.map((packageItem: any, index: number) => <PriceCard className="wedding-package-card" title="" titleLines={packageItem.titleLines} description={packageItem.description} price={packageItem.price} includesLabel={weddingUi.includes} features={packageItem.features} featureBreaks={weddingPackageFeatureBreaks[index]} />)}</div><h2 class="wedding-included-heading">{weddingPage.includedHeading}</h2><div class="wedding-included-grid">{weddingPage.included.map((item: string[]) => <article><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
     <section class="wedding-build"><h2>{weddingPage.buildHeading}</h2><p>{weddingPage.buildIntro}</p><div class="service-upgrade-grid wedding-feature-grid">{weddingCoverageCards.map((card: any) => <ExtrasCard className="wedding-feature-card" title={card.title} description={card.description} priceLabel={card.priceLabel} price={card.price} image={card.image} />)}</div><p class="wedding-choice-note">{weddingUi.choice}</p><p class="wedding-choice-note wedding-choice-note--followup"><a class="text-link" href="#wedding-contact">{weddingUi.contact}</a> {weddingUi.followup}</p></section>
