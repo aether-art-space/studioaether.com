@@ -484,7 +484,6 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         </>;
       })}
     </section>
-    <section class="service-contact"><h2>{mentoringPage.signHeading}</h2><p>{mentoringPage.signBody}</p><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(hu ? "mentor program" : "mentoring in aether art space")}`}>{site.email}</a></section>
     <GalleryLightbox label={hu ? "Mentorálási galéria" : "Mentoring gallery"} hu={hu} />
   </>
 ) : seasonalType === "photoshoot" ? (

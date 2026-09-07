@@ -28,9 +28,11 @@ const bookingFooterDecisions = {
     "/glamour-boudoir-photography-budapest", "/hu/glamour-boudoir-photography-budapest",
     "/model-polaroids-budapest", "/hu/model-polaroids-budapest",
     "/pet-photography-budapest", "/hu/pet-photography-budapest",
-    "/photographer-mentoring-budapest", "/hu/photographer-mentoring-budapest",
     "/photographer-daniel", "/hu/photographer-daniel",
     "/christmas-photoshoot", "/hu/christmas-photoshoot"
+  ]),
+  mentoring: new Set([
+    "/photographer-mentoring-budapest", "/hu/photographer-mentoring-budapest"
   ]),
   none: new Set([
     "/id-photo", "/hu/id-photo",

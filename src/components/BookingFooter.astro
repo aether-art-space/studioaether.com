@@ -5,8 +5,9 @@ import { site } from "../lib/site.mjs";
 const { page, variant = "all", includeContactModal = true } = Astro.props;
 const hu = page.language === "hu";
 const home = homeContent[hu ? "hu" : "en"];
-const variantKey = variant === "selfie-contact" ? "selfieContact" : variant === "artists" ? "artists" : "all";
+const variantKey = variant === "selfie-contact" ? "selfieContact" : variant === "artists" ? "artists" : variant === "mentoring" ? "mentoring" : "all";
 const bookingVariant = home.bookingVariants[variantKey];
+const customContactCard = (bookingVariant as any).contactCard;
 const cardIndexes = variantKey === "all" ? [0, 1, 2] : variantKey === "selfieContact" ? [1, 2] : [2];
 const web3FormsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "eb32865d-ef18-44d3-bdcf-6bb6eb19ae2a";
 const contactSuccessUrl = `${site.domain}${page.path}?contact=success#footer-contact-form`;
@@ -17,14 +18,14 @@ const headingId = `footer-booking-title-${variantKey}`;
     <h2 id={headingId}>{bookingVariant.heading}</h2>
     <p>{bookingVariant.lead}</p>
   </div>
-  <div class="home-booking__grid">{cardIndexes.map((index) => { const [title, copy, cta] = home.bookingCards[index];
+  <div class="home-booking__grid">{cardIndexes.map((index) => { const card = index === 2 && customContactCard ? customContactCard : home.bookingCards[index]; const [title, copy, cta] = card; const questionEnd = copy.indexOf("?"); const contactQuestion = questionEnd >= 0 ? copy.slice(0, questionEnd + 1) : ""; const contactBody = questionEnd >= 0 ? copy.slice(questionEnd + 1).trim() : copy;
     const href = index === 0 ? site.bookingUrl : site.selfieBookingUrl;
     const event = index === 0 ? "booking_click" : index === 1 ? "selfie_booking_click" : "email_click";
     return <article class:list={["home-booking-card", { "home-booking-card--contact": index === 2 }]}>
       <h3>{title}</h3>
       {index === 2 ? <div class="home-booking-card__contact-copy">
-        <p><strong>{copy.slice(0, copy.indexOf("?") + 1)}</strong></p>
-        <p>{copy.slice(copy.indexOf("?") + 1).trim()}</p>
+        {contactQuestion && <p><strong>{contactQuestion}</strong></p>}
+        {contactBody && <p>{contactBody}</p>}
       </div> : <>
         <p>{copy}</p>
         <div class="home-booking-card__media">

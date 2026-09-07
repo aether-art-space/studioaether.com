@@ -63,6 +63,11 @@ export const homeContent = {
       artists: {
         heading: "Book our Artists",
         lead: "Need a photographer, make-up artist, model, or stylist? Send us a message and we’ll help you put the right team together."
+      },
+      mentoring: {
+        heading: "Sign Up for Mentoring",
+        lead: "Send us an email if you want to participate in digital or analogue photography mentoring in our studio. If you feel like you need something else, we can tailor our services to your needs!",
+        contactCard: ["Apply for Mentoring", "Tell us about your current skill level and what you want to achieve, or just ask us any questions.", "Send us a Message"]
       }
     }
   },
@@ -130,6 +135,11 @@ export const homeContent = {
       artists: {
         heading: "Foglald le alkotóinkat",
         lead: "Fotósra, sminkesre, modellre vagy stylistre van szükséged? Írj nekünk, és segítünk összeállítani a megfelelő csapatot."
+      },
+      mentoring: {
+        heading: "Jelentkezz Mentor Programunkra",
+        lead: "Dobj egy üzenetet emailben, ha szeretnél részt venni mentor programunkon digitális vagy analóg stúdiós fotózáshoz! Ha nem pont erre van szükséged, szólj és személyre szabjuk neked az ajánlatunkat.",
+        contactCard: ["Jelentkezz mentorprogramunkra", "Írd meg, milyen szinten vagy, mit szeretnél elérni, vagy egyszerűen tedd fel a kérdéseidet.", "Üzenet küldése"]
       }
     }
   }
