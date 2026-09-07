@@ -1538,8 +1538,8 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .wedding-contact input, .wedding-contact textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); color: var(--ink); font: 400 14px/1.3 var(--sans); }
 .wedding-contact textarea { min-height: 68px; resize: vertical; }
 .wedding-contact__submit { display: flex; align-items: center; gap: 24px; }
-.wedding-contact__submit .button { width: fit-content; min-width: 0; white-space: nowrap; }
-.wedding-contact__submit p { margin: 0; font: var(--text-body); }
+.wedding-contact__submit .button { width: max-content; min-width: max-content; flex: 0 0 auto; padding-right: 26px; padding-left: 26px; white-space: nowrap; }
+.wedding-contact__submit p { min-width: 0; margin: 0; font: var(--text-body); }
 
 @media (max-width: 700px) {
   .page-hero--service, .service-hero { padding: 60px 18px 42px; }
