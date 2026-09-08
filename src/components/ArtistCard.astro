@@ -34,9 +34,10 @@ interface ArtistProfile {
 interface Props {
   profile: ArtistProfile;
   hu: boolean;
+  showGalleryProfileMeta?: boolean;
 }
 
-const { profile, hu } = Astro.props;
+const { profile, hu, showGalleryProfileMeta = true } = Astro.props;
 const isExternalMoreLink = profile.moreHref?.startsWith("http");
 const socials = profile.socials ?? [];
 const gallery = profile.gallery ?? [];
@@ -67,6 +68,6 @@ const gallery = profile.gallery ?? [];
     {profile.more && profile.moreHref && <a class="artist-profile__more button button--secondary" href={profile.moreHref} target={isExternalMoreLink ? "_blank" : undefined} rel={isExternalMoreLink ? "noreferrer noopener" : undefined}>{profile.more}</a>}
   </div>
   {gallery.length > 0 && <div class="artist-profile__gallery">
-    {gallery.map((image) => <GalleryImage image={image} className="artist-profile__gallery-item" label={hu ? "Kép megnyitása" : "Open image"} title={profile.name} description={profile.description} link={profile.websiteUrl} linkLabel={profile.website} />)}
+    {gallery.map((image) => <GalleryImage image={image} className="artist-profile__gallery-item" label={hu ? "Kép megnyitása" : "Open image"} title={showGalleryProfileMeta ? profile.name : undefined} description={showGalleryProfileMeta ? profile.description : undefined} link={showGalleryProfileMeta ? profile.websiteUrl : undefined} linkLabel={showGalleryProfileMeta ? profile.website : undefined} suppressProfileMeta={!showGalleryProfileMeta} />)}
   </div>}
 </article>

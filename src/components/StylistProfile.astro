@@ -21,11 +21,10 @@ interface ArtistProfile {
 
 interface Props {
   profile: ArtistProfile;
-  email: string;
   hu: boolean;
 }
 
-const { profile, email, hu } = Astro.props;
+const { profile, hu } = Astro.props;
 const gallery = profile.gallery ?? [];
 const socials = profile.socials ?? [];
 ---
@@ -44,7 +43,7 @@ const socials = profile.socials ?? [];
       <p class="stylist-profile__specialties">{profile.specialties}</p>
     </div>
     {gallery.length > 0 && <div class="stylist-profile__gallery" aria-label={hu ? `${profile.name} galériája` : `${profile.name}'s gallery`}>
-    {gallery.map((image) => <GalleryImage image={image} className="stylist-profile__gallery-item" label={hu ? "Kép megnyitása" : "Open image"} title={profile.name} description={profile.specialties} link={`mailto:${email}`} linkLabel={email} />)}
+    {gallery.map((image) => <GalleryImage image={image} className="stylist-profile__gallery-item" label={hu ? "Kép megnyitása" : "Open image"} suppressProfileMeta />)}
   </div>}
 </article>
 </div>

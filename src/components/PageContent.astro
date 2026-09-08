@@ -19,6 +19,7 @@ import StudioSection from "./StudioSection.astro";
 import ResponsiveImage from "./ResponsiveImage.astro";
 import GalleryImage from "./GalleryImage.astro";
 import { resolveImage } from "../lib/images.mjs";
+import { InstagramLogoIcon, XLogoIcon } from "@phosphor-icons/react/ssr";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
@@ -368,7 +369,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <section id={collectionAnchorIds[index]} class={`collection-section collection-section--${section.galleries[0].imageKey}`} aria-labelledby={`collection-section-${index}`}>
         <div class="collection-section__intro">
           <h2 id={`collection-section-${index}`}>{section.heading}</h2>
-          {section.subheading && <h3>{section.subheading}</h3>}
+          {section.subheading && <p class="collection-section__subtitle">{section.subheading}</p>}
           {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
         </div>
         {section.galleries.map((gallery) => <div class="collection-gallery-wrap">
@@ -483,8 +484,8 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section id={artistType === "makeup" ? "makeup-pricing" : undefined} class={`artist-profiles artist-profiles--${artistType}`} aria-label={hu ? "Rezidens alkotók" : "Resident artists"}>
       <div class="artist-profiles__grid">
         {artistType === "stylists"
-          ? artistProfiles.map((profile: any) => <StylistProfile profile={profile} email={site.email} hu={hu} />)
-          : artistProfiles.map((profile: any) => <ArtistCard profile={profile} hu={hu} />)}
+          ? artistProfiles.map((profile: any) => <StylistProfile profile={profile} hu={hu} />)
+          : artistProfiles.map((profile: any) => <ArtistCard profile={profile} hu={hu} showGalleryProfileMeta={false} />)}
       </div>
 </section>
           {artistPageAny.footerNote && <InfoBox class="artist-note"><p>{artistPageAny.footerNote}</p></InfoBox>}
@@ -555,15 +556,30 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : isProfile ? (
   <>
-    <PageHero variant="service" headingId="profile-title" title={page.h1} eyebrow={profilePage.hero} description={profilePage.intro[0]}>
-      <a class="text-link page-hero__link" href="https://aczel.pictures/" target="_blank" rel="noreferrer noopener">aczel.pictures</a>
-    </PageHero>
-    <div class="profile-hero__portrait"><ResponsiveImage image={profileImages.portrait} role="hero" loading="eager" fetchpriority="high" /></div>
-    <section class="profile-copy">{profilePage.intro.slice(1).map((paragraph: string) => <p>{paragraph}</p>)}</section>
-    <section class="service-gallery service-gallery--profile" aria-label={hu ? "Dániel portfólió galériája" : "Daniel photography portfolio"}>{profileImages.gallery.map((imageData: any, index: number) => <GalleryImage image={imageData} index={index} label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`} />)}</section>
-    <PriceSection heading={profilePage.packageHeading} packages={profilePackages} headingId="profile-packages-title" />
+    <section class="profile-hero" aria-labelledby="profile-title">
+      <div class="profile-hero__portrait"><ResponsiveImage image={profileImages.portrait} role="hero" loading="eager" fetchpriority="high" /></div>
+      <div class="profile-hero__content">
+        <h1 id="profile-title">{page.h1}</h1>
+        <div class="profile-hero__socials" aria-label={hu ? "Dániel közösségi profiljai" : "Daniel's social profiles"}>
+          <a href="https://instagram.com/aczel_aethereal" target="_blank" rel="noreferrer noopener" aria-label="Dániel on Instagram"><InstagramLogoIcon size={25} weight="regular" aria-hidden="true" /></a>
+          <a href="https://x.com/aczel_pictures" target="_blank" rel="noreferrer noopener" aria-label="Dániel on X"><XLogoIcon size={25} weight="regular" aria-hidden="true" /></a>
+        </div>
+        <a class="profile-hero__website text-link" href="https://aczel.pictures/" target="_blank" rel="noreferrer noopener">aczel.pictures</a>
+        <h2>{profilePage.hero}</h2>
+        <div class="profile-hero__description">{profilePage.intro.map((paragraph: string) => <p>{paragraph}</p>)}</div>
+      </div>
+    </section>
+    <section class="profile-genres" aria-labelledby="profile-genres-title">
+      <h2 id="profile-genres-title">{profilePage.genresHeading}</h2>
+      <div class="profile-genres__grid">
+        {profilePage.genres.map((genre: string, index: number) => <article class="profile-genre">
+          <ResponsiveImage image={{ ...profileImages.gallery[index], alt: `${genre} photography by Dániel Z. Aczél` }} role="content" loading="lazy" />
+          <h3>{genre}</h3>
+        </article>)}
+      </div>
+    </section>
+    <PriceSection packages={profilePackages} ariaLabel={hu ? "Dániel fotózási csomagjai" : "Daniel's photoshoot packages"} />
     <section class="service-contact"><h2>{profilePage.contactHeading}</h2><p><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(profilePage.contactEmailSubject)}`}>{site.email}</a><br /><a class="text-link" href={`tel:${site.phone.replaceAll(" ", "")}`}>{site.phone}</a></p></section>
-    <GalleryLightbox label={hu ? "Dániel portfólió galériája" : "Daniel photography portfolio"} hu={hu} />
   </>
 ) : isPostBooking ? (
   <>
@@ -774,8 +790,13 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     const captionTitle = cleanText(caption?.querySelector("strong")?.textContent || undefined);
     const captionDetail = cleanText(caption?.querySelector("small")?.textContent || undefined);
     const captionPrice = cleanText(caption?.querySelector("b")?.textContent || undefined);
-    const fallbackTitle = cleanText(profile?.querySelector("h3")?.textContent || model?.querySelector("h3")?.textContent || sourceImage?.alt || "");
-    const fallbackDescription = cleanText(profile?.querySelector(".artist-profile__description")?.textContent || "");
+    const suppressProfileMeta = item.hasAttribute("data-gallery-suppress-profile-meta");
+    const fallbackTitle = suppressProfileMeta
+      ? captionTitle
+      : cleanText(profile?.querySelector("h3")?.textContent || model?.querySelector("h3")?.textContent || sourceImage?.alt || "");
+    const fallbackDescription = suppressProfileMeta
+      ? captionDetail
+      : cleanText(profile?.querySelector(".artist-profile__description")?.textContent || "");
     const hasGalleryTitle = item.hasAttribute("data-gallery-title");
     const hasGalleryDescription = item.hasAttribute("data-gallery-description");
 
@@ -783,8 +804,8 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       title: hasGalleryTitle ? cleanText(item.dataset.galleryTitle) : (captionTitle || fallbackTitle),
       description: hasGalleryDescription ? cleanText(item.dataset.galleryDescription) : (captionDetail || fallbackDescription),
       price: cleanText(item.dataset.galleryPrice) || captionPrice,
-      link: cleanText(item.dataset.galleryLink) || cleanText(profile?.querySelector<HTMLAnchorElement>("a[href]")?.href),
-      linkLabel: cleanText(item.dataset.galleryLinkLabel) || cleanText(profile?.querySelector<HTMLAnchorElement>("a[href]")?.textContent || undefined)
+      link: suppressProfileMeta ? cleanText(item.dataset.galleryLink) : cleanText(item.dataset.galleryLink) || cleanText(profile?.querySelector<HTMLAnchorElement>("a[href]")?.href),
+      linkLabel: suppressProfileMeta ? cleanText(item.dataset.galleryLinkLabel) : cleanText(item.dataset.galleryLinkLabel) || cleanText(profile?.querySelector<HTMLAnchorElement>("a[href]")?.textContent || undefined)
     };
   };
 

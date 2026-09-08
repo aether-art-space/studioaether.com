@@ -13,10 +13,11 @@ interface Props {
   price?: string;
   link?: string;
   linkLabel?: string;
+  suppressProfileMeta?: boolean;
   objectPosition?: string;
 }
 
-const { image, index, label, className = "", imageClassName = "", title, description, price, link, linkLabel, objectPosition } = Astro.props;
+const { image, index, label, className = "", imageClassName = "", title, description, price, link, linkLabel, suppressProfileMeta = false, objectPosition } = Astro.props;
 const asset = resolveImage(image, "gallery");
 ---
 <button
@@ -36,6 +37,7 @@ const asset = resolveImage(image, "gallery");
   data-gallery-price={price}
   data-gallery-link={link}
   data-gallery-link-label={linkLabel}
+  data-gallery-suppress-profile-meta={suppressProfileMeta ? "true" : undefined}
   aria-label={label}
 >
   <ResponsiveImage image={image} role="gallery" className={imageClassName} loading="lazy" objectPosition={objectPosition} />
