@@ -663,8 +663,15 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : isPostBooking ? (
   <>
-    <PageHero variant="service" headingId="post-booking-title" title={page.h1} eyebrow={hu ? "foglalás visszaigazolása" : "booking confirmation"} description={postBookingPage.intro} />
-    <section class="post-booking"><p class="post-booking__lead">{postBookingPage.lead}</p>{postBookingPage.sections.map((section: string[]) => <section><h2>{section[0]}</h2><p>{section[1]}</p></section>)}<a class="button" data-gtag-event="booking_click" data-gtag-location="post-booking" href={site.bookingUrl}>{postBookingPage.bookingLabel}</a></section>
+    <PageHero variant="service" headingId="post-booking-title" title={page.h1} description={postBookingPage.intro} />
+    <section class="post-booking" aria-labelledby="post-booking-rules-title">
+      <h2 id="post-booking-rules-title" class="post-booking__rules-heading">{postBookingPage.rulesHeading}</h2>
+      {postBookingPage.sections.map((section: [string, string[]]) => <section class="post-booking__section">
+        <h3>{section[0]}</h3>
+        <ul>{section[1].map((item: string) => <li>{item}</li>)}</ul>
+      </section>)}
+      <p class="post-booking__closing">{postBookingPage.closing[0]}<br />{postBookingPage.closing[1]}</p>
+    </section>
   </>
 ) : isWedding ? (
   <>
@@ -767,11 +774,6 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <FaqSection className="service-faq service-faq--corporate" heading={servicePageAny.faqHeading} items={servicePageAny.faq} headingId="corporate-faq-title" />
     </>}
     <GalleryLightbox label={hu ? "Szolgáltatási galéria" : "Service gallery"} hu={hu} />
-  </>
-) : page.path === "/post-booking" || page.path === "/hu/post-booking" ? (
-  <>
-    <PageHero variant="service" headingId="post-booking-title" title={page.h1} eyebrow={hu ? "foglalás visszaigazolása" : "booking confirmation"} lead={hu ? "Hamarosan jelentkezünk a foglalásod részleteivel." : "We will be in touch shortly with the details of your booking."} />
-    <section class="callout"><h2>{hu ? "Köszönjük, hogy az aether art space-t választottad." : "Thank you for choosing aether art space."}</h2><a class="button button--dark" href={hu ? "/hu" : "/"}>{hu ? "vissza a főoldalra" : "back to home"}</a></section>
   </>
 ) : page.section === "booking" ? (
   <>

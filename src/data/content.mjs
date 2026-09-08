@@ -1339,8 +1339,52 @@ export const mentoringImages = {
 };
 
 export const postBookingContent = {
-  en: { intro: "We will confirm your appointment in 24 hours via email.", lead: "In the meantime, here are some rules that you should know:", sections: [["Cancellations", "We know it's not easy to schedule with multiple people, so we try to be flexible. If you want to move your booking, let us know 24 hours before your shoot. If you want to cancel your booking, we will charge you half the rental price and deduct it from your next booking. If you want to cancel within 24 hours of your shoot, we ask you to pay the full price, since we won't be able to fill your timeslot anymore."], ["Arriving", "We can only guarantee entry to the studio area from the time of your booking, but if you arrive earlier and we are already there, you are welcome to come in and have a coffee in our waiting area. If the studio is free, we can also start the clock earlier. If there is no booking after you, you can extend your original booking on the spot at an hourly rate. Assembly of the lights and set-up are part of your booking time. We ask you to return the studio the way you received it, so please plan your shooting length accordingly. If you are not confident shooting in a studio, or you just want to focus on shooting and not worry about other things, you can ask for assistance (4000 HUF / hour). With these guidelines, we want to keep things running smoothly and provide a good experience in a clean and orderly studio for everyone. Thank you for helping us, and talk to you soon!" ]], bookingLabel: "Book the studio again" },
-  hu: { intro: "Foglalásod 24 órán belül visszaigazoljuk e-mailben.", lead: "Addig is itt van néhány szabály, amiről érdemes tudnod:", sections: [["Lemondás", "Tudjuk, hogy nem egyszerű több emberrel időpontot egyeztetni, ezért igyekszünk rugalmasak lenni a foglalásokkal. Ha át szeretnéd tenni az időpontodat, szólj nyugodtan legkésőbb 24 órával a fotózásod előtt. Ha le szeretnéd mondani a foglalásodat, a bérleti díj felét kérjük, amit levonunk a következő foglalásodból. Ha a fotózásod előtt 24 órán belül szeretnéd lemondani az időpontot, a teljes árat kérjük, mert ezt az időpontot már nem tudjuk feltölteni."], ["Érkezés", "A stúdiótérbe csak a foglalás időpontjától tudjuk garantálni a belépést, de ha korábban érkezel és már ott vagyunk, gyere be nyugodtan, és igyál meg egy kávét a váróteremben. Ha szabad a stúdió, korábban is indíthatjuk az órát. Ha nincs utánad foglalás, az eredeti foglalásodat a helyszínen óradíjasan meghosszabbíthatod. A fények és a díszlet összeszerelése a foglalási idő része. Arra kérünk, hogy úgy add vissza a teret, ahogy megkaptad, ezért ennek megfelelően tervezd meg a fotózásod hosszát. Ha nem vagy magabiztos a stúdióban való fotózásban, vagy csak az alkotásra szeretnél koncentrálni, asszisztenciát is kérhetsz (4000 Ft / óra). Ezekkel az irányelvekkel szeretnénk gondoskodni arról, hogy a foglalások zökkenőmentesen menjenek, és mindenki számára jó élményt nyújtsunk egy tiszta és rendezett stúdióban. Köszönjük, hogy segítesz nekünk, és hamarosan beszélünk!" ]], bookingLabel: "Foglalj újra stúdiót" }
+  en: {
+    intro: "We’ll confirm your appointment by email within 24 hours.",
+    rulesHeading: "A few things to know:",
+    closing: ["Thanks for helping us keep the studio clean and running smoothly.", "See you soon!"],
+    sections: [
+      ["Cancellations & changes", [
+        "To cancel or reschedule, please contact us by email or phone.",
+        "Cancellations made more than 24 hours but within 7 days of your shoot are charged 50% of the rental fee.",
+        "Cancellations within 24 hours are charged in full."
+      ]],
+      ["Payment", [
+        "Payment is made on site by cash or card.",
+        "We do not accept bank transfers.",
+        "We issue an official VAT invoice on site."
+      ]],
+      ["Arriving", [
+        "Your booking starts at the reserved time. If you arrive early and the studio is open, you’re welcome to wait with a coffee.",
+        "If the studio is available, you may start early or extend your booking by the hour.",
+        "Setup and cleanup are part of your booking time. Please leave the studio as you found it.",
+        "Need help? Assistance is available for 4,000 HUF per hour."
+      ]]
+    ]
+  },
+  hu: {
+    intro: "Foglalásodat 24 órán belül e-mailben visszaigazoljuk.",
+    rulesHeading: "Néhány fontos tudnivaló:",
+    closing: ["Köszönjük, hogy segítesz tisztán és rendezetten tartani a stúdiót.", "Hamarosan találkozunk!"],
+    sections: [
+      ["Lemondás és módosítás", [
+        "Lemondás vagy módosítás esetén kérjük, e-mailben vagy telefonon vedd fel velünk a kapcsolatot.",
+        "A fotózás előtti 24 órán túl, de 7 napon belüli lemondás esetén a bérleti díj 50%-át felszámítjuk.",
+        "24 órán belüli lemondásnál a teljes díjat felszámítjuk."
+      ]],
+      ["Fizetés", [
+        "A helyszínen készpénzzel vagy bankkártyával fizethetsz.",
+        "Banki átutalást nem fogadunk el.",
+        "A helyszínen minden esetben hivatalos, áfás számlát állítunk ki."
+      ]],
+      ["Érkezés", [
+        "A foglalásod a lefoglalt időpontban kezdődik. Ha korábban érkezel és már nyitva vagyunk, várakozhatsz nálunk egy kávé mellett.",
+        "Ha a stúdió szabad, korábban is kezdhetsz, illetve óránként hosszabbíthatsz.",
+        "A berendezés és az elpakolás a foglalási idő része. Kérjük, úgy add vissza a stúdiót, ahogy kaptad.",
+        "Asszisztenciát 4 000 Ft/óra díjért kérhetsz."
+      ]]
+    ]
+  }
 };
 
 export const weddingContent = {
@@ -1537,7 +1581,7 @@ export const legalContent = {
 };
 
 export const homeImages = {
-  hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
+  hero: { src: "/wix-recovered/hero-main-people.jpg", width: 5750, height: 3833, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },
   features: [
     { src: "/images/wix/reference/feature-studio.jpg", alt: "photostudio interior" },

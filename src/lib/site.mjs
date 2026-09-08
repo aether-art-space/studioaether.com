@@ -46,8 +46,8 @@ const bookingFooterDecisions = {
   none: new Set([
     "/id-photo", "/hu/id-photo",
     "/privacy-policy", "/hu/privacy-policy",
-    "/post-booking", "/hu/post-booking",
-    "/wedding-photography", "/hu/wedding-photography"
+    "/wedding-photography", "/hu/wedding-photography",
+    "/post-booking", "/hu/post-booking"
   ])
 };
 
