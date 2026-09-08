@@ -1,35 +1,83 @@
 ---
 import { site, localizedPath, localizedNav, sitePath } from "../lib/site.mjs";
-import AetherHeaderNavigation from "./AetherHeaderNavigation";
 import ResponsiveImage from "./ResponsiveImage.astro";
 const { page } = Astro.props;
 const hu = page.language === "hu";
 const languageHref = page.counterpartPath || (hu ? "/" : "/hu");
 const groups = localizedNav(page.language);
-const navigationGroups = groups.map((group) => ({
-  label: group.label,
-  links: group.links.map(([href, label]) => ({ href, label }))
-}));
+const mobileGroups = groups.map((group, index) => index === 1 ? {
+  ...group,
+  links: [group.links[0], group.links[3], group.links[2], group.links[1]]
+} : group);
+const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
 ---
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href={hu ? "/hu" : "/"} aria-label={site.name}>
       <ResponsiveImage image={{ src: "/images/generated/wix/jpg/logo-full-transparent.png", alt: site.name, width: 326, height: 184 }} role="logo" loading="eager" />
     </a>
-    <AetherHeaderNavigation
-      client:load
-      bookingHref={localizedPath("/booking", page.language)}
-      bookingExternalHref={site.bookingUrl}
-      selfieBookingExternalHref={site.selfieBookingUrl}
-      homeHref={sitePath(hu ? "/hu" : "/")}
-      bookingLabel={hu ? "árak és foglalás" : "prices & booking"}
-      groups={navigationGroups}
-      languageHref={languageHref}
-      languageLabel={hu ? "HU" : "EN"}
-      languageMenuLabel={hu ? "Oldal és nyelv" : "Page and language"}
-      mentoringHref={localizedPath("/photographer-mentoring-budapest", page.language)}
-      mentoringLabel={hu ? "mentorálás" : "mentoring"}
-      navigationLabel={hu ? "Fő navigáció" : "Primary navigation"}
-    />
+    <div class="header-interactive">
+      <nav class="main-nav" aria-label={navigationLabel}>
+        <ul class="main-nav__list">
+          {groups.map((group, index) => (
+            <li class={`nav-menu nav-menu--${index + 1}`}>
+              <details class="nav-menu__details">
+                <summary class="nav-trigger">
+                  <span>{group.label}</span>
+                  <span class="nav-trigger__chevron" aria-hidden="true" />
+                </summary>
+              </details>
+              <div class="nav-dropdown">
+                <ul>
+                  {group.links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
+                </ul>
+              </div>
+            </li>
+          ))}
+          <li><a class="nav-direct" href={localizedPath("/photographer-mentoring-budapest", page.language)}>{hu ? "mentorálás" : "mentoring"}</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="button button--dark header-book" data-gtag-event="booking_click" data-gtag-location="header" href={localizedPath("/booking", page.language)}>{hu ? "árak és foglalás" : "prices & booking"}</a>
+        <div class="language-control">
+          <details class="language-menu">
+            <summary class="language-switch" aria-label={hu ? "Oldal és nyelv" : "Page and language"}>
+              <span>{hu ? "HU" : "EN"}</span><span class="language-chevron" aria-hidden="true" />
+            </summary>
+          </details>
+          <div class="language-options">
+            <a href={languageHref}>{hu ? "EN" : "HU"}</a>
+          </div>
+        </div>
+        <details class="mobile-menu">
+          <summary class="mobile-nav-trigger" aria-label={navigationLabel}>
+            <span class="mobile-nav-trigger__icon" aria-hidden="true" />
+          </summary>
+          <div class="mobile-nav-overlay" aria-hidden="true" />
+          <nav class="mobile-nav-panel" aria-label={navigationLabel}>
+            <a class="mobile-nav-link mobile-nav-link--home" href={sitePath(hu ? "/hu" : "/")}>{hu ? "kezdőlap" : "home"}</a>
+            <div class="mobile-nav-accordions">
+              {mobileGroups.map((group) => (
+                <details class="mobile-nav-accordion">
+                  <summary class="mobile-nav-accordion__trigger">
+                    <span>{group.label}</span>
+                    <span class="mobile-nav-accordion__icon" aria-hidden="true" />
+                  </summary>
+                  <div class="mobile-nav-accordion__content">
+                    {group.links.map(([href, label]) => <a href={href}>{label}</a>)}
+                  </div>
+                </details>
+              ))}
+            </div>
+            <a class="mobile-nav-link mobile-nav-link--strong" href={localizedPath("/photographer-mentoring-budapest", page.language)}>{hu ? "mentorálás" : "mentoring"}</a>
+            <a class="mobile-nav-link mobile-nav-link--strong" href={localizedPath("/booking", page.language)}>{hu ? "ÁRAK" : "PRICING"}</a>
+            <a class="mobile-nav-book" data-gtag-event="booking_click" data-gtag-location="mobile-navigation" href={site.bookingUrl}>{hu ? "fotóstúdió foglalása" : "book the photostudio"}</a>
+            <a class="mobile-nav-book" data-gtag-event="selfie_booking_click" data-gtag-location="mobile-navigation" href={site.selfieBookingUrl}>{hu ? "szelfi stúdió foglalása" : "book the selfie studio"}</a>
+            <a class="mobile-nav-book mobile-nav-book--secondary" data-gtag-event="email_click" data-gtag-location="mobile-navigation" href={`mailto:${site.email}`}>{hu ? "írj nekünk" : "message us"}</a>
+          </nav>
+        </details>
+      </div>
+    </div>
   </div>
 </header>

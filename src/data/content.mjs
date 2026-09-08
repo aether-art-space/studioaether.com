@@ -82,7 +82,7 @@ export const homeContent = {
     studioShowcaseCta: "bővebben a stúdióról",
     features: [
       ["tágas stúdiótér", "béreld ki stúdiónkat projektedhez vagy workshophoz a legjobb áron Budapesten", "/hu/studio", "bővebben a stúdióról"],
-      ["vakuk, kamerák és filmek", "próbálj ki egy új fényképezőgépet! Vakuk, digitális és analóg kamerák választékát kínáljuk helyben", "/hu/equipment", "nézd meg felszerelésünket"],
+      ["kamerák és felszerelés", "próbálj ki egy új fényképezőgépet! Vakuk, digitális és analóg kamerák választékát kínáljuk helyben", "/hu/equipment", "nézd meg felszerelésünket"],
       ["különleges bútorok", "terünk fel van szerelkezve változatos bútorokkal, amelyeket felhasználhatsz a fotózásokhoz", "/hu/props", "nézd meg bútorainkat"],
       ["ruhák és kiegészítők", "egyedi ruhára, ékszerre van szükséged ötletedhez? Böngéssz a ruhatárunkból", "/hu/props", "válogass ruhatárunkból"],
       ["kellékek", "halmozzuk a kellékeket — napszemüveget, sapkát, kardot is találsz, ami feldobhatja a fotózást", "/hu/props", "nézd meg kellékeinket"],
@@ -245,7 +245,7 @@ export const selfieContent = {
     extrasHeading: "Extras",
     extras: [["Large Angel Wings", "8.000. HUF"], ["Live White Snake", "15.000. HUF", "let us know in advance please!"], ["Smoke machine", "5.000. HUF"]],
     reserveHeading: "Reserve your spot",
-    reserveCopy: "Don’t miss your chance to experience Budapest’s most creative photo studio.",
+    reserveCopy: "Don’t miss your chance to experience Budapest’s most creative photo studio!",
     reserveCta: "Book Now",
     szegedHeading: "Check out our location in Szeged!",
     szegedCopy: "Our Szeged mini selfie studio is the first one in the city.\n\nSame prices, same friendly atmosphere, and the same attention to detail—go check it out!",

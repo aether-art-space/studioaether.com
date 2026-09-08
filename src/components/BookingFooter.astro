@@ -26,7 +26,17 @@ const headingId = `footer-booking-title-${variantKey}`;
       <h3>{title}</h3>
       {index === 2 ? <div class="home-booking-card__contact-copy">
         {contactQuestion && <p><strong>{contactQuestion}</strong></p>}
-        {contactBody && <p>{contactBody}</p>}
+        <div class="home-booking-card__contact-prompt">
+          <svg class="home-booking-card__contact-icon home-booking-card__contact-icon--closed" viewBox="0 0 256 256" aria-hidden="true">
+            <path d="M224,56l-96,88L32,56Z" opacity="0.2" />
+            <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z" />
+          </svg>
+          <svg class="home-booking-card__contact-icon home-booking-card__contact-icon--open" viewBox="0 0 256 256" aria-hidden="true">
+            <path d="M224,96l-78.55,56h-34.9L32,96l96-64Z" opacity="0.2" />
+            <path d="M228.44,89.34l-96-64a8,8,0,0,0-8.88,0l-96,64A8,8,0,0,0,24,96V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V96A8,8,0,0,0,228.44,89.34ZM96.72,152,40,192V111.53Zm16.37,8h29.82l56.63,40H56.46Zm46.19-8L216,111.53V192ZM128,41.61l81.91,54.61-67,47.78H113.11l-67-47.78Z" />
+          </svg>
+          {contactBody && <p>{contactBody}</p>}
+        </div>
       </div> : <>
         <p>{copy}</p>
         <div class="home-booking-card__media">

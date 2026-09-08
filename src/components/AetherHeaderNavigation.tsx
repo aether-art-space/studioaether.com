@@ -1,8 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import * as Accordion from "@radix-ui/react-accordion";
 import { CaretDownIcon, ListIcon, XIcon } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type NavigationLink = {
   href: string;
@@ -44,6 +43,25 @@ export default function AetherHeaderNavigation({
   homeHref
 }: AetherHeaderNavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  useEffect(() => {
+    const closeMenus = (event: MouseEvent) => {
+      if (!(event.target instanceof Element) || !event.target.closest(".header-interactive")) {
+        setOpenMenu(null);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpenMenu(null);
+    };
+
+    document.addEventListener("click", closeMenus);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("click", closeMenus);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
 
   // The Wix mobile menu keeps a different resident-artist order, while the
   // studio menu shares the same duplicate-destination section links as desktop.
@@ -59,55 +77,51 @@ export default function AetherHeaderNavigation({
 
   return (
     <div className="header-interactive">
-      <NavigationMenu.Root className="main-nav" aria-label={navigationLabel} delayDuration={0} skipDelayDuration={0}>
-        <NavigationMenu.List className="main-nav__list">
+      <nav className="main-nav" aria-label={navigationLabel}>
+        <ul className="main-nav__list">
           {groups.map((group, index) => (
-            <NavigationMenu.Item className={`nav-menu nav-menu--${index + 1}`} key={group.label}>
-              <NavigationMenu.Trigger className="nav-trigger">
-                {group.label}
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content className="nav-dropdown" forceMount>
-                <ul>
+            <li className={`nav-menu nav-menu--${index + 1}`} key={group.label}>
+              <button
+                className="nav-trigger"
+                type="button"
+                aria-expanded={openMenu === group.label}
+                aria-controls={`nav-panel-${index + 1}`}
+                onClick={() => setOpenMenu(openMenu === group.label ? null : group.label)}
+              >
+                <span>{group.label}</span>
+                <CaretDownIcon className="nav-trigger__icon" size={14} weight="regular" aria-hidden="true" />
+              </button>
+              <div className="nav-dropdown" id={`nav-panel-${index + 1}`} hidden={openMenu !== group.label}>
+                  <ul>
                   {group.links.map((link, linkIndex) => (
                     <li key={`${link.href}-${linkIndex}`}>
-                      <a
-                        href={link.href}
-                        onPointerDown={(event) => {
-                          if (event.button !== 0) return;
-                          event.preventDefault();
-                          window.location.assign(link.href);
-                        }}
-                        onClick={(event) => {
-                          event.preventDefault();
-                          window.location.assign(link.href);
-                        }}
-                      >
-                        {link.label}
-                      </a>
+                      <a href={link.href} onClick={() => setOpenMenu(null)}>{link.label}</a>
                     </li>
                   ))}
-                </ul>
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
+                  </ul>
+              </div>
+            </li>
           ))}
-          <NavigationMenu.Item>
-            <NavigationMenu.Link asChild>
-              <a className="nav-direct" href={mentoringHref}>{mentoringLabel}</a>
-            </NavigationMenu.Link>
-          </NavigationMenu.Item>
-        </NavigationMenu.List>
-      </NavigationMenu.Root>
+          <li><a className="nav-direct" href={mentoringHref}>{mentoringLabel}</a></li>
+        </ul>
+      </nav>
 
-      <nav className="header-actions" aria-label={languageMenuLabel}>
+      <div className="header-actions">
         <a className="button button--dark header-book" data-gtag-event="booking_click" data-gtag-location="header" href={bookingHref}>{bookingLabel}</a>
-        <details className="language-menu">
-          <summary className="language-switch" aria-label={languageMenuLabel}>
+        <div className="language-menu" aria-label={languageMenuLabel}>
+          <button
+            className="language-switch"
+            type="button"
+            aria-expanded={openMenu === "language"}
+            aria-controls="language-options"
+            onClick={() => setOpenMenu(openMenu === "language" ? null : "language")}
+          >
             <span>{languageLabel}</span><span className="language-chevron" aria-hidden="true" />
-          </summary>
-          <div className="language-options">
-            <a href={languageHref}>{languageLabel === "HU" ? "EN" : "HU"}</a>
+          </button>
+          <div className="language-options" id="language-options" hidden={openMenu !== "language"}>
+            <a href={languageHref} onClick={() => setOpenMenu(null)}>{languageLabel === "HU" ? "EN" : "HU"}</a>
           </div>
-        </details>
+        </div>
         <Dialog.Root open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <Dialog.Trigger asChild>
             <button className="mobile-nav-trigger" type="button" aria-label={mobileMenuOpen ? (languageLabel === "HU" ? "Menü bezárása" : "Close menu") : navigationLabel}>
@@ -165,7 +179,7 @@ export default function AetherHeaderNavigation({
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
-      </nav>
+      </div>
     </div>
   );
 }
