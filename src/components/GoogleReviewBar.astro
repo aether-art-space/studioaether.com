@@ -1,0 +1,28 @@
+---
+import { googleReviewSummary } from "../data/googleReviews.mjs";
+import { site } from "../data/routes.mjs";
+
+const { language } = Astro.props;
+const hu = language === "hu";
+const reviewCountLabel = hu ? `${googleReviewSummary.reviewCount} értékelés` : `${googleReviewSummary.reviewCount} reviews`;
+const accessibleLabel = hu
+  ? `Google-értékelések: ${googleReviewSummary.rating} az 5-ből, ${reviewCountLabel}`
+  : `Google reviews: ${googleReviewSummary.rating} out of 5, ${reviewCountLabel}`;
+---
+
+<a
+  class="google-review-bar"
+  data-gtag-event="google_reviews_click"
+  data-gtag-location="floating-review-bar"
+  href={site.mapsUrl}
+  target="_blank"
+  rel="noreferrer noopener"
+  aria-label={accessibleLabel}
+>
+  <span class="google-review-bar__logo" aria-hidden="true"></span>
+  <span class="google-review-bar__summary">
+    <span class="google-review-bar__stars" aria-hidden="true">★★★★★</span>
+    <span class="google-review-bar__rating">{googleReviewSummary.rating} / 5 {hu ? "a Google-on" : "on Google"}</span>
+    <span class="google-review-bar__count">{reviewCountLabel} · {hu ? googleReviewSummary.checkedLabelHu : googleReviewSummary.checkedLabel}</span>
+  </span>
+</a>

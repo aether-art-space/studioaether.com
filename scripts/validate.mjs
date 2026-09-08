@@ -70,9 +70,11 @@ for (const page of indexablePages) {
   for (const tag of imageTags) {
     const isLightboxImage = /data-lightbox-image/.test(tag);
     const src = tag.match(/\bsrc=["']([^"']*)["']/i)?.[1] || "";
-    if (!isLightboxImage && src && !src.startsWith("/images/generated/")) fail.push(`non-generated image source: ${page.path}: ${src}`);
-    if (!isLightboxImage && (!/\bsrcset=["'][^"']+["']/i.test(tag) || !/\bsizes=["'][^"']+["']/i.test(tag))) fail.push(`responsive attributes missing: ${page.path}`);
-    if (!isLightboxImage && (!/\bwidth=["'][^"']+["']/i.test(tag) || !/\bheight=["'][^"']+["']/i.test(tag))) fail.push(`image dimensions missing: ${page.path}`);
+    const isSvgImage = /\.svg(?:[?#]|$)/i.test(src);
+    // SVGs are resolution-independent assets and do not need generated raster variants or sizing attributes.
+    if (!isLightboxImage && !isSvgImage && src && !src.startsWith("/images/generated/")) fail.push(`non-generated image source: ${page.path}: ${src}`);
+    if (!isLightboxImage && !isSvgImage && (!/\bsrcset=["'][^"']+["']/i.test(tag) || !/\bsizes=["'][^"']+["']/i.test(tag))) fail.push(`responsive attributes missing: ${page.path}`);
+    if (!isLightboxImage && !isSvgImage && (!/\bwidth=["'][^"']+["']/i.test(tag) || !/\bheight=["'][^"']+["']/i.test(tag))) fail.push(`image dimensions missing: ${page.path}`);
   }
   for (const match of html.matchAll(/\bdata-gallery-(?:src|avif|webp|fallback)=["']([^"']+)["']/gi)) {
     if (!match[1].startsWith("/images/generated/")) fail.push(`gallery source is not generated: ${page.path}: ${match[1]}`);
@@ -120,7 +122,7 @@ try {
     if (variant?.width > 2400 || variant?.height > 2400) fail.push(`generated image exceeds cap: ${variant.src}`);
   }
   const generatedEntries = await fs.readdir(path.join(dist, "images"), { withFileTypes: true }).catch(() => []);
-  for (const entry of generatedEntries) if (entry.name !== "generated") fail.push(`source image directory deployed: /images/${entry.name}`);
+  for (const entry of generatedEntries) if (entry.name !== "generated" && !/\.svg$/i.test(entry.name)) fail.push(`source image directory deployed: /images/${entry.name}`);
 } catch (error) {
   fail.push(`image manifest missing or invalid: ${error.message}`);
 }

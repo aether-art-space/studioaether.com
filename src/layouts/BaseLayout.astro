@@ -4,6 +4,7 @@ import CookieConsent from "../components/CookieConsent.astro";
 import ContactModal from "../components/ContactModal.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import GoogleReviewBar from "../components/GoogleReviewBar.astro";
 import { site } from "../data/routes.mjs";
 
 const { page } = Astro.props;
@@ -28,5 +29,6 @@ const consentEnabled = !preview && Boolean(site.tracking.googleTagId || site.tra
     <SiteFooter page={page} consentEnabled={consentEnabled} />
     <ContactModal page={page} />
     <CookieConsent page={page} enabled={consentEnabled} />
+    <GoogleReviewBar language={page.language} />
   </body>
 </html>
