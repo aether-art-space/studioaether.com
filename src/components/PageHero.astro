@@ -9,13 +9,14 @@ interface Props {
   variant: PageHeroVariant;
   eyebrow?: string;
   description?: string | string[];
+  className?: string;
 }
 
-const { title, lead, subtitle, headingId, variant, eyebrow, description } = Astro.props;
+const { title, lead, subtitle, headingId, variant, eyebrow, description, className } = Astro.props;
 const descriptions = description ? (Array.isArray(description) ? description : [description]) : [];
 ---
 
-<section class={`page-hero page-hero--${variant}`} aria-labelledby={headingId}>
+<section class:list={["page-hero", `page-hero--${variant}`, className]} aria-labelledby={headingId}>
   {eyebrow && <p class="page-hero__eyebrow">{eyebrow}</p>}
   <h1 id={headingId}>{title}</h1>
   {subtitle && <p class="page-hero__subtitle">{subtitle}</p>}

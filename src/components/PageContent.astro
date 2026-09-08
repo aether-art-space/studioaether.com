@@ -488,7 +488,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   </>
 ) : artistPage ? (
   <>
-    <PageHero variant="artist" headingId="artist-title" title={artistPageAny.heroHeading} lead={artistPageAny.heroCopy} description={artistPageAny.intro} />
+    <PageHero variant="artist" className={artistType === "photographers" ? "page-hero--photographers" : undefined} headingId="artist-title" title={artistPageAny.heroHeading} lead={artistPageAny.heroCopy} description={artistPageAny.intro} />
     {artistType === "photographers" && artistPageAny.packages?.length > 0 && <PriceSection id="photographer-pricing" ariaLabel={hu ? "Rezidens fotós csomagok" : "Resident photographer packages"} packages={artistPageAny.packages}>
       <PricingTabs slot="tabs" language={page.language} active="photographer" />
     </PriceSection>}

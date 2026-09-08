@@ -329,6 +329,7 @@
 .page-hero--collection > .page-hero__lead { width: min(680px, 100%); margin: 8px auto 0; font: var(--font-lead); }
 .page-hero--artist, .page-hero--packages, .page-hero--models { padding: 91px 24px 45px; }
 .page-hero--artist h1, .page-hero--packages h1, .page-hero--models h1 { max-width: 1120px; margin-right: auto; margin-left: auto; font: var(--font-page-title); letter-spacing: 0; }
+.page-hero--photographers h1 { font-size: 48px; }
 .page-hero--artist > .page-hero__lead, .page-hero--packages > .page-hero__lead, .page-hero--models > .page-hero__lead { width: min(700px, 100%); margin: 8px auto 0; font: var(--font-lead); }
 .page-hero--service, .service-hero { max-width: var(--content-max); margin: 0 auto; padding: 86px 24px 62px; text-align: center; }
 .page-hero--service h1, .service-hero h1 { font: var(--font-service-title); }
@@ -517,6 +518,7 @@
 @media (max-width: 760px) {
   .page-hero--artist { padding: 68px 18px 50px; }
   .page-hero--artist h1 { font-size: clamp(45px, 12vw, 62px); }
+  .page-hero--photographers h1 { font-size: 48px; }
   .page-hero--artist > .page-hero__lead { margin: 8px auto 0; font: 400 15px/22.5px var(--sans); }
   .page-hero--artist:has(+ .pricing-tabs + .artist-profiles--makeup) > .page-hero__lead { font: 400 18px/26px var(--sans); }
   .page-hero--artist:has(+ .pricing-tabs + .artist-profiles--makeup) .page-hero__description p { font: 400 15px/22.5px var(--sans); }
@@ -1511,7 +1513,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .profile-hero__portrait > .responsive-image { height: 732px; }
 .profile-hero__portrait img { display: block; width: 100%; height: 100%; border-radius: 0; object-fit: cover; object-position: center; }
 .profile-hero__content { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 54px 0; }
-.profile-hero h1 { margin: 0 0 18px; font: 400 clamp(42px, 5vw, 68px)/1.05 var(--serif); }
+.profile-hero h1 { margin: 0 0 18px; font: 400 48px/1.05 var(--serif); }
 .profile-hero h2 { margin: 32px 0 24px; font: 400 20px/1.2 var(--serif); }
 .profile-hero__socials { display: flex; align-items: center; gap: 10px; }
 .profile-hero__socials a { display: inline-flex; width: 25px; height: 25px; align-items: center; justify-content: center; color: var(--ink); }
@@ -1741,7 +1743,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .profile-hero { grid-template-columns: 1fr; gap: 0; width: min(520px, 100%); padding: 0 18px 52px; }
   .profile-hero__portrait > .responsive-image { height: min(520px, 125vw); }
   .profile-hero__content { padding: 42px 0 0; text-align: center; }
-  .profile-hero h1 { font-size: 43px; }
+  .profile-hero h1 { font-size: 48px; }
   .profile-hero h2 { margin-top: 30px; }
   .profile-hero__socials { justify-content: center; }
   .profile-hero__website { margin-right: auto; margin-left: auto; }
