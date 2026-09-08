@@ -1,13 +1,14 @@
 ---
 interface Props {
   language: "en" | "hu";
-  active: "studio" | "selfie" | "photographer" | "makeup" | "stylist";
+  active: "packages" | "studio" | "selfie" | "photographer" | "makeup" | "stylist";
 }
 
 const { language, active } = Astro.props;
 const hu = language === "hu";
 const tabAnchor = (key: string) => `#${key}-pricing-tabs`;
 const tabs = [
+  { key: "packages", label: hu ? "csomagok" : "packages", path: hu ? "/hu/packages" : "/packages" },
   { key: "studio", label: hu ? "stúdió árak" : "studio pricing", path: hu ? "/hu/booking" : "/booking" },
   { key: "selfie", label: hu ? "szelfi stúdió árak" : "selfie studio pricing", path: hu ? "/hu/selfie-studio-budapest" : "/selfie-studio-budapest" },
   { key: "photographer", label: hu ? "fotós árak" : "photographer prices", path: hu ? "/hu/photographers-budapest" : "/photographers-budapest" },

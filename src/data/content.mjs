@@ -628,10 +628,10 @@ const propsCollectionCaptions = [
   ["Pink satin duvet covers with a mattress setup", "You can choose from many different covers for our bed setup - for free"],
   ["70's briefcase", "You can use this prop in the studio for FREE!"],
   ["Large Black Angel Wings", "You can use this prop in the studio for 8000 HUF or outside the studio for 12.000. HUF / day."],
-  ["", ""],
+  ["Longsword", "Handcrafted artisanal longsword by a hungarian swordsmaker. Non-sharpened for safety."],
   ["retro phones in different colors", "An orange, red and a black old phone. Can be used in the studio for free."],
   ["Large Angel Wings", "The angel wings can be rented for 8000.HUF in studio or 10.000.HUF / day outside the studio.\n\nThe wings are handmade by a hungarian artisan."],
-  ["", ""],
+  ["Claw gloves", "Two pairs of black opera-gloves with claws. Use it for free!"],
   ["fencing swords", "You can use this prop in the studio for FREE!"],
   ["vinyls", "You can use this prop in the studio for FREE!"],
   ["red devil's fork", "You can use this prop in the studio for FREE!"],
@@ -670,17 +670,17 @@ const propsWardrobeCaptions = [
   ["black tulle miniskirt", "You can use this outfit in the studio for FREE!"],
   ["long dark coloured skirt", "You can use this outfit in the studio for FREE!"],
   ["silver dress", "You can use this outfit in the studio for FREE!"],
-  ["", ""],
+  ["", "You can rent the dress for 5000HUF in studio."],
   ["golden top", "You can use this outfit in the studio for FREE!"],
   ["retro blazer", "You can use this outfit in the studio for FREE!"],
-  ["silver dress", "You can use this outfit in the studio for FREE!"],
+  ["Fur coat", "Long faux-fur coat. Use it for free in the studio or rent it for use outside the studio!"],
   ["vintage folk male outfit", "You can use this outfit in the studio for FREE!"],
   ["see-through black dress", "You can use this outfit in the studio for FREE!"],
   ["leather biker jacket", "You can use this outfit in the studio for FREE!"],
   ["translucent top", "You can use this outfit in the studio for FREE!"],
   ["finger armor", "You can use this outfit in the studio for FREE!"],
   ["silver handbag", "You can use this outfit in the studio for FREE!"],
-  ["lace shoulder accessory", "You can use this outfit in the studio for FREE!"],
+  ["Lace shoulder accessory", "Off-white lace shoulder accessory. Use it for free in the studio or rent it for use outside the studio!"],
   ["bunny ears", "You can use this outfit in the studio for FREE!"],
   ["rococo handfan", "You can use this outfit in the studio for FREE!"],
   ["large black handfan", "You can use this outfit in the studio for FREE!"],
@@ -699,7 +699,7 @@ const propsImageSet = (start, count, alt, captions = null) => Array.from({ lengt
   };
 });
 export const propsImages = {
-  wardrobe: propsImageSet(1, 10, "Wardrobe piece at aether art space", propsWardrobeCaptions.slice(0, 10)),
+  wardrobe: propsImageSet(1, 7, "Wardrobe piece at aether art space", propsWardrobeCaptions.slice(0, 7)),
   wardrobeFree: propsImageSet(11, 25, "Clothing item available in the studio", propsWardrobeCaptions.slice(10, 35)),
   collection: propsImageSet(36, 25, "Photo prop at aether art space", propsCollectionCaptions),
   furniture: propsImageSet(61, 25, "Furniture piece at aether art space", propsFurnitureCaptions)
@@ -719,7 +719,7 @@ export const propsContent = {
     heroHeading: "kellékek",
     heroCopy: "bútorok, egyedi ruházati cikkek, ékszerek és kis méretű kellékek, amelyeket stúdiónkban felhasználhatsz kreatív fotózásaidhoz",
     sections: [
-      { heading: "A ruhatár", subheading: "Egyedi ruhák és kiegészítők a fotózáshoz", paragraphs: ["Vintage ruhák, avantgárd divat, látványos ékszerek és egyedi kiegészítők – a kollekciónk azért van, hogy inspiráljon és segítsen életre kelteni a vizuális történetmesélésedet.", "Legyél fotós, modell vagy művész, bátran válogathatsz és használhatod ezeket a darabokat, hogy megvalósítsd a víziódat. Nincsenek szabályok, csak tiszta kreatív szabadság – lépj be, és alakítsd át a fotózásodat!"], galleries: [{ imageKey: "wardrobe", title: "Egyedi ruhák bérlésre", info: "Egyedi ruháinkat a stúdióban bérelheted, vagy akár el is viheted.", infoPrice: "5000–9000 HUF" }, { imageKey: "wardrobeFree", title: "További ruhák a stúdióban", info: "Ezeket a ruhákat ingyenesen használhatod a stúdióban, vagy bérlésre el is viheted." }] },
+      { heading: "A ruhatár", subheading: "Egyedi ruhák és kiegészítők a fotózáshoz", paragraphs: ["Vintage ruhák, avantgárd divat, látványos ékszerek és egyedi kiegészítők – a kollekciónk azért van, hogy inspiráljon és segítsen életre kelteni a vizuális történetmesélésedet.", "Legyél fotós, modell vagy művész, bátran válogathatsz és használhatod ezeket a darabokat, hogy megvalósítsd a víziódat. Nincsenek szabályok, csak tiszta kreatív szabadság – lépj be, és alakítsd át a fotózásodat!"], galleries: [{ imageKey: "wardrobe", title: "Különleges ruhák bérlésre", info: "Egyedi ruháinkat a stúdióban bérelheted, vagy akár el is viheted.", infoPrice: "5000–9000 HUF" }, { imageKey: "wardrobeFree", title: "További ruhák a stúdióban", info: "Ezeket a ruhákat ingyenesen használhatod a stúdióban, vagy bérlésre el is viheted." }] },
       { heading: "A kellékgyűjtemény", subheading: "Egyedi kellékek a fotózáshoz", paragraphs: ["Legyen szó egy drámai kardról, egy vörös ördögvilláról, vintage bőröndökről vagy más váratlan kincsekről, ezek a darabok mélységet, történetet és karaktert adnak a képeidhez.", "Akár egy fantasy ihlette portrét, egy filmes jelenetet vagy egy merész művészi kompozíciót alkotsz, a kellékeinket szabadon használhatod, hogy tökéletessé tedd a víziódat!"], galleries: [{ imageKey: "collection", info: "Kiegészítőinket ingyenesen használhatod a fotózásodhoz." }] },
       { heading: "A bútorkollekció", subheading: "Autentikus, karakteres darabok", paragraphs: ["Letisztult modern darabok, retró különlegességek és eredeti antik bútorok – mindegyiknek megvan a maga története és atmoszférája. Nincsenek utánzatok, csak valódi, karakteres darabok, amelyek mélységet, textúrát és érzelmet adnak a kompozícióidhoz.", "Bútorainkat ingyenesen használhatod a stúdióban."], galleries: [{ imageKey: "furniture" }] }
     ]
@@ -768,7 +768,7 @@ export const residentArtistContent = {
       packages: photographerPackagesEn,
       profiles: [
         { name: "Dániel Z. Aczél", role: "photographer - studio owner", specialties: "portrait, glamour, boudoir, art nude, fitness", description: "Comfortably stuck between worlds; shooting in both digital and analogue, in studio and in nature, with natural and artificial light and both with amateur and professional models.", image: "daniel", gallery: "danielGallery", website: "www.aczel.pictures", websiteUrl: "https://www.aczel.pictures", socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/aczel_aethereal" }, { type: "x", label: "X", href: "https://x.com/aczel_pictures" }], more: "more about Dániel", moreHref: "/photographer-daniel" },
-        { name: "Alexandra Kulcsár-Horváth", role: "photographer", specialties: "wedding, portrait, lifestyle, business, pet", description: "She specialises in creating wedding photography, honest and natural portraits be it for business, dating or just for memories.", image: "alexandra", gallery: "alexandraGallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }], more: "more about Alexandra", moreHref: "https://www.instagram.com/aurea_fotografia_/" }
+        { name: "Alexandra Kulcsár-Horváth", role: "photographer", specialties: "wedding, portrait, lifestyle, business, pet", description: "She specialises in creating wedding photography, honest and natural portraits be it for business, dating or just for memories.", image: "alexandra", gallery: "alexandraGallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }], more: "more about Alexandra", moreHref: "/photographer-alexandra" }
       ],
       contactHeading: "For booking one of our artists, drop a message:"
     },
@@ -777,7 +777,7 @@ export const residentArtistContent = {
       packages: photographerPackagesHu,
       profiles: [
         { name: "Aczél Dániel Zoltán", role: "fotográfus - studió tulajdonos", specialties: "portré, glamour, boudoir, akt, fitness", description: "Kényelmesen evickélve a világok között; fényképez digitális és analóg kamerával, stúdióban és természetben, természetes és mesterséges fénnyel, valamint amatőr és professzionális modellekkel.", image: "daniel", gallery: "danielGallery", website: "www.aczel.pictures", websiteUrl: "https://www.aczel.pictures", socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/aczel_aethereal" }, { type: "x", label: "X", href: "https://x.com/aczel_pictures" }], more: "bővebben Dánielről", moreHref: "/hu/photographer-daniel" },
-        { name: "Kulcsár-Horváth Alexandra", role: "fotográfus", specialties: "esküvő, portré, lifestyle, üzleti, kisállat", description: "Szakterülete az esküvőfotózás, őszinte és természetes portrék készítése üzleti felhasználásra, párkereséshez, vagy emléknek.", image: "alexandra", gallery: "alexandraGallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }], more: "bővebben Alexandráról", moreHref: "https://www.instagram.com/aurea_fotografia_/" }
+        { name: "Kulcsár-Horváth Alexandra", role: "fotográfus", specialties: "esküvő, portré, lifestyle, üzleti, kisállat", description: "Szakterülete az esküvőfotózás, őszinte és természetes portrék készítése üzleti felhasználásra, párkereséshez, vagy emléknek.", image: "alexandra", gallery: "alexandraGallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }], more: "bővebben Alexandráról", moreHref: "/hu/photographer-alexandra" }
       ],
       contactHeading: "Foglalj fotózást rezidens fotósainkkal:"
     }
@@ -1193,20 +1193,39 @@ export const seasonalImages = {
 };
 
 export const profileContent = {
-  en: { hero: "in-house photographer, studio owner", intro: ["Based in his Budapest photostudio Dániel crafts imagery that balances personal expression, intimacy, and bold vision.", "He works across a wide spectrum of genres — portrait, glamour, boudoir, nude & erotic art, fitness, and creative/conceptual photography. Whether shooting in his private studio or on location, his approach adapts to suit the idea: digital or analog, controlled lighting or ambient surroundings.", "Dániel’s sessions are rooted in collaboration. He believes in open communication — discussing your vision up front, tweaking references, and building a plan together. On set, he offers clear direction when needed but also gives space for genuine moments to unfold. His priority: respect, consent, and creating a safe, empowering environment — especially for first-time clients.", "In addition to commissioned work, Dániel publishes fine art books and limited print editions. One notable recent project is BLACK, a 168-page volume featuring dark studio imagery created over four years.", "Clients praise his professionalism, kindness, and ability to deliver high-quality results consistently. Dániel also welcomes travel assignments — if your project is calling him elsewhere, he’s happy to come along."], genresHeading: "Daniel is available for photoshoots in the following genres:", genres: ["nude-art", "glamour & boudoir", "portrait", "fitness", "creative", "product and commercial"], contactHeading: "Contact us if you want to shoot with our photographer!", contactEmailSubject: "shoot with Daniel - aether art space" },
-  hu: { hero: "házon belüli fotós, a stúdió tulajdonosa", intro: ["Dániel budapesti fotóstúdiójában olyan képeket készít, amelyekben a személyes önkifejezés, az intimitás és a merész látásmód egyensúlyba kerül.", "Munkája a műfajok széles skáláját öleli fel – portré, glamour, boudoir, akt és erotikus művészet, fitness, valamint kreatív és konceptuális fotózás. Saját stúdiójában és külső helyszíneken is fotózik, a megközelítését mindig az ötlethez igazítva: digitális vagy analóg technikával, kontrollált világítással vagy természetes környezetben.", "Dániel fotózásai az együttműködésre épülnek. Fontos számára a nyílt kommunikáció – előre egyezteti az elképzeléseidet, finomítja a referenciákat, és közösen alakítja ki a tervet. A fotózáson szükség esetén egyértelműen irányít, ugyanakkor teret enged a valódi pillanatok kibontakozásának. Elsődleges számára a tisztelet, a beleegyezés és a biztonságos, önbizalmat adó környezet megteremtése, különösen az első alkalommal érkezők számára.", "A megrendelt munkák mellett Dániel képzőművészeti könyveket és limitált példányszámú nyomatokat is publikál. Egyik jelentős, közelmúltbeli projektje a BLACK, egy 168 oldalas kötet, amely négy éven át készült, sötét stúdióhangulatú képeket tartalmaz.", "Ügyfelei nagyra értékelik professzionalizmusát, kedvességét és következetes, magas színvonalú munkáját. Dániel szívesen vállal utazással járó megbízásokat is – ha a projekt más helyszínre hívja, örömmel megy."], genresHeading: "Dániel elérhető fotózásokhoz az alábbi műfajokban:", genres: ["művészi akt", "glamour és boudoir", "portré", "fitness", "kreatív", "termék és reklám"], contactHeading: "Írj nekünk, ha Dániellel szeretnél fotózni!", contactEmailSubject: "fotózás Dániellel - aether art space" }
+  daniel: {
+    en: { name: "Dániel Z. Aczél", hero: "in-house photographer, studio owner", intro: ["Based in his Budapest photostudio Dániel crafts imagery that balances personal expression, intimacy, and bold vision.", "He works across a wide spectrum of genres — portrait, glamour, boudoir, nude & erotic art, fitness, and creative/conceptual photography. Whether shooting in his private studio or on location, his approach adapts to suit the idea: digital or analog, controlled lighting or ambient surroundings.", "Dániel’s sessions are rooted in collaboration. He believes in open communication — discussing your vision up front, tweaking references, and building a plan together. On set, he offers clear direction when needed but also gives space for genuine moments to unfold. His priority: respect, consent, and creating a safe, empowering environment — especially for first-time clients.", "In addition to commissioned work, Dániel publishes fine art books and limited print editions. One notable recent project is BLACK, a 168-page volume featuring dark studio imagery created over four years.", "Clients praise his professionalism, kindness, and ability to deliver high-quality results consistently. Dániel also welcomes travel assignments — if your project is calling him elsewhere, he’s happy to come along."], genresHeading: "Daniel is available for photoshoots in the following genres:", genres: ["nude-art", "glamour & boudoir", "portrait", "fitness", "creative", "product and commercial"], website: "aczel.pictures", websiteUrl: "https://aczel.pictures/", socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/aczel_aethereal" }, { type: "x", label: "X", href: "https://x.com/aczel_pictures" }] },
+    hu: { name: "Aczél Dániel Zoltán", hero: "házon belüli fotós, a stúdió tulajdonosa", intro: ["Dániel budapesti fotóstúdiójában olyan képeket készít, amelyekben a személyes önkifejezés, az intimitás és a merész látásmód egyensúlyba kerül.", "Munkája a műfajok széles skáláját öleli fel – portré, glamour, boudoir, akt és erotikus művészet, fitness, valamint kreatív és konceptuális fotózás. Saját stúdiójában és külső helyszíneken is fotózik, a megközelítését mindig az ötlethez igazítva: digitális vagy analóg technikával, kontrollált világítással vagy természetes környezetben.", "Dániel fotózásai az együttműködésre épülnek. Fontos számára a nyílt kommunikáció – előre egyezteti az elképzeléseidet, finomítja a referenciákat, és közösen alakítja ki a tervet. A fotózáson szükség esetén egyértelműen irányít, ugyanakkor teret enged a valódi pillanatok kibontakozásának. Elsődleges számára a tisztelet, a beleegyezés és a biztonságos, önbizalmat adó környezet megteremtése, különösen az első alkalommal érkezők számára.", "A megrendelt munkák mellett Dániel képzőművészeti könyveket és limitált példányszámú nyomatokat is publikál. Egyik jelentős, közelmúltbeli projektje a BLACK, egy 168 oldalas kötet, amely négy éven át készült, sötét stúdióhangulatú képeket tartalmaz.", "Ügyfelei nagyra értékelik professzionalizmusát, kedvességét és következetes, magas színvonalú munkáját. Dániel szívesen vállal utazással járó megbízásokat is – ha a projekt más helyszínre hívja, örömmel megy."], genresHeading: "Dániel elérhető fotózásokhoz az alábbi műfajokban:", genres: ["művészi akt", "glamour és boudoir", "portré", "fitness", "kreatív", "termék és reklám"], website: "aczel.pictures", websiteUrl: "https://aczel.pictures/", socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/aczel_aethereal" }, { type: "x", label: "X", href: "https://x.com/aczel_pictures" }] }
+  },
+  alexandra: {
+    en: { name: "Alexandra Kulcsár-Horváth", hero: "wedding, portrait and lifestyle photographer", intro: ["Based in Budapest, Alexandra creates natural, honest images that preserve the feeling of the people and moments in front of her camera.", "She specialises in wedding photography and relaxed portraits for business, dating profiles and personal memories. Her work also extends to lifestyle stories and pet photography, always with an attentive eye for genuine connection.", "Alexandra works calmly and collaboratively, helping clients feel comfortable and confident throughout the shoot. Whether she is documenting a wedding day or creating a portrait in the studio, she focuses on the details that make every story personal."], genresHeading: "Alexandra is available for photoshoots in the following genres:", genres: ["wedding", "portrait", "lifestyle", "business", "pet", "couples & families"], socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }] },
+    hu: { name: "Kulcsár-Horváth Alexandra", hero: "esküvői, portré- és lifestyle fotós", intro: ["Alexandra Budapesten készít természetes, őszinte képeket, amelyek megőrzik a kamera előtt álló emberek és pillanatok valódi hangulatát.", "Esküvőfotózásra, valamint üzleti, társkereső és személyes célú természetes portrékra specializálódott. Lifestyle történeteket és kisállatfotózást is vállal, mindig figyelmesen keresve az őszinte kapcsolódás pillanatait.", "Alexandra nyugodtan és együttműködően dolgozik, hogy ügyfelei a fotózás teljes ideje alatt komfortosan és magabiztosan érezzék magukat. Akár egy esküvői napot dokumentál, akár stúdióportrét készít, azokra a részletekre figyel, amelyek minden történetet személyessé tesznek."], genresHeading: "Alexandra elérhető fotózásokhoz az alábbi műfajokban:", genres: ["esküvő", "portré", "lifestyle", "üzleti", "kisállat", "párok és családok"], socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }] }
+  }
 };
 
 export const profileImages = {
-  portrait: { src: "/images/wix/profile/daniel-portrait.jpg", width: 612, height: 630, alt: "Dániel Z. Aczél photographer" },
-  gallery: [
+  daniel: {
+    portrait: { src: "/images/wix/profile/daniel-portrait.jpg", width: 612, height: 630, alt: "Dániel Z. Aczél photographer" },
+    gallery: [
     { src: "/images/wix/profile/daniel-01.jpg", width: 666, height: 999, alt: "Dániel photography portfolio image" },
     { src: "/images/wix/profile/daniel-02.jpg", width: 3271, height: 4090, alt: "Dániel photography portfolio image" },
     { src: "/images/wix/profile/daniel-03.jpg", width: 1000, height: 1500, alt: "Dániel photography portfolio image" },
     { src: "/images/wix/profile/daniel-04.jpg", width: 3648, height: 4560, alt: "Dániel photography portfolio image" },
     { src: "/images/wix/profile/daniel-05.jpg", width: 4191, height: 5240, alt: "Dániel photography portfolio image" },
     { src: "/images/wix/profile/daniel-06.jpg", width: 1000, height: 1500, alt: "Dániel photography portfolio image" }
-  ]
+    ]
+  },
+  alexandra: {
+    portrait: { src: "/images/photographers/photographers-13.jpg", width: 800, height: 1200, alt: "Alexandra Kulcsár-Horváth photographer" },
+    gallery: [
+      { src: "/images/wix/wedding/wedding-04.jpg", width: 1000, height: 1500, alt: "Wedding couple photography by Alexandra Kulcsár-Horváth" },
+      { src: "/images/photographers/photographers-18.jpg", width: 800, height: 1200, alt: "Portrait photography by Alexandra Kulcsár-Horváth" },
+      { src: "/images/photographers/photographers-17.jpg", width: 800, height: 1200, alt: "Lifestyle photography by Alexandra Kulcsár-Horváth" },
+      { src: "/images/photographers/photographers-22.jpg", width: 800, height: 1200, alt: "Business portrait photography by Alexandra Kulcsár-Horváth" },
+      { src: "/images/wix/service/pet-05.jpg", width: 1333, height: 2000, alt: "Pet photography by Alexandra Kulcsár-Horváth" },
+      { src: "/images/photographers/photographers-20.jpg", width: 800, height: 1200, alt: "Couple portrait photography by Alexandra Kulcsár-Horváth" }
+    ]
+  }
 };
 
 export const mentoringImages = {

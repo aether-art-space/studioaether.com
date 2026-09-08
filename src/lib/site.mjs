@@ -37,6 +37,7 @@ const bookingFooterDecisions = {
     "/model-polaroids-budapest", "/hu/model-polaroids-budapest",
     "/pet-photography-budapest", "/hu/pet-photography-budapest",
     "/photographer-daniel", "/hu/photographer-daniel",
+    "/photographer-alexandra", "/hu/photographer-alexandra",
     "/christmas-photoshoot", "/hu/christmas-photoshoot"
   ]),
   mentoring: new Set([

@@ -138,8 +138,11 @@ const seasonalType = page.path.includes("christmas-photoshoot") ? "photoshoot" :
 const seasonalPage: any = seasonalType ? (seasonalContent as any)[seasonalType][hu ? "hu" : "en"] : null;
 const seasonalPageImages: any = seasonalType ? (seasonalImages as any)[seasonalType] : null;
 const seasonalPackages = seasonalType === "photoshoot" ? photoPackageSets.christmas[hu ? "hu" : "en"] : [];
-const isProfile = page.path.endsWith("photographer-daniel");
-const profilePage: any = isProfile ? (profileContent as any)[hu ? "hu" : "en"] : null;
+const profileKey = page.path.endsWith("photographer-alexandra") ? "alexandra" : "daniel";
+const isProfile = page.path.endsWith("photographer-daniel") || page.path.endsWith("photographer-alexandra");
+const profilePage: any = isProfile ? (profileContent as any)[profileKey][hu ? "hu" : "en"] : null;
+const profileImageSet: any = isProfile ? (profileImages as any)[profileKey] : null;
+const profileSocials = profilePage?.socials ?? [];
 const isPostBooking = page.path.includes("post-booking");
 const postBookingPage: any = isPostBooking ? (postBookingContent as any)[hu ? "hu" : "en"] : null;
 const isWedding = page.path.includes("wedding-photography");
@@ -388,6 +391,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   <>
     <PageHero variant="packages" headingId="packages-title" title={packagesPageAny.heroHeading} lead={packagesPageAny.heroCopy} description={packagesPageAny.intro} />
     <section class="packages-primary" aria-label={hu ? "Fotózási csomagok" : "Photoshoot packages"}>
+      <PricingTabs language={page.language} active="packages" />
       <div class="service-package-grid packages-card-grid">
         {packagesPageAny.packages.map((packageItem: any) => <PriceCard title={packageItem.title} description={packageItem.description} price={packageItem.price} features={packageItem.features} />)}
       </div>
@@ -557,29 +561,33 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : isProfile ? (
   <>
     <section class="profile-hero" aria-labelledby="profile-title">
-      <div class="profile-hero__portrait"><ResponsiveImage image={profileImages.portrait} role="hero" loading="eager" fetchpriority="high" /></div>
+      <div class="profile-hero__portrait"><ResponsiveImage image={profileImageSet.portrait} role="hero" loading="eager" fetchpriority="high" /></div>
       <div class="profile-hero__content">
         <h1 id="profile-title">{page.h1}</h1>
-        <div class="profile-hero__socials" aria-label={hu ? "Dániel közösségi profiljai" : "Daniel's social profiles"}>
-          <a href="https://instagram.com/aczel_aethereal" target="_blank" rel="noreferrer noopener" aria-label="Dániel on Instagram"><InstagramLogoIcon size={25} weight="regular" aria-hidden="true" /></a>
-          <a href="https://x.com/aczel_pictures" target="_blank" rel="noreferrer noopener" aria-label="Dániel on X"><XLogoIcon size={25} weight="regular" aria-hidden="true" /></a>
-        </div>
-        <a class="profile-hero__website text-link" href="https://aczel.pictures/" target="_blank" rel="noreferrer noopener">aczel.pictures</a>
+        {profileSocials.length > 0 && <div class="profile-hero__socials" aria-label={hu ? `${profilePage.name} közösségi profiljai` : `${profilePage.name}'s social profiles`}>
+          {profileSocials.map((social: any) => <a href={social.href} target="_blank" rel="noreferrer noopener" aria-label={hu ? `${profilePage.name} a ${social.label} felületén` : `${profilePage.name} on ${social.label}`}>
+            {social.type === "instagram" ? <InstagramLogoIcon size={25} weight="regular" aria-hidden="true" /> : <XLogoIcon size={25} weight="regular" aria-hidden="true" />}
+          </a>)}
+        </div>}
+        {profilePage.websiteUrl && <a class="profile-hero__website text-link" href={profilePage.websiteUrl} target="_blank" rel="noreferrer noopener">{profilePage.website}</a>}
         <h2>{profilePage.hero}</h2>
         <div class="profile-hero__description">{profilePage.intro.map((paragraph: string) => <p>{paragraph}</p>)}</div>
       </div>
     </section>
     <section class="profile-genres" aria-labelledby="profile-genres-title">
       <h2 id="profile-genres-title">{profilePage.genresHeading}</h2>
-      <div class="profile-genres__grid">
-        {profilePage.genres.map((genre: string, index: number) => <article class="profile-genre">
-          <ResponsiveImage image={{ ...profileImages.gallery[index], alt: `${genre} photography by Dániel Z. Aczél` }} role="content" loading="lazy" />
-          <h3>{genre}</h3>
-        </article>)}
+      <div class="profile-genres__grid home-feature-grid">
+        {profilePage.genres.map((genre: string, index: number) => <CircularCard
+          variant="feature"
+          title={genre}
+          image={{ ...profileImageSet.gallery[index], alt: `${genre} photography by ${profilePage.name}` }}
+          className="profile-genre-card"
+        />)}
       </div>
     </section>
-    <PriceSection packages={profilePackages} ariaLabel={hu ? "Dániel fotózási csomagjai" : "Daniel's photoshoot packages"} />
-    <section class="service-contact"><h2>{profilePage.contactHeading}</h2><p><a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(profilePage.contactEmailSubject)}`}>{site.email}</a><br /><a class="text-link" href={`tel:${site.phone.replaceAll(" ", "")}`}>{site.phone}</a></p></section>
+    <PriceSection packages={profilePackages} ariaLabel={hu ? `${profilePage.name} fotózási csomagjai` : `${profilePage.name}'s photoshoot packages`}>
+      <PricingTabs slot="tabs" language={page.language} active="photographer" />
+    </PriceSection>
   </>
 ) : isPostBooking ? (
   <>

@@ -28,7 +28,8 @@ const socialImageSources: Record<string, string> = {
   "Christmas photoshoot": "/images/wix/seasonal/christmas-01.jpg",
   "Christmas studio": "/images/wix/seasonal/christmas-studio-hero.jpg",
   "Wedding photography": "/images/wix/wedding/source-sections/photographer-alexandra.jpg",
-  "Photographer profile - Dániel": "/images/wix/profile/daniel-portrait.jpg"
+  "Photographer profile - Dániel": "/images/wix/profile/daniel-portrait.jpg",
+  "Photographer profile - Alexandra": "/images/photographers/photographers-13.jpg"
 };
 const logoImage = resolveImage({ src: "/images/wix/jpg/logo-full.jpg", alt: site.name }, "content");
 const logoImageUrl = absoluteUrl(logoImage.lightbox.fallback);
@@ -201,7 +202,7 @@ if (page.section === "faq") {
   });
 }
 
-if (page.section === "service" && page.purpose !== "Photographer profile - Dániel") {
+if (page.section === "service" && !page.purpose.startsWith("Photographer profile -")) {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "Service",
@@ -233,6 +234,25 @@ if (page.path.endsWith("photographer-daniel")) {
     worksFor: { "@id": businessId },
     image: socialImageUrl,
     sameAs: ["https://www.aczel.pictures", "https://instagram.com/aczel_aethereal", "https://x.com/aczel_pictures"],
+    url: canonicalUrl
+  });
+}
+
+if (page.path.endsWith("photographer-alexandra")) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${canonicalUrl}#person`,
+    name: page.language === "hu" ? "Kulcsár-Horváth Alexandra" : "Alexandra Kulcsár-Horváth",
+    jobTitle: page.language === "hu" ? "Fotós" : "Photographer",
+    description: page.description,
+    knowsAbout: page.language === "hu"
+      ? ["Esküvőfotózás", "Portréfotózás", "Lifestyle fotózás", "Üzleti portréfotózás", "Kisállatfotózás"]
+      : ["Wedding photography", "Portrait photography", "Lifestyle photography", "Business portrait photography", "Pet photography"],
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    worksFor: { "@id": businessId },
+    image: socialImageUrl,
+    sameAs: ["https://www.instagram.com/aurea_fotografia_/"],
     url: canonicalUrl
   });
 }
