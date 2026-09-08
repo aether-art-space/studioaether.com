@@ -375,6 +375,12 @@
 .horizontal-masonry-gallery__previous:hover, .horizontal-masonry-gallery__previous:focus-visible, .horizontal-masonry-gallery__next:hover, .horizontal-masonry-gallery__next:focus-visible { background: #f5f5f5; transform: translateY(-50%) scale(1.06); }
 .horizontal-masonry-gallery [hidden] { display: none !important; }
 .horizontal-masonry-gallery-section { width: 100%; max-width: none; margin: 0; padding: 0 0 12px; }
+.christmas-photoshoot-gallery-section { padding: 0; }
+.christmas-photoshoot-gallery-section .horizontal-masonry-gallery__viewport { padding-inline: 0; }
+@media (min-width: 701px) {
+  .christmas-photoshoot-gallery-section .horizontal-masonry-gallery,
+  .christmas-photoshoot-gallery-section .horizontal-masonry-gallery__viewport { height: 476px; max-height: 476px; }
+}
 .mentoring-gallery-section { padding: 40px 0 48px; }
 .collection-gallery { display: grid; gap: 20px; max-width: var(--content-media-max); margin: 0 auto; }
 .collection-gallery figure { position: relative; aspect-ratio: 1; min-width: 0; margin: 0; overflow: hidden; }
@@ -1282,6 +1288,12 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .studio-section__copy > p:last-child { margin-top: 34px; }
 .studio-section__image { min-height: 100%; }
 .studio-section__image img { display: block; width: 100%; height: 100%; min-height: 620px; border-radius: 0; object-fit: cover; }
+.christmas-photoshoot-studio-section .studio-section__image { min-width: 0; min-height: 0; overflow: hidden; }
+.christmas-photoshoot-studio-section .studio-section__image .responsive-image { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.christmas-photoshoot-studio-section .studio-section__image img { min-width: 0; min-height: 0; aspect-ratio: unset; }
+@media (min-width: 701px) {
+  .christmas-photoshoot-studio-section { grid-template-rows: 940px; }
+}
 .price-section--wide { max-width: 1320px; }
 .service-upgrades { max-width: var(--content-max); padding-top: 32px; text-align: center; background: var(--paper); color: var(--ink); }
 .service-upgrades > p { margin-bottom: 0; }
@@ -1420,13 +1432,12 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .booking-price-grid .price-card__description-line--bold { font-weight: 700 !important; }
 .booking-price-grid .price-card__details { min-width: 0; margin-top: auto; padding-top: 0; }
 .booking-price-grid .price-card__price { min-height: 0; margin: 0; padding: 0; }
-.booking-prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 980px; gap: 40px; margin: 0 auto; padding: 0 0 60px; }
-.booking-prices article { display: flex; min-height: 291px; box-sizing: border-box; flex-direction: column; padding: 30px 18px 27px; background: var(--ink); color: var(--paper); }
-.booking-prices h2 { margin: 0 0 19px; font: 400 24px/24px var(--serif); }
-.booking-prices p { margin: 0; font: 16px/28.8px var(--sans); }
-.booking-prices strong { margin-top: auto; font: 400 26px/1 var(--serif); }
+.booking-prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: var(--content-max); gap: 12px; margin: 0 auto; padding: 0 24px 60px; }
+.booking-prices article { display: flex; min-height: 240px; flex-direction: column; padding: 28px 22px; background: var(--ink); color: var(--paper); }
+.booking-prices h2 { margin: 0 0 18px; font: 400 30px/1.08 var(--serif); }
+.booking-prices p { margin: 0 0 18px; font: var(--text-small); }
+.booking-prices strong { margin-top: auto; font: 700 25px/1.1 var(--sans); }
 .booking-prices span { margin-top: 10px; font: var(--text-small); }
-.booking-prices .booking-prices__saving { display: block; margin-top: 0; color: var(--accent); font: 700 20px/24px var(--sans); }
 .booking-note { max-width: var(--content-reading-max); margin: 0 auto 66px; }
 .booking-note .info-box__content { flex: 1 1 auto; }
 .booking-note .info-box__content ul { margin: 0; padding-left: 20px; }
@@ -1470,14 +1481,14 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .christmas-studio-feature--closing { margin: 0 auto; background: #fff; }
 .christmas-studio-feature--closing img { height: 544px; }
 .christmas-studio-feature__copy { display: flex; min-width: 0; flex-direction: column; justify-content: flex-start; padding: 66px 34px; }
-.christmas-studio-feature__copy h2 { margin: 0 0 32px; font: 400 30px/45px var(--serif); letter-spacing: 0; }
+.christmas-studio-feature__copy h2 { margin: 0 0 32px; font: var(--font-feature-title); letter-spacing: 0; }
 .christmas-studio-feature__copy p { margin: 0; font: var(--text-body); }
 .christmas-studio-feature__copy ul { margin: 30px 0 0; padding-left: 20px; }
 .christmas-studio-feature__copy li { margin: 8px 0; font: var(--text-small); }
 .christmas-studio-feature--closing .christmas-studio-feature__copy { padding: 66px 24px; }
 .christmas-studio-feature--closing .button { width: 262px; max-width: 100%; margin-top: 28px; }
 .christmas-decoration { --gallery-card: clamp(240px, 29vw, 409px); padding: 58px 40px 0; background: #f5f5f5; }
-.christmas-decoration > h2 { width: min(950px, 100%); margin: 0 auto 40px; font: 400 56px/56px var(--serif); text-align: center; }
+.christmas-decoration > h2 { width: min(950px, 100%); margin: 0 auto 40px; font: var(--font-section-title); text-align: center; }
 .christmas-decoration__viewport { position: relative; overflow-x: auto; scrollbar-width: none; }
 .christmas-decoration__viewport::-webkit-scrollbar { display: none; }
 .christmas-decoration__track { display: flex; width: max-content; gap: 12px; }
@@ -1490,7 +1501,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .christmas-decoration__next { position: absolute; top: 50%; right: 24px; display: grid; width: 75px; height: 75px; place-items: center; border: 0; border-radius: 0; background: rgb(5 5 5 / 78%); color: #fff; font: 400 28px/1 var(--sans); cursor: pointer; transform: translateY(-50%); }
 .christmas-decoration__next:hover { background: rgb(5 5 5 / 90%); }
 .christmas-studio-details { width: min(884px, calc(100% - 36px)); margin: 98px auto 0; }
-.christmas-studio-details h2 { margin: 0 0 30px; font: 400 30px/45px var(--serif); }
+.christmas-studio-details h2 { margin: 0 0 30px; font: var(--font-subsection-title); }
 .christmas-studio-details p { margin: 0; font: var(--text-body); }
 .christmas-studio-details ul { margin: 38px 0 0; padding-left: 20px; }
 .christmas-studio-details li { margin: 8px 0; font: var(--text-small); }
@@ -1698,7 +1709,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .pricing-tabs:has(+ .artist-profiles--makeup) { width: 100%; margin-left: 0; padding-right: 18px; padding-left: 18px; }
   .pricing-tabs__list { display: none; }
   .pricing-tabs__select-wrap { position: relative; display: block; }
-  .booking-prices { grid-template-columns: 1fr; gap: 12px; padding-right: 18px; padding-left: 18px; }
+  .booking-prices { grid-template-columns: 1fr; padding-right: 18px; padding-left: 18px; }
   .booking-note { margin-right: 18px; margin-left: 18px; }
   .booking-extras { padding-right: 18px; padding-left: 18px; }
   .booking-extras h2 { font-size: 39px; }

@@ -3,10 +3,10 @@ import { resolveImage } from "../lib/images.mjs";
 import { inferGalleryMetadata } from "../lib/galleryMetadata.mjs";
 import ResponsiveImage from "./ResponsiveImage.astro";
 
-const { images = [], label = "Image gallery", previousLabel = "Previous images", nextLabel = "Next images", openLabel = "Open image", desktopHeight = null } = Astro.props;
+const { images = [], label = "Image gallery", previousLabel = "Previous images", nextLabel = "Next images", openLabel = "Open image", desktopHeight = null, columnPattern = null, loading = "lazy" } = Astro.props;
 ---
 
-<div class="horizontal-masonry-gallery" data-horizontal-gallery data-gallery data-desktop-height={desktopHeight || undefined}>
+<div class="horizontal-masonry-gallery" data-horizontal-gallery data-gallery data-desktop-height={desktopHeight || undefined} data-column-pattern={columnPattern?.join(",") || undefined}>
   <button class="horizontal-masonry-gallery__previous" type="button" aria-label={previousLabel} data-horizontal-gallery-previous hidden>←</button>
   <div class="horizontal-masonry-gallery__viewport" data-horizontal-gallery-viewport tabindex="0" role="region" aria-label={label}>
     <div class="horizontal-masonry-gallery__track" data-horizontal-gallery-track>
@@ -15,7 +15,7 @@ const { images = [], label = "Image gallery", previousLabel = "Previous images",
         const metadata = inferGalleryMetadata(image);
         return (
           <button class="horizontal-masonry-gallery__item" type="button" data-gallery-image data-gallery-index={index} data-gallery-src={asset.lightbox.fallback} data-gallery-avif={asset.lightbox.avif} data-gallery-webp={asset.lightbox.webp} data-gallery-fallback={asset.lightbox.fallback} data-gallery-width={asset.lightbox.width} data-gallery-height={asset.lightbox.height} data-gallery-alt={image.alt} data-gallery-title={metadata.title} data-gallery-description={metadata.description} data-gallery-price={image.price} data-gallery-link={image.link} data-gallery-link-label={image.linkLabel} aria-label={`${openLabel} ${index + 1}`}>
-            <ResponsiveImage image={image} role="gallery" loading="lazy" />
+            <ResponsiveImage image={image} role="gallery" loading={loading} />
           </button>
         );
       })}
@@ -81,6 +81,10 @@ const { images = [], label = "Image gallery", previousLabel = "Previous images",
         ? Math.max(480, Math.min(840, pageWidth * 0.78))
         : requestedDesktopHeight || Math.max(320, Math.min(560, pageWidth * 0.52));
       const targetColumnWidth = Math.max(150, Math.min(300, pageWidth * 0.22));
+      const requestedColumnPattern = gallery.dataset.columnPattern
+        ?.split(",")
+        .map(Number)
+        .filter((size) => Number.isFinite(size) && size > 0) || [];
       let cursor = 0;
       let columnIndex = 0;
 
@@ -93,9 +97,11 @@ const { images = [], label = "Image gallery", previousLabel = "Previous images",
         const remaining = items.length - cursor;
         const minimumColumnWidth = Math.max(150, pageWidth * 0.14);
         // Keep a predictable rhythm: every third column is one full-height image.
-        let groupSize = columnIndex % 3 === 2 ? 1 : 2;
+        let groupSize = requestedColumnPattern[columnIndex]
+          ? Math.min(requestedColumnPattern[columnIndex], remaining)
+          : columnIndex % 3 === 2 ? 1 : 2;
 
-        if (columnIndex % 3 !== 2 && remaining > 2) {
+        if (!requestedColumnPattern.length && columnIndex % 3 !== 2 && remaining > 2) {
           const candidates = [2, 3]
             .filter((size) => size <= remaining)
             .map((size) => {

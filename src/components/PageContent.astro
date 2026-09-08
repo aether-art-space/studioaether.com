@@ -553,10 +553,10 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   <>
     <PageHero variant="service" headingId="seasonal-title" title={page.h1} lead={seasonalPage.hero} description={seasonalPage.intro} />
     <section class="horizontal-masonry-gallery-section christmas-photoshoot-gallery-section" aria-label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"}>
-      <HorizontalMasonryGallery {...galleryA11y} images={seasonalPageImages} label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} desktopHeight={476} />
+      <HorizontalMasonryGallery {...galleryA11y} images={seasonalPageImages} label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} desktopHeight={476} columnPattern={[1, 3, 1, 1, 1, 1]} loading="eager" />
     </section>
     <PriceSection heading={seasonalPage.packageHeading} lead={seasonalPage.packageLead} packages={seasonalPackages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="seasonal-packages-title" />
-    <StudioSection heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={seasonalStudioIntroImage?.src || studioSectionImage} imageAlt={seasonalStudioIntroImage?.alt || studioSectionImageAlt} imageWidth={882} imageHeight={1399} emphasizeBulletLeadins />
+    <StudioSection className="christmas-photoshoot-studio-section" heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={seasonalStudioIntroImage?.src || studioSectionImage} imageAlt={seasonalStudioIntroImage?.alt || studioSectionImageAlt} imageWidth={882} imageHeight={1399} emphasizeBulletLeadins />
     <GalleryLightbox label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} hu={hu} />
   </>
 ) : seasonalType === "studio" ? (
