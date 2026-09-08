@@ -3,7 +3,7 @@ import { resolveImage } from "../lib/images.mjs";
 import ResponsiveImage from "./ResponsiveImage.astro";
 
 interface Props {
-  image: { src?: string; source?: string; alt?: string; width?: number; height?: number };
+  image: { src?: string; source?: string; alt?: string; width?: number; height?: number; title?: string; description?: string };
   index?: number;
   label: string;
   className?: string;
@@ -32,8 +32,8 @@ const asset = resolveImage(image, "gallery");
   data-gallery-width={asset.lightbox.width}
   data-gallery-height={asset.lightbox.height}
   data-gallery-alt={image.alt}
-  data-gallery-title={title}
-  data-gallery-description={description}
+  data-gallery-title={title ?? image.title}
+  data-gallery-description={description ?? image.description}
   data-gallery-price={price}
   data-gallery-link={link}
   data-gallery-link-label={linkLabel}

@@ -12,6 +12,10 @@ const htmlFor = new Map();
 const generatedRoot = path.join(dist, "images", "generated");
 const indexablePages = pages.filter((page) => page.disposition !== "redirect");
 const intentionallyUndescribed = new Set(["/hu/post-booking"]);
+const isAllowedExternalImage = (src) => /^https:\/\/static\.wixstatic\.com\/media\//i.test(src);
+const isAllowedLocalImage = (src) => /^\/wix-recovered\//i.test(src);
+const isAllowedImageSource = (src) => isAllowedExternalImage(src) || isAllowedLocalImage(src);
+const localImageExists = async (src) => Boolean(await fs.stat(path.join(dist, src.slice(1))).catch(() => null));
 
 for (const page of indexablePages) {
   try { htmlFor.set(page.path, await fs.readFile(targetFor(page.path), "utf8")); }
@@ -70,12 +74,14 @@ for (const page of indexablePages) {
   for (const tag of imageTags) {
     const isLightboxImage = /data-lightbox-image/.test(tag);
     const src = tag.match(/\bsrc=["']([^"']*)["']/i)?.[1] || "";
-    if (!isLightboxImage && src && !src.startsWith("/images/generated/")) fail.push(`non-generated image source: ${page.path}: ${src}`);
-    if (!isLightboxImage && (!/\bsrcset=["'][^"']+["']/i.test(tag) || !/\bsizes=["'][^"']+["']/i.test(tag))) fail.push(`responsive attributes missing: ${page.path}`);
+    if (!isLightboxImage && src && !src.startsWith("/images/generated/") && !isAllowedImageSource(src)) fail.push(`non-generated image source: ${page.path}: ${src}`);
+    if (!isLightboxImage && isAllowedLocalImage(src) && !(await localImageExists(src))) fail.push(`missing local image: ${page.path}: ${src}`);
+    if (!isLightboxImage && !isAllowedImageSource(src) && (!/\bsrcset=["'][^"']+["']/i.test(tag) || !/\bsizes=["'][^"']+["']/i.test(tag))) fail.push(`responsive attributes missing: ${page.path}`);
     if (!isLightboxImage && (!/\bwidth=["'][^"']+["']/i.test(tag) || !/\bheight=["'][^"']+["']/i.test(tag))) fail.push(`image dimensions missing: ${page.path}`);
   }
   for (const match of html.matchAll(/\bdata-gallery-(?:src|avif|webp|fallback)=["']([^"']+)["']/gi)) {
-    if (!match[1].startsWith("/images/generated/")) fail.push(`gallery source is not generated: ${page.path}: ${match[1]}`);
+    if (!match[1].startsWith("/images/generated/") && !isAllowedImageSource(match[1])) fail.push(`gallery source is not generated: ${page.path}: ${match[1]}`);
+    if (isAllowedLocalImage(match[1]) && !(await localImageExists(match[1]))) fail.push(`missing local gallery image: ${page.path}: ${match[1]}`);
   }
 
   const links = [...html.matchAll(/\bhref=["'](\/(?!\/)[^"'#?]*)/gi)].map((match) => match[1]);

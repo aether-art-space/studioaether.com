@@ -94,7 +94,14 @@ export default function AetherHeaderNavigation({
               <div className="nav-dropdown" id={`nav-panel-${index + 1}`} hidden={openMenu !== group.label}>
                   <ul>
                   {group.links.map((link, linkIndex) => (
-                    <li key={`${link.href}-${linkIndex}`}>
+                    <li
+                      className={[
+                        (index === 0 && linkIndex < 2) || (index === 2 && linkIndex === 0) ? "nav-dropdown__item--emphasis" : "",
+                        (index === 0 && linkIndex === 1) || (index === 2 && linkIndex === 0) ? "nav-dropdown__item--separator" : "",
+                        link.href.includes("/christmas-") ? "nav-dropdown__item--separator-before" : ""
+                      ].filter(Boolean).join(" ")}
+                      key={`${link.href}-${linkIndex}`}
+                    >
                       <a href={link.href} onClick={() => setOpenMenu(null)}>{link.label}</a>
                     </li>
                   ))}
@@ -143,7 +150,7 @@ export default function AetherHeaderNavigation({
               <nav className="mobile-nav-links" aria-label={navigationLabel}>
                 <a className="mobile-nav-link mobile-nav-link--home" href={homeHref}>{languageLabel === "HU" ? "kezdőlap" : "home"}</a>
                 <Accordion.Root className="mobile-nav-accordions" type="multiple">
-                  {mobileGroups.map((group) => (
+                  {mobileGroups.map((group, groupIndex) => (
                     <Accordion.Item className="mobile-nav-accordion" value={group.label} key={group.label}>
                       <Accordion.Header className="mobile-nav-accordion__header">
                         <Accordion.Trigger className="mobile-nav-accordion__trigger">
@@ -153,7 +160,15 @@ export default function AetherHeaderNavigation({
                       </Accordion.Header>
                       <Accordion.Content className="mobile-nav-accordion__content">
                         {group.links.map((link, linkIndex) => (
-                          <a href={link.href} key={`${link.href}-${linkIndex}`}>{link.label}</a>
+                          <a
+                            className={[
+                              (groupIndex === 0 && linkIndex < 2) || (groupIndex === 2 && linkIndex === 0) ? "mobile-nav-accordion__link--emphasis" : "",
+                              (groupIndex === 0 && linkIndex === 1) || (groupIndex === 2 && linkIndex === 0) ? "mobile-nav-accordion__link--separator" : "",
+                              link.href.includes("/christmas-") ? "mobile-nav-accordion__link--separator-before" : ""
+                            ].filter(Boolean).join(" ")}
+                            href={link.href}
+                            key={`${link.href}-${linkIndex}`}
+                          >{link.label}</a>
                         ))}
                       </Accordion.Content>
                     </Accordion.Item>

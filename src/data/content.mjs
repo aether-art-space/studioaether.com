@@ -710,8 +710,8 @@ export const propsContent = {
     heroHeading: "props",
     heroCopy: "furniture, unique clothing items, jewellery and small- to medium-sized props that you can use for your creative shoots in our studio",
     sections: [
-      { heading: "The Wardrobe", subheading: "Unique Outfits & Accessories for Your Photoshoot", paragraphs: ["Unlock endless creative possibilities with our carefully curated wardrobe, available for all photoshoots at our Budapest studio. From vintage gowns and avant-garde fashion to statement jewelry and unique accessories, our collection is designed to inspire and enhance your visual storytelling.", "Whether you're a photographer, model, or artist, you can freely explore and use these pieces to bring your vision to life. No limits, just pure creative freedom—step in and transform your shoot."], galleries: [{ imageKey: "wardrobe", title: "Unique outfits for rent", info: "unique clothing items are available for rent in the studio - or even to take away", infoPrice: "5000-9000 HUF" }, { imageKey: "wardrobeFree", title: "More outfits in the studio", info: "these outfits can be used for free in the studio - or as a rental to take away" }] },
       { heading: "The Prop Collection", subheading: "Unique Props to Elevate Your Photoshoot", paragraphs: ["Take your photoshoot to the next level with our curated collection of unique props. Whether it’s a dramatic sword, a red devil’s pitchfork, vintage suitcases, or other unexpected treasures, these pieces are here to add depth, storytelling, and personality to your shots.", "Whether you're crafting a fantasy-inspired portrait, a cinematic scene, or a bold artistic statement, these props are yours to explore. Let your imagination run wild and bring your vision to life!"], galleries: [{ imageKey: "collection", info: "you can use all items for your photoshoot for free" }] },
+      { heading: "The Wardrobe", subheading: "Unique Outfits & Accessories for Your Photoshoot", paragraphs: ["Unlock endless creative possibilities with our carefully curated wardrobe, available for all photoshoots at our Budapest studio. From vintage gowns and avant-garde fashion to statement jewelry and unique accessories, our collection is designed to inspire and enhance your visual storytelling.", "Whether you're a photographer, model, or artist, you can freely explore and use these pieces to bring your vision to life. No limits, just pure creative freedom—step in and transform your shoot."], galleries: [{ imageKey: "wardrobe", title: "Unique outfits for rent", info: "unique clothing items are available for rent in the studio - or even to take away", infoPrice: "5000-9000 HUF" }, { imageKey: "wardrobeFree", title: "More outfits in the studio", info: "these outfits can be used for free in the studio - or as a rental to take away" }] },
       { heading: "The Furniture Collection", subheading: "Authentic Pieces with Character", paragraphs: ["Set the perfect mood for your photoshoot with our diverse furniture collection. From sleek modern designs to retro gems and original antique pieces, each item carries its own story and atmosphere. No replicas—just real, character-filled pieces that add depth, texture, and emotion to your scene.", "If you're going for timeless elegance, vintage nostalgia, or contemporary edge, our furniture is here to help shape your vision."], galleries: [{ imageKey: "furniture", info: "Furniture is available in the studio free of charge." }] }
     ]
   },
@@ -719,9 +719,9 @@ export const propsContent = {
     heroHeading: "kellékek",
     heroCopy: "bútorok, egyedi ruházati cikkek, ékszerek és kis méretű kellékek, amelyeket stúdiónkban felhasználhatsz kreatív fotózásaidhoz",
     sections: [
-      { heading: "A ruhatár", subheading: "Egyedi ruhák és kiegészítők a fotózáshoz", paragraphs: ["Vintage ruhák, avantgárd divat, látványos ékszerek és egyedi kiegészítők – a kollekciónk azért van, hogy inspiráljon és segítsen életre kelteni a vizuális történetmesélésedet.", "Legyél fotós, modell vagy művész, bátran válogathatsz és használhatod ezeket a darabokat, hogy megvalósítsd a víziódat. Nincsenek szabályok, csak tiszta kreatív szabadság – lépj be, és alakítsd át a fotózásodat!"], galleries: [{ imageKey: "wardrobe", title: "Különleges ruhák bérlésre", info: "Egyedi ruháinkat a stúdióban bérelheted, vagy akár el is viheted.", infoPrice: "5000–9000 HUF" }, { imageKey: "wardrobeFree", title: "További ruhák a stúdióban", info: "Ezeket a ruhákat ingyenesen használhatod a stúdióban, vagy bérlésre el is viheted." }] },
       { heading: "A kellékgyűjtemény", subheading: "Egyedi kellékek a fotózáshoz", paragraphs: ["Legyen szó egy drámai kardról, egy vörös ördögvilláról, vintage bőröndökről vagy más váratlan kincsekről, ezek a darabok mélységet, történetet és karaktert adnak a képeidhez.", "Akár egy fantasy ihlette portrét, egy filmes jelenetet vagy egy merész művészi kompozíciót alkotsz, a kellékeinket szabadon használhatod, hogy tökéletessé tedd a víziódat!"], galleries: [{ imageKey: "collection", info: "Kiegészítőinket ingyenesen használhatod a fotózásodhoz." }] },
-      { heading: "A bútorkollekció", subheading: "Autentikus, karakteres darabok", paragraphs: ["Letisztult modern darabok, retró különlegességek és eredeti antik bútorok – mindegyiknek megvan a maga története és atmoszférája. Nincsenek utánzatok, csak valódi, karakteres darabok, amelyek mélységet, textúrát és érzelmet adnak a kompozícióidhoz.", "Bútorainkat ingyenesen használhatod a stúdióban."], galleries: [{ imageKey: "furniture" }] }
+      { heading: "A ruhatár", subheading: "Egyedi ruhák és kiegészítők a fotózáshoz", paragraphs: ["Vintage ruhák, avantgárd divat, látványos ékszerek és egyedi kiegészítők – a kollekciónk azért van, hogy inspiráljon és segítsen életre kelteni a vizuális történetmesélésedet.", "Legyél fotós, modell vagy művész, bátran válogathatsz és használhatod ezeket a darabokat, hogy megvalósítsd a víziódat. Nincsenek szabályok, csak tiszta kreatív szabadság – lépj be, és alakítsd át a fotózásodat!"], galleries: [{ imageKey: "wardrobe", title: "Különleges ruhák bérlésre", info: "Egyedi ruháinkat a stúdióban bérelheted, vagy akár el is viheted.", infoPrice: "5000–9000 HUF" }, { imageKey: "wardrobeFree", title: "További ruhák a stúdióban", info: "Ezeket a ruhákat ingyenesen használhatod a stúdióban, vagy bérlésre el is viheted." }] },
+      { heading: "A bútorkollekció", subheading: "Autentikus, karakteres darabok", paragraphs: ["Letisztult modern darabok, retró különlegességek és eredeti antik bútorok – mindegyiknek megvan a maga története és atmoszférája. Nincsenek utánzatok, csak valódi, karakteres darabok, amelyek mélységet, textúrát és érzelmet adnak a kompozícióidhoz."], galleries: [{ imageKey: "furniture", info: "Bútorainkat ingyenesen használhatod a stúdióban." }] }
     ]
   }
 };
@@ -806,7 +806,7 @@ export const residentArtistContent = {
   },
   makeup: {
     en: {
-      heroHeading: "resident make-up artists, hair stylists and fashion stylists", heroCopy: "our MUAs, stylists and hair stylists are available for booking", intro: ["Our skilled resident makeup artists at aether art space are available for hire, offering their expertise to both models and photographers renting the studio.", "Each artist brings a distinctive style, ensuring that every look is tailored to enhance the vision of the shoot, whether it's natural elegance or bold, creative expression. With an eye for detail and a commitment to flawless application, our makeup artists elevate any project, helping bring concepts to life with precision and artistry. Book today to add the perfect finishing touch to your next photoshoot."],
+      heroHeading: "resident make-up artists and hair stylists", heroCopy: "our MUAs and hair stylists are available for booking", intro: ["Our skilled resident makeup artists at aether art space are available for hire, offering their expertise to both models and photographers renting the studio.", "Each artist brings a distinctive style, ensuring that every look is tailored to enhance the vision of the shoot, whether it's natural elegance or bold, creative expression. With an eye for detail and a commitment to flawless application, our makeup artists elevate any project, helping bring concepts to life with precision and artistry. Book today to add the perfect finishing touch to your next photoshoot."],
       profiles: [
         { name: "Csenge Katica Denes", role: "hair & make-up artist", specialties: "fashion, commercial, natural, skin like skin", price: "make-ups from 15.000. HUF", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
         { name: "Noémi Holczimmer", role: "make-up artist", specialties: "glamour, natural, alternative, extreme, themed", price: "make-ups from 15.000. HUF", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
@@ -815,7 +815,7 @@ export const residentArtistContent = {
       footerNote: "If you work with our make-up artists, you can use the studio for applying the makeup before your shoot.", contactHeading: "For booking one of our artists, drop a message:"
     },
     hu: {
-      heroHeading: "rezidens sminkesek, fodrászok, stylistok", heroCopy: "foglald le sminkeseinket, stílustanácsadóinkat és hajszobrászainkat fotózásodhoz", intro: ["Az aether art space kiváló sminkesei és haj-stylistjai a modellek és a stúdiót bérlő fotósok számára is elérhetőek.", "Minden sminkesünk egyedi stílust képvisel, és gondoskodik arról, hogy a fotózás megjelenése tökéletesen tükrözze az elképzelt koncepciót – legyen szó természetes eleganciáról vagy merész, kreatív kifejezésről. Precíz munkájukkal és figyelmükkel sminkeseink bármely projektet magasabb szintre emelnek, hogy az elképzelések tökéletesen megvalósuljanak. Foglalj időpontot, és tedd teljessé a következő fotózásod megjelenését!"],
+      heroHeading: "rezidens sminkesek és fodrászok", heroCopy: "foglald le sminkeseinket és hajszobrászainkat fotózásodhoz", intro: ["Az aether art space kiváló sminkesei és hajstylistjai a modellek és a stúdiót bérlő fotósok számára is elérhetőek.", "Minden sminkesünk egyedi stílust képvisel, és gondoskodik arról, hogy a fotózás megjelenése tökéletesen tükrözze az elképzelt koncepciót – legyen szó természetes eleganciáról vagy merész, kreatív kifejezésről. Precíz munkájukkal és figyelmükkel sminkeseink bármely projektet magasabb szintre emelnek, hogy az elképzelések tökéletesen megvalósuljanak. Foglalj időpontot, és tedd teljessé a következő fotózásod megjelenését!"],
       profiles: [
         { name: "Csenge Katica Denes", role: "haj-stylist és sminkes", specialties: "divat, reklám, természetes, skin like skin", price: "sminkek 15.000. Ft-tól", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
         { name: "Holczimmer Noémi", role: "sminkes", specialties: "glamour, természetes, alternatív, extrém, tematikus", price: "sminkek 15.000. Ft-tól", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
@@ -827,18 +827,26 @@ export const residentArtistContent = {
 };
 
 const modelImage = (filename, alt, objectPosition = "50% 50%") => ({ src: `/images/models/${filename}`, alt, width: 300, height: 524, objectPosition });
+const wixLiveGalleryImage = (mediaUrl, width, height, alt, title = "", description = "") => ({
+  src: `/wix-recovered/${mediaUrl}`,
+  width,
+  height,
+  alt,
+  ...(title ? { title } : {}),
+  ...(description ? { description } : {})
+});
 const modelGallery = (filenames, alt, positions = []) => filenames.map((filename, index) => modelImage(filename, alt, positions[index] ?? "50% 50%"));
 
 export const modelImages = {
   people: [
     modelGallery(["model-01.jpg", "model-01-02.jpg", "model-01-03.jpg", "model-01-04.jpg", "model-01-05.jpg", "model-01-06.jpg", "model-01-07.jpg"], "Grinnie model portfolio"),
     modelGallery(["model-02.jpg", "model-02-02.jpg", "model-02-03.jpg", "model-02-04.jpg", "model-02-05.jpg", "model-02-06.jpg"], "Wendy model portfolio", ["45% 30%", "50% 15%", "48% 39%", "44% 17%", "50% 19%", "51% 20%"]),
-    modelGallery(["model-03.jpg", "model-03-02.jpg", "model-03-03.jpg", "model-03-04.jpg", "model-03-05.jpg", "model-03-06.jpg", "model-03-07.jpg"], "Orsolya model portfolio", ["56% 15%", "49% 21%", "45% 38%", "52% 46%", "57% 32%", "54% 13%", "62% 46%"]),
+    [...modelGallery(["model-03.jpg", "model-03-02.jpg", "model-03-03.jpg", "model-03-04.jpg", "model-03-05.jpg", "model-03-06.jpg", "model-03-07.jpg"], "Orsolya model portfolio", ["56% 15%", "49% 21%", "45% 38%", "52% 46%", "57% 32%", "54% 13%", "62% 46%"]), wixLiveGalleryImage("94c0c9_d2fcc4ea01ae4323938a8ac3e6e4a725~mv2.jpeg", 1170, 720, "Orsolya model portfolio", "Orsolya - rezidens modell", "Foglalj fotózást Orsolyával kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól")],
     modelGallery(["model-04.jpg", "model-04-02.jpg", "model-04-03.jpg", "model-04-04.jpg", "model-04-05.jpg", "model-04-06.jpg", "model-04-07.jpg"], "Vuk model portfolio"),
-    modelGallery(["model-05.jpg", "model-05-02.jpg", "model-05-03.jpg", "model-05-04.jpg", "model-05-05.jpg", "model-05-06.jpg", "model-05-07.jpg"], "Szeder model portfolio", ["48% 35%", "50% 18%", "44% 34%", "34% 46%", "57% 20%", "48% 36%", "53% 18%"]),
-    modelGallery(["model-06.jpg", "model-06-02.jpg", "model-06-03.jpg", "model-06-04.jpg", "model-06-05.jpg", "model-06-06.jpg", "model-06-07.jpg"], "Nome model portfolio"),
-    modelGallery(["model-07.jpg", "model-07-02.jpg", "model-07-03.jpg", "model-07-04.jpg", "model-07-05.jpg", "model-07-06.jpg", "model-07-07.jpg"], "Ezra model portfolio", ["52% 42%", "51% 15%", "45% 39%", "75% 32%", "49% 33%", "47% 29%", "26% 29%"]),
-    modelGallery(["model-08.jpg", "model-08-02.jpg", "model-08-03.jpg", "model-08-04.jpg", "model-08-05.jpg", "model-08-06.jpg", "model-08-07.jpg"], "Luca model portfolio"),
+    [...modelGallery(["model-05.jpg", "model-05-02.jpg", "model-05-03.jpg", "model-05-04.jpg", "model-05-05.jpg", "model-05-06.jpg", "model-05-07.jpg"], "Szeder model portfolio", ["48% 35%", "50% 18%", "44% 34%", "34% 46%", "57% 20%", "48% 36%", "53% 18%"]), wixLiveGalleryImage("94c0c9_331ded25215b40e198f64a2e08159f09~mv2.png", 1170, 1750, "Szeder model portfolio", "", "Foglalj fotózást Szederrel kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól")],
+    [...modelGallery(["model-06.jpg", "model-06-02.jpg", "model-06-03.jpg", "model-06-04.jpg", "model-06-05.jpg", "model-06-06.jpg", "model-06-07.jpg"], "Nome model portfolio"), wixLiveGalleryImage("94c0c9_495d2e8b7cd5466287bdf883da62fdcd~mv2.jpeg", 2639, 3958, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól"), wixLiveGalleryImage("94c0c9_9c6073a3b7d348c18694bc83400f44cb~mv2.jpeg", 600, 900, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól"), wixLiveGalleryImage("94c0c9_3abc8bfe750643a5b4d02cffe2e8e46d~mv2.jpg", 2730, 4095, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól"), wixLiveGalleryImage("94c0c9_3a516924468d403899b0708574baafd4~mv2.jpeg", 2448, 3264, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól")],
+    [...modelGallery(["model-07.jpg", "model-07-02.jpg", "model-07-03.jpg", "model-07-04.jpg", "model-07-05.jpg", "model-07-06.jpg", "model-07-07.jpg"], "Ezra model portfolio", ["52% 42%", "51% 15%", "45% 39%", "75% 32%", "49% 33%", "47% 29%", "26% 29%"]), wixLiveGalleryImage("94c0c9_9490cb385ab641bdaee2d59d9d2e4d3a~mv2.jpg", 683, 1024, "Ezra model portfolio", "", "Foglalj fotózást Ezrával kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól")],
+    [...modelGallery(["model-08.jpg", "model-08-02.jpg", "model-08-03.jpg", "model-08-04.jpg", "model-08-05.jpg", "model-08-06.jpg", "model-08-07.jpg"], "Luca model portfolio"), wixLiveGalleryImage("94c0c9_5349ad4d05ee411c9a96788431c68823~mv2.png", 1000, 1343, "Luca model portfolio"), wixLiveGalleryImage("94c0c9_cd1806dbb70940b4ae6b719c37bbb0a0~mv2.png", 1000, 1399, "Luca model portfolio")],
     modelGallery(["model-09.jpg", "model-09-02.jpg", "model-09-03.jpg", "model-09-04.jpg", "model-09-05.jpg", "model-09-06.jpg"], "Csuri model portfolio", ["40% 35%", "50% 50%", "50% 50%", "34% 19%", "50% 50%", "47% 15%"])
   ],
   animal: modelImage("model-19.jpg", "Lucifer, white rat snake model", "50% 50%"),
@@ -935,19 +943,56 @@ export const packagesImages = {
 const serviceImage = (name, width, height, alt = "") => ({ src: `/images/wix/service/${name}`, width, height, alt });
 const wixGalleryImage = (src, width, height, alt) => ({ src, width, height, alt });
 
+const recoveredCommercialImages = [
+  wixLiveGalleryImage("94c0c9_b1dff8bcb8c540f89594dded83cd0f05~mv2.jpg", 1000, 1500, "commercial photography at aether art space", "Portrék a Drag Hungary 2023 győztesének"),
+  wixLiveGalleryImage("94c0c9_6ab3f3fea2884a96a63594d3894670f1~mv2.jpg", 1000, 1500, "commercial photography at aether art space", "Kampány a Drag Hungary eseményeihez"),
+  wixLiveGalleryImage("94c0c9_8af7c096374f4be7916e549f4f6f8a03~mv2.jpg", 1500, 1000, "commercial photography at aether art space", "Kreatív kampány"),
+  wixLiveGalleryImage("94c0c9_1327a19d02af44abaaddb24ce41b17a0~mv2.jpg", 1000, 1250, "commercial photography at aether art space")
+];
+
+const recoveredPortraitImages = [
+  wixLiveGalleryImage("94c0c9_67a25e62e8664b4e80b37f157a9c0a04~mv2.jpg", 1000, 1500, "portrait photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_63a33298fe454f0fa9d3bcd2880b3f5c~mv2.jpg", 1000, 1500, "portrait photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_1827aff1ca454abba0f917fce31997e2~mv2.jpg", 2191, 3286, "portrait photography in Budapest")
+];
+
+const recoveredFitnessImages = [
+  wixLiveGalleryImage("94c0c9_20060b553e7b4c5898c516f9ed2bd6ae~mv2.jpg", 1000, 1250, "fitness photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_b6745c05cf4b44b3ac819a8ae248394b~mv2.jpg", 1000, 1500, "fitness photography in Budapest", "Kézenálló fitness modell fotózáson"),
+  wixLiveGalleryImage("94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2.jpg", 1000, 1500, "fitness photography in Budapest", "Female bodybuilder in the studio"),
+  wixLiveGalleryImage("94c0c9_9648fda2075e4854a520abb675fe474c~mv2.jpg", 1000, 1500, "fitness photography in Budapest", "Portré egy fitness fotózáson"),
+  wixLiveGalleryImage("94c0c9_76c067d86fac494eae2e56e1b0c3033f~mv2.jpg", 1000, 1250, "fitness photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_7e374c4d22aa47b0a41ea9b6b846e939~mv2.jpg", 1000, 1500, "fitness photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_1e6241ba49f54bdb9aeefb7c53ea0db6~mv2.jpg", 1000, 1500, "fitness photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_73b67d28bccb49c7b2aa2bb3f80492b6~mv2.png", 1500, 1000, "fitness photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_a45b7fc4b40441a5a716f10d4aa2828d~mv2.jpg", 1000, 1250, "fitness photography in Budapest", "A classic body builder pose on a fitness photoshoot")
+];
+
+const recoveredGlamourImages = [
+  wixLiveGalleryImage("94c0c9_3cfb592ee16947d8b276c3a252e36303~mv2.jpg", 1500, 1000, "glamour and boudoir photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_b49492f4057e46c3a2f345001b1c0130~mv2.jpg", 1500, 1000, "glamour and boudoir photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_c8d2e26395984e628feda5d083ffd6a2~mv2.jpg", 1000, 1500, "glamour and boudoir photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_12c07c0ca793419aad3efe78a2462566~mv2.jpg", 1000, 1500, "glamour and boudoir photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_6fb3e40ad9d042ed81499f5523e17174~mv2.jpg", 1000, 1500, "glamour and boudoir photography in Budapest"),
+  wixLiveGalleryImage("94c0c9_819774ebb6dd489c9cf0ec1a435f7d3d~mv2.jpg", 1000, 1500, "glamour and boudoir photography in Budapest")
+];
+
+const recoveredPetImages = [
+];
+
 export const serviceImages = {
   commercial: [
-    serviceImage("commercial-01.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-02.png", 1000, 800, "commercial photography at aether art space"), serviceImage("commercial-03.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-04.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-05.jpg", 1500, 1000, "commercial photography at aether art space"), serviceImage("commercial-06.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-07.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-08.jpg", 1500, 1000, "commercial photography at aether art space"), serviceImage("commercial-09.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-10.jpg", 1000, 1500, "commercial photography at aether art space")
+    { ...serviceImage("commercial-01.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Pumpfreak", description: "Product images with a model for an upcoming gymwear brand." }, { ...serviceImage("commercial-02.png", 1000, 800, "commercial photography at aether art space"), title: "Mesotica skincare", description: "Product photography for a skincare product family." }, { ...serviceImage("commercial-03.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Pumpfreak", description: "Product images with a model for an upcoming gymwear brand." }, serviceImage("commercial-04.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-05.jpg", 1500, 1000, "commercial photography at aether art space"), serviceImage("commercial-06.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-07.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-08.jpg", 1500, 1000, "commercial photography at aether art space"), serviceImage("commercial-09.jpg", 1000, 1500, "commercial photography at aether art space"), serviceImage("commercial-10.jpg", 1000, 1500, "commercial photography at aether art space"), ...recoveredCommercialImages
   ],
   corporate: [
     serviceImage("corporate-01.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-02.jpg", 666, 999, "corporate portrait photography"), serviceImage("corporate-03.png", 1000, 667, "corporate team photography"), serviceImage("corporate-04.jpg", 666, 999, "corporate portrait photography"), serviceImage("corporate-05.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-06.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-07.jpg", 666, 999, "corporate team photography")
   ],
   portrait: [
     serviceImage("portrait-01.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-02.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-03.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-04.jpg", 2688, 4033, "portrait photography in Budapest"), serviceImage("portrait-05.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-06.jpg", 2688, 4032, "portrait photography in Budapest"), serviceImage("portrait-07.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-08.jpg", 666, 999, "portrait photography in Budapest"), serviceImage("portrait-09.jpg", 1000, 1250, "portrait photography in Budapest"),
-    serviceImage("portrait-top-01.jpg", 1000, 1500, "close-up artistic portrait photography in Budapest"), serviceImage("portrait-top-02.jpg", 1000, 1500, "pink-haired fashion portrait photography in Budapest"), serviceImage("portrait-top-03.jpg", 1000, 1500, "dramatic studio portrait photography in Budapest"), serviceImage("portrait-top-04.jpg", 1000, 1500, "outdoor portrait photography in Budapest"), serviceImage("portrait-top-05.jpg", 1000, 1500, "artistic portrait photography in Budapest"), serviceImage("portrait-top-06.jpg", 1000, 1500, "business portrait photography in Budapest"), serviceImage("portrait-top-07.jpg", 1000, 1500, "outdoor lifestyle portrait photography in Budapest"), serviceImage("portrait-top-08.jpg", 1000, 1500, "artistic profile portrait photography in Budapest"), serviceImage("portrait-top-09.jpg", 2390, 3707, "casual portrait photography in Budapest")
+    serviceImage("portrait-top-01.jpg", 1000, 1500, "close-up artistic portrait photography in Budapest"), serviceImage("portrait-top-02.jpg", 1000, 1500, "pink-haired fashion portrait photography in Budapest"), serviceImage("portrait-top-03.jpg", 1000, 1500, "dramatic studio portrait photography in Budapest"), serviceImage("portrait-top-04.jpg", 1000, 1500, "outdoor portrait photography in Budapest"), serviceImage("portrait-top-05.jpg", 1000, 1500, "artistic portrait photography in Budapest"), serviceImage("portrait-top-06.jpg", 1000, 1500, "business portrait photography in Budapest"), serviceImage("portrait-top-07.jpg", 1000, 1500, "outdoor lifestyle portrait photography in Budapest"), serviceImage("portrait-top-08.jpg", 1000, 1500, "artistic profile portrait photography in Budapest"), serviceImage("portrait-top-09.jpg", 2390, 3707, "casual portrait photography in Budapest"), ...recoveredPortraitImages
   ],
   fitness: [
-    serviceImage("fitness-01.jpg", 1500, 1000, "fitness photography in Budapest"), serviceImage("fitness-02.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-03.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-04.jpg", 1500, 1000, "fitness photography in Budapest"), serviceImage("fitness-05.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-06.jpg", 3648, 4560, "fitness photography in Budapest"), serviceImage("fitness-07.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-08.jpg", 1500, 1000, "fitness photography in Budapest"), serviceImage("fitness-09.jpg", 1000, 1250, "fitness photography in Budapest"), serviceImage("fitness-10.jpg", 1600, 2400, "aerial fitness photography in Budapest"), serviceImage("fitness-11.jpg", 1600, 2400, "aerial fitness photography in Budapest"), serviceImage("fitness-12.jpg", 1920, 2400, "fitness portrait photography in Budapest"), serviceImage("fitness-13.jpg", 1600, 2400, "fitness portrait photography in Budapest"), serviceImage("fitness-14.jpg", 2400, 1600, "fitness photography for athletes in Budapest")
+    serviceImage("fitness-01.jpg", 1500, 1000, "fitness photography in Budapest"), serviceImage("fitness-02.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-03.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-04.jpg", 1500, 1000, "fitness photography in Budapest"), serviceImage("fitness-05.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-06.jpg", 3648, 4560, "fitness photography in Budapest"), serviceImage("fitness-07.jpg", 1000, 1500, "fitness photography in Budapest"), serviceImage("fitness-08.jpg", 1500, 1000, "fitness photography in Budapest"), serviceImage("fitness-09.jpg", 1000, 1250, "fitness photography in Budapest"), serviceImage("fitness-10.jpg", 1600, 2400, "aerial fitness photography in Budapest"), serviceImage("fitness-11.jpg", 1600, 2400, "aerial fitness photography in Budapest"), serviceImage("fitness-12.jpg", 1920, 2400, "fitness portrait photography in Budapest"), serviceImage("fitness-13.jpg", 1600, 2400, "fitness portrait photography in Budapest"), serviceImage("fitness-14.jpg", 2400, 1600, "fitness photography for athletes in Budapest"), ...recoveredFitnessImages
   ],
   fitnessAudience: [
     serviceImage("fitness-audience-01.jpg", 1000, 1500, "fitness photography for personal milestones"), serviceImage("fitness-audience-02.jpg", 1000, 1250, "fitness photography for personal trainers"), serviceImage("fitness-audience-03.png", 1000, 1000, "yoga photography in Budapest"), serviceImage("fitness-audience-04.jpg", 1000, 1500, "fitness photography for athletes"), serviceImage("fitness-audience-05.jpg", 1000, 1500, "wellness and lifestyle photography")
@@ -1070,7 +1115,7 @@ export const serviceContent = {
 serviceContent.corporate.en.packages[4].price = "129.000. HUF / half day";
 
 export const specialImages = {
-  glamour: [["glamour-01.jpg", 666, 999], ["glamour-02.jpg", 666, 999], ["glamour-03.jpg", 3923, 4904], ["glamour-04.jpg", 4274, 5343], ["glamour-05.jpg", 1500, 1000], ["glamour-06.jpg", 4191, 5240], ["glamour-07.jpg", 3505, 4381], ["glamour-08.jpg", 1000, 1500], ["glamour-09.jpg", 1000, 1500], ["glamour-10.jpg", 1000, 1500], ["glamour-11.jpg", 1500, 1000], ["glamour-12.jpg", 1500, 1000], ["glamour-13.jpg", 2400, 1600], ["glamour-14.jpg", 1600, 2400]].map(([name, width, height]) => serviceImage(name, width, height, "glamour and boudoir photography in Budapest")),
+  glamour: [["glamour-01.jpg", 666, 999], ["glamour-02.jpg", 666, 999], ["glamour-03.jpg", 3923, 4904], ["glamour-04.jpg", 4274, 5343], ["glamour-05.jpg", 1500, 1000], ["glamour-06.jpg", 4191, 5240], ["glamour-07.jpg", 3505, 4381], ["glamour-08.jpg", 1000, 1500], ["glamour-09.jpg", 1000, 1500], ["glamour-10.jpg", 1000, 1500], ["glamour-11.jpg", 1500, 1000], ["glamour-12.jpg", 1500, 1000], ["glamour-13.jpg", 2400, 1600], ["glamour-14.jpg", 1600, 2400]].map(([name, width, height]) => serviceImage(name, width, height, "glamour and boudoir photography in Budapest")).concat(recoveredGlamourImages),
   models: [
     serviceImage("model-digital-01.jpg", 1000, 1500, "model digitals in Budapest"),
     serviceImage("model-digital-02.jpg", 1000, 1500, "model digitals in Budapest"),
@@ -1098,7 +1143,8 @@ export const specialImages = {
     serviceImage("pet-08.jpg", 1333, 2000, "Dalmatian and tabby cat posing together"),
     serviceImage("pet-09.jpg", 1333, 2000, "woman holding a small dog outdoors"),
     serviceImage("pet-10.jpg", 1333, 2000, "small dog portrait against a dark studio background"),
-    serviceImage("pet-11.jpg", 1600, 2000, "woman holding a small dog in a dark studio")
+    serviceImage("pet-11.jpg", 1600, 2000, "woman holding a small dog in a dark studio"),
+    ...recoveredPetImages
   ],
   id: [serviceImage("id-photo.jpg", 1000, 1002, "ID photo"), serviceImage("id-gallery-01.jpg", 3112, 3833, "portrait at aether art space"), serviceImage("id-gallery-02.jpg", 1338, 1648, "portrait at aether art space"), serviceImage("id-gallery-03.jpg", 5750, 3432, "portrait at aether art space")]
 };
@@ -1176,19 +1222,35 @@ export const seasonalContent = {
 
 export const seasonalImages = {
   photoshoot: [
-    { src: "/images/wix/seasonal/christmas-01.jpg", width: 1868, height: 2802, alt: "Christmas photoshoot with a couple" },
-    { src: "/images/wix/seasonal/christmas-02.jpg", width: 1333, height: 2000, alt: "Christmas portrait in the studio" },
-    { src: "/images/wix/seasonal/christmas-03.jpg", width: 1333, height: 2000, alt: "Festive studio portrait" },
+    { src: "/images/wix/seasonal/christmas-01.jpg", width: 1868, height: 2802, alt: "Christmas photoshoot with a couple", title: "Piller family at Christmas", description: "Yearly Christmas family photoshoot in the studio" },
+    { src: "/images/wix/seasonal/christmas-02.jpg", width: 1333, height: 2000, alt: "Christmas portrait in the studio", title: "Christmas photo of the smallest member of the family", description: "Smiling baby wearing a Santa hat, surrounded by Christmas lights in the studio." },
+    { src: "/images/wix/seasonal/christmas-03.jpg", width: 1333, height: 2000, alt: "Festive studio portrait", title: "Christmas cat!", description: "You can also bring your pet to your holiday photoshoot." },
     { src: "/images/wix/seasonal/christmas-04.jpeg", width: 4570, height: 3047, alt: "Christmas family photography" },
     { src: "/images/wix/seasonal/christmas-05.jpg", width: 1333, height: 2000, alt: "Holiday portrait photography" },
     { src: "/images/wix/seasonal/christmas-06.jpg", width: 4000, height: 6000, alt: "Christmas-themed studio portrait" },
-    { src: "/images/wix/seasonal/christmas-07.jpeg", width: 2228, height: 3342, alt: "Festive portrait in Budapest studio" }
+    { src: "/images/wix/seasonal/christmas-07.jpeg", width: 2228, height: 3342, alt: "Festive portrait in Budapest studio" },
+    wixLiveGalleryImage("94c0c9_26d6e48509fa4e029ffc45564e76cf1c~mv2.jpeg", 3613, 5420, "Festive portrait in Budapest studio")
   ],
   studio: [
     { src: "/images/wix/seasonal/christmas-studio-hero.jpg", width: 5472, height: 3648, alt: "Christmas-themed studio in Budapest" },
     { src: "/images/wix/seasonal/christmas-studio-02.jpg", width: 6000, height: 4000, alt: "Christmas studio decoration" },
     { src: "/images/wix/seasonal/christmas-studio-03.jpg", width: 2963, height: 4444, alt: "Holiday studio props and decoration" },
     { src: "/images/wix/seasonal/christmas-studio-detail.jpg", width: 4000, height: 6000, alt: "Christmas studio detail" }
+  ],
+  studioGallery: [
+    wixLiveGalleryImage("94c0c9_fe3770802fb24044b5dd17845f6134da~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_c8f896eaa5894fe0b3fbf0dfdd06a92b~mv2.jpg", 6000, 4000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_d5c1b93b74b34fccb00cb5a580376bbd~mv2.jpg", 2963, 4444, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_c6757868386b47bcab06e79247d07ae8~mv2.jpg", 4000, 6000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_20fb0d3da60d4c48bdd3d8f9ede94f1c~mv2.jpg", 3441, 5162, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_ec14ea5d87214d0a9bc79dd009d3bfe8~mv2.jpg", 4000, 6000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_d0dc54e081564e4abac11fffd44b6e1f~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_1f75b1c45d4e4aa09ebe93348d7ff570~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_54fcd2a3384241d3a997d0aab6faeb54~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_646cf2558fa1479d9b92c3ea2f926467~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_456d925e3a5148eb936323cb42c837a1~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_8b49ce16deb34fbfb5137b71e70d59fd~mv2.jpg", 4000, 6000, "Christmas-themed studio in Budapest"),
+    wixLiveGalleryImage("94c0c9_c5531b99cb1e4694848eb42218af711b~mv2.jpg", 4000, 6000, "Christmas-themed studio in Budapest")
   ]
 };
 
@@ -1479,7 +1541,8 @@ export const homeImages = {
     { src: "/images/wix/reference/creating-art-1-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
     { src: "/images/wix/reference/creating-art-2-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
     { src: "/images/wix/reference/creating-art-3-full.jpg", width: 1000, height: 1500, alt: "a framed artwork in the aether art space photo studio" },
-    { src: "/images/wix/reference/creating-art-4-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" }
+    { src: "/images/wix/reference/creating-art-4-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
+    wixLiveGalleryImage("94c0c9_ee1a10c86e754d76a6e8de8e80f78a6f~mv2.jpg", 1000, 1500, "creative work in the aether art space photo studio")
   ],
   artists: [
     { src: "/images/wix/reference/artist-photographers.jpg", width: 362, height: 362, alt: "resident photographer", altHu: "rezidens fotós" },

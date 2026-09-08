@@ -113,7 +113,8 @@ export const navGroups = [
       ["/equipment", "lights & equipment", "fények és eszközök", "light-sources"],
       ["/equipment", "cameras and lenses for rent", "bérelhető kamerák és lencsék", "cameras-for-rent"],
       ["/props", "furniture & props", "bútorok és kellékek", "props-collection"],
-      ["/props", "outfits & accessories", "outfitek és kiegészítők", "wardrobe"]
+      ["/props", "outfits & accessories", "outfitek és kiegészítők", "wardrobe"],
+      ["/christmas-studio", "🎄 christmas studio", "🎄 karácsonyi fotóstúdió"]
     ]
   },
   {
@@ -130,7 +131,7 @@ export const navGroups = [
     label: "photography services",
     huLabel: "fotós szolgáltatásaink",
     links: [
-      ["/packages", "PACKAGES", "CSOMAGOK"],
+      ["/packages", "photography packages", "fotózási csomagok"],
       ["/wedding-photography", "wedding photography", "esküvői fotózás"],
       ["/commercial-photography-budapest", "commercial photography", "reklámfotózás"],
       ["/corporate-photography-budapest", "corporate photography", "vállalati fotózás"],
@@ -139,7 +140,8 @@ export const navGroups = [
       ["/glamour-boudoir-photography-budapest", "glamour / boudoir / art photography", "glamour, boudoir fotózás"],
       ["/model-polaroids-budapest", "model polaroids / digitals", "model polaroidok / digitalok"],
       ["/pet-photography-budapest", "pet photography", "kisállat fotózás"],
-      ["/id-photo", "ID photo", "igazolványkép"]
+      ["/id-photo", "ID photo", "igazolványkép"],
+      ["/christmas-photoshoot", "🎄 christmas photography", "🎄 karácsonyi fotózás"]
     ]
   }
 ];

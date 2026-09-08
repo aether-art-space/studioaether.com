@@ -67,7 +67,14 @@ const artistPageAny = artistPage as any;
 const artistImagesAny = artistImages as any;
 const artistProfiles = artistPageAny?.profiles.map((profile: any) => {
   const source = artistType === "makeup" ? artistImagesAny.profiles[profile.imageIndex] : { image: artistImagesAny[profile.image], gallery: artistImagesAny[profile.gallery] };
-  return { ...profile, image: source.image, gallery: source.gallery };
+  return {
+    ...profile,
+    image: {
+      ...source.image,
+      ...(artistType === "photographers" ? { sizes: "(min-width: 761px) min(50vw, 582px), calc(100vw - 36px)" } : {})
+    },
+    gallery: source.gallery
+  };
 }) ?? [];
 const isModels = page.path === "/models-budapest" || page.path === "/hu/models-budapest";
 const modelPage = isModels ? modelsContent[hu ? "hu" : "en"] : null;
@@ -137,6 +144,7 @@ const mentoringLessonIntroductions = hu ? [
 const seasonalType = page.path.includes("christmas-photoshoot") ? "photoshoot" : page.path.includes("christmas-studio") ? "studio" : null;
 const seasonalPage: any = seasonalType ? (seasonalContent as any)[seasonalType][hu ? "hu" : "en"] : null;
 const seasonalPageImages: any = seasonalType ? (seasonalImages as any)[seasonalType] : null;
+const seasonalGalleryImages: any = seasonalType === "studio" ? (seasonalImages as any).studioGallery : seasonalPageImages;
 const seasonalPackages = seasonalType === "photoshoot" ? photoPackageSets.christmas[hu ? "hu" : "en"] : [];
 const profileKey = page.path.endsWith("photographer-alexandra") ? "alexandra" : "daniel";
 const isProfile = page.path.endsWith("photographer-daniel") || page.path.endsWith("photographer-alexandra");
@@ -554,7 +562,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <StudioSection heading={seasonalPage.introHeading} intro={seasonalPage.intro} bullets={seasonalPage.introBullets} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
     <section class="seasonal-gallery"><ResponsiveImage image={seasonalPageImages[1]} role="content" loading="lazy" /><div><h2>{seasonalPage.sectionHeading}</h2><p>{seasonalPage.sectionIntro}</p><ul>{seasonalPage.sectionBullets.map((bullet: string) => <li>{bullet}</li>)}</ul></div></section>
     <section class="booking-intro"><p>{seasonalPage.packageIntro}</p></section><section class="booking-prices"><article><h2>{hu ? "Kedvezményes Studió Idősáv" : "Discounted Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig / 9:00 - 18:00" : "Monday to Thursday / 9:00 - 18:00"}</p><strong>{hu ? "6000 Ft / óra" : "6000 HUF / hour"}</strong></article><article><h2>{hu ? "Standard Studió Idősáv" : "Standard Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig 18:00 - 22:00; péntek és hétvége 9:00 - 22:00" : "Monday to Thursday 18:00 - 22:00; Friday & Weekend 9:00 - 22:00"}</p><strong>{hu ? "8000 Ft / óra" : "8000 HUF / hour"}</strong></article><article><h2>{hu ? "10 órás bérlet" : "10 hour Membership"}</h2><p>{hu ? "Bármelyik nap / óránként felbontható" : "Any day / can be broken up by the hour"}</p><strong>60.000. HUF</strong><span>SAVE UP TO 37%</span></article></section>
-    <section class="seasonal-gallery seasonal-gallery--strip">{seasonalPageImages.slice(2).map((imageData: any, index: number) => <GalleryImage image={imageData} index={index + 1} label={hu ? `Kép megnyitása: ${index + 2}` : `Open image ${index + 2}`} />)}</section>
+    <section class="seasonal-gallery seasonal-gallery--strip">{seasonalGalleryImages.map((imageData: any, index: number) => <GalleryImage image={imageData} index={index} label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`} />)}</section>
     <section class="service-contact"><h2>{seasonalPage.contactHeading}</h2><p>{seasonalPage.contactBody}</p><a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a></section>
     <GalleryLightbox label={hu ? "Karácsonyi stúdió galériája" : "Christmas studio gallery"} hu={hu} />
   </>

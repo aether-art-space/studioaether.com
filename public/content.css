@@ -506,12 +506,14 @@
 .artist-profile__gallery-item { display: block; aspect-ratio: 1; min-width: 0; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
 .artist-profile__gallery-item > .responsive-image { display: block; width: 100%; height: 100%; }
 .artist-profile__gallery-item img { display: block; width: 100%; height: 100%; border-radius: 0; object-fit: cover; }
-.artist-note { max-width: var(--content-reading-max); margin: 0 auto 48px; }
+.artist-note { width: min(var(--content-reading-max), calc(100% - 48px)); max-width: var(--content-reading-max); margin: 32px auto 48px; }
 .artist-note p { margin: 0; font: var(--text-body); text-align: left; }
 @media (max-width: 760px) {
   .page-hero--artist { padding: 68px 18px 50px; }
   .page-hero--artist h1 { font-size: clamp(45px, 12vw, 62px); }
   .page-hero--artist > .page-hero__lead { margin: 8px auto 0; font: 400 15px/22.5px var(--sans); }
+  .page-hero--artist:has(+ .pricing-tabs + .artist-profiles--makeup) > .page-hero__lead { font: 400 18px/26px var(--sans); }
+  .page-hero--artist:has(+ .pricing-tabs + .artist-profiles--makeup) .page-hero__description p { font: 400 15px/22.5px var(--sans); }
   .artist-intro { padding: 46px 18px 58px; }
   .artist-packages { grid-template-columns: 1fr; gap: 12px; margin-top: 38px; }
   .artist-package { padding: 25px 18px 22px; }
@@ -522,11 +524,12 @@
   .artist-profiles { padding: 46px 18px 58px; }
   .artist-profiles > h2 { margin-bottom: 28px; font-size: 32px; }
   .artist-profiles__grid, .artist-profiles--photographers .artist-profiles__grid, .artist-profiles--makeup .artist-profiles__grid, .artist-profiles--stylists .artist-profiles__grid { grid-template-columns: 1fr; width: 100%; }
+  .artist-profiles--stylists { padding-right: 0; padding-bottom: 0; padding-left: 0; }
   .artist-profiles--stylists .artist-profiles__grid { display: block; }
   .stylist-profile { grid-template-columns: 1fr; min-height: 0; }
   .stylist-profile__identity { padding: 54px 18px 48px; }
   .stylist-profile__gallery { width: 100%; }
-  .stylist-profile__gallery-item img { aspect-ratio: 1 / 0.83; }
+  .stylist-profile__gallery-item { aspect-ratio: 1; }
   .artist-profile__body { min-height: 0; padding: 24px 18px 22px; }
   .artist-profiles--photographers .artist-profile__body, .artist-profiles--makeup .artist-profile__body { min-height: 0; padding: 24px 18px 22px; }
   .artist-profile__image-copy { bottom: 15px; left: 22px; }
@@ -537,7 +540,7 @@
   .artist-profile__socials { right: 17px; bottom: 15px; gap: 12px; }
   .artist-profile__social svg { width: 28px; height: 28px; }
   .artist-profile__gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .artist-note { max-width: calc(100% - 36px); margin-bottom: 38px; }
+  .artist-note { width: calc(100% - 36px); max-width: none; margin: 24px auto 38px; }
   .artist-note p { font: 400 15px/22.5px var(--sans); }
 }
 
@@ -1384,6 +1387,19 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .booking-intro p { max-width: 820px; margin: 0 auto 20px; font: var(--text-body); }
 .pricing-tabs { max-width: var(--content-max); margin: 0 auto; padding: 28px 24px 0; }
 .pricing-tabs__list { display: flex; align-items: stretch; justify-content: center; gap: 0; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.pricing-tabs__select-wrap { display: none; }
+.pricing-tabs__dropdown { position: relative; padding: 0; border: 0; }
+.pricing-tabs__dropdown-trigger { display: flex; min-height: 48px; align-items: center; justify-content: space-between; padding: 10px 16px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); color: var(--ink); font: var(--font-ui); letter-spacing: .3px; cursor: pointer; list-style: none; }
+.pricing-tabs__dropdown-trigger::-webkit-details-marker { display: none; }
+.pricing-tabs__dropdown-trigger::marker { display: none; }
+.pricing-tabs__dropdown-trigger:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.pricing-tabs__dropdown-chevron { width: 9px; height: 9px; margin: -4px 3px 0 16px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transform: rotate(45deg); transition: transform 160ms ease; }
+.pricing-tabs__dropdown[open] .pricing-tabs__dropdown-chevron { margin-top: 5px; transform: rotate(225deg); }
+.pricing-tabs__dropdown-menu { position: absolute; z-index: 5; top: calc(100% + 8px); right: 0; left: 0; padding: 6px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); box-shadow: 0 14px 30px rgb(5 5 5 / 16%); }
+.pricing-tabs__dropdown-option { display: block; padding: 11px 12px; border-radius: 3px; color: var(--muted); font: var(--font-ui); text-decoration: none; }
+.pricing-tabs__dropdown-option:hover, .pricing-tabs__dropdown-option:focus-visible { background: var(--accent); color: var(--ink); text-decoration: none; }
+.pricing-tabs__dropdown-option--active { background: var(--ink); color: var(--paper); font-weight: 700; }
+.pricing-tabs__dropdown-option--active:hover, .pricing-tabs__dropdown-option--active:focus-visible { background: var(--ink); color: var(--paper); }
 .pricing-tabs__list::-webkit-scrollbar { display: none; }
 .pricing-tabs__tab { position: relative; display: flex; min-height: 48px; align-items: center; justify-content: center; flex: 0 0 auto; padding: 10px 20px 13px; color: var(--muted); font: var(--font-ui); letter-spacing: .3px; text-decoration: none; white-space: nowrap; }
 .pricing-tabs__tab::after { position: absolute; right: 20px; bottom: -1px; left: 20px; height: 2px; background: transparent; content: ""; }
@@ -1643,10 +1659,10 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .service-contact h2 { font-size: 39px; }
   .booking-intro { padding: 56px 18px 38px; }
   .booking-intro h1 { font-size: 43px; }
-  .pricing-tabs { width: calc(100% + 36px); max-width: none; margin-left: -18px; padding: 18px 0 0; }
-  .pricing-tabs__list { justify-content: flex-start; }
-  .pricing-tabs__tab { min-width: 0; flex: 0 0 50%; padding-right: 16px; padding-left: 16px; text-align: center; white-space: normal; }
-  .pricing-tabs__tab::after { right: 16px; left: 16px; }
+  .pricing-tabs, .price-section > .pricing-tabs { width: calc(100% + 36px); max-width: none; margin-left: -18px; padding: 18px; }
+  .pricing-tabs:has(+ .artist-profiles--makeup) { width: 100%; margin-left: 0; padding-right: 18px; padding-left: 18px; }
+  .pricing-tabs__list { display: none; }
+  .pricing-tabs__select-wrap { position: relative; display: block; }
   .booking-prices { grid-template-columns: 1fr; padding-right: 18px; padding-left: 18px; }
   .booking-note { margin-right: 18px; margin-left: 18px; }
   .booking-extras { padding-right: 18px; padding-left: 18px; }

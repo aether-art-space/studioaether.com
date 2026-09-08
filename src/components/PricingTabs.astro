@@ -21,4 +21,12 @@ const tabs = [
   <div class="pricing-tabs__list">
     {tabs.map((tab) => <a class:list={["pricing-tabs__tab", { "pricing-tabs__tab--active": tab.key === active }]} href={`${tab.path}${tabAnchor(tab.key)}`} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>)}
   </div>
+  <div class="pricing-tabs__select-wrap">
+    <details class="pricing-tabs__dropdown">
+      <summary class="pricing-tabs__dropdown-trigger">{tabs.find((tab) => tab.key === active)?.label}<span class="pricing-tabs__dropdown-chevron" aria-hidden="true"></span></summary>
+      <div class="pricing-tabs__dropdown-menu" aria-label={hu ? "Árak" : "Pricing pages"}>
+        {tabs.map((tab) => <a class:list={["pricing-tabs__dropdown-option", { "pricing-tabs__dropdown-option--active": tab.key === active }]} href={`${tab.path}${tabAnchor(tab.key)}`} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>)}
+      </div>
+    </details>
+  </div>
 </nav>

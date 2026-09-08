@@ -29,7 +29,11 @@ const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
               </details>
               <div class="nav-dropdown">
                 <ul>
-                  {group.links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
+                  {group.links.map(([href, label], linkIndex) => <li class:list={{
+                    "nav-dropdown__item--emphasis": (index === 0 && linkIndex < 2) || (index === 2 && linkIndex === 0),
+                    "nav-dropdown__item--separator": (index === 0 && linkIndex === 1) || (index === 2 && linkIndex === 0),
+                    "nav-dropdown__item--separator-before": href.includes("/christmas-")
+                  }}><a href={href}>{label}</a></li>)}
                 </ul>
               </div>
             </li>
@@ -58,14 +62,18 @@ const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
           <nav class="mobile-nav-panel" aria-label={navigationLabel}>
             <a class="mobile-nav-link mobile-nav-link--home" href={sitePath(hu ? "/hu" : "/")}>{hu ? "kezdőlap" : "home"}</a>
             <div class="mobile-nav-accordions">
-              {mobileGroups.map((group) => (
+              {mobileGroups.map((group, groupIndex) => (
                 <details class="mobile-nav-accordion">
                   <summary class="mobile-nav-accordion__trigger">
                     <span>{group.label}</span>
                     <span class="mobile-nav-accordion__icon" aria-hidden="true" />
                   </summary>
                   <div class="mobile-nav-accordion__content">
-                    {group.links.map(([href, label]) => <a href={href}>{label}</a>)}
+                    {group.links.map(([href, label], linkIndex) => <a class:list={{
+                      "mobile-nav-accordion__link--emphasis": (groupIndex === 0 && linkIndex < 2) || (groupIndex === 2 && linkIndex === 0),
+                      "mobile-nav-accordion__link--separator": (groupIndex === 0 && linkIndex === 1) || (groupIndex === 2 && linkIndex === 0),
+                      "mobile-nav-accordion__link--separator-before": href.includes("/christmas-")
+                    }} href={href}>{label}</a>)}
                   </div>
                 </details>
               ))}
