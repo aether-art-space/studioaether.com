@@ -1,0 +1,44 @@
+---
+import GalleryImage from "./GalleryImage.astro";
+
+interface Props {
+  images: any[];
+  heading: string;
+  hu: boolean;
+}
+
+const { images, heading, hu } = Astro.props;
+const openLabel = (index: number) => hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`;
+---
+
+<section class="christmas-decoration" aria-labelledby="christmas-decoration-title">
+  <h2 id="christmas-decoration-title">{heading}</h2>
+  <div class="christmas-decoration__viewport">
+    <div class="christmas-decoration__track">
+      <div class="christmas-decoration__feature">
+        <GalleryImage image={images[0]} index={0} label={openLabel(0)} className="christmas-decoration__item christmas-decoration__item--feature-tall" />
+        <div class="christmas-decoration__feature-middle">
+          <GalleryImage image={images[1]} index={1} label={openLabel(1)} className="christmas-decoration__item christmas-decoration__item--feature-wide" />
+          <div class="christmas-decoration__feature-bottom">
+            <GalleryImage image={images[2]} index={2} label={openLabel(2)} className="christmas-decoration__item" />
+            <GalleryImage image={images[3]} index={3} label={openLabel(3)} className="christmas-decoration__item" />
+          </div>
+        </div>
+        <GalleryImage image={images[4]} index={4} label={openLabel(4)} className="christmas-decoration__item christmas-decoration__item--feature-tall" />
+      </div>
+      {images.slice(5).map((image, offset) => <GalleryImage image={image} index={offset + 5} label={openLabel(offset + 5)} className="christmas-decoration__item christmas-decoration__item--rail" />)}
+    </div>
+    <button class="christmas-decoration__next" type="button" aria-label={hu ? "Következő képek" : "Next images"} data-christmas-gallery-next>
+      <span aria-hidden="true">⟶</span>
+    </button>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-christmas-gallery-next]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const viewport = button.closest<HTMLElement>(".christmas-decoration__viewport");
+      viewport?.scrollBy({ left: viewport.clientWidth * 0.84, behavior: "smooth" });
+    });
+  });
+</script>

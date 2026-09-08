@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T11:36:20.372Z",
+  "generatedAt": "2026-09-08T12:08:17.895Z",
   "images": {
     "/images/corporate-octomind-daniel.jpg": {
       "source": "/images/corporate-octomind-daniel.jpg",
@@ -93543,6 +93543,157 @@
           "src": "/images/generated/wix-recovered/94c0c9_fe3770802fb24044b5dd17845f6134da~mv2--full--4e63e939c2.jpg",
           "width": 1333,
           "height": 2000,
+          "alpha": false
+        }
+      }
+    },
+    "/wix-recovered/christmas-studio-intro.jpg": {
+      "source": "/wix-recovered/christmas-studio-intro.jpg",
+      "width": 882,
+      "height": 1399,
+      "alpha": false,
+      "hash": "97963672be",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--97963672be.avif",
+            "width": 320,
+            "height": 508,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--97963672be.avif",
+            "width": 480,
+            "height": 761,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--97963672be.avif",
+            "width": 640,
+            "height": 1015,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--882w--97963672be.avif",
+            "width": 882,
+            "height": 1399,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--97963672be.webp",
+            "width": 320,
+            "height": 508,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--97963672be.webp",
+            "width": 480,
+            "height": 761,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--97963672be.webp",
+            "width": 640,
+            "height": 1015,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--882w--97963672be.webp",
+            "width": 882,
+            "height": 1399,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--97963672be.jpg",
+            "width": 320,
+            "height": 508,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--97963672be.jpg",
+            "width": 480,
+            "height": 761,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--97963672be.jpg",
+            "width": 640,
+            "height": 1015,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--882w--97963672be.jpg",
+            "width": 882,
+            "height": 1399,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--97963672be.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--97963672be.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--97963672be.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--97963672be.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--97963672be.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--97963672be.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--97963672be.avif",
+          "width": 882,
+          "height": 1399,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--97963672be.webp",
+          "width": 882,
+          "height": 1399,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--97963672be.jpg",
+          "width": 882,
+          "height": 1399,
           "alpha": false
         }
       }

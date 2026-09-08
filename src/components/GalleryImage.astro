@@ -1,5 +1,6 @@
 ---
 import { resolveImage } from "../lib/images.mjs";
+import { inferGalleryMetadata } from "../lib/galleryMetadata.mjs";
 import ResponsiveImage from "./ResponsiveImage.astro";
 
 interface Props {
@@ -19,6 +20,7 @@ interface Props {
 
 const { image, index, label, className = "", imageClassName = "", title, description, price, link, linkLabel, suppressProfileMeta = false, objectPosition } = Astro.props;
 const asset = resolveImage(image, "gallery");
+const metadata = inferGalleryMetadata(image, { title, description });
 ---
 <button
   class={className}
@@ -32,8 +34,8 @@ const asset = resolveImage(image, "gallery");
   data-gallery-width={asset.lightbox.width}
   data-gallery-height={asset.lightbox.height}
   data-gallery-alt={image.alt}
-  data-gallery-title={title ?? image.title}
-  data-gallery-description={description ?? image.description}
+  data-gallery-title={metadata.title}
+  data-gallery-description={metadata.description}
   data-gallery-price={price}
   data-gallery-link={link}
   data-gallery-link-label={linkLabel}

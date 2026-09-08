@@ -6,6 +6,7 @@ import CircularCard from "./CircularCard.astro";
 import ExtrasCard from "./ExtrasCard.astro";
 import GalleryLightbox from "./GalleryLightbox.astro";
 import HorizontalMasonryGallery from "./HorizontalMasonryGallery.astro";
+import ChristmasStudioGallery from "./ChristmasStudioGallery.astro";
 import ImageHero from "./ImageHero.astro";
 import InfoBox from "./InfoBox.astro";
 import ExtrasSection from "./ExtrasSection.astro";
@@ -19,6 +20,7 @@ import StudioSection from "./StudioSection.astro";
 import ResponsiveImage from "./ResponsiveImage.astro";
 import GalleryImage from "./GalleryImage.astro";
 import { resolveImage } from "../lib/images.mjs";
+import { inferGalleryMetadata } from "../lib/galleryMetadata.mjs";
 import { InstagramLogoIcon, XLogoIcon } from "@phosphor-icons/react/ssr";
 
 const { page } = Astro.props;
@@ -145,6 +147,7 @@ const seasonalType = page.path.includes("christmas-photoshoot") ? "photoshoot" :
 const seasonalPage: any = seasonalType ? (seasonalContent as any)[seasonalType][hu ? "hu" : "en"] : null;
 const seasonalPageImages: any = seasonalType ? (seasonalImages as any)[seasonalType] : null;
 const seasonalGalleryImages: any = seasonalType === "studio" ? (seasonalImages as any).studioGallery : seasonalPageImages;
+const seasonalStudioIntroImage: any = seasonalType ? (seasonalImages as any).studioIntro : null;
 const seasonalPackages = seasonalType === "photoshoot" ? photoPackageSets.christmas[hu ? "hu" : "en"] : [];
 const profileKey = page.path.endsWith("photographer-alexandra") ? "alexandra" : "daniel";
 const isProfile = page.path.endsWith("photographer-daniel") || page.path.endsWith("photographer-alexandra");
@@ -439,9 +442,9 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         return <article class="model-card" data-model-card data-gallery>
           <div class="model-gallery">
             <div class="model-gallery__thumbs" aria-label={`${profile.name} ${hu ? "képei" : "images"}`}>
-              {gallery.map((image: any, index: number) => { const asset = resolveImage(image, "gallery"); return <button class={`model-gallery__thumb${index === 0 ? " is-active" : ""}`} type="button" data-model-thumb data-gallery-image data-model-src={asset.src} data-model-srcset={asset.fallbackSrcset} data-model-avif-srcset={asset.avifSrcset} data-model-webp-srcset={asset.webpSrcset} data-gallery-src={asset.lightbox.fallback} data-gallery-avif={asset.lightbox.avif} data-gallery-webp={asset.lightbox.webp} data-gallery-fallback={asset.lightbox.fallback} data-gallery-width={asset.lightbox.width} data-gallery-height={asset.lightbox.height} data-gallery-alt={image.alt} data-model-alt={image.alt} data-model-title={profile.name} data-gallery-title={profile.name} data-model-position={image.objectPosition} aria-label={`${profile.name}, ${hu ? "kép" : "image"} ${index + 1}`} aria-pressed={index === 0 ? "true" : "false"}><ResponsiveImage image={image} role="thumb" objectPosition={image.objectPosition} loading="lazy" /></button>; })}
+              {gallery.map((image: any, index: number) => { const asset = resolveImage(image, "gallery"); const metadata = inferGalleryMetadata(image, { title: profile.name }); return <button class={`model-gallery__thumb${index === 0 ? " is-active" : ""}`} type="button" data-model-thumb data-gallery-image data-model-src={asset.src} data-model-srcset={asset.fallbackSrcset} data-model-avif-srcset={asset.avifSrcset} data-model-webp-srcset={asset.webpSrcset} data-gallery-src={asset.lightbox.fallback} data-gallery-avif={asset.lightbox.avif} data-gallery-webp={asset.lightbox.webp} data-gallery-fallback={asset.lightbox.fallback} data-gallery-width={asset.lightbox.width} data-gallery-height={asset.lightbox.height} data-gallery-alt={image.alt} data-model-alt={image.alt} data-model-title={profile.name} data-gallery-title={metadata.title} data-gallery-description={metadata.description} data-model-position={image.objectPosition} aria-label={`${profile.name}, ${hu ? "kép" : "image"} ${index + 1}`} aria-pressed={index === 0 ? "true" : "false"}><ResponsiveImage image={image} role="thumb" objectPosition={image.objectPosition} loading="lazy" /></button>; })}
             </div>
-            <button class="model-gallery__main" type="button" data-gallery-trigger data-model-main data-gallery-src={firstAsset.lightbox.fallback} data-gallery-avif={firstAsset.lightbox.avif} data-gallery-webp={firstAsset.lightbox.webp} data-gallery-fallback={firstAsset.lightbox.fallback} data-gallery-width={firstAsset.lightbox.width} data-gallery-height={firstAsset.lightbox.height} data-gallery-alt={firstImage.alt} data-gallery-title={profile.name} aria-label={hu ? `Kép megnyitása: ${profile.name}` : `Open ${profile.name} image`}>
+            <button class="model-gallery__main" type="button" data-gallery-trigger data-model-main data-gallery-src={firstAsset.lightbox.fallback} data-gallery-avif={firstAsset.lightbox.avif} data-gallery-webp={firstAsset.lightbox.webp} data-gallery-fallback={firstAsset.lightbox.fallback} data-gallery-width={firstAsset.lightbox.width} data-gallery-height={firstAsset.lightbox.height} data-gallery-alt={firstImage.alt} data-gallery-title={profile.name} data-gallery-description={inferGalleryMetadata(firstImage, { title: profile.name }).description} aria-label={hu ? `Kép megnyitása: ${profile.name}` : `Open ${profile.name} image`}>
               <ResponsiveImage image={firstImage} role="gallery" className="model-gallery__main-image" objectPosition={firstImage.objectPosition} loading="lazy" />
             </button>
           </div>
@@ -549,9 +552,11 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : seasonalType === "photoshoot" ? (
   <>
     <PageHero variant="service" headingId="seasonal-title" title={page.h1} lead={seasonalPage.hero} description={seasonalPage.intro} />
-    <section class="service-gallery service-gallery--seasonal" aria-label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"}>{seasonalPageImages.map((imageData: any, index: number) => <GalleryImage image={imageData} index={index} label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`} />)}</section>
+    <section class="horizontal-masonry-gallery-section christmas-photoshoot-gallery-section" aria-label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"}>
+      <HorizontalMasonryGallery {...galleryA11y} images={seasonalPageImages} label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} desktopHeight={476} />
+    </section>
     <PriceSection heading={seasonalPage.packageHeading} lead={seasonalPage.packageLead} packages={seasonalPackages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="seasonal-packages-title" />
-    <StudioSection heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
+    <StudioSection heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={seasonalStudioIntroImage?.src || studioSectionImage} imageAlt={seasonalStudioIntroImage?.alt || studioSectionImageAlt} imageWidth={882} imageHeight={1399} emphasizeBulletLeadins />
     <GalleryLightbox label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} hu={hu} />
   </>
 ) : seasonalType === "studio" ? (
@@ -559,11 +564,39 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <ImageHero variant="christmas" headingId="seasonal-title" title={page.h1} image={seasonalPageImages[0]} lead={seasonalPage.hero}>
       <a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a>
     </ImageHero>
-    <StudioSection heading={seasonalPage.introHeading} intro={seasonalPage.intro} bullets={seasonalPage.introBullets} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
-    <section class="seasonal-gallery"><ResponsiveImage image={seasonalPageImages[1]} role="content" loading="lazy" /><div><h2>{seasonalPage.sectionHeading}</h2><p>{seasonalPage.sectionIntro}</p><ul>{seasonalPage.sectionBullets.map((bullet: string) => <li>{bullet}</li>)}</ul></div></section>
-    <section class="booking-intro"><p>{seasonalPage.packageIntro}</p></section><section class="booking-prices"><article><h2>{hu ? "Kedvezményes Studió Idősáv" : "Discounted Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig / 9:00 - 18:00" : "Monday to Thursday / 9:00 - 18:00"}</p><strong>{hu ? "6000 Ft / óra" : "6000 HUF / hour"}</strong></article><article><h2>{hu ? "Standard Studió Idősáv" : "Standard Studio Timeslots"}</h2><p>{hu ? "Hétfőtől csütörtökig 18:00 - 22:00; péntek és hétvége 9:00 - 22:00" : "Monday to Thursday 18:00 - 22:00; Friday & Weekend 9:00 - 22:00"}</p><strong>{hu ? "8000 Ft / óra" : "8000 HUF / hour"}</strong></article><article><h2>{hu ? "10 órás bérlet" : "10 hour Membership"}</h2><p>{hu ? "Bármelyik nap / óránként felbontható" : "Any day / can be broken up by the hour"}</p><strong>60.000. HUF</strong><span>SAVE UP TO 37%</span></article></section>
-    <section class="seasonal-gallery seasonal-gallery--strip">{seasonalGalleryImages.map((imageData: any, index: number) => <GalleryImage image={imageData} index={index} label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`} />)}</section>
-    <section class="service-contact"><h2>{seasonalPage.contactHeading}</h2><p>{seasonalPage.contactBody}</p><a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a></section>
+    <section class="christmas-studio-feature christmas-studio-feature--intro">
+      <ResponsiveImage image={seasonalStudioIntroImage} role="content" loading="lazy" />
+      <div class="christmas-studio-feature__copy">
+        <h2>{seasonalPage.introHeading}</h2><p>{seasonalPage.intro}</p><ul>{seasonalPage.introBullets.map((bullet: string) => <li>{bullet}</li>)}</ul>
+      </div>
+    </section>
+    <ChristmasStudioGallery images={seasonalGalleryImages} heading={seasonalPage.decorationHeading} hu={hu} />
+    <section class="christmas-studio-details"><h2>{seasonalPage.sectionHeading}</h2><p>{seasonalPage.sectionIntro}</p><ul>{seasonalPage.sectionBullets.map((bullet: string) => <li>{bullet}</li>)}</ul></section>
+    <section class="booking-intro"><p>{seasonalPage.packageIntro}</p></section>
+    <section class="booking-prices">
+      <article>
+        <h2>{hu ? <>Kedvezményes<br />Studió Idősáv</> : <>Discounted<br />Studio Timeslots</>}</h2>
+        <p>{hu ? <>Hétfőtől csütörtökig<br />9:00 - 18:00</> : <>Monday to Thursday<br />9:00 - 18:00</>}</p>
+        <strong>{hu ? "6000 Ft / óra" : "6000 HUF / hour"}</strong>
+      </article>
+      <article>
+        <h2>{hu ? <>Standard<br />Studió Idősáv</> : <>Standard<br />Studio Timeslots</>}</h2>
+        <p>{hu ? <>Hétfőtől csütörtökig<br />18:00 - 22:00<br /><br />Pénteken és hétvégén<br />9:00 - 22:00</> : <>Monday to Thursday<br />18:00 - 22:00<br /><br />Friday &amp; Weekend<br />9:00 - 22:00</>}</p>
+        <strong>{hu ? "8000 Ft / óra" : "8000 HUF / hour"}</strong>
+      </article>
+      <article>
+        <h2>{hu ? "10 órás bérlet" : "10 hour Membership"}</h2>
+        <p>{hu ? <>Bármelyik nap<br />10:00 - 22:00<br /><br />Órákra bontható</> : <>Any day<br />10:00 - 22:00<br /><br />Can be broken up by the hour</>}</p>
+        <strong>{hu ? "60.000. Ft" : "60.000. HUF"}</strong>
+        <span>{hu ? "SPÓROLJ AKÁR 37%-OT" : "SAVE UP TO 37%"}</span>
+      </article>
+    </section>
+    <section class="christmas-studio-closing">
+      <div class="christmas-studio-feature christmas-studio-feature--closing">
+        <ResponsiveImage image={seasonalPageImages[3]} role="content" loading="lazy" />
+        <div class="christmas-studio-feature__copy"><h2>{seasonalPage.introHeading}</h2><p>{seasonalPage.intro}</p><a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a></div>
+      </div>
+    </section>
     <GalleryLightbox label={hu ? "Karácsonyi stúdió galériája" : "Christmas studio gallery"} hu={hu} />
   </>
 ) : isProfile ? (

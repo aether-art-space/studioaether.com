@@ -941,7 +941,14 @@ export const packagesImages = {
 };
 
 const serviceImage = (name, width, height, alt = "") => ({ src: `/images/wix/service/${name}`, width, height, alt });
-const wixGalleryImage = (src, width, height, alt) => ({ src, width, height, alt });
+const wixGalleryImage = (src, width, height, alt, title = "", description = "") => ({
+  src,
+  width,
+  height,
+  alt,
+  ...(title ? { title } : {}),
+  ...(description ? { description } : {})
+});
 
 const recoveredCommercialImages = [
   wixLiveGalleryImage("94c0c9_b1dff8bcb8c540f89594dded83cd0f05~mv2.jpg", 1000, 1500, "commercial photography at aether art space", "Portrék a Drag Hungary 2023 győztesének", "Commercial portrait for the Drag Queen Hungary contest winner."),
@@ -982,13 +989,13 @@ const recoveredPetImages = [
 
 export const serviceImages = {
   commercial: [
-    { ...serviceImage("commercial-01.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Pumpfreak", description: "Product images with a model for an upcoming gymwear brand." }, { ...serviceImage("commercial-02.png", 1000, 800, "commercial photography at aether art space"), title: "Mesotica skincare", description: "Product photography for a skincare product family." }, { ...serviceImage("commercial-03.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Pumpfreak", description: "Product images with a model for an upcoming gymwear brand." }, { ...serviceImage("commercial-04.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Sword – Messer", description: "Product photography for an artisanal swordmaker." }, { ...serviceImage("commercial-05.jpg", 1500, 1000, "commercial photography at aether art space"), title: "Brand image photography" }, { ...serviceImage("commercial-06.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Hungarikum perfume", description: "Marketing photography in nature for a Hungarian luxury perfume brand." }, { ...serviceImage("commercial-07.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Commodity Gold – perfume", description: "Commercial photography for a contemporary American fragrance brand." }, { ...serviceImage("commercial-08.jpg", 1500, 1000, "commercial photography at aether art space"), title: "Product photography – artisanal candle holders", description: "Product photography for a Spanish artisan." }, { ...serviceImage("commercial-09.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Brand image photography", description: "An ice skater and her trainer in the studio." }, { ...serviceImage("commercial-10.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Drag Queen Hungary 2021 winner", description: "Commercial portrait for the Drag Queen 2021 contest first prize winner." }, ...recoveredCommercialImages
+    { ...serviceImage("commercial-01.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Pumpfreak", description: "Product images with a model for an upcoming gymwear brand." }, { ...serviceImage("commercial-02.png", 1000, 800, "commercial photography at aether art space"), title: "Mesotica skincare", description: "Product photography for a skincare product family." }, { ...serviceImage("commercial-03.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Pumpfreak", description: "Product images with a model for an upcoming gymwear brand." }, { ...serviceImage("commercial-04.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Sword – Messer", description: "Product photography for an artisanal swordmaker." }, { ...serviceImage("commercial-05.jpg", 1500, 1000, "commercial photography at aether art space"), title: "Brand image photography", autoMetadata: false }, { ...serviceImage("commercial-06.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Hungarikum perfume", description: "Marketing photography in nature for a Hungarian luxury perfume brand." }, { ...serviceImage("commercial-07.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Commodity Gold – perfume", description: "Commercial photography for a contemporary American fragrance brand." }, { ...serviceImage("commercial-08.jpg", 1500, 1000, "commercial photography at aether art space"), title: "Product photography – artisanal candle holders", description: "Product photography for a Spanish artisan." }, { ...serviceImage("commercial-09.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Brand image photography", description: "An ice skater and her trainer in the studio." }, { ...serviceImage("commercial-10.jpg", 1000, 1500, "commercial photography at aether art space"), title: "Drag Queen Hungary 2021 winner", description: "Commercial portrait for the Drag Queen 2021 contest first prize winner." }, ...recoveredCommercialImages
   ],
   corporate: [
-    { ...serviceImage("corporate-01.jpg", 1000, 1500, "corporate portrait photography"), title: "Corporate portrait", description: "Part of a company portrait session for Cambridge Mobile Telematics in their Budapest office." }, { ...serviceImage("corporate-02.jpg", 666, 999, "corporate portrait photography"), title: "Executive portrait", description: "Portrait for a finance entrepreneur in the studio." }, { ...serviceImage("corporate-03.png", 1000, 667, "corporate team photography"), title: "Beautician entrepreneur – business portrait", description: "Business portrait photoshoot in the studio for a beautician entrepreneur." }, { ...serviceImage("corporate-04.jpg", 666, 999, "corporate portrait photography"), title: "Business portrait", description: "Professional portrait as part of a company photoshoot for a digital marketing specialist." }, serviceImage("corporate-05.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-06.jpg", 1000, 1500, "corporate portrait photography"), serviceImage("corporate-07.jpg", 666, 999, "corporate team photography")
+    { ...serviceImage("corporate-01.jpg", 1000, 1500, "corporate portrait photography"), title: "Corporate portrait", description: "Part of a company portrait session for Cambridge Mobile Telematics in their Budapest office." }, { ...serviceImage("corporate-02.jpg", 666, 999, "corporate portrait photography"), title: "Executive portrait", description: "Portrait for a finance entrepreneur in the studio." }, { ...serviceImage("corporate-03.png", 1000, 667, "corporate team photography"), title: "Beautician entrepreneur – business portrait", description: "Business portrait photoshoot in the studio for a beautician entrepreneur." }, { ...serviceImage("corporate-04.jpg", 666, 999, "corporate portrait photography"), title: "Business portrait", description: "Professional portrait as part of a company photoshoot for a digital marketing specialist." }, { ...serviceImage("corporate-05.jpg", 1000, 1500, "corporate portrait photography"), title: "Offsite candid shots", description: "Company culture photography at an offsite location with Octomind, an AI tech company." }, { ...serviceImage("corporate-06.jpg", 1000, 1500, "corporate portrait photography"), title: "Octomind – team photo", description: "Team photo for an AI tech startup on location." }, { ...serviceImage("corporate-07.jpg", 666, 999, "corporate team photography"), title: "Executive portrait", description: "Business portrait in the studio." }
   ],
   portrait: [
-    serviceImage("portrait-01.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-02.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-03.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-04.jpg", 2688, 4033, "portrait photography in Budapest"), serviceImage("portrait-05.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-06.jpg", 2688, 4032, "portrait photography in Budapest"), serviceImage("portrait-07.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-08.jpg", 666, 999, "portrait photography in Budapest"), serviceImage("portrait-09.jpg", 1000, 1250, "portrait photography in Budapest"),
+    { ...serviceImage("portrait-01.jpg", 1000, 1500, "portrait photography in Budapest"), title: "Executive portrait", description: "Business portrait in the studio." }, serviceImage("portrait-02.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-03.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-04.jpg", 2688, 4033, "portrait photography in Budapest"), serviceImage("portrait-05.jpg", 1000, 1500, "portrait photography in Budapest"), serviceImage("portrait-06.jpg", 2688, 4032, "portrait photography in Budapest"), serviceImage("portrait-07.jpg", 1500, 1000, "portrait photography in Budapest"), serviceImage("portrait-08.jpg", 666, 999, "portrait photography in Budapest"), serviceImage("portrait-09.jpg", 1000, 1250, "portrait photography in Budapest"),
     serviceImage("portrait-top-01.jpg", 1000, 1500, "close-up artistic portrait photography in Budapest"), serviceImage("portrait-top-02.jpg", 1000, 1500, "pink-haired fashion portrait photography in Budapest"), serviceImage("portrait-top-03.jpg", 1000, 1500, "dramatic studio portrait photography in Budapest"), serviceImage("portrait-top-04.jpg", 1000, 1500, "outdoor portrait photography in Budapest"), serviceImage("portrait-top-05.jpg", 1000, 1500, "artistic portrait photography in Budapest"), serviceImage("portrait-top-06.jpg", 1000, 1500, "business portrait photography in Budapest"), serviceImage("portrait-top-07.jpg", 1000, 1500, "outdoor lifestyle portrait photography in Budapest"), serviceImage("portrait-top-08.jpg", 1000, 1500, "artistic profile portrait photography in Budapest"), serviceImage("portrait-top-09.jpg", 2390, 3707, "casual portrait photography in Budapest"), ...recoveredPortraitImages
   ],
   fitness: [
@@ -1003,13 +1010,13 @@ export const serviceImages = {
 };
 
 export const corporateGalleryImages = [
-  wixGalleryImage("/images/wix/corporate/external-01.jpg", 317, 476, "corporate portrait photography"),
-  wixGalleryImage("/images/wix/corporate/external-02.jpg", 317, 476, "corporate portrait photography"),
-  wixGalleryImage("/images/wix/corporate/external-03.jpg", 317, 476, "corporate portrait photography"),
-  wixGalleryImage("/images/wix/corporate/external-04.jpg", 165, 247, "corporate portrait photography"),
-  wixGalleryImage("/images/wix/corporate/external-05.jpg", 165, 247, "office lifestyle photography"),
-  wixGalleryImage("/images/wix/corporate/external-06.png", 335, 224, "corporate team photography"),
-  wixGalleryImage("/images/wix/corporate/external-07.jpg", 317, 476, "corporate portrait photography"),
+  wixGalleryImage("/images/wix/corporate/external-01.jpg", 317, 476, "corporate portrait photography", "Corporate portrait", "Part of a company portrait session for Cambridge Mobile Telematics in their Budapest office."),
+  wixGalleryImage("/images/wix/corporate/external-02.jpg", 317, 476, "corporate portrait photography", "Executive portrait", "Portrait for a finance entrepreneur in the studio."),
+  wixGalleryImage("/images/wix/corporate/external-03.jpg", 317, 476, "corporate portrait photography", "Beautician entrepreneur – business portrait", "Business portrait photoshoot in the studio for a beautician entrepreneur."),
+  wixGalleryImage("/images/wix/corporate/external-04.jpg", 165, 247, "corporate portrait photography", "Business portrait", "Professional portrait as part of a company photoshoot for a digital marketing specialist."),
+  wixGalleryImage("/images/wix/corporate/external-05.jpg", 165, 247, "office lifestyle photography", "Offsite candid shots", "Company culture photography at an offsite location with Octomind, an AI tech company."),
+  wixGalleryImage("/images/wix/corporate/external-06.png", 335, 224, "corporate team photography", "Octomind – team photo", "Team photo for an AI tech startup on location."),
+  wixGalleryImage("/images/wix/corporate/external-07.jpg", 317, 476, "corporate portrait photography", "Executive portrait", "Business portrait in the studio."),
   wixGalleryImage("/images/wix/corporate/external-08.jpg", 317, 476, "event and team building photography"),
   wixGalleryImage("/images/wix/corporate/external-09.jpg", 317, 476, "office lifestyle photography"),
   wixGalleryImage("/images/corporate-octomind-daniel.jpg", 4000, 6000, "Octomind executive portrait"),
@@ -1025,9 +1032,9 @@ export const photoPackageSets = {
       { title: "Large Christmas Photoshoot Package", description: "perfect for large families and groups for holiday photos", price: "79.000. HUF", features: ["studio rent included", "21 high quality photographs", "up to 3 outfits", "2+ adults + children"] }
     ],
     hu: [
-      { title: "Kis Karácsonyi Fotózás Csomag", description: "készítsetek néhány közös képet a pároddal", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magas minőségű fénykép", "1 outfit", "párok"] },
-      { title: "Közepes Karácsonyi Fotózás Csomag", description: "jó választás családok éves ünnepi fotózásához", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magas minőségű fénykép", "akár 3 outfit", "2 felnőtt + gyerekek"] },
-      { title: "Nagy Karácsonyi Fotózás Csomag", description: "tökéletes nagy családok és csoportok ünnepi fotózásához", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magas minőségű fénykép", "akár 3 outfit", "2+ felnőtt + gyerekek"] }
+      { title: "Kis Karácsonyi Fotózás Csomag", description: "készíts néhány képet a pároddal studiónkban", price: "39.000. Ft", features: ["studió bérlés", "6 magas minőségű fotó", "fotók 1 öltözékkel", "pároknak"] },
+      { title: "Közepes Karácsonyi Fotózás Csomag", description: "jó választás családoknak az éves karácsonyi fotóikhoz", price: "59.000. Ft", features: ["studió bérlés", "15 magas minőségű fotó", "fotók akár 3 öltözékkel", "2 felnőtt + gyerekek"] },
+      { title: "Nagy Karácsonyi Fotózás Csomag", description: "tökéletes nagy családoknak és csoportoknak ünnepi fotókhoz", price: "79.000. Ft", features: ["studió bérlés", "21 magas minőségű fotó", "fotók akár 3 öltözékkel", "2+ felnőtt + gyerekek"] }
     ]
   },
   portrait: {
@@ -1224,13 +1231,13 @@ export const seasonalContent = {
 
 export const seasonalImages = {
   photoshoot: [
-    { src: "/images/wix/seasonal/christmas-01.jpg", width: 1868, height: 2802, alt: "Christmas photoshoot with a couple", title: "Piller family at Christmas", description: "Yearly Christmas family photoshoot in the studio" },
-    { src: "/images/wix/seasonal/christmas-02.jpg", width: 1333, height: 2000, alt: "Christmas portrait in the studio", title: "Christmas photo of the smallest member of the family", description: "Smiling baby wearing a Santa hat, surrounded by Christmas lights in the studio." },
-    { src: "/images/wix/seasonal/christmas-03.jpg", width: 1333, height: 2000, alt: "Festive studio portrait", title: "Christmas cat!", description: "You can also bring your pet to your holiday photoshoot." },
-    { src: "/images/wix/seasonal/christmas-04.jpeg", width: 4570, height: 3047, alt: "Christmas family photography" },
-    { src: "/images/wix/seasonal/christmas-05.jpg", width: 1333, height: 2000, alt: "Holiday portrait photography" },
-    { src: "/images/wix/seasonal/christmas-06.jpg", width: 4000, height: 6000, alt: "Christmas-themed studio portrait" },
-    { src: "/images/wix/seasonal/christmas-07.jpeg", width: 2228, height: 3342, alt: "Festive portrait in Budapest studio" },
+    wixLiveGalleryImage("94c0c9_5c07872f467441098cef95acf7b5fbaa~mv2.jpg", 1868, 2802, "Christmas photoshoot with a couple", "Piller family at Christmas", "Yearly Christmas family photoshoot in the studio"),
+    wixLiveGalleryImage("94c0c9_fe3770802fb24044b5dd17845f6134da~mv2.jpg", 1333, 2000, "Christmas portrait in the studio", "Christmas photo of the smallest member of the family", "Smiling baby wearing a Santa hat, surrounded by Christmas lights in the studio."),
+    wixLiveGalleryImage("94c0c9_d0dc54e081564e4abac11fffd44b6e1f~mv2.jpg", 1333, 2000, "Festive studio portrait", "Christmas cat!", "You can also bring your pet to your holiday photoshoot."),
+    wixLiveGalleryImage("94c0c9_9380a1e8387e4caa80a7a43d61b5e17b~mv2.jpeg", 4570, 3047, "Christmas family photography"),
+    wixLiveGalleryImage("94c0c9_1f75b1c45d4e4aa09ebe93348d7ff570~mv2.jpg", 1333, 2000, "Holiday portrait photography"),
+    wixLiveGalleryImage("94c0c9_301b0780d18948ddac3307f8f300e9c1~mv2.jpg", 4000, 6000, "Christmas-themed studio portrait"),
+    wixLiveGalleryImage("94c0c9_91a0a3fc14b34068ac35ca25edb8d148~mv2.jpeg", 2228, 3342, "Festive portrait in Budapest studio"),
     wixLiveGalleryImage("94c0c9_26d6e48509fa4e029ffc45564e76cf1c~mv2.jpeg", 3613, 5420, "Festive portrait in Budapest studio")
   ],
   studio: [
@@ -1239,7 +1246,7 @@ export const seasonalImages = {
     { src: "/images/wix/seasonal/christmas-studio-03.jpg", width: 2963, height: 4444, alt: "Holiday studio props and decoration" },
     { src: "/images/wix/seasonal/christmas-studio-detail.jpg", width: 4000, height: 6000, alt: "Christmas studio detail" }
   ],
-  studioIntro: wixLiveGalleryImage("94c0c9_77a1c37b2fde43baa5724ca9206fde11~mv2.jpg", 882, 1399, "Christmas studio interior in Budapest"),
+  studioIntro: wixLiveGalleryImage("christmas-studio-intro.jpg", 882, 1399, "Christmas studio interior in Budapest"),
   studioGallery: [
     wixLiveGalleryImage("94c0c9_fe3770802fb24044b5dd17845f6134da~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
     wixLiveGalleryImage("94c0c9_c8f896eaa5894fe0b3fbf0dfdd06a92b~mv2.jpg", 6000, 4000, "Christmas-themed studio in Budapest"),
