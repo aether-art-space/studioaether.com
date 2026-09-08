@@ -101,6 +101,7 @@ button, .button, .mobile-nav-book { border-radius: 5px; }
 .language-chevron { width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
 .language-menu[open] .language-chevron { transform: rotate(225deg) translate(-1px, -1px); }
 .language-options { position: absolute; top: 53px; right: 0; z-index: 25; width: 74px; padding: 5px; border: 1px solid var(--ink); border-radius: 5px; background: var(--paper); box-shadow: 0 10px 24px rgb(0 0 0 / 10%); }
+.language-options::before { position: absolute; top: -12px; right: 0; left: 0; height: 12px; content: ""; }
 .language-options a { display: block; width: 100%; height: 39px; padding: 8px 7px; color: var(--ink); font: 700 16px/23px var(--sans); letter-spacing: 0; text-decoration: none; }
 .language-options a:hover { background: var(--accent); text-decoration: none; }
 .nav-trigger:focus-visible, .nav-dropdown a:focus-visible, .header-book:focus-visible, .language-switch:focus-visible, .language-options a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
@@ -224,18 +225,18 @@ main { width: 100%; }
   .brand {
     position: absolute;
     z-index: 1;
-    top: 2px;
+    top: 50%;
     left: 50%;
     width: 140px;
     height: 62px;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
   .brand img { width: 140px; height: 62px; }
   .header-interactive { display: block; height: 76px; }
   .header-actions {
     position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 76px;
@@ -245,18 +246,25 @@ main { width: 100%; }
   .language-switch {
     width: 82px;
     height: 45px;
-    margin-top: 13px;
+    margin-top: 0;
     padding: 0 16px;
   }
-  .language-control { margin-left: 18px; }
+  .language-control {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    margin: 0;
+    transform: translateY(-50%);
+  }
   .language-options { top: 66px; width: 82px; }
   .mobile-nav-trigger {
     position: absolute;
-    top: 13px;
+    top: 50%;
     right: 18px;
     width: 44px;
     height: 44px;
     border: 0;
+    transform: translateY(-50%);
   }
   .site-footer__details { margin-top: 10px; padding: 0 20px; }
   .site-footer__grid { gap: 0; max-width: none; }
