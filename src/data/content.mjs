@@ -1537,7 +1537,7 @@ export const legalContent = {
 };
 
 export const homeImages = {
-  hero: { src: "/images/wix/jpg/hero.jpg", width: 2560, height: 1332, alt: "aether art space photo studio in Budapest" },
+  hero: { src: "/images/wix/reference/hero-main.jpg", width: 1440, height: 667, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },
   features: [
     { src: "/images/wix/reference/feature-studio.jpg", alt: "photostudio interior" },

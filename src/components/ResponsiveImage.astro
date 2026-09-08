@@ -14,6 +14,7 @@ interface Props {
 const { image, role = "content", className = "", loading = role === "hero" ? "eager" : "lazy", fetchpriority, decoding = "async", objectPosition } = Astro.props;
 const asset = resolveImage(image, role);
 const style = objectPosition ? `object-position: ${objectPosition};` : undefined;
+const fallbackSrcset = asset.fallbackSrcset || (asset.src.startsWith("/images/generated/") && asset.width ? `${asset.src} ${asset.width}w` : "");
 ---
 <picture class="responsive-image">
   {asset.avifSrcset && <source type="image/avif" srcset={asset.avifSrcset} sizes={asset.sizes} />}
@@ -21,7 +22,7 @@ const style = objectPosition ? `object-position: ${objectPosition};` : undefined
   <img
     class={className}
     src={asset.src}
-    srcset={asset.fallbackSrcset || undefined}
+    srcset={fallbackSrcset || undefined}
     sizes={asset.sizes}
     alt={asset.alt}
     width={asset.width}
