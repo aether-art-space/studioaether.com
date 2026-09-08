@@ -7,6 +7,7 @@ import * as content from "../src/data/content.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRoot = path.join(root, "src", "assets", "images");
+const recoveredRoot = path.join(root, "src", "assets", "recovered");
 const defaultOutputRoot = path.join(root, "public", "images", "generated");
 const outputRoot = path.resolve(process.argv.find((arg) => arg.startsWith("--out="))?.slice(6) || defaultOutputRoot);
 const publicPrefix = "/images/generated";
@@ -21,7 +22,7 @@ const explicitSources = [
 ];
 
 const walk = (value, result) => {
-  if (typeof value === "string" && value.startsWith("/images/") && !value.startsWith("/images/generated/")) result.add(value);
+  if (typeof value === "string" && ((value.startsWith("/images/") && !value.startsWith("/images/generated/")) || value.startsWith("/wix-recovered/"))) result.add(value);
   else if (Array.isArray(value)) value.forEach((item) => walk(item, result));
   else if (value instanceof Map) value.forEach((item) => walk(item, result));
   else if (value instanceof Set) value.forEach((item) => walk(item, result));
@@ -44,6 +45,7 @@ const sourceFiles = async (directory, relative = "") => {
 };
 
 const toSourceUrl = (relative) => `/images/${relative.split(path.sep).join("/")}`;
+const toRecoveredSourceUrl = (relative) => `/wix-recovered/${relative.split(path.sep).join("/")}`;
 const withoutExtension = (relative) => relative.slice(0, -path.extname(relative).length);
 const hashFor = async (filePath) => crypto.createHash("sha1").update(await fs.readFile(filePath)).digest("hex").slice(0, 10);
 const dimensionsFor = (metadata) => {
@@ -135,7 +137,30 @@ const writeManifest = async (manifest) => {
   await fs.writeFile(path.join(outputRoot, "manifest.json"), serialized, "utf8");
 };
 
-const useGeneratedAssetsOnly = async () => {
+const buildEntry = async ({ inputPath, outputRelative, source }) => {
+  const [metadata, hash] = await Promise.all([sharp(inputPath, { failOn: "none" }).metadata(), hashFor(inputPath)]);
+  const { width: sourceWidth, height: sourceHeight } = dimensionsFor(metadata);
+  const alpha = Boolean(metadata.hasAlpha);
+  const maximum = variantDimensions(sourceWidth, sourceHeight, 2400);
+  const regularWidths = [...new Set(widthCandidates.map((candidate) => variantDimensions(sourceWidth, sourceHeight, candidate).width))].filter((candidate) => candidate > 0);
+  const regular = {};
+  for (const format of ["avif", "webp", alpha ? "png" : "jpeg"]) regular[format] = [];
+  for (const candidateWidth of regularWidths) {
+    const dimensions = variantDimensions(sourceWidth, sourceHeight, candidateWidth);
+    const variants = await buildFormatSet({ inputPath, relative: outputRelative, hash, label: `${dimensions.width}w`, ...dimensions, alpha });
+    for (const [format, variant] of Object.entries(variants)) regular[format].push(variant);
+  }
+  const thumb = {};
+  for (const format of ["avif", "webp", alpha ? "png" : "jpeg"]) thumb[format] = [];
+  for (const size of thumbCandidates) {
+    const variants = await buildFormatSet({ inputPath, relative: outputRelative, hash, label: `thumb-${size}`, width: size, height: size, square: true, alpha });
+    for (const [format, variant] of Object.entries(variants)) thumb[format].push(variant);
+  }
+  const full = await buildFormatSet({ inputPath, relative: outputRelative, hash, label: "full", ...maximum, alpha });
+  return [source, { source, width: sourceWidth, height: sourceHeight, alpha, hash, regular, thumb, full }];
+};
+
+const useGeneratedAssetsOnly = async (sources = [...sourcePaths]) => {
   let manifest;
   try {
     manifest = JSON.parse(await fs.readFile(path.join(outputRoot, "manifest.json"), "utf8"));
@@ -143,10 +168,10 @@ const useGeneratedAssetsOnly = async () => {
     throw new Error(`Source originals are absent and the generated image manifest is unavailable: ${error.message}`);
   }
 
-  const missing = [...sourcePaths].filter((source) => !manifest.images?.[source]);
+  const missing = sources.filter((source) => !manifest.images?.[source]);
   if (missing.length) throw new Error(`Generated image entries are missing for:\n${missing.join("\n")}`);
 
-  for (const source of sourcePaths) {
+  for (const source of sources) {
     const entry = manifest.images[source];
     for (const variant of [
       ...Object.values(entry.regular || {}).flat(),
@@ -162,13 +187,56 @@ const useGeneratedAssetsOnly = async () => {
     }
   }
 
-  console.log(`Using checked-in image variants (${sourcePaths.size} referenced sources; source originals absent).`);
+  console.log(`Using checked-in image variants (${sources.length} referenced sources; source originals absent).`);
+};
+
+const generateRecoveredAssets = async (files) => {
+  let manifest;
+  try {
+    manifest = JSON.parse(await fs.readFile(path.join(outputRoot, "manifest.json"), "utf8"));
+  } catch (error) {
+    throw new Error(`Cannot extend the generated image manifest for recovered assets: ${error.message}`);
+  }
+
+  const referenced = files.filter((relative) => sourcePaths.has(toRecoveredSourceUrl(relative)));
+  const expectedSources = [...sourcePaths].filter((source) => source.startsWith("/wix-recovered/"));
+  const availableSources = new Set(referenced.map(toRecoveredSourceUrl));
+  const missing = expectedSources.filter((source) => !availableSources.has(source) && !manifest.images?.[source]);
+  if (missing.length) throw new Error(`Missing recovered source images:\n${missing.join("\n")}`);
+
+  let generated = 0;
+  const entries = await mapLimit(referenced, 4, async (relative) => {
+    const inputPath = path.join(recoveredRoot, relative);
+    const source = toRecoveredSourceUrl(relative);
+    const existing = manifest.images[source];
+    if (existing?.hash === await hashFor(inputPath)) {
+      let reusable = true;
+      for (const variantPath of variantPathsFor(existing)) {
+        if (!(await fs.access(path.join(outputRoot, variantPath)).then(() => true).catch(() => false))) {
+          reusable = false;
+          break;
+        }
+      }
+      if (reusable) return [source, existing];
+    }
+    generated += 1;
+    return buildEntry({ inputPath, outputRelative: path.join("wix-recovered", relative), source });
+  });
+  for (const [source, entry] of entries) manifest.images[source] = entry;
+  if (generated) manifest.generatedAt = new Date().toISOString();
+  await writeManifest(manifest);
+  console.log(`Recovered image sources are up to date (${referenced.length} checked; ${generated} regenerated).`);
 };
 
 const main = async () => {
   const sourceRootExists = await fs.stat(sourceRoot).then((stat) => stat.isDirectory()).catch(() => false);
+  const recoveredRootExists = await fs.stat(recoveredRoot).then((stat) => stat.isDirectory()).catch(() => false);
   if (!sourceRootExists) {
-    await useGeneratedAssetsOnly();
+    const generatedSources = [...sourcePaths].filter((source) => !source.startsWith("/wix-recovered/"));
+    if (recoveredRootExists) {
+      await useGeneratedAssetsOnly(generatedSources);
+      await generateRecoveredAssets(await sourceFiles(recoveredRoot));
+    } else await useGeneratedAssetsOnly([...sourcePaths]);
     return;
   }
 
@@ -195,38 +263,11 @@ const main = async () => {
   await fs.mkdir(outputRoot, { recursive: true });
 
   const manifest = { version: 1, generatedAt: new Date().toISOString(), images: {}, unusedSources: unused.map(toSourceUrl).sort() };
-  const entries = await mapLimit(referenced, 4, async (relative) => {
-    const inputPath = path.join(sourceRoot, relative);
-    const [metadata, hash] = await Promise.all([sharp(inputPath, { failOn: "none" }).metadata(), hashFor(inputPath)]);
-    const { width: sourceWidth, height: sourceHeight } = dimensionsFor(metadata);
-    const alpha = Boolean(metadata.hasAlpha);
-    const maximum = variantDimensions(sourceWidth, sourceHeight, 2400);
-    const regularWidths = [...new Set(widthCandidates.map((candidate) => variantDimensions(sourceWidth, sourceHeight, candidate).width))].filter((candidate) => candidate > 0);
-    const regular = {};
-    for (const format of ["avif", "webp", alpha ? "png" : "jpeg"]) regular[format] = [];
-    for (const candidateWidth of regularWidths) {
-      const dimensions = variantDimensions(sourceWidth, sourceHeight, candidateWidth);
-      const variants = await buildFormatSet({ inputPath, relative, hash, label: `${dimensions.width}w`, ...dimensions, alpha });
-      for (const [format, variant] of Object.entries(variants)) regular[format].push(variant);
-    }
-    const thumb = {};
-    for (const format of ["avif", "webp", alpha ? "png" : "jpeg"]) thumb[format] = [];
-    for (const size of thumbCandidates) {
-      const variants = await buildFormatSet({ inputPath, relative, hash, label: `thumb-${size}`, width: size, height: size, square: true, alpha });
-      for (const [format, variant] of Object.entries(variants)) thumb[format].push(variant);
-    }
-    const full = await buildFormatSet({ inputPath, relative, hash, label: "full", ...maximum, alpha });
-    return [toSourceUrl(relative), {
-      source: toSourceUrl(relative),
-      width: sourceWidth,
-      height: sourceHeight,
-      alpha,
-      hash,
-      regular,
-      thumb,
-      full
-    }];
-  });
+  const entries = await mapLimit(referenced, 4, (relative) => buildEntry({
+    inputPath: path.join(sourceRoot, relative),
+    outputRelative: relative,
+    source: toSourceUrl(relative)
+  }));
   for (const [source, entry] of entries) manifest.images[source] = entry;
   await writeManifest(manifest);
   console.log(`Generated ${referenced.length} referenced image sources; ${unused.length} source images are unused.`);
