@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T12:33:17.798Z",
+  "generatedAt": "2026-09-08T15:16:37.395Z",
   "images": {
     "/images/corporate-octomind-daniel.jpg": {
       "source": "/images/corporate-octomind-daniel.jpg",
@@ -94458,6 +94458,211 @@
         },
         "jpeg": {
           "src": "/images/generated/wix-recovered/94c0c9_9380a1e8387e4caa80a7a43d61b5e17b~mv2--full--d461fd9ffb.jpg",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/wix-recovered/hero-main-people.jpg": {
+      "source": "/wix-recovered/hero-main-people.jpg",
+      "width": 5750,
+      "height": 3833,
+      "alpha": false,
+      "hash": "351d469c8f",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--320w--351d469c8f.avif",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--480w--351d469c8f.avif",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--640w--351d469c8f.avif",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--960w--351d469c8f.avif",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--1280w--351d469c8f.avif",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--1600w--351d469c8f.avif",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--2400w--351d469c8f.avif",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--320w--351d469c8f.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--480w--351d469c8f.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--640w--351d469c8f.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--960w--351d469c8f.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--1280w--351d469c8f.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--1600w--351d469c8f.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--2400w--351d469c8f.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--320w--351d469c8f.jpg",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--480w--351d469c8f.jpg",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--640w--351d469c8f.jpg",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--960w--351d469c8f.jpg",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--1280w--351d469c8f.jpg",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--1600w--351d469c8f.jpg",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--2400w--351d469c8f.jpg",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--thumb-160--351d469c8f.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--thumb-320--351d469c8f.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--thumb-160--351d469c8f.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--thumb-320--351d469c8f.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--thumb-160--351d469c8f.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/hero-main-people--thumb-320--351d469c8f.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/wix-recovered/hero-main-people--full--351d469c8f.avif",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/wix-recovered/hero-main-people--full--351d469c8f.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/wix-recovered/hero-main-people--full--351d469c8f.jpg",
           "width": 2400,
           "height": 1600,
           "alpha": false
