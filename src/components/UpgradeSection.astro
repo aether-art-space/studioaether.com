@@ -1,0 +1,48 @@
+---
+interface UpgradeItem {
+  title: string;
+  description: string;
+  priceLabel: string;
+  price: string;
+  href?: string;
+  cta?: string;
+}
+
+interface Props {
+  items: UpgradeItem[];
+  heading?: string;
+  intro?: string;
+  headingId?: string;
+  ariaLabel?: string;
+  cardsOnly?: boolean;
+}
+
+const {
+  items,
+  heading,
+  intro,
+  headingId = "upgrades-section-title",
+  ariaLabel = "Upgrade options",
+  cardsOnly = false
+} = Astro.props;
+
+const sectionClass = ["packages-upgrades", cardsOnly ? "packages-upgrades--cards-only" : ""].filter(Boolean).join(" ");
+---
+
+<section class={sectionClass} aria-labelledby={heading ? headingId : undefined} aria-label={!heading ? ariaLabel : undefined}>
+  {!cardsOnly && heading && <div class="packages-upgrades__intro">
+    <h2 id={headingId}>{heading}</h2>
+    {intro && <p>{intro}</p>}
+  </div>}
+  <div class="service-upgrade-grid packages-upgrade-grid">
+    {items.map((upgrade) => <article>
+      <h4>{upgrade.title}</h4>
+      <p>{upgrade.description}</p>
+      <div class="extras-card__price">
+        <span>{upgrade.priceLabel}</span>
+        <strong>{upgrade.price}</strong>
+      </div>
+      {!cardsOnly && upgrade.href && upgrade.cta && <a class="button button--secondary" href={upgrade.href}>{upgrade.cta}</a>}
+    </article>)}
+  </div>
+</section>

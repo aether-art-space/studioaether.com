@@ -554,14 +554,17 @@
 
 /* Package page: the shared neon price-card treatment for packages and upgrades. */
 .packages-primary { padding: 0 24px 95px; }
+.packages-primary--with-upgrades { padding-bottom: 48px; }
 .packages-primary .packages-card-grid { max-width: var(--content-max); margin: 0 auto; }
 .packages-upgrades { padding: 72px 24px 91px; background: #f5f5f5; }
 .packages-upgrades__intro { max-width: var(--content-reading-max); margin: 0 auto 49px; text-align: center; }
 .packages-upgrades__intro h2 { margin: 0 0 25px; font: 400 48px/1.1 var(--serif); }
 .packages-upgrades__intro p { margin: 0; font: var(--text-body); }
-.packages-upgrades .service-upgrade-grid { max-width: var(--content-max); margin: 0 auto; }
+.packages-upgrades--cards-only { padding-top: 0; background: var(--paper); }
+.packages-upgrades .service-upgrade-grid { max-width: calc(var(--content-max) - 48px); margin: 0 auto; }
 .packages-upgrades .service-upgrade-grid p { margin: 0 0 18px; font: var(--text-small); }
 .packages-upgrade-grid .button { width: 100%; min-width: 0; margin-top: 16px; }
+.seasonal-price-section--with-upgrades { padding-bottom: 24px; }
 
 /* Model directory: Wix-style portrait galleries with measurement cards. */
 .models-intro { padding: 39px 24px 64px; }
@@ -619,11 +622,14 @@
   .page-hero--packages h1 { font-size: clamp(45px, 12vw, 62px); }
   .page-hero--packages > .page-hero__lead { margin: 8px auto 0; font: 400 15px/22.5px var(--sans); }
   .packages-primary { padding: 0 18px 63px; }
-  .packages-primary .packages-card-grid, .packages-upgrades .service-upgrade-grid { width: 100%; }
+  .packages-primary--with-upgrades { padding-bottom: 32px; }
+  .packages-primary .packages-card-grid, .packages-upgrades .packages-upgrade-grid { width: 100%; }
   .packages-upgrades { padding: 57px 18px 63px; }
   .packages-upgrades__intro { margin-bottom: 35px; }
   .packages-upgrades__intro h2 { margin-bottom: 22px; font-size: 36px; }
   .packages-upgrades__intro p { font: 400 15px/22.5px var(--sans); }
+  .seasonal-price-section--with-upgrades { padding-bottom: 18px; }
+  .booking-price-section--with-upgrades { padding-bottom: 18px; }
 
   .page-hero--models { padding: 68px 18px 50px; }
   .page-hero--models h1 { font-size: clamp(45px, 12vw, 62px); }
@@ -1425,6 +1431,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .pricing-tabs + .artist-profiles--makeup { padding-top: 36px; }
 .pricing-tabs, .selfie-prices, #studio-pricing, #photographer-pricing, #makeup-pricing, #stylist-pricing { scroll-margin-top: 104px; }
 .booking-price-section { max-width: var(--content-max); padding-top: 28px; }
+.booking-price-section--with-upgrades { padding-bottom: 24px; }
 .booking-price-grid { max-width: var(--content-max); margin-right: auto; margin-left: auto; }
 .booking-price-grid .price-card { display: flex; min-height: 300px; flex-direction: column; }
 .booking-price-grid .price-card__header h3 { margin: 0 0 26px; font: 400 24px/1 var(--serif); text-wrap: normal; }
@@ -1434,12 +1441,6 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .booking-price-grid .price-card__description-line--bold { font-weight: 700 !important; }
 .booking-price-grid .price-card__details { min-width: 0; margin-top: auto; padding-top: 0; }
 .booking-price-grid .price-card__price { min-height: 0; margin: 0; padding: 0; }
-.booking-prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: var(--content-max); gap: 12px; margin: 0 auto; padding: 0 24px 60px; }
-.booking-prices article { display: flex; min-height: 240px; flex-direction: column; padding: 28px 22px; background: var(--ink); color: var(--paper); }
-.booking-prices h2 { margin: 0 0 18px; font: 400 30px/1.08 var(--serif); }
-.booking-prices p { margin: 0 0 18px; font: var(--text-small); }
-.booking-prices strong { margin-top: auto; font: 700 25px/1.1 var(--sans); }
-.booking-prices span { margin-top: 10px; font: var(--text-small); }
 .booking-note { max-width: var(--content-reading-max); margin: 0 auto 66px; }
 .booking-note .info-box__content { flex: 1 1 auto; }
 .booking-note .info-box__content ul { margin: 0; padding-left: 20px; }
@@ -1476,8 +1477,14 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .seasonal-gallery--strip img { display: block; width: 100%; height: 300px; object-fit: cover; }
 .christmas-studio-feature { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(980px, calc(100% - 36px)); margin: 62px auto 0; }
 .christmas-studio-feature > .responsive-image { display: block; min-width: 0; }
-.christmas-studio-feature img { display: block; width: 100%; height: 100%; border-radius: 0; object-fit: cover; }
-.christmas-studio-feature--intro { margin-bottom: 60px; }
+.christmas-studio-feature--intro > .responsive-image { padding-inline: 24px; }
+.christmas-studio-feature img { display: block; width: 100%; height: 100%; border-radius: 20px; object-fit: cover; }
+.christmas-studio-intro-copy { width: min(820px, calc(100% - 48px)); margin: 62px auto 0; text-align: center; }
+.christmas-studio-intro-copy p { margin: 0; font: var(--text-body); }
+.christmas-studio-disclaimer { width: min(100%, 680px); margin: 24px auto 0; padding: 20px 24px; border: 1px solid rgb(28 27 26 / 12%); border-radius: 20px; background: rgb(186 243 230 / 50%); text-align: center; }
+.christmas-studio-disclaimer__title { font: var(--font-ui); }
+.christmas-studio-disclaimer p + p { margin-top: 8px; }
+.christmas-studio-feature--intro { margin-top: 42px; margin-bottom: 60px; }
 .christmas-studio-feature--intro img { aspect-ratio: 882 / 1399; }
 .christmas-studio-closing { margin-top: 0; padding: 70px 0 90px; background: #f5f5f5; }
 .christmas-studio-feature--closing { margin: 0 auto; background: #fff; }
@@ -1489,7 +1496,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .christmas-studio-feature__copy li { margin: 8px 0; font: var(--text-small); }
 .christmas-studio-feature--closing .christmas-studio-feature__copy { padding: 66px 24px; }
 .christmas-studio-feature--closing .button { width: 262px; max-width: 100%; margin-top: 28px; }
-.christmas-decoration { --gallery-card: clamp(240px, 29vw, 409px); padding: 58px 40px 0; background: #f5f5f5; }
+.christmas-decoration { --gallery-card: clamp(240px, 29vw, 409px); padding: 58px 40px 0; background: var(--paper); }
 .christmas-decoration > h2 { width: min(950px, 100%); margin: 0 auto 40px; font: var(--font-section-title); text-align: center; }
 .christmas-decoration__viewport { position: relative; overflow-x: auto; scrollbar-width: none; }
 .christmas-decoration__viewport::-webkit-scrollbar { display: none; }
@@ -1507,7 +1514,8 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .christmas-studio-details p { margin: 0; font: var(--text-body); }
 .christmas-studio-details ul { margin: 38px 0 0; padding-left: 20px; }
 .christmas-studio-details li { margin: 8px 0; font: var(--text-small); }
-.christmas-studio-details + .booking-intro { padding-top: 80px; }
+.christmas-studio-details + .booking-intro { max-width: 884px; padding: 28px 24px 0; text-align: left; }
+.christmas-studio-details + .booking-intro p { margin: 0; }
 .profile-hero { display: grid; grid-template-columns: 323px minmax(0, 1fr); gap: 64px; align-items: stretch; width: min(980px, 100%); margin: 0 auto; padding: 0 24px 76px; }
 .profile-hero__portrait, .profile-hero__portrait > .responsive-image { display: block; min-width: 0; }
 .profile-hero__portrait > .responsive-image { height: 732px; }
@@ -1711,7 +1719,6 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .pricing-tabs:has(+ .artist-profiles--makeup) { width: 100%; margin-left: 0; padding-right: 18px; padding-left: 18px; }
   .pricing-tabs__list { display: none; }
   .pricing-tabs__select-wrap { position: relative; display: block; }
-  .booking-prices { grid-template-columns: 1fr; padding-right: 18px; padding-left: 18px; }
   .booking-note { margin-right: 18px; margin-left: 18px; }
   .booking-extras { padding-right: 18px; padding-left: 18px; }
   .booking-extras h2 { font-size: 39px; }
@@ -1724,7 +1731,12 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .seasonal-gallery--strip { grid-template-columns: 1fr 1fr; padding-right: 0; padding-left: 0; }
   .seasonal-gallery--strip img { height: 240px; }
   .christmas-studio-feature { width: 100%; grid-template-columns: 1fr; margin-top: 48px; }
-  .christmas-studio-feature--intro { margin-bottom: 64px; }
+  .christmas-studio-feature--intro > .responsive-image { padding-inline: 18px; }
+  .christmas-studio-intro-copy { width: calc(100% - 36px); margin-top: 48px; text-align: center; }
+  .christmas-studio-feature--intro { margin-top: 32px; margin-bottom: 0; }
+  .christmas-studio-feature--intro .christmas-studio-feature__copy { padding-top: 24px; padding-bottom: 0; }
+  .christmas-studio-feature--intro .christmas-studio-feature__copy h2 { margin-bottom: 0; }
+  .christmas-studio-feature--intro .christmas-studio-feature__copy ul { margin-top: 18px; }
   .christmas-studio-feature--intro img { height: auto; aspect-ratio: 882 / 1399; }
   .christmas-studio-closing { padding: 54px 0 64px; }
   .christmas-studio-feature--closing { margin: 0; }
@@ -1732,7 +1744,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .christmas-studio-feature__copy { padding: 44px 18px 50px; }
   .christmas-studio-feature__copy h2 { font-size: 43px; }
   .christmas-studio-feature--closing .christmas-studio-feature__copy { padding: 44px 18px 50px; }
-  .christmas-decoration { --gallery-card: calc((100vw - 48px) * .78); padding: 42px 18px 30px; }
+  .christmas-decoration { --gallery-card: calc((100vw - 48px) * .78); padding: 24px 18px 30px; }
   .christmas-decoration > h2 { margin-bottom: 28px; font-size: 39px; line-height: 1.08; }
   .christmas-decoration__feature { height: calc(var(--gallery-card) * 1.5); grid-template-columns: var(--gallery-card) calc(var(--gallery-card) + 16px) var(--gallery-card); }
   .christmas-decoration__feature-middle { grid-template-rows: calc((var(--gallery-card) * 1.5 - 12px) / 2) calc((var(--gallery-card) * 1.5 - 12px) / 2); }
@@ -1740,6 +1752,9 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .christmas-decoration__next { right: 8px; width: 52px; height: 52px; font-size: 22px; }
   .christmas-studio-details { width: calc(100% - 36px); margin-top: 60px; }
   .christmas-studio-details h2 { font-size: 28px; line-height: 1.2; }
+  .christmas-studio-details + .booking-intro { width: calc(100% - 36px); padding: 28px 0 0; }
+  .booking-price-section--with-upgrades { padding-bottom: 18px; }
+  .packages-upgrades--cards-only { padding-top: 0; }
   .profile-hero { grid-template-columns: 1fr; gap: 0; width: min(520px, 100%); padding: 0 18px 52px; }
   .profile-hero__portrait > .responsive-image { height: min(520px, 125vw); }
   .profile-hero__content { padding: 42px 0 0; text-align: center; }

@@ -6,7 +6,6 @@ import CircularCard from "./CircularCard.astro";
 import ExtrasCard from "./ExtrasCard.astro";
 import GalleryLightbox from "./GalleryLightbox.astro";
 import HorizontalMasonryGallery from "./HorizontalMasonryGallery.astro";
-import ChristmasStudioGallery from "./ChristmasStudioGallery.astro";
 import ImageHero from "./ImageHero.astro";
 import InfoBox from "./InfoBox.astro";
 import ExtrasSection from "./ExtrasSection.astro";
@@ -15,6 +14,7 @@ import PageHero from "./PageHero.astro";
 import PriceCard from "./PriceCard.astro";
 import PriceSection from "./PriceSection.astro";
 import PricingTabs from "./PricingTabs.astro";
+import UpgradeSection from "./UpgradeSection.astro";
 import StylistProfile from "./StylistProfile.astro";
 import StudioSection from "./StudioSection.astro";
 import ResponsiveImage from "./ResponsiveImage.astro";
@@ -149,6 +149,57 @@ const seasonalPageImages: any = seasonalType ? (seasonalImages as any)[seasonalT
 const seasonalGalleryImages: any = seasonalType === "studio" ? (seasonalImages as any).studioGallery : seasonalPageImages;
 const seasonalStudioIntroImage: any = seasonalType ? (seasonalImages as any).studioIntro : null;
 const seasonalPackages = seasonalType === "photoshoot" ? photoPackageSets.christmas[hu ? "hu" : "en"] : [];
+const christmasStudioPackages = seasonalType === "studio" ? [
+  {
+    title: hu ? "Kedvezményes Studió Idősáv" : "Discounted Studio Timeslots",
+    titleLines: hu ? ["Kedvezményes", "Studió Idősáv"] : ["Discounted", "Studio Timeslots"],
+    descriptionLines: hu ? [
+      { text: "Hétfőtől csütörtökig", bold: true },
+      { text: "9:00 - 18:00" },
+      { text: "" },
+      { text: "" }
+    ] : [
+      { text: "Monday to Thursday", bold: true },
+      { text: "9:00 - 18:00" },
+      { text: "" },
+      { text: "" }
+    ],
+    price: hu ? "6000 Ft / óra" : "6000 HUF / hour"
+  },
+  {
+    title: hu ? "Standard Studió Idősáv" : "Standard Studio Timeslots",
+    titleLines: hu ? ["Standard", "Studió Idősáv"] : ["Standard", "Studio Timeslots"],
+    descriptionLines: hu ? [
+      { text: "Hétfőtől csütörtökig", bold: true },
+      { text: "18:00 - 22:00" },
+      { text: "Pénteken és hétvégén", bold: true },
+      { text: "9:00 - 22:00" }
+    ] : [
+      { text: "Monday to Thursday", bold: true },
+      { text: "18:00 - 22:00" },
+      { text: "Friday & Weekend", bold: true },
+      { text: "9:00 - 22:00" }
+    ],
+    price: hu ? "8000 Ft / óra" : "8000 HUF / hour"
+  },
+  {
+    title: hu ? "10 órás bérlet" : "10 hour Membership",
+    titleLines: hu ? ["10 órás bérlet"] : ["10 hour Membership"],
+    titleAccent: hu ? "SPÓROLJ AKÁR 37%-OT" : "SAVE UP TO 37%",
+    descriptionLines: hu ? [
+      { text: "Bármelyik nap", bold: true },
+      { text: "10:00 - 22:00" },
+      { text: "" },
+      { text: "Órákra bontható" }
+    ] : [
+      { text: "Any day", bold: true },
+      { text: "10:00 - 22:00" },
+      { text: "" },
+      { text: "Can be broken up by the hour" }
+    ],
+    price: hu ? "60.000. Ft" : "60.000. HUF"
+  }
+] : [];
 const profileKey = page.path.endsWith("photographer-alexandra") ? "alexandra" : "daniel";
 const isProfile = page.path.endsWith("photographer-daniel") || page.path.endsWith("photographer-alexandra");
 const profilePage: any = isProfile ? (profileContent as any)[profileKey][hu ? "hu" : "en"] : null;
@@ -209,8 +260,8 @@ const weddingUi = hu ? {
 };
 const galleryA11y = hu ? { previousLabel: "Előző képek", nextLabel: "Következő képek", openLabel: "Kép megnyitása" } : {};
 const legalPage: any = page.section === "legal" ? (legalContent as any)[hu ? "hu" : "en"] : null;
-const bookingExtras = hu ? [["Papírháttér", "csak ha ráléptek", "3.000 Ft"], ["Smink", "profi sminkeseinktől", "15.000 Ft-tól"], ["Nagy angyalszárnyak", "fehér vagy fekete / 1 m+", "8.000 Ft"], ["Asszisztencia", "segítünk magyarul vagy angolul", "4.000 Ft / óra"], ["Styling", "dolgozz profi stylistjainkkal", "35.000 Ft-tól"], ["Különleges ruhák", "menyasszonyi ruha, népviselet stb.", "5.000 Ft-tól"], ["Kamerabérlés", "analóg vagy digitális kamerák és filmek", "4.000–9.000 Ft"], ["Fotómodellek", "tapasztalt modellek", "15.000 Ft / órától"], ["Füstgép", "folyadékkal együtt", "5.000 Ft"], ["Akvárium", "egy ember is belefér – vízzel töltve", "39.000 Ft"]] : [["Paper Backdrop", "applies if you step on it", "3.000 HUF"], ["Make-up", "work with our professional make-up artists", "from 15.000 HUF"], ["Large Angel Wings", "black or white / 1 m+", "8.000 HUF"], ["Assistance", "we help you in Hungarian or English", "4.000 HUF / hour"], ["Styling", "work with our professional stylist", "from 35.000 HUF"], ["Unique Outfits", "bridal dress, folk dress, etc.", "from 5.000 HUF"], ["Camera Rental", "analog or digital cameras and films", "4.000–9.000 HUF"], ["Photo Models", "work with our professional models", "from 15.000 HUF / hour"], ["Fog Machine", "with fog juice included", "5.000 HUF"], ["Aquarium", "fits a human, filled with water", "39.000 HUF"]];
-const bookingExtraItems = bookingExtras.map(([title, priceLabel, price]) => ({ title, priceLabel, price }));
+const bookingExtras = hu ? [["Papírháttér", "csak ha ráléptek", "3.000 Ft"], ["Smink", "profi sminkeseinktől", "15.000 Ft-tól"], ["Nagy angyalszárnyak", "fehér vagy fekete / 1 m+", "8.000 Ft"], ["Asszisztencia", "segítünk magyarul vagy angolul", "4.000 Ft / óra"], ["Styling", "dolgozz profi stylistjainkkal", "35.000 Ft-tól"], ["Különleges ruhák", "menyasszonyi ruha, népviselet stb.", "5.000 Ft-tól"], ["Kamerabérlés", "analóg vagy digitális kamerák és filmek", "4.000–9.000 Ft"], ["Fotómodellek", "tapasztalt modellek", "15.000 Ft / órától"], ["Füstgép", "folyadékkal együtt", "5.000 Ft"], ["Akvárium", "egy ember is belefér – vízzel töltve", "39.000 Ft"]] : [["Paper Backdrop", "applies if you step on it", "3.000 HUF"], ["Make-up", "work with our professional make-up artists", "from 15.000 HUF"], ["Large Angel Wings", "black or white / 1 m+", "8.000 HUF"], ["Assistance", "we help you in Hungarian or English", "4.000 HUF / hour"], ["Styling", "work with our professional stylist", "from 35.000 HUF"], ["Unique Outfits", "bridal dress, folk dress, etc.", "from 5.000 HUF"], ["Camera Rental", "analog or digital cameras and films", "4.000–9.000 HUF"], ["Photo Models", "work with our professional models", "from 15.000 HUF / hour"], ["Fog Machine", "with fog juice included", "5.000 HUF"], ["Aquarium", "250 liter (fits a human) - filled with warm water", "39.000 HUF"]];
+const bookingExtraItems = bookingExtras.filter(([title]) => !["Smink", "Make-up", "Styling"].includes(title)).map(([title, priceLabel, price]) => ({ title, priceLabel, price }));
 const profilePackages = hu ? [{ title: "Kis Studiós Fotózás", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretnél kipróbálni.", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] }, { title: "Standard Studiós Fotózás", description: "Tökéletes több öltözékes vagy több stílusú stúdiófotózáshoz. Párok vagy barátok számára is jó megoldás.", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "1-2 modell"] }, { title: "All-inclusive Studiós Fotózás", description: "Ha a megszokottól eltérő, tökéletes képek szép sorozatát szeretnéd, ez az ajánlat neked szól. Bonyolult díszletekkel, különleges világítással vagy csoportképekkel is bármit megvalósítunk, amit elképzelsz.", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "egy modelltől csoportokig"] }] : [{ title: "Small Studio Photoshoot", description: "Pick this package if you want some new profile pictures, CV pictures or just want to try out a simple studio shoot.", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] }, { title: "Standard Studio Photoshoot", description: "Perfect for a studio shoot with multiple outfits or styles. Also a good solution for couples or friends.", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] }, { title: "All-inclusive Studio Photoshoot", description: "If you want a nice set of perfect pictures that are beyond the usual, this offer is for you. Including complicated sets, special lighting or group photos - we can do anything you can imagine!", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }];
 const profilePackageFixes = [["Studiós", "Stúdiós"], ["magazin minőségű", "magazinminőségű"], ["magazine quality", "magazine-quality"], ["Including complicated sets, special lighting or group photos - we can do anything you can imagine!", "We can create complicated sets, use special lighting, and photograph groups—whatever you can imagine."]];
 profilePackages.forEach((packageItem: any) => {
@@ -401,27 +452,13 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : packagesPage ? (
   <>
     <PageHero variant="packages" headingId="packages-title" title={packagesPageAny.heroHeading} lead={packagesPageAny.heroCopy} description={packagesPageAny.intro} />
-    <section class="packages-primary" aria-label={hu ? "Fotózási csomagok" : "Photoshoot packages"}>
+    <section class="packages-primary packages-primary--with-upgrades" aria-label={hu ? "Fotózási csomagok" : "Photoshoot packages"}>
       <PricingTabs language={page.language} active="packages" />
       <div class="service-package-grid packages-card-grid">
         {packagesPageAny.packages.map((packageItem: any) => <PriceCard title={packageItem.title} description={packageItem.description} price={packageItem.price} features={packageItem.features} />)}
       </div>
     </section>
-    <section class="packages-upgrades" aria-labelledby="packages-upgrades-title">
-      <div class="packages-upgrades__intro">
-        <h2 id="packages-upgrades-title">{packagesPageAny.upgradesHeading}</h2>
-        <p>{packagesPageAny.upgradesIntro}</p>
-      </div>
-      <div class="service-upgrade-grid packages-upgrade-grid">
-        {packagesPageAny.upgrades.map((upgrade: any) => <article>
-          <h4>{upgrade.title}</h4>
-          <p>{upgrade.description}</p>
-          <span>{upgrade.priceLabel}</span>
-          <strong>{upgrade.price}</strong>
-          <a class="button button--secondary" href={upgrade.href}>{upgrade.cta}</a>
-        </article>)}
-      </div>
-    </section>
+    <UpgradeSection items={packagesPageAny.upgrades} cardsOnly ariaLabel={hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
   </>
 ) : modelPage ? (
   <>
@@ -555,48 +592,42 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <section class="horizontal-masonry-gallery-section christmas-photoshoot-gallery-section" aria-label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"}>
       <HorizontalMasonryGallery {...galleryA11y} images={seasonalPageImages} label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} desktopHeight={476} columnPattern={[1, 3, 1, 1, 1, 1]} loading="eager" />
     </section>
-    <PriceSection heading={seasonalPage.packageHeading} lead={seasonalPage.packageLead} packages={seasonalPackages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="seasonal-packages-title" />
+    <PriceSection className="seasonal-price-section seasonal-price-section--with-upgrades" heading={seasonalPage.packageHeading} lead={seasonalPage.packageLead} packages={seasonalPackages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="seasonal-packages-title">
+      <PricingTabs slot="tabs" language={page.language} active="packages" />
+    </PriceSection>
+    <UpgradeSection items={packagesContent[hu ? "hu" : "en"].upgrades} cardsOnly ariaLabel={hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
     <StudioSection className="christmas-photoshoot-studio-section" heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={seasonalStudioIntroImage?.src || studioSectionImage} imageAlt={seasonalStudioIntroImage?.alt || studioSectionImageAlt} imageWidth={882} imageHeight={1399} emphasizeBulletLeadins />
     <GalleryLightbox label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} hu={hu} />
   </>
 ) : seasonalType === "studio" ? (
   <>
     <ImageHero variant="christmas" headingId="seasonal-title" title={page.h1} image={seasonalPageImages[0]} lead={seasonalPage.hero}>
-      <a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a>
+      <a class="button button--inverted" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a>
     </ImageHero>
+    <section class="christmas-studio-intro-copy" aria-label={hu ? "A karácsonyi fotózási stúdió bemutatása" : "About the Christmas photoshoot studio"}>
+      <p>{seasonalPage.intro}</p>
+      <div class="christmas-studio-disclaimer" role="note">
+        <p class="christmas-studio-disclaimer__title"><strong>{hu ? "Karácsonyi stúdió 2026" : "Christmas Studio 2026"}</strong></p>
+        <p>{hu ? "Október 15. és december 24. között foglalható." : "Open for bookings from October 15 through December 24."}</p>
+        <p><strong>{hu ? "A foglalás már nyitva." : "Bookings are now open."}</strong></p>
+      </div>
+    </section>
     <section class="christmas-studio-feature christmas-studio-feature--intro">
       <ResponsiveImage image={seasonalStudioIntroImage} role="content" loading="lazy" />
       <div class="christmas-studio-feature__copy">
-        <h2>{seasonalPage.introHeading}</h2><p>{seasonalPage.intro}</p><ul>{seasonalPage.introBullets.map((bullet: string) => <li>{bullet}</li>)}</ul>
+        <h2>{seasonalPage.introHeading}</h2><ul>{seasonalPage.introBullets.map((bullet: string) => <li>{bullet}</li>)}</ul>
       </div>
     </section>
-    <ChristmasStudioGallery images={seasonalGalleryImages} heading={seasonalPage.decorationHeading} hu={hu} />
+    <section class="christmas-decoration horizontal-masonry-gallery-section" aria-labelledby="christmas-decoration-title">
+      <h2 id="christmas-decoration-title">{seasonalPage.decorationHeading}</h2>
+      <HorizontalMasonryGallery {...galleryA11y} images={seasonalGalleryImages} label={hu ? "Karácsonyi stúdió galériája" : "Christmas studio gallery"} />
+    </section>
     <section class="christmas-studio-details"><h2>{seasonalPage.sectionHeading}</h2><p>{seasonalPage.sectionIntro}</p><ul>{seasonalPage.sectionBullets.map((bullet: string) => <li>{bullet}</li>)}</ul></section>
     <section class="booking-intro"><p>{seasonalPage.packageIntro}</p></section>
-    <section class="booking-prices">
-      <article>
-        <h2>{hu ? <>Kedvezményes<br />Studió Idősáv</> : <>Discounted<br />Studio Timeslots</>}</h2>
-        <p>{hu ? <>Hétfőtől csütörtökig<br />9:00 - 18:00</> : <>Monday to Thursday<br />9:00 - 18:00</>}</p>
-        <strong>{hu ? "6000 Ft / óra" : "6000 HUF / hour"}</strong>
-      </article>
-      <article>
-        <h2>{hu ? <>Standard<br />Studió Idősáv</> : <>Standard<br />Studio Timeslots</>}</h2>
-        <p>{hu ? <>Hétfőtől csütörtökig<br />18:00 - 22:00<br /><br />Pénteken és hétvégén<br />9:00 - 22:00</> : <>Monday to Thursday<br />18:00 - 22:00<br /><br />Friday &amp; Weekend<br />9:00 - 22:00</>}</p>
-        <strong>{hu ? "8000 Ft / óra" : "8000 HUF / hour"}</strong>
-      </article>
-      <article>
-        <h2>{hu ? "10 órás bérlet" : "10 hour Membership"}</h2>
-        <p>{hu ? <>Bármelyik nap<br />10:00 - 22:00<br /><br />Órákra bontható</> : <>Any day<br />10:00 - 22:00<br /><br />Can be broken up by the hour</>}</p>
-        <strong>{hu ? "60.000. Ft" : "60.000. HUF"}</strong>
-        <span>{hu ? "SPÓROLJ AKÁR 37%-OT" : "SAVE UP TO 37%"}</span>
-      </article>
-    </section>
-    <section class="christmas-studio-closing">
-      <div class="christmas-studio-feature christmas-studio-feature--closing">
-        <ResponsiveImage image={seasonalPageImages[3]} role="content" loading="lazy" />
-        <div class="christmas-studio-feature__copy"><h2>{seasonalPage.introHeading}</h2><p>{seasonalPage.intro}</p><a class="button" data-gtag-event="booking_click" data-gtag-location="christmas-studio" href={site.bookingUrl}>{hu ? "Foglald le a fotóstúdiót" : "Book the Photo Studio"}</a></div>
-      </div>
-    </section>
+    <PriceSection className="booking-price-section booking-price-section--with-upgrades" gridClassName="booking-price-grid" packages={christmasStudioPackages} ariaLabel={hu ? "Karácsonyi stúdió bérleti díjak" : "Christmas studio rental rates"} headingId="christmas-studio-prices-title">
+      <PricingTabs slot="tabs" language={page.language} active="studio" />
+    </PriceSection>
+    <UpgradeSection items={packagesContent[hu ? "hu" : "en"].upgrades} cardsOnly ariaLabel={hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
     <GalleryLightbox label={hu ? "Karácsonyi stúdió galériája" : "Christmas studio gallery"} hu={hu} />
   </>
 ) : isProfile ? (
@@ -745,9 +776,10 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
 ) : page.section === "booking" ? (
   <>
     <PageHero variant="service" headingId="booking-title" title={page.h1} description={[hu ? "Az Aether Art Space-ben igyekszünk elérhető árakat kínálni, hogy te az igazán fontos dolgokra koncentrálhass – a fotózás mögötti kreativitásra." : "At aether art space, we offer fair and affordable pricing, so you can focus on what matters most – the creativity behind your shoot.", hu ? "Stúdiónk úgy van kialakítva, hogy támogassa a kreatív folyamatot, rugalmas csomagokat kínálva, amelyek különböző igényekhez igazodnak, legyen szó modellről, fotósról vagy vállalkozásról, aki lenyűgöző vizuális anyagot szeretne készíteni." : "Our studio is designed to elevate the creative process, with flexible packages that cater to different needs, whether you're a model, photographer, or business looking to capture stunning visuals.", hu ? "Ezen kívül számos kiegészítőt kínálunk helyben, kizárólag a budapesti stúdiónkban, mint például analóg fényképezőgép bérlés, ruhák, filmek és még sok más, hogy segítsünk életre kelteni a víziódat." : "We also offer a variety of extras on-site exclusive to our studio in Budapest, including analogue camera rentals, clothing, film, and more, to help bring your vision to life."]} />
-    <PriceSection id="studio-pricing" className="booking-price-section" gridClassName="booking-price-grid" packages={bookingPackages} headingId="booking-prices-title" ariaLabel={hu ? "Stúdióbérlés árak" : "Studio rental rates"}>
+    <PriceSection id="studio-pricing" className="booking-price-section booking-price-section--with-upgrades" gridClassName="booking-price-grid" packages={bookingPackages} headingId="booking-prices-title" ariaLabel={hu ? "Stúdióbérlés árak" : "Studio rental rates"}>
       <PricingTabs slot="tabs" language={page.language} active="studio" />
     </PriceSection>
+    <UpgradeSection items={packagesContent[hu ? "hu" : "en"].upgrades} cardsOnly ariaLabel={hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
     <InfoBox class="booking-note">
       <ul>
         {hu ? <>

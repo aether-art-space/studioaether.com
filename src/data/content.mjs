@@ -1231,13 +1231,13 @@ export const seasonalContent = {
 
 export const seasonalImages = {
   photoshoot: [
-    wixLiveGalleryImage("94c0c9_5c07872f467441098cef95acf7b5fbaa~mv2.jpg", 1868, 2802, "Christmas photoshoot with a couple", "Piller family at Christmas", "Yearly Christmas family photoshoot in the studio"),
-    wixLiveGalleryImage("94c0c9_fe3770802fb24044b5dd17845f6134da~mv2.jpg", 1333, 2000, "Christmas portrait in the studio", "Christmas photo of the smallest member of the family", "Smiling baby wearing a Santa hat, surrounded by Christmas lights in the studio."),
-    wixLiveGalleryImage("94c0c9_d0dc54e081564e4abac11fffd44b6e1f~mv2.jpg", 1333, 2000, "Festive studio portrait", "Christmas cat!", "You can also bring your pet to your holiday photoshoot."),
-    wixLiveGalleryImage("94c0c9_9380a1e8387e4caa80a7a43d61b5e17b~mv2.jpeg", 4570, 3047, "Christmas family photography"),
-    wixLiveGalleryImage("94c0c9_1f75b1c45d4e4aa09ebe93348d7ff570~mv2.jpg", 1333, 2000, "Holiday portrait photography"),
-    wixLiveGalleryImage("94c0c9_301b0780d18948ddac3307f8f300e9c1~mv2.jpg", 4000, 6000, "Christmas-themed studio portrait"),
-    wixLiveGalleryImage("94c0c9_91a0a3fc14b34068ac35ca25edb8d148~mv2.jpeg", 2228, 3342, "Festive portrait in Budapest studio"),
+    { src: "/images/wix/seasonal/christmas-01.jpg", width: 1868, height: 2802, alt: "Christmas photoshoot with a couple", title: "Piller family at Christmas", description: "Yearly Christmas family photoshoot in the studio" },
+    { src: "/images/wix/seasonal/christmas-02.jpg", width: 1333, height: 2000, alt: "Christmas portrait in the studio", title: "Christmas photo of the smallest member of the family", description: "Smiling baby wearing a Santa hat, surrounded by Christmas lights in the studio." },
+    { src: "/images/wix/seasonal/christmas-03.jpg", width: 1333, height: 2000, alt: "Festive studio portrait", title: "Christmas cat!", description: "You can also bring your pet to your holiday photoshoot." },
+    { src: "/images/wix/seasonal/christmas-04.jpeg", width: 4570, height: 3047, alt: "Christmas family photography" },
+    { src: "/images/wix/seasonal/christmas-05.jpg", width: 1333, height: 2000, alt: "Holiday portrait photography" },
+    { src: "/images/wix/seasonal/christmas-06.jpg", width: 4000, height: 6000, alt: "Christmas-themed studio portrait" },
+    { src: "/images/wix/seasonal/christmas-07.jpeg", width: 2228, height: 3342, alt: "Festive portrait in Budapest studio" },
     wixLiveGalleryImage("94c0c9_26d6e48509fa4e029ffc45564e76cf1c~mv2.jpeg", 3613, 5420, "Festive portrait in Budapest studio")
   ],
   studio: [
