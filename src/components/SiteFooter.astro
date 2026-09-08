@@ -29,6 +29,9 @@ const bookingFooterVariant = bookingFooterVariantFor(page);
         <a href={hu ? "/hu/privacy-policy" : "/privacy-policy"}>{hu ? "Adatkezelési tájékoztató" : "Privacy Policy"}</a>
         {consentEnabled && <button class="cookie-settings-link" type="button" data-cookie-settings>{hu ? "Süti beállítások" : "Cookie settings"}</button>}
       </nav>
+      <div class="footer-column footer-column--brand" aria-hidden="true">
+        <img src="/images/generated/wix/jpg/logo-icon--450w--961fb830ea.png" alt="" width="100" height="97" loading="lazy" />
+      </div>
       <div class="footer-column footer-column--hours">
         <div class="footer-icon-slot" aria-hidden="true"><ClockIcon className="footer-icon footer-icon--clock" size={24} weight="regular" /></div>
         <h2>{hu ? "Nyitvatartás" : "Opening hours"}</h2>
