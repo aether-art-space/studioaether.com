@@ -97,8 +97,26 @@ Keep `PUBLIC_GOOGLE_TAG_ID`, `PUBLIC_GA4_ID`, and `PUBLIC_GOOGLE_ADS_ID` unset t
 - Wix shows the domain renewing on 18 October 2026.
 - The authenticated DNS tables match this document after adding the previously undiscovered `ervin` TXT record.
 
+## Inactive Cloudflare DNS staging
+
+On 9 September 2026, a full Cloudflare zone was created as a pre-cutover staging step. Its status remains `pending`, so it is not authoritative and does not affect the live Wix site.
+
+| Field | Staged value |
+| --- | --- |
+| Zone | `studioaether.com` |
+| Zone ID | `ab99bcd14186115782d171e385832563` |
+| Status | `pending` |
+| Assigned nameservers | `clara.ns.cloudflare.com`, `theo.ns.cloudflare.com` |
+| Current/original nameservers | `ns12.wixdns.net`, `ns13.wixdns.net` |
+
+Cloudflare's automatic DNS scan imported no records, so all eight functional Wix records were added manually with a 3600-second TTL and DNS-only status: three apex A records, the `www`, `en`, and `hu` CNAMEs, and both TXT verification records. A subsequent API read verified that all eight staged values exactly match the authenticated Wix inventory above.
+
+No Wix nameserver, DNS, domain, or site setting was changed. Do not switch the nameservers yet: the staged web records still deliberately point to Wix and the Pages custom domains and production environment are not ready for activation.
+
 ## Remaining pre-cutover verification
 
-- Determine the exact Cloudflare custom-domain onboarding path before accepting any DNS prompt.
 - Include `en.studioaether.com` and `hu.studioaether.com` in the hostname cutover/redirect design; testing only apex and `www` is insufficient.
-- Do not attach the domains or change DNS until the production environment variables and a coordinated live-test window are ready.
+- Prepare the production environment values and redeploy while the Pages site remains unreachable through the live domain.
+- Attach and validate the apex and `www` Pages custom domains at the coordinated cutover window.
+- Replace the staged Wix web records with the final Pages records and reproduce the apex, `en`, and `hu` redirect behavior.
+- Change the Wix nameservers only after the final Cloudflare zone has been rechecked in full.
