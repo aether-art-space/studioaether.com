@@ -139,3 +139,20 @@ The rehearsal built all 57 pages successfully, produced zero Astro diagnostics, 
 - Attach and validate the apex and `www` Pages custom domains at the coordinated cutover window.
 - Replace the staged Wix web records with the final Pages records and reproduce the apex, `en`, and `hu` redirect behavior.
 - Change the Wix nameservers only after the final Cloudflare zone has been rechecked in full.
+
+## Registrar transfer update — 9 September 2026
+
+The owner subsequently chose to transfer the registrar from Wix to Vercel before the hosting cutover. The transfer of `studioaether.com` was successfully initiated in the existing Vercel team `aczeldz-5096s-projects` and is pending release by Wix. Wix remains the registrar and `ns12.wixdns.net` / `ns13.wixdns.net` remain authoritative while the transfer is pending, so the live Wix site is unaffected.
+
+Before the transfer was allowed to complete, the eight functional Wix DNS records documented above were imported into Vercel DNS with the official Vercel CLI. A subsequent `vercel dns ls studioaether.com --scope aczeldz-5096s-projects` check returned exactly the three apex A records, three Wix CNAMEs, and two verification TXT records with matching values. Vercel also exposes its default CAA and ALIAS records; these are provider defaults, not records recovered from Wix.
+
+When the registrar transfer completes, Vercel is expected to become the authoritative DNS provider automatically. The imported records deliberately continue pointing web traffic to Wix, making registrar transfer and website launch separate operations. Do not restart Wix's transfer-away flow or request a new EPP code while the current transfer is pending.
+
+The final launch sequence is now:
+
+1. Wait for the Wix-to-Vercel registrar transfer to complete while continuing preview QA.
+2. Confirm the Vercel-hosted copy of the legacy DNS records is authoritative and still serves Wix correctly.
+3. Recheck the pending Cloudflare zone and its redirect rules.
+4. Attach the production hostnames to Cloudflare Pages and apply the rehearsed production environment values during the coordinated cutover.
+5. Change the domain's nameservers in Vercel from Vercel DNS to `clara.ns.cloudflare.com` and `theo.ns.cloudflare.com` only after the Cloudflare configuration is ready.
+6. Run the full live smoke test and retain Wix through the stabilization window even though it is not treated as the operational rollback.

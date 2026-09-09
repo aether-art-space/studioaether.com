@@ -51,7 +51,7 @@ The launch is treated as a one-way migration. The Wix site will not be used as a
 7. Run a focused live smoke test: important pages, redirects, booking links, contact and wedding forms, cookie consent, Google Reviews, existing tags, canonical URLs, sitemap, robots, and email delivery.
 8. Monitor forms, bookings, Ads/analytics events, and 404s for the first few days.
 
-The domain must be live for final verification, but most preparation can be completed before DNS cutover. A registrar transfer is not required; the intended action is a DNS/hosting cutover.
+The domain must be live for final verification, but most preparation can be completed before DNS cutover. The owner later elected to transfer the registrar from Wix to Vercel first. That transfer is pending, and a verified copy of all eight functional Wix DNS records is staged in Vercel so completion of the registrar transfer does not itself launch V2 or interrupt the Wix site. After the transfer completes, the coordinated hosting cutover will change nameservers from Vercel DNS to the already staged Cloudflare zone.
 
 ### Tracking environment rule
 
