@@ -57,14 +57,11 @@ The domain must be live for final verification, but most preparation can be comp
 
 For the production Pages build, configure `PUBLIC_GTM_ID=GTM-P6G8NTP2` only after the private/preview tracking check passes. Do not configure the direct `PUBLIC_GOOGLE_TAG_ID`, `PUBLIC_GA4_ID`, or `PUBLIC_GOOGLE_ADS_ID` alongside it unless the marketing owner explicitly approves a fallback test; the source selects GTM first to avoid duplicate tags. Keep all tracking IDs absent from preview builds unless the preview is intentionally being used for GTM Preview/Tag Assistant verification.
 
-## Account-scope verification — 2026-09-04
+## Account-scope verification — updated 2026-09-09
 
-The connected Cloudflare API account is `Photostudio.aether@gmail.com's Account`. Its API currently reports:
+The connected Cloudflare API account is `Photostudio.aether@gmail.com's Account`. The Pages project `studioaether-com` now exists and is connected to `aether-art-space/studioaether.com`, with `main` as its production branch, `npm run build` as its build command, and `dist` as its output directory.
 
-- zero Pages projects
-- no visible `studioaether.com` zone
-
-This means the correct account or permissions must be confirmed before creating the Pages project or changing DNS. No Cloudflare resource or DNS record was changed while recording this plan.
+The project is available at `https://studioaether-com.pages.dev` and is deliberately configured as a non-indexable preview (`PUBLIC_DEPLOY_ENV=preview`). The `studioaether.com` custom domain is not attached yet. Domain/DNS ownership and the complete DNS/email record archive must still be confirmed before cutover.
 
 ## Required settings when the correct account is available
 
