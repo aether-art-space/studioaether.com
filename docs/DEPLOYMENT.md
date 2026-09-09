@@ -38,6 +38,25 @@ Cloudflare Pages supports Git-backed builds and preview deployments for pull req
 3. Verify the canonical hostname, HTTPS, redirects, sitemap, robots, forms, bookings, analytics, and Ads conversions immediately after cutover.
 4. Roll back by restoring the prior DNS/hostname routing or selecting the last known-good Pages deployment. Do not delete the Wix site during the stabilization period.
 
+## Simplified one-way launch plan
+
+The launch is treated as a one-way migration. The Wix site will not be used as an operational rollback after cutover, so preserve the current DNS, email, URL/redirect, and marketing configuration as an archive before changing DNS.
+
+1. Finish and QA the new site on preview, including routes, redirects, forms, booking links, consent, Google Reviews, metadata, and responsive behavior.
+2. Create the production Pages project and deploy the final build.
+3. Connect `studioaether.com` and `www.studioaether.com` to the Pages project, but do not change public DNS yet.
+4. Configure the existing marketing IDs and event expectations supplied by the marketing owner. Preserve the existing Ads setup; do not redesign it during migration. Hotjar and TWIPLA are intentionally excluded from V2.
+5. Preserve the current DNS and email records, Wix URL/redirect list, Search Console details, and Ads/analytics configuration.
+6. Switch DNS once the production Pages site and custom domain are ready.
+7. Run a focused live smoke test: important pages, redirects, booking links, contact and wedding forms, cookie consent, Google Reviews, existing tags, canonical URLs, sitemap, robots, and email delivery.
+8. Monitor forms, bookings, Ads/analytics events, and 404s for the first few days.
+
+The domain must be live for final verification, but most preparation can be completed before DNS cutover. A registrar transfer is not required; the intended action is a DNS/hosting cutover.
+
+### Tracking environment rule
+
+For the production Pages build, configure `PUBLIC_GTM_ID=GTM-P6G8NTP2` only after the private/preview tracking check passes. Do not configure the direct `PUBLIC_GOOGLE_TAG_ID`, `PUBLIC_GA4_ID`, or `PUBLIC_GOOGLE_ADS_ID` alongside it unless the marketing owner explicitly approves a fallback test; the source selects GTM first to avoid duplicate tags. Keep all tracking IDs absent from preview builds unless the preview is intentionally being used for GTM Preview/Tag Assistant verification.
+
 ## Account-scope verification — 2026-09-04
 
 The connected Cloudflare API account is `Photostudio.aether@gmail.com's Account`. Its API currently reports:

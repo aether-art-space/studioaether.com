@@ -9,7 +9,7 @@ import { site } from "../data/routes.mjs";
 
 const { page } = Astro.props;
 const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
-const consentEnabled = !preview && Boolean(site.tracking.googleTagId || site.tracking.ga4Id || site.tracking.googleAdsId);
+const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.googleTagId || site.tracking.ga4Id || site.tracking.googleAdsId);
 ---
 <!doctype html>
 <html lang={page.language}>

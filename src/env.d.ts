@@ -3,6 +3,7 @@
 interface ImportMetaEnv {
   readonly PUBLIC_SITE_URL?: string;
   readonly PUBLIC_DEPLOY_ENV?: string;
+  readonly PUBLIC_GTM_ID?: string;
   readonly PUBLIC_GOOGLE_TAG_ID?: string;
   readonly PUBLIC_GA4_ID?: string;
   readonly PUBLIC_GOOGLE_ADS_ID?: string;

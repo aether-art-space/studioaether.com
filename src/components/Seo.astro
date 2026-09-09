@@ -102,8 +102,8 @@ const faqAnswerText = (answer: unknown) => {
     ? block.items.map((item: any) => [typeof item === "string" ? item : item.text, ...(item.children || [])].join(" "))
     : [block.text]).join(" ");
 };
-const tracking = preview ? { googleTagId: "", ga4Id: "", googleAdsId: "" } : site.tracking;
-const trackingId = tracking.googleTagId || tracking.ga4Id || tracking.googleAdsId;
+const tracking = preview ? { gtmId: "", googleTagId: "", ga4Id: "", googleAdsId: "" } : site.tracking;
+const trackingId = tracking.gtmId || tracking.googleTagId || tracking.ga4Id || tracking.googleAdsId;
 const businessUrl = absoluteUrl("/");
 const businessId = `${businessUrl}#business`;
 const websiteId = `${businessUrl}#website`;

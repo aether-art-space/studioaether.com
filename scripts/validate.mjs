@@ -12,6 +12,7 @@ const htmlFor = new Map();
 const generatedRoot = path.join(dist, "images", "generated");
 const indexablePages = pages.filter((page) => page.disposition !== "redirect");
 const intentionallyUndescribed = new Set(["/hu/post-booking"]);
+const allowedOriginalImages = new Set(["/hero-main-people.jpg"]);
 
 for (const page of indexablePages) {
   try { htmlFor.set(page.path, await fs.readFile(targetFor(page.path), "utf8")); }
@@ -71,8 +72,9 @@ for (const page of indexablePages) {
     const isLightboxImage = /data-lightbox-image/.test(tag);
     const src = tag.match(/\bsrc=["']([^"']*)["']/i)?.[1] || "";
     const isSvgImage = /\.svg(?:[?#]|$)/i.test(src);
+    const isAllowedOriginalImage = allowedOriginalImages.has(src);
     // SVGs are resolution-independent assets and do not need generated raster variants or sizing attributes.
-    if (!isLightboxImage && !isSvgImage && src && !src.startsWith("/images/generated/")) fail.push(`non-generated image source: ${page.path}: ${src}`);
+    if (!isLightboxImage && !isSvgImage && src && !src.startsWith("/images/generated/") && !isAllowedOriginalImage) fail.push(`non-generated image source: ${page.path}: ${src}`);
     if (!isLightboxImage && !isSvgImage && (!/\bsrcset=["'][^"']+["']/i.test(tag) || !/\bsizes=["'][^"']+["']/i.test(tag))) fail.push(`responsive attributes missing: ${page.path}`);
     if (!isLightboxImage && !isSvgImage && (!/\bwidth=["'][^"']+["']/i.test(tag) || !/\bheight=["'][^"']+["']/i.test(tag))) fail.push(`image dimensions missing: ${page.path}`);
   }

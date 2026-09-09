@@ -44,9 +44,10 @@ export const resolveImage = (image, role = "content") => {
   const fallback = variants[fallbackFormat(entry)] || variants.jpeg || variants.png || [];
   const firstFallback = fallback[0] || { src: source, width: entry.width, height: entry.height };
   const lightboxFallback = entry.full[fallbackFormat(entry)] || entry.full.jpeg || entry.full.png || entry.full.webp || entry.full.avif;
+  const explicitFallback = image?.source && image?.src && image.src !== image.source ? image.src : "";
   return {
     source,
-    src: firstFallback.src,
+    src: explicitFallback || firstFallback.src,
     alt: image?.alt || "",
     width: role === "thumb" ? firstFallback.width : entry.width,
     height: role === "thumb" ? firstFallback.height : entry.height,
