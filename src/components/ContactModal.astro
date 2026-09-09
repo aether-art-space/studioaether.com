@@ -39,6 +39,7 @@ const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-c
   const siteContactClose = siteContactModal?.querySelector<HTMLButtonElement>("[data-site-contact-close]");
   const siteContactForm = siteContactModal?.querySelector<HTMLFormElement>("[data-site-web3forms]");
   const siteContactStatus = siteContactForm?.querySelector<HTMLElement>("[data-site-contact-status]");
+  const siteContactOpens = [...document.querySelectorAll<HTMLButtonElement>("[data-site-contact-open]")];
 
   const setSiteContactStatus = (message: string, isError = false) => {
     if (!siteContactStatus) return;
@@ -47,6 +48,10 @@ const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-c
   };
 
   siteContactClose?.addEventListener("click", () => siteContactModal?.close());
+  siteContactOpens.forEach((siteContactOpen) => siteContactOpen.addEventListener("click", () => {
+    document.querySelector<HTMLDetailsElement>(".mobile-menu")?.removeAttribute("open");
+    siteContactModal?.showModal();
+  }));
   siteContactModal?.addEventListener("click", (event) => {
     if (event.target === siteContactModal) siteContactModal.close();
   });

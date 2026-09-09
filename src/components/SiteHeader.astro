@@ -82,10 +82,17 @@ const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
             <a class="mobile-nav-link mobile-nav-link--strong" href={localizedPath("/booking", page.language)}>{hu ? "ÁRAK" : "PRICING"}</a>
             <a class="mobile-nav-book" data-gtag-event="booking_click" data-gtag-location="mobile-navigation" href={site.bookingUrl}>{hu ? "fotóstúdió foglalása" : "book the photostudio"}</a>
             <a class="mobile-nav-book" data-gtag-event="selfie_booking_click" data-gtag-location="mobile-navigation" href={site.selfieBookingUrl}>{hu ? "szelfi stúdió foglalása" : "book the selfie studio"}</a>
-            <a class="mobile-nav-book mobile-nav-book--secondary" data-gtag-event="email_click" data-gtag-location="mobile-navigation" href={`mailto:${site.email}`}>{hu ? "írj nekünk" : "message us"}</a>
+            <button class="mobile-nav-book mobile-nav-book--secondary" data-gtag-event="email_click" data-gtag-location="mobile-navigation" data-site-contact-open type="button">{hu ? "írj nekünk" : "message us"}</button>
           </nav>
         </details>
       </div>
     </div>
   </div>
 </header>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>(".mobile-menu").forEach((menu) => {
+    const overlay = menu.querySelector<HTMLElement>(".mobile-nav-overlay");
+    overlay?.addEventListener("click", () => menu.removeAttribute("open"));
+  });
+</script>

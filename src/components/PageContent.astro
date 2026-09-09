@@ -467,7 +467,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <div class="models-fee">
         <h2>{modelPageAny.feeTitle}</h2>
         <strong>{modelPageAny.feePrice}</strong>
-        <a class="button button--outline" href="#models-contact">{modelPageAny.contactLabel}</a>
+      <button class="button button--outline" type="button" data-contact-open aria-controls="footer-contact-modal">{modelPageAny.contactLabel}</button>
       </div>
     </section>
     <section class="models-list" aria-labelledby="models-list-title">
@@ -489,7 +489,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
             <h3>{profile.name}</h3>
             <h4>{modelPageAny.measurementsTitle}</h4>
             <div class="model-measurements">{profile.measurements.map((group: string[]) => <p>{group.map((line) => <span>{line}</span>)}</p>)}</div>
-            <div class="model-card__action"><p>{profile.contact}</p><a class="button button--outline" href="#models-contact">{modelPageAny.contactLabel}</a></div>
+            <div class="model-card__action"><p>{profile.contact}</p><button class="button button--outline" type="button" data-contact-open aria-controls="footer-contact-modal">{modelPageAny.contactLabel}</button></div>
           </div>
         </article>;
       })}
@@ -508,7 +508,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
           <b>{modelPageAny.animal.price}</b>
           <h4>{modelPageAny.animal.measurementsTitle}</h4>
           <div class="model-measurements">{modelPageAny.animal.measurements.map((group: string[]) => <p>{group.map((line) => <span>{line}</span>)}</p>)}</div>
-          <div class="model-card__action"><p>{modelPageAny.animal.contactPrefix}{modelPageAny.animal.contactSuffix}</p><a class="button button--outline" href="#models-contact">{modelPageAny.contactLabel}</a></div>
+          <div class="model-card__action"><p>{modelPageAny.animal.contactPrefix}{modelPageAny.animal.contactSuffix}</p><button class="button button--outline" type="button" data-contact-open aria-controls="footer-contact-modal">{modelPageAny.contactLabel}</button></div>
         </div>
       </article>
     </section>
@@ -680,7 +680,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <HorizontalMasonryGallery {...galleryA11y} images={weddingImages} label={hu ? "Esküvői fotózási galéria" : "Wedding photography gallery"} />
     </section>
     <section class="wedding-glance"><div class="wedding-glance__copy"><h2>{weddingPage.glanceHeading}</h2><p>{weddingPage.glanceIntro}</p><ul>{weddingPage.glance.map((item: string) => <li>{item}</li>)}</ul></div><ResponsiveImage image={weddingSectionImages.glance} role="content" loading="lazy" /></section>
-    <section id="wedding-packages" class="wedding-packages"><h2>{weddingPage.packagesHeading}</h2><p>{weddingPage.packagesIntro}</p><div class="service-package-grid wedding-package-grid">{weddingPage.packageCards.map((packageItem: any, index: number) => <PriceCard className="wedding-package-card" title="" titleLines={packageItem.titleLines} description={packageItem.description} price={packageItem.price} includesLabel={weddingUi.includes} features={packageItem.features} featureBreaks={weddingPackageFeatureBreaks[index]} />)}</div><h2 class="wedding-included-heading">{weddingPage.includedHeading}</h2><div class="wedding-included-grid">{weddingPage.included.map((item: string[]) => <article><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
+    <section id="wedding-packages" class="wedding-packages"><h2>{weddingPage.packagesHeading}</h2><p>{weddingPage.packagesIntro}</p><div class="service-package-grid wedding-package-grid">{weddingPage.packageCards.map((packageItem: any, index: number) => <PriceCard className="wedding-package-card" title="" titleLines={packageItem.titleLines} description={packageItem.description} price={packageItem.price} includesLabel={weddingUi.includes} features={packageItem.features} featureBreaks={weddingPackageFeatureBreaks[index]} />)}</div><h2 class="wedding-included-heading">{weddingPage.includedHeading}</h2><div class="wedding-included-grid">{weddingPage.included.map((item: string[]) => <article><h3>{hu && item[0] === "Gyors átadás" ? <>Gyors<br class="wedding-included-title-break" />átadás</> : item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
     <section class="wedding-build"><h2>{weddingPage.buildHeading}</h2><p>{weddingPage.buildIntro}</p><div class="service-upgrade-grid wedding-feature-grid">{weddingCoverageCards.map((card: any) => <ExtrasCard className="wedding-feature-card" title={card.title} description={card.description} priceLabel={card.priceLabel} price={card.price} image={card.image} />)}</div><p class="wedding-choice-note">{weddingUi.choice}</p><p class="wedding-choice-note wedding-choice-note--followup"><a class="text-link" href="#wedding-contact">{weddingUi.contact}</a> {weddingUi.followup}</p></section>
     <section class="wedding-options"><h2>{weddingPage.optionalHeading}</h2><p>{weddingPage.optionalIntro}</p><div class="service-upgrade-grid wedding-option-grid wedding-option-grid--primary">{weddingPrimaryOptionCards.map((card: any) => <ExtrasCard className="wedding-option-card" title={card.title} description={card.description} priceLabel={card.priceLabel} price={card.price} image={card.image} />)}</div><h2 class="wedding-addons-heading">{weddingUi.addOns}</h2><p>{weddingUi.addOnsIntro}</p><div class="service-upgrade-grid wedding-option-grid wedding-option-grid--addons">{weddingAddonCards.map((card: any) => <ExtrasCard className="wedding-option-card" title={card.title} description={card.description} priceLabel={card.priceLabel} price={card.price} image={card.image} />)}</div><p class="wedding-choice-note">{weddingUi.choice}</p><p class="wedding-choice-note wedding-choice-note--followup"><a class="text-link" href="#wedding-contact">{weddingUi.contact}</a> {weddingUi.followup}</p></section>
     <section class="wedding-photographers"><div class="wedding-photographers__copy"><h2>{weddingPage.photographersHeading}</h2><p class="wedding-photographers__intro">{weddingUi.photographerIntro}</p><p>{weddingPage.photographersIntro.replace(weddingUi.photographerIntro + " ", "")}</p>{weddingPage.photographers.map((person: string[]) => <div class="wedding-photographer"><h3>{person[0]}</h3><strong>{person[1]}</strong><p>{person[2]}</p></div>)}<p class="wedding-photographers__tail">{weddingUi.photographerTail}</p></div><div class="wedding-photographers__image"><ResponsiveImage image={{ ...weddingImages[0], alt: weddingUi.alt }} role="content" loading="lazy" /></div></section>
@@ -697,8 +697,6 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <div class="id-photo-hero__image"><ResponsiveImage image={specialImages.id[0]} role="hero" loading="eager" fetchpriority="high" /></div>
     <PriceSection className="id-photo-price-section" gridClassName="service-package-grid--id" ariaLabel={hu ? "Igazolványkép árak" : "ID photo prices"} packages={idPhotoPackages} />
     <section class="id-photo-booking"><a class="button" data-gtag-event="booking_click" data-gtag-location="id-photo" href="https://cal.com/aether-studio/id-shoot?overlayCalendar=true">{hu ? "foglalj időpontot" : "Book an ID shoot now"}</a><p><strong>{hu ? "Az igazolványképek készítéséhez előzetes foglalás szükséges!" : "Appointments are required for ID shoots."}</strong></p><p>{hu ? "A nyomtatott igazolványképek 15 perc alatt készülnek el. Visszatérhetsz értük, amikor neked alkalmas, vagy megvárhatod a stúdióban, amíg elkészülnek." : "Printed ID photos take about 15 minutes. You can return to collect them or wait in the studio."}</p></section>
-    <section class="service-gallery service-gallery--id" aria-label={hu ? "Fotóstúdió galéria" : "Photo studio gallery"}>{specialImages.id.slice(1).map((imageData: any, index: number) => <GalleryImage image={imageData} index={index} label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`} />)}</section>
-    <GalleryLightbox label={hu ? "Fotóstúdió galéria" : "Photo studio gallery"} hu={hu} />
   </>
 ) : specialPage ? (
   <>
@@ -754,7 +752,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <section class="horizontal-masonry-gallery-section" aria-label={hu ? "Fitness és jóga fotózási galéria" : "Fitness and yoga photography gallery"}>
         <HorizontalMasonryGallery {...galleryA11y} images={serviceImagesAny} label={hu ? "Fitness és jóga fotózási galéria" : "Fitness and yoga photography gallery"} />
       </section>
-      <section class="service-section service-section--audience"><h2>{servicePageAny.audienceHeading}</h2><p>{servicePageAny.audienceIntro}</p><div class="service-audience-grid">{servicePageAny.audience.map((item: string[], index: number) => <article><ResponsiveImage image={{ ...fitnessAudienceImages[index], width: 258, height: 258 }} role="card" loading="lazy" /><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
+      <section class="service-section service-section--audience"><h2>{servicePageAny.audienceHeading}</h2><p>{servicePageAny.audienceIntro}</p><div class="service-audience-grid">{servicePageAny.audience.map((item: string[], index: number) => <article><ResponsiveImage image={{ ...fitnessAudienceImages[index], width: 258, height: 258, sizes: "(min-width: 1200px) 20vw, (min-width: 761px) 32vw, 100vw" }} role="card" loading="lazy" /><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
       <PriceSection heading={servicePageAny.packageHeading} lead={servicePageAny.packageLead} packages={servicePageAny.packages} includesLabel={hu ? "A csomag tartalma:" : "This package includes:"} headingId="fitness-packages-title" />
       <ExtrasSection heading={servicePageAny.upgradesHeading} intro={[servicePageAny.upgradesSubheading, servicePageAny.upgradesIntro]} items={serviceUpgrades} headingId="fitness-extras-title" />
     </>}
