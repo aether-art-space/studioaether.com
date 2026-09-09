@@ -114,7 +114,7 @@ export const homeContent = {
       ["üzleti és személyes portré", "/hu/portrait-photography-budapest", "bővebben..."],
       ["fitnessz és jóga fotózás", "/hu/fitness", "bővebben..."],
       ["glamour\nés boudoir", "/hu/glamour-boudoir-photography-budapest", "bővebben..."],
-      ["model polaroidok és portfólió", "/hu/model-polaroids-budapest", "bővebben..."],
+      ["modell digitals és portfólió", "/hu/model-polaroids-budapest", "bővebben..."],
       ["esküvői\nfotózás", "/hu/wedding-photography", "bővebben..."]
     ],
     packagesCopy: "Fotózás csomagok minden méretben 39.000.Ft-tól elérhetőek fotósainkkal",
