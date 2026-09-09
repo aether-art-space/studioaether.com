@@ -25,17 +25,21 @@ A registrar transfer is not required for launch. The domain can remain registere
 | `studioaether.com` | `A` | 3600 | `185.230.63.186` |
 | `studioaether.com` | `TXT` | 3600 | `apple-domain-verification=R1ns2vMQhmFp1O6ir11mKrNL23l1KQSAHSc-s-ApAWU` |
 | `www.studioaether.com` | `CNAME` | observed 316 | `cdn1.wixdns.net` (which resolves through `td-ccm-neg-87-45.wixdns.net`) |
+| `en.studioaether.com` | `CNAME` | observed dynamically | `cdn1.wixdns.net` |
+| `hu.studioaether.com` | `CNAME` | observed dynamically | `cdn1.wixdns.net` |
 
 Also observed:
 
 - No apex `AAAA`, `CNAME`, `MX`, or `CAA` answer.
 - No public answer for `mail`, `autodiscover`, or `_dmarc` under the domain.
+- Passive DNS discovery found the additional Wix-backed hostnames `en.studioaether.com` and `hu.studioaether.com`.
 - Email addresses used by the site are `gmail.com` addresses, not mailboxes hosted at `studioaether.com`.
 - Wix refused an `AXFR` zone transfer, so the Wix dashboard must still be checked before cutover for uncommon hostnames or records that were not discoverable through the known public names.
 
 ### Records that must survive the cutover
 
 - Preserve the Apple domain-verification TXT record unless the owner intentionally retires the associated Apple service.
+- Preserve the legacy `en` and `hu` hostname behavior. They must not be left pointing at a retired Wix site after cutover.
 - There are currently no domain MX/SPF/DKIM/DMARC records visible at the known public names. Reconfirm this against Wix's DNS screen before changing nameservers or replacing the apex/`www` records.
 
 ## Current web and TLS behavior
@@ -46,8 +50,10 @@ Also observed:
 | `https://studioaether.com` | `301` to `https://www.studioaether.com/` |
 | `http://www.studioaether.com` | `301` to `https://www.studioaether.com/` |
 | `https://www.studioaether.com` | `200` from Wix (`Pepyaka`) |
+| `https://en.studioaether.com` | `301` to `https://www.studioaether.com/` |
+| `https://hu.studioaether.com` | `301` to `https://www.studioaether.com/hu` |
 
-The current canonical host behavior is therefore HTTPS plus `www`. The replacement must preserve this behavior without a redirect chain where Cloudflare permits it.
+The current canonical host behavior is therefore HTTPS plus `www`. The replacement must preserve this behavior without a redirect chain where Cloudflare permits it. The `en` and `hu` legacy host redirects must also be reproduced on Cloudflare or another retained redirect layer.
 
 The observed certificate covers both `studioaether.com` and `www.studioaether.com`; it was issued by Let's Encrypt and is valid from 16 July 2026 through 14 October 2026. Cloudflare must issue and activate its own certificate for both hostnames during cutover.
 
@@ -85,5 +91,5 @@ Keep `PUBLIC_GOOGLE_TAG_ID`, `PUBLIC_GA4_ID`, and `PUBLIC_GOOGLE_ADS_ID` unset t
 - Confirm whether Wix offers an export; otherwise save screenshots and transcribe every record.
 - Confirm domain auto-renew and ownership/contact access in Wix without changing them.
 - Determine the exact Cloudflare custom-domain onboarding path before accepting any DNS prompt.
+- Include `en.studioaether.com` and `hu.studioaether.com` in the hostname cutover/redirect design; testing only apex and `www` is insufficient.
 - Do not attach the domains or change DNS until the production environment variables and a coordinated live-test window are ready.
-
