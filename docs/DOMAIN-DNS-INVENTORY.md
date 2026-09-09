@@ -111,12 +111,31 @@ On 9 September 2026, a full Cloudflare zone was created as a pre-cutover staging
 
 Cloudflare's automatic DNS scan imported no records, so all eight functional Wix records were added manually with a 3600-second TTL and DNS-only status: three apex A records, the `www`, `en`, and `hu` CNAMEs, and both TXT verification records. A subsequent API read verified that all eight staged values exactly match the authenticated Wix inventory above.
 
+A zone-level Single Redirect ruleset (`ebbc17fb8cb342a09d2394cdd92cdf7b`) is also staged for the cutover. It contains four enabled 301 rules:
+
+- `studioaether.com/*` → the same path on `https://www.studioaether.com`, preserving the query string.
+- `en.studioaether.com/*` → the same path on `https://www.studioaether.com`, preserving the query string.
+- `hu.studioaether.com/` → `https://www.studioaether.com/hu`, preserving the query string.
+- Other `hu.studioaether.com/*` paths → the same path beneath `https://www.studioaether.com/hu`, preserving the query string.
+
+These rules require proxied Cloudflare DNS records. They therefore remain inert while the zone is pending and the copied Wix records are DNS-only.
+
 No Wix nameserver, DNS, domain, or site setting was changed. Do not switch the nameservers yet: the staged web records still deliberately point to Wix and the Pages custom domains and production environment are not ready for activation.
+
+## Production-mode build rehearsal
+
+The exact planned production values were exercised locally without changing the hosted Pages environment:
+
+- `PUBLIC_DEPLOY_ENV=production`
+- `PUBLIC_SITE_URL=https://www.studioaether.com`
+- `PUBLIC_GTM_ID=GTM-P6G8NTP2`
+
+The rehearsal built all 57 pages successfully, produced zero Astro diagnostics, and passed validation for 56 generated routes plus the direct `/mentoring` redirect. The output used indexable robots directives and `www` canonical URLs, loaded the GTM container configuration, and left the direct Google tag, GA4, and Google Ads IDs empty. The checked-out output was then rebuilt with the preview values so no local generated artifact was left launch-configured.
 
 ## Remaining pre-cutover verification
 
 - Include `en.studioaether.com` and `hu.studioaether.com` in the hostname cutover/redirect design; testing only apex and `www` is insufficient.
-- Prepare the production environment values and redeploy while the Pages site remains unreachable through the live domain.
+- Apply the rehearsed production environment values and redeploy at the start of the coordinated cutover window; doing this earlier would make the public `pages.dev` deployment indexable and enable production GTM there.
 - Attach and validate the apex and `www` Pages custom domains at the coordinated cutover window.
 - Replace the staged Wix web records with the final Pages records and reproduce the apex, `en`, and `hu` redirect behavior.
 - Change the Wix nameservers only after the final Cloudflare zone has been rechecked in full.
