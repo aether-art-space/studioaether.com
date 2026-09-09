@@ -6,5 +6,8 @@ export default defineConfig({
   site: "https://www.studioaether.com",
   output: "static",
   trailingSlash: "never",
+  build: {
+    format: "file"
+  },
   integrations: [mdx(), react()]
 });

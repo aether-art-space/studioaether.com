@@ -5,7 +5,7 @@ import { pages, pageByPath, site } from "../src/data/routes.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
-const targetFor = (routePath) => routePath === "/" ? path.join(dist, "index.html") : path.join(dist, routePath.slice(1), "index.html");
+const targetFor = (routePath) => routePath === "/" ? path.join(dist, "index.html") : path.join(dist, `${routePath.slice(1)}.html`);
 const fail = [];
 const warnings = [];
 const htmlFor = new Map();
