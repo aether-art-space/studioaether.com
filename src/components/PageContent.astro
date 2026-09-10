@@ -112,12 +112,12 @@ const isIdPhoto = page.path === "/id-photo" || page.path === "/hu/id-photo";
 const idPhotoPackages = isIdPhoto ? [
   {
     title: hu ? "digitális igazolványkép / útlevélkép" : "digital ID / passport photo",
-    price: "5.000. HUF",
+    price: hu ? "5 000 Ft" : "HUF 5,000",
     features: []
   },
   {
     title: hu ? "digitális + nyomtatott igazolványkép / útlevélkép (4 db)" : "digital + printed ID / passport photo (x4)",
-    price: "7.000. HUF",
+    price: hu ? "7 000 Ft" : "HUF 7,000",
     features: []
   }
 ] : [];
@@ -151,53 +151,57 @@ const seasonalStudioIntroImage: any = seasonalType ? (seasonalImages as any).stu
 const seasonalPackages = seasonalType === "photoshoot" ? photoPackageSets.christmas[hu ? "hu" : "en"] : [];
 const christmasStudioPackages = seasonalType === "studio" ? [
   {
-    title: hu ? "Kedvezményes Studió Idősáv" : "Discounted Studio Timeslots",
-    titleLines: hu ? ["Kedvezményes", "Studió Idősáv"] : ["Discounted", "Studio Timeslots"],
+    title: hu ? "Kedvezményes stúdióidősáv" : "Discounted Studio Timeslots",
+    titleLines: hu ? ["Kedvezményes", "stúdióidősáv"] : ["Discounted", "Studio Timeslots"],
     descriptionLines: hu ? [
       { text: "Hétfőtől csütörtökig", bold: true },
-      { text: "9:00 - 18:00" },
+      { text: "09:00–18:00" },
       { text: "" },
       { text: "" }
     ] : [
       { text: "Monday to Thursday", bold: true },
-      { text: "9:00 - 18:00" },
+      { text: "09:00–18:00" },
       { text: "" },
       { text: "" }
     ],
-    price: hu ? "6000 Ft / óra" : "6000 HUF / hour"
+    price: hu ? "7 000 Ft/óra" : "HUF 7,000/hour"
   },
   {
-    title: hu ? "Standard Studió Idősáv" : "Standard Studio Timeslots",
-    titleLines: hu ? ["Standard", "Studió Idősáv"] : ["Standard", "Studio Timeslots"],
+    title: hu ? "Standard stúdióidősáv" : "Standard Studio Timeslots",
+    titleLines: hu ? ["Standard", "stúdióidősáv"] : ["Standard", "Studio Timeslots"],
     descriptionLines: hu ? [
       { text: "Hétfőtől csütörtökig", bold: true },
-      { text: "18:00 - 22:00" },
-      { text: "Pénteken és hétvégén", bold: true },
-      { text: "9:00 - 22:00" }
+      { text: "18:00–22:00" },
+      { text: "Pénteken", bold: true },
+      { text: "09:00–22:00" },
+      { text: "Hétvégén", bold: true },
+      { text: "10:00–22:00" }
     ] : [
       { text: "Monday to Thursday", bold: true },
-      { text: "18:00 - 22:00" },
-      { text: "Friday & Weekend", bold: true },
-      { text: "9:00 - 22:00" }
+      { text: "18:00–22:00" },
+      { text: "Friday", bold: true },
+      { text: "09:00–22:00" },
+      { text: "Weekend", bold: true },
+      { text: "10:00–22:00" }
     ],
-    price: hu ? "8000 Ft / óra" : "8000 HUF / hour"
+    price: hu ? "8 000 Ft/óra" : "HUF 8,000/hour"
   },
   {
     title: hu ? "10 órás bérlet" : "10 hour Membership",
     titleLines: hu ? ["10 órás bérlet"] : ["10 hour Membership"],
-    titleAccent: hu ? "SPÓROLJ AKÁR 37%-OT" : "SAVE UP TO 37%",
+    titleAccent: hu ? "AKÁR 25% KEDVEZMÉNY" : "SAVE UP TO 25%",
     descriptionLines: hu ? [
       { text: "Bármelyik nap", bold: true },
-      { text: "10:00 - 22:00" },
+      { text: "10:00–22:00" },
       { text: "" },
       { text: "Órákra bontható" }
     ] : [
       { text: "Any day", bold: true },
-      { text: "10:00 - 22:00" },
+      { text: "10:00–22:00" },
       { text: "" },
       { text: "Can be broken up by the hour" }
     ],
-    price: hu ? "60.000. Ft" : "60.000. HUF"
+    price: hu ? "60 000 Ft" : "HUF 60,000"
   }
 ] : [];
 const profileKey = page.path.endsWith("photographer-alexandra") ? "alexandra" : "daniel";
@@ -260,9 +264,9 @@ const weddingUi = hu ? {
 };
 const galleryA11y = hu ? { previousLabel: "Előző képek", nextLabel: "Következő képek", openLabel: "Kép megnyitása" } : {};
 const legalPage: any = page.section === "legal" ? (legalContent as any)[hu ? "hu" : "en"] : null;
-const bookingExtras = hu ? [["Papírháttér", "csak ha ráléptek", "3.000 Ft"], ["Smink", "profi sminkeseinktől", "15.000 Ft-tól"], ["Nagy angyalszárnyak", "fehér vagy fekete / 1 m+", "8.000 Ft"], ["Asszisztencia", "segítünk magyarul vagy angolul", "4.000 Ft / óra"], ["Styling", "dolgozz profi stylistjainkkal", "35.000 Ft-tól"], ["Különleges ruhák", "menyasszonyi ruha, népviselet stb.", "5.000 Ft-tól"], ["Kamerabérlés", "analóg vagy digitális kamerák és filmek", "4.000–9.000 Ft"], ["Fotómodellek", "tapasztalt modellek", "15.000 Ft / órától"], ["Füstgép", "folyadékkal együtt", "5.000 Ft"], ["Akvárium", "egy ember is belefér – vízzel töltve", "39.000 Ft"]] : [["Paper Backdrop", "applies if you step on it", "3.000 HUF"], ["Make-up", "work with our professional make-up artists", "from 15.000 HUF"], ["Large Angel Wings", "black or white / 1 m+", "8.000 HUF"], ["Assistance", "we help you in Hungarian or English", "4.000 HUF / hour"], ["Styling", "work with our professional stylist", "from 35.000 HUF"], ["Unique Outfits", "bridal dress, folk dress, etc.", "from 5.000 HUF"], ["Camera Rental", "analog or digital cameras and films", "4.000–9.000 HUF"], ["Photo Models", "work with our professional models", "from 15.000 HUF / hour"], ["Fog Machine", "with fog juice included", "5.000 HUF"], ["Aquarium", "250 liter (fits a human) - filled with warm water", "39.000 HUF"]];
+const bookingExtras = hu ? [["Papírháttér", "csak ha ráléptek · foglalásonként", "3 000 Ft"], ["Smink", "profi sminkeseinktől · foglalásonként", "15 000 Ft-tól"], ["Nagy angyalszárnyak", "fehér vagy fekete / 1 m+ · foglalásonként", "8 000 Ft"], ["Asszisztencia", "segítünk magyarul vagy angolul", "4 000 Ft/óra"], ["Styling", "dolgozz profi stylistjainkkal · foglalásonként", "35 000 Ft-tól"], ["Különleges ruhák", "menyasszonyi ruha, népviselet stb. · foglalásonként", "5 000 Ft-tól"], ["Kamerabérlés", "analóg vagy digitális kamerák és filmek", "4 000–9 000 Ft/óra"], ["Fotómodellek", "tapasztalt modellek", "15 000 Ft/órától"], ["Füstgép", "folyadékkal együtt · foglalásonként", "5 000 Ft"], ["Akvárium", "egy ember is belefér – vízzel töltve · foglalásonként", "39 000 Ft"]] : [["Paper Backdrop", "applies if you step on it · per booking", "HUF 3,000"], ["Make-up", "work with our professional make-up artists · per booking", "from HUF 15,000"], ["Large Angel Wings", "black or white / 1 m+ · per booking", "HUF 8,000"], ["Assistance", "we help you in Hungarian or English", "HUF 4,000/hour"], ["Styling", "work with our professional stylist · per booking", "from HUF 35,000"], ["Unique Outfits", "bridal dress, folk dress, etc. · per booking", "from HUF 5,000"], ["Camera Rental", "analog or digital cameras and films", "HUF 4,000–9,000/hour"], ["Photo Models", "work with our professional models", "from HUF 15,000/hour"], ["Fog Machine", "with fog juice included · per booking", "HUF 5,000"], ["Aquarium", "250 liter (fits a human) - filled with warm water · per booking", "HUF 39,000"]];
 const bookingExtraItems = bookingExtras.filter(([title]) => !["Smink", "Make-up", "Styling"].includes(title)).map(([title, priceLabel, price]) => ({ title, priceLabel, price }));
-const profilePackages = hu ? [{ title: "Kis Studiós Fotózás", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretnél kipróbálni.", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] }, { title: "Standard Studiós Fotózás", description: "Tökéletes több öltözékes vagy több stílusú stúdiófotózáshoz. Párok vagy barátok számára is jó megoldás.", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "1-2 modell"] }, { title: "All-inclusive Studiós Fotózás", description: "Ha a megszokottól eltérő, tökéletes képek szép sorozatát szeretnéd, ez az ajánlat neked szól. Bonyolult díszletekkel, különleges világítással vagy csoportképekkel is bármit megvalósítunk, amit elképzelsz.", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "egy modelltől csoportokig"] }] : [{ title: "Small Studio Photoshoot", description: "Pick this package if you want some new profile pictures, CV pictures or just want to try out a simple studio shoot.", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] }, { title: "Standard Studio Photoshoot", description: "Perfect for a studio shoot with multiple outfits or styles. Also a good solution for couples or friends.", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] }, { title: "All-inclusive Studio Photoshoot", description: "If you want a nice set of perfect pictures that are beyond the usual, this offer is for you. Including complicated sets, special lighting or group photos - we can do anything you can imagine!", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }];
+const profilePackages = hu ? [{ title: "Kis fotózás csomag", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretnél kipróbálni.", price: "39 000 Ft", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] }, { title: "Standard Studiós Fotózás", description: "Tökéletes több öltözékes vagy több stílusú stúdiófotózáshoz. Párok vagy barátok számára is jó megoldás.", price: "59 000 Ft", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "1-2 modell"] }, { title: "All-inclusive Studiós Fotózás", description: "Ha a megszokottól eltérő, tökéletes képek szép sorozatát szeretnéd, ez az ajánlat neked szól. Bonyolult díszletekkel, különleges világítással vagy csoportképekkel is bármit megvalósítunk, amit elképzelsz.", price: "79 000 Ft", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "legfeljebb 3 öltözék", "legfeljebb 3 stúdióbeállítás", "egy modelltől csoportokig"] }] : [{ title: "Small Studio Photoshoot", description: "Pick this package if you want some new profile pictures, CV pictures or just want to try out a simple studio shoot.", price: "39.000. HUF", features: ["studio rent included", "6 magazine quality photographs", "single outfit", "single studio setting", "single model"] }, { title: "Standard Studio Photoshoot", description: "Perfect for a studio shoot with multiple outfits or styles. Also a good solution for couples or friends.", price: "59.000. HUF", features: ["studio rent included", "15 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "1-2 models"] }, { title: "All-inclusive Studio Photoshoot", description: "If you want a nice set of perfect pictures that are beyond the usual, this offer is for you. Including complicated sets, special lighting or group photos - we can do anything you can imagine!", price: "79.000. HUF", features: ["studio rent included", "21 magazine quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }];
 const profilePackageFixes = [["Studiós", "Stúdiós"], ["magazin minőségű", "magazinminőségű"], ["magazine quality", "magazine-quality"], ["Including complicated sets, special lighting or group photos - we can do anything you can imagine!", "We can create complicated sets, use special lighting, and photograph groups—whatever you can imagine."]];
 profilePackages.forEach((packageItem: any) => {
   const fix = (value: any): any => typeof value === "string" ? profilePackageFixes.reduce((text, [from, to]) => text.replaceAll(from, to), value) : Array.isArray(value) ? value.map(fix) : value;
@@ -271,13 +275,13 @@ profilePackages.forEach((packageItem: any) => {
   packageItem.features = fix(packageItem.features);
 });
 const bookingPackages = hu ? [
-  { title: "Kedvezményes stúdió idősávok", titleLines: ["Kedvezményes", "Stúdió idősávok"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "9:00-18:00" }, { text: "" }, { text: "" }], price: "7.000. Ft/óra" },
-  { title: "Standard stúdió idősávok", titleLines: ["Standard", "Stúdió idősávok"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "18:00-22:00 között" }, { text: "péntek és hétvége", bold: true }, { text: "10:00-22:00" }], price: "8.000. Ft/óra" },
-  { title: "10 órás bérlet", titleLines: ["10 órás bérlet"], titleAccent: "akár 25% kedvezmény!", descriptionLines: [{ text: "Bármelyik nap", bold: true }, { text: "10:00-22:00 között" }, { text: "" }, { text: "Óránként felbontható" }], price: "60.000. Ft" }
+  { title: "Kedvezményes stúdióidősáv", titleLines: ["Kedvezményes", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "7 000 Ft/óra" },
+  { title: "Standard stúdióidősáv", titleLines: ["Standard", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "18:00–22:00" }, { text: "pénteken", bold: true }, { text: "09:00–22:00" }, { text: "hétvégén", bold: true }, { text: "10:00–22:00" }], price: "8 000 Ft/óra" },
+  { title: "10 órás bérlet", titleLines: ["10 órás bérlet"], titleAccent: "akár 25% kedvezmény", descriptionLines: [{ text: "Bármelyik nap", bold: true }, { text: "10:00–22:00 között" }, { text: "" }, { text: "Óránként felbontható" }], price: "60 000 Ft" }
 ] : [
-  { title: "Discounted Studio Timeslots", titleLines: ["Discounted", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "9:00 - 18:00" }, { text: "" }, { text: "" }], price: "7.000. HUF / hour" },
-  { title: "Standard Studio Timeslots", titleLines: ["Standard", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "18:00-22:00" }, { text: "Friday & Weekend", bold: true }, { text: "9:00 - 22:00" }], price: "8.000. HUF / hour" },
-  { title: "10 Hour Membership", titleLines: ["10 hour Membership"], titleAccent: "SAVE UP TO 37%", descriptionLines: [{ text: "Any day", bold: true }, { text: "10:00-22:00" }, { text: "" }, { text: "Can be broken up by the hour" }], price: "60.000. HUF" }
+  { title: "Discounted Studio Timeslots", titleLines: ["Discounted", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "HUF 7,000/hour" },
+  { title: "Standard Studio Timeslots", titleLines: ["Standard", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "18:00–22:00" }, { text: "Friday", bold: true }, { text: "09:00–22:00" }, { text: "Weekend", bold: true }, { text: "10:00–22:00" }], price: "HUF 8,000/hour" },
+  { title: "10 Hour Membership", titleLines: ["10 Hour Membership"], titleAccent: "SAVE UP TO 25%", descriptionLines: [{ text: "Any day", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Can be broken up by the hour" }], price: "HUF 60,000" }
 ];
 const servicePackages = serviceType === "portrait" ? photoPackageSets.portrait[hu ? "hu" : "en"] : servicePageAny?.packages ?? [];
 const specialPackages = specialType ? (photoPackageSets as any)[specialType][hu ? "hu" : "en"] : [];
@@ -316,7 +320,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         </div>
         <aside class="studio-showcase__rent">
           <h3>{hu ? "Stúdióbérlés" : "Studio Rent"}</h3>
-          <p>{hu ? "7.000 HUF / órától" : "starting from 7.000. HUF / hour"}</p>
+          <p>{hu ? "7 000 Ft/órától" : "starting from HUF 7,000/hour"}</p>
           <a class="button button--dark studio-showcase__book" data-gtag-event="booking_click" data-gtag-location="home-studio-showcase" href={site.bookingUrl}>{hu ? "foglald le a stúdiót" : "book the photostudio"}</a>
         </aside>
       </div>
@@ -350,7 +354,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <div class="home-services__grid">{home.photographyServices.map(([title, href, label], index) => <CircularCard variant="service" title={title} href={href} linkLabel={label} image={homeImages.photographers[index]} />)}</div>
       <div class="home-services__packages">
         <p>{home.packagesCopy}</p>
-        <a class="button button--dark" href={hu ? "/hu/packages" : "/packages"}>{hu ? "fotózás csomagok" : "view photography packages"}</a>
+        <a class="button button--dark" href={hu ? "/hu/packages" : "/packages"}>{hu ? "fotózási csomagok" : "view photography packages"}</a>
       </div>
     </section>
   </>
@@ -783,12 +787,12 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <InfoBox class="booking-note">
       <ul>
         {hu ? <>
-          <li>Nyitvatartási időn kívül 10.000 HUF / óra áron bérelhető a stúdió 0–24 óráig – <a href="mailto:photostudio.aether@gmail.com?subject=rent%20outside%20work%20hours">dobj egy e-mailt</a>.</li>
-          <li>Az 5 vagy több résztvevős forgatások, castingok és hasonló projektek 10.000 Ft / óra áron érhetők el.</li>
+          <li>Nyitvatartási időn kívül 10 000 Ft/óra áron bérelhető a stúdió 0–24 óráig – <a href="mailto:photostudio.aether@gmail.com?subject=rent%20outside%20work%20hours">dobj egy e-mailt</a>.</li>
+          <li>Az 5 vagy több résztvevős forgatások, castingok és hasonló projektek 10 000 Ft/óra áron érhetők el.</li>
           <li>Sminkeléshez fél áron bérelheted ki a stúdiót; ha a mi sminkeseinkkel dolgozol, a sminkelés idejére ingyenesen használhatod.</li>
         </> : <>
-          <li>The studio can be rented outside work hours for 10.000. HUF / hour - <a href="mailto:photostudio.aether@gmail.com?subject=rent%20outside%20work%20hours">drop us an email</a></li>
-          <li>Shoots with 5+ participants, castings, and similar projects cost 10.000 HUF / hour.</li>
+          <li>The studio can be rented outside work hours for HUF 10,000/hour - <a href="mailto:photostudio.aether@gmail.com?subject=rent%20outside%20work%20hours">drop us an email</a></li>
+          <li>Shoots with 5+ participants, castings, and similar projects cost HUF 10,000/hour.</li>
           <li>For make-up you can rent the studio for half price - or if you work with our make-up artists, you can use it for free!</li>
         </>}
       </ul>

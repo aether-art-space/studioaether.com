@@ -42,7 +42,7 @@ const bookingFooterVariant = bookingFooterVariantFor(page);
         <div class="footer-icon-slot" aria-hidden="true"><MapPinIcon className="footer-icon footer-icon--location" size={29} weight="regular" /></div>
         <h2>{hu ? "Cím" : "Address"}</h2>
         <address>
-          <span>HUNGARY - 1093. Budapest</span>
+          <span>{hu ? "MAGYARORSZÁG – 1093 Budapest" : "HUNGARY – 1093 Budapest"}</span>
           <span><a href={site.mapsUrl} target="_blank" rel="noreferrer noopener">Lónyay utca 60.</a>&nbsp;{hu ? "4-es kapucsengő" : "#4 doorbell"}</span>
         </address>
       </div>

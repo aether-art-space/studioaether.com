@@ -117,13 +117,13 @@ const faqItemsEn = [
   ["Is it hygienic to wear the clothes in the studio?", [faqParagraph("We take care to keep the wardrobe clean between uses. For hygiene, please wear the clothing with underwear; underwear is not provided.")]],
   ["What backdrops and seasonal sets are available?", [faqParagraph("We offer 2.7 m wide paper backdrops, textile backdrops and custom-built backdrops. Seasonal sets, including Christmas decoration, are also available when offered.")]],
   ["What are the pricing and booking options?", [faqList([
-    "Discounted studio rate: 7,000 HUF/hour, Monday–Thursday 09:00–18:00.",
-    "Standard studio rate: 8,000 HUF/hour, Monday–Thursday 18:00–22:00, Friday 09:00–22:00 and weekends 10:00–22:00.",
-    "10-hour membership: 60,000 HUF, usable flexibly by the hour between 10:00 and 22:00.",
-    "Outside regular opening hours: 10,000 HUF/hour by email.",
-    "Filmings and castings with 5 or more participants: 10,000 HUF/hour.",
+    "Discounted studio rate: HUF 7,000/hour, Monday–Thursday 09:00–18:00.",
+    "Standard studio rate: HUF 8,000/hour, Monday–Thursday 18:00–22:00, Friday 09:00–22:00 and weekends 10:00–22:00.",
+    "10-hour membership: HUF 60,000, usable flexibly by the hour between 10:00 and 22:00. Save up to 25% compared with the standard hourly rate.",
+    "Outside regular opening hours: HUF 10,000/hour by email.",
+    "Filmings and castings with 5 or more participants: HUF 10,000/hour.",
     "For make-up, studio rental is half price; it is free during make-up time when working with the studio's make-up artists.",
-    { text: "Extras:", children: ["Paper backdrop: 3,000 HUF if stepped on", "Make-up: from 15,000 HUF", "Large Angel Wings: 8,000 HUF", "Assistance in Hungarian or English: 4,000 HUF/hour", "Styling: from 35,000 HUF", "Unique Outfits: from 5,000 HUF", "Camera rental: 4,000–9,000 HUF/hour", "Photo Models: from 15,000 HUF/hour", "Fog Machine: 5,000 HUF", "Aquarium: 39,000 HUF"] }
+    { text: "Extras:", children: ["Paper backdrop: HUF 3,000 per booking if stepped on", "Make-up: from HUF 15,000 per booking", "Large Angel Wings: HUF 8,000 per booking", "Assistance in Hungarian or English: HUF 4,000/hour", "Styling: from HUF 35,000 per booking", "Unique Outfits: from HUF 5,000 per booking", "Camera rental: HUF 4,000–9,000/hour", "Photo Models: from HUF 15,000/hour", "Fog Machine: HUF 5,000 per booking", "Aquarium: HUF 39,000 per booking"] }
   ])]],
   ["How can I book the studio?", [faqParagraph("Book through our online booking system or contact us by email."), faqList([{ text: "Open the booking system", href: "/booking" }, { text: "Email photostudio.aether@gmail.com", href: "mailto:photostudio.aether@gmail.com" }])]],
   ["Can I extend my booking while in the studio?", [faqParagraph("If the studio is available after your booking, you can extend your session by the hour at the applicable hourly rate. Setup and tear-down are part of the booked time, so please include them when calculating your reservation.")]],
@@ -151,11 +151,11 @@ const faqItemsHu = [
   ["Mik a bérlési és foglalási lehetőségek?", [faqList([
     "Kedvezményes stúdióár: 7 000 Ft/óra, hétfő–csütörtök 09:00–18:00 között.",
     "Normál stúdióár: 8 000 Ft/óra, hétfő–csütörtök 18:00–22:00, péntek 09:00–22:00 és hétvégén 10:00–22:00 között.",
-    "10 órás bérlet: 60 000 Ft, amely óránként rugalmasan használható 10:00 és 22:00 között.",
+    "10 órás bérlet: 60 000 Ft, amely óránként rugalmasan használható 10:00 és 22:00 között. A normál óradíjhoz képest akár 25% kedvezményt jelent.",
     "Nyitvatartási időn kívül: 10 000 Ft/óra, e-mailes egyeztetéssel.",
     "5 vagy több résztvevős forgatás és casting: 10 000 Ft/óra.",
     "Sminkeléshez a stúdióbérlés féláron vehető igénybe; a sminkelés ideje alatt ingyenes, ha a stúdió sminkeseivel dolgozol.",
-    { text: "Extrák:", children: ["Papírháttér: 3 000 Ft, ha rálépnek", "Smink: 15 000 Ft-tól", "Nagy angyalszárnyak: 8 000 Ft", "Asszisztencia magyar vagy angol nyelven: 4 000 Ft/óra", "Styling: 35 000 Ft-tól", "Egyedi ruhák: 5 000 Ft-tól", "Fényképezőgép-bérlés: 4 000–9 000 Ft/óra", "Fotómodellek: 15 000 Ft/órától", "Füstgép: 5 000 Ft", "Akvárium: 39 000 Ft"] }
+    { text: "Extrák:", children: ["Papírháttér: 3 000 Ft/foglalás, ha rálépnek", "Smink: 15 000 Ft-tól/foglalás", "Nagy angyalszárnyak: 8 000 Ft/foglalás", "Asszisztencia magyar vagy angol nyelven: 4 000 Ft/óra", "Styling: 35 000 Ft-tól/foglalás", "Egyedi ruhák: 5 000 Ft-tól/foglalás", "Fényképezőgép-bérlés: 4 000–9 000 Ft/óra", "Fotómodellek: 15 000 Ft/órától", "Füstgép: 5 000 Ft/foglalás", "Akvárium: 39 000 Ft/foglalás"] }
   ])]],
   ["Hogyan tudok időpontot foglalni?", [faqParagraph("Az online foglalási rendszeren keresztül foglalhatsz, vagy e-mailben veheted fel velünk a kapcsolatot."), faqList([{ text: "Online foglalási rendszer megnyitása", href: "/hu/booking" }, { text: "E-mail: photostudio.aether@gmail.com", href: "mailto:photostudio.aether@gmail.com" }])]],
   ["Meghosszabbíthatom a foglalásomat a helyszínen?", [faqParagraph("Ha a foglalásod után a stúdió szabad, a fotózást óránként, az aktuális óradíj szerint meghosszabbíthatod. A berendezés és az elpakolás a lefoglalt idő részét képezi, ezért ezeket is számítsd bele a foglalás időtartamába.")]],

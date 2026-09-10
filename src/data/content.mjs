@@ -119,7 +119,7 @@ export const homeContent = {
       ["modell digitals és portfólió", "/hu/model-polaroids-budapest", "bővebben..."],
       ["esküvői\nfotózás", "/hu/wedding-photography", "bővebben..."]
     ],
-    packagesCopy: "Fotózás csomagok minden méretben 39.000.Ft-tól elérhetőek fotósainkkal",
+    packagesCopy: "Fotózási csomagok minden méretben, fotósainkkal: 39 000 Ft-tól.",
     bookingHeading: "Foglald le a stúdiót",
     bookingLead: "Foglald le stúdiónkat egy fotózásra, vagy bármi másra.",
     bookingCards: [
@@ -245,7 +245,7 @@ export const selfieContent = {
       ["Retouching service", ["Get your favourite pictures professionally retouched"], "5000 HUF / photo", "price-03"]
     ],
     extrasHeading: "Extras",
-    extras: [["Large Angel Wings", "8.000. HUF"], ["Live White Snake", "15.000. HUF", "let us know in advance please!"], ["Smoke machine", "5.000. HUF"]],
+    extras: [["Large Angel Wings", "HUF 8,000 per booking"], ["Live White Snake", "HUF 15,000", "let us know in advance please!"], ["Smoke machine", "HUF 5,000 per booking"]],
     reserveHeading: "Reserve your spot",
     reserveCopy: "Don’t miss your chance to experience Budapest’s most creative photo studio!",
     reserveCta: "Book Now",
@@ -291,7 +291,7 @@ export const selfieContent = {
       ["Retusálás", ["Retusáltasd ki magazin minőségre a kedvenc képeid."], "5.000. Ft / fotó", "price-03"]
     ],
     extrasHeading: "Extrák",
-    extras: [["Nagy Angyalszárny", "8.000. HUF"], ["Élő fehér kígyó", "15.000. HUF", "Előzetes foglalás szükséges!"], ["Füstgép", "5.000. HUF"]],
+    extras: [["Nagy Angyalszárny", "8 000 Ft/foglalás"], ["Élő fehér kígyó", "15 000 Ft", "Előzetes foglalás szükséges!"], ["Füstgép", "5 000 Ft/foglalás"]],
     reserveHeading: "Foglald le a helyed",
     reserveCopy: "Ne hagyd ki a lehetőséget, hogy kipróbáld Budapest legkreatívabb fotóstúdióját!",
     reserveCta: "Foglalj Most",
@@ -487,22 +487,22 @@ export const equipmentCaptions = {
     other: [
       equipmentCaption("Tripods & stands", "free"),
       equipmentCaption("Wind machine", "free"),
-      equipmentCaption("Fog machine", "5000 HUF / hour"),
+      equipmentCaption("Fog machine", "HUF 5,000 per booking"),
       equipmentCaption("Tools for prep", "free"),
       equipmentCaption("Blacklight", "free")
     ],
     cameras: [
-      equipmentCaption("Sony A7III", "full frame mirrorless digital camera", "9000 HUF"),
-      equipmentCaption("Canon 6D MKII", "full frame mirror digital camera", "9000 HUF"),
-      equipmentCaption("Leica R3 - Safari E,", "35mm film mirror camera", "9000 HUF"),
-      equipmentCaption("Hasselblad 500C", "medium format camera", "9000 HUF"),
-      equipmentCaption("Nikon EM", "35mm film mirror camera", "5000 HUF"),
-      equipmentCaption("Chinon CE-4", "35mm film mirror camera", "5000 HUF"),
-      equipmentCaption("Yashica FX-100", "35mm film mirror camera", "5000 HUF"),
-      equipmentCaption("Yashica Lynx 5000E", "35mm film rangefinder camera", "5000 HUF"),
-      equipmentCaption("FED2", "35mm film rangefinder camera", "5000 HUF"),
-      equipmentCaption("Olympus MJU2", "35mm film compact camera", "5000 HUF"),
-      equipmentCaption("Super 8", "8mm film videocamera", "9000 HUF")
+      equipmentCaption("Sony A7III", "full frame mirrorless digital camera", "HUF 9,000/hour"),
+      equipmentCaption("Canon 6D MKII", "full frame mirror digital camera", "HUF 9,000/hour"),
+      equipmentCaption("Leica R3 - Safari E,", "35mm film mirror camera", "HUF 9,000/hour"),
+      equipmentCaption("Hasselblad 500C", "medium format camera", "HUF 9,000/hour"),
+      equipmentCaption("Nikon EM", "35mm film mirror camera", "HUF 5,000/hour"),
+      equipmentCaption("Chinon CE-4", "35mm film mirror camera", "HUF 5,000/hour"),
+      equipmentCaption("Yashica FX-100", "35mm film mirror camera", "HUF 5,000/hour"),
+      equipmentCaption("Yashica Lynx 5000E", "35mm film rangefinder camera", "HUF 5,000/hour"),
+      equipmentCaption("FED2", "35mm film rangefinder camera", "HUF 5,000/hour"),
+      equipmentCaption("Olympus MJU2", "35mm film compact camera", "HUF 5,000/hour"),
+      equipmentCaption("Super 8", "8mm film videocamera", "HUF 9,000/hour")
     ],
     lenses: [
       equipmentCaption("Nikon mount lenses", "28mm f/1.8, 85mm f/1.8, 50mm f/1.8, and other lenses."),
@@ -537,22 +537,22 @@ export const equipmentCaptions = {
     other: [
       equipmentCaption("Tripodok és állványok", "ingyenes"),
       equipmentCaption("Szélgép", "ingyenes"),
-      equipmentCaption("Ködgép", "5000 HUF / óra"),
+      equipmentCaption("Ködgép", "5 000 Ft/foglalás"),
       equipmentCaption("Eszközök készülődéshez", "ingyenes"),
       equipmentCaption("UV lámpa", "ingyenes")
     ],
     cameras: [
-      equipmentCaption("Sony A7III", "full frame mirrorless digitális fényképező", "9000 HUF"),
-      equipmentCaption("Canon 6D MKII", "full frame tükörreflexes digitális fényképező", "9000 HUF"),
-      equipmentCaption("Leica R3 - Safari E.", "35mm film kamera", "9000 HUF"),
-      equipmentCaption("Hasselblad 500C", "középformátum", "9000 HUF"),
-      equipmentCaption("Nikon EM", "35mm-es kamera", "5000 HUF"),
-      equipmentCaption("Chinon CE-4", "35mm-es kamera", "5000 HUF"),
-      equipmentCaption("Yashica FX-100", "35mm-es kamera", "5000 HUF"),
-      equipmentCaption("Yashica Lynx 5000E", "35mm-es rangefinder kamera", "5000 HUF"),
-      equipmentCaption("FED2", "35mm-es kamera", "5000 HUF"),
-      equipmentCaption("Olympus MJU2", "kompakt 35mm-es", "5000 HUF"),
-      equipmentCaption("Super 8", "8mm film kamera", "9000 HUF")
+      equipmentCaption("Sony A7III", "full frame mirrorless digitális fényképező", "9 000 Ft/óra"),
+      equipmentCaption("Canon 6D MKII", "full frame tükörreflexes digitális fényképező", "9 000 Ft/óra"),
+      equipmentCaption("Leica R3 - Safari E.", "35mm film kamera", "9 000 Ft/óra"),
+      equipmentCaption("Hasselblad 500C", "középformátum", "9 000 Ft/óra"),
+      equipmentCaption("Nikon EM", "35mm-es kamera", "5 000 Ft/óra"),
+      equipmentCaption("Chinon CE-4", "35mm-es kamera", "5 000 Ft/óra"),
+      equipmentCaption("Yashica FX-100", "35mm-es kamera", "5 000 Ft/óra"),
+      equipmentCaption("Yashica Lynx 5000E", "35mm-es rangefinder kamera", "5 000 Ft/óra"),
+      equipmentCaption("FED2", "35mm-es kamera", "5 000 Ft/óra"),
+      equipmentCaption("Olympus MJU2", "kompakt 35mm-es", "5 000 Ft/óra"),
+      equipmentCaption("Super 8", "8mm film kamera", "9 000 Ft/óra")
     ],
     lenses: [
       equipmentCaption("Nikon bajonettes objektívek", "28mm f/1.8, 85mm f/1.8, 50mm f/1.8, és más objektívek."),
@@ -629,10 +629,10 @@ const propsCollectionCaptions = [
   ["70x70cm white posing cube", "You can use this prop in the studio for FREE!"],
   ["Pink satin duvet covers with a mattress setup", "You can choose from many different covers for our bed setup - for free"],
   ["70's briefcase", "You can use this prop in the studio for FREE!"],
-  ["Large Black Angel Wings", "You can use this prop in the studio for 8000 HUF or outside the studio for 12.000. HUF / day."],
+  ["Large Black Angel Wings", "You can use this prop in the studio for HUF 8,000 per booking or outside the studio for HUF 12,000/day."],
   ["Longsword", "Handcrafted artisanal longsword by a hungarian swordsmaker. Non-sharpened for safety."],
   ["retro phones in different colors", "An orange, red and a black old phone. Can be used in the studio for free."],
-  ["Large Angel Wings", "The angel wings can be rented for 8000.HUF in studio or 10.000.HUF / day outside the studio.\n\nThe wings are handmade by a hungarian artisan."],
+  ["Large Angel Wings", "The angel wings can be rented for HUF 8,000 per booking in the studio or HUF 10,000/day outside the studio.\n\nThe wings are handmade by a Hungarian artisan."],
   ["Claw gloves", "Two pairs of black opera-gloves with claws. Use it for free!"],
   ["fencing swords", "You can use this prop in the studio for FREE!"],
   ["vinyls", "You can use this prop in the studio for FREE!"],
@@ -640,7 +640,7 @@ const propsCollectionCaptions = [
   ["french coronation sword replica", "You can use this prop in the studio for FREE!"],
   ["black angel wings", "You can use this prop in the studio for FREE!"],
   ["", "You can use this prop in the studio for FREE!"],
-  ["250 liter aquarium", "You can use this prop in the studio for 29.000.HUF fixed price (including a 2 hour studio rent)."],
+  ["250 liter aquarium", "You can use this prop in the studio for HUF 39,000 per booking."],
   ["Mattrace, bedsheets and baldachin", "You can use this prop in the studio for FREE!"],
   ["Old germanic dresser", "You can use this prop in the studio for FREE!"],
   ["Retro props", "You can use these props in the studio for FREE!"],
@@ -758,7 +758,7 @@ const photographerPackagesEn = [
   { title: "All-inclusive Studio Photoshoot", description: "If you want a strong set of images that goes beyond the usual, this offer is for you. We can create complicated sets, use special lighting, and photograph groups—whatever you can imagine.", price: "79.000. HUF", features: ["studio rent included", "21 magazine-quality photographs", "up to 3 outfits", "up to 3 studio settings", "from a single model to groups"] }
 ];
 const photographerPackagesHu = [
-  { title: "Kis Studiós Fotózás csomag", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretne kipróbálni.", price: "39.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] },
+  { title: "Kis fotózás csomag", description: "Válaszd ezt a csomagot, ha új profilképet, önéletrajzot szeretnél, vagy csak egy egyszerű stúdiófotózást szeretnél kipróbálni.", price: "39 000 Ft", features: ["stúdióbérleti díjat tartalmazza", "6 magazin minőségű fénykép", "1 outfit", "1 stúdió beállítás", "1 modell"] },
   { title: "Standard Studiós Fotózás csomag", description: "Tökéletes stúdiós felvételekhez többféle öltözékkel vagy stílussal. Pároknak vagy barátoknak is jó megoldás.", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 ruha", "akár 3 stúdióbeállítás", "1-2 modell"] },
   { title: "All-inclusive Studiós Fotózás csomag", description: "Ha egy szép, a megszokotton túlmutató képsorozatra vágysz, ez az ajánlat neked szól. Bonyolult szettek, speciális világítás vagy csoportképek – bármit meg tudunk csinálni, amit csak el tudsz képzelni!", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "akár 3 ruha", "akár 3 stúdióbeállítás", "egyetlen modelltől csoportokig"] }
 ];
@@ -1195,7 +1195,7 @@ export const seasonalContent = {
       intro: "A karácsonyi fotózás az egyik legszebb módja annak, hogy megőrizd az ünnep varázsát. Az Aether Art Space budapesti stúdiójában professzionális karácsonyi fotózásokat készítünk, amelyek megragadják az ünnep melegségét, örömét és meghittségét. Legyen szó elegáns karácsonyi portrékról, családi képekről vagy kreatív ünnepi fotókról személyes vagy üzleti célra, barátságos stúdiónk tökéletes helyszínt biztosít. Tapasztalt fotósaink természetes, mégis kifinomult képeket készítenek – hogy minden pillanatot újra átélhess a karácsony varázslatában.",
       packageHeading: "Karácsonyi Fotózás Csomagjaink",
       packageLead: "válassz neked megfelelő csomagot Karácsonyi fotózásodhoz profi fotósainkkal",
-      studioHeading: "Budapesti studiónk",
+      studioHeading: "Budapesti stúdiónk",
       studioIntro: "Az Aether Art Space stúdiót úgy alakítottuk ki, hogy egyszerre legyen professzionális és meghitt, megteremtve a tökéletes ünnepi hangulatot a karácsonyi fotózásodhoz. Tudjuk, hogy egy barátságos, kellemes környezet segít ellazulni és valóban élvezni a pillanatot, ezért olyan teret hoztunk létre, amely ötvözi az eleganciát, a kényelmet és a karácsonyi varázst – az ideális helyszín, ahol megörökítheted az ünnep örömteli, időtálló pillanatait.",
       studioBullets: ["Professzionális felszerelés – csúcskategóriás világítás, kreatív hátterek és minden, ami a gyönyörű karácsonyi portrékhoz szükséges", "Kényelem mindenekelőtt – meghitt lounge rész, ahol ellazulhatsz és ráhangolódhatsz az ünnepi hangulatra", "Smink- és styling sarok – jól megvilágított helyszín az utolsó simításokhoz és előkészületekhez", "Mézeskalács, forró tea és karácsonyi zene – házi sütemények, meleg tea és ünnepi dallamok szólnak a vintage lemezjátszónkról, hogy teljes legyen a hangulat", "Tágas és rugalmas tér – családi, páros vagy egyéni karácsonyi fotózásokhoz egyaránt tökéletes választás"],
       studioTail: "Akár családi karácsonyi fotózást, páros portrékat vagy ünnepi hangulatú kampányképeket tervezel, stúdiónk az elejétől a végéig gördülékeny, szívből jövő élményt nyújt – egy hely, ahol valódi mosolyok születnek, és minden kép a karácsony melegét sugározza."
@@ -1222,8 +1222,8 @@ export const seasonalContent = {
       introBullets: ["Gyönyörű karácsonyi dekoráció, két fával, lámpasorokkal és ünnepi kellékekkel", "Professzionális világítás, háttér és alapvető felszerelés biztosított", "Rugalmas foglalási lehetőségek, ideális rövid fotózásokra, vagy egész napos bérlésre", "Budapest központjában, könnyen megközelíthető és tágas hely"],
       decorationHeading: "Aktuális dekorációnkkal készült",
       sectionHeading: "Minden, ami egy zökkenőmentes ünnepi fotózáshoz szükséges",
-      sectionIntro: "Stúdiónkat úgy alakítottuk ki, hogy támogassuk a fotósokat lenyűgöző ünnepi portrék, családi ülések és csoportképek készítésében. A lámpáktól a dekorációig minden részletre odafigyeltünk, így a tökéletes pillanatok megörökítésére összpontosíthatsz.",
-      sectionBullets: ["Ünnepi dekoráció: 2 karácsonyfa, díszdobozok, ünnepi koszorúk és hangulatos bútorok", "Professzionális felszerelés: Softbox lámpák, hátterek, reflektorok és egyebek", "Nagy sebességű Wi-Fi: Könnyen csatlakozhatsz és megoszthatod munkád a helyszínen", "Öltöző és várótér: Hely az ügyfelek számára a kényelmes felkészüléshez", "Kellékek: Különböző kellékek a család minden tagjainak"],
+      sectionIntro: "Stúdiónkat úgy alakítottuk ki, hogy támogassa a fotósokat lenyűgöző ünnepi portrék, családi fotózások és csoportképek készítésében. A lámpáktól a dekorációig minden részletre odafigyeltünk, így a tökéletes pillanatok megörökítésére összpontosíthatsz.",
+      sectionBullets: ["Ünnepi dekoráció: 2 karácsonyfa, díszdobozok, ünnepi koszorúk és hangulatos bútorok", "Professzionális felszerelés: Softbox lámpák, hátterek, reflektorok és egyebek", "Nagy sebességű Wi-Fi: Könnyen csatlakozhatsz és megoszthatod munkád a helyszínen", "Öltöző és várótér: Hely az ügyfelek számára a kényelmes felkészüléshez", "Kellékek: A család minden tagja számára"],
       packageIntro: "Bérleti csomagok skáláját kínáljuk, így kiválaszthatod, melyik a legmegfelelőbb a költségvetésednek. Akár gyors fotózást, akár hosszabb bérlést keresel, csomagjaink rugalmasságot biztosítanak.",
       contactHeading: "Foglald le stúdiónkat egy ünnepi fotózásra!",
       contactBody: "Karácsonyi tematikájú stúdiónk gyorsan betelik az ünnepi időszakban. Foglald le most az időpontodat, hogy biztosítsd a számodra megfelelő időt és dátumot. Csapatunk bármilyen különleges kérésben vagy extra felszerelésben is segít."
@@ -1673,6 +1673,8 @@ residentArtistImages.photographers.alexandra = photographersGrid[1] || residentA
 // Keep legacy content blocks consistent until they are fully migrated to structured, localized fields.
 const copyFixes = [
   ["studió", "stúdió"],
+  ["Studió", "Stúdió"],
+  ["studiós", "stúdiós"],
   ["15.000.Ft", "15.000 Ft"],
   ["8.000.Ft", "8.000 Ft"],
   ["39.000.Ft", "39.000 Ft"],
@@ -1708,4 +1710,31 @@ const applyCopyFixes = (value) => {
   return value;
 };
 
+const applyHungarianPriceFormat = (value) => {
+  if (typeof value === "string") {
+    return value.replace(/(\d{1,3}(?:\.\d{3})+|\d{4,})\.?\s*HUF/g, (_, amount) => `${amount.replaceAll(".", " ")} Ft`);
+  }
+  if (Array.isArray(value)) {
+    for (let index = 0; index < value.length; index += 1) value[index] = applyHungarianPriceFormat(value[index]);
+    return value;
+  }
+  if (value && typeof value === "object") {
+    for (const key of Object.keys(value)) value[key] = applyHungarianPriceFormat(value[key]);
+  }
+  return value;
+};
+
+const applyHungarianPriceFormats = (value) => {
+  if (Array.isArray(value)) {
+    value.forEach(applyHungarianPriceFormats);
+    return;
+  }
+  if (!value || typeof value !== "object") return;
+  for (const [key, nestedValue] of Object.entries(value)) {
+    if (key === "hu") applyHungarianPriceFormat(nestedValue);
+    else applyHungarianPriceFormats(nestedValue);
+  }
+};
+
 [homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyCopyFixes);
+[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyHungarianPriceFormats);

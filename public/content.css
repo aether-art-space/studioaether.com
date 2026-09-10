@@ -1659,8 +1659,8 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .wedding-glance__copy > p { max-width: 620px; margin: 0 0 24px; }
 .wedding-glance ul { margin: 0; padding-left: 28px; font: var(--text-body); }
 .wedding-glance li { margin: 10px 0; }
-.wedding-glance > .responsive-image { display: block; width: 100%; height: 100%; min-height: 0; }
-.wedding-glance > .responsive-image > img { display: block; width: 100%; height: 100%; min-height: 0; border-radius: 0; object-fit: cover; object-position: center; }
+.wedding-glance > .responsive-image { position: relative; display: block; width: 100%; min-width: 0; min-height: 0; overflow: hidden; }
+.wedding-glance > .responsive-image > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; min-height: 0; border-radius: 0; object-fit: cover; object-position: center; }
 .wedding-packages, .wedding-build, .wedding-options { padding: 54px 24px 78px; text-align: center; }
 .wedding-packages { max-width: none; margin: 0 auto; }
 .wedding-packages > h2, .wedding-build > h2, .wedding-options > h2, .wedding-process > h2 { margin-bottom: 0; font: var(--font-subsection-title); }
@@ -1918,6 +1918,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .wedding-hero h1 { width: 100%; font-size: 43px; }
   .wedding-glance { grid-template-columns: 1fr; min-height: 0; }
   .wedding-glance__copy { padding: 58px 18px 48px; }
+  .wedding-glance > .responsive-image { height: 420px; }
   .wedding-glance > .responsive-image > img { min-height: 420px; height: 420px; }
   .wedding-packages, .wedding-build, .wedding-options { padding: 58px 18px 64px; }
   .wedding-packages h2, .wedding-build h2, .wedding-options h2, .wedding-process h2, .wedding-testimonials h2, .wedding-approach h2 { font-size: 39px; }
