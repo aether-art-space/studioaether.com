@@ -105,4 +105,12 @@ On 9 Sep 2026, V2 was run locally with `PUBLIC_DEPLOY_ENV=production` and `PUBLI
 
 Tag Assistant's popup handshake could not attach to the localhost tab in the controlled browser environment. Consent updates and tag firing should therefore receive one final Tag Assistant smoke test on an accessible preview or immediately after cutover; no real conversion was generated during this local check.
 
-The only external tracking change made during this work was the documented GTM Version 7 selfie-trigger update. No Google Ads conversion settings, GA4 settings, Cal.com event settings, DNS records, or live-site code were changed.
+## Live post-cutover verification — 10 September 2026
+
+Tag Assistant connected successfully to the production Pages site and detected `GTM-P6G8NTP2` plus `G-NFVD8Z3MN2`. The initial `Consent Default` event reported `Denied` for `ad_storage`, `analytics_storage`, `ad_user_data`, and `ad_personalization`. After **Accept all**, the subsequent `Consent Update` reported `Granted` for all four signals. The Google tag diagnostics showed the existing GA4 and Google Ads destinations and no tag-console errors.
+
+An owner-approved direct visit to `/post-booking` was then run through Tag Assistant without creating a Cal.com appointment. The production container emitted the expected `sikeres_foglalas_fotostudio` event and reported the existing Google Ads **Submit lead form**, **aether post booking goal**, page-view, and remarketing outputs. This verifies that the successful photo-studio return path survived the migration. The unused `booking_event` artifact was not manufactured or changed.
+
+The general contact form and wedding-enquiry form were also submitted with clearly labelled `TEST` content and `aczeldz@gmail.com`. Both displayed their success states and both messages were confirmed received by the owner, verifying production Web3Forms delivery end to end.
+
+The only external tracking configuration change made during this work was the documented GTM Version 7 selfie-trigger update. No Google Ads conversion settings, GA4 settings, or Cal.com event settings were changed.

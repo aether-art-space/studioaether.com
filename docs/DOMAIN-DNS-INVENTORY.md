@@ -155,7 +155,7 @@ When the registrar transfer completes, Vercel is expected to become the authorit
 
 Remaining post-launch work:
 
-1. Run one real-browser Tag Assistant pass for denied and granted consent, without editing the existing GTM container.
-2. Submit controlled `TEST` contact/form and booking checks only with the owner's confirmation at submission time.
-3. Monitor redirects, 404s, form delivery, bookings, Search Console, GA4, and Ads diagnostics during stabilization.
-4. Retain the Wix/DNS archive until stabilization is complete even though Wix is no longer the operational rollback.
+1. Monitor redirects, 404s, form delivery, bookings, Search Console, GA4, and Ads diagnostics during stabilization.
+2. Retain the Wix/DNS archive until stabilization is complete even though Wix is no longer the operational rollback.
+
+The real-browser Tag Assistant consent and `/post-booking` checks and both controlled production form-delivery tests were completed successfully on 10 September 2026. No test calendar appointment was required.
