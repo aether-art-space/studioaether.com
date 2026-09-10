@@ -51,7 +51,7 @@ The launch is treated as a one-way migration. The Wix site will not be used as a
 7. Run a focused live smoke test: important pages, redirects, booking links, contact and wedding forms, cookie consent, Google Reviews, existing tags, canonical URLs, sitemap, robots, and email delivery.
 8. Monitor forms, bookings, Ads/analytics events, and 404s for the first few days.
 
-The domain must be live for final verification, but most preparation can be completed before DNS cutover. The owner later elected to transfer the registrar from Wix to Vercel first. That transfer is pending, and a verified copy of all eight functional Wix DNS records is staged in Vercel so completion of the registrar transfer does not itself launch V2 or interrupt the Wix site. After the transfer completes, the coordinated hosting cutover will change nameservers from Vercel DNS to the already staged Cloudflare zone.
+The registrar transfer from Wix to Vercel and the coordinated Cloudflare cutover completed on 10 September 2026. Cloudflare is authoritative, `www.studioaether.com` is active on Pages with SSL enabled, and the apex plus legacy language hosts use proxied DNS and the staged redirect rules. Preserve the archived Wix/Vercel DNS inventory for incident recovery, but treat Cloudflare as the live source of truth.
 
 ### Tracking environment rule
 
@@ -61,7 +61,7 @@ For the production Pages build, configure `PUBLIC_GTM_ID=GTM-P6G8NTP2` only afte
 
 The connected Cloudflare API account is `Photostudio.aether@gmail.com's Account`. The Pages project `studioaether-com` now exists and is connected to `aether-art-space/studioaether.com`, with `main` as its production branch, `npm run build` as its build command, and `dist` as its output directory.
 
-The project is available at `https://studioaether-com.pages.dev` and is deliberately configured as a non-indexable preview (`PUBLIC_DEPLOY_ENV=preview`). The `studioaether.com` custom domain is not attached yet. Domain/DNS ownership and the complete DNS/email record archive must still be confirmed before cutover.
+The project is available at `https://studioaether-com.pages.dev`; production is configured with `PUBLIC_DEPLOY_ENV=production`, `PUBLIC_SITE_URL=https://www.studioaether.com`, `PUBLIC_GTM_ID=GTM-P6G8NTP2`, and Node 22. `www.studioaether.com` is attached and active with SSL enabled. Preview settings remain separate from production.
 
 ## Required settings when the correct account is available
 

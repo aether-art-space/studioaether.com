@@ -73,20 +73,15 @@ The observed certificate covers both `studioaether.com` and `www.studioaether.co
 | Production branch | `main` |
 | Build | `npm run build` → `dist` |
 | Node | `22` |
-| Attached custom domains | None |
+| Attached custom domains | `www.studioaether.com` (Active, SSL enabled) |
 | Latest checked deployment | Successful |
 
-The current production-branch environment is deliberately still configured as a preview:
-
-- `PUBLIC_DEPLOY_ENV=preview`
-- `PUBLIC_SITE_URL=https://studioaether-com.pages.dev`
-- no `PUBLIC_GTM_ID`
-
-This means the Pages deployment remains `noindex` and does not send production analytics. Before cutover, change only the production environment to:
+The production-branch environment was changed at cutover to:
 
 - `PUBLIC_DEPLOY_ENV=production`
 - `PUBLIC_SITE_URL=https://www.studioaether.com`
 - `PUBLIC_GTM_ID=GTM-P6G8NTP2`
+- `NODE_VERSION=22`
 
 Keep `PUBLIC_GOOGLE_TAG_ID`, `PUBLIC_GA4_ID`, and `PUBLIC_GOOGLE_ADS_ID` unset to avoid duplicate Google tags.
 
@@ -148,11 +143,19 @@ Before the transfer was allowed to complete, the eight functional Wix DNS record
 
 When the registrar transfer completes, Vercel is expected to become the authoritative DNS provider automatically. The imported records deliberately continue pointing web traffic to Wix, making registrar transfer and website launch separate operations. Do not restart Wix's transfer-away flow or request a new EPP code while the current transfer is pending.
 
-The final launch sequence is now:
+## Production cutover — 10 September 2026
 
-1. Wait for the Wix-to-Vercel registrar transfer to complete while continuing preview QA.
-2. Confirm the Vercel-hosted copy of the legacy DNS records is authoritative and still serves Wix correctly.
-3. Recheck the pending Cloudflare zone and its redirect rules.
-4. Attach the production hostnames to Cloudflare Pages and apply the rehearsed production environment values during the coordinated cutover.
-5. Change the domain's nameservers in Vercel from Vercel DNS to `clara.ns.cloudflare.com` and `theo.ns.cloudflare.com` only after the Cloudflare configuration is ready.
-6. Run the full live smoke test and retain Wix through the stabilization window even though it is not treated as the operational rollback.
+- The registrar transfer from Wix to Vercel completed. The registry registrar is Name.com (Vercel's registrar backend), with expiry on 18 October 2027.
+- Vercel nameservers were replaced with `clara.ns.cloudflare.com` and `theo.ns.cloudflare.com`. Verisign RDAP confirmed that delegation, and Cloudflare subsequently marked the zone active.
+- The production environment values above were applied and commit `e569ce7` was rebuilt successfully before web traffic moved.
+- `www.studioaether.com` was attached natively to Pages and reached **Active / SSL enabled**. Its DNS record is now a proxied CNAME to `studioaether-com.pages.dev`.
+- The three apex A records and the `en` and `hu` legacy CNAME records are proxied so the staged Single Redirect rules can preserve canonical-host and language-host behavior. Both TXT verification records remain unchanged and DNS-only.
+- Immediate smoke tests returned `200` for the English and Hungarian homepages, studio-rental, selfie-studio, contact, privacy, tracking and consent assets, robots, and sitemap endpoints. Apex, `en`, and `hu` returned the intended direct 301 destinations.
+- The launched homepage contains the `www` canonical URL, `GTM-P6G8NTP2`, the advanced-consent bridge and cookie banner, and the Google Reviews bar. Direct Google measurement IDs remain unset to avoid duplicate tags.
+
+Remaining post-launch work:
+
+1. Run one real-browser Tag Assistant pass for denied and granted consent, without editing the existing GTM container.
+2. Submit controlled `TEST` contact/form and booking checks only with the owner's confirmation at submission time.
+3. Monitor redirects, 404s, form delivery, bookings, Search Console, GA4, and Ads diagnostics during stabilization.
+4. Retain the Wix/DNS archive until stabilization is complete even though Wix is no longer the operational rollback.
