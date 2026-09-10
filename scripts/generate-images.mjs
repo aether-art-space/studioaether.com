@@ -4,9 +4,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import * as content from "../src/data/content.mjs";
+import { managedGalleryLegacySources } from "../src/data/managedGalleries.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRoot = path.join(root, "src", "assets", "images");
+const managedRoot = path.join(root, "content", "galleries");
 const recoveredRoot = path.join(root, "src", "assets", "recovered");
 const defaultOutputRoot = path.join(root, "public", "images", "generated");
 const outputRoot = path.resolve(process.argv.find((arg) => arg.startsWith("--out="))?.slice(6) || defaultOutputRoot);
@@ -45,6 +47,7 @@ const sourceFiles = async (directory, relative = "") => {
 };
 
 const toSourceUrl = (relative) => `/images/${relative.split(path.sep).join("/")}`;
+const toManagedSourceUrl = (relative) => `/images/galleries/${relative.split(path.sep).join("/")}`;
 const toRecoveredSourceUrl = (relative) => `/wix-recovered/${relative.split(path.sep).join("/")}`;
 const withoutExtension = (relative) => relative.slice(0, -path.extname(relative).length);
 const hashFor = async (filePath) => crypto.createHash("sha1").update(await fs.readFile(filePath)).digest("hex").slice(0, 10);
@@ -228,11 +231,64 @@ const generateRecoveredAssets = async (files) => {
   console.log(`Recovered image sources are up to date (${referenced.length} checked; ${generated} regenerated).`);
 };
 
+const removeManifestEntry = async (manifest, source) => {
+  const entry = manifest.images?.[source];
+  if (!entry) return false;
+  await Promise.all(variantPathsFor(entry).map((variantPath) => fs.rm(path.join(outputRoot, variantPath), { force: true })));
+  delete manifest.images[source];
+  return true;
+};
+
+const generateManagedAssets = async (files) => {
+  let manifest;
+  try {
+    manifest = JSON.parse(await fs.readFile(path.join(outputRoot, "manifest.json"), "utf8"));
+  } catch (error) {
+    throw new Error(`Cannot extend the generated image manifest for managed galleries: ${error.message}`);
+  }
+
+  const referenced = files.filter((relative) => sourcePaths.has(toManagedSourceUrl(relative)));
+  const expectedSources = [...sourcePaths].filter((source) => source.startsWith("/images/galleries/"));
+  const availableSources = new Set(referenced.map(toManagedSourceUrl));
+  const missing = expectedSources.filter((source) => !availableSources.has(source) && !manifest.images?.[source]);
+  if (missing.length) throw new Error(`Missing managed gallery source images:\n${missing.join("\n")}`);
+
+  let generated = 0;
+  const entries = await mapLimit(referenced, 4, async (relative) => {
+    const inputPath = path.join(managedRoot, relative);
+    const source = toManagedSourceUrl(relative);
+    const existing = manifest.images[source];
+    if (existing?.hash === await hashFor(inputPath)) {
+      let reusable = true;
+      for (const variantPath of variantPathsFor(existing)) {
+        if (!(await fs.access(path.join(outputRoot, variantPath)).then(() => true).catch(() => false))) {
+          reusable = false;
+          break;
+        }
+      }
+      if (reusable) return [source, existing];
+    }
+    generated += 1;
+    return buildEntry({ inputPath, outputRelative: path.join("galleries", relative), source });
+  });
+  for (const [source, entry] of entries) manifest.images[source] = entry;
+
+  const staleManagedSources = Object.keys(manifest.images).filter((source) => source.startsWith("/images/galleries/") && !availableSources.has(source));
+  const staleLegacySources = [...managedGalleryLegacySources].filter((source) => !sourcePaths.has(source));
+  const removed = await Promise.all([...new Set([...staleManagedSources, ...staleLegacySources])].map((source) => removeManifestEntry(manifest, source)));
+  const removedCount = removed.filter(Boolean).length;
+  if (generated || removedCount) manifest.generatedAt = new Date().toISOString();
+  await writeManifest(manifest);
+  console.log(`Managed gallery sources are up to date (${referenced.length} checked; ${generated} regenerated; ${removedCount} removed).`);
+};
+
 const main = async () => {
   const sourceRootExists = await fs.stat(sourceRoot).then((stat) => stat.isDirectory()).catch(() => false);
+  const managedRootExists = await fs.stat(managedRoot).then((stat) => stat.isDirectory()).catch(() => false);
   const recoveredRootExists = await fs.stat(recoveredRoot).then((stat) => stat.isDirectory()).catch(() => false);
+  if (managedRootExists) await generateManagedAssets(await sourceFiles(managedRoot));
   if (!sourceRootExists) {
-    const generatedSources = [...sourcePaths].filter((source) => !source.startsWith("/wix-recovered/"));
+    const generatedSources = [...sourcePaths].filter((source) => !source.startsWith("/wix-recovered/") && !source.startsWith("/images/galleries/"));
     if (recoveredRootExists) {
       await useGeneratedAssetsOnly(generatedSources);
       await generateRecoveredAssets(await sourceFiles(recoveredRoot));

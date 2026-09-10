@@ -1,0 +1,85 @@
+{
+  "defaultAlt": "Corporate photography in Budapest",
+  "images": {
+    "01-external-01.jpg": {
+      "legacySource": "/images/wix/corporate/external-01.jpg",
+      "alt": "corporate portrait photography",
+      "title": "Corporate portrait",
+      "description": "Part of a company portrait session for Cambridge Mobile Telematics in their Budapest office.",
+      "width": 317,
+      "height": 476
+    },
+    "02-external-02.jpg": {
+      "legacySource": "/images/wix/corporate/external-02.jpg",
+      "alt": "corporate portrait photography",
+      "title": "Executive portrait",
+      "description": "Portrait for a finance entrepreneur in the studio.",
+      "width": 317,
+      "height": 476
+    },
+    "03-external-03.jpg": {
+      "legacySource": "/images/wix/corporate/external-03.jpg",
+      "alt": "corporate portrait photography",
+      "title": "Beautician entrepreneur – business portrait",
+      "description": "Business portrait photoshoot in the studio for a beautician entrepreneur.",
+      "width": 317,
+      "height": 476
+    },
+    "04-external-04.jpg": {
+      "legacySource": "/images/wix/corporate/external-04.jpg",
+      "alt": "corporate portrait photography",
+      "title": "Business portrait",
+      "description": "Professional portrait as part of a company photoshoot for a digital marketing specialist.",
+      "width": 165,
+      "height": 247
+    },
+    "05-external-05.jpg": {
+      "legacySource": "/images/wix/corporate/external-05.jpg",
+      "alt": "office lifestyle photography",
+      "title": "Offsite candid shots",
+      "description": "Company culture photography at an offsite location with Octomind, an AI tech company.",
+      "width": 165,
+      "height": 247
+    },
+    "06-external-06.png": {
+      "legacySource": "/images/wix/corporate/external-06.png",
+      "alt": "corporate team photography",
+      "title": "Octomind – team photo",
+      "description": "Team photo for an AI tech startup on location.",
+      "width": 335,
+      "height": 224
+    },
+    "07-external-07.jpg": {
+      "legacySource": "/images/wix/corporate/external-07.jpg",
+      "alt": "corporate portrait photography",
+      "title": "Executive portrait",
+      "description": "Business portrait in the studio.",
+      "width": 317,
+      "height": 476
+    },
+    "08-external-08.jpg": {
+      "legacySource": "/images/wix/corporate/external-08.jpg",
+      "alt": "event and team building photography",
+      "width": 317,
+      "height": 476
+    },
+    "09-external-09.jpg": {
+      "legacySource": "/images/wix/corporate/external-09.jpg",
+      "alt": "office lifestyle photography",
+      "width": 317,
+      "height": 476
+    },
+    "10-corporate-octomind-daniel.jpg": {
+      "legacySource": "/images/corporate-octomind-daniel.jpg",
+      "alt": "Octomind executive portrait",
+      "width": 4000,
+      "height": 6000
+    },
+    "11-corporate-octomind-team.jpg": {
+      "legacySource": "/images/corporate-octomind-team.jpg",
+      "alt": "Octomind team lifestyle portrait",
+      "width": 3884,
+      "height": 2589
+    }
+  }
+}

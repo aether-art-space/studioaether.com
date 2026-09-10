@@ -1,0 +1,205 @@
+{
+  "defaultAlt": "Furniture piece at aether art space",
+  "images": {
+    "01-image-61.jpg": {
+      "legacySource": "/images/props/image-61.jpg",
+      "alt": "neo-baroque chair from the 1900's",
+      "title": "neo-baroque chair from the 1900's",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "02-image-62.jpg": {
+      "legacySource": "/images/props/image-62.jpg",
+      "alt": "modern office chair from the 70's",
+      "title": "modern office chair from the 70's",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "03-image-63.jpg": {
+      "legacySource": "/images/props/image-63.jpg",
+      "alt": "Black colonial armchair",
+      "title": "Black colonial armchair",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "04-image-64.jpg": {
+      "legacySource": "/images/props/image-64.jpg",
+      "alt": "old germanic chair from the 20's",
+      "title": "old germanic chair from the 20's",
+      "description": "3 chairs and a sofa in the set\n\nYou can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "05-image-65.jpg": {
+      "legacySource": "/images/props/image-65.jpg",
+      "alt": "old germanic sofa from the 20's",
+      "title": "old germanic sofa from the 20's",
+      "description": "3 chairs and a sofa in the set\n\nYou can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "06-image-66.jpg": {
+      "legacySource": "/images/props/image-66.jpg",
+      "alt": "rustic brown chair",
+      "title": "rustic brown chair",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "07-image-67.jpg": {
+      "legacySource": "/images/props/image-67.jpg",
+      "alt": "retro chairs",
+      "title": "retro chairs",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "08-image-68.jpg": {
+      "legacySource": "/images/props/image-68.jpg",
+      "alt": "vintage chair",
+      "title": "vintage chair",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "09-image-69.jpg": {
+      "legacySource": "/images/props/image-69.jpg",
+      "alt": "modern barstool",
+      "title": "modern barstool",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 899
+    },
+    "10-image-70.jpg": {
+      "legacySource": "/images/props/image-70.jpg",
+      "alt": "vintage footstool",
+      "title": "vintage footstool",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "11-image-71.jpg": {
+      "legacySource": "/images/props/image-71.jpg",
+      "alt": "rustic table",
+      "title": "rustic table",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "12-image-72.jpg": {
+      "legacySource": "/images/props/image-72.jpg",
+      "alt": "Old black carpeted neo-baroque armchair",
+      "title": "Old black carpeted neo-baroque armchair",
+      "description": "Old black carpeted neo-baroque armchair. Can be used as a prop in the studio for free.",
+      "width": 720,
+      "height": 900
+    },
+    "13-image-73.jpg": {
+      "legacySource": "/images/props/image-73.jpg",
+      "alt": "white chair",
+      "title": "white chair",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "14-image-74.jpg": {
+      "legacySource": "/images/props/image-74.jpg",
+      "alt": "retro stools",
+      "title": "retro stools",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "15-image-75.jpg": {
+      "legacySource": "/images/props/image-75.jpg",
+      "alt": "pink chair",
+      "title": "pink chair",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "16-image-76.jpg": {
+      "legacySource": "/images/props/image-76.jpg",
+      "alt": "modern barstool",
+      "title": "modern barstool",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "17-image-77.jpg": {
+      "legacySource": "/images/props/image-77.jpg",
+      "alt": "classic barstool",
+      "title": "classic barstool",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 720,
+      "height": 900
+    },
+    "18-image-78.jpg": {
+      "legacySource": "/images/props/image-78.jpg",
+      "alt": "colonial carpeted chair",
+      "title": "colonial carpeted chair",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "19-image-79.jpg": {
+      "legacySource": "/images/props/image-79.jpg",
+      "alt": "beanbag",
+      "title": "beanbag",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "20-image-80.jpg": {
+      "legacySource": "/images/props/image-80.jpg",
+      "alt": "dark grey fitness ball",
+      "title": "dark grey fitness ball",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "21-image-81.jpg": {
+      "legacySource": "/images/props/image-81.jpg",
+      "alt": "white stool",
+      "title": "white stool",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "22-image-82.jpg": {
+      "legacySource": "/images/props/image-82.jpg",
+      "alt": "white desk",
+      "title": "white desk",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 720,
+      "height": 900
+    },
+    "23-image-83.jpg": {
+      "legacySource": "/images/props/image-83.jpg",
+      "alt": "ladders",
+      "title": "ladders",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 720,
+      "height": 900
+    },
+    "24-image-84.jpg": {
+      "legacySource": "/images/props/image-84.jpg",
+      "alt": "retro rotating chair",
+      "title": "retro rotating chair",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 719,
+      "height": 900
+    },
+    "25-image-85.jpg": {
+      "legacySource": "/images/props/image-85.jpg",
+      "alt": "retro stool",
+      "title": "retro stool",
+      "description": "You can use this prop in the studio for FREE!",
+      "width": 720,
+      "height": 900
+    }
+  }
+}

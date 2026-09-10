@@ -1,0 +1,13 @@
+{
+  "defaultAlt": "Resident photographer at aether art space",
+  "images": {
+    "01-photographers-01.jpg": {
+      "legacySource": "/images/photographers/photographers-01.jpg",
+      "alt": "Dániel Z. Aczél, photographer"
+    },
+    "02-photographers-13.jpg": {
+      "legacySource": "/images/photographers/photographers-13.jpg",
+      "alt": "Alexandra Kulcsár-Horváth, photographer"
+    }
+  }
+}

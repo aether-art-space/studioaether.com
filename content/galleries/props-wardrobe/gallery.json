@@ -1,0 +1,61 @@
+{
+  "defaultAlt": "Wardrobe piece at aether art space",
+  "images": {
+    "01-image-1.jpg": {
+      "legacySource": "/images/props/image-1.jpg",
+      "alt": "Wedding Dress",
+      "title": "Wedding Dress",
+      "description": "XS-M size\nYou can rent the dress for 9000HUF in studio.\n\nIncludes a veil and a satin or lace gloves.",
+      "width": 900,
+      "height": 900
+    },
+    "02-image-2.jpg": {
+      "legacySource": "/images/props/image-2.jpg",
+      "alt": "Chinese Qipao",
+      "title": "Chinese Qipao",
+      "description": "XS-M size\nYou can rent the qipao for 5000HUF in studio.",
+      "width": 900,
+      "height": 900
+    },
+    "03-image-3.jpg": {
+      "legacySource": "/images/props/image-3.jpg",
+      "alt": "100 year old hungarian folk dress",
+      "title": "100 year old hungarian folk dress",
+      "description": "XS-M size\nYou can rent the dress for 9000HUF in studio.",
+      "width": 900,
+      "height": 900
+    },
+    "04-image-4.jpg": {
+      "legacySource": "/images/props/image-4.jpg",
+      "alt": "Moroccan Dfina - gold and translucent",
+      "title": "Moroccan Dfina - gold and translucent",
+      "description": "S-L size\nYou can rent the dfina for 5000HUF in studio.",
+      "width": 720,
+      "height": 900
+    },
+    "05-image-5.jpg": {
+      "legacySource": "/images/props/image-5.jpg",
+      "alt": "hungarian folk outfit for males",
+      "title": "hungarian folk outfit for males",
+      "description": "S-M\nYou can rent the outfit for 5000HUF.",
+      "width": 900,
+      "height": 900
+    },
+    "06-image-6.jpg": {
+      "legacySource": "/images/props/image-6.jpg",
+      "alt": "hungarian folk dress",
+      "title": "hungarian folk dress",
+      "description": "XS-M size\nYou can rent the dress for 5000HUF in studio.",
+      "width": 900,
+      "height": 900
+    },
+    "07-image-7.jpg": {
+      "legacySource": "/images/props/image-7.jpg",
+      "alt": "hungarian folk dress",
+      "title": "hungarian folk dress",
+      "description": "XS-M size\nYou can rent the dress for 5000HUF in studio.",
+      "width": 900,
+      "height": 900
+    }
+  }
+}

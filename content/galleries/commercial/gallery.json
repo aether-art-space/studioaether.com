@@ -1,0 +1,117 @@
+{
+  "defaultAlt": "Commercial photography at aether art space",
+  "images": {
+    "01-commercial-01.jpg": {
+      "legacySource": "/images/wix/service/commercial-01.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Pumpfreak",
+      "description": "Product images with a model for an upcoming gymwear brand.",
+      "width": 1000,
+      "height": 1500
+    },
+    "02-commercial-02.png": {
+      "legacySource": "/images/wix/service/commercial-02.png",
+      "alt": "commercial photography at aether art space",
+      "title": "Mesotica skincare",
+      "description": "Product photography for a skincare product family.",
+      "width": 1000,
+      "height": 800
+    },
+    "03-commercial-03.jpg": {
+      "legacySource": "/images/wix/service/commercial-03.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Pumpfreak",
+      "description": "Product images with a model for an upcoming gymwear brand.",
+      "width": 1000,
+      "height": 1500
+    },
+    "04-commercial-04.jpg": {
+      "legacySource": "/images/wix/service/commercial-04.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Sword – Messer",
+      "description": "Product photography for an artisanal swordmaker.",
+      "width": 1000,
+      "height": 1500
+    },
+    "05-commercial-05.jpg": {
+      "legacySource": "/images/wix/service/commercial-05.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Brand image photography",
+      "autoMetadata": false,
+      "width": 1500,
+      "height": 1000
+    },
+    "06-commercial-06.jpg": {
+      "legacySource": "/images/wix/service/commercial-06.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Hungarikum perfume",
+      "description": "Marketing photography in nature for a Hungarian luxury perfume brand.",
+      "width": 1000,
+      "height": 1500
+    },
+    "07-commercial-07.jpg": {
+      "legacySource": "/images/wix/service/commercial-07.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Commodity Gold – perfume",
+      "description": "Commercial photography for a contemporary American fragrance brand.",
+      "width": 1000,
+      "height": 1500
+    },
+    "08-commercial-08.jpg": {
+      "legacySource": "/images/wix/service/commercial-08.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Product photography – artisanal candle holders",
+      "description": "Product photography for a Spanish artisan.",
+      "width": 1500,
+      "height": 1000
+    },
+    "09-commercial-09.jpg": {
+      "legacySource": "/images/wix/service/commercial-09.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Brand image photography",
+      "description": "An ice skater and her trainer in the studio.",
+      "width": 1000,
+      "height": 1500
+    },
+    "10-commercial-10.jpg": {
+      "legacySource": "/images/wix/service/commercial-10.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Drag Queen Hungary 2021 winner",
+      "description": "Commercial portrait for the Drag Queen 2021 contest first prize winner.",
+      "width": 1000,
+      "height": 1500
+    },
+    "11-94c0c9_b1dff8bcb8c540f89594dded83cd0f05~mv2.jpg": {
+      "legacySource": "/wix-recovered/94c0c9_b1dff8bcb8c540f89594dded83cd0f05~mv2.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Portrék a Drag Hungary 2023 győztesének",
+      "description": "Commercial portrait for the Drag Queen Hungary contest winner.",
+      "width": 1000,
+      "height": 1500
+    },
+    "12-94c0c9_6ab3f3fea2884a96a63594d3894670f1~mv2.jpg": {
+      "legacySource": "/wix-recovered/94c0c9_6ab3f3fea2884a96a63594d3894670f1~mv2.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Campaign for Drag Hungary events",
+      "description": "Commercial portrait for the Drag Hungary 2022 campaign.",
+      "width": 1000,
+      "height": 1500
+    },
+    "13-94c0c9_8af7c096374f4be7916e549f4f6f8a03~mv2.jpg": {
+      "legacySource": "/wix-recovered/94c0c9_8af7c096374f4be7916e549f4f6f8a03~mv2.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Creative campaign",
+      "description": "High-complexity photoshoot with lots of models and extensive use of props on location.",
+      "width": 1500,
+      "height": 1000
+    },
+    "14-94c0c9_1327a19d02af44abaaddb24ce41b17a0~mv2.jpg": {
+      "legacySource": "/wix-recovered/94c0c9_1327a19d02af44abaaddb24ce41b17a0~mv2.jpg",
+      "alt": "commercial photography at aether art space",
+      "title": "Sword – Messer",
+      "description": "Product photography for an artisanal swordmaker.",
+      "width": 1000,
+      "height": 1250
+    }
+  }
+}

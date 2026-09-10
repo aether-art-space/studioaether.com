@@ -1,0 +1,65 @@
+{
+  "defaultAlt": "Selfie studio portrait at aether art space",
+  "images": {
+    "01-gallery-01.jpg": {
+      "legacySource": "/images/selfie/gallery-01.jpg",
+      "alt": "Selfie studio portrait",
+      "width": 1800,
+      "height": 1200
+    },
+    "02-gallery-02.jpg": {
+      "legacySource": "/images/selfie/gallery-02.jpg",
+      "alt": "Creative selfie studio portrait",
+      "width": 1800,
+      "height": 1200
+    },
+    "03-gallery-03.jpg": {
+      "legacySource": "/images/selfie/gallery-03.jpg",
+      "alt": "Selfie studio group portrait",
+      "width": 1800,
+      "height": 1200
+    },
+    "04-gallery-04.jpg": {
+      "legacySource": "/images/selfie/gallery-04.jpg",
+      "alt": "Portrait made in the selfie studio",
+      "width": 1200,
+      "height": 1800
+    },
+    "05-gallery-05.jpg": {
+      "legacySource": "/images/selfie/gallery-05.jpg",
+      "alt": "Selfie studio portrait with colored light",
+      "width": 1800,
+      "height": 1200
+    },
+    "06-gallery-06.jpg": {
+      "legacySource": "/images/selfie/gallery-06.jpeg",
+      "alt": "Selfie studio creative portrait",
+      "width": 1800,
+      "height": 1800
+    },
+    "07-gallery-07.jpg": {
+      "legacySource": "/images/selfie/gallery-07.jpeg",
+      "alt": "Selfie studio portrait",
+      "width": 1800,
+      "height": 1200
+    },
+    "08-gallery-08.jpg": {
+      "legacySource": "/images/selfie/gallery-08.jpeg",
+      "alt": "Selfie studio portrait with props",
+      "width": 1800,
+      "height": 1200
+    },
+    "09-gallery-09.jpg": {
+      "legacySource": "/images/selfie/gallery-09.jpeg",
+      "alt": "Selfie studio portrait",
+      "width": 1800,
+      "height": 1199
+    },
+    "10-gallery-10.jpg": {
+      "legacySource": "/images/selfie/gallery-10.jpeg",
+      "alt": "Selfie studio portrait with black backdrop",
+      "width": 3936,
+      "height": 2648
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "defaultAlt": "Wedding photography in Hungary",
+  "images": {
+    "01-wedding-01.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-01.jpg",
+      "alt": "Wedding photography in Hungary",
+      "width": 1500,
+      "height": 1000
+    },
+    "02-wedding-02.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-02.jpg",
+      "alt": "Wedding portrait",
+      "width": 1000,
+      "height": 1500
+    },
+    "03-wedding-03.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-03.jpg",
+      "alt": "Wedding ceremony photography",
+      "width": 1000,
+      "height": 1500
+    },
+    "04-wedding-04.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-04.jpg",
+      "alt": "Wedding couple portrait",
+      "width": 1000,
+      "height": 1500
+    },
+    "05-wedding-05.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-05.jpg",
+      "alt": "Wedding celebration",
+      "width": 1500,
+      "height": 1000
+    },
+    "06-wedding-06.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-06.jpg",
+      "alt": "Wedding photography detail",
+      "width": 1000,
+      "height": 1500
+    },
+    "07-wedding-07.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-07.jpg",
+      "alt": "Wedding reception photography",
+      "width": 5561,
+      "height": 3707
+    },
+    "08-wedding-08.jpg": {
+      "legacySource": "/images/wix/wedding/wedding-08.jpg",
+      "alt": "Wedding portrait photography",
+      "width": 1000,
+      "height": 1500
+    }
+  }
+}

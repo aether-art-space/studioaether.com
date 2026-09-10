@@ -1,0 +1,71 @@
+{
+  "defaultAlt": "Pet photography in Budapest",
+  "images": {
+    "01-pet-01.jpg": {
+      "legacySource": "/images/wix/service/pet-01.jpg",
+      "alt": "brown dog sitting in a yellow wildflower meadow",
+      "width": 1333,
+      "height": 2000
+    },
+    "02-pet-02.jpg": {
+      "legacySource": "/images/wix/service/pet-02.jpg",
+      "alt": "small shaggy dog posing in a yellow flower meadow",
+      "width": 1333,
+      "height": 2000
+    },
+    "03-pet-03.jpg": {
+      "legacySource": "/images/wix/service/pet-03.jpg",
+      "alt": "couple posing with their dog in a flower meadow",
+      "width": 1333,
+      "height": 2000
+    },
+    "04-pet-04.jpg": {
+      "legacySource": "/images/wix/service/pet-04.jpg",
+      "alt": "close-up portrait of a black and white dog",
+      "width": 1333,
+      "height": 2000
+    },
+    "05-pet-05.jpg": {
+      "legacySource": "/images/wix/service/pet-05.jpg",
+      "alt": "woman posing with her dog in a studio",
+      "width": 1333,
+      "height": 2000
+    },
+    "06-pet-06.jpg": {
+      "legacySource": "/images/wix/service/pet-06.jpg",
+      "alt": "white and black dog running across a park lawn",
+      "width": 1333,
+      "height": 2000
+    },
+    "07-pet-07.jpg": {
+      "legacySource": "/images/wix/service/pet-07.jpg",
+      "alt": "woman walking with her dog on a city street",
+      "width": 1333,
+      "height": 2000
+    },
+    "08-pet-08.jpg": {
+      "legacySource": "/images/wix/service/pet-08.jpg",
+      "alt": "Dalmatian and tabby cat posing together",
+      "width": 1333,
+      "height": 2000
+    },
+    "09-pet-09.jpg": {
+      "legacySource": "/images/wix/service/pet-09.jpg",
+      "alt": "woman holding a small dog outdoors",
+      "width": 1333,
+      "height": 2000
+    },
+    "10-pet-10.jpg": {
+      "legacySource": "/images/wix/service/pet-10.jpg",
+      "alt": "small dog portrait against a dark studio background",
+      "width": 1333,
+      "height": 2000
+    },
+    "11-pet-11.jpg": {
+      "legacySource": "/images/wix/service/pet-11.jpg",
+      "alt": "woman holding a small dog in a dark studio",
+      "width": 1600,
+      "height": 2000
+    }
+  }
+}

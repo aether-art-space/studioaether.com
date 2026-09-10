@@ -1,0 +1,71 @@
+{
+  "defaultAlt": "Analogue photography mentoring at aether art space",
+  "images": {
+    "01-analogue-01.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-01.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 3607,
+      "height": 5411
+    },
+    "02-analogue-02.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-02.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 1000,
+      "height": 1500
+    },
+    "03-analogue-03.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-03.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 3505,
+      "height": 4381
+    },
+    "04-analogue-04.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-04.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 3271,
+      "height": 4090
+    },
+    "05-analogue-05.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-05.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 1500,
+      "height": 1000
+    },
+    "06-analogue-06.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-06.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 2937,
+      "height": 4426
+    },
+    "07-analogue-07.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-07.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 2759,
+      "height": 3448
+    },
+    "08-analogue-08.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-08.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 3696,
+      "height": 4620
+    },
+    "09-analogue-09.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-09.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 1000,
+      "height": 1500
+    },
+    "10-analogue-10.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-10.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 1000,
+      "height": 1500
+    },
+    "11-analogue-11.jpg": {
+      "legacySource": "/images/wix/mentoring/analogue-11.jpg",
+      "alt": "Analogue photography mentoring",
+      "width": 1000,
+      "height": 1500
+    }
+  }
+}

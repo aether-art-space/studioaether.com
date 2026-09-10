@@ -1,3 +1,5 @@
+import { managedGalleries } from "./managedGalleries.mjs";
+
 export const homeContent = {
   en: {
     eyebrow: "your new favourite photostudio",
@@ -1619,6 +1621,34 @@ export const homeImages = {
     { src: "/images/wix/reference/booking-contact.jpg", width: 640, height: 382, alt: "photoshoot in the aether studio", altHu: "fotózás az aether stúdióban" }
   ]
 };
+
+const replaceGallery = (target, source) => {
+  target.splice(0, target.length, ...source);
+  return target;
+};
+
+replaceGallery(studioGalleryImages, managedGalleries.studio || []);
+replaceGallery(selfieImages.gallery, managedGalleries.selfie || []);
+replaceGallery(propsImages.wardrobe, managedGalleries["props-wardrobe"] || []);
+replaceGallery(propsImages.wardrobeFree, managedGalleries["props-wardrobe-free"] || []);
+replaceGallery(propsImages.collection, managedGalleries["props-collection"] || []);
+replaceGallery(propsImages.furniture, managedGalleries["props-furniture"] || []);
+replaceGallery(mentoringImages.digital, managedGalleries["mentoring-digital"] || []);
+replaceGallery(mentoringImages.analogue, managedGalleries["mentoring-analogue"] || []);
+replaceGallery(seasonalImages.photoshoot, managedGalleries["christmas-photoshoot"] || []);
+replaceGallery(seasonalImages.studioGallery, managedGalleries["christmas-studio"] || []);
+replaceGallery(weddingImages, managedGalleries.wedding || []);
+replaceGallery(specialImages.glamour, managedGalleries.glamour || []);
+replaceGallery(specialImages.models, managedGalleries["model-digitals"] || []);
+replaceGallery(specialImages.pet, managedGalleries.pet || []);
+replaceGallery(serviceImages.commercial, managedGalleries.commercial || []);
+replaceGallery(serviceImages.portrait, managedGalleries.portrait || []);
+replaceGallery(serviceImages.fitness, managedGalleries.fitness || []);
+replaceGallery(corporateGalleryImages, managedGalleries.corporate || []);
+
+const photographersGrid = managedGalleries["photographers-grid"] || [];
+residentArtistImages.photographers.daniel = photographersGrid[0] || residentArtistImages.photographers.daniel;
+residentArtistImages.photographers.alexandra = photographersGrid[1] || residentArtistImages.photographers.alexandra;
 
 // Keep legacy content blocks consistent until they are fully migrated to structured, localized fields.
 const copyFixes = [

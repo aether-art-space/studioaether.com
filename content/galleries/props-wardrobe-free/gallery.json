@@ -1,0 +1,205 @@
+{
+  "defaultAlt": "Clothing item available in the studio",
+  "images": {
+    "01-image-11.jpg": {
+      "legacySource": "/images/props/image-11.jpg",
+      "alt": "White-Blue Dress",
+      "title": "White-Blue Dress",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 720,
+      "height": 900
+    },
+    "02-image-12.jpg": {
+      "legacySource": "/images/props/image-12.jpg",
+      "alt": "long latex coat",
+      "title": "long latex coat",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "03-image-13.jpg": {
+      "legacySource": "/images/props/image-13.jpg",
+      "alt": "holo jacket",
+      "title": "holo jacket",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "04-image-14.jpg": {
+      "legacySource": "/images/props/image-14.jpg",
+      "alt": "neon miniskirt",
+      "title": "neon miniskirt",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 600,
+      "height": 900
+    },
+    "05-image-15.jpg": {
+      "legacySource": "/images/props/image-15.jpg",
+      "alt": "silver jacket",
+      "title": "silver jacket",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "06-image-16.jpg": {
+      "legacySource": "/images/props/image-16.jpg",
+      "alt": "snake pattern jumper",
+      "title": "snake pattern jumper",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "07-image-17.jpg": {
+      "legacySource": "/images/props/image-17.jpg",
+      "alt": "black tulle miniskirt",
+      "title": "black tulle miniskirt",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 600,
+      "height": 900
+    },
+    "08-image-18.jpg": {
+      "legacySource": "/images/props/image-18.jpg",
+      "alt": "long dark coloured skirt",
+      "title": "long dark coloured skirt",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 600,
+      "height": 900
+    },
+    "09-image-19.jpg": {
+      "legacySource": "/images/props/image-19.jpg",
+      "alt": "silver dress",
+      "title": "silver dress",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "10-image-20.jpg": {
+      "legacySource": "/images/props/image-20.jpg",
+      "alt": "Clothing item available in the studio",
+      "title": "",
+      "description": "You can rent the dress for 5000HUF in studio.",
+      "width": 731,
+      "height": 900
+    },
+    "11-image-21.jpg": {
+      "legacySource": "/images/props/image-21.jpg",
+      "alt": "golden top",
+      "title": "golden top",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 899
+    },
+    "12-image-22.jpg": {
+      "legacySource": "/images/props/image-22.jpg",
+      "alt": "retro blazer",
+      "title": "retro blazer",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "13-image-23.jpg": {
+      "legacySource": "/images/props/image-23.jpg",
+      "alt": "Fur coat",
+      "title": "Fur coat",
+      "description": "Long faux-fur coat. Use it for free in the studio or rent it for use outside the studio!",
+      "width": 900,
+      "height": 900
+    },
+    "14-image-24.jpg": {
+      "legacySource": "/images/props/image-24.jpg",
+      "alt": "vintage folk male outfit",
+      "title": "vintage folk male outfit",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "15-image-25.jpg": {
+      "legacySource": "/images/props/image-25.jpg",
+      "alt": "see-through black dress",
+      "title": "see-through black dress",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "16-image-26.jpg": {
+      "legacySource": "/images/props/image-26.jpg",
+      "alt": "leather biker jacket",
+      "title": "leather biker jacket",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "17-image-27.jpg": {
+      "legacySource": "/images/props/image-27.jpg",
+      "alt": "translucent top",
+      "title": "translucent top",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "18-image-28.jpg": {
+      "legacySource": "/images/props/image-28.jpg",
+      "alt": "finger armor",
+      "title": "finger armor",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "19-image-29.jpg": {
+      "legacySource": "/images/props/image-29.jpg",
+      "alt": "silver handbag",
+      "title": "silver handbag",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "20-image-30.jpg": {
+      "legacySource": "/images/props/image-30.jpg",
+      "alt": "Lace shoulder accessory",
+      "title": "Lace shoulder accessory",
+      "description": "Off-white lace shoulder accessory. Use it for free in the studio or rent it for use outside the studio!",
+      "width": 900,
+      "height": 900
+    },
+    "21-image-31.jpg": {
+      "legacySource": "/images/props/image-31.jpg",
+      "alt": "bunny ears",
+      "title": "bunny ears",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 899,
+      "height": 900
+    },
+    "22-image-32.jpg": {
+      "legacySource": "/images/props/image-32.jpg",
+      "alt": "rococo handfan",
+      "title": "rococo handfan",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "23-image-33.jpg": {
+      "legacySource": "/images/props/image-33.jpg",
+      "alt": "large black handfan",
+      "title": "large black handfan",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "24-image-34.jpg": {
+      "legacySource": "/images/props/image-34.jpg",
+      "alt": "white lace chokers",
+      "title": "white lace chokers",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    },
+    "25-image-35.jpg": {
+      "legacySource": "/images/props/image-35.jpg",
+      "alt": "white lacy handfan",
+      "title": "white lacy handfan",
+      "description": "You can use this outfit in the studio for FREE!",
+      "width": 900,
+      "height": 900
+    }
+  }
+}

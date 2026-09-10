@@ -8,6 +8,7 @@
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "build:github": "PUBLIC_SITE_URL=https://aether-art-space.github.io PUBLIC_BASE_PATH=/studioaether.com PUBLIC_DEPLOY_ENV=preview ASTRO_TELEMETRY_DISABLED=1 astro build && PUBLIC_BASE_PATH=/studioaether.com node scripts/prepare-github-pages.mjs",
     "precheck": "node scripts/generate-images.mjs",
+    "gallery:sync": "node scripts/generate-images.mjs",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && node scripts/validate.mjs",
     "baseline:visual": "node scripts/capture-visual-baseline.mjs",
     "predev": "node scripts/generate-images.mjs",

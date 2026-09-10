@@ -1,0 +1,59 @@
+{
+  "defaultAlt": "Christmas photoshoot in Budapest",
+  "images": {
+    "01-christmas-01.jpg": {
+      "legacySource": "/images/wix/seasonal/christmas-01.jpg",
+      "alt": "Christmas photoshoot with a couple",
+      "title": "Piller family at Christmas",
+      "description": "Yearly Christmas family photoshoot in the studio",
+      "width": 1868,
+      "height": 2802
+    },
+    "02-christmas-02.jpg": {
+      "legacySource": "/images/wix/seasonal/christmas-02.jpg",
+      "alt": "Christmas portrait in the studio",
+      "title": "Christmas photo of the smallest member of the family",
+      "description": "Smiling baby wearing a Santa hat, surrounded by Christmas lights in the studio.",
+      "width": 1333,
+      "height": 2000
+    },
+    "03-christmas-03.jpg": {
+      "legacySource": "/images/wix/seasonal/christmas-03.jpg",
+      "alt": "Festive studio portrait",
+      "title": "Christmas cat!",
+      "description": "You can also bring your pet to your holiday photoshoot.",
+      "width": 1333,
+      "height": 2000
+    },
+    "04-christmas-04.jpg": {
+      "legacySource": "/images/wix/seasonal/christmas-04.jpeg",
+      "alt": "Christmas family photography",
+      "width": 4570,
+      "height": 3047
+    },
+    "05-christmas-05.jpg": {
+      "legacySource": "/images/wix/seasonal/christmas-05.jpg",
+      "alt": "Holiday portrait photography",
+      "width": 1333,
+      "height": 2000
+    },
+    "06-christmas-06.jpg": {
+      "legacySource": "/images/wix/seasonal/christmas-06.jpg",
+      "alt": "Christmas-themed studio portrait",
+      "width": 4000,
+      "height": 6000
+    },
+    "07-christmas-07.jpg": {
+      "legacySource": "/images/wix/seasonal/christmas-07.jpeg",
+      "alt": "Festive portrait in Budapest studio",
+      "width": 2228,
+      "height": 3342
+    },
+    "08-94c0c9_26d6e48509fa4e029ffc45564e76cf1c~mv2.jpg": {
+      "legacySource": "/wix-recovered/94c0c9_26d6e48509fa4e029ffc45564e76cf1c~mv2.jpeg",
+      "alt": "Festive portrait in Budapest studio",
+      "width": 3613,
+      "height": 5420
+    }
+  }
+}
