@@ -5,9 +5,6 @@ import { site } from "../data/routes.mjs";
 const { language } = Astro.props;
 const hu = language === "hu";
 const reviewCountLabel = hu ? `${googleReviewSummary.reviewCount} értékelés` : `${googleReviewSummary.reviewCount} reviews`;
-const accessibleLabel = hu
-  ? `Google-értékelések: ${googleReviewSummary.rating} az 5-ből, ${reviewCountLabel}`
-  : `Google reviews: ${googleReviewSummary.rating} out of 5, ${reviewCountLabel}`;
 ---
 
 <a
@@ -17,7 +14,6 @@ const accessibleLabel = hu
   href={site.mapsUrl}
   target="_blank"
   rel="noreferrer noopener"
-  aria-label={accessibleLabel}
 >
   <span class="google-review-bar__logo" aria-hidden="true"></span>
   <span class="google-review-bar__summary">

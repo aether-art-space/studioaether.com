@@ -1,0 +1,45 @@
+---
+import ContactModal from "../components/ContactModal.astro";
+import GoogleReviewBar from "../components/GoogleReviewBar.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+const page = {
+  path: "/404",
+  language: "en",
+  counterpartPath: "/hu",
+  purpose: "Not found"
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found | aether art space</title>
+    <meta name="robots" content="noindex,follow" />
+    <link rel="icon" type="image/png" href="/images/generated/wix/jpg/logo-icon--thumb-160--961fb830ea.png" />
+    <link rel="stylesheet" href="/site.css?v=20260909-19" />
+    <style>
+      .not-found { display: grid; min-height: min(48rem, 62vh); place-items: center; padding: 4rem 2rem; background: #fff; color: #171919; text-align: center; }
+      .not-found__content { max-width: 42rem; }
+      .not-found h1 { margin: 0 0 1rem; font-size: clamp(2.2rem, 8vw, 5rem); }
+      .not-found p { margin: .75rem 0; font-size: 1.125rem; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader page={page} />
+    <main id="main" class="not-found">
+      <div class="not-found__content">
+        <p aria-hidden="true">404</p>
+        <h1>Page not found</h1>
+        <p>Sorry, we can’t find the page you’re looking for.</p>
+      </div>
+    </main>
+    <SiteFooter page={page} consentEnabled={false} />
+    <ContactModal page={page} />
+    <GoogleReviewBar language="en" />
+  </body>
+</html>

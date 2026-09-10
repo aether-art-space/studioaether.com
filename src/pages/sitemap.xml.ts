@@ -4,7 +4,7 @@ import { pages } from "../data/routes.mjs";
 
 export const GET: APIRoute = () => {
   const urls = pages
-    .filter((page) => page.disposition !== "redirect")
+    .filter((page) => page.disposition !== "redirect" && page.indexable !== false)
     .map((page) => `  <url><loc>${absoluteUrl(page.path)}</loc></url>`)
     .join("\n");
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;

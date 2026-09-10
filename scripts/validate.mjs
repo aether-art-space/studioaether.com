@@ -10,11 +10,12 @@ const fail = [];
 const warnings = [];
 const htmlFor = new Map();
 const generatedRoot = path.join(dist, "images", "generated");
-const indexablePages = pages.filter((page) => page.disposition !== "redirect");
+const renderedPages = pages.filter((page) => page.disposition !== "redirect");
+const indexablePages = renderedPages.filter((page) => page.indexable !== false);
 const intentionallyUndescribed = new Set(["/hu/post-booking"]);
 const allowedOriginalImages = new Set(["/hero-main-people.jpg"]);
 
-for (const page of indexablePages) {
+for (const page of renderedPages) {
   try { htmlFor.set(page.path, await fs.readFile(targetFor(page.path), "utf8")); }
   catch { fail.push(`missing generated file: ${page.path}`); }
 }
@@ -28,7 +29,7 @@ for (const page of pages.filter((route) => route.disposition === "redirect")) {
 const titleSeen = new Map();
 const h1Seen = new Map();
 const hasMeta = (html, attributeName, value) => html.match(new RegExp(`<meta\\b[^>]*${attributeName}=["']${value.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}["'][^>]*content=["'][^"']+["']`, "i"));
-for (const page of indexablePages) {
+for (const page of renderedPages) {
   const html = htmlFor.get(page.path) || "";
   const title = html.match(/<title>([^<]+)<\/title>/i)?.[1];
   const h1s = [...html.matchAll(/<h1\b[^>]*>(.*?)<\/h1>/gis)].map((match) => match[1].replace(/<[^>]+>/g, "").trim());
@@ -93,7 +94,8 @@ for (const page of indexablePages) {
     ].includes(link)) continue;
     if (!pageByPath.has(link)) fail.push(`broken internal link ${link} from ${page.path}`);
   }
-  if (html.includes('content="noindex')) fail.push(`unexpected noindex in production build: ${page.path}`);
+  if (page.indexable === false && !html.includes('content="noindex,follow"')) fail.push(`missing noindex in production build: ${page.path}`);
+  if (page.indexable !== false && html.includes('content="noindex')) fail.push(`unexpected noindex in production build: ${page.path}`);
   const jsonLdNodes = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/gis)].map((match) => JSON.parse(match[1]));
   if (jsonLdNodes.length === 0) fail.push(`missing JSON-LD: ${page.path}`);
   const faqNode = jsonLdNodes.find((node) => node["@type"] === "FAQPage");
@@ -107,7 +109,7 @@ for (const [h1, paths] of h1Seen) if (paths.length > 1) warnings.push(`duplicate
 const sitemap = await fs.readFile(path.join(dist, "sitemap.xml")).catch(() => "");
 const sitemapText = sitemap.toString();
 for (const page of indexablePages) if (!sitemapText.includes(`<loc>${site.domain}${page.path}</loc>`)) fail.push(`missing sitemap URL: ${page.path}`);
-for (const page of pages.filter((route) => route.disposition === "redirect")) if (sitemapText.includes(`<loc>${site.domain}${page.path}</loc>`)) fail.push(`redirect included in sitemap: ${page.path}`);
+for (const page of pages.filter((route) => route.disposition === "redirect" || route.indexable === false)) if (sitemapText.includes(`<loc>${site.domain}${page.path}</loc>`)) fail.push(`non-indexable URL included in sitemap: ${page.path}`);
 const robots = await fs.readFile(path.join(dist, "robots.txt")).catch(() => "");
 if (!robots.toString().includes(`Sitemap: ${site.domain}/sitemap.xml`)) fail.push("robots.txt sitemap missing");
 
@@ -133,6 +135,6 @@ if (fail.length) {
   console.error(fail.map((message) => `FAIL ${message}`).join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Validated ${indexablePages.length} generated routes plus ${pages.length - indexablePages.length} direct redirect(s): URL parity, metadata, canonicals, hreflang, internal links, sitemap and robots.`);
+  console.log(`Validated ${renderedPages.length} generated routes (${indexablePages.length} indexable) plus ${pages.length - renderedPages.length} direct redirect(s): URL parity, metadata, canonicals, hreflang, internal links, sitemap and robots.`);
   for (const warning of warnings) console.log(`WARN ${warning}`);
 }

@@ -259,7 +259,7 @@ if (page.path.endsWith("photographer-alexandra")) {
 ---
 <title>{page.title}</title>
 {page.description && <meta name="description" content={page.description} />}
-<meta name="robots" content={preview ? "noindex,nofollow" : "index,follow"} />
+<meta name="robots" content={preview ? "noindex,nofollow" : page.indexable === false ? "noindex,follow" : "index,follow"} />
 {preview && <meta name="googlebot" content="noindex,nofollow" />}
 <meta property="og:title" content={socialMeta.title} />
 {socialMeta.description && <meta property="og:description" content={socialMeta.description} />}

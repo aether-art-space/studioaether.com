@@ -6,6 +6,9 @@ export default defineConfig({
   site: "https://www.studioaether.com",
   output: "static",
   trailingSlash: "never",
+  devToolbar: {
+    enabled: false
+  },
   build: {
     format: "file"
   },

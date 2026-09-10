@@ -831,7 +831,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
   const title = lightbox?.querySelector<HTMLElement>("[data-lightbox-title]");
   const description = lightbox?.querySelector<HTMLElement>("[data-lightbox-description]");
   const price = lightbox?.querySelector<HTMLElement>("[data-lightbox-price]");
-  const link = lightbox?.querySelector<HTMLAnchorElement>("[data-lightbox-link]");
+    const linkSlot = lightbox?.querySelector<HTMLElement>("[data-lightbox-link-slot]");
   const counter = lightbox?.querySelector<HTMLElement>("[data-lightbox-counter]");
   const previous = lightbox?.querySelector<HTMLButtonElement>("[data-lightbox-previous]");
   const next = lightbox?.querySelector<HTMLButtonElement>("[data-lightbox-next]");
@@ -908,16 +908,20 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     setOptionalText(title, metadata.title);
     setOptionalText(description, metadata.description);
     setOptionalText(price, metadata.price);
-    if (link) {
-      link.hidden = !metadata.link;
-      if (metadata.link) {
-        link.href = metadata.link;
-        link.textContent = metadata.linkLabel || (document.documentElement.lang === "hu" ? "Bővebben" : "View more");
-      } else {
-        link.removeAttribute("href");
-        link.textContent = "";
+      if (linkSlot) {
+        linkSlot.replaceChildren();
+        linkSlot.hidden = !metadata.link;
+
+        if (metadata.link) {
+          const link = document.createElement("a");
+          link.className = "studio-lightbox__link";
+          link.href = metadata.link;
+          link.target = "_blank";
+          link.rel = "noreferrer noopener";
+          link.textContent = metadata.linkLabel || (document.documentElement.lang === "hu" ? "Bővebben" : "View more");
+          linkSlot.append(link);
+        }
       }
-    }
     if (counter) counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(galleryItems.length).padStart(2, "0")}`;
     updateNavigation();
   };
