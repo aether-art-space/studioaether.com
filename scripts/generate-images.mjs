@@ -12,6 +12,7 @@ const managedRoot = path.join(root, "content", "galleries");
 const recoveredRoot = path.join(root, "src", "assets", "recovered");
 const defaultOutputRoot = path.join(root, "public", "images", "generated");
 const outputRoot = path.resolve(process.argv.find((arg) => arg.startsWith("--out="))?.slice(6) || defaultOutputRoot);
+const selectedGalleries = new Set((process.argv.find((arg) => arg.startsWith("--galleries="))?.slice(12) || "").split(",").map((gallery) => gallery.trim()).filter(Boolean));
 const publicPrefix = "/images/generated";
 const widthCandidates = [320, 480, 640, 960, 1280, 1600, 2400];
 const thumbCandidates = [160, 320];
@@ -50,6 +51,8 @@ const toSourceUrl = (relative) => `/images/${relative.split(path.sep).join("/")}
 const toManagedSourceUrl = (relative) => `/images/galleries/${relative.split(path.sep).join("/")}`;
 const toRecoveredSourceUrl = (relative) => `/wix-recovered/${relative.split(path.sep).join("/")}`;
 const withoutExtension = (relative) => relative.slice(0, -path.extname(relative).length);
+const galleryFor = (relative) => relative.split(path.sep)[0];
+const includesSelectedGallery = (relative) => selectedGalleries.size === 0 || selectedGalleries.has(galleryFor(relative));
 const hashFor = async (filePath) => crypto.createHash("sha1").update(await fs.readFile(filePath)).digest("hex").slice(0, 10);
 const dimensionsFor = (metadata) => {
   const rotated = metadata.orientation && metadata.orientation >= 5 && metadata.orientation <= 8;
@@ -247,8 +250,9 @@ const generateManagedAssets = async (files) => {
     throw new Error(`Cannot extend the generated image manifest for managed galleries: ${error.message}`);
   }
 
-  const referenced = files.filter((relative) => sourcePaths.has(toManagedSourceUrl(relative)));
-  const expectedSources = [...sourcePaths].filter((source) => source.startsWith("/images/galleries/"));
+  const scopedFiles = files.filter(includesSelectedGallery);
+  const referenced = scopedFiles.filter((relative) => sourcePaths.has(toManagedSourceUrl(relative)));
+  const expectedSources = [...sourcePaths].filter((source) => source.startsWith("/images/galleries/") && includesSelectedGallery(source.slice("/images/galleries/".length)));
   const availableSources = new Set(referenced.map(toManagedSourceUrl));
   const missing = expectedSources.filter((source) => !availableSources.has(source) && !manifest.images?.[source]);
   if (missing.length) throw new Error(`Missing managed gallery source images:\n${missing.join("\n")}`);
@@ -273,13 +277,14 @@ const generateManagedAssets = async (files) => {
   });
   for (const [source, entry] of entries) manifest.images[source] = entry;
 
-  const staleManagedSources = Object.keys(manifest.images).filter((source) => source.startsWith("/images/galleries/") && !availableSources.has(source));
-  const staleLegacySources = [...managedGalleryLegacySources].filter((source) => !sourcePaths.has(source));
+  const staleManagedSources = Object.keys(manifest.images).filter((source) => source.startsWith("/images/galleries/") && includesSelectedGallery(source.slice("/images/galleries/".length)) && !availableSources.has(source));
+  const staleLegacySources = selectedGalleries.size === 0 ? [...managedGalleryLegacySources].filter((source) => !sourcePaths.has(source)) : [];
   const removed = await Promise.all([...new Set([...staleManagedSources, ...staleLegacySources])].map((source) => removeManifestEntry(manifest, source)));
   const removedCount = removed.filter(Boolean).length;
   if (generated || removedCount) manifest.generatedAt = new Date().toISOString();
   await writeManifest(manifest);
-  console.log(`Managed gallery sources are up to date (${referenced.length} checked; ${generated} regenerated; ${removedCount} removed).`);
+  const scope = selectedGalleries.size ? ` in ${[...selectedGalleries].join(", ")}` : "";
+  console.log(`Managed gallery sources are up to date${scope} (${referenced.length} checked; ${generated} regenerated; ${removedCount} removed).`);
 };
 
 const main = async () => {

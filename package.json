@@ -4,14 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/generate-images.mjs",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "build:github": "PUBLIC_SITE_URL=https://aether-art-space.github.io PUBLIC_BASE_PATH=/studioaether.com PUBLIC_DEPLOY_ENV=preview ASTRO_TELEMETRY_DISABLED=1 astro build && PUBLIC_BASE_PATH=/studioaether.com node scripts/prepare-github-pages.mjs",
-    "precheck": "node scripts/generate-images.mjs",
     "gallery:sync": "node scripts/generate-images.mjs",
+    "gallery:update": "node scripts/generate-images.mjs",
+    "release:build": "PUBLIC_DEPLOY_ENV=production PUBLIC_GTM_ID=GTM-P6G8NTP2 PUBLIC_SITE_URL=https://www.studioaether.com ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/validate.mjs",
+    "release:publish": "node scripts/publish-pages.mjs",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && node scripts/validate.mjs",
     "baseline:visual": "node scripts/capture-visual-baseline.mjs",
-    "predev": "node scripts/generate-images.mjs",
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
   },
