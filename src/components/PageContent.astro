@@ -298,8 +298,8 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
     <ImageHero variant="home" headingId="home-title" title={page.h1} image={homeImages.hero} icon={{ ...homeImages.icon, width: 450, height: 436 }}>
       <a class="button button--inverted" data-gtag-event="booking_click" data-gtag-location="home" href={site.bookingUrl}><span class="home-hero__cta-desktop">{hu ? "foglalás" : "book the studio"}</span><span class="home-hero__cta-mobile">{hu ? "foglalás" : "book the photostudio"}</span></a>
     </ImageHero>
-    <section class="home-favourite home-favourite--home" aria-labelledby="favourite-title">
-      <div class="home-favourite__intro">
+    <section class="home-favourite home-favourite--home" aria-labelledby="favourite-title" data-reveal-section>
+      <div class="home-favourite__intro" data-reveal-item>
         <h2 id="favourite-title">{hu ? <>az új kedvenc<br class="home-mobile-break" />{" "}fotóstúdiód</> : <>your new favourite<br class="home-mobile-break" />{" "}photostudio</>}</h2>
         <p class="home-favourite__subtitle">{home.introHeading}</p>
       </div>
@@ -307,8 +307,8 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         {home.features.map(([title, copy, href, label], index) => <CircularCard variant="feature" title={title} copy={copy} href={href} linkLabel={label} image={homeImages.features[index]} />)}
       </div>
     </section>
-    <section class="studio-showcase" aria-labelledby="studio-showcase-title">
-      <div class="studio-showcase__copy">
+    <section class="studio-showcase" aria-labelledby="studio-showcase-title" data-reveal-section>
+      <div class="studio-showcase__copy" data-reveal-item>
         <h2 id="studio-showcase-title">{home.studioShowcaseTitle}</h2>
         <p>{home.studioShowcaseIntro}</p>
         <p>{home.studioShowcaseBody}</p>
@@ -318,41 +318,43 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
         <div class="studio-showcase__gallery" data-gallery aria-label={hu ? "Képgaléria a stúdióról" : "Photo gallery of the studio"}>
           {homeImages.creatingArt.map((image, index) => <GalleryImage image={image} index={index} className="studio-showcase__gallery-item" label={hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`} />)}
         </div>
-        <aside class="studio-showcase__rent">
+        <aside class="studio-showcase__rent" data-reveal-item>
           <h3>{hu ? "Stúdióbérlés" : "Studio Rent"}</h3>
-          <p>{hu ? "7 000 Ft/órától" : "starting from HUF 7,000/hour"}</p>
+          {hu
+            ? <p class="studio-showcase__price"><span class="studio-showcase__price-label">kezdőár</span><strong>7 000 Ft/óra</strong></p>
+            : <p class="studio-showcase__price"><span class="studio-showcase__price-label">starting from</span><strong>HUF 7,000/hour</strong></p>}
           <a class="button button--dark studio-showcase__book" data-gtag-event="booking_click" data-gtag-location="home-studio-showcase" href={site.bookingUrl}>{hu ? "foglald le a stúdiót" : "book the photostudio"}</a>
         </aside>
       </div>
     </section>
     <GalleryLightbox label={hu ? "Stúdió képgaléria" : "Studio photo gallery"} hu={hu} />
-    <section class="beginner-section" aria-labelledby="beginner-title">
-      <div class="beginner-section__main">
+    <section class="beginner-section" aria-labelledby="beginner-title" data-reveal-section>
+      <div class="beginner-section__main" data-reveal-item>
         <h2 id="beginner-title">{home.beginnerHeading}</h2>
         <p class="beginner-section__lead">{home.beginnerLead}</p>
         <div class="beginner-section__proof">{home.beginnerProof.map((paragraph, index) => <p>{index === 1 ? <strong>{paragraph}</strong> : paragraph}</p>)}</div>
         <ul class="beginner-section__steps">{home.beginnerSteps.map((step) => <li>{step}</li>)}</ul>
         <p class="beginner-section__cta"><strong>{home.beginnerCtaLead}</strong>{home.beginnerCtaTail}</p>
       </div>
-      <div class="beginner-section__testimonials">
+      <div class="beginner-section__testimonials" data-reveal-item>
         <blockquote><p>{home.beginnerQuote}</p><footer>{home.beginnerAttribution}</footer></blockquote>
         <blockquote><p>{home.beginnerQuoteSecond}</p><footer>{home.beginnerAttributionSecond}</footer></blockquote>
       </div>
     </section>
-    <section class="home-artists" aria-labelledby="artists-title">
-      <div class="home-artists__intro">
+    <section class="home-artists" aria-labelledby="artists-title" data-reveal-section>
+      <div class="home-artists__intro" data-reveal-item>
         <h2 id="artists-title">{home.artistsHeading}</h2>
         <p>{home.artistsLead}</p>
       </div>
       <div class="home-artists__grid">{home.artists.map(([title, copy, href, label], index) => <CircularCard variant="artist" title={title} copy={copy} href={href} linkLabel={label} image={{ ...homeImages.artists[index], alt: hu ? homeImages.artists[index].altHu : homeImages.artists[index].alt }} />)}</div>
     </section>
-    <section class="home-services" aria-labelledby="services-title">
-      <div class="home-services__intro">
+    <section class="home-services" aria-labelledby="services-title" data-reveal-section>
+      <div class="home-services__intro" data-reveal-item>
         <h2 id="services-title">{home.photographersHeading}</h2>
         <p>{home.photographersCopy}</p>
       </div>
       <div class="home-services__grid">{home.photographyServices.map(([title, href, label], index) => <CircularCard variant="service" title={title} href={href} linkLabel={label} image={homeImages.photographers[index]} />)}</div>
-      <div class="home-services__packages">
+      <div class="home-services__packages" data-reveal-item>
         <p>{home.packagesCopy}</p>
         <a class="button button--dark" href={hu ? "/hu/packages" : "/packages"}>{hu ? "fotózási csomagok" : "view photography packages"}</a>
       </div>

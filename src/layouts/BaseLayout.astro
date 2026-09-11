@@ -20,7 +20,7 @@ const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.
     <link rel="preload" href="/fonts/Jitter-Regular-hun-v2.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/Jura-400.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
     <link rel="stylesheet" href="/site.css?v=20260909-19" />
-    <link rel="stylesheet" href="/content.css?v=20260909-99" />
+    <link rel="stylesheet" href="/content.css?v=20260911-01" />
   </head>
   <body>
     <a class="skip-link" href="#main">{page.language === "hu" ? "Ugrás a tartalomhoz" : "Skip to content"}</a>
@@ -30,5 +30,27 @@ const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.
     <ContactModal page={page} />
     <CookieConsent page={page} enabled={consentEnabled} />
     <GoogleReviewBar language={page.language} />
+    <script>
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      if (!reduceMotion.matches && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("motion-ready");
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("is-revealed");
+            observer.unobserve(entry.target);
+          }
+        }, { rootMargin: "0px 0px -10%", threshold: 0.08 });
+
+        document.querySelectorAll("[data-reveal-section]").forEach((section) => {
+          section.querySelectorAll("[data-reveal-item]").forEach((item, index) => {
+            (item as HTMLElement).style.setProperty("--reveal-index", String(index));
+          });
+          revealObserver.observe(section);
+        });
+      }
+    </script>
   </body>
 </html>
