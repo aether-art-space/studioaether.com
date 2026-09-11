@@ -31,7 +31,21 @@ The managed folders are `studio`, `selfie`, `props-*`, `mentoring-*`, `christmas
 
 Use `npm run gallery:sync` only when intentionally refreshing every managed gallery. For a named gallery release, use `npm run gallery:update -- --galleries=corporate` (or a comma-separated list such as `corporate,glamour`). It updates just those galleries and their manifest entries; normal `dev`, `check`, and build commands leave image assets alone.
 
-Releases are explicit too: run `npm run release:build`, then `npm run release:publish`. The latter uploads the verified `dist` artifact directly to Cloudflare Pages and records the current Git commit on the deployment. Git remains the source of truth, but a Git push does not generate or deploy images automatically.
+Releases are explicit too. Git is the source of truth, so push the release commits before deploying and always deploy the same commit that was reviewed:
+
+```bash
+# Confirm the worktree is clean and the release commit is on the shared branch.
+git status --short
+git push origin main
+
+# Build and validate the production artifact.
+npm run release:build
+
+# Publish the current HEAD to Cloudflare Pages.
+npm run release:publish
+```
+
+After publishing, verify the deployment URL and the key English/Hungarian routes. `release:publish` uploads the verified `dist` artifact directly to Cloudflare Pages and records the current Git commit on the deployment. If a deployment is made before the push, push that exact commit afterward so `origin/main` remains synchronized; a Git push alone does not generate or deploy images automatically.
 
 The current page body is a conservative scaffold on routes not yet migrated. The English/Hungarian homepage and studio pair now use verified Wix copy and current studio facts; remaining routes are migrated page by page after their own source audit.
 
