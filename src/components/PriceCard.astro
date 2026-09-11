@@ -28,7 +28,7 @@ const {
 const isSimpleCard = !description && descriptionLines.length === 0 && !includesLabel && features.length === 0;
 ---
 
-<article class={`price-card ${isSimpleCard ? "price-card--simple" : ""} ${className}`.trim()}>
+<article class={`price-card ${isSimpleCard ? "price-card--simple" : ""} ${className}`.trim()} data-reveal-item>
   <header class="price-card__header">
     <h3>
       {titleLines.length > 0 ? titleLines.map((line, index) => <span>{line}{index < titleLines.length - 1 && <br />}</span>) : title}

@@ -41,10 +41,10 @@ const sectionClass = ["service-section", "service-section--packages", "price-sec
 const gridClass = ["service-package-grid", gridClassName].filter(Boolean).join(" ");
 ---
 
-<section id={id} class={sectionClass} aria-labelledby={heading ? headingId : undefined} aria-label={!heading ? ariaLabel : undefined}>
-  {note && <p class="service-note">{note}</p>}
-  {heading && <h2 id={headingId}>{heading}</h2>}
-  {lead && <p>{lead}</p>}
+<section id={id} class={sectionClass} aria-labelledby={heading ? headingId : undefined} aria-label={!heading ? ariaLabel : undefined} data-reveal-section>
+  {note && <p class="service-note" data-reveal-item>{note}</p>}
+  {heading && <h2 id={headingId} data-reveal-item>{heading}</h2>}
+  {lead && <p data-reveal-item>{lead}</p>}
   <slot name="tabs" />
   <div class={gridClass}>
     {packages.map((packageItem) => <PriceCard title={packageItem.title} titleLines={packageItem.titleLines} titleAccent={packageItem.titleAccent} description={packageItem.description} descriptionLines={packageItem.descriptionLines} price={packageItem.price} includesLabel={includesLabel} features={packageItem.features} />)}

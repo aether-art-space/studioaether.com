@@ -30,27 +30,27 @@ const {
 const sectionClass = ["studio-section", imageSrc ? "studio-section--split" : "", className].filter(Boolean).join(" ");
 ---
 
-<section class={sectionClass}>
+<section class={sectionClass} data-reveal-section>
   {imageSrc ? <div class="studio-section__copy">
-    <h2>{heading}</h2>
-    <p>{intro}</p>
+    <h2 data-reveal-item>{heading}</h2>
+    <p data-reveal-item>{intro}</p>
     <ul>
       {bullets.map((bullet) => {
         const [title, ...rest] = bullet.split(" – ");
         return <li>{emphasizeBulletLeadins ? <><strong>{title}</strong>{rest.length > 0 ? ` – ${rest.join(" – ")}` : ""}</> : bullet}</li>;
       })}
     </ul>
-    {tail && <p>{tail}</p>}
+    {tail && <p data-reveal-item>{tail}</p>}
   </div> : <>
-    <h2>{heading}</h2>
-    <p>{intro}</p>
+    <h2 data-reveal-item>{heading}</h2>
+    <p data-reveal-item>{intro}</p>
     <ul>
       {bullets.map((bullet) => {
         const [title, ...rest] = bullet.split(" – ");
         return <li>{emphasizeBulletLeadins ? <><strong>{title}</strong>{rest.length > 0 ? ` – ${rest.join(" – ")}` : ""}</> : bullet}</li>;
       })}
     </ul>
-    {tail && <p>{tail}</p>}
+    {tail && <p data-reveal-item>{tail}</p>}
   </>}
-  {imageSrc && <div class="studio-section__image"><ResponsiveImage image={{ src: imageSrc, alt: imageAlt, width: imageWidth, height: imageHeight }} role="content" loading="lazy" /></div>}
+  {imageSrc && <div class="studio-section__image" data-reveal-item><ResponsiveImage image={{ src: imageSrc, alt: imageAlt, width: imageWidth, height: imageHeight }} role="content" loading="lazy" /></div>}
 </section>

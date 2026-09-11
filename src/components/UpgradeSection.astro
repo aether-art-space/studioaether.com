@@ -29,13 +29,13 @@ const {
 const sectionClass = ["packages-upgrades", cardsOnly ? "packages-upgrades--cards-only" : ""].filter(Boolean).join(" ");
 ---
 
-<section class={sectionClass} aria-labelledby={heading ? headingId : undefined} aria-label={!heading ? ariaLabel : undefined}>
+<section class={sectionClass} aria-labelledby={heading ? headingId : undefined} aria-label={!heading ? ariaLabel : undefined} data-reveal-section>
   {!cardsOnly && heading && <div class="packages-upgrades__intro">
-    <h2 id={headingId}>{heading}</h2>
-    {intro && <p>{intro}</p>}
+    <h2 id={headingId} data-reveal-item>{heading}</h2>
+    {intro && <p data-reveal-item>{intro}</p>}
   </div>}
   <div class="service-upgrade-grid packages-upgrade-grid">
-    {items.map((upgrade) => <article>
+    {items.map((upgrade) => <article data-reveal-item>
       <h4>{upgrade.title}</h4>
       <p>{upgrade.description}</p>
       <div class="extras-card__price">

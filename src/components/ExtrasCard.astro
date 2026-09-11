@@ -35,7 +35,7 @@ const {
 const cardClass = ["extras-card", image ? "extras-card--image" : "", className].filter(Boolean).join(" ");
 ---
 
-<article class={cardClass}>
+<article class={cardClass} data-reveal-item>
   {image && <ResponsiveImage image={image} role="card" className="extras-card__image" loading="lazy" />}
   {image ? <div class="extras-card__body">
     <h4>{title}</h4>
