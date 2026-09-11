@@ -452,7 +452,9 @@
 .collection-gallery--cameras,
 .collection-gallery--lenses,
 .collection-gallery--other { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.collection-gallery--wardrobe, .collection-gallery--wardrobeFree, .collection-gallery--collection, .collection-gallery--furniture { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+/* Fixed-width collection cards stay centered when their final row is incomplete. */
+.collection-gallery--wardrobe, .collection-gallery--wardrobeFree, .collection-gallery--collection, .collection-gallery--furniture { display: flex; flex-wrap: wrap; justify-content: center; }
+.collection-gallery--wardrobe > figure, .collection-gallery--wardrobeFree > figure, .collection-gallery--collection > figure, .collection-gallery--furniture > figure { flex: 0 0 calc((100% - 80px) / 5); }
 .collection-section--other .collection-section__intro p { text-align: center; }
 .collection-section--lightSources { padding-top: 39px; }
 .collection-section--lightSources .collection-gallery-wrap { margin-top: 57px; }
@@ -485,6 +487,8 @@
   .horizontal-masonry-gallery__track { gap: 5px; }
   .horizontal-masonry-gallery__previous, .horizontal-masonry-gallery__next { display: none; }
   .collection-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .collection-gallery--wardrobe, .collection-gallery--wardrobeFree, .collection-gallery--collection, .collection-gallery--furniture { display: flex; }
+  .collection-gallery--wardrobe > figure, .collection-gallery--wardrobeFree > figure, .collection-gallery--collection > figure, .collection-gallery--furniture > figure { flex-basis: calc((100% - 12px) / 2); }
   .collection-gallery figcaption { margin-top: 10px; font-size: 15px; line-height: 18px; }
   .collection-gallery__figure--captioned figcaption { padding: 22px 10px 9px; font: var(--text-small); font-size: 13px; line-height: 18px; }
   .collection-gallery figcaption small { margin-top: 4px; font-size: 12px; line-height: 16px; }
