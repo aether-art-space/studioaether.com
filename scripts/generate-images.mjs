@@ -82,7 +82,7 @@ const writeVariant = async ({ inputPath, relative, hash, label, width, height, s
   pipeline = square
     ? pipeline.resize(width, height, { fit: "cover", position: "attention" })
     : pipeline.resize(width, height, { fit: "inside", withoutEnlargement: true });
-  if (format === "avif") pipeline = pipeline.avif({ quality: 48, effort: 4 });
+  if (format === "avif") pipeline = pipeline.avif({ quality: 75, effort: 4 });
   else if (format === "webp") pipeline = pipeline.webp({ quality: 78, effort: 4 });
   else if (format === "jpeg") pipeline = pipeline.jpeg({ quality: 82, progressive: true, mozjpeg: true });
   else if (format === "png") pipeline = pipeline.png({ compressionLevel: 9, palette: true });
