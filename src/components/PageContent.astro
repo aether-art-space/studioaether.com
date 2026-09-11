@@ -600,7 +600,7 @@ const relatedHref = hu ? "/hu/packages" : "/packages";
       <PricingTabs slot="tabs" language={page.language} active="packages" />
     </PriceSection>
     <UpgradeSection items={packagesContent[hu ? "hu" : "en"].upgrades} cardsOnly ariaLabel={hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
-    <StudioSection className="christmas-photoshoot-studio-section" heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={seasonalStudioIntroImage?.src || studioSectionImage} imageAlt={seasonalStudioIntroImage?.alt || studioSectionImageAlt} imageWidth={882} imageHeight={1399} emphasizeBulletLeadins />
+    <StudioSection className="christmas-photoshoot-studio-section" heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={seasonalStudioIntroImage?.src || studioSectionImage} imageAlt={seasonalStudioIntroImage?.alt || studioSectionImageAlt} imageWidth={seasonalStudioIntroImage?.width || 2345} imageHeight={seasonalStudioIntroImage?.height || 2931} emphasizeBulletLeadins />
     <GalleryLightbox label={hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} hu={hu} />
   </>
 ) : seasonalType === "studio" ? (

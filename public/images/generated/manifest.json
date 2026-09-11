@@ -45509,86 +45509,140 @@
     },
     "/wix-recovered/christmas-studio-intro.jpg": {
       "source": "/wix-recovered/christmas-studio-intro.jpg",
-      "width": 882,
-      "height": 1399,
+      "width": 2345,
+      "height": 2931,
       "alpha": false,
-      "hash": "97963672be",
+      "hash": "2c1b3eed0a",
       "regular": {
         "avif": [
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--97963672be.avif",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--2c1b3eed0a.avif",
             "width": 320,
-            "height": 508,
+            "height": 400,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--97963672be.avif",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--2c1b3eed0a.avif",
             "width": 480,
-            "height": 761,
+            "height": 600,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--97963672be.avif",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--2c1b3eed0a.avif",
             "width": 640,
-            "height": 1015,
+            "height": 800,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--882w--97963672be.avif",
-            "width": 882,
-            "height": 1399,
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--960w--2c1b3eed0a.avif",
+            "width": 960,
+            "height": 1200,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1280w--2c1b3eed0a.avif",
+            "width": 1280,
+            "height": 1600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1600w--2c1b3eed0a.avif",
+            "width": 1600,
+            "height": 2000,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1920w--2c1b3eed0a.avif",
+            "width": 1920,
+            "height": 2400,
             "alpha": false
           }
         ],
         "webp": [
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--97963672be.webp",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--2c1b3eed0a.webp",
             "width": 320,
-            "height": 508,
+            "height": 400,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--97963672be.webp",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--2c1b3eed0a.webp",
             "width": 480,
-            "height": 761,
+            "height": 600,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--97963672be.webp",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--2c1b3eed0a.webp",
             "width": 640,
-            "height": 1015,
+            "height": 800,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--882w--97963672be.webp",
-            "width": 882,
-            "height": 1399,
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--960w--2c1b3eed0a.webp",
+            "width": 960,
+            "height": 1200,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1280w--2c1b3eed0a.webp",
+            "width": 1280,
+            "height": 1600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1600w--2c1b3eed0a.webp",
+            "width": 1600,
+            "height": 2000,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1920w--2c1b3eed0a.webp",
+            "width": 1920,
+            "height": 2400,
             "alpha": false
           }
         ],
         "jpeg": [
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--97963672be.jpg",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--320w--2c1b3eed0a.jpg",
             "width": 320,
-            "height": 508,
+            "height": 400,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--97963672be.jpg",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--480w--2c1b3eed0a.jpg",
             "width": 480,
-            "height": 761,
+            "height": 600,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--97963672be.jpg",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--640w--2c1b3eed0a.jpg",
             "width": 640,
-            "height": 1015,
+            "height": 800,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--882w--97963672be.jpg",
-            "width": 882,
-            "height": 1399,
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--960w--2c1b3eed0a.jpg",
+            "width": 960,
+            "height": 1200,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1280w--2c1b3eed0a.jpg",
+            "width": 1280,
+            "height": 1600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1600w--2c1b3eed0a.jpg",
+            "width": 1600,
+            "height": 2000,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--1920w--2c1b3eed0a.jpg",
+            "width": 1920,
+            "height": 2400,
             "alpha": false
           }
         ]
@@ -45596,13 +45650,13 @@
       "thumb": {
         "avif": [
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--97963672be.avif",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--2c1b3eed0a.avif",
             "width": 160,
             "height": 160,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--97963672be.avif",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--2c1b3eed0a.avif",
             "width": 320,
             "height": 320,
             "alpha": false
@@ -45610,13 +45664,13 @@
         ],
         "webp": [
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--97963672be.webp",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--2c1b3eed0a.webp",
             "width": 160,
             "height": 160,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--97963672be.webp",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--2c1b3eed0a.webp",
             "width": 320,
             "height": 320,
             "alpha": false
@@ -45624,13 +45678,13 @@
         ],
         "jpeg": [
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--97963672be.jpg",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-160--2c1b3eed0a.jpg",
             "width": 160,
             "height": 160,
             "alpha": false
           },
           {
-            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--97963672be.jpg",
+            "src": "/images/generated/wix-recovered/christmas-studio-intro--thumb-320--2c1b3eed0a.jpg",
             "width": 320,
             "height": 320,
             "alpha": false
@@ -45639,21 +45693,21 @@
       },
       "full": {
         "avif": {
-          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--97963672be.avif",
-          "width": 882,
-          "height": 1399,
+          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--2c1b3eed0a.avif",
+          "width": 1920,
+          "height": 2400,
           "alpha": false
         },
         "webp": {
-          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--97963672be.webp",
-          "width": 882,
-          "height": 1399,
+          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--2c1b3eed0a.webp",
+          "width": 1920,
+          "height": 2400,
           "alpha": false
         },
         "jpeg": {
-          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--97963672be.jpg",
-          "width": 882,
-          "height": 1399,
+          "src": "/images/generated/wix-recovered/christmas-studio-intro--full--2c1b3eed0a.jpg",
+          "width": 1920,
+          "height": 2400,
           "alpha": false
         }
       }

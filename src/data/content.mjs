@@ -1248,7 +1248,7 @@ export const seasonalImages = {
     { src: "/images/wix/seasonal/christmas-studio-03.jpg", width: 2963, height: 4444, alt: "Holiday studio props and decoration" },
     { src: "/images/wix/seasonal/christmas-studio-detail.jpg", width: 4000, height: 6000, alt: "Christmas studio detail" }
   ],
-  studioIntro: wixLiveGalleryImage("christmas-studio-intro.jpg", 882, 1399, "Christmas studio interior in Budapest"),
+  studioIntro: wixLiveGalleryImage("christmas-studio-intro.jpg", 2345, 2931, "Christmas studio interior in Budapest"),
   studioGallery: [
     wixLiveGalleryImage("94c0c9_fe3770802fb24044b5dd17845f6134da~mv2.jpg", 1333, 2000, "Christmas-themed studio in Budapest"),
     wixLiveGalleryImage("94c0c9_c8f896eaa5894fe0b3fbf0dfdd06a92b~mv2.jpg", 6000, 4000, "Christmas-themed studio in Budapest"),
