@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-11T11:27:50.372Z",
+  "generatedAt": "2026-09-12T13:49:55.119Z",
   "images": {
     "/images/equipment/A7301405.jpg": {
       "source": "/images/equipment/A7301405.jpg",
@@ -94461,211 +94461,6 @@
         }
       }
     },
-    "/images/galleries/pet/DSC00916.JPG": {
-      "source": "/images/galleries/pet/DSC00916.JPG",
-      "width": 6000,
-      "height": 4000,
-      "alpha": false,
-      "hash": "766ad2b7ef",
-      "regular": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--320w--766ad2b7ef.avif",
-            "width": 320,
-            "height": 213,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--480w--766ad2b7ef.avif",
-            "width": 480,
-            "height": 320,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--640w--766ad2b7ef.avif",
-            "width": 640,
-            "height": 427,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--960w--766ad2b7ef.avif",
-            "width": 960,
-            "height": 640,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--1280w--766ad2b7ef.avif",
-            "width": 1280,
-            "height": 853,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--1600w--766ad2b7ef.avif",
-            "width": 1600,
-            "height": 1067,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--2400w--766ad2b7ef.avif",
-            "width": 2400,
-            "height": 1600,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--320w--766ad2b7ef.webp",
-            "width": 320,
-            "height": 213,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--480w--766ad2b7ef.webp",
-            "width": 480,
-            "height": 320,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--640w--766ad2b7ef.webp",
-            "width": 640,
-            "height": 427,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--960w--766ad2b7ef.webp",
-            "width": 960,
-            "height": 640,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--1280w--766ad2b7ef.webp",
-            "width": 1280,
-            "height": 853,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--1600w--766ad2b7ef.webp",
-            "width": 1600,
-            "height": 1067,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--2400w--766ad2b7ef.webp",
-            "width": 2400,
-            "height": 1600,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--320w--766ad2b7ef.jpg",
-            "width": 320,
-            "height": 213,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--480w--766ad2b7ef.jpg",
-            "width": 480,
-            "height": 320,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--640w--766ad2b7ef.jpg",
-            "width": 640,
-            "height": 427,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--960w--766ad2b7ef.jpg",
-            "width": 960,
-            "height": 640,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--1280w--766ad2b7ef.jpg",
-            "width": 1280,
-            "height": 853,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--1600w--766ad2b7ef.jpg",
-            "width": 1600,
-            "height": 1067,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--2400w--766ad2b7ef.jpg",
-            "width": 2400,
-            "height": 1600,
-            "alpha": false
-          }
-        ]
-      },
-      "thumb": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--thumb-160--766ad2b7ef.avif",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--thumb-320--766ad2b7ef.avif",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--thumb-160--766ad2b7ef.webp",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--thumb-320--766ad2b7ef.webp",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--thumb-160--766ad2b7ef.jpg",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/pet/DSC00916--thumb-320--766ad2b7ef.jpg",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ]
-      },
-      "full": {
-        "avif": {
-          "src": "/images/generated/galleries/pet/DSC00916--full--766ad2b7ef.avif",
-          "width": 2400,
-          "height": 1600,
-          "alpha": false
-        },
-        "webp": {
-          "src": "/images/generated/galleries/pet/DSC00916--full--766ad2b7ef.webp",
-          "width": 2400,
-          "height": 1600,
-          "alpha": false
-        },
-        "jpeg": {
-          "src": "/images/generated/galleries/pet/DSC00916--full--766ad2b7ef.jpg",
-          "width": 2400,
-          "height": 1600,
-          "alpha": false
-        }
-      }
-    },
     "/images/galleries/pet/IMG_1741.jpeg": {
       "source": "/images/galleries/pet/IMG_1741.jpeg",
       "width": 3606,
@@ -117389,6 +117184,1369 @@
           "src": "/images/generated/galleries/selfie/IMG_3808 (1)--full--21ed6e354b.jpg",
           "width": 1600,
           "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/pet/03 - IMG_0729.jpeg": {
+      "source": "/images/galleries/pet/03 - IMG_0729.jpeg",
+      "width": 3325,
+      "height": 4987,
+      "alpha": false,
+      "hash": "256e543744",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--320w--256e543744.avif",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--480w--256e543744.avif",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--640w--256e543744.avif",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--960w--256e543744.avif",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--1280w--256e543744.avif",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--1600w--256e543744.avif",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--320w--256e543744.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--480w--256e543744.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--640w--256e543744.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--960w--256e543744.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--1280w--256e543744.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--1600w--256e543744.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--320w--256e543744.jpg",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--480w--256e543744.jpg",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--640w--256e543744.jpg",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--960w--256e543744.jpg",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--1280w--256e543744.jpg",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--1600w--256e543744.jpg",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--thumb-160--256e543744.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--thumb-320--256e543744.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--thumb-160--256e543744.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--thumb-320--256e543744.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--thumb-160--256e543744.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/03 - IMG_0729--thumb-320--256e543744.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/pet/03 - IMG_0729--full--256e543744.avif",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/pet/03 - IMG_0729--full--256e543744.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/pet/03 - IMG_0729--full--256e543744.jpg",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/pet/04 - A7304073.jpg": {
+      "source": "/images/galleries/pet/04 - A7304073.jpg",
+      "width": 2215,
+      "height": 3322,
+      "alpha": false,
+      "hash": "381036023a",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--320w--381036023a.avif",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--480w--381036023a.avif",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--640w--381036023a.avif",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--960w--381036023a.avif",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--1280w--381036023a.avif",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--1600w--381036023a.avif",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--320w--381036023a.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--480w--381036023a.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--640w--381036023a.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--960w--381036023a.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--1280w--381036023a.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--1600w--381036023a.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--320w--381036023a.jpg",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--480w--381036023a.jpg",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--640w--381036023a.jpg",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--960w--381036023a.jpg",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--1280w--381036023a.jpg",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--1600w--381036023a.jpg",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--thumb-160--381036023a.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--thumb-320--381036023a.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--thumb-160--381036023a.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--thumb-320--381036023a.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--thumb-160--381036023a.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - A7304073--thumb-320--381036023a.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/pet/04 - A7304073--full--381036023a.avif",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/pet/04 - A7304073--full--381036023a.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/pet/04 - A7304073--full--381036023a.jpg",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/pet/04 - DSC00916.JPG": {
+      "source": "/images/galleries/pet/04 - DSC00916.JPG",
+      "width": 6000,
+      "height": 4000,
+      "alpha": false,
+      "hash": "766ad2b7ef",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--320w--766ad2b7ef.avif",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--480w--766ad2b7ef.avif",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--640w--766ad2b7ef.avif",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--960w--766ad2b7ef.avif",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--1280w--766ad2b7ef.avif",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--1600w--766ad2b7ef.avif",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--2400w--766ad2b7ef.avif",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--320w--766ad2b7ef.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--480w--766ad2b7ef.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--640w--766ad2b7ef.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--960w--766ad2b7ef.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--1280w--766ad2b7ef.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--1600w--766ad2b7ef.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--2400w--766ad2b7ef.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--320w--766ad2b7ef.jpg",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--480w--766ad2b7ef.jpg",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--640w--766ad2b7ef.jpg",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--960w--766ad2b7ef.jpg",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--1280w--766ad2b7ef.jpg",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--1600w--766ad2b7ef.jpg",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--2400w--766ad2b7ef.jpg",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--thumb-160--766ad2b7ef.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--thumb-320--766ad2b7ef.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--thumb-160--766ad2b7ef.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--thumb-320--766ad2b7ef.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--thumb-160--766ad2b7ef.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/04 - DSC00916--thumb-320--766ad2b7ef.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/pet/04 - DSC00916--full--766ad2b7ef.avif",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/pet/04 - DSC00916--full--766ad2b7ef.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/pet/04 - DSC00916--full--766ad2b7ef.jpg",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/pet/A7304065.jpg": {
+      "source": "/images/galleries/pet/A7304065.jpg",
+      "width": 6000,
+      "height": 4000,
+      "alpha": false,
+      "hash": "82169edc07",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/A7304065--320w--82169edc07.avif",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--480w--82169edc07.avif",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--640w--82169edc07.avif",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--960w--82169edc07.avif",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--1280w--82169edc07.avif",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--1600w--82169edc07.avif",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--2400w--82169edc07.avif",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/A7304065--320w--82169edc07.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--480w--82169edc07.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--640w--82169edc07.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--960w--82169edc07.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--1280w--82169edc07.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--1600w--82169edc07.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--2400w--82169edc07.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/A7304065--320w--82169edc07.jpg",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--480w--82169edc07.jpg",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--640w--82169edc07.jpg",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--960w--82169edc07.jpg",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--1280w--82169edc07.jpg",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--1600w--82169edc07.jpg",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--2400w--82169edc07.jpg",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/A7304065--thumb-160--82169edc07.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--thumb-320--82169edc07.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/A7304065--thumb-160--82169edc07.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--thumb-320--82169edc07.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/A7304065--thumb-160--82169edc07.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/A7304065--thumb-320--82169edc07.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/pet/A7304065--full--82169edc07.avif",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/pet/A7304065--full--82169edc07.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/pet/A7304065--full--82169edc07.jpg",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/pet/DSC00091.jpeg": {
+      "source": "/images/galleries/pet/DSC00091.jpeg",
+      "width": 6000,
+      "height": 4000,
+      "alpha": false,
+      "hash": "8e7662538e",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--320w--8e7662538e.avif",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--480w--8e7662538e.avif",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--640w--8e7662538e.avif",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--960w--8e7662538e.avif",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--1280w--8e7662538e.avif",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--1600w--8e7662538e.avif",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--2400w--8e7662538e.avif",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--320w--8e7662538e.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--480w--8e7662538e.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--640w--8e7662538e.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--960w--8e7662538e.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--1280w--8e7662538e.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--1600w--8e7662538e.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--2400w--8e7662538e.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--320w--8e7662538e.jpg",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--480w--8e7662538e.jpg",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--640w--8e7662538e.jpg",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--960w--8e7662538e.jpg",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--1280w--8e7662538e.jpg",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--1600w--8e7662538e.jpg",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--2400w--8e7662538e.jpg",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--thumb-160--8e7662538e.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--thumb-320--8e7662538e.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--thumb-160--8e7662538e.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--thumb-320--8e7662538e.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--thumb-160--8e7662538e.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/pet/DSC00091--thumb-320--8e7662538e.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/pet/DSC00091--full--8e7662538e.avif",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/pet/DSC00091--full--8e7662538e.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/pet/DSC00091--full--8e7662538e.jpg",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/portrait/04 - A7304017.jpg": {
+      "source": "/images/galleries/portrait/04 - A7304017.jpg",
+      "width": 2624,
+      "height": 3936,
+      "alpha": false,
+      "hash": "e08310d436",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--320w--e08310d436.avif",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--480w--e08310d436.avif",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--640w--e08310d436.avif",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--960w--e08310d436.avif",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--1280w--e08310d436.avif",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--1600w--e08310d436.avif",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--320w--e08310d436.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--480w--e08310d436.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--640w--e08310d436.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--960w--e08310d436.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--1280w--e08310d436.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--1600w--e08310d436.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--320w--e08310d436.jpg",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--480w--e08310d436.jpg",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--640w--e08310d436.jpg",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--960w--e08310d436.jpg",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--1280w--e08310d436.jpg",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--1600w--e08310d436.jpg",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--thumb-160--e08310d436.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--thumb-320--e08310d436.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--thumb-160--e08310d436.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--thumb-320--e08310d436.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--thumb-160--e08310d436.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/04 - A7304017--thumb-320--e08310d436.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/portrait/04 - A7304017--full--e08310d436.avif",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/portrait/04 - A7304017--full--e08310d436.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/portrait/04 - A7304017--full--e08310d436.jpg",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/portrait/IMG_0297.jpeg": {
+      "source": "/images/galleries/portrait/IMG_0297.jpeg",
+      "width": 3517,
+      "height": 5276,
+      "alpha": false,
+      "hash": "721aa3a4e0",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--320w--721aa3a4e0.avif",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--480w--721aa3a4e0.avif",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--640w--721aa3a4e0.avif",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--960w--721aa3a4e0.avif",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--1280w--721aa3a4e0.avif",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--1599w--721aa3a4e0.avif",
+            "width": 1599,
+            "height": 2399,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--320w--721aa3a4e0.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--480w--721aa3a4e0.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--640w--721aa3a4e0.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--960w--721aa3a4e0.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--1280w--721aa3a4e0.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--1599w--721aa3a4e0.webp",
+            "width": 1599,
+            "height": 2399,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--320w--721aa3a4e0.jpg",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--480w--721aa3a4e0.jpg",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--640w--721aa3a4e0.jpg",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--960w--721aa3a4e0.jpg",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--1280w--721aa3a4e0.jpg",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--1599w--721aa3a4e0.jpg",
+            "width": 1599,
+            "height": 2399,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--thumb-160--721aa3a4e0.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--thumb-320--721aa3a4e0.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--thumb-160--721aa3a4e0.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--thumb-320--721aa3a4e0.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--thumb-160--721aa3a4e0.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/portrait/IMG_0297--thumb-320--721aa3a4e0.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/portrait/IMG_0297--full--721aa3a4e0.avif",
+          "width": 1599,
+          "height": 2399,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/portrait/IMG_0297--full--721aa3a4e0.webp",
+          "width": 1599,
+          "height": 2399,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/portrait/IMG_0297--full--721aa3a4e0.jpg",
+          "width": 1599,
+          "height": 2399,
           "alpha": false
         }
       }
