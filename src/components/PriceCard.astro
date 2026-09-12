@@ -48,8 +48,11 @@ const isSimpleCard = !description && descriptionLines.length === 0 && !includesL
   </header>
   <div class="price-card__details">
     <p class="price-card__price"><strong>{price}</strong></p>
+    {!includesLabel && features.length === 0 && (cta?.href
+      ? <a class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} href={cta.href}>{cta.label}</a>
+      : cta?.contact && <button class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} type="button" data-site-contact-open aria-controls="site-contact-modal">{cta.label}</button>)}
   </div>
-  {(includesLabel || features.length > 0 || cta) && <div class="price-card__features">
+  {(includesLabel || features.length > 0) && <div class="price-card__features">
     {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
     {features.length > 0 && <ul aria-label={includesLabel ?? "Package features"}>
       {features.map((feature, index) => <li class={featureBreaks.includes(index) ? "price-card__feature-break" : undefined}>{feature}</li>)}
