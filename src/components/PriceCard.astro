@@ -34,6 +34,7 @@ const {
 } = Astro.props;
 
 const isSimpleCard = !description && descriptionLines.length === 0 && !includesLabel && features.length === 0;
+const hasCta = Boolean(cta?.href || cta?.contact);
 ---
 
 <article class={`price-card ${isSimpleCard ? "price-card--simple" : ""} ${className}`.trim()} data-reveal-item>
@@ -48,17 +49,21 @@ const isSimpleCard = !description && descriptionLines.length === 0 && !includesL
   </header>
   <div class="price-card__details">
     <p class="price-card__price"><strong>{price}</strong></p>
-    {!includesLabel && features.length === 0 && (cta?.href
-      ? <a class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} href={cta.href}>{cta.label}</a>
-      : cta?.contact && <button class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} type="button" data-site-contact-open aria-controls="site-contact-modal">{cta.label}</button>)}
+    {!includesLabel && features.length === 0 && hasCta && <div class="price-card__action-wrap">
+      {cta?.href
+        ? <a class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} href={cta.href}>{cta.label}</a>
+        : cta?.contact && <button class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} type="button" data-site-contact-open aria-controls="site-contact-modal">{cta.label}</button>}
+    </div>}
   </div>
   {(includesLabel || features.length > 0) && <div class="price-card__features">
     {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
     {features.length > 0 && <ul aria-label={includesLabel ?? "Package features"}>
       {features.map((feature, index) => <li class={featureBreaks.includes(index) ? "price-card__feature-break" : undefined}>{feature}</li>)}
     </ul>}
-    {cta?.href
-      ? <a class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} href={cta.href}>{cta.label}</a>
-      : cta?.contact && <button class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} type="button" data-site-contact-open aria-controls="site-contact-modal">{cta.label}</button>}
+    {hasCta && <div class="price-card__action-wrap">
+      {cta?.href
+        ? <a class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} href={cta.href}>{cta.label}</a>
+        : cta?.contact && <button class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} type="button" data-site-contact-open aria-controls="site-contact-modal">{cta.label}</button>}
+    </div>}
   </div>}
 </article>

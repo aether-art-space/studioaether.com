@@ -1365,8 +1365,8 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .price-card li.price-card__feature-break { margin-top: 22px; }
 .price-card li::marker { color: #baf3e6; font-size: .8em; }
 .price-card__includes { margin: 0 !important; color: rgba(255, 255, 255, .72); font-size: 13px !important; letter-spacing: .08em; text-transform: uppercase; }
-.price-card__action { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: center; margin-top: 22px; padding: 10px 16px; border: 1px solid var(--price-card-edge); border-radius: 5px; background: rgb(0 0 0 / 18%); box-shadow: 0 0 14px var(--price-card-glow), inset 0 0 10px rgb(255 255 255 / 5%); color: var(--paper); font: 700 14px/1 var(--sans); letter-spacing: .04em; text-decoration: none; cursor: pointer; transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
-.price-card__details .price-card__action, .price-card__features .price-card__action { margin-top: auto; }
+.price-card__action-wrap { display: flex; min-width: 0; margin-top: auto; padding-top: 22px; }
+.price-card__action { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: center; margin-top: 0; padding: 10px 16px; border: 1px solid var(--price-card-edge); border-radius: 5px; background: rgb(0 0 0 / 18%); box-shadow: 0 0 14px var(--price-card-glow), inset 0 0 10px rgb(255 255 255 / 5%); color: var(--paper); font: 700 14px/1 var(--sans); letter-spacing: .04em; text-decoration: none; cursor: pointer; transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
 .price-card__action:hover, .price-card__action:focus-visible { background: var(--price-card-edge); box-shadow: 0 0 20px var(--price-card-glow), 0 0 8px var(--price-card-glow); color: var(--ink); text-decoration: none; }
 .price-card__action:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
 .price-card--simple { min-height: 0; }
@@ -1379,6 +1379,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .price-card__details { padding-top: 18px; }
   .price-card__price { min-height: 0; padding-bottom: 20px; }
   .price-card__features { margin-right: -22px; margin-left: -22px; padding: 18px 22px 24px; }
+  .price-card__action-wrap { padding-top: 18px; }
   .price-card__includes { font-size: 11px !important; }
   .price-card ul { gap: 6px; margin-top: 12px; padding-left: 18px; }
   .price-card li { font-size: 14px; line-height: 1.35; }
