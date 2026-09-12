@@ -89,11 +89,11 @@ const renderBooking = (page) => {
 const renderFaq = (page) => {
   const hu = page.language === "hu";
   const items = hu ? [
-    ["Mikor használható a stúdió?", "Időpont-egyeztetéssel hétköznap 09:00–22:00, hétvégén 10:00–22:00 között."],
+    ["Mikor használható a stúdió?", "Időpont-egyeztetéssel hétfőtől vasárnapig 09:00–22:00 között."],
     ["Kezdők is foglalhatnak?", "Igen. A helyszínen megmutatjuk az alapvető felszerelés használatát."],
     ["Hogyan foglalhatok?", "A foglalási oldalon válaszd ki a megfelelő időpontot, vagy írj nekünk e-mailt."]
   ] : [
-    ["When can I use the studio?", "By appointment: Monday to Friday 09:00–22:00 and weekends 10:00–22:00."],
+    ["When can I use the studio?", "By appointment: Monday to Sunday 09:00–22:00."],
     ["Can first-time creatives book?", "Yes. We will show you the basics of using the studio equipment on site."],
     ["How do I book?", "Choose a suitable time on the booking page, or email us with your idea."]
   ];
@@ -200,7 +200,7 @@ export const renderPage = (page) => {
     </div>
     <footer class="site-footer">
       <div><p class="eyebrow">${hu ? "kapcsolat" : "contact"}</p><a href="mailto:${site.email}">${site.email}</a><br><a href="tel:+36703861739">${site.phone}</a></div>
-      <div><p class="eyebrow">${hu ? "nyitvatartás" : "opening hours"}</p><p>APPOINTMENT ONLY<br>Mon–Fri 09:00–22:00<br>Sat–Sun 10:00–22:00</p></div>
+      <div><p class="eyebrow">${hu ? "nyitvatartás" : "opening hours"}</p><p>APPOINTMENT ONLY<br>Mon–Sun 09:00–22:00</p></div>
       <div><p class="eyebrow">${hu ? "cím" : "address"}</p><p>${site.publicAddress}</p><a href="${hu ? "/hu/faq" : "/faq"}">${hu ? "GYIK" : "FAQ"}</a> · <a href="${hu ? "/hu/privacy-policy" : "/privacy-policy"}">${hu ? "Adatvédelem" : "Privacy"}</a></div>
     </footer>
   </body>

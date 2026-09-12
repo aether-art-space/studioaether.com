@@ -153,7 +153,7 @@ const faqList = (items) => ({ type: "list", items });
 const faqItemsEn = [
   ["What is aether art space?", [faqParagraph("Aether Art Space is a professional yet welcoming photo studio in the heart of Budapest, offering studio rental, equipment, props, wardrobe and creative services for photographers and other creatives.")]],
   ["Is the studio suitable for beginners?", [faqParagraph("The studio is perfect for first timers and beginners. We help you set the lights and your camera for free at the beginning of your shoot if you wish. You can also ask for full assistance for 4,000 HUF/hour.")]],
-  ["What are the studio opening hours?", [faqList(["The studio is open by appointment only.", "Monday–Friday: 09:00–22:00", "Saturday–Sunday: 10:00–22:00"])]],
+  ["What are the studio opening hours?", [faqList(["The studio is open by appointment only.", "Monday–Sunday: 09:00–22:00"])]],
   ["What is the studio layout and size?", [faqList(["The studio has two rooms.", "The ceiling is 4.2 m high.", "There is 10 m of shooting distance from the backdrop and a 60 m² shooting area.", "A separate dressing room with a make-up desk is available."])]],
   ["Are you pet-friendly and can I bring animals?", [faqList(["Yes. The studio is pet-friendly, and animals can be brought for shoots by arrangement."])]],
   ["What equipment and resources are available on site?", [faqList(["Lighting: powerful flash strobes, LED lights and a broad range of light modifiers, including softboxes, umbrellas, beauty dishes, snoots and reflectors.", "Cameras and lenses: analog and digital cameras, including 35mm, medium-format and instant cameras, with lenses that can be used with a rented or your own camera.", "Other equipment: fog machines, tripods and more.", "Props and wardrobe: vintage furniture, outfits, accessories and other creative items, many available to use in the studio."])]],
@@ -164,7 +164,7 @@ const faqItemsEn = [
   ["What backdrops and seasonal sets are available?", [faqParagraph("We offer 2.7 m wide paper backdrops, textile backdrops and custom-built backdrops. Seasonal sets, including Christmas decoration, are also available when offered.")]],
   ["What are the pricing and booking options?", [faqList([
     "Discounted studio rate: HUF 7,000/hour, Monday–Thursday 09:00–18:00.",
-    "Standard studio rate: HUF 8,000/hour, Monday–Thursday 18:00–22:00, Friday 09:00–22:00 and weekends 10:00–22:00.",
+    "Standard studio rate: HUF 8,000/hour, Monday–Thursday 18:00–22:00 and Friday–Sunday 09:00–22:00.",
     "10-hour membership: HUF 60,000, usable flexibly by the hour between 10:00 and 22:00. Save up to 25% compared with the standard hourly rate.",
     "Outside regular opening hours: HUF 10,000/hour by email.",
     "Filmings and castings with 5 or more participants: HUF 10,000/hour.",
@@ -185,7 +185,7 @@ const faqItemsEn = [
 const faqItemsHu = [
   ["Mi az Aether Art Space stúdió?", [faqParagraph("Az Aether Art Space egy professzionális, ugyanakkor barátságos fotóstúdió Budapest szívében, amely stúdióbérlést, felszerelést, kellékeket, ruhatárat és kreatív szolgáltatásokat kínál fotósoknak és más alkotóknak.")]],
   ["Alkalmas a stúdió kezdőknek is?", [faqParagraph("Igen. A stúdió tökéletes első alkalommal érkezők és kezdők számára. A fotózás elején, ha szeretnéd, ingyen segítünk beállítani a világítást és a fényképezőgépedet. Teljes körű asszisztenciát is kérhetsz 4 000 Ft/óra díjért.")]],
-  ["Mikor használható a stúdió?", [faqList(["A stúdió kizárólag előzetes időpontfoglalással használható.", "Hétfő–péntek: 09:00–22:00", "Szombat–vasárnap: 10:00–22:00"])]],
+  ["Mikor használható a stúdió?", [faqList(["A stúdió kizárólag előzetes időpontfoglalással használható.", "Hétfő–vasárnap: 09:00–22:00"])]],
   ["Mekkora és hogyan épül fel a stúdió?", [faqList(["A stúdió két helyiségből áll.", "A belmagasság 4,2 méter.", "A háttértől 10 méteres fotózási távolság és 60 m²-es fotózási terület áll rendelkezésre.", "Külön öltözőszoba sminkasztallal is rendelkezésre áll."])]],
   ["Állatbarát a stúdió? Hozhatok állatot?", [faqParagraph("Igen. A stúdió állatbarát, és előzetes egyeztetéssel állatot is hozhatsz fotózáshoz.")]],
   ["Milyen felszerelés és eszközök érhetők el a helyszínen?", [faqParagraph("Világításként erős vakurendszereket, LED-lámpákat és számos fénymódosítót használhatsz, például softboxokat, ernyőket, beauty dish-eket, snootokat és reflektorokat. Analóg és digitális, többek között 35 mm-es, középformátumú és instant fényképezőgépek, valamint bérelt vagy saját fényképezőgéppel használható objektívek érhetők el. Egyéb felszerelésként füstgépek, állványok és további eszközök állnak rendelkezésre. A vintage bútorok, ruhák, kiegészítők és más kreatív tárgyak közül sok használható a stúdióban.")]],
@@ -196,7 +196,7 @@ const faqItemsHu = [
   ["Milyen hátterek és szezonális díszletek érhetők el?", [faqParagraph("2,7 méter széles papírháttereket, textil- és egyedi építésű háttereket kínálunk. Szezonális díszletek, többek között karácsonyi dekoráció is elérhető, amikor meghirdetjük.")]],
   ["Mik a bérlési és foglalási lehetőségek?", [faqList([
     "Kedvezményes stúdióár: 7 000 Ft/óra, hétfő–csütörtök 09:00–18:00 között.",
-    "Normál stúdióár: 8 000 Ft/óra, hétfő–csütörtök 18:00–22:00, péntek 09:00–22:00 és hétvégén 10:00–22:00 között.",
+    "Normál stúdióár: 8 000 Ft/óra, hétfő–csütörtök 18:00–22:00, péntek–vasárnap 09:00–22:00 között.",
     "10 órás bérlet: 60 000 Ft, amely óránként rugalmasan használható 10:00 és 22:00 között. A normál óradíjhoz képest akár 25% kedvezményt jelent.",
     "Nyitvatartási időn kívül: 10 000 Ft/óra, e-mailes egyeztetéssel.",
     "5 vagy több résztvevős forgatás és casting: 10 000 Ft/óra.",
@@ -217,7 +217,7 @@ const faqItemsHu = [
 const faqItemsDe = [
   ["Was ist aether art space?", [faqParagraph("Aether Art Space ist ein professionelles und zugleich entspanntes Fotostudio im Herzen von Budapest – mit Studiomiete, Equipment, Requisiten, Garderobe und kreativen Services.")]],
   ["Ist das Studio für Anfänger:innen geeignet?", [faqParagraph("Ja. Auf Wunsch helfen wir dir zu Beginn kostenlos beim Einrichten von Licht und Kamera. Eine umfassende Assistenz kannst du für 4.000 HUF pro Stunde buchen.")]],
-  ["Wann ist das Studio geöffnet?", [faqList(["Nur nach Terminvereinbarung.", "Montag–Freitag: 09:00–22:00", "Samstag–Sonntag: 10:00–22:00"])]],
+  ["Wann ist das Studio geöffnet?", [faqList(["Nur nach Terminvereinbarung.", "Montag–Sonntag: 09:00–22:00"])]],
   ["Wie groß ist das Studio?", [faqList(["Zwei Räume.", "4,2 m Deckenhöhe.", "10 m Aufnahmeabstand zum Hintergrund und 60 m² Aufnahmefläche.", "Separater Umkleideraum mit Make-up-Platz."])]],
   ["Sind Tiere erlaubt?", [faqParagraph("Ja. Das Studio ist tierfreundlich; Tiere können nach Absprache zum Shooting mitgebracht werden.")]],
   ["Welches Equipment gibt es?", [faqList(["Licht: leistungsstarke Studioblitze, LED-Dauerlicht und zahlreiche Lichtformer wie Softboxen, Schirme, Beauty-Dishes, Snoots und Reflektoren.", "Kameras und Objektive: analoge und digitale Kameras, darunter 35-mm-, Mittelformat- und Sofortbildkameras; die Objektive können mit einer gemieteten oder deiner eigenen Kamera verwendet werden.", "Weiteres Equipment: Nebelmaschine, Stative und mehr.", "Requisiten und Garderobe: Vintage-Möbel, Outfits, Accessoires und weitere kreative Gegenstände, von denen viele im Studio genutzt werden können."])]] ,
@@ -228,7 +228,7 @@ const faqItemsDe = [
   ["Welche Hintergründe gibt es?", [faqParagraph("Wir bieten 2,7 m breite Papierhintergründe, Textilhintergründe und fest gebaute Sets. Saisonale Sets wie Weihnachtsdekoration sind verfügbar, wenn sie angeboten werden.")]],
   ["Welche Preise und Buchungsoptionen gibt es?", [faqList([
     "Vergünstigter Studio-Tarif: 7.000 HUF/Stunde, Montag–Donnerstag 09:00–18:00.",
-    "Standardtarif: 8.000 HUF/Stunde, Montag–Donnerstag 18:00–22:00, Freitag 09:00–22:00 und am Wochenende 10:00–22:00.",
+    "Standardtarif: 8.000 HUF/Stunde, Montag–Donnerstag 18:00–22:00 und Freitag–Sonntag 09:00–22:00.",
     "10-Stunden-Karte: 60.000 HUF, flexibel stundenweise zwischen 10:00 und 22:00 nutzbar. Gegenüber dem Standardtarif sparst du bis zu 25 %.",
     "Außerhalb der regulären Öffnungszeiten: 10.000 HUF/Stunde nach Absprache per E-Mail.",
     "Filmproduktionen und Castings mit 5 oder mehr Teilnehmenden: 10.000 HUF/Stunde.",

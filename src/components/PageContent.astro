@@ -518,21 +518,17 @@ const christmasStudioPackages = seasonalType === "studio" ? [
     title: de ? "Standard-Studio-Zeitfenster" : hu ? "Standard stúdióidősáv" : "Standard Studio Timeslots",
     titleLines: de ? ["Standard", "Studio-Zeitfenster"] : hu ? ["Standard", "stúdióidősáv"] : ["Standard", "Studio Timeslots"],
     descriptionLines: de ? [
-      { text: "Montag bis Donnerstag", bold: true }, { text: "18:00–22:00" }, { text: "Freitag", bold: true }, { text: "09:00–22:00" }, { text: "Wochenende", bold: true }, { text: "10:00–22:00" }
+      { text: "Montag bis Donnerstag", bold: true }, { text: "18:00–22:00" }, { text: "Freitag und Wochenende", bold: true }, { text: "09:00–22:00" }
     ] : hu ? [
       { text: "Hétfőtől csütörtökig", bold: true },
       { text: "18:00–22:00" },
-      { text: "Pénteken", bold: true },
-      { text: "09:00–22:00" },
-      { text: "Hétvégén", bold: true },
-      { text: "10:00–22:00" }
+      { text: "Pénteken és hétvégén", bold: true },
+      { text: "09:00–22:00" }
     ] : [
       { text: "Monday to Thursday", bold: true },
       { text: "18:00–22:00" },
-      { text: "Friday", bold: true },
-      { text: "09:00–22:00" },
-      { text: "Weekend", bold: true },
-      { text: "10:00–22:00" }
+      { text: "Friday and weekend", bold: true },
+      { text: "09:00–22:00" }
     ],
     price: de ? "8.000 HUF/Stunde" : hu ? "8 000 Ft/óra" : "HUF 8,000/hour"
   },
@@ -645,15 +641,15 @@ profilePackages.forEach((packageItem: any) => {
 });
 const bookingPackages = de ? [
   { title: "Vergünstigtes Studio-Zeitfenster", titleLines: ["Vergünstigtes", "Studio-Zeitfenster"], descriptionLines: [{ text: "Montag bis Donnerstag", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "7.000 HUF/Stunde" },
-  { title: "Standard-Studio-Zeitfenster", titleLines: ["Standard", "Studio-Zeitfenster"], descriptionLines: [{ text: "Montag bis Donnerstag", bold: true }, { text: "18:00–22:00" }, { text: "Freitag", bold: true }, { text: "09:00–22:00" }, { text: "Wochenende", bold: true }, { text: "10:00–22:00" }], price: "8.000 HUF/Stunde" },
+  { title: "Standard-Studio-Zeitfenster", titleLines: ["Standard", "Studio-Zeitfenster"], descriptionLines: [{ text: "Montag bis Donnerstag", bold: true }, { text: "18:00–22:00" }, { text: "Freitag und Wochenende", bold: true }, { text: "09:00–22:00" }], price: "8.000 HUF/Stunde" },
   { title: "10-Stunden-Pass", titleLines: ["10-Stunden-Pass"], titleAccent: "BIS ZU 25 % SPAREN", descriptionLines: [{ text: "Jeden Tag", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Stundenweise nutzbar" }], price: "60.000 HUF" }
 ] : hu ? [
   { title: "Kedvezményes stúdióidősáv", titleLines: ["Kedvezményes", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "7 000 Ft/óra" },
-  { title: "Standard stúdióidősáv", titleLines: ["Standard", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "18:00–22:00" }, { text: "pénteken", bold: true }, { text: "09:00–22:00" }, { text: "hétvégén", bold: true }, { text: "10:00–22:00" }], price: "8 000 Ft/óra" },
+  { title: "Standard stúdióidősáv", titleLines: ["Standard", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "18:00–22:00" }, { text: "pénteken és hétvégén", bold: true }, { text: "09:00–22:00" }], price: "8 000 Ft/óra" },
   { title: "10 órás bérlet", titleLines: ["10 órás bérlet"], titleAccent: "akár 25% kedvezmény", descriptionLines: [{ text: "Bármelyik nap", bold: true }, { text: "10:00–22:00 között" }, { text: "" }, { text: "Óránként felbontható" }], price: "60 000 Ft" }
 ] : [
   { title: "Discounted Studio Timeslots", titleLines: ["Discounted", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "HUF 7,000/hour" },
-  { title: "Standard Studio Timeslots", titleLines: ["Standard", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "18:00–22:00" }, { text: "Friday", bold: true }, { text: "09:00–22:00" }, { text: "Weekend", bold: true }, { text: "10:00–22:00" }], price: "HUF 8,000/hour" },
+  { title: "Standard Studio Timeslots", titleLines: ["Standard", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "18:00–22:00" }, { text: "Friday and weekend", bold: true }, { text: "09:00–22:00" }], price: "HUF 8,000/hour" },
   { title: "10 Hour Membership", titleLines: ["10 Hour Membership"], titleAccent: "SAVE UP TO 25%", descriptionLines: [{ text: "Any day", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Can be broken up by the hour" }], price: "HUF 60,000" }
 ];
 const servicePackages = serviceType === "portrait" ? (photoPackageSets.portrait as any)[language] : servicePageAny?.packages ?? [];

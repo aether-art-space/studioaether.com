@@ -6,7 +6,7 @@ import { bookingFooterVariantFor, site } from "../lib/site.mjs";
 const { page, consentEnabled = false } = Astro.props;
 const hu = page.language === "hu";
 const de = page.language === "de";
-const copy = de ? { details: "Kontakt und Studioinformationen", contact: "Kontakt & Social Media", pages: "Weitere Seiten", privacy: "Datenschutzerklärung", cookies: "Cookie-Einstellungen", hours: "Öffnungszeiten", appointment: "NUR MIT TERMIN", weekdays: "Montag – Freitag", weekend: "Samstag – Sonntag", address: "Adresse", country: "UNGARN – 1093 Budapest", doorbell: "Klingel Nr. 4", instagram: " auf Instagram", facebook: " auf Facebook" } : hu ? { details: "Kapcsolat és stúdióinformációk", contact: "Kapcsolat és közösségi média", pages: "Egyéb oldalak", privacy: "Adatkezelési tájékoztató", cookies: "Süti beállítások", hours: "Nyitvatartás", appointment: "CSAK IDŐPONTTAL", weekdays: "Hétfő - Péntek", weekend: "Szombat - Vasárnap", address: "Cím", country: "MAGYARORSZÁG – 1093 Budapest", doorbell: "4-es kapucsengő", instagram: " Instagramon", facebook: " Facebookon" } : { details: "Contact and studio information", contact: "Contact & Socials", pages: "Other pages", privacy: "Privacy Policy", cookies: "Cookie settings", hours: "Opening hours", appointment: "APPOINTMENT ONLY", weekdays: "Monday - Friday", weekend: "Saturday - Sunday", address: "Address", country: "HUNGARY – 1093 Budapest", doorbell: "#4 doorbell", instagram: " on Instagram", facebook: " on Facebook" };
+const copy = de ? { details: "Kontakt und Studioinformationen", contact: "Kontakt & Social Media", pages: "Weitere Seiten", privacy: "Datenschutzerklärung", cookies: "Cookie-Einstellungen", hours: "Öffnungszeiten", appointment: "NUR MIT TERMIN", days: "Montag – Sonntag", address: "Adresse", country: "UNGARN – 1093 Budapest", doorbell: "Klingel Nr. 4", instagram: " auf Instagram", facebook: " auf Facebook" } : hu ? { details: "Kapcsolat és stúdióinformációk", contact: "Kapcsolat és közösségi média", pages: "Egyéb oldalak", privacy: "Adatkezelési tájékoztató", cookies: "Süti beállítások", hours: "Nyitvatartás", appointment: "CSAK IDŐPONTTAL", days: "Hétfő - Vasárnap", address: "Cím", country: "MAGYARORSZÁG – 1093 Budapest", doorbell: "4-es kapucsengő", instagram: " Instagramon", facebook: " Facebookon" } : { details: "Contact and studio information", contact: "Contact & Socials", pages: "Other pages", privacy: "Privacy Policy", cookies: "Cookie settings", hours: "Opening hours", appointment: "APPOINTMENT ONLY", days: "Monday - Sunday", address: "Address", country: "HUNGARY – 1093 Budapest", doorbell: "#4 doorbell", instagram: " on Instagram", facebook: " on Facebook" };
 const bookingFooterVariant = bookingFooterVariantFor(page);
 ---
 <footer class="site-footer">
@@ -38,7 +38,7 @@ const bookingFooterVariant = bookingFooterVariantFor(page);
       <div class="footer-column footer-column--hours">
         <div class="footer-icon-slot" aria-hidden="true"><ClockIcon className="footer-icon footer-icon--clock" size={24} weight="regular" /></div>
         <h2>{copy.hours}</h2>
-        <p>{copy.appointment}<br /><br />{copy.weekdays}<br />09:00 - 22:00<br /><br />{copy.weekend}<br />10:00 - 22:00</p>
+        <p>{copy.appointment}<br /><br />{copy.days}<br />09:00 - 22:00</p>
       </div>
       <div class="footer-column footer-column--address">
         <div class="footer-icon-slot" aria-hidden="true"><MapPinIcon className="footer-icon footer-icon--location" size={29} weight="regular" /></div>
