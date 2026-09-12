@@ -207,7 +207,7 @@ main { width: 100%; }
   .mobile-nav-trigger__icon::before, .mobile-nav-trigger__icon::after { position: absolute; left: 0; }
   .mobile-nav-trigger__icon::before { top: -6px; }
   .mobile-nav-trigger__icon::after { top: 6px; }
-  .mobile-menu[open] .mobile-nav-trigger { position: relative; z-index: 42; }
+  .mobile-menu[open] .mobile-nav-trigger { position: fixed; z-index: 42; top: 18px; right: 18px; transform: none; }
   .mobile-menu[open] .mobile-nav-trigger__icon { background: transparent; }
   .mobile-menu[open] .mobile-nav-trigger__icon::before { top: 0; transform: rotate(45deg); }
   .mobile-menu[open] .mobile-nav-trigger__icon::after { top: 0; transform: rotate(-45deg); }

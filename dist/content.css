@@ -452,7 +452,9 @@
 .collection-gallery--cameras,
 .collection-gallery--lenses,
 .collection-gallery--other { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.collection-gallery--wardrobe, .collection-gallery--wardrobeFree, .collection-gallery--collection, .collection-gallery--furniture { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+/* Fixed-width collection cards stay centered when their final row is incomplete. */
+.collection-gallery--wardrobe, .collection-gallery--wardrobeFree, .collection-gallery--collection, .collection-gallery--furniture { display: flex; flex-wrap: wrap; justify-content: center; }
+.collection-gallery--wardrobe > figure, .collection-gallery--wardrobeFree > figure, .collection-gallery--collection > figure, .collection-gallery--furniture > figure { flex: 0 0 calc((100% - 80px) / 5); }
 .collection-section--other .collection-section__intro p { text-align: center; }
 .collection-section--lightSources { padding-top: 39px; }
 .collection-section--lightSources .collection-gallery-wrap { margin-top: 57px; }
@@ -485,6 +487,8 @@
   .horizontal-masonry-gallery__track { gap: 5px; }
   .horizontal-masonry-gallery__previous, .horizontal-masonry-gallery__next { display: none; }
   .collection-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .collection-gallery--wardrobe, .collection-gallery--wardrobeFree, .collection-gallery--collection, .collection-gallery--furniture { display: flex; }
+  .collection-gallery--wardrobe > figure, .collection-gallery--wardrobeFree > figure, .collection-gallery--collection > figure, .collection-gallery--furniture > figure { flex-basis: calc((100% - 12px) / 2); }
   .collection-gallery figcaption { margin-top: 10px; font-size: 15px; line-height: 18px; }
   .collection-gallery__figure--captioned figcaption { padding: 22px 10px 9px; font: var(--text-small); font-size: 13px; line-height: 18px; }
   .collection-gallery figcaption small { margin-top: 4px; font-size: 12px; line-height: 16px; }
@@ -1361,6 +1365,9 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .price-card li.price-card__feature-break { margin-top: 22px; }
 .price-card li::marker { color: #baf3e6; font-size: .8em; }
 .price-card__includes { margin: 0 !important; color: rgba(255, 255, 255, .72); font-size: 13px !important; letter-spacing: .08em; text-transform: uppercase; }
+.price-card__action { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: center; margin-top: 22px; padding: 10px 16px; border: 1px solid var(--price-card-edge); border-radius: 5px; background: rgb(0 0 0 / 18%); box-shadow: 0 0 14px var(--price-card-glow), inset 0 0 10px rgb(255 255 255 / 5%); color: var(--paper); font: 700 14px/1 var(--sans); letter-spacing: .04em; text-decoration: none; cursor: pointer; transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+.price-card__action:hover, .price-card__action:focus-visible { background: var(--price-card-edge); box-shadow: 0 0 20px var(--price-card-glow), 0 0 8px var(--price-card-glow); color: var(--ink); text-decoration: none; }
+.price-card__action:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
 .price-card--simple { min-height: 0; }
 .price-card--simple .price-card__header h3 { min-height: 2.12em; }
 .price-card--simple .price-card__details { flex: 0; }
@@ -1578,6 +1585,9 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .booking-extras-section { max-width: var(--content-max); padding-bottom: 34px; }
 .booking-extras-section .service-upgrade-grid { max-width: var(--content-max); margin-right: auto; margin-left: auto; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .booking-extras-section .service-upgrade-grid strong { font-size: 20px; }
+@media (max-width: 900px) {
+  .booking-extras-section .service-upgrade-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 1199px) and (min-width: 761px) {
   .booking-extras-section .service-upgrade-grid article { padding: 24px 18px 22px; }
   .booking-extras-section .service-upgrade-grid h4 { margin-bottom: 12px; font-size: 20px; line-height: 1.08; }
