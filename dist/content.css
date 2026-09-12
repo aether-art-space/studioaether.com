@@ -1359,13 +1359,14 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .price-card__details { display: flex; min-width: 0; flex-direction: column; padding-top: 22px; }
 .price-card__price { min-height: 2.16em; margin: 0; padding-bottom: 28px; }
 .price-card__price strong { display: block; font: 700 20px/1.08 var(--sans); letter-spacing: -.02em; }
-.price-card__features { margin: 0 -28px -30px; padding: 22px 28px 30px; border-top: 1px solid rgba(255, 255, 255, .12); background: rgba(255, 255, 255, .07); }
+.price-card__features { display: flex; margin: 0 -28px -30px; padding: 22px 28px 30px; border-top: 1px solid rgba(255, 255, 255, .12); background: rgba(255, 255, 255, .07); flex-direction: column; }
 .price-card ul { display: grid; gap: 8px; margin: 16px 0 0; padding-left: 22px; list-style: disc; }
 .price-card li { margin: 0; color: rgba(255, 255, 255, .9); font: var(--text-small); }
 .price-card li.price-card__feature-break { margin-top: 22px; }
 .price-card li::marker { color: #baf3e6; font-size: .8em; }
 .price-card__includes { margin: 0 !important; color: rgba(255, 255, 255, .72); font-size: 13px !important; letter-spacing: .08em; text-transform: uppercase; }
 .price-card__action { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: center; margin-top: 22px; padding: 10px 16px; border: 1px solid var(--price-card-edge); border-radius: 5px; background: rgb(0 0 0 / 18%); box-shadow: 0 0 14px var(--price-card-glow), inset 0 0 10px rgb(255 255 255 / 5%); color: var(--paper); font: 700 14px/1 var(--sans); letter-spacing: .04em; text-decoration: none; cursor: pointer; transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+.price-card__details .price-card__action, .price-card__features .price-card__action { margin-top: auto; }
 .price-card__action:hover, .price-card__action:focus-visible { background: var(--price-card-edge); box-shadow: 0 0 20px var(--price-card-glow), 0 0 8px var(--price-card-glow); color: var(--ink); text-decoration: none; }
 .price-card__action:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
 .price-card--simple { min-height: 0; }
