@@ -835,7 +835,7 @@ const relatedHref = localizedPath("/packages", language);
   <>
     <PageHero variant="packages" headingId="packages-title" title={packagesPageAny.heroHeading} lead={packagesPageAny.heroCopy} description={packagesPageAny.intro} />
     <section class="packages-primary packages-primary--with-upgrades" aria-label={de ? "Fotoshooting-Pakete" : hu ? "Fotózási csomagok" : "Photoshoot packages"}>
-      <PricingTabs language={page.language} active="packages" />
+      <PricingTabs language={page.language} active="packages" includePackages />
       <div class="service-package-grid packages-card-grid">
         {packagesPageWithTitleLines.map((packageItem: any) => <PriceCard title={packageItem.title} titleLines={packageItem.titleLines} description={packageItem.description} price={packageItem.price} features={packageItem.features} cta={priceCardCtas.contact} />)}
       </div>
@@ -975,7 +975,7 @@ const relatedHref = localizedPath("/packages", language);
       <HorizontalMasonryGallery {...galleryA11y} images={localizedSeasonalPageImages} label={de ? "Weihnachtsfotografie-Galerie" : hu ? "Karácsonyi fotózási galéria" : "Christmas photography gallery"} desktopHeight={476} columnPattern={[1, 3, 1, 1, 1, 1]} loading="eager" />
     </section>
     <PriceSection className="seasonal-price-section seasonal-price-section--with-upgrades" heading={seasonalPage.packageHeading} lead={seasonalPage.packageLead} packages={seasonalPackages} includesLabel={de ? "Im Paket enthalten:" : hu ? "A csomag tartalma:" : "This package includes:"} headingId="seasonal-packages-title" cta={priceCardCtas.contact}>
-      <PricingTabs slot="tabs" language={page.language} active="packages" />
+      <PricingTabs slot="tabs" language={page.language} active="packages" includePackages />
     </PriceSection>
       <UpgradeSection items={packagesContent[language].upgrades} cardsOnly ariaLabel={de ? "Zusatzleistungen" : hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
     <StudioSection className="christmas-photoshoot-studio-section" heading={seasonalPage.studioHeading} intro={seasonalPage.studioIntro} bullets={seasonalPage.studioBullets} tail={seasonalPage.studioTail} imageSrc={localizedSeasonalStudioIntroImage?.src || studioSectionImage} imageAlt={localizedSeasonalStudioIntroImage?.alt || studioSectionImageAlt} imageWidth={localizedSeasonalStudioIntroImage?.width || 2345} imageHeight={localizedSeasonalStudioIntroImage?.height || 2931} emphasizeBulletLeadins />

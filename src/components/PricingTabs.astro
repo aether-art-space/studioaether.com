@@ -2,14 +2,15 @@
 interface Props {
   language: "en" | "hu" | "de";
   active: "packages" | "studio" | "selfie" | "photographer" | "makeup" | "stylist";
+  includePackages?: boolean;
 }
 
-const { language, active } = Astro.props;
+const { language, active, includePackages = false } = Astro.props;
 const hu = language === "hu";
 const de = language === "de";
 const tabAnchor = (key: string) => `#${key}-pricing-tabs`;
 const tabs = [
-  { key: "packages", label: de ? "Pakete" : hu ? "csomagok" : "packages", path: de ? "/de/packages" : hu ? "/hu/packages" : "/packages" },
+  ...(includePackages ? [{ key: "packages", label: de ? "Pakete" : hu ? "csomagok" : "packages", path: de ? "/de/packages" : hu ? "/hu/packages" : "/packages" }] : []),
   { key: "studio", label: de ? "Studiopreise" : hu ? "stúdió árak" : "studio pricing", path: de ? "/de/booking" : hu ? "/hu/booking" : "/booking" },
   { key: "selfie", label: de ? "Selfie-Studio Preise" : hu ? "szelfi stúdió árak" : "selfie studio pricing", path: de ? "/de/selfie-studio-budapest" : hu ? "/hu/selfie-studio-budapest" : "/selfie-studio-budapest" },
   { key: "photographer", label: de ? "Fotografen" : hu ? "fotós árak" : "photographer prices", path: de ? "/de/photographers-budapest" : hu ? "/hu/photographers-budapest" : "/photographers-budapest" },
