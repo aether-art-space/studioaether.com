@@ -4,7 +4,8 @@ import { site } from "../data/routes.mjs";
 
 const { language } = Astro.props;
 const hu = language === "hu";
-const reviewCountLabel = hu ? `${googleReviewSummary.reviewCount} értékelés` : `${googleReviewSummary.reviewCount} reviews`;
+const de = language === "de";
+const reviewCountLabel = de ? `${googleReviewSummary.reviewCount} Bewertungen` : hu ? `${googleReviewSummary.reviewCount} értékelés` : `${googleReviewSummary.reviewCount} reviews`;
 ---
 
 <a
@@ -18,7 +19,7 @@ const reviewCountLabel = hu ? `${googleReviewSummary.reviewCount} értékelés` 
   <span class="google-review-bar__logo" aria-hidden="true"></span>
   <span class="google-review-bar__summary">
     <span class="google-review-bar__stars" aria-hidden="true">★★★★★</span>
-    <span class="google-review-bar__rating">{googleReviewSummary.rating} / 5 {hu ? "a Google-on" : "on Google"}</span>
-    <span class="google-review-bar__count">{reviewCountLabel} · {hu ? googleReviewSummary.checkedLabelHu : googleReviewSummary.checkedLabel}</span>
+    <span class="google-review-bar__rating">{googleReviewSummary.rating} / 5 {de ? "bei Google" : hu ? "a Google-on" : "on Google"}</span>
+    <span class="google-review-bar__count">{reviewCountLabel} · {de ? googleReviewSummary.checkedLabelDe : hu ? googleReviewSummary.checkedLabelHu : googleReviewSummary.checkedLabel}</span>
   </span>
 </a>

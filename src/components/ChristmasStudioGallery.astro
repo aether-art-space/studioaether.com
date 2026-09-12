@@ -5,10 +5,11 @@ interface Props {
   images: any[];
   heading: string;
   hu: boolean;
+  de?: boolean;
 }
 
-const { images, heading, hu } = Astro.props;
-const openLabel = (index: number) => hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`;
+const { images, heading, hu, de = false } = Astro.props;
+const openLabel = (index: number) => de ? `Bild öffnen: ${index + 1}` : hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`;
 ---
 
 <section class="christmas-decoration" aria-labelledby="christmas-decoration-title">
@@ -28,7 +29,7 @@ const openLabel = (index: number) => hu ? `Kép megnyitása: ${index + 1}` : `Op
       </div>
       {images.slice(5).map((image, offset) => <GalleryImage image={image} index={offset + 5} label={openLabel(offset + 5)} className="christmas-decoration__item christmas-decoration__item--rail" />)}
     </div>
-    <button class="christmas-decoration__next" type="button" aria-label={hu ? "Következő képek" : "Next images"} data-christmas-gallery-next>
+    <button class="christmas-decoration__next" type="button" aria-label={de ? "Nächste Bilder" : hu ? "Következő képek" : "Next images"} data-christmas-gallery-next>
       <span aria-hidden="true">⟶</span>
     </button>
   </div>

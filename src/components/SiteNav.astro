@@ -2,15 +2,16 @@
 import { localizedNav } from "../lib/site.mjs";
 const { page } = Astro.props;
 const hu = page.language === "hu";
+const de = page.language === "de";
 const groups = localizedNav(page.language);
 ---
-<aside class="site-nav" aria-label={hu ? "Fő navigáció" : "Primary navigation"}>
+<aside class="site-nav" aria-label={de ? "Hauptnavigation" : hu ? "Fő navigáció" : "Primary navigation"}>
   {groups.map((group) => (
     <div class="nav-group">
       <p>{group.label}</p>
       {group.links.map(([path, label]) => <a href={path}>{label}</a>)}
     </div>
   ))}
-  <a class="nav-standalone" href={hu ? "/hu/photographer-mentoring-budapest" : "/photographer-mentoring-budapest"}>{hu ? "mentorálás" : "mentoring"}</a>
-  <a class="nav-standalone" href={hu ? "/hu/booking" : "/booking"}>{hu ? "árak és foglalás" : "prices & booking"}</a>
+  <a class="nav-standalone" href={de ? "/de/photographer-mentoring-budapest" : hu ? "/hu/photographer-mentoring-budapest" : "/photographer-mentoring-budapest"}>{de ? "Mentoring" : hu ? "mentorálás" : "mentoring"}</a>
+  <a class="nav-standalone" href={de ? "/de/booking" : hu ? "/hu/booking" : "/booking"}>{de ? "Preise & Buchung" : hu ? "árak és foglalás" : "prices & booking"}</a>
 </aside>

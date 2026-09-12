@@ -1,5 +1,5 @@
 ---
-import { absoluteUrl, faqItemsFor, pageByPath, site } from "../lib/site.mjs";
+import { absoluteUrl, faqItemsFor, site } from "../lib/site.mjs";
 import { resolveImage } from "../lib/images.mjs";
 
 const { page } = Astro.props;
@@ -40,18 +40,17 @@ const socialImage = resolveImage({
 const socialImageUrl = absoluteUrl(socialImage.lightbox.fallback);
 const iconImage = resolveImage({ src: "/images/wix/jpg/logo-icon.jpg", alt: site.name }, "thumb");
 const iconImageUrl = absoluteUrl(iconImage.lightbox.fallback);
-const counterpart = page.counterpartPath ? pageByPath.get(page.counterpartPath) : null;
-const alternates = [
-  { hreflang: page.language === "hu" ? "hu-hu" : "en-us", href: canonicalUrl },
-  ...(counterpart ? [{ hreflang: counterpart.language === "hu" ? "hu-hu" : "en-us", href: absoluteUrl(counterpart.path) }] : [])
-];
-const englishPage = page.language === "en" ? page : counterpart?.language === "en" ? counterpart : null;
-const xDefault = absoluteUrl(englishPage?.path || "/");
-const locale = page.language === "hu" ? "hu_HU" : "en_US";
-const alternateLocale = page.language === "hu" ? "en_US" : "hu_HU";
+const languageCodes: Record<string, string> = { en: "en-us", hu: "hu-hu", de: "de-de" };
+const socialLocales: Record<string, string> = { en: "en_US", hu: "hu_HU", de: "de_DE" };
+const alternates = Object.entries(page.alternatePaths || { [page.language]: page.path }).map(([language, path]) => ({ hreflang: languageCodes[language] || language, href: absoluteUrl(path) }));
+const xDefault = absoluteUrl(page.alternatePaths?.en || "/");
+const locale = socialLocales[page.language] || "en_US";
+const alternateLocales = Object.keys(page.alternatePaths || {}).filter((language) => language !== page.language).map((language) => socialLocales[language] || language);
 const socialSiteName = "Aether Art Space";
 const socialMeta = page.purpose === "Studio rental / space"
-  ? page.language === "hu"
+  ? page.language === "de"
+    ? { title: "Fotostudio in Budapest | aether art space", description: "Kreatives Fotostudio in Budapest mit Studio-Blitzen, Lichtformern, Papierhintergründen, Mietkameras, Outfits, Möbeln und Requisiten für Fotoshootings." }
+  : page.language === "hu"
     ? {
         title: "Fotóstúdió Budapesten | aether art space",
         description: "Kreatív fotóstúdió Budapesten vakukkal, fényformálókkal, papírhátterekkel, bérelhető kamerákkal, outfitekkel, bútorokkal és kellékekkel."
@@ -63,7 +62,7 @@ const socialMeta = page.purpose === "Studio rental / space"
   : { title: page.title, description: page.description };
 const schemaPhone = "+36 70 386 1739";
 const schemaFacebookUrl = "https://www.facebook.com/aetherbudapest/";
-const serviceTypeLabels: Record<string, { en: string; hu: string }> = {
+const serviceTypeLabels: Record<string, { en: string; hu: string; de?: string }> = {
   "Studio rental / space": { en: "Photo studio rental", hu: "Fotóstúdió-bérlés" },
   "Selfie studio": { en: "Selfie studio rental", hu: "Szelfistúdió-bérlés" },
   "Equipment / camera rental": { en: "Photography equipment rental", hu: "Fotózási felszerelés- és kamerabérlés" },
@@ -86,14 +85,38 @@ const serviceTypeLabels: Record<string, { en: string; hu: string }> = {
   "Christmas studio": { en: "Christmas studio rental", hu: "Karácsonyi stúdióbérlés" },
   "Wedding photography": { en: "Wedding photography", hu: "Esküvői fotózás" }
 };
-const localizedServiceType = serviceTypeLabels[page.purpose]?.[page.language === "hu" ? "hu" : "en"] || page.purpose;
-const businessDescription = page.language === "hu"
+const germanServiceTypeLabels: Record<string, string> = {
+  "Studio rental / space": "Fotostudio mieten",
+  "Selfie studio": "Selfie-Studio",
+  "Equipment / camera rental": "Fotoequipment- und Kameravermietung",
+  "Props, wardrobe, furniture": "Requisiten und Garderobe für Fotoshootings",
+  "Resident models": "Modelbuchung",
+  "Resident photographers": "Fotografen buchen",
+  "Make-up / hair artists": "Make-up und Haarstyling",
+  "Stylists / brand designers": "Styling und Brand Design",
+  "Model polaroids / digitals": "Model-Digitals-Fotografie",
+  "Passport / ID photos": "Pass- und Ausweisfotos",
+  "Pet photography": "Tierfotografie",
+  "Photography mentoring - current nav URL": "Fotografie-Mentoring",
+  "Photography packages": "Fotoshooting-Pakete",
+  "Portrait photography": "Porträtfotografie",
+  "Fitness & yoga photography": "Fitness- und Yogafotografie",
+  "Glamour / boudoir / fine-art nude": "Glamour-, Boudoir- und Fine-Art-Aktfotografie",
+  "Commercial photography": "Werbefotografie",
+  "Corporate photography": "Businessfotografie",
+  "Christmas photoshoot": "Weihnachtsfotografie",
+  "Christmas studio": "Weihnachtsstudio mieten"
+};
+const localizedServiceType = page.language === "de" ? germanServiceTypeLabels[page.purpose] || page.purpose : (serviceTypeLabels[page.purpose] as any)?.[page.language] || page.purpose;
+const businessDescription = page.language === "de"
+  ? "Kreatives Fotostudio in Budapest für Studiomiete, Fotoshootings, Equipment und kreative Produktionen."
+  : page.language === "hu"
   ? "Kreatív fotóstúdió Budapesten stúdióbérléshez, fotózási szolgáltatásokhoz, felszereléshez és kreatív produkciókhoz."
   : "A creative photo studio in Budapest for studio rental, photography services, equipment and creative productions.";
 const serviceArea = page.purpose === "Wedding photography"
   ? [
       { "@type": "City", name: "Budapest" },
-      { "@type": "Country", name: page.language === "hu" ? "Magyarország" : "Hungary" }
+      { "@type": "Country", name: page.language === "de" ? "Ungarn" : page.language === "hu" ? "Magyarország" : "Hungary" }
     ]
   : { "@type": "City", name: "Budapest" };
 const faqAnswerText = (answer: unknown) => {
@@ -121,13 +144,13 @@ const schemas: Record<string, unknown>[] = [
     description: businessDescription,
     sameAs: [site.instagramUrl, schemaFacebookUrl],
     hasMap: site.mapsUrl,
-    areaServed: { "@type": "Country", name: "Hungary" },
+    areaServed: { "@type": "Country", name: page.language === "de" || page.language === "hu" ? "Ungarn" : "Hungary" },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: site.email,
       telephone: schemaPhone,
-      availableLanguage: ["en", "hu"]
+      availableLanguage: ["en", "hu", "de"]
     },
     openingHoursSpecification: [
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "22:00" },
@@ -159,10 +182,10 @@ const schemas: Record<string, unknown>[] = [
       {
         "@type": "ListItem",
         position: 1,
-        name: page.language === "hu" ? "Kezdőlap" : "Home",
-        item: absoluteUrl(page.language === "hu" ? "/hu" : "/")
+        name: page.language === "de" ? "Startseite" : page.language === "hu" ? "Kezdőlap" : "Home",
+        item: absoluteUrl(page.language === "de" ? "/de" : page.language === "hu" ? "/hu" : "/")
       },
-      ...(page.path !== "/" && page.path !== "/hu" ? [{
+      ...(page.section !== "home" ? [{
         "@type": "ListItem",
         position: 2,
         name: page.h1,
@@ -172,14 +195,14 @@ const schemas: Record<string, unknown>[] = [
   }
 ];
 
-if (page.section === "home" && page.path === "/") {
+if (page.section === "home") {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": websiteId,
     name: site.name,
     url: businessUrl,
-    inLanguage: ["en", "hu"]
+    inLanguage: ["en", "hu", "de"]
   });
 }
 
@@ -211,7 +234,7 @@ if (page.section === "service" && !page.purpose.startsWith("Photographer profile
     ...(socialMeta.description ? { description: socialMeta.description } : {}),
     image: socialImageUrl,
     url: canonicalUrl,
-    inLanguage: page.language === "hu" ? "hu-HU" : "en-US",
+    inLanguage: languageCodes[page.language] || page.language,
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     provider: { "@id": businessId },
     areaServed: serviceArea
@@ -224,9 +247,11 @@ if (page.path.endsWith("photographer-daniel")) {
     "@type": "Person",
     "@id": `${canonicalUrl}#person`,
     name: "Dániel Z. Aczél",
-    jobTitle: page.language === "hu" ? "Fotós és stúdió tulajdonos" : "Photographer and studio owner",
+    jobTitle: page.language === "de" ? "Fotograf und Studioinhaber" : page.language === "hu" ? "Fotós és stúdió tulajdonos" : "Photographer and studio owner",
     description: page.description,
-    knowsAbout: page.language === "hu"
+    knowsAbout: page.language === "de"
+      ? ["Porträtfotografie", "Boudoirfotografie", "Glamourfotografie", "Fine-Art-Aktfotografie", "Fitnessfotografie", "Kreative Fotografie"]
+      : page.language === "hu"
       ? ["Portréfotózás", "Boudoir fotózás", "Glamour fotózás", "Akt fotózás", "Fitness fotózás", "Kreatív fotózás"]
       : ["Portrait photography", "Boudoir photography", "Glamour photography", "Fine art nude photography", "Fitness photography", "Creative photography"],
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
@@ -243,9 +268,11 @@ if (page.path.endsWith("photographer-alexandra")) {
     "@type": "Person",
     "@id": `${canonicalUrl}#person`,
     name: page.language === "hu" ? "Kulcsár-Horváth Alexandra" : "Alexandra Kulcsár-Horváth",
-    jobTitle: page.language === "hu" ? "Fotós" : "Photographer",
+    jobTitle: page.language === "de" ? "Fotografin" : page.language === "hu" ? "Fotós" : "Photographer",
     description: page.description,
-    knowsAbout: page.language === "hu"
+    knowsAbout: page.language === "de"
+      ? ["Hochzeitsfotografie", "Porträtfotografie", "Lifestylefotografie", "Businessporträts", "Tierfotografie"]
+      : page.language === "hu"
       ? ["Esküvőfotózás", "Portréfotózás", "Lifestyle fotózás", "Üzleti portréfotózás", "Kisállatfotózás"]
       : ["Wedding photography", "Portrait photography", "Lifestyle photography", "Business portrait photography", "Pet photography"],
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
@@ -265,7 +292,7 @@ if (page.path.endsWith("photographer-alexandra")) {
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={socialSiteName} />
 <meta property="og:locale" content={locale} />
-<meta property="og:locale:alternate" content={alternateLocale} />
+{alternateLocales.map((alternateLocale) => <meta property="og:locale:alternate" content={alternateLocale} />)}
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:image" content={socialImageUrl} />
 <meta property="og:image:secure_url" content={socialImageUrl} />

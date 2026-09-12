@@ -146,6 +146,79 @@ export const homeContent = {
         contactCard: ["Jelentkezz mentorprogramunkra", "Írd meg, milyen szinten vagy, mit szeretnél elérni, vagy egyszerűen tedd fel a kérdéseidet.", "Üzenet küldése"]
       }
     }
+  },
+  de: {
+    eyebrow: "dein neues Lieblings-Fotostudio",
+    introHeading: "ein Studio, das den kreativen Prozess von Anfang bis Ende möglich macht",
+    introCopy: "Ob du professionell fotografierst oder einfach einen Ort suchst, an dem deine Idee Gestalt annimmt: Unser Fotostudio ist genau dafür da. Wir haben es so eingerichtet, dass es kreative Prozesse unterstützt. Zuverlässige Models, Outfits und natürlich die nötige Technik – Blitze und Lichtformer – findest du bei uns im Studio.",
+    studioShowcaseTitle: "Raum für Kunst",
+    studioShowcaseIntro: "Ob du professionell fotografierst oder einfach einen Ort suchst, an dem deine Idee Gestalt annimmt: Unser Fotostudio ist genau dafür da.",
+    studioShowcaseBody: "Wir haben unser Fotostudio so eingerichtet, dass es kreative Prozesse unterstützt. Zuverlässige Models, Outfits und natürlich die nötige Technik – Blitze und Lichtformer – findest du bei uns im Studio.",
+    studioShowcaseCta: "mehr über unser Studio",
+    features: [
+      ["großzügiges Studio", "miete unser Studio für kreative Projekte und Workshops – zu fairen Preisen in Budapest", "/de/studio", "mehr über das Studio"],
+      ["Kameras & Equipment", "probiere eine neue Kamera aus: Bei uns findest du digitale und analoge Kameras sowie passenden Film", "/de/equipment", "unser Equipment entdecken"],
+      ["besondere Möbel", "Stühle, Tische und vieles mehr stehen dir für dein Shooting zur Verfügung", "/de/props", "unsere Möbel entdecken"],
+      ["Kleidung & Accessoires", "du suchst ein besonderes Outfit für deine Idee? Stöbere in unserer Garderobe", "/de/props", "unsere Garderobe entdecken"],
+      ["Requisiten", "Sonnenbrillen, Hüte, Schwerter und alles, was dein Shooting spannender macht – wir sammeln Requisiten", "/de/props", "unsere Requisiten entdecken"],
+      ["Extras", "Tiermodels, Nebelmaschine und andere Dinge, die dich inspirieren und die du nicht überall findest", "/de/props", "Requisiten oder Tiermodels entdecken"]
+    ],
+    beginnerHeading: "zum ersten Mal in einem Studio?",
+    beginnerLead: "wir zeigen dir alles und erklären dir, wie du unser Equipment nutzt!",
+    beginnerQuote: "„Ich hatte vorher noch nie mit einem Studioblitz gearbeitet. Das Team hat mir alles erklärt und mir sogar beim Aufbau geholfen.“",
+    beginnerAttribution: "Anna, Porträtfotografin beim ersten Studio-Shooting",
+    beginnerQuoteSecond: "„Ich hatte Bedenken zu buchen, aber ehrlich gesagt fühlte es sich wie ein kreativer Spielplatz an – ganz ohne Druck.“",
+    beginnerAttributionSecond: "Márk, Fotografie-Student",
+    beginnerProof: ["Wir haben schon mit Hunderten Einsteiger:innen, kreativen Neulingen und Solo-Künstler:innen gearbeitet.", "Bei uns bist du in guten Händen."],
+    beginnerSteps: ["Erzähl uns bei der Buchung von deiner Idee", "Wir empfehlen dir ein passendes Setup", "Du bekommst Hilfe vor Ort", "Du gehst mit starken Ergebnissen nach Hause"],
+    beginnerCtaLead: "Jetzt buchen",
+    beginnerCtaTail: " und einsteigerfreundliche Unterstützung bekommen!",
+    artistsHeading: "unser Kreativteam",
+    artistsLead: "Unser Kreativteam hilft dir, deine Idee in unserem Budapester Studio umzusetzen.",
+    artists: [
+      ["Fotograf:innen", "unsere Fotograf:innen im Studio stehen für Shootings in unterschiedlichen Stilen und Genres bereit", "/de/photographers-budapest", "unsere Fotograf:innen kennenlernen"],
+      ["Models", "bei uns findest du zuverlässige Models, mit denen du zu einem vergünstigten Preis in unserem Studio fotografieren kannst", "/de/models-budapest", "unsere Models kennenlernen"],
+      ["Make-up-Artists", "buche für dein Shooting einen Make-up-Artist direkt bei uns im Haus. Unser Team deckt viele Stilrichtungen ab", "/de/make-up-artists", "unsere Make-up-Artists kennenlernen"],
+      ["Stylist:innen", "buche unsere Stylist:innen und Personal-Brand-Designer:innen für dein Fotoshooting", "/de/stylists", "unsere Stylist:innen kennenlernen"]
+    ],
+    photographersHeading: "buche unsere Fotograf:innen für dein Shooting",
+    photographersCopy: "Unsere professionellen Fotograf:innen im Studio sind in unserem Budapester Studio für folgende Genres buchbar:",
+    photographyServices: [
+      ["Werbe- & Produktfotografie", "/de/commercial-photography-budapest", "mehr erfahren"],
+      ["Unternehmens-\n& Eventfotografie", "/de/corporate-photography-budapest", "mehr erfahren"],
+      ["Business- &\nLifestyle-Porträts", "/de/portrait-photography-budapest", "mehr erfahren"],
+      ["Fitness-\n& Yogafotografie", "/de/fitness", "mehr erfahren"],
+      ["Glamour\n& Boudoir", "/de/glamour-boudoir-photography-budapest", "mehr erfahren"],
+      ["Model-Digitals & Portfolio", "/de/model-polaroids-budapest", "mehr erfahren"],
+      ["Hochzeits-\nfotografie", "/de/wedding-photography", "mehr erfahren"]
+    ],
+    packagesCopy: "Fotoshooting-Pakete in jeder Größe – ab 39.000 HUF",
+    bookingHeading: "Studio buchen",
+    bookingLead: "Buche unser Fotostudio in Budapest für dein Shooting, deinen Workshop oder dein kreatives Projekt:",
+    bookingCards: [
+      ["Fotostudio", "Buche das Studio für dein Fotoshooting, deinen Workshop oder dein kreatives Projekt.", "Fotostudio buchen"],
+      ["Selfie-Studio", "Fotografiere ohne Fotograf:in! Buche das Selfie-Studio ganz für dich.", "Selfie-Studio buchen"],
+      ["Kontaktiere uns", "Du brauchst eine:n Fotograf:in, Make-up-Artist, ein Model oder eine:n Stylist:in? Schreib uns über das Kontaktformular – wir helfen dir, das richtige Team zusammenzustellen.", "Nachricht senden"]
+    ],
+    bookingVariants: {
+      all: {
+        heading: "Studio buchen",
+        lead: "Buche unser Fotostudio in Budapest für dein Shooting, deinen Workshop oder dein kreatives Projekt:"
+      },
+      selfieContact: {
+        heading: "Selfie-Studio buchen",
+        lead: "Buche unser Selfie-Studio für ein privates Shooting oder kontaktiere uns, um eine:n unserer Künstler:innen zu buchen:"
+      },
+      artists: {
+        heading: "Unsere Künstler:innen buchen",
+        lead: "Du brauchst eine:n Fotograf:in, Make-up-Artist, ein Model oder eine:n Stylist:in? Schreib uns, und wir helfen dir, das richtige Team zusammenzustellen."
+      },
+      mentoring: {
+        heading: "Für Mentoring anmelden",
+        lead: "Schreib uns eine E-Mail, wenn du an unserem Mentoring für digitale oder analoge Fotografie im Studio teilnehmen möchtest. Du brauchst etwas anderes? Wir passen unser Angebot gern an deine Bedürfnisse an!",
+        contactCard: ["Für Mentoring anmelden", "Erzähl uns von deinem aktuellen Stand und deinem Ziel – oder stell uns einfach deine Fragen.", "Nachricht senden"]
+      }
+    }
   }
 };
 
@@ -203,6 +276,33 @@ export const studioContent = {
     backdropCta: "Szeretnél valami egyedit? Mi megépítjük a tökéletes szettet veled együttműködve — oszd meg velünk az elképzeléseidet, és mi életre keltjük!",
     backdropList: ["Pure White (Tiszta fehér)", "Stone Grey (Szikla szürke)", "Ultra Black (Ultra Fekete)", "Crimson (Bordó)", "Orange (Narancs)", "Deep Yellow (Mély-sárga)", "Blue Mist (Kék Köd)", "Ultramarine (Ultramarin)", "Orchid (Orchidea)", "Coral (Korall)", "Eggnog (Tojáslikőr)", "Sötétzöld ál-fal — 4m x 4m", "Bordó ál-fal — 2m x 1,2m", "Fekete ál-fal — 2m x 1,2m", "Bordó textil háttér", "Türkiz textil háttér", "Mustársárga textil háttér", "Sötétkék textil háttér"],
     backdropNote: "Papír háttereink 2,7m szélesek.\nIgény szerint bármilyen további színt be tudunk szerezni."
+  },
+  de: {
+    eyebrow: "unser Studio und unsere Hintergründe",
+    heading: "Unser Studio auf einen Blick:",
+    paragraphs: [
+      "Das Fotostudio besteht aus zwei Räumen mit viel offenem Raum für kreatives Arbeiten. Mit einer Deckenhöhe von über 4 Metern – ideal für Aufnahmen von oben – und 10 Metern Abstand zum Hintergrund sind sogar Ganzkörperaufnahmen mit einer Brennweite von 105 mm möglich.",
+      "Wenn du früher ankommst, kannst du es dir in unserem Empfangsbereich gemütlich machen. Kaffee geht auf uns, während du Fotobücher durchblätterst oder dich auf dein Shooting vorbereitest. Das Studio liegt an einem geschlossenen Innenhof; dort dürfen Gäste rauchen."
+    ],
+    facts: [
+      { lead: "zwei Räume", tail: " (beide sind in der Miete enthalten)" },
+      { lead: "zentrale Lage", tail: ", 1 Minute von öffentlichen Verkehrsmitteln entfernt" },
+      { lead: "leicht zu finden", tail: ", ebenerdiger Eingang vom Innenhof" },
+      { lead: "hohe Decke", tail: " – 4,2 m mit stabilen Aufhängepunkten" },
+      { lead: "großer Aufnahmeabstand", tail: " – 10 m bis zum Hintergrund" },
+      { lead: "großzügige Räume", tail: " – 60 m² Aufnahmefläche" },
+      { lead: "separater Umkleideraum", tail: " mit Make-up-Platz" },
+      { lead: "Kaffee und Getränke", tail: " stehen bereit" },
+      { lead: "haustierfreundlich", tail: "" },
+      { lead: "Musik", tail: " über ein hochwertiges Bluetooth-Soundsystem" },
+      { lead: "Dusche", tail: " kann genutzt werden" },
+      { lead: "viele Requisiten, Kleidung und Möbel", tail: " kostenlos verfügbar" }
+    ],
+    backdropHeading: "Hintergründe",
+    backdropCopy: "Wir bieten eine große Auswahl hochwertiger Papierhintergründe in verschiedenen Farben. Wir pflegen und erneuern sie regelmäßig, damit sie immer frisch aussehen. Außerdem stehen Textilhintergründe und ein individuell gebauter Hintergrund für unterschiedlichste kreative Ideen bereit.",
+    backdropCta: "Du suchst etwas Besonderes? Wir entwickeln und bauen mit dir das perfekte Set – erzähl uns einfach von deiner Idee, und wir setzen sie um!",
+    backdropList: ["Reinweiß", "Steingrau", "Tiefschwarz", "Karmesinrot", "Orange", "Tiefgelb", "Nebelblau", "Ultramarin", "Orchidee", "Koralle", "Eierlikör", "dunkelgrüne Wand – 4 m × 4 m", "bewegliche karmesinrote Wand – 2 m × 1,2 m", "bewegliche schwarze Wand – 2 m × 1,2 m", "karmesinroter Textilhintergrund", "petrolfarbener Textilhintergrund", "senfgelber Textilhintergrund ×2", "dunkelblauer Textilhintergrund ×2"],
+    backdropNote: "Unsere Papierhintergründe sind 2,7 m breit.\nAuf Wunsch bestellen wir jede Farbe, die du dir wünschst."
   }
 };
 
@@ -297,6 +397,52 @@ export const selfieContent = {
     reserveCta: "Foglalj Most",
     szegedHeading: "Nézd meg a szegedi stúdiónkat is!",
     szegedCopy: "Megnyitottuk Szeged első szelfistúdióját!\n\nUgyanazok az árak, barátságos atmoszféra és a részletekre fordított figyelem vár, mint az első helyszínünkön. Nézd meg:",
+    szegedCta: "Szeged Selfie Space"
+  },
+  de: {
+    heroHeading: "Aether Selfie-Studio\nBudapests führendes DIY-Fotoerlebnis",
+    heroSubheading: "Übernimm die Regie bei deinem Fotoshooting",
+    heroCopy: "Das Aether Art Space Selfie-Studio im Herzen von Budapest bietet ein einzigartiges Self-Service-Erlebnis im Fotostudio. Ob Content Creator, Influencer:in, Paar, Tourist:in oder einfach zum Spaß: Hier kannst du in Budapest professionelle Selfies und Porträts aufnehmen – ganz ohne Fotograf:in.",
+    heroCta: "Jetzt buchen",
+    processHeading: "So funktioniert das Selfie-Studio",
+    processSteps: [
+      ["Du wählst Hintergrund und Stil", "process-01"],
+      ["Du siehst dich auf dem Bildschirm", "process-02"],
+      ["Du drückst den Fernauslöser", "(mit 2 Sekunden Verzögerung, damit der Auslöser auf den Fotos nicht zu sehen ist)", "process-03"],
+      ["Du siehst deine Fotos sofort auf dem Bildschirm", "process-04"],
+      ["Du erhältst alle Fotos online, noch bevor du zu Hause bist", "process-03"]
+    ],
+    galleryHeading: "Selfies aus unserem Studio",
+    customizeHeading: "Das einzige Selfie-Studio in Budapest, in dem du dein Shooting individuell gestalten kannst",
+    customizeCopy: "Die meisten Studios bieten ein festes Setup mit wenig Spielraum. Wir machen es anders: Im Aether Art Space dreht sich alles um deine Idee. Du bist nicht an eine Vorlage gebunden – du wählst Hintergrund, Licht und Bildausschnitt. Dein Raum, deine Regeln.",
+    controls: [
+      ["wähle einen Hintergrund, der dir gefällt", ["gebautes grünes Set", "Reinweiß", "Steingrau", "Schwarz", "Nebelblau", "Orchidee", "Ultramarin", "Tiefgelb", "Orange", "Karmesinrot", "Koralle", "Eierlikör"], ["control-01", "control-02", "control-03", "control-04", "control-05", "control-06", "control-07", "control-08", "control-09", "control-10", "control-11", "control-12"]],
+      ["wähle einen Lichtstil, der zu dir passt", ["Moody für dramatische Aufnahmen", "Rembrandt für einen klassischen Look", "High Fashion für ausdrucksstarke Bilder", "Schwarzlicht"], ["control-13", "control-14", "control-15", "control-16"]],
+      ["Nahaufnahme oder Ganzkörper – wie du es brauchst", ["Porträt", "Halbporträt", "Ganzkörper"], ["control-17", "control-18", "control-19"]]
+    ],
+    benefitsHeading: "Warum unser Selfie-Studio?",
+    benefitsIntro: "In unserem automatisierten Studio findest du alles für kreative Fotos in professioneller Qualität.",
+    benefits: [
+      ["individuelle Hintergründe & Requisiten", "Wähle aus über 10 farbigen Hintergründen und nutze unsere vielseitige Auswahl an Möbeln und Requisiten."],
+      ["Make-up-Platz & Umkleideraum", "Bereite dich entspannt an unserem Make-up-Platz auf deine Fotos vor. Haarspray, Föhn und weitere hilfreiche Dinge stehen bereit."],
+      ["automatisches Profi-Licht", "Hochwertiges Licht setzt dich perfekt in Szene. Alles ist vorbereitet und eingestellt – du musst dich um nichts kümmern."],
+      ["Kamera mit Fernauslöser", "Unsere Kamera steht auf einem Stativ und wird mit einem Fernauslöser ausgelöst, den du in deiner Handfläche verbergen kannst."],
+      ["privater & diskreter Raum", "Während des Shootings bist du allein im Studio. Auf Wunsch schicken wir dir die Fotos, ohne sie anzusehen."],
+      ["deine Fotos vor der Heimfahrt", "Nach deinem Shooting exportieren und senden wir deine Fotos schnell, sodass du innerhalb weniger Minuten darauf zugreifen kannst."]
+    ],
+    pricesHeading: "faire Preise in Budapest",
+    prices: [
+      ["Mini-Selfie-Session", ["1–6 Personen", "unbegrenzt viele Fotos"], "10.990 HUF / 30 Min.", "price-01"],
+      ["Selfie-Session", ["1–6 Personen", "unbegrenzt viele Fotos"], "16.990 HUF / Stunde", "price-02"],
+      ["Retusche", ["Lass deine Lieblingsfotos professionell retuschieren."], "5.000 HUF / Foto", "price-03"]
+    ],
+    extrasHeading: "Extras",
+    extras: [["große Engelsflügel", "8.000 HUF pro Buchung"], ["lebende weiße Schlange", "15.000 HUF", "bitte vorher Bescheid geben!"], ["Nebelmaschine", "5.000 HUF pro Buchung"]],
+    reserveHeading: "Reserviere deinen Termin",
+    reserveCopy: "Verpasse nicht die Gelegenheit, Budapests kreativstes Fotostudio zu erleben!",
+    reserveCta: "Jetzt buchen",
+    szegedHeading: "Entdecke auch unseren Standort in Szeged!",
+    szegedCopy: "Unser Mini-Selfie-Studio in Szeged ist das erste der Stadt.\n\nDie gleichen Preise, die gleiche freundliche Atmosphäre und dieselbe Liebe zum Detail – schau vorbei!",
     szegedCta: "Szeged Selfie Space"
   }
 };
@@ -462,6 +608,56 @@ export const equipmentImages = {
 
 const equipmentCaption = (title, detail = "", price = "") => ({ title, detail, price });
 export const equipmentCaptions = {
+  de: {
+    lightSources: [
+      equipmentCaption("Godox DP600III", "Studioblitz"),
+      equipmentCaption("2× Godox DP400III", "Studioblitze"),
+      equipmentCaption("Godox MS300", "Studioblitz"),
+      equipmentCaption("Nanlite FS-300C", "RGB-LED-Dauerlicht"),
+      equipmentCaption("2× Godox SL200II", "LED-Dauerlicht")
+    ],
+    modifiers: [
+      equipmentCaption("Beauty Dish", "mit Diffusor und Wabe"),
+      equipmentCaption("Gobo", "mit zahlreichen Masken und Filtern"),
+      equipmentCaption("Große Octabox", "150 cm, mit Diffusor"),
+      equipmentCaption("Mittlere Octabox", "mit Diffusor und Grid"),
+      equipmentCaption("2× mittlere Softbox", "mit Diffusor"),
+      equipmentCaption("2× Stripbox", "mit Diffusor und Grid"),
+      equipmentCaption("Snoot", "mit Wabe"),
+      equipmentCaption("4× Reflektorschale", "mit Farbfolien und Klappen"),
+      equipmentCaption("Reflektorflächen", "in verschiedenen Größen"),
+      equipmentCaption("Reflektorzubehör", "Farbfolien"),
+      equipmentCaption("Reflexschirm", ""),
+      equipmentCaption("Durchlichtschirm", "")
+    ],
+    other: [
+      equipmentCaption("Stative und Halterungen", "kostenlos"),
+      equipmentCaption("Windmaschine", "kostenlos"),
+      equipmentCaption("Nebelmaschine", "5.000 HUF pro Buchung"),
+      equipmentCaption("Vorbereitungsequipment", "kostenlos"),
+      equipmentCaption("Schwarzlicht", "kostenlos")
+    ],
+    cameras: [
+      equipmentCaption("Sony A7III", "spiegellose Vollformat-Digitalkamera", "9.000 HUF/Stunde"),
+      equipmentCaption("Canon 6D MKII", "digitale Vollformat-Spiegelreflexkamera", "9.000 HUF/Stunde"),
+      equipmentCaption("Leica R3 – Safari E.", "35-mm-Filmkamera", "9.000 HUF/Stunde"),
+      equipmentCaption("Hasselblad 500C", "Mittelformatkamera", "9.000 HUF/Stunde"),
+      equipmentCaption("Nikon EM", "35-mm-Filmkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("Chinon CE-4", "35-mm-Filmkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("Yashica FX-100", "35-mm-Filmkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("Yashica Lynx 5000E", "35-mm-Messsucherkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("FED2", "35-mm-Messsucherkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("Olympus MJU2", "kompakte 35-mm-Filmkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("Super 8", "8-mm-Filmkamera", "9.000 HUF/Stunde")
+    ],
+    lenses: [
+      equipmentCaption("Objektive mit Nikon-Bajonett", "28 mm f/1.8, 85 mm f/1.8, 50 mm f/1.8 und weitere Objektive."),
+      equipmentCaption("Objektive mit M42-Bajonett", "28 mm f/2.8, 50 mm f/1.8, 135 mm f/3.5 und weitere Objektive."),
+      equipmentCaption("Objektive mit Pentax-K-Bajonett", "50 mm f/1.7 und Zoomobjektiv"),
+      equipmentCaption("Objektive mit Canon-Bajonett", "Zoomobjektiv"),
+      equipmentCaption("Objektive mit Canon-Bajonett", "Sigma 85 mm\nCanon-auf-Sony-Adapter")
+    ]
+  },
   en: {
     lightSources: [
       equipmentCaption("Godox DP600iii", "flash strobe"),
@@ -574,6 +770,16 @@ export const equipmentContent = {
       { heading: "Other equipment", paragraphs: ["We also offer a variety of additional equipment to complete your setup in our studio—including fog machines for atmospheric effects and sturdy tripods for steady shots."], galleries: [{ imageKey: "other" }] },
       { heading: "Cameras for Rent", paragraphs: ["Capture your vision with our selection of analog and digital cameras, lenses, and accessories, all available for your shoot. Whether you prefer the timeless charm of film or the flexibility of digital, we’ve got you covered. Choose from 35mm, medium format, and instant cameras, including our flagship Hasselblad 500C and Leica R3—icons of photographic excellence.", "With a variety of lenses and essential gear at your disposal, you can experiment freely and bring your creative ideas to life.", "Available for use in the studio, with assistance included."], galleries: [{ imageKey: "cameras" }] },
       { heading: "Lenses for Rent", paragraphs: ["You can use lenses in the studio either with a rented camera or on your own camera."], galleries: [{ imageKey: "lenses" }] }
+    ]
+  },
+  de: {
+    heroHeading: "Ausrüstung", heroCopy: "unsere Leuchten, Kameras, Objektive und weitere Elektronik, die du während deiner Studiosession nutzen kannst",
+    sections: [
+      { heading: "Lichtquellen", paragraphs: ["Wir haben leistungsstarke Studioblitze und LED-Leuchten ausgewählt, die bei jeder Aufnahme gleichmäßiges, professionelles Licht liefern. Mit ihnen lassen sich Intensität und Richtung präzise steuern, sodass du dramatische Effekte erzeugen, Details hervorheben und die Stimmung deiner Szene formen kannst.", "Ob Porträts, Produkte oder kreative Kompositionen: Unsere Lichtquellen sorgen jedes Mal für das passende Licht und geben deinen Fotos ein sorgfältig ausgearbeitetes Studio-Finish.", "Wenn du mit dieser Ausrüstung noch keine Erfahrung hast, helfen wir dir gern.", "Wir haben kameramontierte Funkauslöser, die mit jeder Kameramarke kompatibel sind, die du mitbringst – und auch einige Synchronkabel für ältere Kameratypen."], galleries: [{ imageKey: "lightSources", info: "Alle Lichtquellen sind in der Studiomiete enthalten." }] },
+      { heading: "Lichtformer", paragraphs: ["Erweitere deine Lichtgestaltung mit unserer großen Auswahl an Lichtformern. Sie lenken und mildern das Licht, erzeugen Schatten oder besondere Effekte. Von Softboxen bis zu Schirmen kannst du damit für jedes Shooting das passende Licht formen."], galleries: [{ imageKey: "modifiers", info: "Alle Lichtformer sind in der Studiomiete enthalten." }] },
+      { heading: "Weitere Ausrüstung", paragraphs: ["Wir bieten außerdem verschiedene zusätzliche Geräte für dein Studio-Setup, darunter Nebelmaschinen für atmosphärische Effekte und stabile Stative für ruhige Aufnahmen."], galleries: [{ imageKey: "other" }] },
+      { heading: "Kameras zur Miete", paragraphs: ["Setze deine Vision mit unserer Auswahl an analogen und digitalen Kameras, Objektiven und Zubehör um – alles für dein Shooting verfügbar. Ob du den zeitlosen Charme von Film oder die Flexibilität digitaler Fotografie bevorzugst: Bei uns findest du beides. Wähle zwischen 35-mm-, Mittelformat- und Sofortbildkameras, darunter unsere Flaggschiffe Hasselblad 500C und Leica R3 – Ikonen der Fotografie.", "Mit verschiedenen Objektiven und essenzieller Ausrüstung kannst du frei experimentieren und deine kreativen Ideen verwirklichen.", "Zur Nutzung im Studio, Unterstützung inklusive."], galleries: [{ imageKey: "cameras" }] },
+      { heading: "Objektive zur Miete", paragraphs: ["Du kannst die Objektive im Studio entweder mit einer gemieteten Kamera oder mit deiner eigenen Kamera verwenden."], galleries: [{ imageKey: "lenses" }] }
     ]
   },
   hu: {
@@ -689,6 +895,22 @@ const propsWardrobeCaptions = [
   ["white lace chokers", "You can use this outfit in the studio for FREE!"],
   ["white lacy handfan", "You can use this outfit in the studio for FREE!"]
 ];
+const propsCaption = (title, detail, price = "") => ({ title, detail, price });
+const propsCaptionsDe = {
+  furniture: [
+    ["Neobarocker Stuhl aus den 1900er-Jahren", "Kostenlos im Studio nutzbar."], ["Moderner Bürostuhl aus den 1970ern", "Kostenlos im Studio nutzbar."], ["Schwarzer Kolonial-Sessel", "Kostenlos im Studio nutzbar."], ["Alter germanischer Stuhl aus den 1920ern", "Drei Stühle und ein Sofa als Set. Kostenlos im Studio nutzbar."], ["Altes germanisches Sofa aus den 1920ern", "Drei Stühle und ein Sofa als Set. Kostenlos im Studio nutzbar."], ["Rustikaler brauner Stuhl", "Kostenlos im Studio nutzbar."], ["Retro-Stühle", "Kostenlos im Studio nutzbar."], ["Vintage-Stuhl", "Kostenlos im Studio nutzbar."], ["Moderner Barhocker", "Kostenlos im Studio nutzbar."], ["Vintage-Fußhocker", "Kostenlos im Studio nutzbar."], ["Rustikaler Tisch", "Kostenlos im Studio nutzbar."], ["Schwarzer, gepolsterter Neobarock-Sessel", "Kostenlos im Studio als Requisite nutzbar."], ["Weißer Stuhl", "Kostenlos im Studio nutzbar."], ["Retro-Hocker", "Kostenlos im Studio nutzbar."], ["Rosa Stuhl", "Kostenlos im Studio nutzbar."], ["Moderner Barhocker", "Kostenlos im Studio nutzbar."], ["Klassischer Barhocker", "Kostenlos im Studio nutzbar."], ["Gepolsterter Kolonialstuhl", "Kostenlos im Studio nutzbar."], ["Sitzsack", "Kostenlos im Studio nutzbar."], ["Dunkelgrauer Gymnastikball", "Kostenlos im Studio nutzbar."], ["Weißer Hocker", "Kostenlos im Studio nutzbar."], ["Weißer Schreibtisch", "Kostenlos im Studio nutzbar."], ["Leitern", "Kostenlos im Studio nutzbar."], ["Drehstuhl im Retro-Stil", "Kostenlos im Studio nutzbar."], ["Retro-Hocker", "Kostenlos im Studio nutzbar."]
+  ],
+  collection: [
+    ["Weißer 70×70-cm-Posierwürfel", "Kostenlos im Studio nutzbar."], ["Rosa Satin-Bettwäsche mit Matratze", "Für das Bett-Set stehen verschiedene Bezüge kostenlos zur Auswahl."], ["Aktentasche aus den 1970ern", "Kostenlos im Studio nutzbar."], ["Große schwarze Engelsflügel", "Im Studio oder außerhalb mietbar.", "8.000 HUF pro Buchung im Studio · 12.000 HUF/Tag außerhalb"], ["Langschwert", "Handgefertigtes, stumpfes Langschwert eines ungarischen Schwertmachers."], ["Retro-Telefone in verschiedenen Farben", "Orangefarbenes, rotes und schwarzes Vintage-Telefon. Kostenlos im Studio nutzbar."], ["Große Engelsflügel", "Handgefertigte Flügel eines ungarischen Kunsthandwerkers; im Studio oder außerhalb mietbar.", "8.000 HUF pro Buchung im Studio · 10.000 HUF/Tag außerhalb"], ["Handschuhe mit Krallen", "Zwei Paar schwarze Opernhandschuhe mit Krallen. Kostenlos nutzbar."], ["Fechtschwerter", "Kostenlos im Studio nutzbar."], ["Schallplatten", "Kostenlos im Studio nutzbar."], ["Rote Teufelsgabel", "Kostenlos im Studio nutzbar."], ["Replik eines französischen Krönungsschwerts", "Kostenlos im Studio nutzbar."], ["Schwarze Engelsflügel", "Kostenlos im Studio nutzbar."], ["Dekoratives Objekt", "Kostenlos im Studio nutzbar."], ["250-Liter-Aquarium", "Im Studio für ein Shooting mietbar.", "39.000 HUF pro Buchung"], ["Matratze, Bettwäsche und Baldachin", "Kostenlos im Studio nutzbar."], ["Alte germanische Kommode", "Kostenlos im Studio nutzbar."], ["Retro-Requisiten", "Kostenlos im Studio nutzbar."], ["Schwarzes Satin-Boudoir-Set", "Kostenlos im Studio nutzbar."], ["Rotes Satin-Boudoir-Set", "Kostenlos im Studio nutzbar."], ["Speer", "Kostenlos im Studio nutzbar."], ["Markiertes Skateboard", "Kostenlos im Studio nutzbar."], ["Gehstock", "Kostenlos im Studio nutzbar."], ["Großer Holzlöffel", "Kostenlos im Studio nutzbar."], ["Schwarze Sense", "Kostenlos im Studio nutzbar."]
+  ],
+  wardrobe: [
+    ["Brautkleid", "Größe XS–M. Mit Schleier sowie Satin- oder Spitzenhandschuhen.", "9.000 HUF pro Buchung im Studio"], ["Chinesischer Qipao", "Größe XS–M.", "5.000 HUF pro Buchung im Studio"], ["100 Jahre altes ungarisches Trachtenkleid", "Größe XS–M.", "9.000 HUF pro Buchung im Studio"], ["Marokkanische Dfina – goldfarben und transparent", "Größe S–L.", "5.000 HUF pro Buchung im Studio"], ["Ungarische Männertracht", "Größe S–M.", "5.000 HUF pro Buchung im Studio"], ["Ungarisches Trachtenkleid", "Größe XS–M.", "5.000 HUF pro Buchung im Studio"], ["Ungarisches Trachtenkleid", "Größe XS–M.", "5.000 HUF pro Buchung im Studio"]
+  ],
+  wardrobeFree: [
+    ["Weiß-blaues Kleid", "Kostenlos im Studio nutzbar."], ["Langer Latex-Mantel", "Kostenlos im Studio nutzbar."], ["Holografische Jacke", "Kostenlos im Studio nutzbar."], ["Neon-Minirock", "Kostenlos im Studio nutzbar."], ["Silberne Jacke", "Kostenlos im Studio nutzbar."], ["Pullover mit Schlangenmuster", "Kostenlos im Studio nutzbar."], ["Schwarzer Tüll-Minirock", "Kostenlos im Studio nutzbar."], ["Langer dunkler Rock", "Kostenlos im Studio nutzbar."], ["Silbernes Kleid", "Kostenlos im Studio nutzbar."], ["Besonderes Kleid", "Im Studio mietbar.", "5.000 HUF pro Buchung im Studio"], ["Goldfarbenes Top", "Kostenlos im Studio nutzbar."], ["Retro-Blazer", "Kostenlos im Studio nutzbar."], ["Kunstpelzmantel", "Langer Kunstpelzmantel. Kostenlos im Studio nutzbar oder zur externen Nutzung mietbar."], ["Vintage-Männertracht", "Kostenlos im Studio nutzbar."], ["Transparentes schwarzes Kleid", "Kostenlos im Studio nutzbar."], ["Leder-Bikerjacke", "Kostenlos im Studio nutzbar."], ["Transparentes Oberteil", "Kostenlos im Studio nutzbar."], ["Fingerrüstung", "Kostenlos im Studio nutzbar."], ["Silberne Handtasche", "Kostenlos im Studio nutzbar."], ["Spitzen-Schulteraccessoire", "Cremefarbenes Spitzenaccessoire. Kostenlos im Studio nutzbar oder zur externen Nutzung mietbar."], ["Hasenohren", "Kostenlos im Studio nutzbar."], ["Rokoko-Fächer", "Kostenlos im Studio nutzbar."], ["Großer schwarzer Fächer", "Kostenlos im Studio nutzbar."], ["Weiße Spitzen-Choker", "Kostenlos im Studio nutzbar."], ["Weißer Spitzenfächer", "Kostenlos im Studio nutzbar."]
+  ]
+};
+export const propsCaptions = Object.fromEntries(Object.entries(propsCaptionsDe).map(([key, captions]) => [key, captions.map(([title, detail, price]) => propsCaption(title, detail, price))]));
 const propsImageSet = (start, count, alt, captions = null) => Array.from({ length: count }, (_, index) => {
   const [width, height] = propsImageDimensions[start + index] ?? [900, 900];
   const caption = captions?.[index];
@@ -715,6 +937,14 @@ export const propsContent = {
       { heading: "The Prop Collection", subheading: "Unique Props to Elevate Your Photoshoot", paragraphs: ["Take your photoshoot to the next level with our curated collection of unique props. Whether it’s a dramatic sword, a red devil’s pitchfork, vintage suitcases, or other unexpected treasures, these pieces are here to add depth, storytelling, and personality to your shots.", "Whether you're crafting a fantasy-inspired portrait, a cinematic scene, or a bold artistic statement, these props are yours to explore. Let your imagination run wild and bring your vision to life!"], galleries: [{ imageKey: "collection", info: "you can use all items for your photoshoot for free" }] },
       { heading: "The Wardrobe", subheading: "Unique Outfits & Accessories for Your Photoshoot", paragraphs: ["Unlock endless creative possibilities with our carefully curated wardrobe, available for all photoshoots at our Budapest studio. From vintage gowns and avant-garde fashion to statement jewelry and unique accessories, our collection is designed to inspire and enhance your visual storytelling.", "Whether you're a photographer, model, or artist, you can freely explore and use these pieces to bring your vision to life. No limits, just pure creative freedom—step in and transform your shoot."], galleries: [{ imageKey: "wardrobe", title: "Unique outfits for rent", info: "unique clothing items are available for rent in the studio - or even to take away", infoPrice: "5000-9000 HUF" }, { imageKey: "wardrobeFree", title: "More outfits in the studio", info: "these outfits can be used for free in the studio - or as a rental to take away" }] },
       { heading: "The Furniture Collection", subheading: "Authentic Pieces with Character", paragraphs: ["Set the perfect mood for your photoshoot with our diverse furniture collection. From sleek modern designs to retro gems and original antique pieces, each item carries its own story and atmosphere. No replicas—just real, character-filled pieces that add depth, texture, and emotion to your scene.", "If you're going for timeless elegance, vintage nostalgia, or contemporary edge, our furniture is here to help shape your vision."], galleries: [{ imageKey: "furniture", info: "Furniture is available in the studio free of charge." }] }
+    ]
+  },
+  de: {
+    heroHeading: "Requisiten", heroCopy: "Möbel, besondere Kleidungsstücke, Schmuck und kleine bis mittelgroße Requisiten, die du für kreative Shootings in unserem Studio verwenden kannst",
+    sections: [
+      { heading: "Die Requisitenkollektion", subheading: "Besondere Requisiten für dein Fotoshooting", paragraphs: ["Bring dein Fotoshooting mit unserer sorgfältig ausgewählten Requisitenkollektion auf das nächste Level. Ob ein dramatisches Schwert, eine rote Teufelsgabel, Vintage-Koffer oder andere unerwartete Schätze: Diese Stücke geben deinen Bildern Tiefe, Geschichte und Persönlichkeit.", "Ob du ein Fantasy-Porträt, eine filmische Szene oder ein mutiges künstlerisches Statement entwickelst – diese Requisiten stehen dir zur Verfügung. Lass deiner Fantasie freien Lauf und verwirkliche deine Vision."], galleries: [{ imageKey: "collection", info: "Du kannst alle Gegenstände für dein Fotoshooting kostenlos nutzen." }] },
+      { heading: "Die Garderobe", subheading: "Besondere Outfits und Accessoires für dein Fotoshooting", paragraphs: ["Entdecke unzählige kreative Möglichkeiten mit unserer sorgfältig kuratierten Garderobe für alle Shootings in unserem Budapester Studio. Von Vintage-Kleidern und avantgardistischer Mode bis zu auffälligem Schmuck und besonderen Accessoires: Unsere Kollektion soll inspirieren und dein visuelles Storytelling bereichern.", "Ob Fotograf:in, Model oder Künstler:in – du kannst diese Stücke frei erkunden und nutzen, um deine Vision umzusetzen. Keine Grenzen, nur kreative Freiheit: Komm herein und verwandle dein Shooting."], galleries: [{ imageKey: "wardrobe", title: "Besondere Outfits zur Miete", info: "Besondere Kleidungsstücke können im Studio gemietet oder auch mitgenommen werden.", infoPrice: "5.000–9.000 HUF" }, { imageKey: "wardrobeFree", title: "Weitere Outfits im Studio", info: "Diese Outfits kannst du im Studio kostenlos nutzen oder für externe Nutzung mieten." }] },
+      { heading: "Die Möbelkollektion", subheading: "Authentische Stücke mit Charakter", paragraphs: ["Schaffe die passende Stimmung für dein Shooting mit unserer vielfältigen Möbelkollektion. Von klaren modernen Designs über Retro-Schätze bis zu originalen Antiquitäten trägt jedes Stück seine eigene Geschichte und Atmosphäre. Keine Repliken – nur echte, charaktervolle Objekte, die deiner Szene Tiefe, Textur und Emotion verleihen.", "Ob zeitlose Eleganz, Vintage-Nostalgie oder ein zeitgemäßer Look: Unsere Möbel helfen dir, deine Vision zu gestalten."], galleries: [{ imageKey: "furniture", info: "Möbel stehen im Studio kostenlos zur Verfügung." }] }
     ]
   },
   hu: {
@@ -762,6 +992,12 @@ const photographerPackagesHu = [
   { title: "Standard Studiós Fotózás csomag", description: "Tökéletes stúdiós felvételekhez többféle öltözékkel vagy stílussal. Pároknak vagy barátoknak is jó megoldás.", price: "59.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "15 magazin minőségű fénykép", "legfeljebb 3 ruha", "akár 3 stúdióbeállítás", "1-2 modell"] },
   { title: "All-inclusive Studiós Fotózás csomag", description: "Ha egy szép, a megszokotton túlmutató képsorozatra vágysz, ez az ajánlat neked szól. Bonyolult szettek, speciális világítás vagy csoportképek – bármit meg tudunk csinálni, amit csak el tudsz képzelni!", price: "79.000. HUF", features: ["stúdióbérleti díjat tartalmazza", "21 magazin minőségű fénykép", "akár 3 ruha", "akár 3 stúdióbeállítás", "egyetlen modelltől csoportokig"] }
 ];
+const photographerPackagesDe = [
+  { title: "Kleines Studio-Fotoshooting", description: "Wähle dieses Paket für neue Profil- oder Bewerbungsfotos oder wenn du ein einfaches Studio-Shooting ausprobieren möchtest.", price: "39.000 HUF", features: ["Studiomiete inbegriffen", "6 Fotos in Magazinqualität", "ein Outfit", "ein Studio-Setup", "ein Model"] },
+  { title: "Standard-Studio-Fotoshooting", description: "Perfekt für ein Studio-Shooting mit mehreren Outfits oder Stilen; auch eine gute Wahl für Paare oder Freund:innen.", price: "59.000 HUF", features: ["Studiomiete inbegriffen", "15 Fotos in Magazinqualität", "bis zu 3 Outfits", "bis zu 3 Studio-Setups", "1–2 Models"] },
+  { title: "All-inclusive-Studio-Fotoshooting", description: "Wenn du eine starke Bildserie jenseits des Gewöhnlichen möchtest, ist dieses Angebot für dich. Komplexe Sets, besonderes Licht oder Gruppen – wir können umsetzen, was du dir vorstellst.", price: "79.000 HUF", features: ["Studiomiete inbegriffen", "21 Fotos in Magazinqualität", "bis zu 3 Outfits", "bis zu 3 Studio-Setups", "von einem Model bis zu Gruppen"] }
+];
+photographerPackagesDe.forEach((packageItem) => { packageItem.price = packageItem.price.replace(". HUF", " HUF"); });
 
 export const residentArtistContent = {
   photographers: {
@@ -773,6 +1009,10 @@ export const residentArtistContent = {
         { name: "Alexandra Kulcsár-Horváth", role: "photographer", specialties: "wedding, portrait, lifestyle, business, pet", description: "She specialises in creating wedding photography, honest and natural portraits be it for business, dating or just for memories.", image: "alexandra", gallery: "alexandraGallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }], more: "more about Alexandra", moreHref: "/photographer-alexandra" }
       ],
       contactHeading: "For booking one of our artists, drop a message:"
+    },
+    de: {
+      heroHeading: "unsere Fotograf:innen", heroCopy: "unsere Fotograf:innen können gebucht werden", intro: ["Unsere talentierten Fotograf:innen bei aether art space können gebucht werden und bringen jeweils einen eigenen kreativen Stil mit, der jedes Fotoshooting zu einem besonderen Erlebnis macht.", "Mit ihrem gemeinsamen Anspruch an Qualität und Kunst arbeiten sie eng mit Kund:innen zusammen, um Bilder zu schaffen, die nachwirken. Buche deine Session und lass unsere Fotograf:innen deine Vision zum Leben erwecken."], packages: photographerPackagesDe,
+      profiles: [{ name: "Dániel Z. Aczél", role: "Fotograf – Studioinhaber", specialties: "Porträt, Glamour, Boudoir, künstlerischer Akt, Fitness", description: "Er arbeitet selbstverständlich zwischen Welten: digital und analog, im Studio und in der Natur, mit natürlichem und künstlichem Licht sowie mit Amateur- und Profi-Models.", image: "daniel", gallery: "danielGallery", website: "www.aczel.pictures", websiteUrl: "https://www.aczel.pictures", socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/aczel_aethereal" }, { type: "x", label: "X", href: "https://x.com/aczel_pictures" }], more: "mehr über Dániel", moreHref: "/de/photographer-daniel" }, { name: "Alexandra Kulcsár-Horváth", role: "Fotografin", specialties: "Hochzeit, Porträt, Lifestyle, Business, Haustier", description: "Sie spezialisiert sich auf Hochzeitsfotografie sowie ehrliche, natürliche Porträts – für Business, Dating oder einfach als Erinnerung.", image: "alexandra", gallery: "alexandraGallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }], more: "mehr über Alexandra", moreHref: "/de/photographer-alexandra" }], contactHeading: "Um eine:n unserer Künstler:innen zu buchen, schreib uns:"
     },
     hu: {
       heroHeading: "rezidens fotósaink", heroCopy: "foglald le fotósainkat fotózásodhoz", intro: ["Az aether art space tehetséges fotósai lefoglalhatók fotózásra, és mindegyikük saját, egyedi stílussal járul hozzá, hogy minden fotózás felejthetetlen élmény legyen.", "Mindannyian a kiválóságra és művésziességre törekednek, és szorosan együttműködnek az ügyfelekkel, hogy olyan képeket alkossanak, amelyek maradandó benyomást keltenek. Foglalj időpontot, és engedd, hogy fotósaink életre keltsék az elképzeléseidet!"],
@@ -795,6 +1035,9 @@ export const residentArtistContent = {
       profiles: [{ name: "Szmilkó Lilla", role: "stylist", specialties: "visual identity design and fashion advisory for you or your clients", image: "profile", gallery: "gallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/szmilkolilla" }] }],
       contactHeading: "For booking one of our artists, drop a message:"
     },
+    de: {
+      heroHeading: "Styling und Personal-Brand-Design", heroCopy: "arbeite bei deinem nächsten Shooting in unserem Budapester Studio mit unserer Stylistin und Personal-Brand-Expertin", intro: ["Ergänze dein Shooting um professionelles Styling für ein ausgearbeiteteres, stimmiges und kamerataugliches Ergebnis. Von einem komplett gestylten Look über Konzepte mit mehreren Looks bis zum umfassenden markenorientierten Styling hilft unsere Stylistin bei Outfit, Stimmung und visueller Richtung.", "Styling eignet sich für Porträts, Modelportfolios, Personal Branding, Glamour, Boudoir, kreative Editorial-Shootings, Kampagnen, Lookbooks und Markeninhalte. Es kann zusammen mit Fotografie, Make-up und Haarstyling an einem Ort gebucht werden."], packages: [{ title: "Standard-Styling-Paket", description: "Ein komplett gestylter Look für dein Shooting – ideal für ein sorgfältig zum Konzept ausgewähltes Outfit und ein bewusstes, vollständiges Endergebnis.", price: "35.000. HUF", features: ["1 komplett gestylter Look", "Outfitkonzept und Richtung", "Beschaffung von Kleidung und Accessoires", "Anprobe und finales Styling am Set"] }, { title: "Signature-Styling-Paket", description: "Für Shootings mit mehreren Outfits oder einer klareren visuellen Richtung. Ideal für Porträts, Modelportfolios, Branding, Glamour oder kreative Bilder.", price: "55.000. HUF", features: ["2–3 komplett gestylte Looks", "Outfitkonzept und Richtung", "Beschaffung von Kleidung und Accessoires", "Anprobe und finales Styling am Set"] }, { title: "Personal-Brand-Design & Styling", description: "Für Kund:innen, die eine stärkere, strategischere visuelle Identität brauchen – ideal für Unternehmer:innen, Kreative, Coaches, Performer:innen und Personal Brands.", price: "75.000. HUF", features: ["visuelle Richtung für die Personal Brand", "Styling-Konzept für das Shooting", "Outfitplanung für mehrere Anwendungen", "Stimmungs-, Farb- und Bildrichtung", "empfohlen für Branding-Shootings und Kampagnen"] }], profiles: [{ name: "Szmilkó Lilla", role: "Stylistin", specialties: "visuelles Identitätsdesign und Modeberatung für dich oder deine Kund:innen", image: "profile", gallery: "gallery", socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/szmilkolilla" }] }], contactHeading: "Um eine:n unserer Künstler:innen zu buchen, schreib uns:"
+    },
     hu: {
       heroHeading: "styling és énmárka tervezés", heroCopy: "dolgozz stylistunkkal a következő fotózásodon Budapesti stúdiónkban", intro: ["Adj professzionális stylingot a fotózásodhoz a letisztultabb, egységesebb és kamera előtt is jobban működő végeredményért. Az egyetlen teljesen összeállított looktól a több outfites koncepciókon át a teljes énmárka-stylingig stylistunk segít kialakítani a fotózás öltözékeit, hangulatát és vizuális irányát.", "A styling kérhető portrékhoz, modell portfólióhoz, personal brandinghez, glamour, boudoir és kreatív editorial fotózásokhoz, kereskedelmi kampányokhoz, lookbookokhoz és márkatartalmakhoz is. A szolgáltatás fotózással, sminkkel és hajjal együtt, egy helyen is foglalható."],
       packages: [
@@ -816,6 +1059,9 @@ export const residentArtistContent = {
       ],
       footerNote: "If you work with our make-up artists, you can use the studio for applying the makeup before your shoot.", contactHeading: "For booking one of our artists, drop a message:"
     },
+    de: {
+      heroHeading: "unsere Make-up-Artists und Haarstylist:innen", heroCopy: "unsere Make-up-Artists und Haarstylist:innen können gebucht werden", intro: ["Unsere erfahrenen Make-up-Artists bei aether art space können gebucht werden und bringen ihre Expertise sowohl für Models als auch für Fotograf:innen ein, die das Studio mieten.", "Jede:r Artist bringt einen eigenen Stil mit und entwickelt Looks, die die Vision des Shootings unterstreichen – von natürlicher Eleganz bis zu mutigem kreativem Ausdruck. Mit Blick fürs Detail und einem hohen Anspruch an ein makelloses Ergebnis geben unsere Make-up-Artists jedem Projekt den passenden letzten Schliff."], profiles: [{ name: "Csenge Katica Denes", role: "Haar- und Make-up-Artist", specialties: "Fashion, Commercial, natürlich, Haut wie Haut", price: "Make-up ab 15.000 HUF", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] }, { name: "Noémi Holczimmer", role: "Make-up-Artist", specialties: "Glamour, natürlich, alternativ, extrem, thematisch", price: "Make-up ab 15.000 HUF", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] }, { name: "Anna Máté", role: "Make-up-Artist", specialties: "Glamour, Beauty, natürlich, Alltag", price: "Make-up ab 15.000 HUF", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }], footerNote: "Wenn du mit unseren Make-up-Artists arbeitest, kannst du das Studio vor deinem Shooting kostenlos zum Schminken nutzen.", contactHeading: "Um eine:n unserer Künstler:innen zu buchen, schreib uns:"
+    },
     hu: {
       heroHeading: "rezidens sminkesek és fodrászok", heroCopy: "foglald le sminkeseinket és hajszobrászainkat fotózásodhoz", intro: ["Az aether art space kiváló sminkesei és hajstylistjai a modellek és a stúdiót bérlő fotósok számára is elérhetőek.", "Minden sminkesünk egyedi stílust képvisel, és gondoskodik arról, hogy a fotózás megjelenése tökéletesen tükrözze az elképzelt koncepciót – legyen szó természetes eleganciáról vagy merész, kreatív kifejezésről. Precíz munkájukkal és figyelmükkel sminkeseink bármely projektet magasabb szintre emelnek, hogy az elképzelések tökéletesen megvalósuljanak. Foglalj időpontot, és tedd teljessé a következő fotózásod megjelenését!"],
       profiles: [
@@ -827,6 +1073,8 @@ export const residentArtistContent = {
     }
   }
 };
+residentArtistContent.stylists.de.packages.forEach((packageItem) => { packageItem.price = packageItem.price.replace(". HUF", " HUF"); });
+residentArtistContent.makeup.de.profiles.forEach((profile) => { profile.price = profile.price.replace(". HUF", " HUF"); });
 
 const modelImage = (filename, alt, objectPosition = "50% 50%") => ({ src: `/images/models/${filename}`, alt, width: 300, height: 524, objectPosition });
 const wixLiveGalleryImage = (mediaUrl, width, height, alt, title = "", description = "") => ({
@@ -881,6 +1129,17 @@ const modelProfilesHu = [
 const modelProfilesEnWithContact = modelProfilesEn.map((profile) => ({ ...profile, contact: `Want to shoot with ${profile.name}?` }));
 const modelContactsHu = ["Szeretnél Grinnievel dolgozni?", "Szeretnél Wendyvel dolgozni?", "Szeretnél Orsolyával dolgozni?", "Szeretnél Vukkal dolgozni?", "Szeretnél Szederrel dolgozni?", "Szeretnél Noméval dolgozni?", "Szeretnél Ezrával dolgozni?", "Szeretnél Lucával dolgozni?", "Szeretnél Csurival dolgozni?"];
 const modelProfilesHuWithContact = modelProfilesHu.map((profile, index) => ({ ...profile, contact: modelContactsHu[index] }));
+const localizeModelMeasurementDe = (line) => String(line)
+  .replace(/^Height:/, "Größe:").replace(/^Size:/, "Konfektionsgröße:").replace(/^Dress size:/, "Konfektionsgröße:")
+  .replace(/^Eyes:/, "Augen:").replace(/^Hair:/, "Haare:").replace(/^Bust:/, "Brustumfang:").replace(/^Waist:/, "Taille:").replace(/^Hips:/, "Hüfte:").replace(/^Shoe size:/, "Schuhgröße:").replace(/^Tattoos:/, "Tattoos:").replace(/^Piercings:/, "Piercings:")
+  .replace(/Black and green dreadlocks/g, "schwarze und grüne Dreadlocks").replace(/Platinum Blonde/g, "platinblond").replace(/Blonde, light blue/g, "blond, hellblau")
+  .replace(/Dark brown/g, "dunkelbraun").replace(/Grey-Blue/g, "graublau").replace(/Blue/g, "blau").replace(/Brown/g, "braun").replace(/Green/g, "grün").replace(/Grey/g, "grau").replace(/Red/g, "rot").replace(/Blonde/g, "blond").replace(/Black/g, "schwarz")
+  .replace(/A lot/g, "viele").replace(/None/g, "keine").replace(/Back, thighs, collarbone/g, "Rücken, Oberschenkel, Schlüsselbein").replace(/Belly button/g, "Bauchnabel").replace(/small tattoos/g, "kleine Tattoos").replace(/on nipples and ears/g, "an Brustwarzen und Ohren").replace(/all over/g, "am ganzen Körper").replace(/on face, 1 on ear/g, "im Gesicht, 1 am Ohr").replace(/small linework/g, "kleine Linework-Tattoos").replace(/ear stretchers and rings/g, "Ohrdehner und Ringe").replace(/2 on face/g, "2 im Gesicht").replace(/In nose/g, "in der Nase");
+const modelProfilesDeWithContact = modelProfilesEn.map((profile) => ({
+  ...profile,
+  measurements: profile.measurements.map((group) => group.map(localizeModelMeasurementDe)),
+  contact: `Möchtest du mit ${profile.name} arbeiten?`
+}));
 
 export const modelsContent = {
   en: {
@@ -891,6 +1150,9 @@ export const modelsContent = {
     animalHeading: "our non-human models", animalIntro: ["If you book a pet and the studio together, you’ll get an even better price!", "Since we’re not an agency, there’s no added margin on booking these pets. It’s all about making your creative process smoother and more affordable."],
     animal: { name: "Lucifer", description: "a very relaxed white rat snake", priceLabel: "starting from:", price: "16.000. HUF / shoot", measurementsTitle: "Measurements", measurements: [["length: 150cm"], ["color: off white"], ["legs: none"]], contactPrefix: "Want to shoot with Lucifer", contactSuffix: "?" },
     platform: { heading: "Still looking for a model?", subheading: "Try our free platform for finding models / photographers and creatives!", paragraphs: ["We are building a free online platform where you can easily find your next creative partner for your shoot. TFP or paid work, beginners or pros.", "Browse creatives around you or create a project and wait for them to join.", "Try it out for free!"], cta: "go to naebula.app" }
+  },
+  de: {
+    heroHeading: "zuverlässige Models", heroCopy: "eine Auswahl zuverlässiger professioneller Fotomodelle, mit denen du in unserem Budapester Studio zu einem Festpreis arbeiten kannst", intro: ["Wenn du für dein Fotoshooting ein Model suchst, findest du bei aether art space eine Auswahl zuverlässiger professioneller Models, mit denen wir bereits gern gearbeitet haben. Diese erfahrenen Models wissen, wie sie das Beste aus Fashion-, Porträt- und Kreativshootings herausholen.", "Wenn du Model und Studio zusammen buchst, erhältst du einen noch besseren Preis. Da wir keine Agentur sind, gibt es keinen zusätzlichen Aufschlag für die Buchung unserer Models. So wird dein kreativer Prozess einfacher und erschwinglicher."], feeTitle: "Grundhonorar für Models", feePrice: "15.000 HUF / Stunde", contactLabel: "Kontakt", measurementsTitle: "Maße", contactPrefix: "Möchtest du mit", contactSuffix: "arbeiten?", people: modelProfilesDeWithContact, animalHeading: "unsere nichtmenschlichen Models", animalIntro: ["Wenn du ein Tier und das Studio zusammen buchst, erhältst du einen noch besseren Preis.", "Da wir keine Agentur sind, gibt es keinen zusätzlichen Aufschlag für die Buchung dieser Tiere. So wird dein kreativer Prozess einfacher und erschwinglicher."], animal: { name: "Lucifer", description: "eine sehr entspannte weiße Kornnatter", priceLabel: "ab:", price: "16.000 HUF/Shooting", measurementsTitle: "Maße", measurements: [["Länge: 150 cm"], ["Farbe: gebrochenes Weiß"], ["Beine: keine"]], contactPrefix: "Möchtest du mit Lucifer arbeiten", contactSuffix: "?" }, platform: { heading: "Suchst du noch ein Model?", subheading: "Teste unsere kostenlose Plattform, um Models, Fotograf:innen und Kreative zu finden.", paragraphs: ["Wir bauen eine kostenlose Online-Plattform, auf der du unkompliziert deine nächsten kreativen Partner:innen für ein Shooting findest – TFP oder bezahlt, Anfänger:innen oder Profis.", "Entdecke Kreative in deiner Nähe oder erstelle ein Projekt und warte, bis sie mitmachen.", "Teste sie kostenlos!"], cta: "zu naebula.app" }
   },
   hu: {
     heroHeading: "kedvenc modelleink", heroCopy: "megbízható és professzionális fotómodelleink, akikkel budapesti stúdiónkban fix áron alkothatsz",
@@ -919,6 +1181,9 @@ export const packagesContent = {
       { title: "Complete Creative Team", description: "Make-up, hair and styling together. The perfect choice for a complete transformation or a high end concept.", priceLabel: "starting from", price: "+48.000. HUF", cta: "ask for an offer", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
     ],
     contactHeading: "For booking one of our artists, drop a message:", contactSubject: "combined shoot inquiry"
+  },
+  de: {
+    heroHeading: "alle Pakete und Leistungen", heroCopy: "Fotoshootings, Styling, Make-up und Kombipakete", intro: ["Wähle das Fotoshooting-Paket, das zu dir passt, und ergänze bei Bedarf Make-up, Haare oder Styling – alles in einer Buchung und an einem Ort.", "Studio, professionelles Licht, Shooting, Retusche und Kreativteam arbeiten zusammen für ein stimmiges, hochwertiges Ergebnis vor der Kamera. Ideal für Porträts, Modelportfolios, Personal Branding, Glamour, Boudoir und kreative Shootings."], packages: [{ title: "Kleines Studio-Fotoshooting", description: "Wähle dieses Paket für neue Profil- oder Bewerbungsfotos oder als unkomplizierten Einstieg ins Studio.", price: "39.000 HUF", features: ["Studio-Miete inklusive", "6 magazinreife Fotos", "ein Outfit", "ein Set", "ein Model"] }, { title: "Standard-Fotoshooting", description: "Perfekt für mehrere Outfits oder Stile – auch für Paare oder Freund:innen.", price: "59.000 HUF", features: ["Studio-Miete inklusive", "15 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "1–2 Models"] }, { title: "All-inclusive-Fotoshooting", description: "Für eine außergewöhnliche Bildserie mit komplexen Sets, besonderem Licht oder Gruppenaufnahmen.", price: "79.000 HUF", features: ["Studio-Miete inklusive", "21 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "ein Model bis zur Gruppe"] }], upgradesHeading: "dein Shooting erweitern", upgradesIntro: "Ergänze dein Fotoshooting in Budapest um professionelles Make-up, Haarstyling und Styling. Unser Make-up- und Hair-Team sowie unsere Stylist:innen helfen dir bei kameratauglichen Looks und der Outfitplanung.", upgrades: [{ title: "Make-up & Haare hinzufügen", description: "Professionelles, kamerataugliches Make-up und Haarstyling, abgestimmt auf deinen Look.", priceLabel: "ab", price: "+15.000 HUF", cta: "alle Make-up-Pakete", href: "/de/make-up-artists" }, { title: "Styling hinzufügen", description: "Professionelles Styling, Outfitkonzept und Beschaffung für einen stimmigen Look passend zu deinem Konzept.", priceLabel: "ab", price: "+35.000 HUF", cta: "alle Styling-Pakete", href: "/de/stylists" }, { title: "Komplettes Kreativteam", description: "Make-up, Haare und Styling zusammen – ideal für eine vollständige Verwandlung oder ein hochwertiges Konzept.", priceLabel: "ab", price: "+48.000 HUF", cta: "Angebot anfragen", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }], contactHeading: "Um unser Kreativteam zu buchen, schreib uns:", contactSubject: "combined shoot inquiry"
   },
   hu: {
     heroHeading: "fotózás és kombinált csomagjaink", heroCopy: "foglald le kreatív csapatunkat fotózásodhoz",
@@ -1089,6 +1354,24 @@ export const photoPackageSets = {
   }
 };
 
+photoPackageSets.christmas.de = [
+  { title: "Kleines Weihnachts-Fotoshooting", description: "Ein paar schöne Bilder mit deinem Lieblingsmenschen", price: "39.000 HUF", features: ["Studio-Miete inklusive", "6 hochwertige Fotos", "ein Outfit", "für Paare"] },
+  { title: "Mittleres Weihnachts-Fotoshooting", description: "Ideal für Familien und ihre jährlichen Weihnachtsfotos", price: "59.000 HUF", features: ["Studio-Miete inklusive", "15 hochwertige Fotos", "bis zu 3 Outfits", "2 Erwachsene + Kinder"] },
+  { title: "Großes Weihnachts-Fotoshooting", description: "Perfekt für große Familien und Gruppen", price: "79.000 HUF", features: ["Studio-Miete inklusive", "21 hochwertige Fotos", "bis zu 3 Outfits", "2+ Erwachsene + Kinder"] }
+];
+for (const key of ["portrait", "glamour", "models", "pet"]) {
+  const labels = { portrait: ["Porträt", "Porträt"], glamour: ["Glamour", "Glamour"], models: ["Model", "Model"], pet: ["Tier", "Tier"] }[key];
+  const base = photoPackageSets[key].en;
+  photoPackageSets[key].de = base.map((item, index) => ({ ...item, title: `${["Kleines", "Mittleres", "Großes"][index]} ${labels[0]}-Fotoshooting-Paket`, description: index === 0 ? `Ein kompakter Einstieg in die ${labels[1]}fotografie` : index === 1 ? `Eine vielseitige Serie für dein ${labels[1]}-Shooting` : `Für kreative Konzepte und umfangreiche ${labels[1]}-Serien`, price: item.price.replace("from ", "ab ").replace(". HUF", " HUF"), features: item.features.map((feature) => feature.replace("studio rent included", "Studio-Miete inklusive").replace("from a single model to groups", "ein Model bis zur Gruppe").replace("magazine quality", "magazinreife").replace("magazine-quality", "magazinreife").replace("photographs", "Fotos").replace("single outfit", "ein Outfit").replace("up to 3 outfits", "bis zu 3 Outfits").replace("single studio setting", "ein Set").replace("up to 3 studio settings", "bis zu 3 Sets").replace("single model", "ein Model").replace("1-2 models", "1–2 Models").replace("one pet", "ein Haustier").replace("multiple pets or together with owner", "mehrere Haustiere oder gemeinsam mit ihrem Menschen").replace("many pets or group shots", "mehrere Haustiere oder Gruppenaufnahmen")) }));
+}
+
+// Model-digitals packages use niche terminology that should read naturally in German.
+photoPackageSets.models.de = [
+  { title: "Kleines Model-Digitals-Fotoshooting-Paket", description: "Der erste Schritt in deine Modelkarriere.", price: "39.000 HUF", features: ["4 standardisierte Model-Digitals", "PDF-Modelkarte", "ein Outfit", "ein Set", "Studio-Miete inklusive"] },
+  { title: "Model-Portfolio-Starter-Paket", description: "Eine vielseitige Serie starker Bilder, die deine Eignung für unterschiedliche Stile zeigt.", price: "79.000 HUF", features: ["4 standardisierte Model-Digitals", "PDF-Modelkarte", "zusätzlich 15 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "Studio-Miete inklusive"] },
+  { title: "Komplettes Model-Portfolio-Paket", description: "Präsentiere dich mit einem gedruckten Lookbook und einem vielseitigen Portfolio professionell.", price: "149.000 HUF", features: ["4 standardisierte Model-Digitals", "PDF-Modelkarte", "genug Fotos für dein 30-seitiges Lookbook", "bis zu 3 Outfits", "bis zu 3 Sets", "Studio-Miete inklusive"] }
+];
+
 export const commonUpgrades = {
   en: [
     { title: "Add Make up & Hair", priceLabel: "starting at", price: "15.000. HUF", href: "/make-up-artists" },
@@ -1099,6 +1382,11 @@ export const commonUpgrades = {
     { title: "Smink és haj", priceLabel: "kezdőár", price: "15.000 HUF", href: "/hu/make-up-artists" },
     { title: "Styling", priceLabel: "kezdőár", price: "35.000 HUF", href: "/hu/stylists" },
     { title: "Teljes kreatív csapat", priceLabel: "kezdőár", price: "48.000 HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+  ],
+  de: [
+    { title: "Make-up & Hair dazu buchen", priceLabel: "ab", price: "15.000 HUF", href: "/de/make-up-artists" },
+    { title: "Styling dazu buchen", priceLabel: "ab", price: "35.000 HUF", href: "/de/stylists" },
+    { title: "Komplettes Kreativteam", priceLabel: "ab", price: "48.000 HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
   ]
 };
 
@@ -1122,6 +1410,12 @@ export const serviceContent = {
 };
 
 serviceContent.corporate.en.packages[4].price = "129.000. HUF / half day";
+
+// German service copy is kept explicit so German routes never inherit English text.
+serviceContent.commercial.de = { hero: "Beauftrage unsere professionellen Fotograf:innen für dein Werbeprojekt", intro: ["Bei Aether Art Space erstellen wir hochwertige Werbefotografie in Budapest, die Marken sichtbar macht und ihre Geschichte überzeugend erzählt. Unser Kreativteam produziert sorgfältig ausgearbeitete Bilder für Marketing, Werbung und Branding.", "Wir fotografieren Produkteinführungen, Unternehmenskampagnen und Social-Media-Inhalte – Studioqualität, die Aufmerksamkeit gewinnt und Vertrauen schafft."], servicesHeading: "Unsere Werbefotografie", servicesLead: "Wir bieten Unternehmen und Kreativprofis unter anderem:", services: [["Werbekampagnen", "Ausdrucksstarke Bilder für Plakate, Print- und Digitalkampagnen."], ["Lifestyle- und Brandingfotografie", "Visuelles Storytelling, das deine Produkte und Leistungen in Aktion zeigt."], ["Businessfotografie", "Führungs-, Team- und Büroaufnahmen für einen starken Markenauftritt."], ["Produktfotografie", "Klare, detailreiche Bilder für Onlineshops, Kataloge und Werbung."], ["Social-Media-Content", "Aufmerksamkeitsstarke Visuals für Instagram, LinkedIn und Facebook."]], servicesTail: "Jedes Projekt richten wir an deiner Markenidentität und visuellen Strategie aus.", offer: "Frag per E-Mail nach einem Angebot: photostudio.aether@gmail.com", clients: "Unsere Kund:innen" };
+serviceContent.portrait.de = { hero: "Business-, Casual- und künstlerische Porträts für private oder gewerbliche Zwecke", intro: ["Bei Aether Art Space entstehen professionelle Porträts, die Persönlichkeit, Stil und Selbstvertrauen zeigen. Ob Businessporträt, lockere Bilder, Dating-Profilfotos oder kreative Aufnahmen: Wir schaffen hochwertige Bilder, die zu dir passen."], packageHeading: "Porträt-Fotoshooting-Pakete", packageLead: "Studio-Miete in allen Paketen enthalten", firstTimers: "Auch ohne Erfahrung willkommen!", studioHeading: "Unser Fotostudio in Budapest", studioIntro: "Unser Studio verbindet professionelle Ausstattung mit einer entspannten Atmosphäre – ideal für jede Art von Porträtshooting.", studioBullets: ["Professionelles Setup mit hochwertigem Licht, vielseitigen Hintergründen und kreativen Sets", "Privater Lounge-Bereich zum Ankommen und Vorbereiten", "Make-up- und Stylingplatz mit perfektem Licht", "Kaffee und Erfrischungen", "Viel Platz für Business-, Lifestyle- und kreative Porträts"], studioTail: "Von Businessporträts bis zu persönlichen Bildern begleiten wir dich entspannt und professionell durch das gesamte Shooting." };
+serviceContent.fitness.de = { hero: "Fitness- und Yogashootings für Personal Trainer:innen, Athlet:innen und Sportbegeisterte", intro: ["Bei Aether Art Space fotografieren wir Kraft, Bewegung, Balance und Authentizität. Wir arbeiten mit Athlet:innen, Personal Trainer:innen, Yoga-Lehrenden und Studios an professionellen und persönlichen Bildern.", "Ob Sportlerporträts, Personal-Branding, Studio-Content oder dynamische Lifestylebilder: Der Fokus liegt auf sauberer, hochwertiger Bildsprache und natürlicher Bewegung."], packageHeading: "Unsere Fitness- und Yoga-Pakete", packageLead: "Studio-Miete in allen Paketen enthalten", audienceHeading: "Für wen ist das Shooting geeignet?", audienceIntro: "Fitness- und Yogafotografie kann Branding, Coaching, Portfolio, Social Media oder persönliche Entwicklung dokumentieren. Wir richten das Shooting an deinem Ziel aus.", audience: [["Persönliche Meilensteine", "Bilder, die deine aktuelle Form, Entwicklung oder Transformation festhalten."], ["Personal Trainer:innen", "Professionelle Bilder für Website, Coachingprofile, Anzeigen und Social Media."], ["Yoga- und Pilates-Lehrende", "Ruhige, elegante Bilder von Bewegung, Flexibilität und Haltung."], ["Athlet:innen und Wettkämpfer:innen", "Starke Porträts, die Disziplin, Körper und Leistung zeigen."], ["Wellness- und Lifestyle-Marken", "Natürliches, hochwertiges Bildmaterial für Kampagnen und Markenauftritte."]], packages: [{ title: "Kleines Fitness-Fotoshooting", description: "Ein kompakter Einstieg mit einigen starken Bildern", price: "39.000 HUF", features: ["Studio-Miete inklusive", "6 magazinreife Fotos", "ein Outfit", "ein Set", "ein Model"] }, { title: "Mittleres Fitness-Fotoshooting", description: "Eine vielseitige Serie für dein Fitnessprojekt", price: "59.000 HUF", features: ["Studio-Miete inklusive", "15 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "1–2 Models"] }, { title: "Großes Fitness-Fotoshooting", description: "Für kreative Konzepte und umfangreiche Bildserien", price: "79.000 HUF", features: ["Studio-Miete inklusive", "21 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "ein Model bis zur Gruppe"] }], upgradesHeading: "Dein Shooting erweitern", upgradesSubheading: "Buche unser komplettes Kreativteam", upgradesIntro: "Alles bequem in einem Schritt buchen", studioHeading: "Unser Fotostudio in Budapest", studioIntro: "Unser Studio bietet die professionelle, energiegeladene Umgebung, die Fitness- und Sportproduktionen brauchen.", studioBullets: ["Hochwertiges Licht und dynamische Hintergründe", "Entspannter Lounge-Bereich", "Make-up- und Stylingplatz", "Kaffee und Erfrischungen", "Viel Platz für Einzelpersonen, Duos und Teams"], studioTail: "Ob Athlet:innenporträts, Personal-Branding oder Kampagne: Wir schaffen einen reibungslosen Ablauf und Bilder mit Kraft und Charakter." };
+serviceContent.corporate.de = { hero: "Businessporträts in Budapest für Einzelpersonen, Teams und Unternehmen", intro: ["Bei Aether Art Space entstehen professionelle Businessbilder, die dein Unternehmen überzeugend repräsentieren – von Executive-Porträts bis zu Team- und Brandingaufnahmen."], whatHeading: "Was wir für dein Unternehmen erstellen", whatIntro: "Wir klären zunächst Personenzahl, Verwendungszweck und Ort des Shootings. Danach werden die ausgewählten Bilder einheitlich bearbeitet und für Website, LinkedIn, Presse oder interne Profile geliefert.", services: ["LinkedIn- und CV-Porträts", "Executive-, Leadership- und Gründerporträts", "Teamfotos", "Büro- und Lifestylebilder", "Website- und Über-uns-Bilder", "Event- und Teambuildingfotografie"], sections: [["Businessporträts und Teamfotos", "Wir erstellen einen konsistenten, professionellen Auftritt für LinkedIn, Websites, Presse und Employer Branding."], ["Für kleine Teams und große Unternehmen", "Ob Gründerteam, neue Mitarbeitende oder kompletter Fototag: Wir planen das Shooting passend zu Teamgröße und Zeitplan – im Studio oder vor Ort."], ["Einheitlicher Look für alle", "Licht, Hintergrund, Bildausschnitt und Retusche werden abgestimmt, damit alle Porträts zusammenpassen."]], packageHeading: "Unsere Businessfotografie-Pakete", packageLead: "passend zu deinem Bedarf und deiner Unternehmensgröße", packages: [{ title: "Executive-Porträt-Paket", description: "Ausdrucksstarke Porträts passend zu deiner Marke", price: "ab 49.000 HUF / Person", features: ["5 magazinreife Fotos pro Person", "Studio-Miete nach Bedarf"] }, { title: "Kleines Unternehmen", description: "Ideal für 2–10 Personen", price: "ab 89.000 HUF", features: ["Hochwertiges Foto pro Person", "Gruppenfoto", "Studio-Miete nach Bedarf"] }, { title: "Mittleres Unternehmen", description: "Ideal für 10–40 Personen", price: "ab 159.000 HUF", features: ["Hochwertiges Foto pro Person", "Gruppenfoto", "Studio-Miete nach Bedarf"] }, { title: "Großes Unternehmen", description: "Ideal für mehr als 40 Personen", price: "Angebot auf Anfrage", features: ["Hochwertiges Foto pro Person", "Gruppenfoto", "Studio-Miete nach Bedarf"] }, { title: "Büro- und Lifestylebilder", description: "Eine Galerie, die Unternehmenskultur und Arbeitsplatz zeigt", price: "129.000 HUF / halber Tag", features: ["50–100 bearbeitete Fotos vor Ort"] }], studioHeading: "Unser Fotostudio in Budapest", studioIntro: "Unser Studio ist professionell, freundlich und für Businessproduktionen jeder Größe geeignet.", studioBullets: ["Hochwertige Beleuchtung und Fotoequipment", "Gemütlicher Wartebereich", "Make-up- und Stylingplatz", "Kaffee und Erfrischungen", "Flexibler Raum für Einzelpersonen und Gruppen"], studioTail: "Vom Executive-Porträt bis zum kompletten Brandingtag sorgen wir für einen effizienten, angenehmen Ablauf.", approachHeading: "Unser Ansatz", approach: "Wir verbinden kreative Bildsprache mit professioneller Präzision – im Studio oder mit mobilem Setup bei dir vor Ort.", clients: "Unsere Kund:innen", faqHeading: "FAQ", faq: [["Könnt ihr unser gesamtes Team fotografieren?", "Ja. Wir fotografieren kleine Teams ebenso wie größere Gruppen und planen den Zeitablauf im Voraus."], ["Kommt ihr in unser Büro?", "Ja, je nach Projekt kann das Shooting bei euch oder in unserem Studio stattfinden."], ["Können alle Porträts im gleichen Stil entstehen?", "Ja. Wir stimmen Licht, Hintergrund, Ausschnitt und Bearbeitung aufeinander ab."], ["Wie sollen sich Mitarbeitende vorbereiten?", "Am besten mit sauberer, schlichter Kleidung, die zu eurem Markenauftritt passt."], ["Liefert ihr Bilder für LinkedIn und Websites?", "Ja, die finalen Bilder werden in passenden Formaten geliefert."]] };
 
 export const specialImages = {
   glamour: [["glamour-01.jpg", 666, 999], ["glamour-02.jpg", 666, 999], ["glamour-03.jpg", 3923, 4904], ["glamour-04.jpg", 4274, 5343], ["glamour-05.jpg", 1500, 1000], ["glamour-06.jpg", 4191, 5240], ["glamour-07.jpg", 3505, 4381], ["glamour-08.jpg", 1000, 1500], ["glamour-09.jpg", 1000, 1500], ["glamour-10.jpg", 1000, 1500], ["glamour-11.jpg", 1500, 1000], ["glamour-12.jpg", 1500, 1000], ["glamour-13.jpg", 2400, 1600], ["glamour-14.jpg", 1600, 2400]].map(([name, width, height]) => serviceImage(name, width, height, "glamour and boudoir photography in Budapest")).concat(recoveredGlamourImages),
@@ -1173,9 +1467,14 @@ export const specialContent = {
   }
 };
 
+specialContent.glamour.de = { hero: "Elegante und ausdrucksstarke Bilder für private oder gewerbliche Zwecke", intro: ["Bei Aether Art Space entstehen professionelle Glamour-, Boudoir- und Fine-Art-Aktfotos, die Schönheit, Selbstvertrauen und Individualität feiern. Wir schaffen intime, künstlerische und elegante Bilder, die deine Persönlichkeit sichtbar machen."], packageHeading: "Unsere Glamour-, Boudoir- und Fine-Art-Pakete", packageLead: "Studio-Miete in allen Paketen enthalten", firstTimers: "Auch ohne Erfahrung willkommen!", sections: [["Für wen ist das Shooting?", "Für alle, die elegante, intime und selbstbewusste Porträts in einem privaten Budapester Studio möchten. Modelerfahrung ist nicht nötig – wir begleiten dich durch das gesamte Shooting."], ["Was passiert beim Shooting?", "Wir besprechen Stimmung, Outfits, Komfort und Bildideen. Danach führen wir dich bei Posing, Ausdruck und Details sicher durch die Session."], ["Privatsphäre und Komfort", "Du bestimmst deine Grenzen, das Styling und wie sinnlich oder künstlerisch die Bilder wirken. Die Session findet in privater Atmosphäre und deinem Tempo statt."], ["Was ist enthalten?", "Je nach Paket sind Studiozeit, Posing-Anleitung, Lichtsetzung, Outfitwechsel und eine Auswahl bearbeiteter Bilder enthalten."]], studioHeading: "Unser Fotostudio in Budapest", studioIntro: "Unser Studio ist professionell und intim zugleich – ideal für Glamour-, Boudoir- und Fine-Art-Shootings.", studioBullets: ["Hochwertiges Licht, elegante Hintergründe und kreative Sets", "Privater Lounge-Bereich", "Make-up- und Stylingplatz", "Kaffee und Erfrischungen", "Viel Platz für Einzel- und Paarporträts"], studioTail: "Wir schaffen eine sichere, respektvolle und inspirierende Umgebung für ausdrucksstarke Bilder.", faqHeading: "FAQ", faq: [["Brauche ich Erfahrung vor der Kamera?", "Nein. Die meisten Kund:innen sind keine professionellen Models. Wir führen dich während der gesamten Session durch Posing, Ausdruck, Körperhaltung und kleine Anpassungen."], ["Kann ich entscheiden, wie sinnlich die Fotos werden?", "Ja. Vor dem Shooting besprechen wir dein Komfortniveau, deine Grenzen, deinen visuellen Stil und was nicht enthalten sein soll. Während der Session arbeiten wir nur mit Posen und Ideen, die sich für dich richtig anfühlen."], ["Was sollte ich zu einem Glamour- oder Boudoir-Shooting anziehen?", "Bring Outfits mit, in denen du dich selbstbewusst fühlst. Dein Komfort und dein visueller Stil werden vor dem Shooting gemeinsam besprochen."], ["Sind die Bilder privat?", "Ja. Deine Bilder bleiben privat und werden ohne deine Erlaubnis nicht öffentlich geteilt."], ["Werden die Bilder retuschiert?", "Ja. Eine Retusche in Magazinqualität ist bereits in unseren Paketen enthalten."], ["Kann ich die Bilder selbst verkaufen?", "Ja. Du kannst die finalen Bilder selbst nutzen und verkaufen. Wenn du spezielle kommerzielle Lizenz- oder Nutzungsrechte brauchst, können wir das vor dem Shooting besprechen."]] };
+specialContent.models.de = { hero: "Model-Polaroids und Digitals für Einsteiger:innen und Portfolioaufbau", intro: ["Model-Digitals sind der erste Schritt in eine professionelle Modelkarriere. Wir erstellen natürliche, agenturtaugliche Bilder und zeigen dein aktuelles Erscheinungsbild authentisch."], sections: [["Was enthält eine Model-Digitals-Session?", "Wir erstellen klare, agenturtaugliche Digitals, die Gesicht, Körperproportionen, Haltung und natürliche Ausstrahlung zeigen – mit einfachen Porträts, Ganzkörper- und Profilaufnahmen sowie bei Bedarf einigen sauberen Portfoliofotos."], ["Für neue und erfahrene Models", "Geeignet für neue Models bei Agenturbewerbungen, Schauspieler:innen und Performer:innen bei Portfolio-Updates sowie erfahrene Models, die in Budapest frische Digitals brauchen."], ["Was soll ich anziehen?", "Bring schlichte, figurbetonte Kleidung in neutralen Farben mit: ein schwarzes oder weißes Oberteil, Jeans, saubere Schuhe und wenige Accessoires. Natürliches Haar und leichtes Make-up helfen Agenturen, deinen tatsächlichen Look zu beurteilen."], ["Posing-Anleitung inklusive", "Du musst nicht wissen, wie man posiert. Wir führen dich durch entspannte stehende, sitzende, Profil- und Ganzkörperposen, damit die Bilder klar, natürlich und für Agenturen oder Castings gut nutzbar sind."], ["Kostenlose PDF-Modelkarte", "Das ist ein branchenüblicher Standard: eine digitale Karte, die du Kund:innen und Agenturen geben kannst und die vier Fotos sowie deine wichtigsten Maße enthält."], ["" , ""]], packageHeading: "Unsere Pakete für Models und Agenturen", packageLead: "Model-Digitals und Portfolio-Shootings in Budapest", studioHeading: "Unser Fotostudio in Budapest", studioIntro: "Professionelle Ausstattung, vielseitige Hintergründe und eine entspannte Umgebung für deinen Portfolioaufbau.", studioBullets: ["Agenturtaugliches Licht und Equipment", "Freundlicher Lounge-Bereich", "Make-up- und Stylingplatz", "Kaffee und Erfrischungen", "Flexibler Raum für Testshootings und Produktionen"], studioTail: "Wir begleiten dich vom ersten Digitals-Shooting bis zum fertigen Portfolio.", faqHeading: "FAQ", faq: [["Sind Polaroids und Digitals dasselbe?", "Sie sind eng verwandt: Digitals sind natürliche Agenturbilder und werden oft weiterhin Polaroids genannt."], ["Brauche ich Modelerfahrung?", "Nein. Die Session ist für Einsteiger:innen geeignet."], ["Kann ich die Bilder für Agenturbewerbungen nutzen?", "Ja, die Bilder zeigen deinen aktuellen Look klar und natürlich."]] };
+specialContent.pet.de = { hero: "Fotoshootings mit Hunden, Katzen und anderen Haustieren", intro: ["Jedes Haustier verdient es, wie ein Familienmitglied fotografiert zu werden. Unser Budapester Studio bietet eine ruhige, komfortable Umgebung, in der Hunde, Katzen und andere Begleiter:innen vor der Kamera glänzen können. Mit professionellem Licht, Geduld und Kreativität halten wir die einzigartige Persönlichkeit deines Tieres fest – von spielerischer Energie bis zu sanften Momenten – und schaffen zeitlose Porträts, die du viele Jahre schätzen wirst."], packageHeading: "Unsere Tierfotografie-Pakete", packageLead: "Buche ein Shooting für Hund, Katze oder anderes Haustier", studioHeading: "Unser Fotostudio in Budapest", studioIntro: "Wir schaffen eine entspannte und einladende Umgebung, in der sich dein Tier wohl und gut aufgehoben fühlt. Unser Budapester Studio ist vollständig für Tierfotografie ausgestattet – mit Näpfen für frisches Wasser, viel Bewegungsfläche und professioneller Beleuchtung, die jedes Detail deines Tieres hervorhebt. Vor oder nach der Session könnt ihr einen kurzen Spaziergang im nahegelegenen Park machen, damit dein Tier ruhig und entspannt bleibt und die Bilder natürlich und charaktervoll werden.", studioBullets: ["Professionelles Setup – hochwertige Beleuchtung, dynamische Hintergründe und Equipment für Bewegung und klare Details", "Komfort an erster Stelle – ein einladender Lounge-Bereich, in dem sich Menschen und Tiere vor der Session vorbereiten und erholen können", "Kaffee und Erfrischungen – frisches Wasser für Tiere und Kaffee oder Tee für ihre Menschen, denn beide verdienen während der Session eine kleine Aufmerksamkeit", "Viel Platz und Sicherheit – komfortabler Raum für Tiere jeder Größe, auch für dynamische oder spielerische Aufnahmen"], studioTail: "Ob Porträts deines Hundes, deiner Katze oder eines anderen geliebten Begleiters: Unser Studio sorgt für eine reibungslose und angenehme Erfahrung von Anfang bis Ende. Hier kann der einzigartige Charakter deines Tieres in zeitlosen, hochwertigen Bildern sichtbar werden." };
+
 export const mentoringContent = {
   en: { hero: "master studio photography with our 1-on-1 mentoring packages in our photo studio", intro: "At Aether Art Space, our Photography Mentoring program guides you from beginner to confident studio photographer—digital or analogue. Whether you want to master lighting in the studio, direct models, develop film, or perfect post-processing, we’ll walk you through everything step by step in an immersive, hands-on environment designed to accelerate your growth.", priceHeading: "Photographer Mentoring Packages from 99.000.HUF", packages: [{title:"Digital Photography Mentoring Package",description:"If you want to be a confident studio photographer who can handle the entire process of digital photography from beginning to end, this package is for you.",price:"99.000. HUF for 3+1 lessons",includes:["camera, laptop and software if needed","model fee","studio rent"],lessons:[["Lesson #1 - Studio Basics and Ground Work",["How to use the strobes and a digital camera in a studio setting confidently.","How to prepare everything for your photoshoot in Lesson #2"]],["Lesson #2 - Photoshoot with a pro model",["How to handle light and adapt it for different poses","How to instruct the model","How to experiment and pivot live"]],["Lesson #3 - Post-processing and retouching",["How to select your final set of images","Post-processing in Adobe Lightroom","High-end retouching in Adobe Photoshop"]]],free:"+1 - 2 hours for free in the studio"},{title:"Analogue Photography Mentoring Package",description:"If you want to learn how to shoot with film and also develop, scan and post-process the images through a real photoshoot with a professional model, this package is for you.",price:"99.000. HUF for 3 lessons",includes:["camera, laptop and software if needed","chemicals and equipment for developing film","model fee","studio rent"],lessons:[["Lesson #1 - Studio Basics and Ground Work",["How to use the strobes and a film camera in a studio setting confidently.","How to prepare everything for your photoshoot in Lesson #2","How to select a film suitable for your shoot"]],["Lesson #2 - Photoshoot with a pro model",["How to handle light and adapt it for different poses","How to instruct the model","How to experiment and pivot live"]],["Lesson #3 - Developing and post-processing",["How to develop black and white film","How to scan film","How to invert negatives and post-process the images"]]],free:"+1 - 2 hours for free in the studio"}], signHeading:"Sign Up for Mentoring", signBody:"Send us an email if you want to participate in digital or analogue photography mentoring in our studio. If you feel like you need something else, we can tailor our services for your needs!" },
-  hu: { hero: "sajátítsd el a studiófotózást digitális vagy analóg személyes mentorálás csomagjainkkal Budapesti studiónkban", intro: "Az Aether Art Space fotós mentorálás programja segít, hogy a kezdőtől magabiztos stúdiófotóssá válj – digitálisan és analóg módon is. Akár a stúdióvilágítást szeretnéd megtanulni, a modellek irányításában fejlődnél, filmhívást gyakorolnál vagy az utómunkát tökéletesítenéd, lépésről lépésre végigvezetünk egy intenzív, gyakorlati környezetben, ahol gyorsan fejlődhetsz.", priceHeading:"Fotós mentorálás csomagok 99.000.Ft-tól", packages:[{title:"Digitális Fotográfus Mentorálás Csomag",description:"Ha magabiztos stúdiófotós szeretnél lenni, aki az elejétől a végéig kézben tudja tartani a digitális fotózás teljes folyamatát, akkor ez a csomag neked szól.",price:"99.000. HUF / 3 alkalom",includes:["fényképezőgép, laptop és szoftver (ha szükséges)","modell díja","stúdióbérlet"],lessons:[["1. alkalom - Stúdió Alapok és Előkészületek",["Hogyan használd a vakukat és a digitális fényképezőgépet stúdiókörnyezetben magabiztosan","Hogyan készíts elő mindent a 2. órai fotózáshoz"]],["2. alkalom - Fotózás profi modellel",["Hogyan kezeld a fényt és alkalmazd különböző pózokhoz","Hogyan instruáld a modellt","Hogyan kísérletezz és reagálj rugalmasan fotózás közben"]],["3. alkalom - Utómunka és retusálás",["Hogyan válaszd ki a végső képeket","Utómunka Adobe Lightroom programban","Professzionális retusálás Adobe Photoshopban"]]],free:"+1 alkalom - 2 órás önálló fotózás"},{title:"Analóg Fotográfus Mentorálás Csomag",description:"Ha szeretnél megtanulni filmmel fotózni, valamint előhívni, szkennelni és utómunkázni a képeket egy valódi fotózás során profi modellel, akkor ez a csomag neked szól.",price:"99.000. HUF / 3+1 alkalom",includes:["fényképezőgép, laptop és szoftver (ha szükséges)","vegyszerek és eszközök a film előhívásához","modell díja","stúdióbérlet"],lessons:[["1. alkalom - Stúdió Alapok és Előkészületek",["Hogyan használd a vakukat és a filmes fényképezőgépet magabiztosan stúdiókörnyezetben","Hogyan készíts elő mindent a 2. órai fotózáshoz","Hogyan válassz a fotózáshoz megfelelő filmet"]],["2. alkalom - Fotózás profi modellel",["Hogyan kezeld a fényt és alkalmazd különböző pózokhoz","Hogyan instruáld a modellt","Hogyan kísérletezz és reagálj rugalmasan fotózás közben"]],["3. alkalom - Előhívás és utómunka",["Hogyan hívj elő fekete-fehér filmet","Hogyan szkenneld a filmet","Hogyan invertálj negatívokat és végezz utómunkát a képeken"]]],free:"+1 alkalom - 2 órás önálló fotózás"}],signHeading:"Jelentkezz Mentor Programunkra",signBody:"Dobj egy üzenetet emailben, ha szeretnél részt venni mentor programunkon digitális vagy analóg studiós fotózáshoz! Ha nem pont erre van szükséged, szólj és személyre szabjuk neked az ajánlatunkat." }
+  hu: { hero: "sajátítsd el a studiófotózást digitális vagy analóg személyes mentorálás csomagjainkkal Budapesti studiónkban", intro: "Az Aether Art Space fotós mentorálás programja segít, hogy a kezdőtől magabiztos stúdiófotóssá válj – digitálisan és analóg módon is. Akár a stúdióvilágítást szeretnéd megtanulni, a modellek irányításában fejlődnél, filmhívást gyakorolnál vagy az utómunkát tökéletesítenéd, lépésről lépésre végigvezetünk egy intenzív, gyakorlati környezetben, ahol gyorsan fejlődhetsz.", priceHeading:"Fotós mentorálás csomagok 99.000.Ft-tól", packages:[{title:"Digitális Fotográfus Mentorálás Csomag",description:"Ha magabiztos stúdiófotós szeretnél lenni, aki az elejétől a végéig kézben tudja tartani a digitális fotózás teljes folyamatát, akkor ez a csomag neked szól.",price:"99.000. HUF / 3 alkalom",includes:["fényképezőgép, laptop és szoftver (ha szükséges)","modell díja","stúdióbérlet"],lessons:[["1. alkalom - Stúdió Alapok és Előkészületek",["Hogyan használd a vakukat és a digitális fényképezőgépet stúdiókörnyezetben magabiztosan","Hogyan készíts elő mindent a 2. órai fotózáshoz"]],["2. alkalom - Fotózás profi modellel",["Hogyan kezeld a fényt és alkalmazd különböző pózokhoz","Hogyan instruáld a modellt","Hogyan kísérletezz és reagálj rugalmasan fotózás közben"]],["3. alkalom - Utómunka és retusálás",["Hogyan válaszd ki a végső képeket","Utómunka Adobe Lightroom programban","Professzionális retusálás Adobe Photoshopban"]]],free:"+1 alkalom - 2 órás önálló fotózás"},{title:"Analóg Fotográfus Mentorálás Csomag",description:"Ha szeretnél megtanulni filmmel fotózni, valamint előhívni, szkennelni és utómunkázni a képeket egy valódi fotózás során profi modellel, akkor ez a csomag neked szól.",price:"99.000. HUF / 3+1 alkalom",includes:["fényképezőgép, laptop és szoftver (ha szükséges)","vegyszerek és eszközök a film előhívásához","modell díja","stúdióbérlet"],lessons:[["1. alkalom - Stúdió Alapok és Előkészületek",["Hogyan használd a vakukat és a filmes fényképezőgépet magabiztosan stúdiókörnyezetben","Hogyan készíts elő mindent a 2. órai fotózáshoz","Hogyan válassz a fotózáshoz megfelelő filmet"]],["2. alkalom - Fotózás profi modellel",["Hogyan kezeld a fényt és alkalmazd különböző pózokhoz","Hogyan instruáld a modellt","Hogyan kísérletezz és reagálj rugalmasan fotózás közben"]],["3. alkalom - Előhívás és utómunka",["Hogyan hívj elő fekete-fehér filmet","Hogyan szkenneld a filmet","Hogyan invertálj negatívokat és végezz utómunkát a képeken"]]],free:"+1 alkalom - 2 órás önálló fotózás"}],signHeading:"Jelentkezz Mentor Programunkra",signBody:"Dobj egy üzenetet emailben, ha szeretnél részt venni mentor programunkon digitális vagy analóg studiós fotózáshoz! Ha nem pont erre van szükséged, szólj és személyre szabjuk neked az ajánlatunkat." },
+  de: { hero: "lerne Studiofotografie in einem persönlichen Digital- oder Analog-Mentoring in unserem Fotostudio in Budapest", intro: "Im Fotografie-Mentoring von Aether Art Space entwickelst du dich vom Einstieg bis zur souveränen Studiofotografie weiter – digital oder analog. Ob du Studio-Licht setzen, Models anleiten, Film entwickeln oder deine Bildbearbeitung verbessern möchtest: Wir gehen alles Schritt für Schritt in einer intensiven, praxisnahen Umgebung durch.", priceHeading:"Fotografie-Mentoring ab 99.000 Ft", packages:[{title:"Mentoring-Paket Digitale Fotografie",description:"Dieses Paket ist für dich, wenn du den gesamten Prozess der digitalen Studiofotografie sicher von Anfang bis Ende beherrschen möchtest.",price:"99.000 Ft für 3 + 1 Termine",includes:["Kamera, Laptop und Software bei Bedarf","Modelhonorar","Studiomiete"],lessons:[["Termin 1 – Studio-Grundlagen und Vorbereitung",["Studio-Blitze und eine Digitalkamera sicher einsetzen","Alles für das Shooting beim zweiten Termin vorbereiten"]],["Termin 2 – Shooting mit einem Profi-Model",["Licht führen und an unterschiedliche Posen anpassen","Das Model klar anleiten","Während des Shootings experimentieren und flexibel reagieren"]],["Termin 3 – Bildbearbeitung und Retusche",["Die finale Bildauswahl treffen","Bildbearbeitung in Adobe Lightroom","Professionelle Retusche in Adobe Photoshop"]]],free:"+1: 2 Stunden freie Studiozeit"},{title:"Mentoring-Paket Analoge Fotografie",description:"Dieses Paket ist für dich, wenn du bei einem echten Shooting mit einem Profi-Model auf Film fotografieren und die Bilder anschließend entwickeln, scannen und bearbeiten möchtest.",price:"99.000 Ft für 3 Termine",includes:["Kamera, Laptop und Software bei Bedarf","Chemie und Ausrüstung für die Filmentwicklung","Modelhonorar","Studiomiete"],lessons:[["Termin 1 – Studio-Grundlagen und Vorbereitung",["Studio-Blitze und eine Filmkamera sicher einsetzen","Alles für das Shooting beim zweiten Termin vorbereiten","Den passenden Film für dein Shooting auswählen"]],["Termin 2 – Shooting mit einem Profi-Model",["Licht führen und an unterschiedliche Posen anpassen","Das Model klar anleiten","Während des Shootings experimentieren und flexibel reagieren"]],["Termin 3 – Entwicklung und Bildbearbeitung",["Schwarzweißfilm entwickeln","Film scannen","Negative invertieren und die Bilder bearbeiten"]]],free:"+1: 2 Stunden freie Studiozeit"}],signHeading:"Für das Mentoring anmelden",signBody:"Schreib uns eine E-Mail, wenn du am Mentoring für digitale oder analoge Fotografie teilnehmen möchtest. Falls du etwas anderes brauchst, stellen wir das Angebot gern auf deine Ziele zusammen." }
 };
 
 export const seasonalContent = {
@@ -1231,6 +1530,9 @@ export const seasonalContent = {
   }
 };
 
+seasonalContent.photoshoot.de = { hero: "Festliche Weihnachtsfotografie für Familien, Paare und alle, die besondere Bilder wünschen", introHeading: "Weihnachtsfotos mit Wärme und Stil", intro: "Unser weihnachtlich dekoriertes Studio in Budapest bietet den perfekten Rahmen für Familien-, Paar- und Einzelporträts. Mit professionellem Licht und liebevollen Details entstehen natürliche, hochwertige Bilder.", packageHeading: "Unsere Weihnachts-Fotoshooting-Pakete", packageLead: "Wähle das passende Paket für dein Weihnachtsshooting", studioHeading: "Unser Studio in Budapest", studioIntro: "Unser Studio verbindet professionelle Ausstattung mit einer gemütlichen, festlichen Atmosphäre.", studioBullets: ["Professionelles Setup – hochwertige Beleuchtung, kreative Hintergründe und alles, was für schöne Weihnachtsporträts nötig ist", "Komfort an erster Stelle – ein gemütlicher Lounge-Bereich zum Entspannen und Einstimmen auf die Feiertage", "Make-up- und Stylingplatz – ein gut beleuchteter Bereich für letzte Auffrischungen und die Vorbereitung", "Lebkuchen, Tee und Vinyl-Musik – süße Leckereien, heißer Tee und festliche Musik von unserem Vintage-Plattenspieler schaffen die richtige Stimmung", "Viel Platz und Flexibilität – für Familien, Paare und individuelle Weihnachtsporträts"], studioTail: "Ob Familienbilder, Paarporträts oder saisonale Kampagnen: Wir sorgen für eine entspannte Erfahrung und zeitlose Weihnachtsfotos." };
+seasonalContent.studio.de = { hero: "Professionell dekoriertes Weihnachtsstudio in Budapest – perfekt für saisonale Fotoshootings.", introHeading: "Festlicher Raum für eure Weihnachtsfotos", intro: "Unser komplett ausgestattetes und weihnachtlich dekoriertes Studio liegt im Herzen Budapests. Von gemütlichen Sets und festlichen Requisiten bis zu professionellem Licht ist alles vorbereitet.", introBullets: ["Weihnachtsdeko mit zwei Bäumen, Lichterketten und Requisiten", "Professionelles Licht, Hintergründe und wichtiges Equipment", "Flexible Buchung für einzelne Sessions oder ganze Tage", "Zentrale Lage mit viel Platz"], decorationHeading: "Mit unserer aktuellen Dekoration fotografiert", sectionHeading: "Alles für ein entspanntes Weihnachtsshooting", sectionIntro: "Wir haben jedes Detail vorbereitet, damit du dich auf deine Bilder konzentrieren kannst.", sectionBullets: ["Festliche Deko: zwei Weihnachtsbäume, Geschenkboxen, Kränze und gemütliche Möbel", "Professionelles Equipment: Softboxen, Hintergründe und Reflektoren", "Schnelles WLAN zum Verbinden und Teilen", "Umkleide und Wartebereich", "Requisiten für Familien, Paare und Einzelporträts"], packageIntro: "Wähle aus flexiblen Mietpaketen die passende Dauer für deine Weihnachtssession.", contactHeading: "Buche das Weihnachtsstudio", contactBody: "Unser Weihnachtsstudio ist in der Saison schnell ausgebucht. Sichere dir jetzt deinen Wunschtermin – bei besonderen Wünschen oder zusätzlichem Equipment helfen wir gern." };
+
 export const seasonalImages = {
   photoshoot: [
     { src: "/images/wix/seasonal/christmas-01.jpg", width: 1868, height: 2802, alt: "Christmas photoshoot with a couple", title: "Piller family at Christmas", description: "Yearly Christmas family photoshoot in the studio" },
@@ -1276,6 +1578,9 @@ export const profileContent = {
     hu: { name: "Kulcsár-Horváth Alexandra", hero: "esküvői, portré- és lifestyle fotós", intro: ["Alexandra Budapesten készít természetes, őszinte képeket, amelyek megőrzik a kamera előtt álló emberek és pillanatok valódi hangulatát.", "Esküvőfotózásra, valamint üzleti, társkereső és személyes célú természetes portrékra specializálódott. Lifestyle történeteket és kisállatfotózást is vállal, mindig figyelmesen keresve az őszinte kapcsolódás pillanatait.", "Alexandra nyugodtan és együttműködően dolgozik, hogy ügyfelei a fotózás teljes ideje alatt komfortosan és magabiztosan érezzék magukat. Akár egy esküvői napot dokumentál, akár stúdióportrét készít, azokra a részletekre figyel, amelyek minden történetet személyessé tesznek."], genresHeading: "Alexandra elérhető fotózásokhoz az alábbi műfajokban:", genres: ["esküvő", "portré", "lifestyle", "üzleti", "kisállat", "párok és családok"], socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }] }
   }
 };
+
+profileContent.daniel.de = { name: "Dániel Z. Aczél", hero: "Studiofotograf und Inhaber", intro: ["In seinem Budapester Fotostudio schafft Dániel Bilder zwischen persönlichem Ausdruck, Intimität und mutiger Vision.", "Er arbeitet in Porträt-, Glamour-, Boudoir-, Akt-, Fitness- und konzeptueller Fotografie – digital und analog, im Studio oder on location.", "Seine Shootings basieren auf Zusammenarbeit, klarer Kommunikation, Respekt und Einverständnis. Besonders Einsteiger:innen begleitet er sicher und aufmerksam.", "Neben Auftragsarbeiten veröffentlicht Dániel Fine-Art-Bücher und limitierte Editionen. Sein Projekt BLACK umfasst 168 Seiten dunkler Studiofotografie.", "Kund:innen schätzen seine Professionalität, Freundlichkeit und konstant hochwertige Ergebnisse. Auch Reiseaufträge übernimmt er gern."], genresHeading: "Dániel arbeitet in diesen Genres:", genres: ["Fine-Art-Akt", "Glamour und Boudoir", "Porträt", "Fitness", "Kreativ", "Produkt und Werbung"], website: "aczel.pictures", websiteUrl: "https://aczel.pictures/", socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/aczel_aethereal" }, { type: "x", label: "X", href: "https://x.com/aczel_pictures" }] };
+profileContent.alexandra.de = { name: "Alexandra Kulcsár-Horváth", hero: "Hochzeits-, Porträt- und Lifestylefotografin", intro: ["Alexandra arbeitet in Budapest und schafft natürliche, ehrliche Bilder, die die Stimmung von Menschen und Momenten bewahren.", "Sie ist auf Hochzeiten sowie entspannte Business-, Dating- und persönliche Porträts spezialisiert. Außerdem fotografiert sie Lifestylegeschichten und Haustiere mit einem aufmerksamen Blick für echte Verbindungen.", "Alexandra arbeitet ruhig und kollaborativ und gibt dir Sicherheit vor der Kamera. Sie achtet auf die Details, die jede Geschichte persönlich machen."], genresHeading: "Alexandra arbeitet in diesen Genres:", genres: ["Hochzeit", "Porträt", "Lifestyle", "Business", "Tiere", "Paare und Familien"], socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/aurea_fotografia_/" }] };
 
 export const profileImages = {
   daniel: {
@@ -1389,6 +1694,11 @@ export const postBookingContent = {
   }
 };
 
+postBookingContent.de = {
+  intro: "Wir bestätigen deinen Termin innerhalb von 24 Stunden per E-Mail.", rulesHeading: "Wichtige Hinweise:", closing: ["Danke, dass du uns hilfst, das Studio sauber und reibungslos zu betreiben.", "Bis bald!"],
+  sections: [["Stornierungen und Änderungen", ["Für eine Stornierung oder Umbuchung kontaktiere uns bitte per E-Mail oder Telefon.", "Stornierungen mehr als 24 Stunden, aber innerhalb von sieben Tagen vor dem Shooting werden mit 50 % der Mietgebühr berechnet.", "Bei einer Stornierung innerhalb von 24 Stunden fällt die volle Gebühr an."]], ["Zahlung", ["Du zahlst vor Ort bar oder mit Karte.", "Banküberweisungen akzeptieren wir nicht.", "Eine offizielle Rechnung mit Mehrwertsteuer erhältst du vor Ort."]], ["Ankunft", ["Deine Buchung beginnt zur reservierten Zeit. Wenn du früher kommst und das Studio geöffnet ist, kannst du bei einem Kaffee warten.", "Ist das Studio frei, kannst du früher beginnen oder stundenweise verlängern.", "Auf- und Abbau gehören zur Buchungszeit. Bitte hinterlasse das Studio so, wie du es vorgefunden hast.", "Assistenz ist für 4.000 HUF pro Stunde verfügbar."]]]
+};
+
 export const weddingContent = {
   en: {
     hero: "Natural, elegant wedding photos—from getting ready to the last dance",
@@ -1406,6 +1716,21 @@ export const weddingContent = {
   hu: {
     hero: "lenyűgöző képek különböző stílusokban személyre szabva", intro: "Az Aether Art Space professzionális glamour, boudoir és fine art akt fotózásra specializálódott, amely a szépséget, az önbizalmat és az egyediséget ünnepli. Legyen szó intim boudoir portrékról, művészi képekről vagy elegáns glamour fotózásról, kifinomult, magas minőségű vizuális anyagokat készítünk, amelyek kiemelik az egyedi lényeged és időtálló művészetté alakítják a víziód.", glanceHeading: "Wedding Photography at a Glance", glanceIntro: "Flexible wedding photography for intimate ceremonies, celebrations and complete wedding days in Budapest and throughout Hungary.", glance: ["Two photographers included in every package", "Up to 10 hours of wedding-day coverage", "100–1,000 edited photographs, depending on the package", "Sneak peek within one week", "Complete private gallery within one month", "Travel included within 50 km of Budapest", "Digital and analogue photography available", "Packages tailored after a personal consultation"], packagesHeading: "Glamour, Boudoir és Művészi Fotózás Csomagjaink", packagesIntro: "minden csomag tartalmazza a studióbérlést is", buildHeading: "Build Your Wedding Photography Coverage", buildIntro: "Start with one of our wedding photography packages, then tailor the coverage to your celebration. During your consultation, we help you choose the moments and optional services that matter most to you.", coverage: [["Preparations Pictures", "Natural behind-the-scenes coverage of the morning preparations, from final details and getting ready to the anticipation before the ceremony.", "included in the Full Wedding Day Package"], ["Creative Couple Portraits", "A relaxed portrait session for the two of you, creating romantic, editorial images that feel personal, intimate, and beautifully composed.", "included in the Full Wedding Day Package"], ["Ceremony Pictures", "Timeless photographs of your ceremony, capturing the vows, emotions, details, and quiet in-between moments that make it yours.", "included in every package"], ["Reception Photography", "Warm, candid coverage of your reception, including greetings, speeches, dinner moments, decorations, and the atmosphere of the celebration.", "included from the Ceremony & Celebration Package"], ["Group & Family Portraits", "Beautifully arranged family and guest portraits, photographed with care so everyone important to you is remembered.", "included in every package"], ["Party Photography", "Energetic coverage of the evening celebration, from the first dance to the dance floor, laughter, movement, and late-night memories.", "included from the Ceremony & Celebration Package"]], optionalHeading: "Optional Photography Sessions", optionalIntro: "Additional sessions and formats to make your wedding collection even more personal.", options: [["Engagement Photoshoot", "A relaxed portrait session before your wedding, creating natural, romantic images while helping you feel comfortable together in front of the camera.", "add this to any package for 59.000. HUF"], ["Bridal Boudoir Photography", "An elegant, intimate bridal portrait session created with sensitivity, confidence, and a refined editorial touch.", "add this to any package for 59.000. HUF"], ["Analogue Wedding Photography", "Analogue photographs bring rich tones and a nostalgic quality, creating distinctive images that feel intimate, authentic and beautifully imperfect.", "add to any package for 39.000. HUF"], ["Polaroid Camera Rental", "Let your guests capture spontaneous moments and create instant keepsakes throughout the celebration with a classic instant camera.", "add to any package for 59.000. HUF"], ["Selfie Corner Rental", "A self-service photo area where guests can take relaxed, playful portraits throughout the celebration without a photographer.", "add to any package for 69.000. HUF"]], photographersHeading: "Meet Your Wedding Photographers", photographersIntro: "Two distinct personalities. Two different perspectives. One shared vision.", photographers: [["Alexandra Kulcsár-Horváth", "Wedding, portrait and lifestyle photographer", "Alexandra brings a sensitive, intuitive approach to wedding photography."], ["Dániel Z. Aczél", "Photographer and founder of Aether Art Space", "Dániel combines precise composition and creative lighting with an editorial perspective."]], approachHeading: "Our Approach to Your Wedding Day", approachIntro: "Thoughtful photography that lets you stay present in the moment.", testimonialHeading: "Testimonials", testimonialIntro: "Kind words from couples we’ve photographed", testimonial: "Szandi did an amazing job photographing our wedding day. From our very first contact, she was flexible, supportive, and genuinely invested in making sure everything ran smoothly. Through multiple planning meetings, we worked together to finalise all the logistics, and she always made us feel heard and confident about our choices.\nOn the day itself, we particularly appreciated her ideas around timing, posing, and scene selection. Her calm communication and clear directions helped us relax in front of the camera, and she captured moments we didn’t even realise were happening. The result is a gallery that feels natural, emotional, and true to us.\nWe couldn’t recommend Szandi highly enough to any couple looking for a photographer who is both talented and incredibly easy to work with.", testimonialName: "Martin & Chris", processHeading: "How to Book Your Wedding Photography", processIntro: "A simple, personal process from your first message to the final gallery.", formHeading: "Tell Us About Your Wedding", formIntro: "Let’s create a photography package around your plans", formBody: "Planning a wedding in Budapest or elsewhere in Hungary? Send us your date, venue and a few details about your celebration. We will check availability and prepare a photography offer tailored to your plans."
   }
+};
+
+weddingContent.de = { ...weddingContent.en,
+  hero: "Natürliche, elegante Hochzeitsfotos – vom Getting Ready bis zum letzten Tanz",
+  intro: "Wir fotografieren Hochzeiten mit einer Mischung aus ehrlichen Reportage-Momenten und stilvollen Porträts. Von Budapest aus begleiten wir euch in ganz Ungarn und bewahren die Atmosphäre, Gefühle und Details eurer Feier.",
+  subIntro: "Flexible Begleitung für intime Zeremonien, komplette Hochzeitstage und Feiern in ganz Ungarn.",
+  glanceHeading: "Hochzeitsfotografie auf einen Blick", glanceIntro: "Flexible Hochzeitsfotografie für intime Zeremonien, Feiern und komplette Hochzeitstage in Budapest und ganz Ungarn.",
+  glance: ["Zwei Fotograf:innen in jedem Paket", "Bis zu 10 Stunden Begleitung", "100–1.000 bearbeitete Fotos je nach Paket", "Sneak Peek innerhalb einer Woche", "Private Komplettgalerie innerhalb eines Monats", "Anfahrt bis 50 km von Budapest inklusive", "Digitale und analoge Fotografie möglich", "Pakete nach persönlicher Beratung"],
+  packagesHeading: "Unsere Hochzeitsfotografie-Pakete", packagesIntro: "Pakete für intime Zeremonien, komplette Hochzeitstage, kreative Brautporträts und After-Wedding-Shootings.",
+  buildHeading: "Stellt eure Hochzeitsbegleitung zusammen", buildIntro: "Beginnt mit einem Paket und passt die Begleitung an eure Feier an. In der Beratung helfen wir euch, die wichtigsten Momente und Extras auszuwählen.",
+  coverage: [["Getting-Ready-Fotos", "Natürliche Einblicke in die Vorbereitungen am Morgen – von den letzten Details bis zur Vorfreude vor der Zeremonie.", "im Paket Ganzer Hochzeitstag enthalten"], ["Kreative Paarporträts", "Eine entspannte Porträtsession für euch beide mit romantischen, persönlichen und stilvoll komponierten Bildern.", "im Paket Ganzer Hochzeitstag enthalten"], ["Zeremoniefotos", "Zeitlose Bilder von Gelübden, Emotionen und den stillen Momenten dazwischen.", "in jedem Paket enthalten"], ["Reportage der Feier", "Warme, ungestellte Bilder von Empfang, Reden, Dinner, Dekoration und Atmosphäre.", "ab dem Paket Zeremonie & Feier enthalten"], ["Gruppen- und Familienporträts", "Sorgfältig arrangierte Porträts mit den Menschen, die euch wichtig sind.", "in jedem Paket enthalten"], ["Partyfotos", "Energiegeladene Bilder vom ersten Tanz bis zur Tanzfläche und den Erinnerungen der Nacht.", "ab dem Paket Zeremonie & Feier enthalten"]],
+  optionalHeading: "Optionale Shootings", optionalIntro: "Zusätzliche Formate für eine noch persönlichere Hochzeitskollektion.",
+  options: [["Engagement-Shooting", "Eine entspannte Porträtsession vor der Hochzeit – romantische Bilder und mehr Sicherheit vor der Kamera.", "zu jedem Paket für 59.000 HUF zubuchbar"], ["Bridal-Boudoir-Fotografie", "Eine elegante, intime Brautporträtsession mit Sensibilität und editorialem Stil.", "zu jedem Paket für 59.000 HUF zubuchbar"], ["Analoge Hochzeitsfotografie", "Analoge Bilder mit satten Tönen und nostalgischer, authentischer Anmutung.", "zu jedem Paket für 39.000 HUF zubuchbar"], ["Polaroid-Kamera mieten", "Eure Gäste halten spontane Momente als Sofortbilder fest.", "zu jedem Paket für 59.000 HUF zubuchbar"], ["Selfie-Ecke mieten", "Ein Self-Service-Fotobereich für spielerische Porträts ohne Fotograf:in.", "zu jedem Paket für 69.000 HUF zubuchbar"]],
+  photographersHeading: "Lernt eure Hochzeitsfotograf:innen kennen", photographersIntro: "Zwei Persönlichkeiten. Zwei Perspektiven. Eine gemeinsame Vision. Wir achten auf unterschiedliche Details und reagieren auf unterschiedliche Momente. Gemeinsam erzählen wir eine reichere, vollständigere Geschichte eurer Hochzeit – und geben euch zugleich die Freiheit, den Tag ganz natürlich zu erleben.", photographers: [["Alexandra Kulcsár-Horváth", "Hochzeits-, Porträt- und Lifestylefotografin", "Alexandra arbeitet einfühlsam und intuitiv und achtet auf natürliche Ausdrücke und leise, leicht übersehene Momente."], ["Dániel Z. Aczél", "Fotograf und Gründer von Aether Art Space", "Dániel verbindet präzise Komposition und kreatives Licht mit einer editoriellen Perspektive – digital und analog."]],
+  approachHeading: "Unser Ansatz für euren Hochzeitstag", approachIntro: "Aufmerksame Fotografie, damit ihr im Moment bleiben könnt.", testimonialHeading: "Stimmen unserer Paare", testimonialIntro: "Liebe Worte von Paaren, die wir fotografiert haben.", processHeading: "So bucht ihr eure Hochzeitsfotografie", processIntro: "Ein persönlicher, unkomplizierter Weg von der ersten Nachricht bis zur Galerie.", formHeading: "Erzählt uns von eurer Hochzeit", formIntro: "Wir stellen ein Paket rund um eure Pläne zusammen.", formBody: "Plant ihr eine Hochzeit in Budapest oder anderswo in Ungarn? Schickt uns Datum, Ort und ein paar Details. Wir prüfen die Verfügbarkeit und erstellen ein passendes Angebot."
 };
 
 const weddingPackages = [
@@ -1507,6 +1832,19 @@ Object.assign(weddingContent.hu, {
 });
 
 Object.assign(weddingContent.en, { packageCards: weddingPackages, includedHeading: "Included With Every Wedding Package", included: weddingIncluded, approach: weddingApproach, process: weddingProcess, faqHeading: "Wedding Photography FAQ", faq: weddingFaq });
+Object.assign(weddingContent.de, {
+  packageCards: [
+    { titleLines: ["Zeremonie", "Fotografie-Paket"], description: "Hochwertige Fotos eurer Zeremonie – in der Kirche, an einem privaten Ort oder an eurer Wunschlocation.", price: "109.000 HUF", features: ["Zeremonie", "Gruppenfotos", "2 Fotograf:innen", "bis zu 2 Stunden", "ein Ort", "100–300 Fotos", "Anfahrt bis 50 km inklusive"] },
+    { titleLines: ["Zeremonie & Feier", "Fotografie-Paket"], description: "Stimmungsvolle Bilder eurer wichtigsten Momente – von der Zeremonie bis zur Party.", price: "269.000 HUF", features: ["Zeremonie", "Gruppenfotos", "Empfang", "Party", "2 Fotograf:innen", "bis zu 6 Stunden", "bis zu 2 Orte", "400–800 Fotos", "Anfahrt bis 50 km inklusive"] },
+    { titleLines: ["Ganzer Hochzeitstag", "Paket"], description: "Eine umfassende Begleitung mit Vorbereitungen, Zeremonie, Feier und kreativer Paarporträtsession.", price: "319.000 HUF", features: ["Zeremonie", "Gruppenfotos", "Empfang", "Party", "Vorbereitungen", "kreative Paarporträts", "2 Fotograf:innen", "bis zu 10 Stunden", "mehrere Orte", "600–1.000 Fotos", "Anfahrt bis 50 km inklusive"] }
+  ],
+  includedHeading: "In jedem Hochzeitspaket enthalten",
+  included: [["Kostenlose Beratung", "Wir lernen euch kennen und besprechen eure Pläne vor dem persönlichen Angebot."], ["Schnelle Lieferung", "Ein Sneak Peek kommt innerhalb einer Woche, die vollständige Galerie innerhalb eines Monats."], ["Private Online-Galerie", "Ihr erhaltet eure Bilder digital in einer privaten Galerie zum Ansehen, Herunterladen und Teilen."], ["Hochwertige Fotos", "Jedes Bild wird sorgfältig ausgewählt, professionell bearbeitet und hochauflösend geliefert."]],
+  approach: [["Echte Momente", "Wir halten ehrliche Ausdrücke und Begegnungen fest, ohne eure Hochzeit in Posen zu verwandeln."], ["Elegante Porträts", "Mit ruhiger Anleitung entstehen stilvolle Porträts von euch und eurer Familie."], ["Unaufdringliche Präsenz", "Wir bleiben aufmerksam, ohne den Tag zu übernehmen, damit ihr ihn bewusst erleben könnt."]],
+  process: [["Datum und Ort senden", "Schickt uns Datum und Ort eurer Hochzeit."], ["Begleitung planen", "In einem persönlichen Gespräch besprechen wir Ablauf, Prioritäten und Paket."], ["Buchung bestätigen", "Nehmt das Angebot an und zahlt die vereinbarte Anzahlung."], ["Galerie erhalten", "Eure Bilder werden ausgewählt, bearbeitet und in einer privaten Galerie geliefert."]],
+  testimonial: "Szandi hat unseren Hochzeitstag großartig fotografiert. Von unserem ersten Kontakt an war sie flexibel, unterstützend und ehrlich daran interessiert, dass alles reibungslos abläuft. In mehreren Planungsgesprächen haben wir gemeinsam alle Details festgelegt, und sie gab uns stets das Gefühl, gehört zu werden und sicher entscheiden zu können.\n\nAm Tag selbst schätzten wir besonders ihre Ideen zu Timing, Posing und Bildkomposition. Ihre ruhige Kommunikation und klaren Anweisungen halfen uns, vor der Kamera zu entspannen. Gleichzeitig hielt sie Momente fest, von denen wir gar nicht bemerkt hatten, dass sie passierten. Die Galerie fühlt sich natürlich, emotional und ganz nach uns an.\n\nWir können Szandi jedem Paar, das eine talentierte und unkomplizierte Fotografin sucht, wärmstens empfehlen.",
+  faqHeading: "FAQ zur Hochzeitsfotografie", faq: [["Fotografiert ihr auch außerhalb von Budapest?", "Ja. Wir begleiten Hochzeiten in ganz Ungarn; schickt uns einfach den Veranstaltungsort."], ["Sind zwei Fotograf:innen in jedem Paket enthalten?", "Ja, jedes Hochzeitspaket umfasst zwei Fotograf:innen."], ["Können wir das Paket anpassen?", "Ja. Wir stimmen Umfang und Extras in einer persönlichen Beratung auf eure Feier ab."], ["Welche Teile des Hochzeitstags fotografiert ihr?", "Je nach Paket fotografieren wir Vorbereitungen, Zeremonie, Porträts, Empfang und Party."], ["Bietet ihr analoge Hochzeitsfotografie an?", "Ja. Ausgewählte Momente können zusätzlich auf 35-mm-Film entstehen."], ["Können wir ein separates Paarshooting buchen?", "Ja, als Engagement- oder After-Wedding-Shooting im Studio oder an einem passenden Ort."], ["Bietet ihr Bridal-Boudoir-Fotografie an?", "Ja, diese Session kann diskret zum Hochzeitspaket hinzugebucht werden."], ["Wie würdet ihr euren Stil beschreiben?", "Natürliche Reportagefotografie kombiniert mit eleganten, sorgfältig komponierten Porträts."], ["Wie wählen wir das passende Paket?", "Schickt uns Datum, Ort und euren ungefähren Ablauf; danach empfehlen wir euch das passende Paket."], ["Wie reservieren wir unseren Hochzeitstermin?", "Schreibt uns zur Verfügbarkeitsprüfung. Nach Annahme des Angebots und der Anzahlung ist der Termin reserviert."]]
+});
 
 export const weddingImages = [
   { src: "/images/wix/wedding/wedding-01.jpg", width: 1500, height: 1000, alt: "Wedding photography in Hungary" },
@@ -1602,6 +1940,20 @@ export const legalContent = {
   hu: { lastUpdated: "Frissítve: 2026. szeptember 10.", intro: "Ez az adatkezelési tájékoztató bemutatja, hogyan kezeli az aether art space a személyes adatokat a weboldal használata, a kapcsolatfelvétel és a foglalás indítása során. A rendelkezésedre álló választási lehetőségeket és jogaidat is ismerteti.", sections: [...privacySectionsHu.slice(0, 0), ...currentPrivacySectionsHu] }
 };
 
+legalContent.de = {
+  lastUpdated: "Zuletzt aktualisiert: 10. September 2026",
+  intro: "Diese Datenschutzerklärung erläutert, wie aether art space personenbezogene Daten verarbeitet, wenn du diese Website nutzt, uns kontaktierst oder eine Buchung startest. Sie beschreibt auch deine Wahlmöglichkeiten und Rechte.",
+  sections: [
+    ["Verantwortlicher und Geltungsbereich", ["Verantwortlich für die Verarbeitung personenbezogener Daten über diese Website ist aether art space, Budapest, Tátra utca 29b. Du erreichst uns unter photostudio.aether@gmail.com.", "Diese Erklärung gilt für studioaether.com, Kontaktanfragen über die Website und Buchungen, die hier gestartet werden."]],
+    ["Welche Daten wir verarbeiten und warum", ["Wenn du uns kontaktierst, verarbeiten wir deinen Namen, deine E-Mail-Adresse und deine Nachricht, um dir zu antworten. Rechtsgrundlage ist die Durchführung vorvertraglicher, auf deine Anfrage hin ergriffener Maßnahmen oder unser berechtigtes Interesse an der Beantwortung geschäftlicher Anfragen.", "Bei einer Buchung wird der Termin in Cal.com abgeschlossen. Die dort eingegebenen Daten verwenden wir zur Organisation und Verwaltung deines Termins sowie für die damit verbundene Kundenkommunikation. Rechtsgrundlage ist die Vertragserfüllung oder die Durchführung vorvertraglicher, auf deine Anfrage hin ergriffener Maßnahmen.", "Hosting- und Sicherheitssysteme können begrenzte technische Daten wie IP-Adresse, Browser- und Serverprotokolldaten verarbeiten, um die Website bereitzustellen, Missbrauch zu verhindern und sie zu schützen. Rechtsgrundlage ist unser berechtigtes Interesse am sicheren Betrieb der Website."]],
+    ["Dienstleister und externe Links", ["Für Kontaktformulare nutzen wir Web3Forms, für Online-Buchungen Cal.com. Diese Anbieter verarbeiten Daten nach ihren eigenen Datenschutzbestimmungen und können Daten außerhalb des Europäischen Wirtschaftsraums unter den in ihrer Dokumentation beschriebenen Schutzmaßnahmen verarbeiten.", "Links zu sozialen Netzwerken, Google Maps und anderen Websites unterliegen den Datenschutzbestimmungen der jeweiligen Anbieter. Auf deren Datenverarbeitung haben wir keinen Einfluss."]],
+    ["Cookies und Analyse", ["Die Website speichert ein kleines Präferenz-Cookie, wenn du eine Cookie-Auswahl triffst. Es hält fest, ob optionale Analyse- und Werbespeicherung erlaubt ist, und bleibt bis zu 180 Tage gespeichert.", "Falls Google-Mess-Tags auf der Website aktiviert sind, ist die Analyse- und Werbespeicherung standardmäßig deaktiviert. Optionale Messung wird erst aktiviert, wenn du im Cookie-Hinweis „Alle akzeptieren“ auswählst. Diese Auswahl kannst du jederzeit über die Cookie-Einstellungen in der Fußzeile ändern."]],
+    ["Aufbewahrung und Sicherheit", ["Wir bewahren Kontakt- und Buchungsdaten nur so lange auf, wie es für die Bearbeitung, die Leistungserbringung, Streitigkeiten oder gesetzliche Pflichten erforderlich ist.", "Wir treffen angemessene technische und organisatorische Maßnahmen zum Schutz deiner Daten. Eine vollständige Sicherheit im Internet kann jedoch nicht garantiert werden."]],
+    ["Deine Rechte", ["Du kannst unter den gesetzlichen Voraussetzungen Auskunft, Berichtigung, Löschung, Einschränkung oder Widerspruch verlangen. Bei Verarbeitung auf Grundlage einer Einwilligung kannst du diese jederzeit widerrufen. Soweit anwendbar, kannst du außerdem die Übertragbarkeit deiner Daten verlangen.", "Schreib dazu an photostudio.aether@gmail.com. Außerdem kannst du dich bei der ungarischen Datenschutzaufsicht, der Nationalen Behörde für Datenschutz und Informationsfreiheit (NAIH), beschweren."]],
+    ["Änderungen dieser Erklärung", ["Wir können diese Erklärung aktualisieren, wenn sich unsere Praxis oder rechtliche Pflichten ändern. Die aktuelle Fassung wird immer auf dieser Seite veröffentlicht."]]
+  ]
+};
+
 export const homeImages = {
   hero: { source: "/wix-recovered/hero-main-people.jpg", src: "/hero-main-people.jpg", width: 5750, height: 3833, alt: "aether art space photo studio in Budapest" },
   icon: { src: "/images/wix/jpg/logo-icon.jpg", width: 450, height: 436, alt: "aether art space logo icon" },
@@ -1621,10 +1973,10 @@ export const homeImages = {
     wixLiveGalleryImage("94c0c9_ee1a10c86e754d76a6e8de8e80f78a6f~mv2.jpg", 1000, 1500, "creative work in the aether art space photo studio")
   ],
   artists: [
-    { src: "/images/wix/reference/artist-photographers.jpg", width: 362, height: 362, alt: "resident photographer", altHu: "rezidens fotós" },
-    { src: "/images/wix/reference/artist-models.jpg", width: 362, height: 362, alt: "resident photomodel", altHu: "rezidens fotómodell" },
-    { src: "/images/wix/reference/artist-makeup.jpg", width: 362, height: 362, alt: "resident make-up artist", altHu: "rezidens sminkes" },
-    { src: "/images/wix/reference/artist-stylists.jpg", width: 362, height: 362, alt: "resident stylist", altHu: "rezidens stylist" }
+    { src: "/images/wix/reference/artist-photographers.jpg", width: 362, height: 362, alt: "resident photographer", altHu: "rezidens fotós", altDe: "ansässige:r Fotograf:in" },
+    { src: "/images/wix/reference/artist-models.jpg", width: 362, height: 362, alt: "resident photomodel", altHu: "rezidens fotómodell", altDe: "ansässiges Fotomodel" },
+    { src: "/images/wix/reference/artist-makeup.jpg", width: 362, height: 362, alt: "resident make-up artist", altHu: "rezidens sminkes", altDe: "ansässige:r Make-up-Artist" },
+    { src: "/images/wix/reference/artist-stylists.jpg", width: 362, height: 362, alt: "resident stylist", altHu: "rezidens stylist", altDe: "ansässige:r Stylist:in" }
   ],
   photographers: [
     { src: "/images/wix/reference/service-commercial.jpg", width: 300, height: 298, alt: "commercial and product photography" },
@@ -1636,9 +1988,9 @@ export const homeImages = {
     { src: "/images/wix/wedding/wedding-01.jpg", width: 1500, height: 1000, alt: "wedding photography in Budapest and Hungary" }
   ],
   booking: [
-    { src: "/images/wix/reference/booking-photo-studio.jpg", width: 640, height: 382, alt: "aether photo studio interior", altHu: "az aether fotóstúdió belső tere" },
-    { src: "/images/wix/reference/booking-selfie-studio.jpg", width: 640, height: 382, alt: "aether selfie studio", altHu: "az aether szelfi stúdió" },
-    { src: "/images/wix/reference/booking-contact.jpg", width: 640, height: 382, alt: "photoshoot in the aether studio", altHu: "fotózás az aether stúdióban" }
+    { src: "/images/wix/reference/booking-photo-studio.jpg", width: 640, height: 382, alt: "aether photo studio interior", altHu: "az aether fotóstúdió belső tere", altDe: "Innenraum des aether-Fotostudios" },
+    { src: "/images/wix/reference/booking-selfie-studio.jpg", width: 640, height: 382, alt: "aether selfie studio", altHu: "az aether szelfi stúdió", altDe: "aether Selfie-Studio" },
+    { src: "/images/wix/reference/booking-contact.jpg", width: 640, height: 382, alt: "photoshoot in the aether studio", altHu: "fotózás az aether stúdióban", altDe: "Fotoshooting im aether-Studio" }
   ]
 };
 
@@ -1665,6 +2017,16 @@ replaceGallery(serviceImages.commercial, managedGalleries.commercial || []);
 replaceGallery(serviceImages.portrait, managedGalleries.portrait || []);
 replaceGallery(serviceImages.fitness, managedGalleries.fitness || []);
 replaceGallery(corporateGalleryImages, managedGalleries.corporate || []);
+
+// Managed galleries can contain more images than the legacy caption lists. Keep every
+// German lightbox item localized rather than falling back to English metadata.
+for (const [key, images] of Object.entries(propsImages)) {
+  const captions = propsCaptions[key] || (propsCaptions[key] = []);
+  while (captions.length < images.length) {
+    const wardrobe = key.startsWith("wardrobe");
+    captions.push(propsCaption(wardrobe ? "Outfit oder Accessoire" : key === "furniture" ? "Möbelstück" : "Requisite", wardrobe && key === "wardrobe" ? "Im Studio mietbar." : "Kostenlos im Studio nutzbar.", wardrobe && key === "wardrobe" ? "5.000–9.000 HUF pro Buchung" : ""));
+  }
+}
 
 const photographersGrid = managedGalleries["photographers-grid"] || [];
 residentArtistImages.photographers.daniel = photographersGrid[0] || residentArtistImages.photographers.daniel;
@@ -1710,6 +2072,40 @@ const applyCopyFixes = (value) => {
   return value;
 };
 
+const germanCopyFixes = [
+  ["Self-Service", "Selbstbedienungs"],
+  ["Partyfotos", "Feierfotos"],
+  ["editorielle", "editoriale"],
+  ["kollaborativ", "im Austausch mit ihren Kund:innen"],
+  ["bei Posing", "bei den Posen"],
+  ["führen wir dich bei den Posen, Ausdruck und Details sicher durch die Session", "geben wir dir bei Posen, Ausdruck und Details sichere Anleitung"],
+  ["in deinem Tempo", "in deinem eigenen Tempo"],
+  ["Studio-Licht setzen", "Studio-Licht einrichten"],
+  ["Licht führen", "Licht setzen"],
+  ["Chemie und Ausrüstung", "Chemikalien und Ausrüstung"],
+  ["on location", "vor Ort"],
+  ["Make-up- und Hair-Team", "Make-up- und Haarstyling-Team"],
+  ["Visuals", "Bildmaterial"],
+  ["Aufmerksamkeitsstarke Bildmaterial", "Aufmerksamkeitsstarkes Bildmaterial"],
+  ["Executive-, Leadership- und Gründerporträts", "Führungs-, Management- und Gründerporträts"],
+  ["Website- und Über-uns-Bilder", "Bilder für Website und Über-uns-Seite"],
+  ["Fitness- und Yogashootings", "Fitness- und Yoga-Fotoshootings"],
+  ["sauberer, hochwertiger Bildsprache", "klarem, hochwertigem Look"],
+  ["ein Model bis zur Gruppe", "ein Model oder eine Gruppe"],
+  ["können gebucht werden", "stehen zur Buchung bereit"],
+  ["Beauftrage unsere professionellen Fotograf:innen für dein Werbeprojekt", "Buche unsere professionellen Fotograf:innen für dein Werbeprojekt"]
+];
+const applyGermanCopyFixes = (value, inGerman = false) => {
+  if (typeof value === "string") return inGerman ? germanCopyFixes.reduce((text, [from, to]) => text.replaceAll(from, to), value) : value;
+  if (Array.isArray(value)) {
+    for (let index = 0; index < value.length; index += 1) value[index] = applyGermanCopyFixes(value[index], inGerman);
+    return value;
+  }
+  if (!value || typeof value !== "object") return value;
+  for (const [key, nestedValue] of Object.entries(value)) value[key] = applyGermanCopyFixes(nestedValue, inGerman || key === "de");
+  return value;
+};
+
 const applyHungarianPriceFormat = (value) => {
   if (typeof value === "string") {
     return value.replace(/(\d{1,3}(?:\.\d{3})+|\d{4,})\.?\s*HUF/g, (_, amount) => `${amount.replaceAll(".", " ")} Ft`);
@@ -1724,6 +2120,20 @@ const applyHungarianPriceFormat = (value) => {
   return value;
 };
 
+const applyGermanPriceFormat = (value) => {
+  if (typeof value === "string") {
+    return value.replace(/(\d{1,3}(?:\.\d{3})+|\d{4,})\.\s*HUF/g, "$1 HUF");
+  }
+  if (Array.isArray(value)) {
+    for (let index = 0; index < value.length; index += 1) value[index] = applyGermanPriceFormat(value[index]);
+    return value;
+  }
+  if (value && typeof value === "object") {
+    for (const key of Object.keys(value)) value[key] = applyGermanPriceFormat(value[key]);
+  }
+  return value;
+};
+
 const applyHungarianPriceFormats = (value) => {
   if (Array.isArray(value)) {
     value.forEach(applyHungarianPriceFormats);
@@ -1732,9 +2142,11 @@ const applyHungarianPriceFormats = (value) => {
   if (!value || typeof value !== "object") return;
   for (const [key, nestedValue] of Object.entries(value)) {
     if (key === "hu") applyHungarianPriceFormat(nestedValue);
+    else if (key === "de") applyGermanPriceFormat(nestedValue);
     else applyHungarianPriceFormats(nestedValue);
   }
 };
 
 [homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyCopyFixes);
+[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyGermanCopyFixes);
 [homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyHungarianPriceFormats);

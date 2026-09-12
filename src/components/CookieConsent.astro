@@ -1,27 +1,30 @@
 ---
 const { enabled = false, page } = Astro.props;
 const hu = page.language === "hu";
-const privacyHref = hu ? "/hu/privacy-policy" : "/privacy-policy";
-const titleId = `cookie-consent-title-${hu ? "hu" : "en"}`;
+const de = page.language === "de";
+const privacyHref = de ? "/de/privacy-policy" : hu ? "/hu/privacy-policy" : "/privacy-policy";
+const titleId = `cookie-consent-title-${page.language}`;
 ---
 
 {enabled && <div class="cookie-consent" data-cookie-consent hidden>
   <section class="cookie-consent__panel" aria-labelledby={titleId}>
     <div class="cookie-consent__copy">
-      <h2 id={titleId}>{hu ? "Süti tájékoztató" : "Cookie notice"}</h2>
+      <h2 id={titleId}>{de ? "Cookie-Hinweis" : hu ? "Süti tájékoztató" : "Cookie notice"}</h2>
       <p>
-        {hu
+        {de
+          ? "Wir verwenden notwendige Cookies, damit die Website funktioniert. Optionale Analyse- und Werbe-Cookies verwenden wir nur mit deiner Zustimmung."
+          : hu
           ? "A szükséges sütik biztosítják a webhely működését. Az opcionális analitikai és hirdetési sütiket csak akkor használjuk, ha engedélyezed őket."
           : "We use necessary cookies to keep the website working. Optional analytics and advertising cookies are used only if you accept them."}
-        {" "}<a href={privacyHref}>{hu ? "Adatvédelmi tájékoztató" : "Privacy Policy"}</a>
+        {" "}<a href={privacyHref}>{de ? "Datenschutzerklärung" : hu ? "Adatvédelmi tájékoztató" : "Privacy Policy"}</a>
       </p>
     </div>
     <div class="cookie-consent__actions">
       <button class="button button--secondary" type="button" data-cookie-consent-necessary>
-        {hu ? "Csak szükséges" : "Only necessary"}
+        {de ? "Nur notwendige" : hu ? "Csak szükséges" : "Only necessary"}
       </button>
       <button class="button" type="button" data-cookie-consent-all>
-        {hu ? "Összes elfogadása" : "Accept all"}
+        {de ? "Alle akzeptieren" : hu ? "Összes elfogadása" : "Accept all"}
       </button>
     </div>
   </section>

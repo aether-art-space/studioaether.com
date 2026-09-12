@@ -3,33 +3,35 @@ import { absoluteUrl } from "../lib/site.mjs";
 
 const { page } = Astro.props;
 const hu = page.language === "hu";
+const de = page.language === "de";
+const copy = de ? { title: "Schreib uns", close: "Schließen", subject: "Neue Nachricht über die aether Website", name: "Name", email: "E-Mail", message: "Nachricht", send: "Nachricht senden" } : hu ? { title: "Írj nekünk", close: "Bezárás", subject: "Új kapcsolatfelvétel az aether weboldaláról", name: "Név", email: "E-mail", message: "Üzenet", send: "Üzenet küldése" } : { title: "Send us a message", close: "Close", subject: "New contact from the aether website", name: "Name", email: "Email", message: "Message", send: "Send message" };
 const web3FormsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "eb32865d-ef18-44d3-bdcf-6bb6eb19ae2a";
 const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-contact-form`;
 ---
 <dialog class="contact-modal site-contact-modal" id="site-contact-modal" data-site-contact-modal aria-labelledby="site-contact-modal-title">
   <div class="contact-modal__header">
-    <h2 id="site-contact-modal-title">{hu ? "Írj nekünk" : "Send us a message"}</h2>
-    <button class="contact-modal__close" type="button" data-site-contact-close aria-label={hu ? "Bezárás" : "Close"}>×</button>
+    <h2 id="site-contact-modal-title">{copy.title}</h2>
+    <button class="contact-modal__close" type="button" data-site-contact-close aria-label={copy.close}>×</button>
   </div>
   <form class="contact-form" id="site-contact-form" action="https://api.web3forms.com/submit" method="POST" data-site-web3forms>
     <input type="hidden" name="access_key" value={web3FormsAccessKey} />
-    <input type="hidden" name="subject" value={hu ? "Új kapcsolatfelvétel az aether weboldaláról" : "New contact from the aether website"} />
+    <input type="hidden" name="subject" value={copy.subject} />
     <input type="hidden" name="page" value={page.path} />
     <input type="hidden" name="redirect" value={contactSuccessUrl} />
     <input type="checkbox" name="botcheck" class="contact-form__botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
     <label>
-      <span>{hu ? "Név" : "Name"}</span>
+      <span>{copy.name}</span>
       <input type="text" name="name" autocomplete="name" required />
     </label>
     <label>
-      <span>{hu ? "E-mail" : "Email"}</span>
+      <span>{copy.email}</span>
       <input type="email" name="email" autocomplete="email" required />
     </label>
     <label>
-      <span>{hu ? "Üzenet" : "Message"}</span>
+      <span>{copy.message}</span>
       <textarea name="message" rows="5" required></textarea>
     </label>
-    <button class="contact-form__submit" type="submit">{hu ? "Üzenet küldése" : "Send message"}</button>
+    <button class="contact-form__submit" type="submit">{copy.send}</button>
     <p class="contact-form__status" data-site-contact-status role="status" aria-live="polite"></p>
   </form>
 </dialog>
@@ -59,7 +61,7 @@ const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-c
   if (siteContactForm && siteContactStatus) {
     const params = new URLSearchParams(window.location.search);
     if (params.get("site-contact") === "success") {
-      setSiteContactStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
+      setSiteContactStatus(document.documentElement.lang === "de" ? "Vielen Dank, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
       siteContactModal?.showModal();
       window.history.replaceState({}, document.title, `${window.location.pathname}#site-contact-form`);
     }
@@ -68,7 +70,7 @@ const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-c
       event.preventDefault();
       const submitButton = siteContactForm.querySelector<HTMLButtonElement>("[type=submit]");
       if (submitButton) submitButton.disabled = true;
-      setSiteContactStatus(document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
+      setSiteContactStatus(document.documentElement.lang === "de" ? "Wird gesendet …" : document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
 
       try {
         const response = await fetch(siteContactForm.action, {
@@ -79,9 +81,9 @@ const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-c
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
         siteContactForm.reset();
-        setSiteContactStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
+        setSiteContactStatus(document.documentElement.lang === "de" ? "Vielen Dank, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
       } catch {
-        setSiteContactStatus(document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);
+        setSiteContactStatus(document.documentElement.lang === "de" ? "Die Nachricht konnte nicht gesendet werden. Schreib uns bitte stattdessen eine E-Mail." : document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);
       } finally {
         if (submitButton) submitButton.disabled = false;
       }

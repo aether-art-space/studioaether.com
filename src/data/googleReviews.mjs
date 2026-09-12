@@ -5,5 +5,6 @@ export const googleReviewSummary = {
   reviewCount: 51,
   checkedOn: "2026-09-08",
   checkedLabel: "as of 8 Sep 2026",
-  checkedLabelHu: "2026.09.08."
+  checkedLabelHu: "2026.09.08.",
+  checkedLabelDe: "Stand: 8. Sep. 2026"
 };

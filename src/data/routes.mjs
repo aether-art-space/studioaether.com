@@ -38,7 +38,7 @@ export const site = {
   }
 };
 
-export const pages = [
+const sourcePages = [
   route("/", "en", "Homepage", "Photo Studio in Budapest | aether art space", "photostudio in Budapest tailored for creation - both for pros and first timers", "/hu", { priority: "Critical", section: "home", description: "aether art space is a creative photo studio in the heart of Budapest, built for portraits, commercial shoots, self photo sessions, and first-time creators." }),
   route("/hu", "hu", "Homepage", "aether art space - kreatív fotóstúdió Budapesten", "fotóstúdió Budapesten az alkotáshoz kialakítva - profiknak és első alkalmasoknak is", "/", { priority: "Critical", section: "home", description: "Az aether art space kreatív fotóstúdió Budapest szívében portré-, reklám-, szelfi- és első alkalmas fotózásokhoz." }),
 
@@ -103,12 +103,72 @@ export const pages = [
   route("/hu/photographer-alexandra", "hu", "Photographer profile - Alexandra", "Kulcsár-Horváth Alexandra fotós Budapesten | aether art space", "Kulcsár-Horváth Alexandra", "/photographer-alexandra", { nav: false, priority: "Medium", action: "PRESERVE; photographer profile", disposition: "preserve", description: "Ismerd meg Kulcsár-Horváth Alexandra budapesti rezidens fotóst, aki esküvői, portré-, lifestyle-, üzleti és kisállatfotózással foglalkozik." })
 ];
 
+const germanRouteCopy = {
+  "/": ["Fotostudio in Budapest | aether art space", "Fotostudio in Budapest – für Profis und Einsteiger:innen", "aether art space ist ein kreatives Fotostudio im Herzen Budapests für Porträts, kommerzielle Shootings, Selfie-Sessions und erste Studioerlebnisse."],
+  "/studio": ["Fotostudio mieten in Budapest | aether art space", "das Studio", "Miete ein kreatives Fotostudio in Budapest mit Blitzanlagen, Lichtformern, Papierhintergründen, Kameras, Möbeln, Outfits und Requisiten für professionelle Fotoshootings."],
+  "/selfie-studio-budapest": ["Selfie-Studio Budapest | Privates Fotoshooting | aether", "Aether Selfie-Studio", "Erlebe ein privates Selfie-Shooting in Budapest im Aether Selfie-Studio – mit Studiolicht und entspannter Atmosphäre für Porträts und Content."],
+  "/equipment": ["Fotoequipment in Budapest | aether art space", "Ausstattung", "Entdecke das Fotoequipment im aether art space in Budapest: Studiolicht, Lichtformer, Kameras, Objektive und praktische Produktionsausstattung."],
+  "/props": ["Requisiten & Möbel für Fotoshootings in Budapest | aether", "Requisiten", "Entdecke Garderobe, Requisiten, Möbel und kreative Accessoires für dein Shooting im aether art space."],
+  "/photographers-budapest": ["Fotograf:innen in Budapest | aether art space", "unsere Fotograf:innen", "Lerne die Fotograf:innen im aether art space für Porträt-, Werbe-, Glamour- und kreative Fotoprojekte in Budapest kennen."],
+  "/models-budapest": ["Modelle in Budapest | aether art space", "ausgewählte Models", "Lerne Models für Fotoshootings, Kampagnen, kreative Projekte und Portfolioarbeiten in Budapest kennen."],
+  "/stylists": ["Stylist:innen & Brand Designer in Budapest | aether", "Stylist:innen / Brand Designer", "Finde Stylist:innen und Brand Designer in Budapest für Fotoshootings, Personal Branding, Kampagnen und kreative Projekte."],
+  "/make-up-artists": ["Make-up-Artists & Hair-Stylist:innen in Budapest | aether", "Make-up-Artists / Hair-Stylist:innen", "Buche Make-up-Artists und Hair-Stylist:innen in Budapest für Porträt-, Glamour-, Boudoir-, Werbe- und kreative Shootings."],
+  "/packages": ["Fotoshooting-Pakete in Budapest | aether art space", "alle Pakete und Leistungen", "Buche Porträt-, Business-, Glamour-, Boudoir-, Model-Digitals-, Tier- und kreative Fotoshooting-Pakete in Budapest."],
+  "/commercial-photography-budapest": ["Werbefotografie in Budapest | aether art space", "Werbefotografie in Budapest", "Aether Art Space ist dein Partner für hochwertige Werbefotografie in Budapest – für Produkteinführungen, Kampagnen und Social Media."],
+  "/corporate-photography-budapest": ["Businessfotografie in Budapest: Businessporträts & Teamfotos | aether", "Businessfotografie in Budapest", "Businessporträts, Teamfotos und Markenbilder in Budapest – im Studio oder bei euch im Büro."],
+  "/portrait-photography-budapest": ["Porträtfotografie in Budapest | Businessporträts & kreative Porträts | aether", "Porträtfotografie in Budapest", "Professionelle Porträtfotografie in Budapest für Businessporträts, Datingprofile, Personal Branding, Lifestyle- und kreative Studioporträts."],
+  "/fitness": ["Fitness- & Yogafotografie in Budapest | aether", "Fitness- & Yogafotografie in Budapest", "Fitness- und Yogashootings in Budapest für Trainer:innen, Athlet:innen, Kursleiter:innen und Wellness-Marken."],
+  "/glamour-boudoir-photography-budapest": ["Glamour-, Boudoir- & Fine-Art-Aktfotografie | aether", "Glamour-, Boudoir- und Fine-Art-Fotografie in Budapest", "Professionelle Glamour-, Boudoir- und Fine-Art-Aktfotografie in Budapest – elegant, persönlich und in einem privaten Kreativstudio."],
+  "/model-polaroids-budapest": ["Model-Polaroids & Digitals in Budapest | aether art space", "Model-Polaroids / Digitals und Portfolio-Shooting in Budapest", "Im Aether Art Space erstellen wir agenturtaugliche Model-Polaroids, Digitals und komplette Portfolio-Shootings in Budapest."],
+  "/pet-photography-budapest": ["Tierfotografie in Budapest | aether art space", "Tierfotografie in Budapest", "Halte den einzigartigen Charakter deines Haustiers im tierfreundlichen Fotostudio von Aether Art Space in Budapest fest."],
+  "/id-photo": ["Pass- & Ausweisfotos in Budapest | Schnell als Print und digital | aether", "Schnelle Pass- oder Ausweisfotos", "Professionelle Pass-, Visa-, Ausweis- und Dokumentenfotos in Budapest – schnell, hochwertig und digital oder als Abzug."],
+  "/photographer-mentoring-budapest": ["Fotografie-Mentoring in Budapest | aether art space", "Fotografie-Mentoring in Budapest", "Lerne Fotografie mit dem Mentoring von Aether Art Space in Budapest: digitale und analoge Fotografie, Modelshootings, Technik und flexible Kurse."],
+  "/booking": ["Buchung & Preise | aether art space Budapest", "Buchung & Preise", "Buche ein kreatives Fotostudio in Budapest für Porträts, Werbeshootings, Selfie-Sessions, Content-Produktion und private Shootings."],
+  "/faq": ["Fotostudio-FAQ in Budapest | Buchung, Ausstattung & Shootings | aether", "Häufige Fragen", "Antworten zu Buchung, Ausstattung, Hintergründen, Requisiten, Haustieren, Bezahlung und Shootings im aether art space in Budapest."],
+  "/privacy-policy": ["Datenschutzerklärung | aether art space", "Datenschutzerklärung", "Datenschutzinformationen des aether art space zu Website, Buchungen, Kontaktformular und Leistungen."],
+  "/photographer-daniel": ["Dániel Z. Aczél – Fotograf in Budapest | aether art space", "Dániel Z. Aczél", "Lerne Dániel Z. Aczél kennen, Fotograf im Aether Art Space in Budapest für Porträts, Boudoir, Glamour und Fine-Art-Fotografie."],
+  "/photographer-alexandra": ["Alexandra Kulcsár-Horváth – Fotografin in Budapest | aether", "Alexandra Kulcsár-Horváth", "Lerne Alexandra Kulcsár-Horváth kennen, Fotografin im Aether Art Space für Hochzeiten, Porträts, Lifestyle, Business und Tierfotografie."],
+  "/christmas-photoshoot": ["Weihnachts-Fotoshooting in Budapest | aether art space", "Weihnachts-Fotoshooting", "Feiere die Saison mit einem professionellen Weihnachts-Fotoshooting im Aether Art Space in Budapest – für Paare, Familien und Gruppen."],
+  "/christmas-studio": ["Weihnachts-Fotostudio in Budapest | aether art space", "Weihnachtsstimmung in unserem festlich dekorierten Studio", "Buche unser Fotostudio im Herzen Budapests mit saisonaler Weihnachtsdekoration für dein festliches Fotoshooting."],
+  "/post-booking": ["Nach der Buchung | Aether Art Space", "Danke für deine Buchung!", "Danke für deine Buchung im aether art space. Wir freuen uns auf dich."],
+  "/wedding-photography": ["Hochzeitsfotografie Budapest | Natürlich & elegant | aether", "Hochzeitsfotografie in Budapest und ganz Ungarn", "Professionelle Hochzeitsfotografie in Budapest und ganz Ungarn: natürliche Momente, elegante Porträts und flexible Begleitung."],
+};
+
+const germanPages = sourcePages
+  .filter((page) => page.language === "en" && page.disposition !== "redirect")
+  .map((page) => {
+    const normalizeGermanRouteText = (value) => typeof value === "string"
+      ? value
+        .replace(/Fotograf:innen/g, "Fotografen")
+        .replace(/Stylist:innen/g, "Stylisten")
+        .replace(/Einsteiger:innen/g, "Einsteiger")
+        .replace(/Trainer:innen/g, "Trainer")
+        .replace(/Athlet:innen/g, "Athleten")
+        .replace(/Kursleiter:innen/g, "Kursleitern")
+        .replace(/Teilnehmer:innen/g, "Teilnehmer")
+        .replace(/([A-Za-zÄÖÜäöüß-]+):innen\b/g, "$1en")
+        .replace(/([A-Za-zÄÖÜäöüß-]+):in\b/g, "$1")
+      : value;
+    const routeCopy = germanRouteCopy[page.path] || [page.title, page.h1, page.description];
+    const [title, h1, description] = routeCopy.map(normalizeGermanRouteText);
+    const germanPath = page.path === "/" ? "/de" : `/de${page.path}`;
+    return { ...page, path: germanPath, url: `${base}${germanPath}`, language: "de", title, h1, description, counterpartPath: page.path, alternatePaths: { en: page.path, hu: page.path === "/" ? "/hu" : `/hu${page.path}`, de: germanPath } };
+  });
+
+export const pages = sourcePages.map((page) => ({
+  ...page,
+  alternatePaths: page.language === "en"
+    ? { en: page.path, hu: page.path === "/" ? "/hu" : `/hu${page.path}`, de: page.path === "/" ? "/de" : `/de${page.path}` }
+    : { en: page.path === "/hu" ? "/" : page.path.replace(/^\/hu/, ""), hu: page.path, de: page.path === "/hu" ? "/de" : page.path.replace(/^\/hu/, "/de") }
+})).concat(germanPages);
+
 export const pageByPath = new Map(pages.map((page) => [page.path, page]));
 
 export const navGroups = [
   {
     label: "the studio",
     huLabel: "a stúdió",
+    deLabel: "das Studio",
     links: [
       ["/studio", "photo studio", "fotóstúdió"],
       ["/selfie-studio-budapest", "selfie studio", "szelfi stúdió"],
@@ -122,6 +182,7 @@ export const navGroups = [
   {
     label: "resident artists",
     huLabel: "rezidens művészek",
+    deLabel: "Kreativteam",
     links: [
       ["/photographers-budapest", "photographers", "fotósaink"],
       ["/models-budapest", "models", "modelleink"],
@@ -132,6 +193,7 @@ export const navGroups = [
   {
     label: "photography services",
     huLabel: "fotós szolgáltatásaink",
+    deLabel: "Fotografie-Angebote",
     links: [
       ["/packages", "photography packages", "fotózási csomagok"],
       ["/wedding-photography", "wedding photography", "esküvői fotózás"],

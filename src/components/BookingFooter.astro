@@ -1,11 +1,18 @@
 ---
 import { homeContent, homeImages } from "../data/content.mjs";
-import { absoluteUrl, site } from "../lib/site.mjs";
+import { absoluteUrl, site, naturalGerman } from "../lib/site.mjs";
 import ResponsiveImage from "./ResponsiveImage.astro";
 
 const { page, variant = "all", includeContactModal = true } = Astro.props;
 const hu = page.language === "hu";
-const home = homeContent[hu ? "hu" : "en"];
+const de = page.language === "de";
+const rawHome = homeContent[(page.language || "en") as "en" | "hu" | "de"];
+const home = de ? naturalGerman(rawHome) : rawHome;
+const contactCopy = de
+  ? { heading: "Schreib uns", close: "Schließen", subject: "Neue Nachricht über die aether-Website", name: "Name", email: "E-Mail", message: "Nachricht", submit: "Nachricht senden", success: "Danke, wir melden uns bald bei dir.", sending: "Wird gesendet …", failure: "Deine Nachricht konnte nicht gesendet werden. Schreib uns bitte eine E-Mail." }
+  : hu
+    ? { heading: "Írj nekünk", close: "Bezárás", subject: "Új kapcsolatfelvétel az aether weboldaláról", name: "Név", email: "E-mail", message: "Üzenet", submit: "Üzenet küldése", success: "Köszönjük, hamarosan jelentkezünk.", sending: "Küldés…", failure: "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." }
+    : { heading: "Send us a message", close: "Close", subject: "New contact from the aether website", name: "Name", email: "Email", message: "Message", submit: "Send message", success: "Thank you, we’ll be in touch soon.", sending: "Sending…", failure: "We couldn’t send your message. Please email us instead." };
 const variantKey = variant === "selfie-contact" ? "selfieContact" : variant === "artists" ? "artists" : variant === "mentoring" ? "mentoring" : "all";
 const bookingVariant = home.bookingVariants[variantKey];
 const customContactCard = (bookingVariant as any).contactCard;
@@ -40,7 +47,7 @@ const headingId = `footer-booking-title-${variantKey}`;
       </div> : <>
         <p>{copy}</p>
         <div class="home-booking-card__media">
-          <ResponsiveImage className="home-booking-card__image" image={{ ...homeImages.booking[index], alt: hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt }} role="card" loading="lazy" />
+          <ResponsiveImage className="home-booking-card__image" image={{ ...homeImages.booking[index], alt: de ? naturalGerman((homeImages.booking[index] as any).altDe || homeImages.booking[index].alt) : hu ? homeImages.booking[index].altHu : homeImages.booking[index].alt }} role="card" loading="lazy" />
         </div>
       </>}
       {index === 2 ? <button class:list={["button", "button--secondary", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" type="button" data-contact-open aria-controls="footer-contact-modal">{cta}</button> : <a class:list={["button", "button--dark", "home-booking-card__action"]} data-gtag-event={event} data-gtag-location="footer-booking" href={href}>{cta}</a>}
@@ -50,28 +57,28 @@ const headingId = `footer-booking-title-${variantKey}`;
 
 {includeContactModal && <dialog class="contact-modal" id="footer-contact-modal" data-contact-modal aria-labelledby="footer-contact-modal-title">
   <div class="contact-modal__header">
-    <h2 id="footer-contact-modal-title">{hu ? "Írj nekünk" : "Send us a message"}</h2>
-    <button class="contact-modal__close" type="button" data-contact-close aria-label={hu ? "Bezárás" : "Close"}>×</button>
+    <h2 id="footer-contact-modal-title">{contactCopy.heading}</h2>
+    <button class="contact-modal__close" type="button" data-contact-close aria-label={contactCopy.close}>×</button>
   </div>
   <form class="contact-form" id="footer-contact-form" action="https://api.web3forms.com/submit" method="POST" data-web3forms>
     <input type="hidden" name="access_key" value={web3FormsAccessKey} />
-    <input type="hidden" name="subject" value={hu ? "Új kapcsolatfelvétel az aether weboldaláról" : "New contact from the aether website"} />
+    <input type="hidden" name="subject" value={contactCopy.subject} />
     <input type="hidden" name="page" value={page.path} />
     <input type="hidden" name="redirect" value={contactSuccessUrl} />
     <input type="checkbox" name="botcheck" class="contact-form__botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
     <label>
-      <span>{hu ? "Név" : "Name"}</span>
+      <span>{contactCopy.name}</span>
       <input type="text" name="name" autocomplete="name" required />
     </label>
     <label>
-      <span>{hu ? "E-mail" : "Email"}</span>
+      <span>{contactCopy.email}</span>
       <input type="email" name="email" autocomplete="email" required />
     </label>
     <label>
-      <span>{hu ? "Üzenet" : "Message"}</span>
+      <span>{contactCopy.message}</span>
       <textarea name="message" rows="5" required></textarea>
     </label>
-    <button class="contact-form__submit" type="submit">{hu ? "Üzenet küldése" : "Send message"}</button>
+    <button class="contact-form__submit" type="submit">{contactCopy.submit}</button>
     <p class="contact-form__status" data-contact-status role="status" aria-live="polite"></p>
   </form>
 </dialog>}
@@ -98,7 +105,7 @@ const headingId = `footer-booking-title-${variantKey}`;
   if (contactForm && contactStatus) {
     const params = new URLSearchParams(window.location.search);
     if (params.get("contact") === "success") {
-      setContactStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
+      setContactStatus(document.documentElement.lang === "de" ? "Danke, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
       contactModal?.showModal();
       window.history.replaceState({}, document.title, `${window.location.pathname}#footer-contact-form`);
     }
@@ -107,7 +114,7 @@ const headingId = `footer-booking-title-${variantKey}`;
       event.preventDefault();
       const submitButton = contactForm.querySelector<HTMLButtonElement>("[type=submit]");
       if (submitButton) submitButton.disabled = true;
-      setContactStatus(document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
+      setContactStatus(document.documentElement.lang === "de" ? "Wird gesendet …" : document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
 
       try {
         const response = await fetch(contactForm.action, {
@@ -118,9 +125,9 @@ const headingId = `footer-booking-title-${variantKey}`;
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
         contactForm.reset();
-        setContactStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
+        setContactStatus(document.documentElement.lang === "de" ? "Danke, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
       } catch {
-        setContactStatus(document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);
+        setContactStatus(document.documentElement.lang === "de" ? "Deine Nachricht konnte nicht gesendet werden. Schreib uns bitte eine E-Mail." : document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);
       } finally {
         if (submitButton) submitButton.disabled = false;
       }

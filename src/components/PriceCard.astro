@@ -10,6 +10,13 @@ interface Props {
   featureBreaks?: number[];
   includesLabel?: string;
   className?: string;
+  cta?: {
+    label: string;
+    href?: string;
+    event?: string;
+    location?: string;
+    contact?: boolean;
+  };
 }
 
 const {
@@ -22,7 +29,8 @@ const {
   features = [],
   featureBreaks = [],
   includesLabel,
-  className = ""
+  className = "",
+  cta
 } = Astro.props;
 
 const isSimpleCard = !description && descriptionLines.length === 0 && !includesLabel && features.length === 0;
@@ -41,10 +49,13 @@ const isSimpleCard = !description && descriptionLines.length === 0 && !includesL
   <div class="price-card__details">
     <p class="price-card__price"><strong>{price}</strong></p>
   </div>
-  {(includesLabel || features.length > 0) && <div class="price-card__features">
+  {(includesLabel || features.length > 0 || cta) && <div class="price-card__features">
     {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
-    <ul aria-label={includesLabel ?? "Package features"}>
+    {features.length > 0 && <ul aria-label={includesLabel ?? "Package features"}>
       {features.map((feature, index) => <li class={featureBreaks.includes(index) ? "price-card__feature-break" : undefined}>{feature}</li>)}
-    </ul>
+    </ul>}
+    {cta?.href
+      ? <a class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} href={cta.href}>{cta.label}</a>
+      : cta?.contact && <button class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} type="button" data-site-contact-open aria-controls="site-contact-modal">{cta.label}</button>}
   </div>}
 </article>

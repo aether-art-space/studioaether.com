@@ -1,30 +1,31 @@
 ---
 interface Props {
-  language: "en" | "hu";
+  language: "en" | "hu" | "de";
   active: "packages" | "studio" | "selfie" | "photographer" | "makeup" | "stylist";
 }
 
 const { language, active } = Astro.props;
 const hu = language === "hu";
+const de = language === "de";
 const tabAnchor = (key: string) => `#${key}-pricing-tabs`;
 const tabs = [
-  { key: "packages", label: hu ? "csomagok" : "packages", path: hu ? "/hu/packages" : "/packages" },
-  { key: "studio", label: hu ? "stúdió árak" : "studio pricing", path: hu ? "/hu/booking" : "/booking" },
-  { key: "selfie", label: hu ? "szelfi stúdió árak" : "selfie studio pricing", path: hu ? "/hu/selfie-studio-budapest" : "/selfie-studio-budapest" },
-  { key: "photographer", label: hu ? "fotós árak" : "photographer prices", path: hu ? "/hu/photographers-budapest" : "/photographers-budapest" },
-  { key: "makeup", label: hu ? "sminkes árak" : "make up artist prices", path: hu ? "/hu/make-up-artists" : "/make-up-artists" },
-  { key: "stylist", label: hu ? "stylist árak" : "stylist prices", path: hu ? "/hu/stylists" : "/stylists" }
+  { key: "packages", label: de ? "Pakete" : hu ? "csomagok" : "packages", path: de ? "/de/packages" : hu ? "/hu/packages" : "/packages" },
+  { key: "studio", label: de ? "Studiopreise" : hu ? "stúdió árak" : "studio pricing", path: de ? "/de/booking" : hu ? "/hu/booking" : "/booking" },
+  { key: "selfie", label: de ? "Selfie-Studio Preise" : hu ? "szelfi stúdió árak" : "selfie studio pricing", path: de ? "/de/selfie-studio-budapest" : hu ? "/hu/selfie-studio-budapest" : "/selfie-studio-budapest" },
+  { key: "photographer", label: de ? "Fotografen" : hu ? "fotós árak" : "photographer prices", path: de ? "/de/photographers-budapest" : hu ? "/hu/photographers-budapest" : "/photographers-budapest" },
+  { key: "makeup", label: de ? "Make-up & Haare" : hu ? "sminkes árak" : "make up artist prices", path: de ? "/de/make-up-artists" : hu ? "/hu/make-up-artists" : "/make-up-artists" },
+  { key: "stylist", label: de ? "Styling" : hu ? "stylist árak" : "stylist prices", path: de ? "/de/stylists" : hu ? "/hu/stylists" : "/stylists" }
 ];
 ---
 
-<nav id={`${active}-pricing-tabs`} class="pricing-tabs" aria-label={hu ? "Árak" : "Pricing pages"}>
+<nav id={`${active}-pricing-tabs`} class="pricing-tabs" aria-label={de ? "Preisseiten" : hu ? "Árak" : "Pricing pages"}>
   <div class="pricing-tabs__list">
     {tabs.map((tab) => <a class:list={["pricing-tabs__tab", { "pricing-tabs__tab--active": tab.key === active }]} href={`${tab.path}${tabAnchor(tab.key)}`} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>)}
   </div>
   <div class="pricing-tabs__select-wrap">
     <details class="pricing-tabs__dropdown">
       <summary class="pricing-tabs__dropdown-trigger">{tabs.find((tab) => tab.key === active)?.label}<span class="pricing-tabs__dropdown-chevron" aria-hidden="true"></span></summary>
-      <div class="pricing-tabs__dropdown-menu" aria-label={hu ? "Árak" : "Pricing pages"}>
+      <div class="pricing-tabs__dropdown-menu" aria-label={de ? "Preisseiten" : hu ? "Árak" : "Pricing pages"}>
         {tabs.map((tab) => <a class:list={["pricing-tabs__dropdown-option", { "pricing-tabs__dropdown-option--active": tab.key === active }]} href={`${tab.path}${tabAnchor(tab.key)}`} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>)}
       </div>
     </details>

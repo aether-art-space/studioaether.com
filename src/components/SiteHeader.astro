@@ -1,19 +1,20 @@
 ---
-import { site, localizedPath, localizedNav, sitePath } from "../lib/site.mjs";
+import { site, localizedPath, localizedNav } from "../lib/site.mjs";
 import ResponsiveImage from "./ResponsiveImage.astro";
 const { page } = Astro.props;
 const hu = page.language === "hu";
-const languageHref = page.counterpartPath || (hu ? "/" : "/hu");
+const de = page.language === "de";
+const copy = de ? { navigation: "Hauptnavigation", mentoring: "Mentoring", pricing: "Preise & Buchung", home: "Startseite", bookStudio: "Fotostudio buchen", bookSelfie: "Selfie-Studio buchen", message: "Nachricht schreiben", aria: "DE — Seite und Sprache" } : hu ? { navigation: "Fő navigáció", mentoring: "mentorálás", pricing: "árak és foglalás", home: "kezdőlap", bookStudio: "fotóstúdió foglalása", bookSelfie: "szelfi stúdió foglalása", message: "írj nekünk", aria: "HU — Oldal és nyelv" } : { navigation: "Primary navigation", mentoring: "mentoring", pricing: "prices & booking", home: "home", bookStudio: "book the photostudio", bookSelfie: "book the selfie studio", message: "message us", aria: "EN — Page and language" };
 const groups = localizedNav(page.language);
 const mobileGroups = groups.map((group, index) => index === 1 ? {
   ...group,
   links: [group.links[0], group.links[3], group.links[2], group.links[1]]
 } : group);
-const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
+const navigationLabel = copy.navigation;
 ---
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="brand" href={hu ? "/hu" : "/"} aria-label={site.name}>
+    <a class="brand" href={localizedPath("/", page.language)} aria-label={site.name}>
       <ResponsiveImage image={{ src: "/images/generated/wix/jpg/logo-full-transparent.png", alt: site.name, width: 326, height: 184 }} role="logo" loading="eager" />
     </a>
     <div class="header-interactive">
@@ -38,20 +39,20 @@ const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
               </div>
             </li>
           ))}
-          <li><a class="nav-direct" href={localizedPath("/photographer-mentoring-budapest", page.language)}>{hu ? "mentorálás" : "mentoring"}</a></li>
+          <li><a class="nav-direct" href={localizedPath("/photographer-mentoring-budapest", page.language)}>{copy.mentoring}</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a class="button button--dark header-book" data-gtag-event="booking_click" data-gtag-location="header" href={localizedPath("/booking", page.language)}>{hu ? "árak és foglalás" : "prices & booking"}</a>
+        <a class="button button--dark header-book" data-gtag-event="booking_click" data-gtag-location="header" href={localizedPath("/booking", page.language)}>{copy.pricing}</a>
         <div class="language-control">
           <details class="language-menu">
-            <summary class="language-switch" aria-label={hu ? "HU — Oldal és nyelv" : "EN — Page and language"}>
-              <span>{hu ? "HU" : "EN"}</span><span class="language-chevron" aria-hidden="true" />
+            <summary class="language-switch" aria-label={copy.aria}>
+              <span>{page.language.toUpperCase()}</span><span class="language-chevron" aria-hidden="true" />
             </summary>
           </details>
           <div class="language-options">
-            <a href={languageHref}>{hu ? "EN" : "HU"}</a>
+            {Object.entries(page.alternatePaths || {}).filter(([language]) => language !== page.language).map(([language, href]) => <a href={href as string}>{language.toUpperCase()}</a>)}
           </div>
         </div>
         <details class="mobile-menu">
@@ -60,7 +61,7 @@ const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
           </summary>
           <div class="mobile-nav-overlay" aria-hidden="true" />
           <nav class="mobile-nav-panel" aria-label={navigationLabel}>
-            <a class="mobile-nav-link mobile-nav-link--home" href={sitePath(hu ? "/hu" : "/")}>{hu ? "kezdőlap" : "home"}</a>
+            <a class="mobile-nav-link mobile-nav-link--home" href={localizedPath("/", page.language)}>{copy.home}</a>
             <div class="mobile-nav-accordions">
               {mobileGroups.map((group, groupIndex) => (
                 <details class="mobile-nav-accordion">
@@ -78,11 +79,11 @@ const navigationLabel = hu ? "Fő navigáció" : "Primary navigation";
                 </details>
               ))}
             </div>
-            <a class="mobile-nav-link mobile-nav-link--strong" href={localizedPath("/photographer-mentoring-budapest", page.language)}>{hu ? "mentorálás" : "mentoring"}</a>
-            <a class="mobile-nav-link mobile-nav-link--strong" href={localizedPath("/booking", page.language)}>{hu ? "ÁRAK" : "PRICING"}</a>
-            <a class="mobile-nav-book" data-gtag-event="booking_click" data-gtag-location="mobile-navigation" href={site.bookingUrl}>{hu ? "fotóstúdió foglalása" : "book the photostudio"}</a>
-            <a class="mobile-nav-book" data-gtag-event="selfie_booking_click" data-gtag-location="mobile-navigation" href={site.selfieBookingUrl}>{hu ? "szelfi stúdió foglalása" : "book the selfie studio"}</a>
-            <button class="mobile-nav-book mobile-nav-book--secondary" data-gtag-event="email_click" data-gtag-location="mobile-navigation" data-site-contact-open type="button">{hu ? "írj nekünk" : "message us"}</button>
+            <a class="mobile-nav-link mobile-nav-link--strong" href={localizedPath("/photographer-mentoring-budapest", page.language)}>{copy.mentoring}</a>
+            <a class="mobile-nav-link mobile-nav-link--strong" href={localizedPath("/booking", page.language)}>{copy.pricing}</a>
+            <a class="mobile-nav-book" data-gtag-event="booking_click" data-gtag-location="mobile-navigation" href={localizedPath("/booking", page.language)}>{copy.bookStudio}</a>
+            <a class="mobile-nav-book" data-gtag-event="selfie_booking_click" data-gtag-location="mobile-navigation" href={localizedPath("/selfie-studio-budapest", page.language)}>{copy.bookSelfie}</a>
+            <button class="mobile-nav-book mobile-nav-book--secondary" data-gtag-event="email_click" data-gtag-location="mobile-navigation" data-site-contact-open type="button">{copy.message}</button>
           </nav>
         </details>
       </div>

@@ -35,10 +35,11 @@ interface ArtistProfile {
 interface Props {
   profile: ArtistProfile;
   hu: boolean;
+  de?: boolean;
   showGalleryProfileMeta?: boolean;
 }
 
-const { profile, hu, showGalleryProfileMeta = true } = Astro.props;
+const { profile, hu, de = false, showGalleryProfileMeta = true } = Astro.props;
 const isExternalMoreLink = profile.moreHref?.startsWith("http");
 const socials = profile.socials ?? [];
 const gallery = profile.gallery ?? [];
@@ -59,7 +60,7 @@ const gallery = profile.gallery ?? [];
   </div>
   <div class="artist-profile__body">
     <div class="artist-profile__specialties" aria-label={hu ? "Szakterületek" : "Specialties"}>
-      {profile.specialties.split(", ").map((specialty) => <span>{specialty}</span>)}
+    {profile.specialties.split(", ").map((specialty) => <span>{specialty}</span>)}
     </div>
     {profile.description && <p class="artist-profile__description">{profile.description}</p>}
     {profile.price && <strong>{profile.price}</strong>}
@@ -69,6 +70,6 @@ const gallery = profile.gallery ?? [];
     {profile.more && profile.moreHref && <a class="artist-profile__more button button--secondary" href={profile.moreHref} target={isExternalMoreLink ? "_blank" : undefined} rel={isExternalMoreLink ? "noreferrer noopener" : undefined}>{profile.more}</a>}
   </div>
   {gallery.length > 0 && <div class="artist-profile__gallery">
-    {gallery.map((image) => <GalleryImage image={image} className="artist-profile__gallery-item" label={hu ? "Kép megnyitása" : "Open image"} title={showGalleryProfileMeta ? profile.name : undefined} description={showGalleryProfileMeta ? profile.description : undefined} link={showGalleryProfileMeta ? profile.websiteUrl : undefined} linkLabel={showGalleryProfileMeta ? profile.website : undefined} suppressProfileMeta={!showGalleryProfileMeta} />)}
+    {gallery.map((image) => <GalleryImage image={image} className="artist-profile__gallery-item" label={de ? "Bild öffnen" : hu ? "Kép megnyitása" : "Open image"} title={showGalleryProfileMeta ? profile.name : undefined} description={showGalleryProfileMeta ? profile.description : undefined} link={showGalleryProfileMeta ? profile.websiteUrl : undefined} linkLabel={showGalleryProfileMeta ? profile.website : undefined} suppressProfileMeta={!showGalleryProfileMeta} />)}
   </div>}
 </article>

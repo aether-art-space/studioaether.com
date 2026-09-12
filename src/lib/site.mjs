@@ -10,17 +10,57 @@ export const sitePath = (path) => {
   return `${basePrefix}${path}`;
 };
 
+const germanNavLabels = {
+  "photo studio": "Fotostudio", "selfie studio": "Selfie-Studio", "lights & equipment": "Licht & Equipment", "cameras and lenses for rent": "Kameras & Objektive mieten", "furniture & props": "Möbel & Requisiten", "outfits & accessories": "Outfits & Accessoires", "🎄 christmas studio": "🎄 Weihnachtsstudio",
+  photographers: "Fotograf:innen", models: "Models", "stylists & brand designers": "Stylist:innen & Brand-Designer:innen", "make-up artists and hair stylists": "Make-up-Artists & Haarstylist:innen",
+  "photography packages": "Fotoshooting-Pakete", "wedding photography": "Hochzeitsfotografie", "commercial photography": "Werbefotografie", "corporate photography": "Businessfotografie", "portrait photography": "Porträtfotografie", "fitness and yoga photography": "Fitness- & Yogafotografie", "glamour / boudoir / art photography": "Glamour / Boudoir / Fine Art", "model polaroids / digitals": "Model-Polaroids / Digitals", "pet photography": "Tierfotografie", "ID photo": "Pass- & Ausweisfotos", "🎄 christmas photography": "🎄 Weihnachtsfotografie"
+};
+
+// Use conventional, readable German copy in the UI. The previous inclusive
+// colon forms (e.g. "Fotograf:innen") rendered awkwardly in headings and
+// navigation, so normalize them to the concise nouns used by the site.
+export const naturalGerman = (value) => {
+  if (typeof value === "string") {
+    return value
+      .replace(/Fotograf:innen/g, "Fotografen").replace(/Fotograf:in/g, "Fotograf")
+      .replace(/Stylist:innen/g, "Stylisten").replace(/Stylist:in/g, "Stylist")
+      .replace(/Künstler:innen/g, "Künstler").replace(/Künstler:in/g, "Künstler")
+      .replace(/Mentor:innen/g, "Mentoren").replace(/Mentor:in/g, "Mentor")
+      .replace(/Einsteiger:innen/g, "Einsteiger").replace(/Anfänger:innen/g, "Anfänger")
+      .replace(/Kund:innen/g, "Kunden").replace(/Teilnehmer:innen/g, "Teilnehmer")
+      .replace(/Athlet:innen/g, "Athleten").replace(/Wettkämpfer:innen/g, "Wettkämpfer")
+      .replace(/Sportler:innen/g, "Sportler").replace(/Personal Trainer:innen/g, "Personal Trainer")
+      .replace(/Partner:innen/g, "Partner").replace(/Unternehmer:innen/g, "Unternehmer")
+      .replace(/Performer:innen/g, "Performer").replace(/Schauspieler:innen/g, "Schauspieler")
+      .replace(/Influencer:in/g, "Influencer").replace(/Tourist:in/g, "Tourist")
+      .replace(/Begleiter:innen/g, "Begleiter").replace(/Freund:innen/g, "Freunde")
+      .replace(/Solo-Künstler:innen/g, "Solo-Künstler").replace(/Brand-Designer:innen/g, "Brand-Designer")
+      .replace(/Haarstylist:innen/g, "Haarstylisten").replace(/ansässige:r/g, "ansässiger")
+      .replace(/Teilnehmenden/g, "Teilnehmern").replace(/Gewinner:in/g, "Gewinner")
+      .replace(/Finanzunternehmer:in/g, "Finanzunternehmer").replace(/Kosmetikunternehmer:in/g, "Kosmetikunternehmer")
+      .replace(/Marketing-Spezialist:in/g, "Marketing-Spezialist").replace(/Besucher:in/g, "Besucher")
+      .replace(/Jede:r/g, "Jeder").replace(/jede:r/g, "jeder").replace(/eine:n/g, "einen")
+      .replace(/einer:n/g, "eines").replace(/unserer Künstler:innen/g, "unserer Künstler")
+      .replace(/Fotograf:innenprofil/g, "Fotografenprofil")
+      .replace(/([A-Za-zÄÖÜäöüß-]+):innen\b/g, "$1en")
+      .replace(/([A-Za-zÄÖÜäöüß-]+):in\b/g, "$1");
+  }
+  if (Array.isArray(value)) return value.map(naturalGerman);
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, naturalGerman(item)]));
+  return value;
+};
+
 export const absoluteUrl = (path) => new URL(sitePath(path), `${siteUrl()}/`).toString();
 
 const bookingFooterDecisions = {
   all: new Set([
-    "/", "/hu",
-    "/studio", "/hu/studio",
-    "/equipment", "/hu/equipment",
-    "/props", "/hu/props",
-    "/booking", "/hu/booking",
-    "/faq", "/hu/faq",
-    "/christmas-studio", "/hu/christmas-studio"
+    "/", "/hu", "/de",
+    "/studio", "/hu/studio", "/de/studio",
+    "/equipment", "/hu/equipment", "/de/equipment",
+    "/props", "/hu/props", "/de/props",
+    "/booking", "/hu/booking", "/de/booking",
+    "/faq", "/hu/faq", "/de/faq",
+    "/christmas-studio", "/hu/christmas-studio", "/de/christmas-studio"
   ]),
   selfieContact: new Set(["/selfie-studio-budapest", "/hu/selfie-studio-budapest"]),
   artists: new Set([
@@ -52,30 +92,36 @@ const bookingFooterDecisions = {
 };
 
 export const bookingFooterVariantFor = (page) => {
+  const canonicalPath = page.path.replace(/^\/(hu|de)(?=\/|$)/, "") || "/";
   for (const [variant, paths] of Object.entries(bookingFooterDecisions)) {
-    if (paths.has(page.path)) return variant === "none" ? null : variant;
+    if (paths.has(page.path) || paths.has(canonicalPath)) return variant === "none" ? null : variant;
   }
   return null;
 };
 
 export const localizedPath = (path, language) => {
   const page = pageByPath.get(path);
-  const localized = !page
-    ? path
-    : language === "hu" && page.language === "en" ? (page.counterpartPath || path) : path;
+  const localized = page?.alternatePaths?.[language] || path;
   return sitePath(localized);
 };
 
 export const localizedNav = (language) => navGroups.map((group) => ({
   ...group,
-  label: language === "hu" ? group.huLabel : group.label,
+  label: language === "hu" ? group.huLabel : language === "de" ? naturalGerman(group.deLabel) : group.label,
   links: group.links.map(([path, label, huLabel, anchor]) => [
     `${localizedPath(path, language)}${anchor ? `#${anchor}` : ""}`,
-    language === "hu" ? huLabel : label
+    language === "hu" ? huLabel : language === "de" ? naturalGerman(germanNavLabels[label] || label) : label
   ])
 }));
 
 export const introFor = (page) => {
+  if (page.language === "de") {
+    if (page.section === "home") return naturalGerman("Ein kreatives Fotostudio in Budapest – für Profis und Einsteiger:innen.");
+    if (page.section === "booking") return "Buche das Studio für ein Fotoshooting, einen Workshop oder eine private Selfie-Session.";
+    if (page.section === "faq") return "Antworten zu Studio, Ausstattung, Buchung und Fotoshootings.";
+    if (page.section === "legal") return "Datenschutzinformationen für aether art space.";
+    return `Entdecke ${page.purpose.toLowerCase()} im aether art space in Budapest.`;
+  }
   if (page.section === "home") {
     return page.language === "hu"
       ? "Profiknak és első alkalommal érkezőknek is kialakított alkotótér Budapesten."
@@ -168,15 +214,49 @@ const faqItemsHu = [
   ["Van ital, kávé, tea a stúdióban?", [faqParagraph("A kávé, tea és ásványvíz mind ingyenesen elérhető.")]]
 ];
 
-export const faqItemsFor = (page) => page.language === "hu" ? faqItemsHu : faqItemsEn;
+const faqItemsDe = [
+  ["Was ist aether art space?", [faqParagraph("Aether Art Space ist ein professionelles und zugleich entspanntes Fotostudio im Herzen von Budapest – mit Studiomiete, Equipment, Requisiten, Garderobe und kreativen Services.")]],
+  ["Ist das Studio für Anfänger:innen geeignet?", [faqParagraph("Ja. Auf Wunsch helfen wir dir zu Beginn kostenlos beim Einrichten von Licht und Kamera. Eine umfassende Assistenz kannst du für 4.000 HUF pro Stunde buchen.")]],
+  ["Wann ist das Studio geöffnet?", [faqList(["Nur nach Terminvereinbarung.", "Montag–Freitag: 09:00–22:00", "Samstag–Sonntag: 10:00–22:00"])]],
+  ["Wie groß ist das Studio?", [faqList(["Zwei Räume.", "4,2 m Deckenhöhe.", "10 m Aufnahmeabstand zum Hintergrund und 60 m² Aufnahmefläche.", "Separater Umkleideraum mit Make-up-Platz."])]],
+  ["Sind Tiere erlaubt?", [faqParagraph("Ja. Das Studio ist tierfreundlich; Tiere können nach Absprache zum Shooting mitgebracht werden.")]],
+  ["Welches Equipment gibt es?", [faqList(["Licht: leistungsstarke Studioblitze, LED-Dauerlicht und zahlreiche Lichtformer wie Softboxen, Schirme, Beauty-Dishes, Snoots und Reflektoren.", "Kameras und Objektive: analoge und digitale Kameras, darunter 35-mm-, Mittelformat- und Sofortbildkameras; die Objektive können mit einer gemieteten oder deiner eigenen Kamera verwendet werden.", "Weiteres Equipment: Nebelmaschine, Stative und mehr.", "Requisiten und Garderobe: Vintage-Möbel, Outfits, Accessoires und weitere kreative Gegenstände, von denen viele im Studio genutzt werden können."])]] ,
+  ["Kann ich meine Kamera mit den Blitzen verwenden?", [faqParagraph("Ja. Wir haben markenkompatible Funkauslöser und einige Synchronkabel. Ohne Blitzschuh nutzen wir LED-Licht.")]],
+  ["Gibt es Dauerlicht für Video?", [faqList(["Ja, unser LED-Licht eignet sich für Foto und Video."])]],
+  ["Sind Requisiten und Kleidung kostenlos?", [faqList([{ text: "Alle Requisiten und fast alle Kleidungsstücke sind im Studio kostenlos nutzbar. Ausgenommen sind:", children: ["antike Trachten", "Brautkleider"] }])]],
+  ["Ist die Garderobe hygienisch?", [faqParagraph("Wir halten die Garderobe zwischen den Einsätzen sauber. Bitte trage Kleidung aus hygienischen Gründen über Unterwäsche; Unterwäsche stellen wir nicht bereit.")]],
+  ["Welche Hintergründe gibt es?", [faqParagraph("Wir bieten 2,7 m breite Papierhintergründe, Textilhintergründe und fest gebaute Sets. Saisonale Sets wie Weihnachtsdekoration sind verfügbar, wenn sie angeboten werden.")]],
+  ["Welche Preise und Buchungsoptionen gibt es?", [faqList([
+    "Vergünstigter Studio-Tarif: 7.000 HUF/Stunde, Montag–Donnerstag 09:00–18:00.",
+    "Standardtarif: 8.000 HUF/Stunde, Montag–Donnerstag 18:00–22:00, Freitag 09:00–22:00 und am Wochenende 10:00–22:00.",
+    "10-Stunden-Karte: 60.000 HUF, flexibel stundenweise zwischen 10:00 und 22:00 nutzbar. Gegenüber dem Standardtarif sparst du bis zu 25 %.",
+    "Außerhalb der regulären Öffnungszeiten: 10.000 HUF/Stunde nach Absprache per E-Mail.",
+    "Filmproduktionen und Castings mit 5 oder mehr Teilnehmenden: 10.000 HUF/Stunde.",
+    "Für Make-up ist die Studiomiete halb so teuer; während der Make-up-Zeit ist sie kostenlos, wenn du mit unseren Make-up-Artists arbeitest.",
+    { text: "Extras:", children: ["Papierhintergrund: 3.000 HUF pro Buchung, wenn er betreten wird", "Make-up: ab 15.000 HUF pro Buchung", "Große Engelsflügel: 8.000 HUF pro Buchung", "Assistenz auf Ungarisch oder Englisch: 4.000 HUF/Stunde", "Styling: ab 35.000 HUF pro Buchung", "Individuelle Outfits: ab 5.000 HUF pro Buchung", "Kameramiete: 4.000–9.000 HUF/Stunde", "Fotomodelle: ab 15.000 HUF/Stunde", "Nebelmaschine: 5.000 HUF pro Buchung", "Aquarium: 39.000 HUF pro Buchung"] }
+  ])]],
+  ["Wie buche ich das Studio?", [faqList([{ text: "Buchungssystem öffnen", href: "/de/booking" }, { text: "E-Mail: photostudio.aether@gmail.com", href: "mailto:photostudio.aether@gmail.com" }])]],
+  ["Kann ich meine Buchung verlängern?", [faqParagraph("Wenn das Studio danach frei ist, kannst du stundenweise verlängern. Aufbau und Abbau gehören zur gebuchten Zeit.")]],
+  ["Wie lautet die Stornierungsregelung?", [faqParagraph("Bei Stornierung oder Umbuchung mehr als 24 Stunden, aber innerhalb von 7 Tagen vor dem Termin, sind 50 % des Buchungspreises fällig. Innerhalb von 24 Stunden ist der volle Preis fällig.")]],
+  ["Mit welchen Künstler:innen arbeitet ihr?", [faqParagraph("Unsere residenten Fotograf:innen bieten Pakete an: Small (39.000 HUF), Standard (59.000 HUF) und All-inclusive (79.000 HUF). Models können gemeinsam mit dem Studio gebucht werden. Auch residente Make-up-Artists, Haarstylist:innen und Fashion-Stylist:innen stehen zur Buchung bereit.")]],
+  ["Gibt es einen privaten Umkleidebereich?", [faqList(["Ja, ein eigener Raum steht für Make-up, Vorbereitung und privates Umziehen bereit."])]],
+  ["Kann ich im Studio Make-up und Haare machen?", [faqList(["Ja, es gibt einen Make-up-Platz mit Haarprodukten, Föhn, Glätteisen und mehr."])]],
+  ["Kann ich nach dem Shooting duschen?", [faqList(["Ja, eine Dusche mit Duschgel und Shampoo ist vorhanden."])]],
+  ["Kann ich meine Kleidung bügeln?", [faqList(["Ja, Bügeleisen, Bügelbrett und Dampfglätter stehen bereit."])]],
+  ["Gibt es Kaffee, Tee und Wasser?", [faqParagraph("Kaffee, Tee und Mineralwasser sind kostenlos verfügbar.")]]
+];
+
+export const faqItemsFor = (page) => page.language === "de" ? faqItemsDe : page.language === "hu" ? faqItemsHu : faqItemsEn;
 
 export const faqGroupsFor = (page) => {
-  const headings = page.language === "hu"
+  const headings = page.language === "de"
+    ? ["Über das Studio", "Equipment & Technik", "Requisiten, Garderobe & Styling", "Buchung & Preise", "Kreativteam & Services", "Komfort"]
+    : page.language === "hu"
     ? ["Az Aether Art Space stúdióról", "Felszerelés és technikai adatok", "Kellékek, ruhák és styling", "Foglalás és árak", "Rezidens művészek és szolgáltatások", "Kényelem"]
     : ["About aether art space studio", "Equipment & Technical", "Props, Wardrobe & Styling", "Booking & Pricing", "Resident Artists & Services", "Facilities & Comfort"];
   const ranges = [[0, 5], [5, 8], [8, 11], [11, 15], [15, 16], [16, 21]];
   const items = faqItemsFor(page);
-  return headings.map((heading, index) => [heading, items.slice(ranges[index][0], ranges[index][1])]);
+  return headings.map((heading, index) => [naturalGerman(heading), naturalGerman(items.slice(ranges[index][0], ranges[index][1]))]);
 };
 
 export { navGroups, pageByPath, site };
