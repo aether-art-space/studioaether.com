@@ -62,6 +62,7 @@ const headingId = `footer-booking-title-${variantKey}`;
   </div>
   <form class="contact-form" id="footer-contact-form" action="https://api.web3forms.com/submit" method="POST" data-web3forms>
     <input type="hidden" name="access_key" value={web3FormsAccessKey} />
+    <input type="hidden" name="from_name" value="aether art space" />
     <input type="hidden" name="subject" value={contactCopy.subject} />
     <input type="hidden" name="page" value={page.path} />
     <input type="hidden" name="redirect" value={contactSuccessUrl} />
@@ -117,9 +118,14 @@ const headingId = `footer-booking-title-${variantKey}`;
       setContactStatus(document.documentElement.lang === "de" ? "Wird gesendet …" : document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
 
       try {
+        const formData = new FormData(contactForm);
+        const submitterName = String(formData.get("name") || "").trim();
+        formData.set("from_name", submitterName ? `${submitterName} via aether` : "aether art space");
+        formData.set("subject", submitterName ? `Website enquiry — ${submitterName}` : "New website enquiry");
+        formData.set("replyto", String(formData.get("email") || "").trim());
         const response = await fetch(contactForm.action, {
           method: "POST",
-          body: new FormData(contactForm),
+          body: formData,
           headers: { Accept: "application/json" }
         });
         const result = await response.json();
