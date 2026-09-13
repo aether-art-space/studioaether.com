@@ -157,6 +157,19 @@ const mentoringBenefits = de ? [
   { title: "gear included", copy: "If you don't have proper gear or just want to try out a different setup, we got you covered. Chemicals and lab equipment is also available.", image: mentoringImages.mentors[2] },
   { title: "flexible classes", copy: "Take your classes whenever you feel like and at the pace you want. If you need something else, we will modify the topics for you.", image: mentoringImages.mentors[3] }
 ];
+const mentoringCaseStudies = de ? [
+  { title: "Dmitrij", copy: ["Dmitrij beherrschte seine Kamera bereits, wollte seine Bilder aber auf das nächste Niveau bringen.", "In zwei Studio-Terminen mit professionellen Models vertieften wir Lichtsetzung, Shooting-Praxis und Bildbearbeitung."], image: mentoringImages.digital[3] },
+  { title: "Zoli", copy: ["Zoli fotografierte bereits sicher und wollte bessere Familienbilder machen – ohne unnötig komplizierte Technik.", "Wir übten Studio-Licht, natürliche Posen und einen einfachen Workflow für die Bildbearbeitung."], image: mentoringImages.digital[0] },
+  { title: "Anna", copy: ["Anna begann ganz am Anfang und wollte Fotografie für ihren Marketing-Beruf lernen.", "Wir gingen gemeinsam von den technischen Grundlagen über Studio-Licht bis zur Bildbearbeitung."], image: mentoringImages.digital[9] }
+] : hu ? [
+  { title: "Dmitrij", copy: ["Dmitrij már magabiztosan használta a fényképezőgépét, de magasabb szintre akarta emelni a képeit.", "Két stúdióalkalmon profi modellekkel gyakoroltunk, majd alaposan elmélyültünk az utómunkában."], image: mentoringImages.digital[3] },
+  { title: "Zoli", copy: ["Zoli már rutinosan fotózott, és egyszerűbb módszerekkel szeretett volna jobb képeket készíteni a családjáról.", "Stúdióvilágítást, természetes pózokat és egy könnyen használható utómunka-folyamatot gyakoroltunk."], image: mentoringImages.digital[0] },
+  { title: "Anna", copy: ["Anna kezdőként azért szeretett volna megtanulni fotózni, hogy a tudását a marketinges munkájában is használhassa.", "Az alapoktól indulva végigvettük a stúdióvilágítást és az utómunkát is."], image: mentoringImages.digital[9] }
+] : [
+  { title: "Dmitrij", copy: ["Dmitrij already knew his way around a camera, but wanted to take his images to the next level.", "Across two studio sessions with professional models, we refined his lighting and shooting, then went deep into post-processing."], image: mentoringImages.digital[3] },
+  { title: "Zoli", copy: ["Zoli was already a proficient photographer, but wanted to take better pictures of his family without overcomplicating the process.", "We practised studio lighting, natural posing and a simple post-processing workflow."], image: mentoringImages.digital[0] },
+  { title: "Anna", copy: ["Anna was a complete beginner who wanted to use photography in her marketing career.", "Starting with the fundamentals, we worked through camera skills, studio lighting and post-processing."], image: mentoringImages.digital[9] }
+];
 const mentoringLessonIntroductions = de ? [
   "Wir treffen uns im Studio und üben gemeinsam, bevor du selbst fotografierst. Dabei lernst du:",
   "Wir fotografieren gemeinsam im Studio. Dabei lernst du:",
@@ -947,6 +960,7 @@ const relatedHref = localizedPath("/packages", language);
               <strong>{packageItem.price}</strong>
               <h3>{de ? "Das Paket enthält alles, was du für den Kurs brauchst:" : hu ? "A csomag tartalmaz mindent, amire a kurzus során szükséged lehet:" : "The package includes everything you need to complete the course:"}</h3>
               <ul>{packageItem.includes.map((item: string) => <li>{item}</li>)}</ul>
+              <button class="button button--inverted mentoring-package__action" data-gtag-event="email_click" data-gtag-location={`mentoring-package-${packageIndex === 0 ? "digital" : "analogue"}`} type="button" data-site-contact-open aria-controls="site-contact-modal">{de ? "Jetzt buchen" : hu ? "foglalok" : "book now"}</button>
             </div>
             <div class="mentoring-package__lessons">
               {packageItem.lessons.map((lesson: any, lessonIndex: number) => <section class="mentoring-lesson">
@@ -965,6 +979,20 @@ const relatedHref = localizedPath("/packages", language);
           </section>
         </>;
       })}
+      <section class="mentoring-case-studies" aria-labelledby="mentoring-case-studies-title">
+        <h2 id="mentoring-case-studies-title">{de ? "Fallbeispiele" : hu ? "Esettanulmányok" : "Case studies"}</h2>
+        <p class="mentoring-case-studies__subtitle">{de ? "Jedes Mentoring wird an deinen Ausgangspunkt und deine persönlichen Ziele angepasst." : hu ? "Minden mentorprogramot a kiindulási szintedhez és a személyes céljaidhoz igazítunk." : "Every mentoring program is tailored to your starting point and personal goals."}</p>
+        <div class="mentoring-case-studies__grid">
+          {mentoringCaseStudies.map((caseStudy: any) => <CircularCard
+            variant="feature"
+            className="mentoring-case-study"
+            title={caseStudy.title}
+            copy={caseStudy.copy}
+            image={localizeImage(caseStudy.image)}
+            showImage={false}
+          />)}
+        </div>
+      </section>
     </section>
     <GalleryLightbox label={de ? "Mentoring-Galerie" : hu ? "Mentorálási galéria" : "Mentoring gallery"} hu={hu} de={de} />
   </>

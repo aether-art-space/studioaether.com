@@ -14,13 +14,15 @@ interface Props {
   variant: CircularCardVariant;
   title: string;
   image: CardImage;
-  copy?: string;
+  showImage?: boolean;
+  copy?: string | string[];
   href?: string;
   linkLabel?: string;
   className?: string;
 }
 
-const { variant, title, image, copy, href, linkLabel, className = "" } = Astro.props;
+const { variant, title, image, showImage = true, copy, href, linkLabel, className = "" } = Astro.props;
+const copyParagraphs = Array.isArray(copy) ? copy : copy ? [copy] : [];
 const imageWidth = image.width ?? (variant === "service" ? 150 : 181);
 const imageHeight = image.height ?? (variant === "service" ? 149 : 181);
 const cardClass = ["circular-card", `circular-card--${variant}`, className].filter(Boolean).join(" ");
@@ -29,12 +31,12 @@ const cardClass = ["circular-card", `circular-card--${variant}`, className].filt
 <article class={cardClass} data-reveal-item>
   {href ? <a class="circular-card__link" href={href}>
     <h3>{title}</h3>
-    <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />
-    {copy && <p>{copy}</p>}
+    {showImage && <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />}
+    {copyParagraphs.map((paragraph, index) => <p class={index === 1 ? "circular-card__copy-emphasis" : undefined}>{paragraph}</p>)}
     {linkLabel && <span class="text-link">{linkLabel}</span>}
   </a> : <>
     <h3>{title}</h3>
-    <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />
-    {copy && <p>{copy}</p>}
+    {showImage && <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />}
+    {copyParagraphs.map((paragraph, index) => <p class={index === 1 ? "circular-card__copy-emphasis" : undefined}>{paragraph}</p>)}
   </>}
 </article>
