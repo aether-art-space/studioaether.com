@@ -23,11 +23,12 @@ interface Props {
   headingId: string;
   image: HeroImage;
   icon?: HeroIcon;
+  eyebrow?: string;
   subheading?: string;
   lead?: string;
 }
 
-const { variant, title, headingId, image, icon, subheading, lead } = Astro.props;
+const { variant, title, headingId, image, icon, eyebrow, subheading, lead } = Astro.props;
 const lines = title.split("\n");
 ---
 
@@ -37,6 +38,7 @@ const lines = title.split("\n");
     <div class="image-hero__veil" aria-hidden="true"></div>
     {icon && <ResponsiveImage image={icon} role="decorative" className="image-hero__icon" loading="eager" />}
     <div class="image-hero__content">
+      {eyebrow && <p class="image-hero__eyebrow">{eyebrow}</p>}
       <h1 id={headingId}>{lines.map((line) => <span>{line}</span>)}</h1>
       {subheading && <h2>{subheading}</h2>}
       {lead && <p>{lead}</p>}

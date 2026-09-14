@@ -32,8 +32,9 @@ const bookingFooterVariant = bookingFooterVariantFor(page);
         <a href={de ? "/de/privacy-policy" : hu ? "/hu/privacy-policy" : "/privacy-policy"}>{copy.privacy}</a>
         {consentEnabled && <button class="cookie-settings-link" type="button" data-cookie-settings>{copy.cookies}</button>}
       </nav>
-      <div class="footer-column footer-column--brand" aria-hidden="true">
+      <div class="footer-column footer-column--brand">
         <ResponsiveImage image={{ src: "/images/wix/jpg/logo-icon.jpg", alt: "", width: 450, height: 436, sizes: "100px" }} role="logo" loading="lazy" />
+        <p class="site-footer__operator">Aether Art Space is operated by Studio Aether.</p>
       </div>
       <div class="footer-column footer-column--hours">
         <div class="footer-icon-slot" aria-hidden="true"><ClockIcon className="footer-icon footer-icon--clock" size={24} weight="regular" /></div>

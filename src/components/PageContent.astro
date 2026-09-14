@@ -684,7 +684,7 @@ const relatedHref = localizedPath("/packages", language);
 
 {page.section === "home" ? (
   <>
-    <ImageHero variant="home" headingId="home-title" title={page.h1} image={localizeImage(homeImages.hero)} icon={{ ...homeImages.icon, width: 450, height: 436 }}>
+    <ImageHero variant="home" headingId="home-title" title={page.h1} eyebrow="aether art space" image={localizeImage(homeImages.hero)} icon={{ ...homeImages.icon, width: 450, height: 436 }}>
       <a class="button button--inverted" data-gtag-event="booking_click" data-gtag-location="home" href={site.bookingUrl}><span class="home-hero__cta-desktop">{de ? "Studio buchen" : hu ? "foglalás" : "book the studio"}</span><span class="home-hero__cta-mobile">{de ? "Fotostudio buchen" : hu ? "foglalás" : "book the photostudio"}</span></a>
     </ImageHero>
     <section class="home-favourite home-favourite--home" aria-labelledby="favourite-title" data-reveal-section>
