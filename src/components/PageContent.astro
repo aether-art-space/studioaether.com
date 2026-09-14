@@ -503,6 +503,8 @@ const localizedHomeFeatures: any = localizeGalleryImages(homeImages.features);
 const localizedHomePhotographers: any = localizeGalleryImages(homeImages.photographers);
 const localizedSelfieHero: any = localizeGalleryImages([selfieImages.hero])[0];
 const localizedSelfieBenefits: any = localizeGalleryImages(selfieImages.benefits);
+const localizedSelfieChristmasImages: any = localizeGalleryImages((seasonalImages as any).studioGallery.slice(0, 6));
+const localizedSelfieChristmasIntroImage: any = localizeImage((seasonalImages as any).studioIntro);
 const localizedStudioImages: any = localizeGalleryImages(studioImages);
 const localizedStudioBackdrops: any = localizeGalleryImages(studioBackdropImages);
 const localizedMentoringGalleries: any = {
@@ -810,6 +812,19 @@ const relatedHref = localizedPath("/packages", language);
     <section class="selfie-benefits home-favourite" aria-labelledby="selfie-benefits-title">
       <div class="selfie-benefits__intro home-favourite__intro"><h2 id="selfie-benefits-title">{selfie.benefitsHeading}</h2><p>{selfie.benefitsIntro}</p></div>
       <div class="selfie-benefits__grid home-feature-grid">{selfie.benefits.map(([title, copy], index) => { const image = localizedSelfieBenefits[index]; return <CircularCard variant="feature" className="selfie-benefit" title={title} copy={copy} image={image} />; })}</div>
+    </section>
+    <section class="selfie-christmas-feature" aria-labelledby="selfie-christmas-title">
+      <ResponsiveImage image={localizedSelfieChristmasIntroImage} role="content" loading="lazy" />
+      <div class="selfie-christmas-feature__copy">
+        <p class="selfie-christmas__eyebrow">{de ? "15. Oktober – 24. Dezember 2026" : hu ? "2026. október 15. – december 24." : "October 15 – December 24, 2026"}</p>
+        <h2 id="selfie-christmas-title">{de ? "Weihnachts-Selfie-Session" : hu ? "Karácsonyi szelfifotózás" : "Christmas Selfie Session"}</h2>
+        <p>{de ? "Mach deine eigenen festlichen Fotos in unserem weihnachtlich dekorierten Studio – mit professionellem Licht, Fernauslöser und allen Bildern inklusive." : hu ? "Készítsd el saját ünnepi fotóidat karácsonyi díszletünkben, profi világítással és távirányítós kamerával – az összes elkészült képet megkapod." : "Create your own festive photos in our Christmas-decorated studio, with professional lighting, a remote-controlled camera, and every photo included."}</p>
+        <div class="selfie-christmas__booking" role="note">
+          <strong>{de ? "Die Buchung ist geöffnet." : hu ? "A foglalás már nyitva." : "Bookings are now open."}</strong>
+          <span>{de ? "Buche wie gewohnt eine Selfie-Session und wähle bei der Buchung „Weihnachtsdekoration“ aus." : hu ? "Foglalj a megszokott módon szelfifotózást, és a foglalásnál válaszd a „Karácsonyi dekoráció” opciót." : "Book a selfie session as usual and select “Christmas decoration” when booking."}</span>
+        </div>
+        <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-christmas" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{de ? "Weihnachts-Selfie buchen" : hu ? "Karácsonyi szelfifotózás foglalása" : "Book a Christmas Selfie Session"}</a>
+      </div>
     </section>
     <section id="selfie-pricing" class="selfie-prices" aria-labelledby="selfie-prices-title">
       <PriceSection className="selfie-prices__packages" gridClassName="selfie-prices__grid" heading={selfie.pricesHeading} headingId="selfie-prices-title" packages={selfiePackages} cta={priceCardCtas.selfie}>

@@ -88,6 +88,7 @@ for (const page of renderedPages) {
     if ([
       "/site.css",
       "/content.css",
+      "/favicon.svg",
       "/tracking.js",
       "/fonts/Jitter-Regular-hun-v2.ttf",
       "/fonts/Jura-400.ttf"
