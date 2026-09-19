@@ -23,8 +23,8 @@ interface Props {
 
 const { variant, title, image, showImage = true, copy, href, linkLabel, className = "" } = Astro.props;
 const copyParagraphs = Array.isArray(copy) ? copy : copy ? [copy] : [];
-const imageWidth = image.width ?? (variant === "service" ? 150 : 181);
-const imageHeight = image.height ?? (variant === "service" ? 149 : 181);
+const imageWidth = image.width ?? 150;
+const imageHeight = image.height ?? 150;
 const cardClass = ["circular-card", `circular-card--${variant}`, className].filter(Boolean).join(" ");
 ---
 
