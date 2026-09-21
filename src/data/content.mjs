@@ -1097,7 +1097,8 @@ export const modelImages = {
     [...modelGallery(["model-06.jpg", "model-06-02.jpg", "model-06-03.jpg", "model-06-04.jpg", "model-06-05.jpg", "model-06-06.jpg", "model-06-07.jpg"], "Nome model portfolio"), wixLiveGalleryImage("94c0c9_495d2e8b7cd5466287bdf883da62fdcd~mv2.jpeg", 2639, 3958, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól"), wixLiveGalleryImage("94c0c9_9c6073a3b7d348c18694bc83400f44cb~mv2.jpeg", 600, 900, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól"), wixLiveGalleryImage("94c0c9_3abc8bfe750643a5b4d02cffe2e8e46d~mv2.jpg", 2730, 4095, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól"), wixLiveGalleryImage("94c0c9_3a516924468d403899b0708574baafd4~mv2.jpeg", 2448, 3264, "Nome model portfolio", "", "Foglalj fotózást Nomével kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól")],
     [...modelGallery(["model-07.jpg", "model-07-02.jpg", "model-07-03.jpg", "model-07-04.jpg", "model-07-05.jpg", "model-07-06.jpg", "model-07-07.jpg"], "Ezra model portfolio", ["52% 42%", "51% 15%", "45% 39%", "75% 32%", "49% 33%", "47% 29%", "26% 29%"]), wixLiveGalleryImage("94c0c9_9490cb385ab641bdaee2d59d9d2e4d3a~mv2.jpg", 683, 1024, "Ezra model portfolio", "", "Foglalj fotózást Ezrával kedvezményes áron.\n\nModelldíj: 15.000.Ft-tól")],
     [...modelGallery(["model-08.jpg", "model-08-02.jpg", "model-08-03.jpg", "model-08-04.jpg", "model-08-05.jpg", "model-08-06.jpg", "model-08-07.jpg"], "Luca model portfolio"), wixLiveGalleryImage("94c0c9_5349ad4d05ee411c9a96788431c68823~mv2.png", 1000, 1343, "Luca model portfolio"), wixLiveGalleryImage("94c0c9_cd1806dbb70940b4ae6b719c37bbb0a0~mv2.png", 1000, 1399, "Luca model portfolio")],
-    modelGallery(["model-09.jpg", "model-09-02.jpg", "model-09-03.jpg", "model-09-04.jpg", "model-09-05.jpg", "model-09-06.jpg"], "Csuri model portfolio", ["40% 35%", "50% 50%", "50% 50%", "34% 19%", "50% 50%", "47% 15%"])
+    modelGallery(["model-09.jpg", "model-09-02.jpg", "model-09-03.jpg", "model-09-04.jpg", "model-09-05.jpg", "model-09-06.jpg"], "Csuri model portfolio", ["40% 35%", "50% 50%", "50% 50%", "34% 19%", "50% 50%", "47% 15%"]),
+    modelGallery(["viktoria-01.jpg", "viktoria-02.jpg", "viktoria-03.jpg", "viktoria-04.jpg", "viktoria-05.jpg", "viktoria-06.jpg", "viktoria-07.jpg"], "Viktória model portfolio", ["50% 42%", "50% 45%", "50% 35%", "50% 42%", "50% 35%", "50% 35%", "50% 35%"])
   ],
   animal: modelImage("model-19.jpg", "Lucifer, white rat snake model", "50% 50%"),
   platform: modelImage("model-20.png", "Naebula creative platform", "50% 50%")
@@ -1112,7 +1113,8 @@ const modelProfilesEn = [
   { name: "Nome", imageIndex: 5, measurements: [["Height: 168cm / 5'5\"", "Dress size: S"], ["Eyes: Grey", "Hair: Black"], ["Bust: 105cm / 41\"", "Waist: 81cm / 32\"", "Hips: 108 / 42\""], ["Shoe size: 37 (EU) / 6.5 (US)"], ["Tattoos: 12 small tattoos", "Piercings: on nipples and ears"]] },
   { name: "Ezra", imageIndex: 6, measurements: [["Height: 164cm / 5'4\"", "Dress size: XS-S"], ["Eyes: Dark brown", "Hair: Black"], ["Bust: 78cm / 30\"", "Waist: 65cm / 25\"", "Hips: 78 / 30\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 14 all over", "Piercings: 3 on face, 1 on ear"]] },
   { name: "Luca", imageIndex: 7, measurements: [["Height: 175cm / 5'9\"", "Dress size: S-M"], ["Eyes: Green", "Hair: Platinum Blonde"], ["Bust: 86cm / 34\"", "Waist: 67cm / 26\"", "Hips: 92 / 36\""], ["Shoe size: 39,5 (EU) / 8 (US)"], ["Tattoos: 2 small linework", "Piercings: ear stretchers and rings"]] },
-  { name: "Csuri", imageIndex: 8, measurements: [["Height: 170cm / 5'7\"", "Dress size: S"], ["Eyes: Green", "Hair: Blonde, light blue"], ["Bust: 78cm / 31\"", "Waist: 67cm / 26\"", "Hips: 90cm / 35.5\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 2 small ones", "Piercings: In nose"]] }
+  { name: "Csuri", imageIndex: 8, measurements: [["Height: 170cm / 5'7\"", "Dress size: S"], ["Eyes: Green", "Hair: Blonde, light blue"], ["Bust: 78cm / 31\"", "Waist: 67cm / 26\"", "Hips: 90cm / 35.5\""], ["Shoe size: 38 (EU) / 7.5 (US)"], ["Tattoos: 2 small ones", "Piercings: In nose"]] },
+  { name: "Viktória", imageIndex: 9, measurements: [["Height: 168cm / 5'6\"", "Dress size: XS"], ["Eyes: Green", "Hair: Black"], ["Bust: 85cm / 33.5\"", "Waist: 61cm / 24\"", "Hips: 88cm / 34.5\""], ["Shoe size: 39 (EU) / 8.5 (US)"], ["Tattoos: A lot"]] }
 ];
 
 const modelProfilesHu = [
@@ -1124,10 +1126,11 @@ const modelProfilesHu = [
   { name: "Nome", imageIndex: 5, measurements: [["Magasság: 168 cm / 5'5\"", "Ruhamérete: S"], ["Szemszín: Szürke", "Hajszín: fekete"], ["Mellbőség: 105 cm / 41\"", "Derék: 81 cm / 32\"", "Csípő: 108/42\""], ["Cipőméret: 37 (EU) / 6,5 (USA)"], ["Tetoválások: 12 kis tetoválás", "Piercingek: mellbimbón és fülekben"]] },
   { name: "Ezra", imageIndex: 6, measurements: [["Magasság: 164cm / 5'4\"", "Ruhaméret: XS-S"], ["Szemszín: Sötétbarna", "Hajszín: Fekete"], ["Mellbőség: 78cm / 30\"", "Derék: 65cm / 25\"", "Csípő: 78 / 30\""], ["Cipőméret: 38 (EU) / 7.5 (US)"], ["Tetoválások: 14", "Piercingek: 3 arcon, 1 fülben"]] },
   { name: "Luca", imageIndex: 7, measurements: [["Magasság: 175cm / 5'9\"", "Ruhaméret: S-M"], ["Szemszín: Zöld", "Hajszín: Platinaszőke"], ["Mellbőség: 86cm / 34\"", "Derék: 67cm / 26\"", "Csípő: 92 / 36\""], ["Cipőméret: 39,5 (EU) / 8 (US)"], ["Tetoválások: 2 kicsi linework", "Piercingek: fültágító és fülbevalók"]] },
-  { name: "Csuri", imageIndex: 8, measurements: [["Magasság: 170 cm / 5'7\"", "Ruhaméret: S"], ["Szemszín: zöld", "Hajszín: szőke / világoskék"], ["Mellbőség: 78 cm / 31\"", "Derék: 67 cm / 26\"", "Csípő: 90 cm / 35,5\""], ["Cipőméret: 38 (EU) / 7,5 (US)"], ["Tetoválások: 2 kicsi", "Piercing: 1 db – a bal orrcimpán"]] }
+  { name: "Csuri", imageIndex: 8, measurements: [["Magasság: 170 cm / 5'7\"", "Ruhaméret: S"], ["Szemszín: zöld", "Hajszín: szőke / világoskék"], ["Mellbőség: 78 cm / 31\"", "Derék: 67 cm / 26\"", "Csípő: 90 cm / 35,5\""], ["Cipőméret: 38 (EU) / 7,5 (US)"], ["Tetoválások: 2 kicsi", "Piercing: 1 db – a bal orrcimpán"]] },
+  { name: "Viktória", imageIndex: 9, measurements: [["Magasság: 168 cm / 5'6\"", "Ruhaméret: XS"], ["Szemszín: zöld", "Hajszín: fekete"], ["Mellbőség: 85 cm / 33,5\"", "Derék: 61 cm / 24\"", "Csípő: 88 cm / 34,5\""], ["Cipőméret: 39 (EU) / 8,5 (US)"], ["Tetoválások: sok"]] }
 ];
 const modelProfilesEnWithContact = modelProfilesEn.map((profile) => ({ ...profile, contact: `Want to shoot with ${profile.name}?` }));
-const modelContactsHu = ["Szeretnél Grinnievel dolgozni?", "Szeretnél Wendyvel dolgozni?", "Szeretnél Orsolyával dolgozni?", "Szeretnél Vukkal dolgozni?", "Szeretnél Szederrel dolgozni?", "Szeretnél Noméval dolgozni?", "Szeretnél Ezrával dolgozni?", "Szeretnél Lucával dolgozni?", "Szeretnél Csurival dolgozni?"];
+const modelContactsHu = ["Szeretnél Grinnievel dolgozni?", "Szeretnél Wendyvel dolgozni?", "Szeretnél Orsolyával dolgozni?", "Szeretnél Vukkal dolgozni?", "Szeretnél Szederrel dolgozni?", "Szeretnél Noméval dolgozni?", "Szeretnél Ezrával dolgozni?", "Szeretnél Lucával dolgozni?", "Szeretnél Csurival dolgozni?", "Szeretnél Viktóriával dolgozni?"];
 const modelProfilesHuWithContact = modelProfilesHu.map((profile, index) => ({ ...profile, contact: modelContactsHu[index] }));
 const localizeModelMeasurementDe = (line) => String(line)
   .replace(/^Height:/, "Größe:").replace(/^Size:/, "Konfektionsgröße:").replace(/^Dress size:/, "Konfektionsgröße:")
@@ -1141,12 +1144,18 @@ const modelProfilesDeWithContact = modelProfilesEn.map((profile) => ({
   contact: `Möchtest du mit ${profile.name} arbeiten?`
 }));
 
+const modelPricing = {
+  en: { heading: "model packages", cards: [{ title: "portrait – fashion", description: "starting from", price: "15.000. HUF" }, { title: "glamour – boudoir", description: "starting from", price: "20.000. HUF" }, { title: "nude – other", description: "", price: "get a quote" }], disclaimer: "Not all models are available for nude shoots. Please ask about availability when booking." },
+  de: { heading: "Model-Pakete", cards: [{ title: "Porträt – Fashion", description: "ab", price: "15.000 HUF" }, { title: "Glamour – Boudoir", description: "ab", price: "20.000 HUF" }, { title: "Akt – Sonstiges", description: "", price: "Angebot anfragen" }], disclaimer: "Nicht alle Models stehen für Aktaufnahmen zur Verfügung. Bitte frag bei der Buchung nach der Verfügbarkeit." },
+  hu: { heading: "modell csomagok", cards: [{ title: "portré – fashion", description: "kezdőár", price: "15 000 Ft" }, { title: "glamour – boudoir", description: "kezdőár", price: "20 000 Ft" }, { title: "akt – egyéb", description: "", price: "Kérj árajánlatot" }], disclaimer: "Nem minden modell vállal aktfotózást. Foglaláskor érdeklődj az elérhetőségről." }
+};
+
 export const modelsContent = {
   en: {
     heroHeading: "trusted models", heroCopy: "a list of reliable and professional photo models you can shoot in our Budapest studio for a fixed price",
     intro: ["At aether art space, if you’re looking for a model for your photoshoot, we’ve got you covered with a selection of trusted, professional models we’ve already enjoyed working with. These experienced models know how to bring out the best in any shoot, whether it’s fashion, portraits, or creative projects.", "If you book the model and the studio together, you’ll get an even better price—since we’re not an agency, there’s no added margin on booking our models. It’s all about making your creative process smoother and more affordable."],
     feeTitle: "basic model fee", feePrice: "15.000. HUF / hour", contactLabel: "Contact us", measurementsTitle: "Measurements", contactPrefix: "Want to shoot with", contactSuffix: "?",
-    people: modelProfilesEnWithContact,
+    people: modelProfilesEnWithContact, pricing: modelPricing.en,
     animalHeading: "our non-human models", animalIntro: ["If you book a pet and the studio together, you’ll get an even better price!", "Since we’re not an agency, there’s no added margin on booking these pets. It’s all about making your creative process smoother and more affordable."],
     animal: { name: "Lucifer", description: "a very relaxed white rat snake", priceLabel: "starting from:", price: "16.000. HUF / shoot", measurementsTitle: "Measurements", measurements: [["length: 150cm"], ["color: off white"], ["legs: none"]], contactPrefix: "Want to shoot with Lucifer", contactSuffix: "?" },
     platform: { heading: "Still looking for a model?", subheading: "Try our free platform for finding models / photographers and creatives!", paragraphs: ["We are building a free online platform where you can easily find your next creative partner for your shoot. TFP or paid work, beginners or pros.", "Browse creatives around you or create a project and wait for them to join.", "Try it out for free!"], cta: "go to naebula.app" }
@@ -1158,12 +1167,13 @@ export const modelsContent = {
     heroHeading: "kedvenc modelleink", heroCopy: "megbízható és professzionális fotómodelleink, akikkel budapesti stúdiónkban fix áron alkothatsz",
     intro: ["Az aether art space-ben, ha modellt keresel a fotózásodhoz, megbízható és profi modellek közül választhatsz, akikkel mi is szívesen dolgozunk együtt. Tapasztalt modelljeink pontosan tudják, hogyan hozzák ki a legtöbbet egy fotózásból, legyen szó divatfotókról, portrékról vagy kreatív projektekről.", "Ha együtt foglalod le a modellt és a stúdiót, kedvezőbb árat kapsz – mivel nem vagyunk ügynökség, nincs a foglaláson extra költség. Célunk, hogy a kreatív folyamatod gördülékenyebb és megfizethetőbb legyen."],
     feeTitle: "alap modell-díj", feePrice: "15.000 HUF / óra", contactLabel: "Kapcsolat", measurementsTitle: "Méretek", contactPrefix: "Szeretnél", contactSuffix: "-vel dolgozni?",
-    people: modelProfilesHuWithContact,
+    people: modelProfilesHuWithContact, pricing: modelPricing.hu,
     animalHeading: "állat modelleink", animalIntro: ["Ha együtt foglalsz egy állatot és a stúdiót, még jobb árat kapsz – mivel nem vagyunk ügynökség, ezeknek a kisállatoknak a lefoglalása nem jár plusz költséggel. Célunk az, hogy kreatív folyamatod gördülékenyebbé és megfizethetővé tegyük."],
     animal: { name: "Lucifer", description: "egy nyugis fehér patkánykígyó", priceLabel: "kezdő ár:", price: "16.000. HUF / alkalom", measurementsTitle: "Méretek", measurements: [["hossz: 150cm"], ["szín: törtfehér"], ["lábak: nincs"]], contactPrefix: "Szeretnél Luciferrel dolgozni", contactSuffix: "?" },
     platform: { heading: "Még mindig modellt keresel?", subheading: "Próbáld ki ingyenes platformunkat, ahol modelleket, fotósokat és további kreatívokat találhatsz!", paragraphs: ["Egy ingyenes online platformot építünk, ahol könnyedén megtalálhatod a következő kreatív partneredet a fotózásodhoz. TFP vagy fizetett munka, kezdőknek és profiknak egyaránt.", "Böngéssz a környékeden lévő kreatívok között, vagy hozz létre egy projektet, és várd meg, amíg csatlakoznak.", "Próbáld ki ingyen!"], cta: "tovább a naebula.app-ra" }
   }
 };
+modelsContent.de.pricing = modelPricing.de;
 
 export const packagesContent = {
   en: {
@@ -1699,6 +1709,69 @@ postBookingContent.de = {
   sections: [["Stornierungen und Änderungen", ["Für eine Stornierung oder Umbuchung kontaktiere uns bitte per E-Mail oder Telefon.", "Stornierungen mehr als 24 Stunden, aber innerhalb von sieben Tagen vor dem Shooting werden mit 50 % der Mietgebühr berechnet.", "Bei einer Stornierung innerhalb von 24 Stunden fällt die volle Gebühr an."]], ["Zahlung", ["Du zahlst vor Ort bar oder mit Karte.", "Banküberweisungen akzeptieren wir nicht.", "Eine offizielle Rechnung mit Mehrwertsteuer erhältst du vor Ort."]], ["Ankunft", ["Deine Buchung beginnt zur reservierten Zeit. Wenn du früher kommst und das Studio geöffnet ist, kannst du bei einem Kaffee warten.", "Ist das Studio frei, kannst du früher beginnen oder stundenweise verlängern.", "Auf- und Abbau gehören zur Buchungszeit. Bitte hinterlasse das Studio so, wie du es vorgefunden hast.", "Assistenz ist für 4.000 HUF pro Stunde verfügbar."]]]
 };
 
+export const selfiePostBookingContent = {
+  en: {
+    intro: "We’ve received your private selfie studio booking request. We’ll confirm your appointment by email within 24 hours.",
+    rulesHeading: "A few things to know:",
+    closing: ["Please arrive ready to create at your reserved time.", "See you soon!"],
+    sections: [
+      ["Cancellations & changes", [
+        "To cancel or reschedule, please contact us by email or phone.",
+        "Cancellations made more than 24 hours but within 7 days of your session are charged 50% of the booking fee.",
+        "Cancellations within 24 hours are charged in full."
+      ]],
+      ["Payment", [
+        "Payment is made on site by cash or card.",
+        "We issue an official VAT invoice on site."
+      ]],
+      ["Arriving", [
+        "Your session starts at the reserved time. Please arrive a few minutes early so you can settle in.",
+        "Your booking includes setup and cleanup time. Please leave the studio as you found it."
+      ]]
+    ]
+  },
+  hu: {
+    intro: "Megkaptuk a privát szelfi stúdiózásodra vonatkozó foglalási kérelmedet. Időpontodat 24 órán belül e-mailben visszaigazoljuk.",
+    rulesHeading: "Néhány fontos tudnivaló:",
+    closing: ["Érkezz a lefoglalt időpontra alkotásra készen.", "Hamarosan találkozunk!"],
+    sections: [
+      ["Lemondás és módosítás", [
+        "Lemondás vagy módosítás esetén kérjük, e-mailben vagy telefonon vedd fel velünk a kapcsolatot.",
+        "A fotózás előtti 24 órán túl, de 7 napon belüli lemondás esetén a foglalási díj 50%-át felszámítjuk.",
+        "24 órán belüli lemondásnál a teljes díjat felszámítjuk."
+      ]],
+      ["Fizetés", [
+        "A helyszínen készpénzzel vagy bankkártyával fizethetsz.",
+        "A helyszínen hivatalos, áfás számlát állítunk ki."
+      ]],
+      ["Érkezés", [
+        "A foglalásod a lefoglalt időpontban kezdődik. Kérjük, érkezz néhány perccel korábban, hogy legyen időd megérkezni.",
+        "A foglalási idő a berendezést és az elpakolást is tartalmazza. Kérjük, úgy add vissza a stúdiót, ahogy kaptad."
+      ]]
+    ]
+  },
+  de: {
+    intro: "Wir haben deine Anfrage für eine private Selfie-Session erhalten. Wir bestätigen deinen Termin innerhalb von 24 Stunden per E-Mail.",
+    rulesHeading: "Wichtige Hinweise:",
+    closing: ["Komm zu deiner reservierten Zeit bereit zum Kreativsein.", "Bis bald!"],
+    sections: [
+      ["Stornierungen und Änderungen", [
+        "Für eine Stornierung oder Umbuchung kontaktiere uns bitte per E-Mail oder Telefon.",
+        "Stornierungen mehr als 24 Stunden, aber innerhalb von sieben Tagen vor der Session werden mit 50 % der Buchungsgebühr berechnet.",
+        "Bei einer Stornierung innerhalb von 24 Stunden fällt die volle Gebühr an."
+      ]],
+      ["Zahlung", [
+        "Du zahlst vor Ort bar oder mit Karte.",
+        "Eine offizielle Rechnung mit Mehrwertsteuer erhältst du vor Ort."
+      ]],
+      ["Ankunft", [
+        "Deine Session beginnt zur reservierten Zeit. Komm bitte ein paar Minuten früher, damit du in Ruhe ankommen kannst.",
+        "Auf- und Abbau gehören zur Buchungszeit. Bitte hinterlasse das Studio so, wie du es vorgefunden hast."
+      ]]
+    ]
+  }
+};
+
 export const weddingContent = {
   en: {
     hero: "Natural, elegant wedding photos—from getting ready to the last dance",
@@ -2147,6 +2220,6 @@ const applyHungarianPriceFormats = (value) => {
   }
 };
 
-[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyCopyFixes);
-[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyGermanCopyFixes);
-[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, weddingContent, legalContent].forEach(applyHungarianPriceFormats);
+[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, selfiePostBookingContent, weddingContent, legalContent].forEach(applyCopyFixes);
+[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, selfiePostBookingContent, weddingContent, legalContent].forEach(applyGermanCopyFixes);
+[homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, mentoringContent, seasonalContent, profileContent, postBookingContent, selfiePostBookingContent, weddingContent, legalContent].forEach(applyHungarianPriceFormats);

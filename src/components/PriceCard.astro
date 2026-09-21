@@ -10,6 +10,7 @@ interface Props {
   featureBreaks?: number[];
   includesLabel?: string;
   className?: string;
+  descriptionAbovePrice?: boolean;
   cta?: {
     label: string;
     href?: string;
@@ -30,6 +31,7 @@ const {
   featureBreaks = [],
   includesLabel,
   className = "",
+  descriptionAbovePrice = false,
   cta
 } = Astro.props;
 
@@ -43,11 +45,12 @@ const hasCta = Boolean(cta?.href || cta?.contact);
       {titleLines.length > 0 ? titleLines.map((line, index) => <span>{line}{index < titleLines.length - 1 && <br />}</span>) : title}
       {titleAccent && <><br /><span class="price-card__accent">{titleAccent}</span></>}
     </h3>
-    {descriptionLines.length > 0
+    {!descriptionAbovePrice && (descriptionLines.length > 0
       ? <div class="price-card__description price-card__description--lines">{descriptionLines.map((line) => <p class={line.bold ? "price-card__description-line--bold" : ""}>{line.text || "\u00a0"}</p>)}</div>
-      : description && <p class="price-card__description">{description}</p>}
+      : description && <p class="price-card__description">{description}</p>)}
   </header>
   <div class="price-card__details">
+    {descriptionAbovePrice && description && <p class="price-card__price-label">{description}</p>}
     <p class="price-card__price"><strong>{price}</strong></p>
     {!includesLabel && features.length === 0 && hasCta && <div class="price-card__action-wrap">
       {cta?.href

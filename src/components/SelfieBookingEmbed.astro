@@ -1,0 +1,140 @@
+---
+import { localizedPath } from "../lib/site.mjs";
+
+const { page } = Astro.props;
+const confirmationPath = localizedPath("/selfie-post-booking", page.language);
+const copy = page.language === "de"
+  ? { title: "Selfie-Studio buchen", fallback: "Der Buchungskalender konnte nicht geladen werden. Bitte versuche es erneut oder kontaktiere uns per E-Mail." }
+  : page.language === "hu"
+    ? { title: "Szelfi stúdió foglalása", fallback: "A foglalási naptár nem töltődött be. Próbáld újra, vagy írj nekünk e-mailt." }
+    : { title: "Book the Selfie Studio", fallback: "The booking calendar could not be loaded. Please try again or email us." };
+---
+
+<section class="selfie-booking-embed" aria-label={copy.title}>
+  <div
+    id="selfie-cal-booking"
+    class="selfie-booking-embed__calendar"
+    data-cal-inline="aether-studio/selfie-shoot"
+    data-selfie-confirmation-path={confirmationPath}
+    data-selfie-booking-fallback={copy.fallback}
+    aria-live="polite"
+  ></div>
+</section>
+
+<script is:inline>
+  (() => {
+    const container = document.querySelector("[data-cal-inline='aether-studio/selfie-shoot']");
+    if (!container || container.dataset.calInitialized === "true") return;
+
+    const confirmationPath = container.dataset.selfieConfirmationPath || "/selfie-post-booking";
+    const fallback = container.dataset.selfieBookingFallback || "The booking calendar could not be loaded. Please try again or email us.";
+    let redirected = false;
+
+    const redirectAfterBooking = () => {
+      if (redirected) return;
+      redirected = true;
+      window.location.assign(confirmationPath);
+    };
+
+    const handleEmbedFailure = () => {
+      if (container.querySelector("iframe")) return;
+      container.textContent = fallback;
+      container.classList.add("selfie-booking-embed__calendar--failed");
+    };
+
+    // Cal.com queues these calls until its embed script is ready. Register both
+    // action names because the hosted embed has used both during the transition
+    // from bookingSuccessful to bookingSuccessfulV2.
+    const installEmbed = () => {
+      window.Cal("init", { origin: "https://cal.com" });
+      window.Cal("on", { action: "bookingSuccessfulV2", callback: redirectAfterBooking });
+      window.Cal("on", { action: "bookingSuccessful", callback: redirectAfterBooking });
+      window.Cal("on", { action: "linkFailed", callback: handleEmbedFailure });
+      window.Cal("inline", {
+        elementOrSelector: container,
+        calLink: "aether-studio/selfie-shoot",
+        config: { theme: "light", layout: "month_view" }
+      });
+      container.dataset.calInitialized = "true";
+    };
+
+    // This is Cal.com's documented queue loader. It lets the page register
+    // actions immediately while the hosted embed script loads asynchronously.
+    if (!window.Cal) {
+      ((C, A, L) => {
+        const push = (api, args) => api.q.push(args);
+        const document = C.document;
+        C.Cal = C.Cal || function (...args) {
+          const cal = C.Cal;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            const script = document.createElement("script");
+            script.src = A;
+            script.async = true;
+            script.addEventListener("error", handleEmbedFailure, { once: true });
+            document.head.appendChild(script);
+            cal.loaded = true;
+          }
+          if (args[0] === L) {
+            const api = (...apiArgs) => push(api, apiArgs);
+            const namespace = args[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = api;
+              push(api, args);
+            } else {
+              push(cal, args);
+            }
+            return api;
+          }
+          push(cal, args);
+        };
+      })(window, "https://cal.com/embed/embed.js", "init");
+    }
+
+    installEmbed();
+  })();
+</script>
+
+<style>
+  .selfie-booking-embed {
+    max-width: none;
+    margin: 0 auto;
+    padding: 24px 0 96px;
+  }
+
+  .selfie-booking-embed__calendar {
+    min-height: 760px;
+    overflow: hidden;
+    border: 1px solid rgba(16, 16, 16, 0.12);
+    background: #fff;
+  }
+
+  .selfie-booking-embed__calendar iframe {
+    display: block;
+    width: 100%;
+    min-height: 760px;
+    border: 0;
+  }
+
+  .selfie-booking-embed__calendar--failed {
+    display: grid;
+    min-height: 180px;
+    place-items: center;
+    padding: 32px;
+    text-align: center;
+    font: var(--text-body);
+  }
+
+  @media (max-width: 760px) {
+    .selfie-booking-embed {
+      padding: 12px 0 70px;
+    }
+
+    .selfie-booking-embed__calendar,
+    .selfie-booking-embed__calendar iframe {
+      min-height: 920px;
+    }
+  }
+</style>

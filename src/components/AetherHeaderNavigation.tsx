@@ -24,7 +24,7 @@ type AetherHeaderNavigationProps = {
   mentoringLabel: string;
   navigationLabel: string;
   bookingExternalHref: string;
-  selfieBookingExternalHref: string;
+  selfieBookingHref: string;
   homeHref: string;
 };
 
@@ -39,7 +39,7 @@ export default function AetherHeaderNavigation({
   mentoringLabel,
   navigationLabel,
   bookingExternalHref,
-  selfieBookingExternalHref,
+  selfieBookingHref,
   homeHref
 }: AetherHeaderNavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -177,7 +177,7 @@ export default function AetherHeaderNavigation({
                 <a className="mobile-nav-link mobile-nav-link--strong" href={mentoringHref}>{mentoringLabel}</a>
                 <a className="mobile-nav-link mobile-nav-link--strong" href={bookingHref}>{languageLabel === "HU" ? "ÁRAK" : "PRICING"}</a>
                 <a className="mobile-nav-book" data-gtag-event="booking_click" data-gtag-location="mobile-navigation" href={bookingExternalHref}>{languageLabel === "HU" ? "fotóstúdió foglalása" : "book the photostudio"}</a>
-                <a className="mobile-nav-book" data-gtag-event="selfie_booking_click" data-gtag-location="mobile-navigation" href={selfieBookingExternalHref}>{languageLabel === "HU" ? "szelfi stúdió foglalása" : "book the selfie studio"}</a>
+                <a className="mobile-nav-book" data-gtag-event="selfie_booking_click" data-gtag-location="mobile-navigation" href={selfieBookingHref}>{languageLabel === "HU" ? "szelfi stúdió foglalása" : "book the selfie studio"}</a>
                 <button
                   className="mobile-nav-book mobile-nav-book--secondary"
                   data-gtag-event="email_click"

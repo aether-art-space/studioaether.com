@@ -1,6 +1,6 @@
 ---
 import { faqGroupsFor, introFor, site, localizedNav, localizedPath, naturalGerman } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, propsCaptions, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, photoPackageSets, commonUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, propsCaptions, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, photoPackageSets, commonUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, selfiePostBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
 import ArtistCard from "./ArtistCard.astro";
 import CircularCard from "./CircularCard.astro";
 import ExtrasCard from "./ExtrasCard.astro";
@@ -13,6 +13,7 @@ import FaqSection from "./FaqSection.astro";
 import PageHero from "./PageHero.astro";
 import PriceCard from "./PriceCard.astro";
 import PriceSection from "./PriceSection.astro";
+import SelfieBookingEmbed from "./SelfieBookingEmbed.astro";
 import PricingTabs from "./PricingTabs.astro";
 import UpgradeSection from "./UpgradeSection.astro";
 import StylistProfile from "./StylistProfile.astro";
@@ -29,8 +30,14 @@ const de = page.language === "de";
 const language = (page.language || "en") as "en" | "hu" | "de";
 const priceCardCtas = {
   studio: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: site.bookingUrl, event: "booking_click", location: "price-card-studio" },
-  selfie: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: site.selfieBookingUrl, event: "selfie_booking_click", location: "price-card-selfie" },
+  selfie: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: localizedPath("/selfie-booking", language), event: "selfie_booking_click", location: "price-card-selfie" },
   contact: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", contact: true, event: "email_click", location: "price-card-photography" }
+};
+const modelPriceCardCta = {
+  label: de ? "Model buchen" : hu ? "Modell foglalása" : "book a model",
+  contact: true,
+  event: "email_click",
+  location: "model-pricing-card"
 };
 const localizeCopy = <T,>(value: T): T => de ? naturalGerman(value) as T : value;
 const faqGroups = localizeCopy(faqGroupsFor(page)) as Array<[string, any[]]>;
@@ -582,6 +589,9 @@ const localizedProfileImageSet: any = profileImageSet ? { ...profileImageSet, po
 const profileSocials = profilePage?.socials ?? [];
 const isPostBooking = page.path.includes("post-booking");
 const postBookingPage: any = isPostBooking ? (postBookingContent as any)[language] : null;
+const isSelfieBooking = isLocalizedRoute("/selfie-booking");
+const isSelfiePostBooking = isLocalizedRoute("/selfie-post-booking");
+const selfiePostBookingPage: any = (isSelfiePostBooking ? selfiePostBookingContent : null)?.[language];
 const isWedding = page.path.includes("wedding-photography");
 const weddingPage: any = localizeCopy(isWedding ? (weddingContent as any)[language] : null);
 const weddingWeb3FormsAccessKey = import.meta.env.PUBLIC_WEDDING_WEB3FORMS_ACCESS_KEY || "d92ec586-0336-439d-a756-005f41e36de4";
@@ -785,7 +795,7 @@ const relatedHref = localizedPath("/packages", language);
 ) : isLocalizedRoute("/selfie-studio-budapest") ? (
   <>
     <ImageHero variant="selfie" headingId="selfie-title" title={selfie.heroHeading} image={localizedSelfieHero} subheading={selfie.heroSubheading} lead={selfie.heroCopy}>
-      <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-hero" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.heroCta}</a>
+      <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-hero" href={localizedPath("/selfie-booking", language)}>{selfie.heroCta}</a>
     </ImageHero>
     <section class="selfie-process" data-gallery aria-labelledby="selfie-process-title">
       <h2 id="selfie-process-title">{selfie.processHeading}</h2>
@@ -823,14 +833,14 @@ const relatedHref = localizedPath("/packages", language);
           <strong>{de ? "Die Buchung ist geöffnet." : hu ? "A foglalás már nyitva." : "Bookings are now open."}</strong>
           <span>{de ? "Buche wie gewohnt eine Selfie-Session und wähle bei der Buchung „Weihnachtsdekoration“ aus." : hu ? "Foglalj a megszokott módon szelfifotózást, és a foglalásnál válaszd a „Karácsonyi dekoráció” opciót." : "Book a selfie session as usual and select “Christmas decoration” when booking."}</span>
         </div>
-        <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-christmas" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{de ? "Weihnachts-Selfie buchen" : hu ? "Karácsonyi szelfifotózás foglalása" : "Book a Christmas Selfie Session"}</a>
+        <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-christmas" href={localizedPath("/selfie-booking", language)}>{de ? "Weihnachts-Selfie buchen" : hu ? "Karácsonyi szelfifotózás foglalása" : "Book a Christmas Selfie Session"}</a>
       </div>
     </section>
     <section id="selfie-pricing" class="selfie-prices" aria-labelledby="selfie-prices-title">
       <PriceSection className="selfie-prices__packages" gridClassName="selfie-prices__grid" heading={selfie.pricesHeading} headingId="selfie-prices-title" packages={selfiePackages} cta={priceCardCtas.selfie}>
         <PricingTabs slot="tabs" language={page.language} active="selfie" />
       </PriceSection>
-      <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={site.selfieBookingUrl} target="_blank" rel="noreferrer noopener">{selfie.reserveCta}</a></div>
+      <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={localizedPath("/selfie-booking", language)}>{selfie.reserveCta}</a></div>
     </section>
     <section class="selfie-location" aria-labelledby="selfie-location-title">
       <div class="selfie-location__inner"><div class="selfie-location__visual"><ResponsiveImage image={{ src: "/images/selfie/szeged-space.avif", alt: "", width: 1600, height: 900 }} role="content" loading="lazy" className="selfie-location__background" /><h2 id="selfie-location-title">{selfie.szegedHeading}</h2></div><div class="selfie-location__copy"><ResponsiveImage className="selfie-location__logo" image={{ src: "/images/selfie/szeged-logo.avif", alt: "aether art space", width: 326, height: 184 }} role="logo" loading="lazy" /><p>{selfie.szegedCopy}</p><a class="button button--dark" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div></div>
@@ -879,6 +889,13 @@ const relatedHref = localizedPath("/packages", language);
         <strong>{modelPageAny.feePrice}</strong>
       <button class="button button--outline" type="button" data-contact-open aria-controls="footer-contact-modal">{modelPageAny.contactLabel}</button>
       </div>
+      <section class="models-pricing" aria-labelledby="models-pricing-title">
+        <h2 id="models-pricing-title">{modelPageAny.pricing.heading}</h2>
+        <div class="models-pricing-grid service-package-grid">
+          {modelPageAny.pricing.cards.map((card: any) => <PriceCard className="models-pricing-card" title={card.title} description={card.description} descriptionAbovePrice price={card.price} cta={modelPriceCardCta} />)}
+        </div>
+        <p class="models-pricing__disclaimer">{modelPageAny.pricing.disclaimer}</p>
+      </section>
     </section>
     <section class="models-list" aria-labelledby="models-list-title">
       <h2 id="models-list-title">{modelPageAny.feeTitle}</h2>
@@ -1085,6 +1102,23 @@ const relatedHref = localizedPath("/packages", language);
     <PriceSection packages={profilePackages} ariaLabel={de ? `Fotoshooting-Pakete von ${profilePage.name}` : hu ? `${profilePage.name} fotózási csomagjai` : `${profilePage.name}'s photoshoot packages`} cta={priceCardCtas.contact}>
       <PricingTabs slot="tabs" language={page.language} active="photographer" />
     </PriceSection>
+  </>
+) : isSelfieBooking ? (
+  <>
+    <PageHero variant="service" headingId="selfie-booking-title" title={page.h1} />
+    <SelfieBookingEmbed page={page} />
+  </>
+) : isSelfiePostBooking ? (
+  <>
+    <PageHero variant="service" headingId="selfie-post-booking-title" title={page.h1} description={selfiePostBookingPage.intro} />
+    <section class="post-booking post-booking--selfie" aria-labelledby="selfie-post-booking-rules-title">
+      <h2 id="selfie-post-booking-rules-title" class="post-booking__rules-heading">{selfiePostBookingPage.rulesHeading}</h2>
+      {selfiePostBookingPage.sections.map((section: [string, string[]]) => <section class="post-booking__section">
+        <h3>{section[0]}</h3>
+        <ul>{section[1].map((item: string) => <li>{item}</li>)}</ul>
+      </section>)}
+      <p class="post-booking__closing">{selfiePostBookingPage.closing[0]}<br />{selfiePostBookingPage.closing[1]}</p>
+    </section>
   </>
 ) : isPostBooking ? (
   <>
@@ -1457,6 +1491,12 @@ const relatedHref = localizedPath("/packages", language);
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
         weddingForm.reset();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "contact_form_submit",
+          form_type: "wedding_enquiry",
+          page_path: window.location.pathname
+        });
         setWeddingStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk az elérhetőséggel." : "Thank you, we’ll be in touch soon about availability.");
       } catch {
         setWeddingStatus(document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your enquiry. Please email us instead.", true);

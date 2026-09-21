@@ -87,6 +87,12 @@ const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-c
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
         siteContactForm.reset();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "contact_form_submit",
+          form_type: "general_contact",
+          page_path: window.location.pathname
+        });
         setSiteContactStatus(document.documentElement.lang === "de" ? "Vielen Dank, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
       } catch {
         setSiteContactStatus(document.documentElement.lang === "de" ? "Die Nachricht konnte nicht gesendet werden. Schreib uns bitte stattdessen eine E-Mail." : document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);

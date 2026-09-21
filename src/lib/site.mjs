@@ -87,7 +87,9 @@ const bookingFooterDecisions = {
     "/id-photo", "/hu/id-photo",
     "/privacy-policy", "/hu/privacy-policy",
     "/wedding-photography", "/hu/wedding-photography",
-    "/post-booking", "/hu/post-booking"
+    "/post-booking", "/hu/post-booking", "/de/post-booking",
+    "/selfie-booking", "/hu/selfie-booking", "/de/selfie-booking",
+    "/selfie-post-booking", "/hu/selfie-post-booking", "/de/selfie-post-booking"
   ])
 };
 

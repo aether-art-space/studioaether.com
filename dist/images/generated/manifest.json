@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T16:25:05.192Z",
+  "generatedAt": "2026-09-20T17:42:09.978Z",
   "images": {
     "/images/equipment/A7301405.jpg": {
       "source": "/images/equipment/A7301405.jpg",
@@ -118005,6 +118005,1141 @@
           "width": 1599,
           "height": 2399,
           "alpha": false
+        }
+      }
+    },
+    "/images/models/viktoria-01.jpg": {
+      "source": "/images/models/viktoria-01.jpg",
+      "width": 2480,
+      "height": 3100,
+      "alpha": false,
+      "hash": "912c501db4",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-01--320w--912c501db4.avif",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--480w--912c501db4.avif",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--640w--912c501db4.avif",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--960w--912c501db4.avif",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1280w--912c501db4.avif",
+            "width": 1280,
+            "height": 1600
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1600w--912c501db4.avif",
+            "width": 1600,
+            "height": 2000
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1920w--912c501db4.avif",
+            "width": 1920,
+            "height": 2400
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-01--320w--912c501db4.webp",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--480w--912c501db4.webp",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--640w--912c501db4.webp",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--960w--912c501db4.webp",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1280w--912c501db4.webp",
+            "width": 1280,
+            "height": 1600
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1600w--912c501db4.webp",
+            "width": 1600,
+            "height": 2000
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1920w--912c501db4.webp",
+            "width": 1920,
+            "height": 2400
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-01--320w--912c501db4.jpg",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--480w--912c501db4.jpg",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--640w--912c501db4.jpg",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--960w--912c501db4.jpg",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1280w--912c501db4.jpg",
+            "width": 1280,
+            "height": 1600
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1600w--912c501db4.jpg",
+            "width": 1600,
+            "height": 2000
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--1920w--912c501db4.jpg",
+            "width": 1920,
+            "height": 2400
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-01--thumb-160--912c501db4.avif",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--thumb-320--912c501db4.avif",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-01--thumb-160--912c501db4.webp",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--thumb-320--912c501db4.webp",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-01--thumb-160--912c501db4.jpg",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-01--thumb-320--912c501db4.jpg",
+            "width": 320,
+            "height": 320
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/models/viktoria-01--full--912c501db4.avif",
+          "width": 1920,
+          "height": 2400
+        },
+        "webp": {
+          "src": "/images/generated/models/viktoria-01--full--912c501db4.webp",
+          "width": 1920,
+          "height": 2400
+        },
+        "jpeg": {
+          "src": "/images/generated/models/viktoria-01--full--912c501db4.jpg",
+          "width": 1920,
+          "height": 2400
+        }
+      }
+    },
+    "/images/models/viktoria-02.jpg": {
+      "source": "/images/models/viktoria-02.jpg",
+      "width": 2480,
+      "height": 3101,
+      "alpha": false,
+      "hash": "9d7ec1bec0",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-02--320w--9d7ec1bec0.avif",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--480w--9d7ec1bec0.avif",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--640w--9d7ec1bec0.avif",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--960w--9d7ec1bec0.avif",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1280w--9d7ec1bec0.avif",
+            "width": 1280,
+            "height": 1601
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1600w--9d7ec1bec0.avif",
+            "width": 1600,
+            "height": 2001
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1919w--9d7ec1bec0.avif",
+            "width": 1919,
+            "height": 2400
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-02--320w--9d7ec1bec0.webp",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--480w--9d7ec1bec0.webp",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--640w--9d7ec1bec0.webp",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--960w--9d7ec1bec0.webp",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1280w--9d7ec1bec0.webp",
+            "width": 1280,
+            "height": 1601
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1600w--9d7ec1bec0.webp",
+            "width": 1600,
+            "height": 2001
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1919w--9d7ec1bec0.webp",
+            "width": 1919,
+            "height": 2400
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-02--320w--9d7ec1bec0.jpg",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--480w--9d7ec1bec0.jpg",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--640w--9d7ec1bec0.jpg",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--960w--9d7ec1bec0.jpg",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1280w--9d7ec1bec0.jpg",
+            "width": 1280,
+            "height": 1601
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1600w--9d7ec1bec0.jpg",
+            "width": 1600,
+            "height": 2001
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--1919w--9d7ec1bec0.jpg",
+            "width": 1919,
+            "height": 2400
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-02--thumb-160--9d7ec1bec0.avif",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--thumb-320--9d7ec1bec0.avif",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-02--thumb-160--9d7ec1bec0.webp",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--thumb-320--9d7ec1bec0.webp",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-02--thumb-160--9d7ec1bec0.jpg",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-02--thumb-320--9d7ec1bec0.jpg",
+            "width": 320,
+            "height": 320
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/models/viktoria-02--full--9d7ec1bec0.avif",
+          "width": 1919,
+          "height": 2400
+        },
+        "webp": {
+          "src": "/images/generated/models/viktoria-02--full--9d7ec1bec0.webp",
+          "width": 1919,
+          "height": 2400
+        },
+        "jpeg": {
+          "src": "/images/generated/models/viktoria-02--full--9d7ec1bec0.jpg",
+          "width": 1919,
+          "height": 2400
+        }
+      }
+    },
+    "/images/models/viktoria-03.jpg": {
+      "source": "/images/models/viktoria-03.jpg",
+      "width": 2480,
+      "height": 3719,
+      "alpha": false,
+      "hash": "4c4faadf81",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-03--320w--4c4faadf81.avif",
+            "width": 320,
+            "height": 479
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--480w--4c4faadf81.avif",
+            "width": 480,
+            "height": 719
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--640w--4c4faadf81.avif",
+            "width": 640,
+            "height": 959
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--960w--4c4faadf81.avif",
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--1280w--4c4faadf81.avif",
+            "width": 1280,
+            "height": 1919
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--1600w--4c4faadf81.avif",
+            "width": 1600,
+            "height": 2399
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-03--320w--4c4faadf81.webp",
+            "width": 320,
+            "height": 479
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--480w--4c4faadf81.webp",
+            "width": 480,
+            "height": 719
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--640w--4c4faadf81.webp",
+            "width": 640,
+            "height": 959
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--960w--4c4faadf81.webp",
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--1280w--4c4faadf81.webp",
+            "width": 1280,
+            "height": 1919
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--1600w--4c4faadf81.webp",
+            "width": 1600,
+            "height": 2399
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-03--320w--4c4faadf81.jpg",
+            "width": 320,
+            "height": 479
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--480w--4c4faadf81.jpg",
+            "width": 480,
+            "height": 719
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--640w--4c4faadf81.jpg",
+            "width": 640,
+            "height": 959
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--960w--4c4faadf81.jpg",
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--1280w--4c4faadf81.jpg",
+            "width": 1280,
+            "height": 1919
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--1600w--4c4faadf81.jpg",
+            "width": 1600,
+            "height": 2399
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-03--thumb-160--4c4faadf81.avif",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--thumb-320--4c4faadf81.avif",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-03--thumb-160--4c4faadf81.webp",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--thumb-320--4c4faadf81.webp",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-03--thumb-160--4c4faadf81.jpg",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-03--thumb-320--4c4faadf81.jpg",
+            "width": 320,
+            "height": 320
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/models/viktoria-03--full--4c4faadf81.avif",
+          "width": 1600,
+          "height": 2399
+        },
+        "webp": {
+          "src": "/images/generated/models/viktoria-03--full--4c4faadf81.webp",
+          "width": 1600,
+          "height": 2399
+        },
+        "jpeg": {
+          "src": "/images/generated/models/viktoria-03--full--4c4faadf81.jpg",
+          "width": 1600,
+          "height": 2399
+        }
+      }
+    },
+    "/images/models/viktoria-04.jpg": {
+      "source": "/images/models/viktoria-04.jpg",
+      "width": 1366,
+      "height": 2048,
+      "alpha": false,
+      "hash": "d6c1b981a1",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-04--320w--d6c1b981a1.avif",
+            "width": 320,
+            "height": 480
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--480w--d6c1b981a1.avif",
+            "width": 480,
+            "height": 720
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--640w--d6c1b981a1.avif",
+            "width": 640,
+            "height": 960
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--960w--d6c1b981a1.avif",
+            "width": 960,
+            "height": 1439
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--1280w--d6c1b981a1.avif",
+            "width": 1280,
+            "height": 1919
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--1366w--d6c1b981a1.avif",
+            "width": 1366,
+            "height": 2048
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-04--320w--d6c1b981a1.webp",
+            "width": 320,
+            "height": 480
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--480w--d6c1b981a1.webp",
+            "width": 480,
+            "height": 720
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--640w--d6c1b981a1.webp",
+            "width": 640,
+            "height": 960
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--960w--d6c1b981a1.webp",
+            "width": 960,
+            "height": 1439
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--1280w--d6c1b981a1.webp",
+            "width": 1280,
+            "height": 1919
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--1366w--d6c1b981a1.webp",
+            "width": 1366,
+            "height": 2048
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-04--320w--d6c1b981a1.jpg",
+            "width": 320,
+            "height": 480
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--480w--d6c1b981a1.jpg",
+            "width": 480,
+            "height": 720
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--640w--d6c1b981a1.jpg",
+            "width": 640,
+            "height": 960
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--960w--d6c1b981a1.jpg",
+            "width": 960,
+            "height": 1439
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--1280w--d6c1b981a1.jpg",
+            "width": 1280,
+            "height": 1919
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--1366w--d6c1b981a1.jpg",
+            "width": 1366,
+            "height": 2048
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-04--thumb-160--d6c1b981a1.avif",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--thumb-320--d6c1b981a1.avif",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-04--thumb-160--d6c1b981a1.webp",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--thumb-320--d6c1b981a1.webp",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-04--thumb-160--d6c1b981a1.jpg",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-04--thumb-320--d6c1b981a1.jpg",
+            "width": 320,
+            "height": 320
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/models/viktoria-04--full--d6c1b981a1.avif",
+          "width": 1366,
+          "height": 2048
+        },
+        "webp": {
+          "src": "/images/generated/models/viktoria-04--full--d6c1b981a1.webp",
+          "width": 1366,
+          "height": 2048
+        },
+        "jpeg": {
+          "src": "/images/generated/models/viktoria-04--full--d6c1b981a1.jpg",
+          "width": 1366,
+          "height": 2048
+        }
+      }
+    },
+    "/images/models/viktoria-05.jpg": {
+      "source": "/images/models/viktoria-05.jpg",
+      "width": 2480,
+      "height": 3101,
+      "alpha": false,
+      "hash": "0c340c1b6f",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-05--320w--0c340c1b6f.avif",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--480w--0c340c1b6f.avif",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--640w--0c340c1b6f.avif",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--960w--0c340c1b6f.avif",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1280w--0c340c1b6f.avif",
+            "width": 1280,
+            "height": 1601
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1600w--0c340c1b6f.avif",
+            "width": 1600,
+            "height": 2001
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1919w--0c340c1b6f.avif",
+            "width": 1919,
+            "height": 2400
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-05--320w--0c340c1b6f.webp",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--480w--0c340c1b6f.webp",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--640w--0c340c1b6f.webp",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--960w--0c340c1b6f.webp",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1280w--0c340c1b6f.webp",
+            "width": 1280,
+            "height": 1601
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1600w--0c340c1b6f.webp",
+            "width": 1600,
+            "height": 2001
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1919w--0c340c1b6f.webp",
+            "width": 1919,
+            "height": 2400
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-05--320w--0c340c1b6f.jpg",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--480w--0c340c1b6f.jpg",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--640w--0c340c1b6f.jpg",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--960w--0c340c1b6f.jpg",
+            "width": 960,
+            "height": 1200
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1280w--0c340c1b6f.jpg",
+            "width": 1280,
+            "height": 1601
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1600w--0c340c1b6f.jpg",
+            "width": 1600,
+            "height": 2001
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--1919w--0c340c1b6f.jpg",
+            "width": 1919,
+            "height": 2400
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-05--thumb-160--0c340c1b6f.avif",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--thumb-320--0c340c1b6f.avif",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-05--thumb-160--0c340c1b6f.webp",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--thumb-320--0c340c1b6f.webp",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-05--thumb-160--0c340c1b6f.jpg",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-05--thumb-320--0c340c1b6f.jpg",
+            "width": 320,
+            "height": 320
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/models/viktoria-05--full--0c340c1b6f.avif",
+          "width": 1919,
+          "height": 2400
+        },
+        "webp": {
+          "src": "/images/generated/models/viktoria-05--full--0c340c1b6f.webp",
+          "width": 1919,
+          "height": 2400
+        },
+        "jpeg": {
+          "src": "/images/generated/models/viktoria-05--full--0c340c1b6f.jpg",
+          "width": 1919,
+          "height": 2400
+        }
+      }
+    },
+    "/images/models/viktoria-06.jpg": {
+      "source": "/images/models/viktoria-06.jpg",
+      "width": 720,
+      "height": 900,
+      "alpha": false,
+      "hash": "d56ba85a50",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-06--320w--d56ba85a50.avif",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--480w--d56ba85a50.avif",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--640w--d56ba85a50.avif",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--720w--d56ba85a50.avif",
+            "width": 720,
+            "height": 900
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-06--320w--d56ba85a50.webp",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--480w--d56ba85a50.webp",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--640w--d56ba85a50.webp",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--720w--d56ba85a50.webp",
+            "width": 720,
+            "height": 900
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-06--320w--d56ba85a50.jpg",
+            "width": 320,
+            "height": 400
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--480w--d56ba85a50.jpg",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--640w--d56ba85a50.jpg",
+            "width": 640,
+            "height": 800
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--720w--d56ba85a50.jpg",
+            "width": 720,
+            "height": 900
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-06--thumb-160--d56ba85a50.avif",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--thumb-320--d56ba85a50.avif",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-06--thumb-160--d56ba85a50.webp",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--thumb-320--d56ba85a50.webp",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-06--thumb-160--d56ba85a50.jpg",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-06--thumb-320--d56ba85a50.jpg",
+            "width": 320,
+            "height": 320
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/models/viktoria-06--full--d56ba85a50.avif",
+          "width": 720,
+          "height": 900
+        },
+        "webp": {
+          "src": "/images/generated/models/viktoria-06--full--d56ba85a50.webp",
+          "width": 720,
+          "height": 900
+        },
+        "jpeg": {
+          "src": "/images/generated/models/viktoria-06--full--d56ba85a50.jpg",
+          "width": 720,
+          "height": 900
+        }
+      }
+    },
+    "/images/models/viktoria-07.jpg": {
+      "source": "/images/models/viktoria-07.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alpha": false,
+      "hash": "0a0a82b55a",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-07--320w--0a0a82b55a.avif",
+            "width": 320,
+            "height": 480
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--480w--0a0a82b55a.avif",
+            "width": 480,
+            "height": 720
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--640w--0a0a82b55a.avif",
+            "width": 640,
+            "height": 960
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--960w--0a0a82b55a.avif",
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--1280w--0a0a82b55a.avif",
+            "width": 1280,
+            "height": 1920
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--1600w--0a0a82b55a.avif",
+            "width": 1600,
+            "height": 2400
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-07--320w--0a0a82b55a.webp",
+            "width": 320,
+            "height": 480
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--480w--0a0a82b55a.webp",
+            "width": 480,
+            "height": 720
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--640w--0a0a82b55a.webp",
+            "width": 640,
+            "height": 960
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--960w--0a0a82b55a.webp",
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--1280w--0a0a82b55a.webp",
+            "width": 1280,
+            "height": 1920
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--1600w--0a0a82b55a.webp",
+            "width": 1600,
+            "height": 2400
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-07--320w--0a0a82b55a.jpg",
+            "width": 320,
+            "height": 480
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--480w--0a0a82b55a.jpg",
+            "width": 480,
+            "height": 720
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--640w--0a0a82b55a.jpg",
+            "width": 640,
+            "height": 960
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--960w--0a0a82b55a.jpg",
+            "width": 960,
+            "height": 1440
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--1280w--0a0a82b55a.jpg",
+            "width": 1280,
+            "height": 1920
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--1600w--0a0a82b55a.jpg",
+            "width": 1600,
+            "height": 2400
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/models/viktoria-07--thumb-160--0a0a82b55a.avif",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--thumb-320--0a0a82b55a.avif",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/models/viktoria-07--thumb-160--0a0a82b55a.webp",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--thumb-320--0a0a82b55a.webp",
+            "width": 320,
+            "height": 320
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/models/viktoria-07--thumb-160--0a0a82b55a.jpg",
+            "width": 160,
+            "height": 160
+          },
+          {
+            "src": "/images/generated/models/viktoria-07--thumb-320--0a0a82b55a.jpg",
+            "width": 320,
+            "height": 320
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/models/viktoria-07--full--0a0a82b55a.avif",
+          "width": 1600,
+          "height": 2400
+        },
+        "webp": {
+          "src": "/images/generated/models/viktoria-07--full--0a0a82b55a.webp",
+          "width": 1600,
+          "height": 2400
+        },
+        "jpeg": {
+          "src": "/images/generated/models/viktoria-07--full--0a0a82b55a.jpg",
+          "width": 1600,
+          "height": 2400
         }
       }
     }

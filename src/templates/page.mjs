@@ -10,7 +10,7 @@ const escapeHtml = (value = "") => String(value)
 const localizedPath = (path, language) => {
   const page = pageByPath.get(path);
   if (!page) return path;
-  return language === "hu" && page.language === "en" ? (page.counterpartPath || path) : path;
+  return page.alternatePaths?.[language] || (language === "hu" && page.language === "en" ? (page.counterpartPath || path) : path);
 };
 
 const localizedNav = (language) => navGroups.map((group) => ({
@@ -83,7 +83,7 @@ const renderHome = (page) => {
 
 const renderBooking = (page) => {
   const hu = page.language === "hu";
-  return `<section class="hero"><p class="eyebrow">${hu ? "foglalás" : "booking"}</p><h1>${escapeHtml(page.h1)}</h1><p class="hero-lead">${escapeHtml(introFor(page))}</p><div class="actions"><a class="button" data-gtag-event="booking_click" data-gtag-location="booking" href="${site.bookingUrl}">${hu ? "fotóstúdió foglalása" : "book the photo studio"}</a><a class="button button--outline" data-gtag-event="selfie_booking_click" data-gtag-location="booking" href="${site.selfieBookingUrl}">${hu ? "szelfi stúdió foglalása" : "book the selfie studio"}</a></div></section><section class="price-grid"><article><p class="eyebrow">studio rent</p><h2>7.000 HUF / hour</h2><p>${hu ? "A fotóstúdió használata felszereléssel és helyszíni segítséggel." : "Studio rental for your photoshoot, workshop or creative project."}</p></article><article><p class="eyebrow">photoshoots</p><h2>from 39.000 HUF</h2><p>${hu ? "Fotózási csomagok különböző méretű projektekhez." : "Photoshoot packages for projects of different sizes and purposes."}</p></article><article><p class="eyebrow">selfie studio</p><h2>private session</h2><p>${hu ? "Privát fotózás saját tempóban." : "A private, self-directed photo session."}</p></article></section><p class="audit-note">${hu ? "A végleges árlistát és foglalási feltételeket a cutover előtti forrásellenőrzés során kell rögzíteni." : "Final prices and booking terms must be confirmed during the pre-cutover source audit."}</p>`;
+  return `<section class="hero"><p class="eyebrow">${hu ? "foglalás" : "booking"}</p><h1>${escapeHtml(page.h1)}</h1><p class="hero-lead">${escapeHtml(introFor(page))}</p><div class="actions"><a class="button" data-gtag-event="booking_click" data-gtag-location="booking" href="${site.bookingUrl}">${hu ? "fotóstúdió foglalása" : "book the photo studio"}</a><a class="button button--outline" data-gtag-event="selfie_booking_click" data-gtag-location="booking" href="${localizedPath("/selfie-booking", page.language)}">${hu ? "szelfi stúdió foglalása" : "book the selfie studio"}</a></div></section><section class="price-grid"><article><p class="eyebrow">studio rent</p><h2>7.000 HUF / hour</h2><p>${hu ? "A fotóstúdió használata felszereléssel és helyszíni segítséggel." : "Studio rental for your photoshoot, workshop or creative project."}</p></article><article><p class="eyebrow">photoshoots</p><h2>from 39.000 HUF</h2><p>${hu ? "Fotózási csomagok különböző méretű projektekhez." : "Photoshoot packages for projects of different sizes and purposes."}</p></article><article><p class="eyebrow">selfie studio</p><h2>private session</h2><p>${hu ? "Privát fotózás saját tempóban." : "A private, self-directed photo session."}</p></article></section><p class="audit-note">${hu ? "A végleges árlistát és foglalási feltételeket a cutover előtti forrásellenőrzés során kell rögzíteni." : "Final prices and booking terms must be confirmed during the pre-cutover source audit."}</p>`;
 };
 
 const renderFaq = (page) => {

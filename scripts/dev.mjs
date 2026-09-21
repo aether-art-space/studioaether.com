@@ -18,10 +18,22 @@ const mime = {
 };
 const server = createServer(async (request, response) => {
   const clean = decodeURIComponent((request.url || "/").split("?")[0]);
-  const candidate = clean.endsWith("/") ? `${clean}index.html` : clean.includes(".") ? clean : `${clean}/index.html`;
-  const file = path.resolve(root, `.${candidate}`);
-  if (!file.startsWith(root)) { response.writeHead(400); response.end("Bad request"); return; }
-  try { const body = await fs.readFile(file); response.writeHead(200, { "Content-Type": mime[path.extname(file)] || "text/html; charset=utf-8" }); response.end(body); }
-  catch { response.writeHead(404, { "Content-Type": "text/plain" }); response.end("Not found"); }
+  const candidates = clean.endsWith("/")
+    ? [`${clean}index.html`, `${clean.slice(0, -1)}.html`]
+    : clean.includes(".")
+      ? [clean]
+      : [`${clean}.html`, `${clean}/index.html`];
+  for (const candidate of candidates) {
+    const file = path.resolve(root, `.${candidate}`);
+    if (!file.startsWith(root)) { response.writeHead(400); response.end("Bad request"); return; }
+    try {
+      const body = await fs.readFile(file);
+      response.writeHead(200, { "Content-Type": mime[path.extname(file)] || "text/html; charset=utf-8" });
+      response.end(body);
+      return;
+    } catch {}
+  }
+  response.writeHead(404, { "Content-Type": "text/plain" });
+  response.end("Not found");
 });
 server.listen(4173, () => console.log("studioaether.com V2 at http://localhost:4173"));

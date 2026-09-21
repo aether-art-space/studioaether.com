@@ -41,15 +41,16 @@ This is an investigation record for the Wix-to-V2 migration. It is deliberately 
 
 ## V2 implementation status
 
-- The source now supports the existing GTM container through `PUBLIC_GTM_ID`; the production value is intentionally not configured yet.
+- The source supports the existing GTM container through `PUBLIC_GTM_ID`; production is deployed with `GTM-P6G8NTP2`.
 - In production, the cookie banner is enabled when GTM or a direct Google tracking fallback is configured. Preview builds keep tracking disabled.
 - [`public/tracking.js`](../public/tracking.js) now implements advanced consent mode: it establishes a default-denied state before loading Google measurement, then updates that state from the saved choice or consent banner.
 - In GTM mode, V2 does not manufacture conversion events. The existing container remains the source of truth until each current Wix event source is observed and deliberately reproduced.
-- The `/post-booking` route remains available for the confirmed Cal.com photo-studio redirect and its existing page-path triggers. The selfie event cannot use a custom redirect on its current Cal.com plan, so its outbound click remains the intentional proxy signal.
+- After a successful Web3Forms response, the general contact and wedding enquiry forms push one non-PII `contact_form_submit` event to `dataLayer`, with `form_type` and `page_path` parameters. No tag will fire until this event is configured in GTM.
+- The `/post-booking` route remains available for the confirmed Cal.com photo-studio redirect and its existing page-path triggers. Selfie bookings now use localized `/selfie-booking` pages with the Cal.com inline embed and redirect from the embed success callback to localized `/selfie-post-booking` pages.
 
-## Read-only GTM container result
+## GTM configuration
 
-The container `GTM-P6G8NTP2` is now visible under the `aether art space` account. The current workspace reports zero pending changes. It contains seven tags:
+GTM container `GTM-P6G8NTP2` is under the `aether art space` account. Version 8, **Track completed selfie bookings**, was published on 19 Sep 2026. The relevant selfie tracking configuration is:
 
 | Tag | Configuration | Trigger | Initial classification |
 | --- | --- | --- | --- |
@@ -57,9 +58,14 @@ The container `GTM-P6G8NTP2` is now visible under the `aether art space` account
 | `GA4 - Booking Submission` | GA4 event `Post-Booking Page View` | Page path contains `/post-booking` | **Verify flow** |
 | `Google Ads Conversion Tracking` | Ads ID `16760295216`, label `RqzSCLLwy6QbELCe97c-` | Custom event `booking_event` | **Verify event source** |
 | `Google Ads Conversion Tracking - Aether sikeres form beküldés - Fotóstúdió` | Ads ID from `Gads ID`, label `JLOECLS_-eYcELCe97c-`, once per page | Page path contains `/post-booking` | **Verify flow** |
-| `Google Ads Conversion Tracking - Szelfi stúdió foglalás gomb katt` | Ads ID from `Gads ID`, label `kW2fCPfojOccELCe97c-`, once per page | Just Links where Click URL contains `cal.com/aether-studio/selfie-shoot` | **Keep** |
+| `Google Ads Conversion Tracking - Szelfi stúdió sikeres foglalás` | Ads ID from `Gads ID`, label `kW2fCPfojOccELCe97c-`, once per page | `Selfie Booking Completed - Confirmation Page View` | **Completed-booking conversion** |
 | `Google Analytics GA4 Event - Sikeres foglalás - fotóstúdió` | GA4 event `sikeres_foglalas_fotostudio` | Page path contains `/post-booking` | **Verify flow** |
 | `Google Analytics GA4 Event - Szelfi studio foglalás kattintás` | GA4 event `szelfi_studio_foglalas_katt` | Just Links where Click URL contains `cal.com/aether-studio/selfie-shoot` | **Keep** |
+| `GA4 Event - Selfie Booking Completed` | GA4 event `selfie_booking_completed` | `Selfie Booking Completed - Confirmation Page View` | **Completed-booking measurement** |
+
+Google Ads conversion action `7732409463` is named `Selfie Studio — Completed Booking`, remains Primary, and is categorized as **Book appointment**. It is a campaign-specific goal used only by `Selfie Studio — Completed Bookings — PMax`; it is not an account-default goal.
+
+The selfie PMax campaign keeps only the `szelfi studio` asset group active. Its unrelated `Studio` asset group is paused, and Final URL Expansion is off so traffic remains on the campaign's declared selfie landing pages.
 
 The two user-defined constants are:
 
@@ -69,8 +75,10 @@ The two user-defined constants are:
 ### Parity checks to resolve before launch
 
 - The current V2 click events are `booking_click` and `selfie_booking_click`; the old GTM booking Ads tag listens for the custom event `booking_event`. We must observe what creates `booking_event` on Wix before reproducing it in V2; it may be a click or a completion signal.
-- GTM version 7, **Selfie booking trigger: match Cal.com URL**, was published on 8 Sep 2026. The shared selfie trigger now matches Click URL containing `cal.com/aether-studio/selfie-shoot`, replacing its fragile Hungarian click-text condition while preserving both referenced tags.
+- GTM version 7, **Selfie booking trigger: match Cal.com URL**, was published on 8 Sep 2026. Its remaining GA4 click tag still measures the funnel step; no Google Ads conversion tag uses this click trigger.
+- GTM version 8 adds `Selfie Booking Completed - Confirmation Page View`, a Page View trigger whose Page Path regular expression is `^/(?:hu/|de/)?selfie-post-booking/?$`. It fires the selfie Google Ads conversion tag and the `selfie_booking_completed` GA4 event.
 - The photo-studio Cal.com event (`/aether-studio/booking`) has **Redirect on booking** enabled with `https://www.studioaether.com/post-booking`; forwarding booking parameters is also enabled. This confirms that the three `/post-booking` tags represent successful photo-studio bookings and should remain unchanged through the domain cutover.
+- The selfie Cal.com event remains on the free plan without event-type redirect access. The V2 embed listens for `bookingSuccessfulV2` and the legacy `bookingSuccessful` action, deduplicates the callback, and redirects to `/selfie-post-booking`, `/hu/selfie-post-booking`, or `/de/selfie-post-booking`.
 - The separate `aczel.pictures` container `GTM-TTB3D9ZQ` is visible in the same Google account list but is not part of the `studioaether.com` container. It is not included in this migration inventory.
 
 ### Live-page cross-check
@@ -84,14 +92,13 @@ The custom event name `booking_event` was not present in the rendered HTML or in
 
 Wix's GTM integration is connected with **Advanced consent mode** enabled. V2 now matches that loading model: Google measurement loads under denied consent and the banner updates the state after the visitor's choice.
 
-The selfie tags are not ambiguous: both are explicitly triggered by the Cal.com selfie link click. Cal.com's **Redirect on booking** control for this event is locked behind a Teams upgrade, confirming that the outbound click is the intentional proxy signal rather than evidence of a completed booking.
+The former selfie Google Ads click conversion has been moved to the localized selfie post-booking paths. Cal.com's **Redirect on booking** control for this event remains locked behind a Teams upgrade, but the V2 embed success callback supplies the redirect without requiring that plan feature.
 
-## Next evidence required before DNS cutover
+## Remaining evidence
 
-1. Preserve `/post-booking` and its three existing path-triggered tags; Cal.com's photo-studio event is confirmed to return there after successful booking.
-2. Preserve the selfie click as a proxy conversion. Its shared GTM trigger now uses the durable Cal.com URL and works with both Wix and V2 labels.
+1. Preserve `/post-booking` and its existing page-path tags; Cal.com's photo-studio event is confirmed to return there after successful booking.
+2. Confirm a real, completed selfie booking in Tag Assistant after consent is granted. Do not directly open a selfie post-booking URL for this check, as that could record a false Ads conversion.
 3. Treat the `booking_event` tag as a likely artifact unless its current source or purpose is identified; do not create a new event merely to make that tag fire.
-4. Compare Wix and a private V2 preview in Tag Assistant, then add `PUBLIC_GTM_ID=GTM-P6G8NTP2` to production. Keep direct Google IDs unset there so tags do not fire twice.
 
 ## Local production-mode verification
 
@@ -100,7 +107,7 @@ On 9 Sep 2026, V2 was run locally with `PUBLIC_DEPLOY_ENV=production` and `PUBLI
 - A fresh visit displayed the consent banner while loading exactly one GTM container and its GA4 Google tag, confirming the advanced-consent loading order.
 - **Accept all** hid the banner and persisted across reload.
 - **Only necessary** also hid the banner and persisted across reload while GTM continued to load exactly once under denied consent.
-- The local selfie links resolve to `https://cal.com/aether-studio/selfie-shoot`, matching the published GTM Click URL trigger.
+- The local selfie CTAs now resolve to localized `/selfie-booking` pages; the embedded Cal.com event remains `aether-studio/selfie-shoot`.
 - `/post-booking` rendered the booking confirmation page and loaded GTM exactly once, matching the three existing page-path triggers.
 
 Tag Assistant's popup handshake could not attach to the localhost tab in the controlled browser environment. Consent updates and tag firing should therefore receive one final Tag Assistant smoke test on an accessible preview or immediately after cutover; no real conversion was generated during this local check.
@@ -113,4 +120,4 @@ An owner-approved direct visit to `/post-booking` was then run through Tag Assis
 
 The general contact form and wedding-enquiry form were also submitted with clearly labelled `TEST` content and `aczeldz@gmail.com`. Both displayed their success states and both messages were confirmed received by the owner, verifying production Web3Forms delivery end to end.
 
-The only external tracking configuration change made during this work was the documented GTM Version 7 selfie-trigger update. No Google Ads conversion settings, GA4 settings, or Cal.com event settings were changed.
+On 19 Sep 2026, GTM Version 8 was published. It moved the existing selfie Google Ads conversion label from the outbound Cal.com click to the localized selfie post-booking trigger, and added the `selfie_booking_completed` GA4 event on the same trigger. No Google Ads conversion-action settings, GA4 property settings, or Cal.com event settings were changed.

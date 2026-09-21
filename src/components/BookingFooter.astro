@@ -1,6 +1,6 @@
 ---
 import { homeContent, homeImages } from "../data/content.mjs";
-import { absoluteUrl, site, naturalGerman } from "../lib/site.mjs";
+import { absoluteUrl, site, naturalGerman, localizedPath } from "../lib/site.mjs";
 import ResponsiveImage from "./ResponsiveImage.astro";
 
 const { page, variant = "all", includeContactModal = true } = Astro.props;
@@ -27,7 +27,7 @@ const headingId = `footer-booking-title-${variantKey}`;
     <p>{bookingVariant.lead}</p>
   </div>
   <div class="home-booking__grid">{cardIndexes.map((index) => { const card = index === 2 && customContactCard ? customContactCard : home.bookingCards[index]; const [title, copy, cta] = card; const questionEnd = copy.indexOf("?"); const contactQuestion = questionEnd >= 0 ? copy.slice(0, questionEnd + 1) : ""; const contactBody = questionEnd >= 0 ? copy.slice(questionEnd + 1).trim() : copy;
-    const href = index === 0 ? site.bookingUrl : site.selfieBookingUrl;
+    const href = index === 0 ? site.bookingUrl : localizedPath("/selfie-booking", page.language);
     const event = index === 0 ? "booking_click" : index === 1 ? "selfie_booking_click" : "email_click";
     return <article class:list={["home-booking-card", { "home-booking-card--contact": index === 2 }]}>
       <h3>{title}</h3>
