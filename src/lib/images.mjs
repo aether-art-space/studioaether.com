@@ -20,7 +20,7 @@ export const imageRoles = {
 
 const sourceFor = (image) => image?.source || image?.src || "";
 const fallbackFormat = (entry) => entry?.alpha ? "png" : "jpeg";
-const srcsetFor = (variants = []) => variants.map((variant) => `${variant.src} ${variant.width}w`).join(", ");
+const srcsetFor = (variants = []) => variants.map((variant) => `${variant.src.replaceAll(" ", "%20")} ${variant.width}w`).join(", ");
 
 export const resolveImage = (image, role = "content") => {
   const source = sourceFor(image);

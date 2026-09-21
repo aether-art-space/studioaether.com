@@ -1,0 +1,35 @@
+{
+  "defaultAlt": "Creative work at aether art space",
+  "images": {
+    "01-creating-art-01.jpg": {
+      "alt": "Studio reception",
+      "title": "Studio reception",
+      "description": "The studio reception area."
+    },
+    "02-creating-art-02.jpg": {
+      "alt": "Framed work in the studio",
+      "title": "Framed work in the studio",
+      "description": "Framed work in the studio."
+    },
+    "03-creating-art-03.jpg": {
+      "alt": "Camera collection",
+      "title": "Camera collection",
+      "description": "Cameras and equipment in the studio."
+    },
+    "04-creating-art-04.jpg": {
+      "alt": "Make-up desk",
+      "title": "Make-up desk",
+      "description": "The make-up desk and mirror."
+    },
+    "05-creating-art-05.jpg": {
+      "alt": "Creative work in the studio",
+      "title": "Creative work in the studio",
+      "description": "A creative studio setup."
+    },
+    "A7306747-HDR 2.jpg": {
+      "alt": "Studio lights",
+      "title": "Studio lights",
+      "description": "The studio set up with lights."
+    }
+  }
+}

@@ -2047,11 +2047,11 @@ export const homeImages = {
     { src: "/images/wix/reference/feature-extras.jpg", alt: "extras available in the photostudio" }
   ],
   creatingArt: [
-    { src: "/images/wix/reference/creating-art-1-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
-    { src: "/images/wix/reference/creating-art-2-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
-    { src: "/images/wix/reference/creating-art-3-full.jpg", width: 1000, height: 1500, alt: "a framed artwork in the aether art space photo studio" },
-    { src: "/images/wix/reference/creating-art-4-full.jpg", width: 1000, height: 1500, alt: "creative work in the aether art space photo studio" },
-    wixLiveGalleryImage("94c0c9_ee1a10c86e754d76a6e8de8e80f78a6f~mv2.jpg", 1000, 1500, "creative work in the aether art space photo studio")
+    { source: "/images/galleries/home-showcase/01-creating-art-01.jpg", src: "/images/galleries/home-showcase/01-creating-art-01.jpg", width: 1000, height: 1500, alt: "Studio reception" },
+    { source: "/images/galleries/home-showcase/02-creating-art-02.jpg", src: "/images/galleries/home-showcase/02-creating-art-02.jpg", width: 1000, height: 1500, alt: "Framed work in the studio" },
+    { source: "/images/galleries/home-showcase/03-creating-art-03.jpg", src: "/images/galleries/home-showcase/03-creating-art-03.jpg", width: 1000, height: 1500, alt: "Camera collection" },
+    { source: "/images/galleries/home-showcase/04-creating-art-04.jpg", src: "/images/galleries/home-showcase/04-creating-art-04.jpg", width: 1000, height: 1500, alt: "Make-up desk" },
+    { source: "/images/galleries/home-showcase/05-creating-art-05.jpg", src: "/images/galleries/home-showcase/05-creating-art-05.jpg", width: 1000, height: 1500, alt: "Creative work in the studio" }
   ],
   artists: [
     { src: "/images/wix/reference/artist-photographers.jpg", width: 362, height: 362, alt: "resident photographer", altHu: "rezidens fotós", altDe: "ansässige:r Fotograf:in" },
@@ -2081,6 +2081,7 @@ const replaceGallery = (target, source) => {
 };
 
 replaceGallery(studioGalleryImages, managedGalleries.studio || []);
+replaceGallery(homeImages.creatingArt, managedGalleries["home-showcase"] || homeImages.creatingArt);
 replaceGallery(selfieImages.gallery, managedGalleries.selfie || []);
 replaceGallery(propsImages.wardrobe, managedGalleries["props-wardrobe"] || []);
 replaceGallery(propsImages.wardrobeFree, managedGalleries["props-wardrobe-free"] || []);
