@@ -561,7 +561,7 @@ export const equipmentImages = {
     equipmentImage("A7304153.jpg", "A7304153.jpg"),
     equipmentImage("A7305000.jpg", "strobe flash - Godox MS300"),
     equipmentImage("A7306627.jpg", "A7306627.jpg"),
-    equipmentImage("DSC04162.jpg", "DSC04162.jpg")
+    equipmentImage("A7306772.jpg", "2x Godox SL200II")
   ],
   modifiers: [
     equipmentImage("A7304989.jpg", "light modifier - beauty dish"),
@@ -595,7 +595,9 @@ export const equipmentImages = {
     equipmentImage("A7304159.jpg", "A7304159.jpg"),
     equipmentImage("A7304974.jpg", "analogue camera - FED2"),
     equipmentImage("A7305079.jpg", "analogue camera - Olympus MJU2"),
-    equipmentImage("A7304979.jpg", "analogue camera - Super 8")
+    equipmentImage("A7306773.jpg", "instant camera - Instax Mini 12"),
+    equipmentImage("A7306774.jpg", "110 film camera - Kodak Ektra 12"),
+    equipmentImage("A7306777.jpg", "simple compact 35mm camera - Carena Mini AF")
   ],
   lenses: [
     equipmentImage("A7307150.jpg", "Nikon mount lenses"),
@@ -631,11 +633,11 @@ export const equipmentCaptions = {
       equipmentCaption("Durchlichtschirm", "")
     ],
     other: [
-      equipmentCaption("Stative und Halterungen", "kostenlos"),
-      equipmentCaption("Windmaschine", "kostenlos"),
-      equipmentCaption("Nebelmaschine", "5.000 HUF pro Buchung"),
-      equipmentCaption("Vorbereitungsequipment", "kostenlos"),
-      equipmentCaption("Schwarzlicht", "kostenlos")
+      equipmentCaption("Stative und Halterungen", "", "kostenlos"),
+      equipmentCaption("Windmaschine", "", "kostenlos"),
+      equipmentCaption("Nebelmaschine", "", "5.000 HUF pro Buchung"),
+      equipmentCaption("Vorbereitungsequipment", "", "kostenlos"),
+      equipmentCaption("Schwarzlicht", "", "kostenlos")
     ],
     cameras: [
       equipmentCaption("Sony A7III", "spiegellose Vollformat-Digitalkamera", "9.000 HUF/Stunde"),
@@ -648,7 +650,9 @@ export const equipmentCaptions = {
       equipmentCaption("Yashica Lynx 5000E", "35-mm-Messsucherkamera", "5.000 HUF/Stunde"),
       equipmentCaption("FED2", "35-mm-Messsucherkamera", "5.000 HUF/Stunde"),
       equipmentCaption("Olympus MJU2", "kompakte 35-mm-Filmkamera", "5.000 HUF/Stunde"),
-      equipmentCaption("Super 8", "8-mm-Filmkamera", "9.000 HUF/Stunde")
+      equipmentCaption("Instax Mini 12", "Sofortbildkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("Kodak Ektra 12", "110-Filmkamera", "5.000 HUF/Stunde"),
+      equipmentCaption("Carena Mini AF", "einfache kompakte 35-mm-Filmkamera", "5.000 HUF/Stunde")
     ],
     lenses: [
       equipmentCaption("Objektive mit Nikon-Bajonett", "28 mm f/1.8, 85 mm f/1.8, 50 mm f/1.8 und weitere Objektive."),
@@ -681,11 +685,11 @@ export const equipmentCaptions = {
       equipmentCaption("Translucent Umbrella", "-")
     ],
     other: [
-      equipmentCaption("Tripods & stands", "free"),
-      equipmentCaption("Wind machine", "free"),
-      equipmentCaption("Fog machine", "HUF 5,000 per booking"),
-      equipmentCaption("Tools for prep", "free"),
-      equipmentCaption("Blacklight", "free")
+      equipmentCaption("Tripods & stands", "", "free"),
+      equipmentCaption("Wind machine", "", "free"),
+      equipmentCaption("Fog machine", "", "HUF 5,000 per booking"),
+      equipmentCaption("Tools for prep", "", "free"),
+      equipmentCaption("Blacklight", "", "free")
     ],
     cameras: [
       equipmentCaption("Sony A7III", "full frame mirrorless digital camera", "HUF 9,000/hour"),
@@ -698,7 +702,9 @@ export const equipmentCaptions = {
       equipmentCaption("Yashica Lynx 5000E", "35mm film rangefinder camera", "HUF 5,000/hour"),
       equipmentCaption("FED2", "35mm film rangefinder camera", "HUF 5,000/hour"),
       equipmentCaption("Olympus MJU2", "35mm film compact camera", "HUF 5,000/hour"),
-      equipmentCaption("Super 8", "8mm film videocamera", "HUF 9,000/hour")
+      equipmentCaption("Instax Mini 12", "instant camera", "HUF 5,000/hour"),
+      equipmentCaption("Kodak Ektra 12", "110 film camera", "HUF 5,000/hour"),
+      equipmentCaption("Carena Mini AF", "simple compact 35mm camera", "HUF 5,000/hour")
     ],
     lenses: [
       equipmentCaption("Nikon mount lenses", "28mm f/1.8, 85mm f/1.8, 50mm f/1.8, and other lenses."),
@@ -731,11 +737,11 @@ export const equipmentCaptions = {
       equipmentCaption("Áttetsző ernyő", "-")
     ],
     other: [
-      equipmentCaption("Tripodok és állványok", "ingyenes"),
-      equipmentCaption("Szélgép", "ingyenes"),
-      equipmentCaption("Ködgép", "5 000 Ft/foglalás"),
-      equipmentCaption("Eszközök készülődéshez", "ingyenes"),
-      equipmentCaption("UV lámpa", "ingyenes")
+      equipmentCaption("Tripodok és állványok", "", "ingyenes"),
+      equipmentCaption("Szélgép", "", "ingyenes"),
+      equipmentCaption("Ködgép", "", "5 000 Ft/foglalás"),
+      equipmentCaption("Eszközök készülődéshez", "", "ingyenes"),
+      equipmentCaption("UV lámpa", "", "ingyenes")
     ],
     cameras: [
       equipmentCaption("Sony A7III", "full frame mirrorless digitális fényképező", "9 000 Ft/óra"),
@@ -748,7 +754,9 @@ export const equipmentCaptions = {
       equipmentCaption("Yashica Lynx 5000E", "35mm-es rangefinder kamera", "5 000 Ft/óra"),
       equipmentCaption("FED2", "35mm-es kamera", "5 000 Ft/óra"),
       equipmentCaption("Olympus MJU2", "kompakt 35mm-es", "5 000 Ft/óra"),
-      equipmentCaption("Super 8", "8mm film kamera", "9 000 Ft/óra")
+      equipmentCaption("Instax Mini 12", "instant kamera", "5 000 Ft/óra"),
+      equipmentCaption("Kodak Ektra 12", "110-es filmes kamera", "5 000 Ft/óra"),
+      equipmentCaption("Carena Mini AF", "egyszerű kompakt 35mm-es kamera", "5 000 Ft/óra")
     ],
     lenses: [
       equipmentCaption("Nikon bajonettes objektívek", "28mm f/1.8, 85mm f/1.8, 50mm f/1.8, és más objektívek."),
