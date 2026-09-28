@@ -130,7 +130,15 @@ const headingId = `footer-booking-title-${variantKey}`;
         });
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
+        const submittedEmail = String(formData.get("email") || "").trim().toLowerCase();
         contactForm.reset();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "contact_form_submit",
+          form_type: "general_contact",
+          page_path: window.location.pathname,
+          user_data: { email: submittedEmail }
+        });
         setContactStatus(document.documentElement.lang === "de" ? "Danke, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
       } catch {
         setContactStatus(document.documentElement.lang === "de" ? "Deine Nachricht konnte nicht gesendet werden. Schreib uns bitte eine E-Mail." : document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);

@@ -178,18 +178,60 @@ const mentoringCaseStudies = de ? [
   { title: "Anna", copy: ["Anna was a complete beginner who wanted to use photography in her marketing career.", "Starting with the fundamentals, we worked through camera skills, studio lighting and post-processing."], image: mentoringImages.digital[9] }
 ];
 const mentoringLessonIntroductions = de ? [
-  "Wir treffen uns im Studio und üben gemeinsam, bevor du selbst fotografierst. Dabei lernst du:",
+  "Im Studio üben wir gemeinsam, bevor du selbst fotografierst. Du lernst:",
   "Wir fotografieren gemeinsam im Studio. Dabei lernst du:",
-  "Wir digitalisieren und bearbeiten deine Bilder gemeinsam. Dabei lernst du:"
+  "Wir digitalisieren und bearbeiten deine Bilder gemeinsam. Du lernst:"
 ] : hu ? [
-  "A stúdióban találkozunk, és a valódi fotózás előtt együtt gyakorlunk. Ezt fogod megtanulni:",
-  "Együtt fotózunk a stúdióban. Ezt fogod megtanulni:",
-  "Együtt digitalizáljuk és fejezzük be a képeidet. Ezt fogod megtanulni:"
+  "A stúdióban együtt gyakorlunk a fotózás előtt. Ezt tanulod meg:",
+  "Együtt fotózunk a stúdióban. Ezt tanulod meg:",
+  "Együtt digitalizáljuk és utómunkázzuk a képeidet. Ezt tanulod meg:"
 ] : [
-  "We meet you in the studio and practice before the real shoot. You will learn:",
+  "We practice in the studio before you shoot on your own. You will learn:",
   "We do a photoshoot together in the studio. You will learn:",
-  "We will sit together and finish up your images. You will learn:"
+  "We finish your images together. You will learn:"
 ];
+const compactMentoringLessons: Record<string, Record<string, string>> = {
+  hu: {
+    "Hogyan használd a vakukat és a digitális fényképezőgépet stúdiókörnyezetben magabiztosan": "Vakuk és digitális fényképezőgép magabiztos használata stúdióban",
+    "Hogyan készíts elő mindent a 2. órai fotózáshoz": "A 2. órai fotózás előkészítése",
+    "Hogyan kezeld a fényt és alkalmazd különböző pózokhoz": "Fénykezelés különböző pózokhoz",
+    "Hogyan instruáld a modellt": "Modellinstruálás",
+    "Hogyan kísérletezz és reagálj rugalmasan fotózás közben": "Kísérletezés és rugalmas reagálás fotózás közben",
+    "Hogyan válaszd ki a végső képeket": "Végső képek kiválasztása",
+    "Hogyan használd a vakukat és a filmes fényképezőgépet magabiztosan stúdiókörnyezetben": "Vakuk és filmes fényképezőgép magabiztos használata stúdióban",
+    "Hogyan válassz a fotózáshoz megfelelő filmet": "A fotózáshoz megfelelő film kiválasztása",
+    "Hogyan hívj elő fekete-fehér filmet": "Fekete-fehér film előhívása",
+    "Hogyan szkenneld a filmet": "Film szkennelése",
+    "Hogyan invertálj negatívokat és végezz utómunkát a képeken": "Negatívok invertálása és utómunka"
+  },
+  en: {
+    "How to use the strobes and a digital camera in a studio setting confidently.": "Confident use of strobes and a digital camera in the studio",
+    "How to prepare everything for your photoshoot in Lesson #2": "Prepare the Lesson #2 photoshoot",
+    "How to handle light and adapt it for different poses": "Adapt light to different poses",
+    "How to instruct the model": "Model direction",
+    "How to experiment and pivot live": "Experiment and adapt during the shoot",
+    "How to select your final set of images": "Select your final images",
+    "How to use the strobes and a film camera in a studio setting confidently.": "Confident use of strobes and a film camera in the studio",
+    "How to select a film suitable for your shoot": "Choose the right film for the shoot",
+    "How to develop black and white film": "Develop black-and-white film",
+    "How to scan film": "Scan film",
+    "How to invert negatives and post-process the images": "Invert negatives and post-process images"
+  },
+  de: {
+    "Studio-Blitze und eine Digitalkamera sicher einsetzen": "Studio-Blitze und Digitalkamera sicher einsetzen",
+    "Alles für das Shooting beim zweiten Termin vorbereiten": "Shooting beim zweiten Termin vorbereiten",
+    "Licht führen und an unterschiedliche Posen anpassen": "Licht an unterschiedliche Posen anpassen",
+    "Das Model klar anleiten": "Model klar anleiten",
+    "Während des Shootings experimentieren und flexibel reagieren": "Beim Shooting experimentieren und flexibel reagieren",
+    "Die finale Bildauswahl treffen": "Finale Bildauswahl treffen",
+    "Studio-Blitze und eine Filmkamera sicher einsetzen": "Studio-Blitze und Filmkamera sicher einsetzen",
+    "Den passenden Film für dein Shooting auswählen": "Passenden Film auswählen",
+    "Schwarzweißfilm entwickeln": "Schwarzweißfilm entwickeln",
+    "Film scannen": "Film scannen",
+    "Negative invertieren und die Bilder bearbeiten": "Negative invertieren und Bilder bearbeiten"
+  }
+};
+const compactMentoringLesson = (value: string) => compactMentoringLessons[language]?.[value] || value;
 const seasonalType = page.path.includes("christmas-photoshoot") ? "photoshoot" : page.path.includes("christmas-studio") ? "studio" : null;
 const seasonalPage: any = localizeCopy(seasonalType ? (seasonalContent as any)[seasonalType][language] : null);
 const seasonalPageImages: any = seasonalType ? (seasonalImages as any)[seasonalType] : null;
@@ -998,7 +1040,7 @@ const relatedHref = localizedPath("/packages", language);
               {packageItem.lessons.map((lesson: any, lessonIndex: number) => <section class="mentoring-lesson">
                 <h3>{lesson[0]}</h3>
                 <p>{mentoringLessonIntroductions[lessonIndex]}</p>
-                <ul>{lesson[1].map((item: string) => <li>{item}</li>)}</ul>
+                <ul>{lesson[1].map((item: string) => <li>{compactMentoringLesson(item)}</li>)}</ul>
               </section>)}
               <section class="mentoring-lesson mentoring-lesson--free">
                 <h3>{packageItem.free}</h3>
@@ -1490,12 +1532,14 @@ const relatedHref = localizedPath("/packages", language);
         });
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
+        const submittedEmail = String(formData.get("email") || "").trim().toLowerCase();
         weddingForm.reset();
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: "contact_form_submit",
           form_type: "wedding_enquiry",
-          page_path: window.location.pathname
+          page_path: window.location.pathname,
+          user_data: { email: submittedEmail }
         });
         setWeddingStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk az elérhetőséggel." : "Thank you, we’ll be in touch soon about availability.");
       } catch {

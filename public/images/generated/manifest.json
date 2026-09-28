@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-21T12:51:36.746Z",
+  "generatedAt": "2026-09-28T13:53:37.942Z",
   "images": {
     "/images/equipment/A7301405.jpg": {
       "source": "/images/equipment/A7301405.jpg",
@@ -88089,193 +88089,6 @@
         }
       }
     },
-    "/images/galleries/studio/03-gallery-03.jpg": {
-      "source": "/images/galleries/studio/03-gallery-03.jpg",
-      "width": 3982,
-      "height": 5973,
-      "alpha": false,
-      "hash": "34d75970f4",
-      "regular": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--320w--34d75970f4.avif",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--480w--34d75970f4.avif",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--640w--34d75970f4.avif",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--960w--34d75970f4.avif",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--1280w--34d75970f4.avif",
-            "width": 1280,
-            "height": 1920,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--1600w--34d75970f4.avif",
-            "width": 1600,
-            "height": 2400,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--320w--34d75970f4.webp",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--480w--34d75970f4.webp",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--640w--34d75970f4.webp",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--960w--34d75970f4.webp",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--1280w--34d75970f4.webp",
-            "width": 1280,
-            "height": 1920,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--1600w--34d75970f4.webp",
-            "width": 1600,
-            "height": 2400,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--320w--34d75970f4.jpg",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--480w--34d75970f4.jpg",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--640w--34d75970f4.jpg",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--960w--34d75970f4.jpg",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--1280w--34d75970f4.jpg",
-            "width": 1280,
-            "height": 1920,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--1600w--34d75970f4.jpg",
-            "width": 1600,
-            "height": 2400,
-            "alpha": false
-          }
-        ]
-      },
-      "thumb": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--thumb-160--34d75970f4.avif",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--thumb-320--34d75970f4.avif",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--thumb-160--34d75970f4.webp",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--thumb-320--34d75970f4.webp",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--thumb-160--34d75970f4.jpg",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/03-gallery-03--thumb-320--34d75970f4.jpg",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ]
-      },
-      "full": {
-        "avif": {
-          "src": "/images/generated/galleries/studio/03-gallery-03--full--34d75970f4.avif",
-          "width": 1600,
-          "height": 2400,
-          "alpha": false
-        },
-        "webp": {
-          "src": "/images/generated/galleries/studio/03-gallery-03--full--34d75970f4.webp",
-          "width": 1600,
-          "height": 2400,
-          "alpha": false
-        },
-        "jpeg": {
-          "src": "/images/generated/galleries/studio/03-gallery-03--full--34d75970f4.jpg",
-          "width": 1600,
-          "height": 2400,
-          "alpha": false
-        }
-      }
-    },
     "/images/galleries/studio/04-gallery-04.jpg": {
       "source": "/images/galleries/studio/04-gallery-04.jpg",
       "width": 1200,
@@ -88646,193 +88459,6 @@
           "src": "/images/generated/galleries/studio/05-gallery-05--full--1e335be2d6.jpg",
           "width": 1800,
           "height": 1800,
-          "alpha": false
-        }
-      }
-    },
-    "/images/galleries/studio/06-gallery-06.jpg": {
-      "source": "/images/galleries/studio/06-gallery-06.jpg",
-      "width": 3911,
-      "height": 5866,
-      "alpha": false,
-      "hash": "c6d815558c",
-      "regular": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--320w--c6d815558c.avif",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--480w--c6d815558c.avif",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--640w--c6d815558c.avif",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--960w--c6d815558c.avif",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--1280w--c6d815558c.avif",
-            "width": 1280,
-            "height": 1920,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--1600w--c6d815558c.avif",
-            "width": 1600,
-            "height": 2400,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--320w--c6d815558c.webp",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--480w--c6d815558c.webp",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--640w--c6d815558c.webp",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--960w--c6d815558c.webp",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--1280w--c6d815558c.webp",
-            "width": 1280,
-            "height": 1920,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--1600w--c6d815558c.webp",
-            "width": 1600,
-            "height": 2400,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--320w--c6d815558c.jpg",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--480w--c6d815558c.jpg",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--640w--c6d815558c.jpg",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--960w--c6d815558c.jpg",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--1280w--c6d815558c.jpg",
-            "width": 1280,
-            "height": 1920,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--1600w--c6d815558c.jpg",
-            "width": 1600,
-            "height": 2400,
-            "alpha": false
-          }
-        ]
-      },
-      "thumb": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--thumb-160--c6d815558c.avif",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--thumb-320--c6d815558c.avif",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--thumb-160--c6d815558c.webp",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--thumb-320--c6d815558c.webp",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--thumb-160--c6d815558c.jpg",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/06-gallery-06--thumb-320--c6d815558c.jpg",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ]
-      },
-      "full": {
-        "avif": {
-          "src": "/images/generated/galleries/studio/06-gallery-06--full--c6d815558c.avif",
-          "width": 1600,
-          "height": 2400,
-          "alpha": false
-        },
-        "webp": {
-          "src": "/images/generated/galleries/studio/06-gallery-06--full--c6d815558c.webp",
-          "width": 1600,
-          "height": 2400,
-          "alpha": false
-        },
-        "jpeg": {
-          "src": "/images/generated/galleries/studio/06-gallery-06--full--c6d815558c.jpg",
-          "width": 1600,
-          "height": 2400,
           "alpha": false
         }
       }
@@ -119936,211 +119562,6 @@
         }
       }
     },
-    "/images/galleries/studio/A7306747-HDR 2.jpg": {
-      "source": "/images/galleries/studio/A7306747-HDR 2.jpg",
-      "width": 5985,
-      "height": 3990,
-      "alpha": false,
-      "hash": "6396e765bb",
-      "regular": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--320w--6396e765bb.avif",
-            "width": 320,
-            "height": 213,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--480w--6396e765bb.avif",
-            "width": 480,
-            "height": 320,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--640w--6396e765bb.avif",
-            "width": 640,
-            "height": 427,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--960w--6396e765bb.avif",
-            "width": 960,
-            "height": 640,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--1280w--6396e765bb.avif",
-            "width": 1280,
-            "height": 853,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--1600w--6396e765bb.avif",
-            "width": 1600,
-            "height": 1067,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--2400w--6396e765bb.avif",
-            "width": 2400,
-            "height": 1600,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--320w--6396e765bb.webp",
-            "width": 320,
-            "height": 213,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--480w--6396e765bb.webp",
-            "width": 480,
-            "height": 320,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--640w--6396e765bb.webp",
-            "width": 640,
-            "height": 427,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--960w--6396e765bb.webp",
-            "width": 960,
-            "height": 640,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--1280w--6396e765bb.webp",
-            "width": 1280,
-            "height": 853,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--1600w--6396e765bb.webp",
-            "width": 1600,
-            "height": 1067,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--2400w--6396e765bb.webp",
-            "width": 2400,
-            "height": 1600,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--320w--6396e765bb.jpg",
-            "width": 320,
-            "height": 213,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--480w--6396e765bb.jpg",
-            "width": 480,
-            "height": 320,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--640w--6396e765bb.jpg",
-            "width": 640,
-            "height": 427,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--960w--6396e765bb.jpg",
-            "width": 960,
-            "height": 640,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--1280w--6396e765bb.jpg",
-            "width": 1280,
-            "height": 853,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--1600w--6396e765bb.jpg",
-            "width": 1600,
-            "height": 1067,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--2400w--6396e765bb.jpg",
-            "width": 2400,
-            "height": 1600,
-            "alpha": false
-          }
-        ]
-      },
-      "thumb": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--thumb-160--6396e765bb.avif",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--thumb-320--6396e765bb.avif",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--thumb-160--6396e765bb.webp",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--thumb-320--6396e765bb.webp",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--thumb-160--6396e765bb.jpg",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/studio/A7306747-HDR 2--thumb-320--6396e765bb.jpg",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ]
-      },
-      "full": {
-        "avif": {
-          "src": "/images/generated/galleries/studio/A7306747-HDR 2--full--6396e765bb.avif",
-          "width": 2400,
-          "height": 1600,
-          "alpha": false
-        },
-        "webp": {
-          "src": "/images/generated/galleries/studio/A7306747-HDR 2--full--6396e765bb.webp",
-          "width": 2400,
-          "height": 1600,
-          "alpha": false
-        },
-        "jpeg": {
-          "src": "/images/generated/galleries/studio/A7306747-HDR 2--full--6396e765bb.jpg",
-          "width": 2400,
-          "height": 1600,
-          "alpha": false
-        }
-      }
-    },
     "/images/galleries/studio/A7306747-HDR.jpg": {
       "source": "/images/galleries/studio/A7306747-HDR.jpg",
       "width": 5985,
@@ -122212,6 +121633,157 @@
           "src": "/images/generated/galleries/home-showcase/A7306747-HDR 2--full--6396e765bb.jpg",
           "width": 2400,
           "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/studio/olive-green.png": {
+      "source": "/images/studio/olive-green.png",
+      "width": 700,
+      "height": 700,
+      "alpha": false,
+      "hash": "2c9f5bbab4",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/studio/olive-green--320w--2c9f5bbab4.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--480w--2c9f5bbab4.avif",
+            "width": 480,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--640w--2c9f5bbab4.avif",
+            "width": 640,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--700w--2c9f5bbab4.avif",
+            "width": 700,
+            "height": 700,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/studio/olive-green--320w--2c9f5bbab4.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--480w--2c9f5bbab4.webp",
+            "width": 480,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--640w--2c9f5bbab4.webp",
+            "width": 640,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--700w--2c9f5bbab4.webp",
+            "width": 700,
+            "height": 700,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/studio/olive-green--320w--2c9f5bbab4.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--480w--2c9f5bbab4.jpg",
+            "width": 480,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--640w--2c9f5bbab4.jpg",
+            "width": 640,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--700w--2c9f5bbab4.jpg",
+            "width": 700,
+            "height": 700,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/studio/olive-green--thumb-160--2c9f5bbab4.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--thumb-320--2c9f5bbab4.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/studio/olive-green--thumb-160--2c9f5bbab4.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--thumb-320--2c9f5bbab4.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/studio/olive-green--thumb-160--2c9f5bbab4.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/studio/olive-green--thumb-320--2c9f5bbab4.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/studio/olive-green--full--2c9f5bbab4.avif",
+          "width": 700,
+          "height": 700,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/studio/olive-green--full--2c9f5bbab4.webp",
+          "width": 700,
+          "height": 700,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/studio/olive-green--full--2c9f5bbab4.jpg",
+          "width": 700,
+          "height": 700,
           "alpha": false
         }
       }

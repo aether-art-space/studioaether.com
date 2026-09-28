@@ -86,12 +86,14 @@ const contactSuccessUrl = `${absoluteUrl(page.path)}?site-contact=success#site-c
         });
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
+        const submittedEmail = String(formData.get("email") || "").trim().toLowerCase();
         siteContactForm.reset();
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: "contact_form_submit",
           form_type: "general_contact",
-          page_path: window.location.pathname
+          page_path: window.location.pathname,
+          user_data: { email: submittedEmail }
         });
         setSiteContactStatus(document.documentElement.lang === "de" ? "Vielen Dank, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
       } catch {
