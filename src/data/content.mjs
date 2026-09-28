@@ -247,7 +247,7 @@ export const studioContent = {
     backdropHeading: "Backdrops",
     backdropCopy: "We offer a wide range of high-quality color paper backdrops, carefully maintained and frequently replaced to ensure they always look fresh. In addition, we have a selection of textile backdrops and a custom-built backdrop to suit any creative vision.",
     backdropCta: "Want something unique? Ask us to build the perfect set for you and with you — just share your vision, and we’ll bring it to life!",
-    backdropList: ["Pure White", "Stone Grey", "Ultra Black", "Crimson", "Orange", "Deep Yellow", "Blue Mist", "Ultramarine", "Orchid", "Coral", "Eggnog", "Dark Green Wall — 4m x 4m", "Moveable Crimson Wall — 2m x 1.2m", "Moveable Black Wall — 2m x 1.2m", "Crimson Textile Backdrop", "Teal Textile Backdrop", "Mustard Textile Backdrop x2", "Dark Blue Textile Backdrop x2"],
+    backdropList: ["Pure White", "Stone Grey", "Ultra Black", "Crimson", "Orange", "Deep Yellow", "Olive Green", "Ultramarine", "Blue Mist", "Orchid", "Coral", "Eggnog", "Dark Green Wall — 4m x 4m", "Moveable Crimson Wall — 2m x 1.2m", "Moveable Black Wall — 2m x 1.2m", "Crimson Textile Backdrop", "Teal Textile Backdrop", "Mustard Textile Backdrop x2", "Dark Blue Textile Backdrop x2"],
     backdropNote: "Our paper backdrops are 2.7m wide.\nOn request we can order any color that you wish."
   },
   hu: {
@@ -274,7 +274,7 @@ export const studioContent = {
     backdropHeading: "Hátterek",
     backdropCopy: "Széles választékban kínálunk kiváló minőségű színes papír háttereket, amelyeket gondosan karbantartunk és gyakran cserélünk, hogy mindig frissnek tűnjenek. Ezen kívül többféle textil hátteret és egyedi építésű hátteret is kínálunk, hogy bármilyen kreatív víziót megvalósíthass.",
     backdropCta: "Szeretnél valami egyedit? Mi megépítjük a tökéletes szettet veled együttműködve — oszd meg velünk az elképzeléseidet, és mi életre keltjük!",
-    backdropList: ["Pure White (Tiszta fehér)", "Stone Grey (Szikla szürke)", "Ultra Black (Ultra Fekete)", "Crimson (Bordó)", "Orange (Narancs)", "Deep Yellow (Mély-sárga)", "Blue Mist (Kék Köd)", "Ultramarine (Ultramarin)", "Orchid (Orchidea)", "Coral (Korall)", "Eggnog (Tojáslikőr)", "Sötétzöld ál-fal — 4m x 4m", "Bordó ál-fal — 2m x 1,2m", "Fekete ál-fal — 2m x 1,2m", "Bordó textil háttér", "Türkiz textil háttér", "Mustársárga textil háttér", "Sötétkék textil háttér"],
+    backdropList: ["Pure White (Tiszta fehér)", "Stone Grey (Szikla szürke)", "Ultra Black (Ultra Fekete)", "Crimson (Bordó)", "Orange (Narancs)", "Deep Yellow (Mély-sárga)", "Olive Green (Olívazöld)", "Ultramarine (Ultramarin)", "Blue Mist (Kék Köd)", "Orchid (Orchidea)", "Coral (Korall)", "Eggnog (Tojáslikőr)", "Sötétzöld ál-fal — 4m x 4m", "Bordó ál-fal — 2m x 1,2m", "Fekete ál-fal — 2m x 1,2m", "Bordó textil háttér", "Türkiz textil háttér", "Mustársárga textil háttér", "Sötétkék textil háttér"],
     backdropNote: "Papír háttereink 2,7m szélesek.\nIgény szerint bármilyen további színt be tudunk szerezni."
   },
   de: {
@@ -301,7 +301,7 @@ export const studioContent = {
     backdropHeading: "Hintergründe",
     backdropCopy: "Wir bieten eine große Auswahl hochwertiger Papierhintergründe in verschiedenen Farben. Wir pflegen und erneuern sie regelmäßig, damit sie immer frisch aussehen. Außerdem stehen Textilhintergründe und ein individuell gebauter Hintergrund für unterschiedlichste kreative Ideen bereit.",
     backdropCta: "Du suchst etwas Besonderes? Wir entwickeln und bauen mit dir das perfekte Set – erzähl uns einfach von deiner Idee, und wir setzen sie um!",
-    backdropList: ["Reinweiß", "Steingrau", "Tiefschwarz", "Karmesinrot", "Orange", "Tiefgelb", "Nebelblau", "Ultramarin", "Orchidee", "Koralle", "Eierlikör", "dunkelgrüne Wand – 4 m × 4 m", "bewegliche karmesinrote Wand – 2 m × 1,2 m", "bewegliche schwarze Wand – 2 m × 1,2 m", "karmesinroter Textilhintergrund", "petrolfarbener Textilhintergrund", "senfgelber Textilhintergrund ×2", "dunkelblauer Textilhintergrund ×2"],
+    backdropList: ["Reinweiß", "Steingrau", "Tiefschwarz", "Karmesinrot", "Orange", "Tiefgelb", "Olivgrün", "Ultramarin", "Nebelblau", "Orchidee", "Koralle", "Eierlikör", "dunkelgrüne Wand – 4 m × 4 m", "bewegliche karmesinrote Wand – 2 m × 1,2 m", "bewegliche schwarze Wand – 2 m × 1,2 m", "karmesinroter Textilhintergrund", "petrolfarbener Textilhintergrund", "senfgelber Textilhintergrund ×2", "dunkelblauer Textilhintergrund ×2"],
     backdropNote: "Unsere Papierhintergründe sind 2,7 m breit.\nAuf Wunsch bestellen wir jede Farbe, die du dir wünschst."
   }
 };
@@ -540,8 +540,9 @@ export const studioBackdropImages = [
   { src: "/images/studio/backdrop-04.png", alt: "Crimson paper backdrop" },
   { src: "/images/studio/backdrop-05.webp", alt: "Orange paper backdrop" },
   { src: "/images/studio/backdrop-06.webp", alt: "Deep yellow paper backdrop" },
-  { src: "/images/studio/backdrop-07.png", alt: "Blue mist paper backdrop" },
+  { src: "/images/studio/olive-green.png", alt: "Olive green paper backdrop" },
   { src: "/images/studio/backdrop-08.webp", alt: "Ultramarine paper backdrop" },
+  { src: "/images/studio/backdrop-07.png", alt: "Blue mist paper backdrop" },
   { src: "/images/studio/backdrop-09.jpg", alt: "Orchid paper backdrop" },
   { src: "/images/studio/backdrop-10.png", alt: "Coral paper backdrop" },
   { src: "/images/studio/backdrop-11.png", alt: "Eggnog paper backdrop" },
