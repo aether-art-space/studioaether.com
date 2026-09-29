@@ -953,6 +953,7 @@
 .faq-item:nth-child(n + 4) { padding-top: 18px; border-top: 1px solid var(--line); }
 .faq-item h3 { margin: 0 0 10px; color: var(--ink); font: 500 19px/1.2 var(--sans); letter-spacing: .01em; }
 .faq-item p { margin: 0; color: var(--muted); font: 400 16px/1.5 var(--sans); }
+.faq-item > .button { display: inline-flex; width: max-content; max-width: 100%; box-sizing: border-box; margin-top: 20px; }
 .faq-section--standalone { display: block; max-width: var(--content-max); }
 .faq-section--standalone .faq-article { max-width: 1000px; margin: 0 auto; }
 .faq-section--standalone .faq-group + .faq-group { margin-top: 72px; }
@@ -2016,6 +2017,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
     margin-right: auto;
     margin-left: auto;
   }
+  .faq-item > .button { display: inline-flex; width: max-content; margin-right: 0; margin-left: 0; }
   .image-hero__image-wrap { height: 560px; clip-path: ellipse(92% 100% at 50% 0%); }
   .image-hero__content { bottom: 50px; padding: 0 18px; }
   .image-hero--home .image-hero__icon { top: 9%; left: 34%; width: 32%; }

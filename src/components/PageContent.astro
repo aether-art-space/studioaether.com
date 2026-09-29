@@ -137,6 +137,11 @@ const modelDigitalsGuideImage = specialImages.modelCard;
 const modelDigitalsPackages = (photoPackageSets as any).models[language];
 const modelDetails = specialType === "models" ? specialPageAny.sections.slice(0, -1) : [];
 const modelFaceCard = specialType === "models" ? specialPageAny.sections.at(-1) : null;
+const specialFaq = specialType === "models" && specialPageAny?.faq?.length
+  ? specialPageAny.faq.map((item: any[], index: number) => index === specialPageAny.faq.length - 1
+    ? [item[0], [{ type: "paragraph", text: item[1] }, { type: "link", text: de ? "Vollständiger Vorbereitungsguide" : hu ? "Teljes felkészülési útmutató" : "Full preparation guide", href: localizedPath("/model-digitals-preparation", language), className: "button button--secondary" }]]
+    : item)
+  : specialPageAny?.faq;
 const isIdPhoto = isLocalizedRoute("/id-photo");
 const idPhotoPackages = isIdPhoto ? [
   {
@@ -1242,12 +1247,11 @@ const relatedHref = localizedPath("/packages", language);
     ) : null}
     {specialType === "models" && <section class="service-section service-special-sections model-details" aria-label={de ? "Informationen zu Model-Digitals" : hu ? "Modell digitals információk" : "Model digitals information"}><div class="model-details-grid">{modelDetails.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}</div></section>}
     {specialType === "models" && modelFaceCard && <section class="model-face-card-section" aria-label={de ? "Kostenlose PDF-Modelkarte" : hu ? "Digitális modell-kártya" : "Free PDF face-card"}><GalleryImage image={de ? { ...specialImages.modelCard, alt: "digitale Modelkarte als PDF" } : specialImages.modelCard} className="model-face-card-section__image" label={de ? "Kostenlose PDF-Modelkarte öffnen" : hu ? "Digitális modell-kártya megnyitása" : "Open free PDF face-card"} /><div class="model-face-card-section__copy"><h2>{modelFaceCard[0]}</h2><p>{modelFaceCard[1]}</p></div></section>}
-    {specialType === "models" && <section class="model-digitals-guide-link" aria-label={de ? "Vorbereitungshinweis" : hu ? "Felkészülési útmutató" : "Preparation guide"}><div><h2>{de ? "Bereite dich auf dein Shooting vor" : hu ? "Készülj fel a fotózásodra" : "Prepare for your shoot"}</h2><p>{de ? "Lies unseren praktischen Leitfaden für Kleidung, Haut, Haare und den Ablauf deiner Model-Digitals-Session." : hu ? "Gyakorlati útmutató ruhákról, bőrről, hajról és a modell digitals fotózás menetéről." : "Read our practical guide to clothing, skin, hair and what to expect during your model digitals session."}</p></div><a class="button button--outline" href={localizedPath("/model-digitals-preparation", language)}>{de ? "Leitfaden lesen" : hu ? "útmutató megnyitása" : "read the guide"}</a></section>}
     {specialType === "glamour" && <section class="service-section service-special-sections glamour-details"><div class="glamour-details-grid">{specialPageAny.sections.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}</div></section>}
     <PriceSection heading={specialPageAny.packageHeading} lead={specialPageAny.packageLead} packages={specialPackages} includesLabel={de ? "Im Paket enthalten:" : hu ? "A csomag tartalma:" : "This package includes:"} headingId="special-packages-title" cta={priceCardCtas.contact} />
     {specialType !== "pet" && <ExtrasSection heading={de ? "Zusatzleistungen" : hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[de ? "Buche unser komplettes Kreativteam" : hu ? "vedd igénybe teljes kreatív csapatunkat" : "use our entire creative team", de ? "Buche alles bequem in einem Schritt" : hu ? "foglalj le mindent egyszerre fotózásodhoz" : "save the hassle and book everything in one go"]} items={commonUpgrades[language]} headingId="special-extras-title" />}
     <StudioSection heading={specialPageAny.studioHeading} intro={specialPageAny.studioIntro} bullets={specialPageAny.studioBullets} tail={specialPageAny.studioTail} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
-    {specialPageAny.faq && <FaqSection className="service-faq" heading={specialPageAny.faqHeading} items={specialPageAny.faq} headingId="special-faq-title" />}
+    {specialFaq && <FaqSection className="service-faq" heading={specialPageAny.faqHeading} items={specialFaq} headingId="special-faq-title" />}
     {localizedSpecialImagesAny?.length > 0 && <GalleryLightbox label={de ? "Fotogalerie" : hu ? "Fotózási galéria" : "Photography gallery"} hu={hu} de={de} />}
   </>
 ) : servicePage ? (

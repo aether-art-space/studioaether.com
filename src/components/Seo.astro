@@ -5,6 +5,7 @@ import { resolveImage } from "../lib/images.mjs";
 const { page } = Astro.props;
 const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
 const canonicalUrl = absoluteUrl(page.path);
+const isModelDigitalsGuide = page.path.endsWith("/model-digitals-preparation");
 const socialImageSources: Record<string, string> = {
   "Studio rental / space": "/images/wix/reference/feature-studio.jpg",
   "Selfie studio": "/images/selfie/hero.jpg",
@@ -16,6 +17,7 @@ const socialImageSources: Record<string, string> = {
   "Make-up / hair artists": "/images/wix/reference/artist-makeup.jpg",
   "Stylists / brand designers": "/images/wix/reference/artist-stylists.jpg",
   "Model polaroids / digitals": "/images/galleries/model-digitals/01-model-digital-01.jpg",
+  "Model digitals preparation guide": "/images/galleries/model-digitals/01-model-digital-01.jpg",
   "Passport / ID photos": "/images/wix/service/id-photo.jpg",
   "Pet photography": "/images/galleries/pet/01-pet-01.jpg",
   "Photography mentoring - current nav URL": "/images/galleries/mentoring-digital/01-digital-01.jpg",
@@ -34,7 +36,7 @@ const socialImageSources: Record<string, string> = {
 const logoImage = resolveImage({ src: "/images/wix/jpg/logo-full.jpg", alt: site.name }, "content");
 const logoImageUrl = absoluteUrl(logoImage.lightbox.fallback);
 const socialImage = resolveImage({
-  src: socialImageSources[page.purpose] || "/images/wix/reference/hero-main.jpg",
+  src: socialImageSources[page.purpose] || (isModelDigitalsGuide ? socialImageSources["Model digitals preparation guide"] : "/images/wix/reference/hero-main.jpg"),
   alt: page.h1
 }, "content");
 const socialImageUrl = absoluteUrl(socialImage.lightbox.fallback);
@@ -223,7 +225,7 @@ if (page.section === "faq") {
   });
 }
 
-if (page.section === "service" && !page.purpose.startsWith("Photographer profile -")) {
+if (page.section === "service" && !page.purpose.startsWith("Photographer profile -") && !isModelDigitalsGuide) {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "Service",
@@ -237,6 +239,23 @@ if (page.section === "service" && !page.purpose.startsWith("Photographer profile
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     provider: { "@id": businessId },
     areaServed: serviceArea
+  });
+}
+
+if (isModelDigitalsGuide) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${canonicalUrl}#article`,
+    headline: page.h1,
+    description: page.description,
+    image: [socialImageUrl],
+    url: canonicalUrl,
+    inLanguage: languageCodes[page.language] || page.language,
+    articleSection: page.language === "de" ? "Model-Digitals" : page.language === "hu" ? "Modell digitals" : "Model digitals",
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${canonicalUrl}#webpage` },
+    author: { "@type": "Organization", name: site.name, url: businessUrl },
+    publisher: { "@id": businessId }
   });
 }
 
