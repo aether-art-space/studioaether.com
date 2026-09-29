@@ -144,7 +144,7 @@ const schemas: Record<string, unknown>[] = [
     description: businessDescription,
     sameAs: [site.instagramUrl, schemaFacebookUrl],
     hasMap: site.mapsUrl,
-    areaServed: { "@type": "Country", name: page.language === "de" || page.language === "hu" ? "Ungarn" : "Hungary" },
+    areaServed: { "@type": "Country", name: page.language === "de" ? "Ungarn" : page.language === "hu" ? "Magyarország" : "Hungary" },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",

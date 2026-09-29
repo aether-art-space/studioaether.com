@@ -1,6 +1,6 @@
 ---
 import { faqGroupsFor, introFor, site, localizedNav, localizedPath, naturalGerman } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, propsCaptions, residentArtistContent, residentArtistImages, modelsContent, modelImages, packagesContent, photoPackageSets, commonUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, selfiePostBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, propsCaptions, residentArtistContent, residentArtistImages, modelsContent, modelImages, modelDigitalsGuideContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, selfiePostBookingContent, weddingContent, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
 import ArtistCard from "./ArtistCard.astro";
 import CircularCard from "./CircularCard.astro";
 import ExtrasCard from "./ExtrasCard.astro";
@@ -131,6 +131,10 @@ const specialType = page.path.includes("glamour-boudoir") ? "glamour" : page.pat
 const specialPage = localizeCopy(specialType ? (specialContent as any)[specialType][language] : null);
 const specialPageAny = specialPage as any;
 const specialImagesAny: any = specialType ? (specialImages as any)[specialType] : null;
+const isModelDigitalsGuide = isLocalizedRoute("/model-digitals-preparation");
+const modelDigitalsGuide = localizeCopy(isModelDigitalsGuide ? (modelDigitalsGuideContent as any)[language] : null) as any;
+const modelDigitalsGuideImage = specialImages.modelCard;
+const modelDigitalsPackages = (photoPackageSets as any).models[language];
 const modelDetails = specialType === "models" ? specialPageAny.sections.slice(0, -1) : [];
 const modelFaceCard = specialType === "models" ? specialPageAny.sections.at(-1) : null;
 const isIdPhoto = isLocalizedRoute("/id-photo");
@@ -530,6 +534,7 @@ const localizedSeasonalPageImages = localizeGalleryImages(seasonalPageImages);
 const localizedSeasonalGalleryImages = localizeGalleryImages(seasonalGalleryImages);
 const localizedSeasonalStudioIntroImage = localizeImage(seasonalStudioIntroImage);
 const localizedSpecialImagesAny: any = localizeGalleryImages(specialImagesAny);
+const modelDigitalsGuideGallery: any = localizeGalleryImages((specialImages as any).models);
 const localizedModelPeopleImages: any = de ? modelPeopleImages.map((gallery: any[]) => localizeGalleryImages(gallery)) : modelPeopleImages;
 const localizedWeddingImages: any = localizeGalleryImages(weddingImages);
 const localizedWeddingSectionImages: any = de ? {
@@ -1199,6 +1204,22 @@ const relatedHref = localizedPath("/packages", language);
     <PriceSection className="id-photo-price-section" gridClassName="service-package-grid--id" ariaLabel={de ? "Preise für Pass- und Ausweisfotos" : hu ? "Igazolványkép árak" : "ID photo prices"} packages={idPhotoPackages} cta={priceCardCtas.contact} />
     <section class="id-photo-booking"><a class="button" data-gtag-event="booking_click" data-gtag-location="id-photo" href="https://cal.com/aether-studio/id-shoot?overlayCalendar=true">{de ? "Termin buchen" : hu ? "foglalj időpontot" : "Book an ID shoot now"}</a><p><strong>{de ? "Für Pass- und Ausweisfotos ist eine Terminbuchung erforderlich." : hu ? "Az igazolványképek készítéséhez előzetes foglalás szükséges!" : "Appointments are required for ID shoots."}</strong></p><p>{de ? "Gedruckte Fotos sind nach etwa 15 Minuten fertig. Du kannst sie später abholen oder im Studio warten." : hu ? "A nyomtatott igazolványképek 15 perc alatt készülnek el. Visszatérhetsz értük, amikor neked alkalmas, vagy megvárhatod a stúdióban, amíg elkészülnek." : "Printed ID photos take about 15 minutes. You can return to collect them or wait in the studio."}</p></section>
   </>
+) : isModelDigitalsGuide ? (
+  <>
+    <PageHero variant="service" headingId="model-digitals-preparation-title" title={page.h1} lead={modelDigitalsGuide.hero} />
+    <section class="model-digitals-guide__intro" aria-label={de ? "Vorbereitung auf Model-Digitals" : hu ? "Felkészülés modell digitals fotózásra" : "Preparing for model digitals"}>
+      <div class="model-digitals-guide__image"><ResponsiveImage image={{ ...modelDigitalsGuideImage, alt: de ? "Digitale Modelkarte für ein Model-Digitals-Shooting" : hu ? "Digitális modell-kártya modell digitals fotózáshoz" : "Digital model card for a model digitals shoot" }} role="content" loading="eager" fetchpriority="high" /></div>
+      {modelDigitalsGuide.intro?.[0] && <div class="model-digitals-guide__intro-copy"><h2>{de ? "Was sind Model-Digitals bzw. Polaroids?" : hu ? "Mik azok a modell digitals, vagyis polaroidok?" : "What are model digitals aka polaroids?"}</h2><p>{modelDigitalsGuide.intro[0]}</p><h3>{modelDigitalsGuide.faceCard[0]}</h3><p>{modelDigitalsGuide.faceCard[1]}</p></div>}
+    </section>
+    <section class="horizontal-masonry-gallery-section model-digitals-guide-gallery" aria-label={de ? "Model-Digitals-Galerie" : hu ? "Modell digitals fotózási galéria" : "Model digitals photography gallery"}>
+      <HorizontalMasonryGallery {...galleryA11y} images={modelDigitalsGuideGallery} label={de ? "Model-Digitals-Galerie" : hu ? "Modell digitals fotózási galéria" : "Model digitals photography gallery"} />
+    </section>
+    <GalleryLightbox label={de ? "Model-Digitals-Galerie" : hu ? "Modell digitals galéria" : "Model digitals gallery"} hu={hu} de={de} />
+    <section class="model-digitals-guide__sections" aria-label={de ? "Vorbereitungsschritte" : hu ? "Felkészülési lépések" : "Preparation steps"}>
+      {modelDigitalsGuide.sections.map((section: string[]) => <article class="model-digitals-guide__section"><h2>{section[0]}</h2><p>{section[1]}</p></article>)}
+    </section>
+    <PriceSection className="model-digitals-guide__pricing" heading={modelDigitalsGuide.ctaHeading} lead={modelDigitalsGuide.ctaCopy} packages={modelDigitalsPackages} includesLabel={de ? "Im Paket enthalten:" : hu ? "A csomag tartalma:" : "This package includes:"} headingId="model-digitals-guide-pricing-title" cta={priceCardCtas.contact} />
+  </>
 ) : specialPage ? (
   <>
     <PageHero variant="service" headingId="special-title" title={page.h1} subtitle={specialType === "glamour" || specialType === "pet" ? specialPageAny.hero : undefined} lead={specialType === "glamour" || specialType === "pet" ? undefined : specialPageAny.hero} description={specialPageAny.intro}>
@@ -1221,6 +1242,7 @@ const relatedHref = localizedPath("/packages", language);
     ) : null}
     {specialType === "models" && <section class="service-section service-special-sections model-details" aria-label={de ? "Informationen zu Model-Digitals" : hu ? "Modell digitals információk" : "Model digitals information"}><div class="model-details-grid">{modelDetails.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}</div></section>}
     {specialType === "models" && modelFaceCard && <section class="model-face-card-section" aria-label={de ? "Kostenlose PDF-Modelkarte" : hu ? "Digitális modell-kártya" : "Free PDF face-card"}><GalleryImage image={de ? { ...specialImages.modelCard, alt: "digitale Modelkarte als PDF" } : specialImages.modelCard} className="model-face-card-section__image" label={de ? "Kostenlose PDF-Modelkarte öffnen" : hu ? "Digitális modell-kártya megnyitása" : "Open free PDF face-card"} /><div class="model-face-card-section__copy"><h2>{modelFaceCard[0]}</h2><p>{modelFaceCard[1]}</p></div></section>}
+    {specialType === "models" && <section class="model-digitals-guide-link" aria-label={de ? "Vorbereitungshinweis" : hu ? "Felkészülési útmutató" : "Preparation guide"}><div><h2>{de ? "Bereite dich auf dein Shooting vor" : hu ? "Készülj fel a fotózásodra" : "Prepare for your shoot"}</h2><p>{de ? "Lies unseren praktischen Leitfaden für Kleidung, Haut, Haare und den Ablauf deiner Model-Digitals-Session." : hu ? "Gyakorlati útmutató ruhákról, bőrről, hajról és a modell digitals fotózás menetéről." : "Read our practical guide to clothing, skin, hair and what to expect during your model digitals session."}</p></div><a class="button button--outline" href={localizedPath("/model-digitals-preparation", language)}>{de ? "Leitfaden lesen" : hu ? "útmutató megnyitása" : "read the guide"}</a></section>}
     {specialType === "glamour" && <section class="service-section service-special-sections glamour-details"><div class="glamour-details-grid">{specialPageAny.sections.map((item: string[]) => <div class="service-info"><h3>{item[0]}</h3><p>{item[1]}</p></div>)}</div></section>}
     <PriceSection heading={specialPageAny.packageHeading} lead={specialPageAny.packageLead} packages={specialPackages} includesLabel={de ? "Im Paket enthalten:" : hu ? "A csomag tartalma:" : "This package includes:"} headingId="special-packages-title" cta={priceCardCtas.contact} />
     {specialType !== "pet" && <ExtrasSection heading={de ? "Zusatzleistungen" : hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[de ? "Buche unser komplettes Kreativteam" : hu ? "vedd igénybe teljes kreatív csapatunkat" : "use our entire creative team", de ? "Buche alles bequem in einem Schritt" : hu ? "foglalj le mindent egyszerre fotózásodhoz" : "save the hassle and book everything in one go"]} items={commonUpgrades[language]} headingId="special-extras-title" />}
