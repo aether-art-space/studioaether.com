@@ -132,6 +132,20 @@ try {
   fail.push(`image manifest missing or invalid: ${error.message}`);
 }
 
+const headers = await fs.readFile(path.join(dist, "_headers"), "utf8").catch(() => "");
+for (const line of headers.split("\n")) if (line.length > 2000) fail.push("Cloudflare header line exceeds 2000 characters");
+const csp = headers.match(/Content-Security-Policy:\s*(.+)/i)?.[1] || "";
+const cspDirectives = new Map(csp.split(";").map((directive) => {
+  const [name, ...sources] = directive.trim().split(/\s+/);
+  return [name, sources];
+}));
+for (const directive of ["img-src", "connect-src"]) {
+  for (const source of ["https://www.google.com", "https://www.google.hu", "https://www.google.de"]) {
+    if (!cspDirectives.get(directive)?.includes(source)) fail.push(`missing Google measurement source in ${directive}: ${source}`);
+  }
+}
+if (!cspDirectives.get("connect-src")?.includes("https://analytics.google.com")) fail.push("Google Analytics connection blocked by CSP");
+
 if (fail.length) {
   console.error(fail.map((message) => `FAIL ${message}`).join("\n"));
   process.exitCode = 1;
