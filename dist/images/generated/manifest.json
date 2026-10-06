@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-28T13:53:37.942Z",
+  "generatedAt": "2026-10-06T13:17:33.851Z",
   "images": {
     "/images/equipment/A7301405.jpg": {
       "source": "/images/equipment/A7301405.jpg",
@@ -57102,175 +57102,6 @@
         },
         "jpeg": {
           "src": "/images/generated/galleries/fitness/16-94c0c9_b6745c05cf4b44b3ac819a8ae248394b~mv2--full--87be4bb0b0.jpg",
-          "width": 1000,
-          "height": 1500,
-          "alpha": false
-        }
-      }
-    },
-    "/images/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2.jpg": {
-      "source": "/images/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2.jpg",
-      "width": 1000,
-      "height": 1500,
-      "alpha": false,
-      "hash": "dbf602dfa6",
-      "regular": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--320w--dbf602dfa6.avif",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--480w--dbf602dfa6.avif",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--640w--dbf602dfa6.avif",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--960w--dbf602dfa6.avif",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--1000w--dbf602dfa6.avif",
-            "width": 1000,
-            "height": 1500,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--320w--dbf602dfa6.webp",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--480w--dbf602dfa6.webp",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--640w--dbf602dfa6.webp",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--960w--dbf602dfa6.webp",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--1000w--dbf602dfa6.webp",
-            "width": 1000,
-            "height": 1500,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--320w--dbf602dfa6.jpg",
-            "width": 320,
-            "height": 480,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--480w--dbf602dfa6.jpg",
-            "width": 480,
-            "height": 720,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--640w--dbf602dfa6.jpg",
-            "width": 640,
-            "height": 960,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--960w--dbf602dfa6.jpg",
-            "width": 960,
-            "height": 1440,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--1000w--dbf602dfa6.jpg",
-            "width": 1000,
-            "height": 1500,
-            "alpha": false
-          }
-        ]
-      },
-      "thumb": {
-        "avif": [
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--thumb-160--dbf602dfa6.avif",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--thumb-320--dbf602dfa6.avif",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "webp": [
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--thumb-160--dbf602dfa6.webp",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--thumb-320--dbf602dfa6.webp",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ],
-        "jpeg": [
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--thumb-160--dbf602dfa6.jpg",
-            "width": 160,
-            "height": 160,
-            "alpha": false
-          },
-          {
-            "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--thumb-320--dbf602dfa6.jpg",
-            "width": 320,
-            "height": 320,
-            "alpha": false
-          }
-        ]
-      },
-      "full": {
-        "avif": {
-          "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--full--dbf602dfa6.avif",
-          "width": 1000,
-          "height": 1500,
-          "alpha": false
-        },
-        "webp": {
-          "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--full--dbf602dfa6.webp",
-          "width": 1000,
-          "height": 1500,
-          "alpha": false
-        },
-        "jpeg": {
-          "src": "/images/generated/galleries/fitness/17-94c0c9_aa0154deb4854a5c986b815c4c41e0e8~mv2--full--dbf602dfa6.jpg",
           "width": 1000,
           "height": 1500,
           "alpha": false
@@ -121784,6 +121615,603 @@
           "src": "/images/generated/studio/olive-green--full--2c9f5bbab4.jpg",
           "width": 700,
           "height": 700,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/corporate/01-external-001.jpg": {
+      "source": "/images/galleries/corporate/01-external-001.jpg",
+      "width": 5731,
+      "height": 3821,
+      "alpha": false,
+      "hash": "e7fb11fa49",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--320w--e7fb11fa49.avif",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--480w--e7fb11fa49.avif",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--640w--e7fb11fa49.avif",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--960w--e7fb11fa49.avif",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--1280w--e7fb11fa49.avif",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--1600w--e7fb11fa49.avif",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--2400w--e7fb11fa49.avif",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--320w--e7fb11fa49.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--480w--e7fb11fa49.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--640w--e7fb11fa49.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--960w--e7fb11fa49.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--1280w--e7fb11fa49.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--1600w--e7fb11fa49.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--2400w--e7fb11fa49.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--320w--e7fb11fa49.jpg",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--480w--e7fb11fa49.jpg",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--640w--e7fb11fa49.jpg",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--960w--e7fb11fa49.jpg",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--1280w--e7fb11fa49.jpg",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--1600w--e7fb11fa49.jpg",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--2400w--e7fb11fa49.jpg",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--thumb-160--e7fb11fa49.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--thumb-320--e7fb11fa49.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--thumb-160--e7fb11fa49.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--thumb-320--e7fb11fa49.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--thumb-160--e7fb11fa49.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/01-external-001--thumb-320--e7fb11fa49.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/corporate/01-external-001--full--e7fb11fa49.avif",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/corporate/01-external-001--full--e7fb11fa49.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/corporate/01-external-001--full--e7fb11fa49.jpg",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/corporate/A7307115.jpg": {
+      "source": "/images/galleries/corporate/A7307115.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alpha": false,
+      "hash": "51c48373bb",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--320w--51c48373bb.avif",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--480w--51c48373bb.avif",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--640w--51c48373bb.avif",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--960w--51c48373bb.avif",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--1280w--51c48373bb.avif",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--1600w--51c48373bb.avif",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--320w--51c48373bb.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--480w--51c48373bb.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--640w--51c48373bb.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--960w--51c48373bb.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--1280w--51c48373bb.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--1600w--51c48373bb.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--320w--51c48373bb.jpg",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--480w--51c48373bb.jpg",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--640w--51c48373bb.jpg",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--960w--51c48373bb.jpg",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--1280w--51c48373bb.jpg",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--1600w--51c48373bb.jpg",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--thumb-160--51c48373bb.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--thumb-320--51c48373bb.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--thumb-160--51c48373bb.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--thumb-320--51c48373bb.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--thumb-160--51c48373bb.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/corporate/A7307115--thumb-320--51c48373bb.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/corporate/A7307115--full--51c48373bb.avif",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/corporate/A7307115--full--51c48373bb.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/corporate/A7307115--full--51c48373bb.jpg",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/fitness/A7307257 - insta.jpg": {
+      "source": "/images/galleries/fitness/A7307257 - insta.jpg",
+      "width": 4456,
+      "height": 5571,
+      "alpha": false,
+      "hash": "c7972f366e",
+      "regular": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--320w--c7972f366e.avif",
+            "width": 320,
+            "height": 400,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--480w--c7972f366e.avif",
+            "width": 480,
+            "height": 600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--640w--c7972f366e.avif",
+            "width": 640,
+            "height": 800,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--960w--c7972f366e.avif",
+            "width": 960,
+            "height": 1200,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1280w--c7972f366e.avif",
+            "width": 1280,
+            "height": 1600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1600w--c7972f366e.avif",
+            "width": 1600,
+            "height": 2000,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1919w--c7972f366e.avif",
+            "width": 1919,
+            "height": 2399,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--320w--c7972f366e.webp",
+            "width": 320,
+            "height": 400,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--480w--c7972f366e.webp",
+            "width": 480,
+            "height": 600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--640w--c7972f366e.webp",
+            "width": 640,
+            "height": 800,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--960w--c7972f366e.webp",
+            "width": 960,
+            "height": 1200,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1280w--c7972f366e.webp",
+            "width": 1280,
+            "height": 1600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1600w--c7972f366e.webp",
+            "width": 1600,
+            "height": 2000,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1919w--c7972f366e.webp",
+            "width": 1919,
+            "height": 2399,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--320w--c7972f366e.jpg",
+            "width": 320,
+            "height": 400,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--480w--c7972f366e.jpg",
+            "width": 480,
+            "height": 600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--640w--c7972f366e.jpg",
+            "width": 640,
+            "height": 800,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--960w--c7972f366e.jpg",
+            "width": 960,
+            "height": 1200,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1280w--c7972f366e.jpg",
+            "width": 1280,
+            "height": 1600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1600w--c7972f366e.jpg",
+            "width": 1600,
+            "height": 2000,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--1919w--c7972f366e.jpg",
+            "width": 1919,
+            "height": 2399,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "avif": [
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--thumb-160--c7972f366e.avif",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--thumb-320--c7972f366e.avif",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "webp": [
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--thumb-160--c7972f366e.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--thumb-320--c7972f366e.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ],
+        "jpeg": [
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--thumb-160--c7972f366e.jpg",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/fitness/A7307257 - insta--thumb-320--c7972f366e.jpg",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "avif": {
+          "src": "/images/generated/galleries/fitness/A7307257 - insta--full--c7972f366e.avif",
+          "width": 1919,
+          "height": 2399,
+          "alpha": false
+        },
+        "webp": {
+          "src": "/images/generated/galleries/fitness/A7307257 - insta--full--c7972f366e.webp",
+          "width": 1919,
+          "height": 2399,
+          "alpha": false
+        },
+        "jpeg": {
+          "src": "/images/generated/galleries/fitness/A7307257 - insta--full--c7972f366e.jpg",
+          "width": 1919,
+          "height": 2399,
           "alpha": false
         }
       }

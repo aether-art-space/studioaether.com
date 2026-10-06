@@ -1,0 +1,3 @@
+Built-in image_gen edit with transparent_background=true.
+Preserve original monochrome interior, framing, foreground people and furniture, open door leaves and frame. Remove rear room, rear people, equipment and rear floor to create one continuous alpha-transparent opening bounded by the door leaves and threshold. Keep all pixels outside doorway opaque and unchanged.
+QA: Generated draft has uneven alpha in doorway and unintended partial transparency on ceiling. Requires precise mask refinement before production use.

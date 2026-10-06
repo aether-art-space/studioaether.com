@@ -72,3 +72,9 @@ The project is available at `https://studioaether-com.pages.dev`; production is 
 - Configure preview environment variables separately from production.
 - Confirm Pages preview URLs cannot be indexed before sharing them publicly.
 - Add the custom domain only after migration parity validation.
+
+## Production hosting alias redirect — 3 October 2026
+
+The production hostname `studioaether-com.pages.dev` now permanently redirects to `https://www.studioaether.com/` through an account-level Cloudflare Bulk Redirect. The list `studioaether_hosting_alias` is activated by the enabled rule `Redirect Studio Aether hosting alias`. The redirect uses status 301 with **Preserve query string**, **Subpath matching**, and **Preserve path suffix** enabled. **Include subdomains** is disabled so deployment and branch preview hostnames retain their existing behavior.
+
+Live checks confirmed that the alias root returns 301 to the production root, and `/booking?utm_source=redirect-check` returns 301 to the same path and query on the production domain. The production homepage continues to return 200. This removes the separate public production copy that prompted GTM to suggest cross-domain linking between `studioaether-com.pages.dev` and `studioaether.com`; Google's diagnostic still needs to refresh. No GTM cross-domain configuration was added.

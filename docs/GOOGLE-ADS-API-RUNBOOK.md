@@ -44,3 +44,9 @@ Google Ads API reads and writes succeeded earlier in this task. A sandboxed Keyc
 ## PMax sitelinks and language groups
 
 PMax sitelinks are associated with the campaign, not an individual asset group. When one campaign contains Hungarian and English asset groups, the campaign can have links to both localized pages. Keep destinations localized and review the live sitelinks through the API after changes. The English routes verified in `src/data/routes.mjs` include `/studio`, `/equipment`, `/props`, `/photographer-mentoring-budapest`, `/selfie-studio-budapest`, and `/booking`. As of 2026-09-27, the active campaign has six enabled Hungarian sitelinks and six enabled English sitelinks (12 total); API read-back confirmed all are enabled.
+
+## Tag Manager read-only access — 1 October 2026
+
+`node scripts/google-ads/authorize.mjs --with-tag-manager` requests the existing AdWords permission plus `tagmanager.readonly`, and preserves all existing Keychain fields. The consent flow succeeded and stored the new refresh credential. The subsequent live-version GET reached the Tag Manager API but returned `SERVICE_DISABLED` for Google Cloud project `391779592493`; enable `tagmanager.googleapis.com` in that project, then retry. No Tag Manager edit or publish OAuth scopes were granted.
+
+The Tag Manager API was subsequently enabled in `studioaether-google-ads` (`second-pursuit-509912-s6`, project number `391779592493`). Read-only verification succeeded with HTTP 200 at `GET https://tagmanager.googleapis.com/tagmanager/v2/accounts/6292147560/containers/218384234/versions:live`. It returned live Version 13, “Add Conversion Linker on all pages”, containing `Conversion Linker - All Pages` (`gclidw`) with All Pages trigger ID `2147479553`. Use `versions:live`, not `versions/live`.

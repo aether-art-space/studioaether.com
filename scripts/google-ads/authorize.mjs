@@ -1,6 +1,6 @@
 import http from "node:http";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
-import { spawnSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -12,6 +12,13 @@ const port = 8787;
 // same exact URI in the authorization request and token exchange.
 const redirectUri = `http://127.0.0.1:${port}`;
 const keychainUpdater = join(dirname(fileURLToPath(import.meta.url)), "upsert-keychain.swift");
+const withTagManager = process.argv.includes("--with-tag-manager");
+const requestedScopes = [
+  "https://www.googleapis.com/auth/adwords",
+  ...(withTagManager ? [
+    "https://www.googleapis.com/auth/tagmanager.readonly"
+  ] : [])
+];
 let storedCredentials;
 try {
   const raw = execFileSync("security", [
@@ -32,7 +39,8 @@ const params = new URLSearchParams({
   client_id: clientId,
   redirect_uri: redirectUri,
   response_type: "code",
-  scope: "https://www.googleapis.com/auth/adwords",
+  scope: requestedScopes.join(" "),
+  include_granted_scopes: "true",
   access_type: "offline",
   prompt: "consent",
   code_challenge: challenge,
@@ -86,10 +94,16 @@ const server = http.createServer(async (req, res) => {
       throw new Error(`OAuth code exchange failed (${tokenResponse.status}): ${detail || "no refresh token returned"}`);
     }
 
+    const grantedScopes = new Set((token.scope ?? "").split(" "));
+    if (requestedScopes.some(scope => !grantedScopes.has(scope))) {
+      throw new Error("Google did not grant every requested permission; existing Keychain credentials were preserved.");
+    }
     const credentials = JSON.stringify({
+      ...storedCredentials,
       client_id: clientId,
       client_secret: storedCredentials.client_secret,
-      refresh_token: token.refresh_token
+      refresh_token: token.refresh_token,
+      scopes: [...grantedScopes]
     });
     const update = spawnSync("swift", [keychainUpdater], {
       input: credentials,
@@ -99,8 +113,8 @@ const server = http.createServer(async (req, res) => {
     if (update.status !== 0) throw new Error("OAuth succeeded, but the refresh token could not be saved to Keychain.");
 
     res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
-    res.end("<h2>Google Ads authorization is restored.</h2>You can return to Codex.");
-    console.log("Google Ads authorization restored; refresh credentials saved only in the login Keychain.");
+    res.end("<h2>Google API authorization saved.</h2>You can return to Codex.");
+    console.log("Google API authorization saved; refresh credentials stored only in the login Keychain.");
   } catch (e) {
     res.writeHead(500, { "content-type": "text/plain; charset=utf-8" });
     res.end("Google Ads authorization could not be saved. Return to Codex for help.");
@@ -111,6 +125,6 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log("Open this Google OAuth URL to restore the existing AdWords access:");
+  console.log("Open this Google OAuth URL to authorize the requested API permissions:");
   console.log(`AUTH_URL=https://accounts.google.com/o/oauth2/v2/auth?${params}`);
 });

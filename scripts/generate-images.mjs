@@ -292,6 +292,7 @@ const main = async () => {
   const managedRootExists = await fs.stat(managedRoot).then((stat) => stat.isDirectory()).catch(() => false);
   const recoveredRootExists = await fs.stat(recoveredRoot).then((stat) => stat.isDirectory()).catch(() => false);
   if (managedRootExists) await generateManagedAssets(await sourceFiles(managedRoot));
+  if (selectedGalleries.size) return;
   if (!sourceRootExists) {
     const generatedSources = [...sourcePaths].filter((source) => !source.startsWith("/wix-recovered/") && !source.startsWith("/images/galleries/"));
     if (recoveredRootExists) {
