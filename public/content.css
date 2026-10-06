@@ -1737,7 +1737,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .wedding-option-grid .extras-card__description { min-height: 0; }
 .wedding-addons-heading { margin-top: 90px !important; font-size: 38px !important; }
 .wedding-options .wedding-choice-note--followup { margin-top: 0 !important; }
-.wedding-photographers { display: grid; grid-template-columns: minmax(0, 1fr) 652px; height: 880px; min-height: 0; overflow: hidden; }
+.wedding-photographers { display: grid; grid-template-columns: minmax(0, 1fr) 652px; height: auto; min-height: 880px; overflow: hidden; }
 .wedding-photographers__copy { padding: 50px 311px 40px 310px; }
 .wedding-photographers h2 { max-width: 485px; margin: 0 0 22px; font: var(--font-feature-title); }
 .wedding-photographers p { max-width: 620px; margin: 0 0 24px; font: var(--text-body); }
@@ -1748,7 +1748,8 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .wedding-photographer strong { display: block; margin-bottom: 28px; font: var(--font-body); }
 .wedding-photographer p { margin-bottom: 0; }
 .wedding-photographers__tail { margin-top: 40px !important; font-weight: 700 !important; }
-.wedding-photographers__image { height: 880px; min-height: 0; overflow: hidden; }
+.wedding-photographers__image { position: relative; align-self: stretch; min-height: 0; overflow: hidden; }
+.wedding-photographers__image > .responsive-image { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
 .wedding-photographers__image img { display: block; width: 100%; height: 100%; border-radius: 0; object-fit: cover; object-position: center; }
 .wedding-approach { max-width: none; margin-top: 1px; padding: 64px 24px 95px; background: #f5f5f5; text-align: center; }
 .wedding-approach h2 { width: min(907px, 100%); margin: 0 auto; font: 400 64px/1 var(--serif); }
