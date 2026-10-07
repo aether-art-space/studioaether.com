@@ -16,15 +16,26 @@
     try {
       const value = JSON.parse(decodeURIComponent(entry.slice(cookieName.length + 1)));
       if (typeof value?.analytics !== "boolean" || typeof value?.consentedAt !== "string") return null;
+      // Older consent cookies had one all-or-nothing choice. Preserve the
+      // meaning of those choices when introducing separate ad measurement.
+      if (typeof value.adMeasurement !== "boolean" || typeof value.adPersonalization !== "boolean") {
+        return {
+          ...value,
+          adMeasurement: value.analytics,
+          adPersonalization: value.analytics
+        };
+      }
       return value;
     } catch {
       return null;
     }
   };
 
-  const saveConsent = (analytics) => {
+  const saveConsent = ({ analytics, adMeasurement, adPersonalization }) => {
     const consent = {
       analytics,
+      adMeasurement,
+      adPersonalization,
       consentedAt: new Date().toISOString()
     };
     const secure = window.location.protocol === "https:" ? ";Secure" : "";
@@ -41,8 +52,21 @@
     banner.hidden = false;
   }
 
-  banner.querySelector("[data-cookie-consent-necessary]")?.addEventListener("click", () => saveConsent(false));
-  banner.querySelector("[data-cookie-consent-all]")?.addEventListener("click", () => saveConsent(true));
+  banner.querySelector("[data-cookie-consent-necessary]")?.addEventListener("click", () => saveConsent({
+    analytics: false,
+    adMeasurement: false,
+    adPersonalization: false
+  }));
+  banner.querySelector("[data-cookie-consent-measurement]")?.addEventListener("click", () => saveConsent({
+    analytics: false,
+    adMeasurement: true,
+    adPersonalization: false
+  }));
+  banner.querySelector("[data-cookie-consent-all]")?.addEventListener("click", () => saveConsent({
+    analytics: true,
+    adMeasurement: true,
+    adPersonalization: true
+  }));
 
   document.querySelectorAll("[data-cookie-settings]").forEach((control) => {
     control.addEventListener("click", () => {
