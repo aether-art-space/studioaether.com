@@ -22,13 +22,24 @@ const readStoredConsent = () => {
 
   try {
     const value = JSON.parse(decodeURIComponent(entry.slice(consentCookieName.length + 1)));
-    return typeof value?.analytics === "boolean" ? value : null;
+    if (typeof value?.analytics !== "boolean") return null;
+    return {
+      analytics: value.analytics,
+      // Before granular choices, accepting analytics granted all optional
+      // Google consent signals and rejecting denied all of them.
+      adMeasurement: typeof value.adMeasurement === "boolean" ? value.adMeasurement : value.analytics,
+      adPersonalization: typeof value.adPersonalization === "boolean" ? value.adPersonalization : value.analytics
+    };
   } catch {
     return null;
   }
 };
 
-window.aetherCookieConsent = readStoredConsent() || { analytics: false };
+window.aetherCookieConsent = readStoredConsent() || {
+  analytics: false,
+  adMeasurement: false,
+  adPersonalization: false
+};
 
 const loadGtm = () => {
   if (!config.gtmId || measurementLoaded) return;
@@ -60,12 +71,18 @@ const loadMeasurement = () => {
 
 window.aetherApplyCookieConsent = (consent) => {
   const analyticsGranted = consent?.analytics === true;
-  window.aetherCookieConsent = { analytics: analyticsGranted };
+  const adMeasurementGranted = consent?.adMeasurement === true;
+  const adPersonalizationGranted = consent?.adPersonalization === true;
+  window.aetherCookieConsent = {
+    analytics: analyticsGranted,
+    adMeasurement: adMeasurementGranted,
+    adPersonalization: adPersonalizationGranted
+  };
   window.gtag("consent", "update", {
-    ad_storage: analyticsGranted ? "granted" : "denied",
+    ad_storage: adMeasurementGranted ? "granted" : "denied",
     analytics_storage: analyticsGranted ? "granted" : "denied",
-    ad_user_data: analyticsGranted ? "granted" : "denied",
-    ad_personalization: analyticsGranted ? "granted" : "denied"
+    ad_user_data: adMeasurementGranted ? "granted" : "denied",
+    ad_personalization: adPersonalizationGranted ? "granted" : "denied"
   });
 };
 
@@ -77,7 +94,7 @@ loadMeasurement();
 
 document.addEventListener("click", (event) => {
   const target = event.target.closest?.("[data-gtag-event]");
-  if (!target || !window.gtag || !window.aetherCookieConsent.analytics) return;
+  if (!target || !window.gtag || !(window.aetherCookieConsent.analytics || window.aetherCookieConsent.adMeasurement)) return;
   const eventName = target.dataset.gtagEvent;
   const location = target.dataset.gtagLocation || undefined;
   const linkUrl = target.href || undefined;
