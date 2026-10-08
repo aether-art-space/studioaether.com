@@ -1,0 +1,34 @@
+---
+import { testimonialReviews, serviceTestimonialSets } from "../data/serviceTestimonials.mjs";
+
+interface Props {
+  language: "en" | "hu" | "de";
+  service: keyof typeof serviceTestimonialSets;
+}
+const { language, service } = Astro.props;
+const headings = { en: "Kind words from our clients", hu: "Vendégeink mondták", de: "Stimmen unserer Kunden" };
+const items = serviceTestimonialSets[service].map((id) => testimonialReviews[id as keyof typeof testimonialReviews]);
+---
+<section class="service-testimonials" aria-labelledby="service-testimonials-title">
+  <h2 id="service-testimonials-title">{headings[language]}</h2>
+  <div class="service-testimonials__grid">
+    {items.map((item) => <figure><blockquote><p>{item.quote[language]}</p></blockquote><figcaption>{item.name}</figcaption></figure>)}
+  </div>
+</section>
+<style>
+  .service-testimonials { max-width: var(--content-max); margin: 0 auto; padding: 34px 24px 48px; text-align: center; }
+  h2 { margin: 0 0 26px; font: 400 30px/1.15 var(--serif); }
+  .service-testimonials__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+  figure, blockquote { margin: 0; }
+  figure { display: flex; flex-direction: column; align-items: center; }
+  blockquote { flex: 1; max-width: 34ch; }
+  blockquote p { margin: 0; font: 400 16px/1.65 var(--sans); }
+  blockquote p::before { content: "“"; }
+  blockquote p::after { content: "”"; }
+  figcaption { margin-top: 14px; font: 500 13px/1.5 var(--sans); }
+  @media (max-width: 700px) {
+    .service-testimonials { padding: 28px 18px 38px; }
+    .service-testimonials__grid { grid-template-columns: 1fr; gap: 28px; }
+    h2 { font-size: 27px; }
+  }
+</style>
