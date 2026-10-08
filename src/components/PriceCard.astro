@@ -1,6 +1,7 @@
 ---
 interface Props {
   title: string;
+  eyebrow?: string;
   titleLines?: string[];
   titleAccent?: string;
   description?: string;
@@ -22,6 +23,7 @@ interface Props {
 
 const {
   title,
+  eyebrow = "",
   titleLines = [],
   titleAccent = "",
   description = "",
@@ -41,6 +43,7 @@ const hasCta = Boolean(cta?.href || cta?.contact);
 
 <article class={`price-card ${isSimpleCard ? "price-card--simple" : ""} ${className}`.trim()} data-reveal-item>
   <header class="price-card__header">
+    {eyebrow && <p class="price-card__eyebrow">{eyebrow}</p>}
     <h3>
       {titleLines.length > 0 ? titleLines.map((line, index) => <span>{line}{index < titleLines.length - 1 && <br />}</span>) : title}
       {titleAccent && <><br /><span class="price-card__accent">{titleAccent}</span></>}
