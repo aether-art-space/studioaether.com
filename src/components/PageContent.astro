@@ -1296,7 +1296,13 @@ const relatedHref = localizedPath("/packages", language);
     {serviceType === "corporate" && <>
       <StudioSection heading={servicePageAny.studioHeading} intro={servicePageAny.studioIntro} bullets={servicePageAny.studioBullets} tail={servicePageAny.studioTail} imageSrc={studioSectionImage} imageAlt={studioSectionImageAlt} emphasizeBulletLeadins />
       <section class="service-section service-section--approach"><h2>{servicePageAny.approachHeading}</h2><p>{servicePageAny.approach}</p></section>
-      <section class="service-clients"><h2>{servicePageAny.clients}</h2><div>{localizeGalleryImages(serviceImages.clients).map((imageData: any) => <ResponsiveImage image={{ ...imageData, width: 150, height: 150 }} role="decorative" loading="lazy" />)}</div></section>
+      <section class="service-clients service-clients--corporate"><h2>{servicePageAny.clients}</h2><div>{[
+        { name: "Octomind", src: "/images/generated/clients/octomind.png" },
+        { name: "Arriva", src: "/images/generated/clients/arriva.png" },
+        { name: "Sunme", src: "/images/generated/clients/sunme.png" },
+        { name: "OrthoGraph", src: "/images/generated/clients/orthograph.png" },
+        { name: "Valio Solutions", src: "/images/generated/clients/valio.png" }
+      ].map((client) => <div class="corporate-client"><img src={client.src} srcset={`${client.src} 300w`} sizes="124px" alt={client.name} width="300" height="180" loading="lazy" /></div>)}<a href="https://pogun.io/" class="corporate-client corporate-client--pogun"><img src="/images/generated/clients/pogun-logo.png" srcset="/images/generated/clients/pogun-logo.png 3200w" sizes="124px" width="3200" height="860" alt="Pogun" loading="lazy" /></a><a href="https://www.cmtelematics.com/" class="corporate-client corporate-client--cmt"><img src="/images/cmt.svg" width="260" height="61" alt="Cambridge Mobile Telematics" loading="lazy" /></a><a href="https://www.goto.com/" class="corporate-client corporate-client--goto"><img src="/images/goto.svg" width="78" height="41" alt="GoTo" loading="lazy" /></a></div></section>
       <FaqSection className="service-faq service-faq--corporate" heading={servicePageAny.faqHeading} items={servicePageAny.faq} headingId="corporate-faq-title" />
     </>}
     <GalleryLightbox label={de ? "Service-Galerie" : hu ? "Szolgáltatási galéria" : "Service gallery"} hu={hu} de={de} />
