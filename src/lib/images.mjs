@@ -1,12 +1,21 @@
 import fs from "node:fs";
 import path from "node:path";
 
+const manifestPath = path.join(process.cwd(), "public", "images", "generated", "manifest.json");
 let manifest = { images: {} };
-try {
-  manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "images", "generated", "manifest.json"), "utf8"));
-} catch {
-  // The generator runs before build/dev/check; source URLs remain a safe fallback during startup.
-}
+let manifestModified = -1;
+const refreshManifest = () => {
+  try {
+    const modified = fs.statSync(manifestPath).mtimeMs;
+    if (modified === manifestModified) return;
+    const updated = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    manifest.images = updated.images || {};
+    manifestModified = modified;
+  } catch {
+    // Keep the last valid manifest while the generator is writing it.
+  }
+};
+refreshManifest();
 
 export const imageRoles = {
   hero: { sizes: "100vw" },
@@ -19,10 +28,11 @@ export const imageRoles = {
 };
 
 const sourceFor = (image) => image?.source || image?.src || "";
-const fallbackFormat = (entry) => entry?.alpha ? "png" : "jpeg";
+const fallbackFormat = () => "webp";
 const srcsetFor = (variants = []) => variants.map((variant) => `${variant.src.replaceAll(" ", "%20")} ${variant.width}w`).join(", ");
 
 export const resolveImage = (image, role = "content") => {
+  if (import.meta.env?.DEV) refreshManifest();
   const source = sourceFor(image);
   const entry = manifest.images[source];
   if (!entry) {
@@ -56,7 +66,7 @@ export const resolveImage = (image, role = "content") => {
     webpSrcset: srcsetFor(variants.webp),
     fallbackSrcset: srcsetFor(fallback),
     lightbox: {
-      avif: entry.full.avif.src,
+      avif: entry.full.avif?.src || "",
       webp: entry.full.webp.src,
       fallback: lightboxFallback.src,
       width: lightboxFallback.width,

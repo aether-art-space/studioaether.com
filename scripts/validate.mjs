@@ -13,6 +13,7 @@ const generatedRoot = path.join(dist, "images", "generated");
 const renderedPages = pages.filter((page) => page.disposition !== "redirect");
 const indexablePages = renderedPages.filter((page) => page.indexable !== false);
 const intentionallyUndescribed = new Set(["/hu/post-booking"]);
+if (!(await fs.stat(path.join(dist, "apple-touch-icon.png")).catch(() => null))?.isFile()) fail.push("Apple touch icon file missing");
 const allowedOriginalImages = new Set(["/hero-main-people.jpg"]);
 
 for (const page of renderedPages) {
@@ -89,6 +90,7 @@ for (const page of renderedPages) {
       "/site.css",
       "/content.css",
       "/favicon.svg",
+      "/apple-touch-icon.png",
       "/tracking.js",
       "/fonts/Jitter-Regular-hun-v2.ttf",
       "/fonts/Jura-400.ttf"

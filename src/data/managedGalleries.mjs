@@ -61,3 +61,7 @@ const galleryDirectories = fs.existsSync(root)
 
 export const managedGalleries = Object.fromEntries(galleryDirectories.map((slug) => [slug, buildGallery(slug)]));
 export const managedGalleryLegacySources = legacySources;
+
+export const weddingCategoryGalleries = Object.fromEntries(
+  ["preparations", "couple", "ceremony", "reception", "group-family", "party"].map((category) => [category, buildGallery(`wedding/${category}`)])
+);

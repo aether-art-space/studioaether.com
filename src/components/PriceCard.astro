@@ -9,6 +9,7 @@ interface Props {
   price: string;
   features?: string[];
   featureBreaks?: number[];
+  highlightedFeatures?: number[];
   includesLabel?: string;
   className?: string;
   descriptionAbovePrice?: boolean;
@@ -31,6 +32,7 @@ const {
   price,
   features = [],
   featureBreaks = [],
+  highlightedFeatures = [],
   includesLabel,
   className = "",
   descriptionAbovePrice = false,
@@ -63,9 +65,12 @@ const hasCta = Boolean(cta?.href || cta?.contact);
   </div>
   {(includesLabel || features.length > 0) && <div class="price-card__features">
     {includesLabel && <p class="price-card__includes">{includesLabel}</p>}
-    {features.length > 0 && <ul aria-label={includesLabel ?? "Package features"}>
-      {features.map((feature, index) => <li class={featureBreaks.includes(index) ? "price-card__feature-break" : undefined}>{feature}</li>)}
-    </ul>}
+    {features.length > 0 && (featureBreaks.length === 1 ? <div class="price-card__feature-groups">
+      <ul class="price-card__coverage-features" aria-label={includesLabel ?? "Package features"}>{features.slice(0, featureBreaks[0]).map((feature, index) => <li>{highlightedFeatures.includes(index) ? <strong>{feature}</strong> : feature}</li>)}</ul>
+      <ul class="price-card__practical-features" aria-label="Package details">{features.slice(featureBreaks[0]).map((feature, index) => <li>{highlightedFeatures.includes(index + featureBreaks[0]) ? <strong>{feature}</strong> : feature}</li>)}</ul>
+    </div> : <ul aria-label={includesLabel ?? "Package features"}>
+      {features.map((feature, index) => <li class={featureBreaks.includes(index) ? "price-card__feature-break" : undefined}>{highlightedFeatures.includes(index) ? <strong>{feature}</strong> : feature}</li>)}
+    </ul>)}
     {hasCta && <div class="price-card__action-wrap">
       {cta?.href
         ? <a class="price-card__action" data-gtag-event={cta.event} data-gtag-location={cta.location} href={cta.href}>{cta.label}</a>

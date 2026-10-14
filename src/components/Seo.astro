@@ -1,5 +1,6 @@
 ---
 import { absoluteUrl, faqItemsFor, site } from "../lib/site.mjs";
+import { weddingContent, weddingContentCreation } from "../data/content.mjs";
 import { resolveImage } from "../lib/images.mjs";
 
 const { page } = Astro.props;
@@ -238,7 +239,46 @@ if (page.section === "service" && !page.purpose.startsWith("Photographer profile
     inLanguage: languageCodes[page.language] || page.language,
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     provider: { "@id": businessId },
-    areaServed: serviceArea
+    areaServed: serviceArea,
+    ...(page.path.endsWith("/wedding-photography") ? {
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: weddingContent[page.language].packagesHeading,
+        itemListElement: weddingContent[page.language].packageCards.map((pkg: any, index: number) => ({
+          "@type": "Offer",
+          "@id": `${canonicalUrl}#package-${index + 1}`,
+          name: pkg.titleLines.join(" "),
+          description: `${pkg.description} ${pkg.features.join("; ")}.`,
+          price: Number(pkg.price.replace(/[^0-9]/g, "")),
+          priceCurrency: "HUF",
+          url: `${canonicalUrl}#wedding-packages`,
+          seller: { "@id": businessId },
+          itemOffered: {
+            "@type": "Service",
+            name: pkg.titleLines.join(" "),
+            description: `${pkg.description} ${pkg.features.join("; ")}.`,
+            provider: { "@id": businessId },
+            areaServed: serviceArea
+          },
+          addOn: {
+            "@type": "Offer",
+            "@id": `${canonicalUrl}#content-creation-offer`,
+            name: weddingContentCreation[page.language].title,
+            description: weddingContentCreation[page.language].description,
+            price: Number(weddingContentCreation[page.language].price.replace(/[^0-9]/g, "")),
+            priceCurrency: "HUF",
+            url: `${canonicalUrl}#wedding-extras`,
+            seller: { "@id": businessId },
+            itemOffered: {
+              "@type": "Service",
+              name: weddingContentCreation[page.language].title,
+              description: weddingContentCreation[page.language].description,
+              provider: { "@id": businessId }
+            }
+          }
+        }))
+      }
+    } : {})
   });
 }
 
@@ -325,7 +365,7 @@ if (page.path.endsWith("photographer-alexandra")) {
 <meta name="twitter:image:alt" content={page.h1} />
 <meta name="twitter:url" content={canonicalUrl} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href={iconImageUrl} />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="canonical" href={canonicalUrl} />
 {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />)}
 <link rel="alternate" hreflang="x-default" href={xDefault} />

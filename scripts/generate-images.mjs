@@ -91,7 +91,7 @@ const writeVariant = async ({ inputPath, relative, hash, label, width, height, s
 };
 
 const buildFormatSet = async ({ inputPath, relative, hash, label, width, height, square = false, alpha }) => {
-  const formats = ["avif", "webp", alpha ? "png" : "jpeg"];
+  const formats = ["webp"];
   const variants = {};
   const generated = await Promise.all(formats.map((format) => writeVariant({ inputPath, relative, hash, label, width, height, square, format, alpha })));
   formats.forEach((format, index) => { variants[format] = generated[index]; });
@@ -150,14 +150,14 @@ const buildEntry = async ({ inputPath, outputRelative, source }) => {
   const maximum = variantDimensions(sourceWidth, sourceHeight, 2400);
   const regularWidths = [...new Set(widthCandidates.map((candidate) => variantDimensions(sourceWidth, sourceHeight, candidate).width))].filter((candidate) => candidate > 0);
   const regular = {};
-  for (const format of ["avif", "webp", alpha ? "png" : "jpeg"]) regular[format] = [];
+  for (const format of ["webp"]) regular[format] = [];
   for (const candidateWidth of regularWidths) {
     const dimensions = variantDimensions(sourceWidth, sourceHeight, candidateWidth);
     const variants = await buildFormatSet({ inputPath, relative: outputRelative, hash, label: `${dimensions.width}w`, ...dimensions, alpha });
     for (const [format, variant] of Object.entries(variants)) regular[format].push(variant);
   }
   const thumb = {};
-  for (const format of ["avif", "webp", alpha ? "png" : "jpeg"]) thumb[format] = [];
+  for (const format of ["webp"]) thumb[format] = [];
   for (const size of thumbCandidates) {
     const variants = await buildFormatSet({ inputPath, relative: outputRelative, hash, label: `thumb-${size}`, width: size, height: size, square: true, alpha });
     for (const [format, variant] of Object.entries(variants)) thumb[format].push(variant);
@@ -288,6 +288,17 @@ const generateManagedAssets = async (files) => {
 };
 
 const main = async () => {
+  const selectedSources = new Set((process.argv.find((arg) => arg.startsWith("--sources="))?.slice(10) || "").split(",").filter(Boolean));
+  if (selectedSources.size) {
+    const manifest = JSON.parse(await fs.readFile(path.join(outputRoot, "manifest.json"), "utf8"));
+    const files = (await sourceFiles(sourceRoot)).filter((relative) => selectedSources.has(relative.split(path.sep)[0]));
+    const entries = await mapLimit(files, 4, (relative) => buildEntry({ inputPath: path.join(sourceRoot, relative), outputRelative: relative, source: toSourceUrl(relative) }));
+    for (const [source, entry] of entries) manifest.images[source] = entry;
+    await writeManifest(manifest);
+    console.log(`Optimized ${entries.length} source images.`);
+    return;
+  }
+
   const sourceRootExists = await fs.stat(sourceRoot).then((stat) => stat.isDirectory()).catch(() => false);
   const managedRootExists = await fs.stat(managedRoot).then((stat) => stat.isDirectory()).catch(() => false);
   const recoveredRootExists = await fs.stat(recoveredRoot).then((stat) => stat.isDirectory()).catch(() => false);

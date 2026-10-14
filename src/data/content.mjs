@@ -1,4 +1,4 @@
-import { managedGalleries } from "./managedGalleries.mjs";
+import { managedGalleries, weddingCategoryGalleries } from "./managedGalleries.mjs";
 
 export const homeContent = {
   en: {
@@ -1866,16 +1866,16 @@ weddingContent.de = { ...weddingContent.en,
 };
 
 const weddingPackages = [
-  { titleLines: ["Ceremony", "Photography Package"], description: "High quality photographs of your ceremony in a church, private venue or wherever you are holding it.", price: "109.000. HUF", features: ["ceremony", "group pictures", "2 photographers", "up to 2 hours", "one location", "100-300 photographs", "travel included within 50km"] },
-  { titleLines: ["Ceremony & Celebration", "Photography Package"], description: "Get great pictures of your most important events during the day - from the ceremony to the party.", price: "269.000. HUF", features: ["ceremony", "group pictures", "reception", "party", "2 photographers", "up to 6 hours", "up to 2 locations", "400-800 photographs", "travel included within 50km"] },
-  { titleLines: ["Full Wedding Day", "Package"], description: "A comprehensive package that includes your whole wedding day including some behind-the-scenes shots from the preparations and some creative couples photos.", price: "319.000. HUF", features: ["ceremony", "group pictures", "reception", "party", "preparations", "creative couple session", "2 photographers", "up to 10 hours", "multiple locations", "600-1000 photographs", "travel included within 50km"] }
+  { titleLines: ["Ceremony", "Photography Package"], description: "Beautiful ceremony coverage, group pictures and a brief couple portrait session at your chosen venue.", price: "109.000. HUF", features: ["ceremony", "group pictures", "a brief couple portrait session", "2 photographers", "up to 2 hours", "one location", "100-300 photographs", "travel included within 50km"] },
+  { titleLines: ["Ceremony & Celebration", "Photography Package"], description: "Coverage from the ceremony to the party, including group pictures and a brief couple portrait session.", price: "269.000. HUF", features: ["ceremony", "group pictures", "a brief couple portrait session", "reception", "party", "2 photographers", "up to 6 hours", "up to 2 locations", "400-800 photographs", "travel included within 50km"] },
+  { titleLines: ["Full Wedding Day", "Package"], description: "Complete wedding-day coverage, from preparations to the party, including a full creative couple shoot.", price: "319.000. HUF", features: ["ceremony", "group pictures", "reception", "party", "preparations", "full creative couple shoot", "2 photographers", "up to 10 hours", "multiple locations", "600-1000 photographs", "travel included within 50km"] }
 ];
 
 const weddingIncluded = [
   ["Free Consultation", "We get to know you and discuss your plans during a video call or personal meeting before preparing your tailored offer."],
   ["Quick Delivery", "Receive a sneak peek within one week and your complete wedding gallery within one month."],
   ["Private Online Gallery", "Your photographs are delivered digitally through a private online gallery, where you can view, download and share them."],
-  ["High Quality Photographs", "Every delivered photograph is carefully selected, professionally edited and provided in high resolution."]
+  ["High Quality Photos", "Every delivered photograph is carefully selected, professionally edited and provided in high resolution."]
 ];
 
 const weddingApproach = [
@@ -1905,9 +1905,9 @@ const weddingFaq = [
 ];
 
 const weddingPackagesHu = [
-  { titleLines: ["Szertartás", "fotózási csomag"], description: "Magas minőségű képek a templomi, helyszíni vagy bármilyen más helyen tartott szertartásotokról.", price: "109.000 HUF", features: ["szertartás", "csoportképek", "2 fotós", "legfeljebb 2 óra", "egy helyszín", "100–300 fénykép", "utazás 50 km-en belül"] },
-  { titleLines: ["Szertartás és ünneplés", "fotózási csomag"], description: "Megörökítjük a nap legfontosabb eseményeit a szertartástól a mulatságig.", price: "269.000 HUF", features: ["szertartás", "csoportképek", "fogadás", "mulatság", "2 fotós", "legfeljebb 6 óra", "legfeljebb 2 helyszín", "400–800 fénykép", "utazás 50 km-en belül"] },
-  { titleLines: ["Egész napos esküvői", "fotózási csomag"], description: "A teljes esküvői napot lefedő csomag, amely az előkészületek kulisszák mögötti pillanatait és egy kreatív páros fotózást is tartalmaz.", price: "319.000 HUF", features: ["szertartás", "csoportképek", "fogadás", "mulatság", "előkészületek", "kreatív páros fotózás", "2 fotós", "legfeljebb 10 óra", "több helyszín", "600–1000 fénykép", "utazás 50 km-en belül"] }
+  { titleLines: ["Szertartás", "fotózási csomag"], description: "A szertartás megörökítése a választott helyszínen, csoportképekkel és egy rövid páros portréfotózással.", price: "109.000 HUF", features: ["szertartás", "csoportképek", "rövid páros portréfotózás", "2 fotós", "legfeljebb 2 óra", "egy helyszín", "100–300 fénykép", "utazás 50 km-en belül"] },
+  { titleLines: ["Szertartás és ünneplés", "fotózási csomag"], description: "Fotózás a szertartástól a mulatságig, csoportképekkel és egy rövid páros portréfotózással.", price: "269.000 HUF", features: ["szertartás", "csoportképek", "rövid páros portréfotózás", "fogadás", "mulatság", "2 fotós", "legfeljebb 6 óra", "legfeljebb 2 helyszín", "400–800 fénykép", "utazás 50 km-en belül"] },
+  { titleLines: ["Egész napos esküvői", "fotózási csomag"], description: "A teljes esküvői napot lefedő csomag, amely az előkészületek kulisszák mögötti pillanatait és egy teljes kreatív páros fotózást is tartalmaz.", price: "319.000 HUF", features: ["szertartás", "csoportképek", "fogadás", "mulatság", "előkészületek", "teljes kreatív páros fotózás", "2 fotós", "legfeljebb 10 óra", "több helyszín", "600–1000 fénykép", "utazás 50 km-en belül"] }
 ];
 
 const weddingIncludedHu = [
@@ -1966,9 +1966,9 @@ Object.assign(weddingContent.hu, {
 Object.assign(weddingContent.en, { packageCards: weddingPackages, includedHeading: "Included With Every Wedding Package", included: weddingIncluded, approach: weddingApproach, process: weddingProcess, faqHeading: "Wedding Photography FAQ", faq: weddingFaq });
 Object.assign(weddingContent.de, {
   packageCards: [
-    { titleLines: ["Zeremonie", "Fotografie-Paket"], description: "Hochwertige Fotos eurer Zeremonie – in der Kirche, an einem privaten Ort oder an eurer Wunschlocation.", price: "109.000 HUF", features: ["Zeremonie", "Gruppenfotos", "2 Fotograf:innen", "bis zu 2 Stunden", "ein Ort", "100–300 Fotos", "Anfahrt bis 50 km inklusive"] },
-    { titleLines: ["Zeremonie & Feier", "Fotografie-Paket"], description: "Stimmungsvolle Bilder eurer wichtigsten Momente – von der Zeremonie bis zur Party.", price: "269.000 HUF", features: ["Zeremonie", "Gruppenfotos", "Empfang", "Party", "2 Fotograf:innen", "bis zu 6 Stunden", "bis zu 2 Orte", "400–800 Fotos", "Anfahrt bis 50 km inklusive"] },
-    { titleLines: ["Ganzer Hochzeitstag", "Paket"], description: "Eine umfassende Begleitung mit Vorbereitungen, Zeremonie, Feier und kreativer Paarporträtsession.", price: "319.000 HUF", features: ["Zeremonie", "Gruppenfotos", "Empfang", "Party", "Vorbereitungen", "kreative Paarporträts", "2 Fotograf:innen", "bis zu 10 Stunden", "mehrere Orte", "600–1.000 Fotos", "Anfahrt bis 50 km inklusive"] }
+    { titleLines: ["Zeremonie", "Fotografie-Paket"], description: "Fotos eurer Zeremonie an eurer Wunschlocation, Gruppenfotos und eine kurze Paarporträtsession.", price: "109.000 HUF", features: ["Zeremonie", "Gruppenfotos", "kurze Paarporträtsession", "2 Fotograf:innen", "bis zu 2 Stunden", "ein Ort", "100–300 Fotos", "Anfahrt bis 50 km inklusive"] },
+    { titleLines: ["Zeremonie & Feier", "Fotografie-Paket"], description: "Begleitung von der Zeremonie bis zur Party, mit Gruppenfotos und einer kurzen Paarporträtsession.", price: "269.000 HUF", features: ["Zeremonie", "Gruppenfotos", "kurze Paarporträtsession", "Empfang", "Party", "2 Fotograf:innen", "bis zu 6 Stunden", "bis zu 2 Orte", "400–800 Fotos", "Anfahrt bis 50 km inklusive"] },
+    { titleLines: ["Ganzer Hochzeitstag", "Paket"], description: "Eine umfassende Begleitung von den Vorbereitungen bis zur Party, inklusive eines vollständigen kreativen Paarshootings.", price: "319.000 HUF", features: ["Zeremonie", "Gruppenfotos", "Empfang", "Party", "Vorbereitungen", "vollständiges kreatives Paarshooting", "2 Fotograf:innen", "bis zu 10 Stunden", "mehrere Orte", "600–1.000 Fotos", "Anfahrt bis 50 km inklusive"] }
   ],
   includedHeading: "In jedem Hochzeitspaket enthalten",
   included: [["Kostenlose Beratung", "Wir lernen euch kennen und besprechen eure Pläne vor dem persönlichen Angebot."], ["Schnelle Lieferung", "Ein Sneak Peek kommt innerhalb einer Woche, die vollständige Galerie innerhalb eines Monats."], ["Private Online-Galerie", "Ihr erhaltet eure Bilder digital in einer privaten Galerie zum Ansehen, Herunterladen und Teilen."], ["Hochwertige Fotos", "Jedes Bild wird sorgfältig ausgewählt, professionell bearbeitet und hochauflösend geliefert."]],
@@ -1992,12 +1992,12 @@ export const weddingImages = [
 export const weddingSectionImages = {
   glance: { src: "/images/wix/wedding/source-sections/wedding-glance.jpg", width: 1000, height: 1500, alt: "Wedding photography at a Budapest wedding" },
   coverage: [
-    { src: "/images/wix/wedding/source-sections/coverage-01.png", width: 1000, height: 667, alt: "Wedding preparations photography" },
-    { src: "/images/wix/wedding/source-sections/coverage-02.jpg", width: 1000, height: 563, alt: "Creative couple wedding portrait" },
+    { src: "/images/wedding/preparations-down15.webp", width: 1280, height: 854, alt: "Wedding preparations photography" },
+    { src: "/images/wedding/creative-couple-up5.webp", width: 1280, height: 853, alt: "Creative couple wedding portrait" },
     { src: "/images/wix/wedding/source-sections/coverage-03.jpg", width: 1000, height: 1500, alt: "Wedding ceremony photography" },
     { src: "/images/wix/wedding/source-sections/coverage-04.png", width: 1000, height: 667, alt: "Wedding reception photography" },
     { src: "/images/wix/wedding/source-sections/coverage-05.png", width: 1000, height: 667, alt: "Wedding family portrait" },
-    { src: "/images/wix/wedding/source-sections/coverage-06.png", width: 1000, height: 667, alt: "Wedding party photography" }
+    { src: "/images/wedding/party.webp", width: 1280, height: 853, alt: "Wedding party photography" }
   ],
   options: [
     { src: "/images/wix/wedding/source-sections/options-01.png", width: 1000, height: 667, alt: "Engagement photoshoot" },
@@ -2283,3 +2283,26 @@ const applyHungarianPriceFormats = (value) => {
 [homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, modelDigitalsGuideContent, mentoringContent, seasonalContent, profileContent, postBookingContent, selfiePostBookingContent, weddingContent, legalContent].forEach(applyCopyFixes);
 [homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, modelDigitalsGuideContent, mentoringContent, seasonalContent, profileContent, postBookingContent, selfiePostBookingContent, weddingContent, legalContent].forEach(applyGermanCopyFixes);
 [homeContent, studioContent, selfieContent, equipmentContent, propsContent, residentArtistContent, modelsContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, specialContent, modelDigitalsGuideContent, mentoringContent, seasonalContent, profileContent, postBookingContent, selfiePostBookingContent, weddingContent, legalContent].forEach(applyHungarianPriceFormats);
+
+export { weddingCategoryGalleries };
+
+export const weddingContentCreation = {
+  "de": {
+    "title": "Wedding Content Creation",
+    "description": "Erlebt die kleinen Momente noch einmal: mit spontanen Blicken hinter die Kulissen und kurzen Videos zum Teilen. Optional zu eurem Fotografie-Paket buchbar.",
+    "priceLabel": "zu jedem Paket zubuchbar",
+    "price": "59.000 HUF"
+  },
+  "hu": {
+    "title": "Esküvői tartalomkészítés",
+    "description": "Éljétek át újra az apró pillanatokat spontán, kulisszák mögötti felvételekkel és megosztásra szánt rövid videókkal. Opcionális kiegészítő a fotós csomagotokhoz.",
+    "priceLabel": "bármely csomaghoz hozzáadható",
+    "price": "59.000 HUF"
+  },
+  "en": {
+    "title": "Wedding Content Creation",
+    "description": "Relive the little moments through candid, behind-the-scenes clips and short videos made for sharing. An optional addition to your photography package.",
+    "priceLabel": "add to any package for",
+    "price": "59.000 HUF"
+  }
+};

@@ -41,6 +41,7 @@ const cardClass = ["extras-card", image ? "extras-card--image" : "", className].
   {image ? <div class="extras-card__body">
     <h4>{title}</h4>
     {description && <p class="extras-card__description">{description}</p>}
+    <slot name="action" />
     {(priceLabel || price) && <div class="extras-card__price">
       {priceLabel && <span>{priceLabel}</span>}
       {price && <strong>{price}</strong>}
@@ -49,6 +50,7 @@ const cardClass = ["extras-card", image ? "extras-card--image" : "", className].
   </div> : <>
     <h4>{title}</h4>
     {description && <p class="extras-card__description">{description}</p>}
+    <slot name="action" />
     {(priceLabel || price) && <div class="extras-card__price">
       {priceLabel && <span>{priceLabel}</span>}
       {price && <strong>{price}</strong>}
