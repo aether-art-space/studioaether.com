@@ -42,6 +42,7 @@ for (const page of pages.filter(p => p.disposition !== 'redirect')) {
     check(entity.mainEntityOfPage?.['@id'] === `${canonical}#webpage`, `${page.path}: inconsistent page reference`);
     if (hasType(entity, 'Person')) check(entity['@id'] === `${site.domain}${base}#person`, `${page.path}: translated person identity differs`);
   }
+  check(!nodes.some(n => hasType(n, 'Service') && n.inLanguage !== undefined), `${page.path}: inLanguage is not a Service property`);
   if (pricedFamilies.has(base)) check(offers.length > 0, `${page.path}: published service prices missing offers`);
   if (base === '/commercial-photography-budapest') check(offers.length === 0, `${page.path}: fabricated custom-quote price`);
   for (const offer of offers) {

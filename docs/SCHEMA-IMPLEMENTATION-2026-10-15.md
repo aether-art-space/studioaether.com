@@ -17,3 +17,7 @@ Validation: production build succeeds; `npm run check` reports 0 errors and 0 wa
 Deliberate omissions: no speculative business-wide priceRange, article dates, credentials, stock status, offer expiry dates or self-serving review-star markup. Quote-only services remain unpriced; the plain studio overview does not repeat unseen prices. More elaborate CollectionPage/ItemList modeling is optional and deferred; the existing Service nodes describe the service content accurately. No direct Google ranking or rich-result claim is made.
 
 The historical audit inventory is retained as the before-state. Representative published outputs will be checked after deployment. This release does not change Calendar event names or Cal.com descriptions.
+
+## Published verification
+
+Verified live studio booking offers (8,000 / 9,000 per hour and 70,000 per pass), Hungarian selfie durations/prices, German photographer stable identity, and homepage breadcrumb omission. The Schema.org Validator initially fetched an older cached page; submitted fresh live JSON-LD in code mode instead. It found an existing unsupported Service.inLanguage property (one warning, zero errors). Removed that property from Service nodes while retaining language on WebPage/Article/FAQPage, and added a regression check.

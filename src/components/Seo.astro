@@ -248,7 +248,6 @@ if ((page.section === "service" && !page.purpose.startsWith("Photographer profil
     ...(socialMeta.description ? { description: socialMeta.description } : {}),
     image: socialImageUrl,
     url: canonicalUrl,
-    inLanguage: languageCodes[page.language] || page.language,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${canonicalUrl}#webpage` },
     provider: { "@id": businessId },
     areaServed: serviceArea,
