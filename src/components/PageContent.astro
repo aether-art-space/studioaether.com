@@ -1,4 +1,5 @@
 ---
+import { studioPriceLabels } from "../data/studioPricing.mjs";
 import { faqGroupsFor, introFor, site, localizedNav, localizedPath, naturalGerman } from "../lib/site.mjs";
 import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, propsCaptions, residentArtistContent, residentArtistImages, modelsContent, modelImages, modelDigitalsGuideContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, selfiePostBookingContent, weddingContent, weddingContentCreation, weddingCategoryGalleries, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
 import ArtistCard from "./ArtistCard.astro";
@@ -29,6 +30,7 @@ const { page } = Astro.props;
 const hu = page.language === "hu";
 const de = page.language === "de";
 const language = (page.language || "en") as "en" | "hu" | "de";
+const studioPrices = studioPriceLabels(language);
 const priceCardCtas = {
   studio: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: site.bookingUrl, event: "booking_click", location: "price-card-studio" },
   selfie: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: localizedPath("/selfie-booking", language), event: "selfie_booking_click", location: "price-card-selfie" },
@@ -594,7 +596,7 @@ const christmasStudioPackages = seasonalType === "studio" ? [
       { text: "" },
       { text: "" }
     ],
-    price: de ? "7.000 HUF/Stunde" : hu ? "7 000 Ft/óra" : "HUF 7,000/hour"
+    price: studioPrices.discounted
   },
   {
     title: de ? "Standard-Studio-Zeitfenster" : hu ? "Standard stúdióidősáv" : "Standard Studio Timeslots",
@@ -612,12 +614,12 @@ const christmasStudioPackages = seasonalType === "studio" ? [
       { text: "Friday and weekend", bold: true },
       { text: "09:00–22:00" }
     ],
-    price: de ? "8.000 HUF/Stunde" : hu ? "8 000 Ft/óra" : "HUF 8,000/hour"
+    price: studioPrices.standard
   },
   {
-    title: de ? "10-Stunden-Pass" : hu ? "10 órás bérlet" : "10 hour Membership",
-    titleLines: de ? ["10-Stunden-Pass"] : hu ? ["10 órás bérlet"] : ["10 hour Membership"],
-    titleAccent: de ? "BIS ZU 25 % SPAREN" : hu ? "AKÁR 25% KEDVEZMÉNY" : "SAVE UP TO 25%",
+    title: de ? "10-Stunden-Pass" : hu ? "10 órás bérlet" : "10-hour pass",
+    titleLines: de ? ["10-Stunden-Pass"] : hu ? ["10 órás bérlet"] : ["10-hour pass"],
+    titleAccent: studioPrices.savings,
     descriptionLines: de ? [
       { text: "Jeden Tag", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Stundenweise nutzbar" }
     ] : hu ? [
@@ -631,7 +633,7 @@ const christmasStudioPackages = seasonalType === "studio" ? [
       { text: "" },
       { text: "Can be broken up by the hour" }
     ],
-    price: de ? "60.000 HUF" : hu ? "60 000 Ft" : "HUF 60,000"
+    price: studioPrices.pass
   }
 ] : [];
 const profileKey = page.path.endsWith("photographer-alexandra") ? "alexandra" : "daniel";
@@ -730,17 +732,17 @@ profilePackages.forEach((packageItem: any) => {
   }
 });
 const bookingPackages = de ? [
-  { title: "Vergünstigtes Studio-Zeitfenster", titleLines: ["Vergünstigtes", "Studio-Zeitfenster"], descriptionLines: [{ text: "Montag bis Donnerstag", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "7.000 HUF/Stunde" },
-  { title: "Standard-Studio-Zeitfenster", titleLines: ["Standard", "Studio-Zeitfenster"], descriptionLines: [{ text: "Montag bis Donnerstag", bold: true }, { text: "18:00–22:00" }, { text: "Freitag und Wochenende", bold: true }, { text: "09:00–22:00" }], price: "8.000 HUF/Stunde" },
-  { title: "10-Stunden-Pass", titleLines: ["10-Stunden-Pass"], titleAccent: "BIS ZU 25 % SPAREN", descriptionLines: [{ text: "Jeden Tag", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Stundenweise nutzbar" }], price: "60.000 HUF" }
+  { title: "Vergünstigtes Studio-Zeitfenster", titleLines: ["Vergünstigtes", "Studio-Zeitfenster"], descriptionLines: [{ text: "Montag bis Donnerstag", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: studioPrices.discounted },
+  { title: "Standard-Studio-Zeitfenster", titleLines: ["Standard", "Studio-Zeitfenster"], descriptionLines: [{ text: "Montag bis Donnerstag", bold: true }, { text: "18:00–22:00" }, { text: "Freitag und Wochenende", bold: true }, { text: "09:00–22:00" }], price: studioPrices.standard },
+  { title: "10-Stunden-Pass", titleLines: ["10-Stunden-Pass"], titleAccent: studioPrices.savings, descriptionLines: [{ text: "Jeden Tag", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Stundenweise nutzbar" }], price: studioPrices.pass }
 ] : hu ? [
-  { title: "Kedvezményes stúdióidősáv", titleLines: ["Kedvezményes", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "7 000 Ft/óra" },
-  { title: "Standard stúdióidősáv", titleLines: ["Standard", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "18:00–22:00" }, { text: "pénteken és hétvégén", bold: true }, { text: "09:00–22:00" }], price: "8 000 Ft/óra" },
-  { title: "10 órás bérlet", titleLines: ["10 órás bérlet"], titleAccent: "akár 25% kedvezmény", descriptionLines: [{ text: "Bármelyik nap", bold: true }, { text: "10:00–22:00 között" }, { text: "" }, { text: "Óránként felbontható" }], price: "60 000 Ft" }
+  { title: "Kedvezményes stúdióidősáv", titleLines: ["Kedvezményes", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: studioPrices.discounted },
+  { title: "Standard stúdióidősáv", titleLines: ["Standard", "stúdióidősáv"], descriptionLines: [{ text: "hétfőtől csütörtökig", bold: true }, { text: "18:00–22:00" }, { text: "pénteken és hétvégén", bold: true }, { text: "09:00–22:00" }], price: studioPrices.standard },
+  { title: "10 órás bérlet", titleLines: ["10 órás bérlet"], titleAccent: studioPrices.savings, descriptionLines: [{ text: "Bármelyik nap", bold: true }, { text: "10:00–22:00 között" }, { text: "" }, { text: "Óránként felbontható" }], price: studioPrices.pass }
 ] : [
-  { title: "Discounted Studio Timeslots", titleLines: ["Discounted", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: "HUF 7,000/hour" },
-  { title: "Standard Studio Timeslots", titleLines: ["Standard", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "18:00–22:00" }, { text: "Friday and weekend", bold: true }, { text: "09:00–22:00" }], price: "HUF 8,000/hour" },
-  { title: "10 Hour Membership", titleLines: ["10 Hour Membership"], titleAccent: "SAVE UP TO 25%", descriptionLines: [{ text: "Any day", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Can be broken up by the hour" }], price: "HUF 60,000" }
+  { title: "Discounted Studio Timeslots", titleLines: ["Discounted", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "09:00–18:00" }, { text: "" }, { text: "" }], price: studioPrices.discounted },
+  { title: "Standard Studio Timeslots", titleLines: ["Standard", "Studio Timeslots"], descriptionLines: [{ text: "Monday to Thursday", bold: true }, { text: "18:00–22:00" }, { text: "Friday and weekend", bold: true }, { text: "09:00–22:00" }], price: studioPrices.standard },
+  { title: "10-hour pass", titleLines: ["10-hour pass"], titleAccent: studioPrices.savings, descriptionLines: [{ text: "Any day", bold: true }, { text: "10:00–22:00" }, { text: "" }, { text: "Can be broken up by the hour" }], price: studioPrices.pass }
 ];
 const servicePackages = serviceType === "portrait" ? (photoPackageSets.portrait as any)[language] : servicePageAny?.packages ?? [];
 const specialPackages = specialType ? (photoPackageSets as any)[specialType][language] : [];
@@ -779,9 +781,9 @@ const relatedHref = localizedPath("/packages", language);
         </div>
         <aside class="studio-showcase__rent" data-reveal-item>
           <h3>{de ? "Studio mieten" : hu ? "Stúdióbérlés" : "Studio Rent"}</h3>
-          {de ? <p class="studio-showcase__price"><span class="studio-showcase__price-label">ab</span><strong>7.000 HUF/Stunde</strong></p> : hu
-            ? <p class="studio-showcase__price"><span class="studio-showcase__price-label">kezdőár</span><strong>7 000 Ft/óra</strong></p>
-            : <p class="studio-showcase__price"><span class="studio-showcase__price-label">starting from</span><strong>HUF 7,000/hour</strong></p>}
+          {de ? <p class="studio-showcase__price"><span class="studio-showcase__price-label">ab</span><strong>{studioPrices.discounted}</strong></p> : hu
+            ? <p class="studio-showcase__price"><span class="studio-showcase__price-label">kezdőár</span><strong>{studioPrices.discounted}</strong></p>
+            : <p class="studio-showcase__price"><span class="studio-showcase__price-label">starting from</span><strong>{studioPrices.discounted}</strong></p>}
           <a class="button button--dark studio-showcase__book" data-gtag-event="booking_click" data-gtag-location="home-studio-showcase" href={localizedPath("/booking", language)}>{de ? "Studio buchen" : hu ? "foglald le a stúdiót" : "book the photostudio"}</a>
         </aside>
       </div>

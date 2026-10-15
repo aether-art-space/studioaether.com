@@ -1,3 +1,4 @@
+import { studioPriceLabels, studioPricing } from "../data/studioPricing.mjs";
 import { navGroups, pageByPath, site } from "../data/routes.mjs";
 
 export const siteUrl = () => (import.meta.env.PUBLIC_SITE_URL || site.domain).replace(/\/+$/, "");
@@ -165,9 +166,9 @@ const faqItemsEn = [
   ["Is it hygienic to wear the clothes in the studio?", [faqParagraph("We take care to keep the wardrobe clean between uses. For hygiene, please wear the clothing with underwear; underwear is not provided.")]],
   ["What backdrops and seasonal sets are available?", [faqParagraph("We offer 2.7 m wide paper backdrops, textile backdrops and custom-built backdrops. Seasonal sets, including Christmas decoration, are also available when offered.")]],
   ["What are the pricing and booking options?", [faqList([
-    "Discounted studio rate: HUF 7,000/hour, Monday–Thursday 09:00–18:00.",
-    "Standard studio rate: HUF 8,000/hour, Monday–Thursday 18:00–22:00 and Friday–Sunday 09:00–22:00.",
-    "10-hour membership: HUF 60,000, usable flexibly by the hour between 10:00 and 22:00. Save up to 25% compared with the standard hourly rate.",
+    `Discounted studio rate: ${studioPriceLabels("en").discounted}, Monday–Thursday 09:00–18:00.`,
+    `Standard studio rate: ${studioPriceLabels("en").standard}, Monday–Thursday 18:00–22:00 and Friday–Sunday 09:00–22:00.`,
+    `10-hour pass: ${studioPriceLabels("en").pass}, usable flexibly by the hour between 10:00 and 22:00. Save up to ${studioPricing.savingsPercent}% compared with the standard hourly rate.`,
     "Outside regular opening hours: HUF 10,000/hour by email.",
     "Filmings and castings with 5 or more participants: HUF 10,000/hour.",
     "For make-up, studio rental is half price; it is free during make-up time when working with the studio's make-up artists.",
@@ -197,9 +198,9 @@ const faqItemsHu = [
   ["Higiénikus a ruhák használata?", [faqParagraph("A ruhatár tisztaságára két használat között figyelünk. Higiéniai okokból kérjük, a ruhákat fehérneművel viseld; fehérneműt nem biztosítunk.")]],
   ["Milyen hátterek és szezonális díszletek érhetők el?", [faqParagraph("2,7 méter széles papírháttereket, textil- és egyedi építésű háttereket kínálunk. Szezonális díszletek, többek között karácsonyi dekoráció is elérhető, amikor meghirdetjük.")]],
   ["Mik a bérlési és foglalási lehetőségek?", [faqList([
-    "Kedvezményes stúdióár: 7 000 Ft/óra, hétfő–csütörtök 09:00–18:00 között.",
-    "Normál stúdióár: 8 000 Ft/óra, hétfő–csütörtök 18:00–22:00, péntek–vasárnap 09:00–22:00 között.",
-    "10 órás bérlet: 60 000 Ft, amely óránként rugalmasan használható 10:00 és 22:00 között. A normál óradíjhoz képest akár 25% kedvezményt jelent.",
+    `Kedvezményes stúdióár: ${studioPriceLabels("hu").discounted}, hétfő–csütörtök 09:00–18:00 között.`,
+    `Normál stúdióár: ${studioPriceLabels("hu").standard}, hétfő–csütörtök 18:00–22:00, péntek–vasárnap 09:00–22:00 között.`,
+    `10 órás bérlet: ${studioPriceLabels("hu").pass}, amely óránként rugalmasan használható 10:00 és 22:00 között. A normál óradíjhoz képest akár ${studioPricing.savingsPercent}% kedvezményt jelent.`,
     "Nyitvatartási időn kívül: 10 000 Ft/óra, e-mailes egyeztetéssel.",
     "5 vagy több résztvevős forgatás és casting: 10 000 Ft/óra.",
     "Sminkeléshez a stúdióbérlés féláron vehető igénybe; a sminkelés ideje alatt ingyenes, ha a stúdió sminkeseivel dolgozol.",
@@ -229,9 +230,9 @@ const faqItemsDe = [
   ["Ist die Garderobe hygienisch?", [faqParagraph("Wir halten die Garderobe zwischen den Einsätzen sauber. Bitte trage Kleidung aus hygienischen Gründen über Unterwäsche; Unterwäsche stellen wir nicht bereit.")]],
   ["Welche Hintergründe gibt es?", [faqParagraph("Wir bieten 2,7 m breite Papierhintergründe, Textilhintergründe und fest gebaute Sets. Saisonale Sets wie Weihnachtsdekoration sind verfügbar, wenn sie angeboten werden.")]],
   ["Welche Preise und Buchungsoptionen gibt es?", [faqList([
-    "Vergünstigter Studio-Tarif: 7.000 HUF/Stunde, Montag–Donnerstag 09:00–18:00.",
-    "Standardtarif: 8.000 HUF/Stunde, Montag–Donnerstag 18:00–22:00 und Freitag–Sonntag 09:00–22:00.",
-    "10-Stunden-Karte: 60.000 HUF, flexibel stundenweise zwischen 10:00 und 22:00 nutzbar. Gegenüber dem Standardtarif sparst du bis zu 25 %.",
+    `Vergünstigter Studio-Tarif: ${studioPriceLabels("de").discounted}, Montag–Donnerstag 09:00–18:00.`,
+    `Standardtarif: ${studioPriceLabels("de").standard}, Montag–Donnerstag 18:00–22:00 und Freitag–Sonntag 09:00–22:00.`,
+    `10-Stunden-Karte: ${studioPriceLabels("de").pass}, flexibel stundenweise zwischen 10:00 und 22:00 nutzbar. Gegenüber dem Standardtarif sparst du bis zu ${studioPricing.savingsPercent} %.`,
     "Außerhalb der regulären Öffnungszeiten: 10.000 HUF/Stunde nach Absprache per E-Mail.",
     "Filmproduktionen und Castings mit 5 oder mehr Teilnehmenden: 10.000 HUF/Stunde.",
     "Für Make-up ist die Studiomiete halb so teuer; während der Make-up-Zeit ist sie kostenlos, wenn du mit unseren Make-up-Artists arbeitest.",
