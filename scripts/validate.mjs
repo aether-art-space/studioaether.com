@@ -155,3 +155,5 @@ if (fail.length) {
   console.log(`Validated ${renderedPages.length} generated routes (${indexablePages.length} indexable) plus ${pages.length - renderedPages.length} direct redirect(s): URL parity, metadata, canonicals, hreflang, internal links, sitemap and robots.`);
   for (const warning of warnings) console.log(`WARN ${warning}`);
 }
+
+if (!fail.length) await import("./validate-schema.mjs");

@@ -1,11 +1,20 @@
 ---
 import { absoluteUrl, faqItemsFor, site } from "../lib/site.mjs";
 import { weddingContent, weddingContentCreation } from "../data/content.mjs";
+import { serviceOffersFor } from "../lib/serviceOffers.mjs";
 import { resolveImage } from "../lib/images.mjs";
 
 const { page } = Astro.props;
 const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
 const canonicalUrl = absoluteUrl(page.path);
+const serviceOffers = serviceOffersFor(page, { origin: absoluteUrl("/").replace(/\/$/, "") });
+const isStudioBooking = page.path === "/booking" || page.path === "/hu/booking" || page.path === "/de/booking";
+const isDanielProfile = page.path.endsWith("photographer-daniel");
+const isAlexandraProfile = page.path.endsWith("photographer-alexandra");
+const isPhotographerProfile = isDanielProfile || isAlexandraProfile;
+const photographerId = absoluteUrl(isDanielProfile ? "/photographer-daniel" : "/photographer-alexandra") + "#person";
+const weddingLanguage = (page.language === "hu" || page.language === "de" ? page.language : "en") as keyof typeof weddingContent;
+const weddingLocaleContent = weddingContent[weddingLanguage] as typeof weddingContent.en & { packageCards: any[] };
 const isModelDigitalsGuide = page.path.endsWith("/model-digitals-preparation");
 const socialImageSources: Record<string, string> = {
   "Studio rental / space": "/images/wix/reference/feature-studio.jpg",
@@ -112,10 +121,10 @@ const germanServiceTypeLabels: Record<string, string> = {
 };
 const localizedServiceType = page.language === "de" ? germanServiceTypeLabels[page.purpose] || page.purpose : (serviceTypeLabels[page.purpose] as any)?.[page.language] || page.purpose;
 const businessDescription = page.language === "de"
-  ? "Kreatives Fotostudio in Budapest für Studiomiete, Fotoshootings, Equipment und kreative Produktionen."
+  ? "Kreatives Fotostudio in Budapest für Studiomiete nach Terminvereinbarung, Fotoshootings, Equipment und kreative Produktionen."
   : page.language === "hu"
-  ? "Kreatív fotóstúdió Budapesten stúdióbérléshez, fotózási szolgáltatásokhoz, felszereléshez és kreatív produkciókhoz."
-  : "A creative photo studio in Budapest for studio rental, photography services, equipment and creative productions.";
+  ? "Kreatív fotóstúdió Budapesten, stúdióbérlés kizárólag előzetes időpont-egyeztetéssel, fotózási szolgáltatásokkal és felszereléssel."
+  : "A creative photo studio in Budapest for studio rental by appointment only, photography services, equipment and creative productions.";
 const serviceArea = page.purpose === "Wedding photography"
   ? [
       { "@type": "City", name: "Budapest" },
@@ -136,7 +145,7 @@ const websiteId = `${businessUrl}#website`;
 const schemas: Record<string, unknown>[] = [
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@type": "LocalBusiness",
     "@id": businessId,
     name: site.name,
     url: businessUrl,
@@ -147,13 +156,15 @@ const schemas: Record<string, unknown>[] = [
     description: businessDescription,
     sameAs: [site.instagramUrl, schemaFacebookUrl],
     hasMap: site.mapsUrl,
+    geo: { "@type": "GeoCoordinates", latitude: 47.4815598, longitude: 19.066554 },
+    currenciesAccepted: "HUF",
     areaServed: { "@type": "Country", name: page.language === "de" ? "Ungarn" : page.language === "hu" ? "Magyarország" : "Hungary" },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: site.email,
       telephone: schemaPhone,
-      availableLanguage: ["en", "hu", "de"]
+      availableLanguage: ["en", "hu"]
     },
     openingHoursSpecification: [
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "09:00", closes: "22:00" }
@@ -168,16 +179,17 @@ const schemas: Record<string, unknown>[] = [
   },
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": isPhotographerProfile ? "ProfilePage" : "WebPage",
     "@id": `${canonicalUrl}#webpage`,
     name: page.title,
     url: canonicalUrl,
     inLanguage: page.language,
     ...(page.description ? { description: page.description } : {}),
     image: socialImageUrl,
-    isPartOf: { "@id": websiteId }
+    isPartOf: { "@id": websiteId },
+    ...(isModelDigitalsGuide ? { mainEntity: { "@id": `${canonicalUrl}#article` } } : isPhotographerProfile ? { mainEntity: { "@id": photographerId } } : (page.section === "service" && !isModelDigitalsGuide || isStudioBooking) ? { mainEntity: { "@id": `${canonicalUrl}#service` } } : {})
   },
-  {
+  ...(page.section !== "home" ? [{
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
@@ -194,7 +206,7 @@ const schemas: Record<string, unknown>[] = [
         item: canonicalUrl
       }] : [])
     ]
-  }
+  }] : [])
 ];
 
 if (page.section === "home") {
@@ -226,25 +238,26 @@ if (page.section === "faq") {
   });
 }
 
-if (page.section === "service" && !page.purpose.startsWith("Photographer profile -") && !isModelDigitalsGuide) {
+if ((page.section === "service" && !page.purpose.startsWith("Photographer profile -") && !isModelDigitalsGuide) || isStudioBooking) {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${canonicalUrl}#service`,
     name: page.title.split(" | ")[0],
-    serviceType: localizedServiceType,
+    serviceType: isStudioBooking ? (page.language === "hu" ? "Fotóstúdió-bérlés" : page.language === "de" ? "Fotostudio mieten" : "Photo studio rental") : localizedServiceType,
     ...(socialMeta.description ? { description: socialMeta.description } : {}),
     image: socialImageUrl,
     url: canonicalUrl,
     inLanguage: languageCodes[page.language] || page.language,
-    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${canonicalUrl}#webpage` },
     provider: { "@id": businessId },
     areaServed: serviceArea,
+    ...(serviceOffers.length ? { offers: serviceOffers } : {}),
     ...(page.path.endsWith("/wedding-photography") ? {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: weddingContent[page.language].packagesHeading,
-        itemListElement: weddingContent[page.language].packageCards.map((pkg: any, index: number) => ({
+        name: weddingLocaleContent.packagesHeading,
+        itemListElement: weddingLocaleContent.packageCards.map((pkg: any, index: number) => ({
           "@type": "Offer",
           "@id": `${canonicalUrl}#package-${index + 1}`,
           name: pkg.titleLines.join(" "),
@@ -263,16 +276,16 @@ if (page.section === "service" && !page.purpose.startsWith("Photographer profile
           addOn: {
             "@type": "Offer",
             "@id": `${canonicalUrl}#content-creation-offer`,
-            name: weddingContentCreation[page.language].title,
-            description: weddingContentCreation[page.language].description,
-            price: Number(weddingContentCreation[page.language].price.replace(/[^0-9]/g, "")),
+            name: weddingContentCreation[weddingLanguage].title,
+            description: weddingContentCreation[weddingLanguage].description,
+            price: Number(weddingContentCreation[weddingLanguage].price.replace(/[^0-9]/g, "")),
             priceCurrency: "HUF",
             url: `${canonicalUrl}#wedding-extras`,
             seller: { "@id": businessId },
             itemOffered: {
               "@type": "Service",
-              name: weddingContentCreation[page.language].title,
-              description: weddingContentCreation[page.language].description,
+              name: weddingContentCreation[weddingLanguage].title,
+              description: weddingContentCreation[weddingLanguage].description,
               provider: { "@id": businessId }
             }
           }
@@ -303,7 +316,7 @@ if (page.path.endsWith("photographer-daniel")) {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${canonicalUrl}#person`,
+    "@id": photographerId,
     name: "Dániel Z. Aczél",
     jobTitle: page.language === "de" ? "Fotograf und Studioinhaber" : page.language === "hu" ? "Fotós és stúdió tulajdonos" : "Photographer and studio owner",
     description: page.description,
@@ -312,8 +325,9 @@ if (page.path.endsWith("photographer-daniel")) {
       : page.language === "hu"
       ? ["Portréfotózás", "Boudoir fotózás", "Glamour fotózás", "Akt fotózás", "Fitness fotózás", "Kreatív fotózás"]
       : ["Portrait photography", "Boudoir photography", "Glamour photography", "Fine art nude photography", "Fitness photography", "Creative photography"],
-    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${canonicalUrl}#webpage` },
     worksFor: { "@id": businessId },
+    ...(serviceOffers.length ? { makesOffer: serviceOffers } : {}),
     image: socialImageUrl,
     sameAs: ["https://www.aczel.pictures", "https://instagram.com/aczel_aethereal", "https://x.com/aczel_pictures"],
     url: canonicalUrl
@@ -324,7 +338,7 @@ if (page.path.endsWith("photographer-alexandra")) {
   schemas.push({
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${canonicalUrl}#person`,
+    "@id": photographerId,
     name: page.language === "hu" ? "Kulcsár-Horváth Alexandra" : "Alexandra Kulcsár-Horváth",
     jobTitle: page.language === "de" ? "Fotografin" : page.language === "hu" ? "Fotós" : "Photographer",
     description: page.description,
@@ -333,8 +347,9 @@ if (page.path.endsWith("photographer-alexandra")) {
       : page.language === "hu"
       ? ["Esküvőfotózás", "Portréfotózás", "Lifestyle fotózás", "Üzleti portréfotózás", "Kisállatfotózás"]
       : ["Wedding photography", "Portrait photography", "Lifestyle photography", "Business portrait photography", "Pet photography"],
-    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${canonicalUrl}#webpage` },
     worksFor: { "@id": businessId },
+    ...(serviceOffers.length ? { makesOffer: serviceOffers } : {}),
     image: socialImageUrl,
     sameAs: ["https://www.instagram.com/aurea_fotografia_/"],
     url: canonicalUrl
