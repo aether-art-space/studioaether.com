@@ -1,0 +1,94 @@
+path,language,indexable,types,offer_occurrences,visible_price_mentions,json_parse_errors
+/,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; WebSite,0,2,0
+/hu,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; WebSite,0,2,0
+/studio,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,0,0
+/hu/studio,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,0,0
+/selfie-studio-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/hu/selfie-studio-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/equipment,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,14,0
+/hu/equipment,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,14,0
+/props,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,1,0
+/hu/props,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,1,0
+/photographers-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/hu/photographers-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/models-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,4,0
+/hu/models-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,4,0
+/stylists,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/hu/stylists,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/make-up-artists,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/hu/make-up-artists,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/packages,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/hu/packages,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/commercial-photography-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,0,0
+/hu/commercial-photography-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,0,0
+/corporate-photography-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,4,0
+/hu/corporate-photography-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,4,0
+/portrait-photography-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/hu/portrait-photography-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/fitness,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/hu/fitness,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/glamour-boudoir-photography-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/hu/glamour-boudoir-photography-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/model-polaroids-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/hu/model-polaroids-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/model-digitals-preparation,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Article,0,3,0
+/hu/model-digitals-preparation,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Article,0,3,0
+/pet-photography-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/hu/pet-photography-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/id-photo,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,2,0
+/hu/id-photo,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,2,0
+/photographer-mentoring-budapest,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/hu/photographer-mentoring-budapest,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/booking,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,16,0
+/hu/booking,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,16,0
+/selfie-booking,en,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/hu/selfie-booking,hu,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/faq,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; FAQPage,0,19,0
+/hu/faq,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; FAQPage,0,19,0
+/privacy-policy,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/hu/privacy-policy,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/photographer-daniel,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Person,0,3,0
+/photographer-alexandra,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Person,0,3,0
+/christmas-photoshoot,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/hu/christmas-photoshoot,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/christmas-studio,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/hu/christmas-studio,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/post-booking,en,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,1,0
+/hu/post-booking,hu,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,1,0
+/selfie-post-booking,en,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/hu/selfie-post-booking,hu,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/wedding-photography,en,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,6,12,0
+/hu/wedding-photography,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,6,12,0
+/hu/photographer-daniel,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Person,0,3,0
+/hu/photographer-alexandra,hu,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Person,0,3,0
+/de,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; WebSite,0,2,0
+/de/studio,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,0,0
+/de/selfie-studio-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/de/equipment,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,14,0
+/de/props,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,1,0
+/de/photographers-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/de/models-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,4,0
+/de/stylists,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/de/make-up-artists,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/de/packages,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/de/commercial-photography-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,0,0
+/de/corporate-photography-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,4,0
+/de/portrait-photography-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/de/fitness,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/de/glamour-boudoir-photography-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/de/model-polaroids-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/de/model-digitals-preparation,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Article,0,3,0
+/de/pet-photography-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/de/id-photo,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,2,0
+/de/photographer-mentoring-budapest,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,3,0
+/de/booking,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,16,0
+/de/selfie-booking,de,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/de/faq,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; FAQPage,0,19,0
+/de/privacy-policy,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/de/photographer-daniel,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Person,0,3,0
+/de/photographer-alexandra,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Person,0,3,0
+/de/christmas-photoshoot,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/de/christmas-studio,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,0,6,0
+/de/post-booking,de,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,1,0
+/de/selfie-post-booking,de,False,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList,0,0,0
+/de/wedding-photography,de,True,LocalBusiness/ProfessionalService; WebPage; BreadcrumbList; Service,6,12,0
