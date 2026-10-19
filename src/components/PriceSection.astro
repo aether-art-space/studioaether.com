@@ -3,6 +3,7 @@ import PriceCard from "./PriceCard.astro";
 
 interface PriceItem {
   title: string;
+  hidePriceEyebrow?: boolean;
   titleLines?: string[];
   titleAccent?: string;
   description?: string;
@@ -31,6 +32,7 @@ interface Props {
   className?: string;
   gridClassName?: string;
   cta?: PriceCardCta;
+  priceEyebrow?: string;
 }
 
 const {
@@ -44,7 +46,8 @@ const {
   ariaLabel = "Pricing",
   className = "",
   gridClassName = "",
-  cta
+  cta,
+  priceEyebrow
 } = Astro.props;
 
 const sectionClass = ["service-section", "service-section--packages", "price-section", packages.length > 3 ? "price-section--wide" : "", className].filter(Boolean).join(" ");
@@ -57,6 +60,6 @@ const gridClass = ["service-package-grid", gridClassName].filter(Boolean).join("
   {lead && <p data-reveal-item>{lead}</p>}
   <slot name="tabs" />
   <div class={gridClass}>
-    {packages.map((packageItem) => <PriceCard title={packageItem.title} titleLines={packageItem.titleLines} titleAccent={packageItem.titleAccent} description={packageItem.description} descriptionLines={packageItem.descriptionLines} price={packageItem.price} includesLabel={includesLabel} features={packageItem.features} cta={cta} />)}
+    {packages.map((packageItem) => <PriceCard title={packageItem.title} titleLines={packageItem.titleLines} titleAccent={packageItem.titleAccent} description={packageItem.description} descriptionLines={packageItem.descriptionLines} price={packageItem.price} priceEyebrow={priceEyebrow} hidePriceEyebrow={packageItem.hidePriceEyebrow} includesLabel={includesLabel} features={packageItem.features} cta={cta} />)}
   </div>
 </section>

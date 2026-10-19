@@ -7,6 +7,8 @@ interface Props {
   description?: string;
   descriptionLines?: Array<{ text: string; bold?: boolean }>;
   price: string;
+  priceEyebrow?: string;
+  hidePriceEyebrow?: boolean;
   features?: string[];
   featureBreaks?: number[];
   highlightedFeatures?: number[];
@@ -30,6 +32,8 @@ const {
   description = "",
   descriptionLines = [],
   price,
+  priceEyebrow,
+  hidePriceEyebrow = false,
   features = [],
   featureBreaks = [],
   highlightedFeatures = [],
@@ -56,6 +60,7 @@ const hasCta = Boolean(cta?.href || cta?.contact);
   </header>
   <div class="price-card__details">
     {descriptionAbovePrice && description && <p class="price-card__price-label">{description}</p>}
+    {priceEyebrow && <p class="price-card__price-eyebrow" style={hidePriceEyebrow ? "visibility: hidden" : undefined} aria-hidden={hidePriceEyebrow ? "true" : undefined}>{priceEyebrow}</p>}
     <p class="price-card__price"><strong>{price}</strong></p>
     {!includesLabel && features.length === 0 && hasCta && <div class="price-card__action-wrap">
       {cta?.href

@@ -1579,7 +1579,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .booking-price-grid .price-card__description { min-height: 0; max-width: none; margin: 0; color: var(--paper); font: 400 16px/1.8 var(--sans); }
 .booking-price-grid .price-card__description p { margin: 0; font: inherit; }
 .booking-price-grid .price-card__description-line--bold { font-weight: 700 !important; }
-.booking-price-grid .price-card__details { min-width: 0; margin-top: auto; padding-top: 0; }
+.booking-price-grid .price-card__details { min-width: 0; margin-top: auto; padding-top: 12px; }
 .booking-price-grid .price-card__price { min-height: 0; margin: 0; padding: 0; }
 .booking-note { max-width: var(--content-reading-max); margin: 0 auto 66px; }
 .booking-note .info-box__content { flex: 1 1 auto; }
@@ -2086,3 +2086,12 @@ summary { cursor: pointer; font: var(--font-card-title); }
 }
 
 @media (min-width: 701px) and (max-width: 1000px) { .wedding-approach-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; } }
+
+.price-card__price-eyebrow { margin: 0 0 6px; color: rgba(255, 255, 255, .72); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+
+/* Keep stylist titles, descriptions, prices and feature panels aligned across cards. */
+@media (min-width: 701px) {
+  #stylist-pricing .service-package-grid { grid-template-rows: auto auto auto minmax(auto, 1fr); }
+  #stylist-pricing .price-card { container-type: normal; grid-template-rows: subgrid; grid-row: span 4; }
+  #stylist-pricing .price-card__header { display: grid; grid-template-rows: subgrid; grid-row: span 2; row-gap: 0; }
+}

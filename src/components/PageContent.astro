@@ -1023,7 +1023,7 @@ const relatedHref = localizedPath("/packages", language);
     {artistType === "photographers" && artistPackagesWithTitleLines.length > 0 && <PriceSection id="photographer-pricing" ariaLabel={de ? "Pakete der ansässigen Fotografen" : hu ? "Rezidens fotós csomagok" : "Resident photographer packages"} packages={artistPackagesWithTitleLines} cta={priceCardCtas.contact}>
       <PricingTabs slot="tabs" language={page.language} active="photographer" />
     </PriceSection>}
-    {artistType === "stylists" && artistPackagesWithTitleLines.length > 0 && <PriceSection id="stylist-pricing" ariaLabel={de ? "Styling-Pakete" : hu ? "Styling csomagok" : "Styling packages"} packages={artistPackagesWithTitleLines} cta={priceCardCtas.contact}>
+    {artistType === "stylists" && artistPackagesWithTitleLines.length > 0 && <PriceSection id="stylist-pricing" priceEyebrow={de ? "ab" : hu ? "kezdőár" : "starting from"} ariaLabel={de ? "Styling-Pakete" : hu ? "Styling csomagok" : "Styling packages"} packages={artistPackagesWithTitleLines} cta={priceCardCtas.contact}>
       <PricingTabs slot="tabs" language={page.language} active="stylist" />
     </PriceSection>}
     {artistType === "makeup" && <PricingTabs language={page.language} active="makeup" />}
