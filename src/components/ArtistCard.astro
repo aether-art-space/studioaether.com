@@ -60,7 +60,7 @@ const gallery = profile.gallery ?? [];
   </div>
   <div class="artist-profile__body">
     <div class="artist-profile__specialties" aria-label={hu ? "Szakterületek" : "Specialties"}>
-    {profile.specialties.split(", ").map((specialty) => <span>{specialty}</span>)}
+    {profile.specialties.split(", ").filter(Boolean).map((specialty) => <span>{specialty}</span>)}
     </div>
     {profile.description && <p class="artist-profile__description">{profile.description}</p>}
     {profile.price && <strong>{profile.price}</strong>}

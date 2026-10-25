@@ -1,3 +1,5 @@
+import { creativePrice } from "./creativePricing.mjs";
+import { makeupPricing } from "./makeupPricing.mjs";
 import { managedGalleries, weddingCategoryGalleries } from "./managedGalleries.mjs";
 
 export const homeContent = {
@@ -986,7 +988,7 @@ export const residentArtistImages = {
     profiles: [
       { image: artistImage("makeup", "makeup-09.png", "Csenge Katica Denes, hair and make-up artist"), gallery: artistGallery("makeup", ["makeup-10.jpg", "makeup-11.jpg", "makeup-12.png", "makeup-13.jpg", "makeup-14.jpg", "makeup-15.jpeg"], "Make-up work by Csenge Katica Denes") },
       { image: artistImage("makeup", "makeup-16.jpg", "Noémi Holczimmer, make-up artist"), gallery: artistGallery("makeup", ["makeup-17.jpeg", "makeup-18.jpeg", "makeup-19.jpeg", "makeup-20.jpg", "makeup-21.jpeg", "makeup-22.jpg"], "Make-up work by Noémi Holczimmer") },
-      { image: artistImage("makeup", "makeup-23.jpg", "Anna Máté, make-up artist"), gallery: numbered("makeup", "makeup", 24, 29, "jpg", "Make-up work by Anna Máté") }
+      { image: { src: "/images/eszter-placeholder.svg", alt: "Gémesi Eszter", width: 600, height: 800 }, gallery: [] }
     ]
   }
 };
@@ -1063,28 +1065,37 @@ export const residentArtistContent = {
     en: {
       heroHeading: "resident make-up artists and hair stylists", heroCopy: "our MUAs and hair stylists are available for booking", intro: ["Our skilled resident makeup artists at aether art space are available for hire, offering their expertise to both models and photographers renting the studio.", "Each artist brings a distinctive style, ensuring that every look is tailored to enhance the vision of the shoot, whether it's natural elegance or bold, creative expression. With an eye for detail and a commitment to flawless application, our makeup artists elevate any project, helping bring concepts to life with precision and artistry. Book today to add the perfect finishing touch to your next photoshoot."],
       profiles: [
-        { name: "Csenge Katica Denes", role: "hair & make-up artist", specialties: "fashion, commercial, natural, skin like skin", price: "make-ups from 15.000. HUF", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
-        { name: "Noémi Holczimmer", role: "make-up artist", specialties: "glamour, natural, alternative, extreme, themed", price: "make-ups from 15.000. HUF", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
-        { name: "Anna Máté", role: "make-up artist", specialties: "glamour, beauty, natural, everyday", price: "make-ups from 15.000. HUF", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }
+        { name: "Csenge Katica Denes", role: "hair & make-up artist", specialties: "fashion, commercial, natural, skin like skin", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
+        { name: "Noémi Holczimmer", role: "make-up artist", specialties: "glamour, natural, alternative, extreme, themed", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
+        { name: "Anna Máté", role: "make-up artist", specialties: "glamour, beauty, natural, everyday", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }
       ],
       footerNote: "If you work with our make-up artists, you can use the studio for applying the makeup before your shoot.", contactHeading: "For booking one of our artists, drop a message:"
     },
     de: {
-      heroHeading: "unsere Make-up-Artists und Haarstylist:innen", heroCopy: "unsere Make-up-Artists und Haarstylist:innen können gebucht werden", intro: ["Unsere erfahrenen Make-up-Artists bei aether art space können gebucht werden und bringen ihre Expertise sowohl für Models als auch für Fotograf:innen ein, die das Studio mieten.", "Jede:r Artist bringt einen eigenen Stil mit und entwickelt Looks, die die Vision des Shootings unterstreichen – von natürlicher Eleganz bis zu mutigem kreativem Ausdruck. Mit Blick fürs Detail und einem hohen Anspruch an ein makelloses Ergebnis geben unsere Make-up-Artists jedem Projekt den passenden letzten Schliff."], profiles: [{ name: "Csenge Katica Denes", role: "Haar- und Make-up-Artist", specialties: "Fashion, Commercial, natürlich, Haut wie Haut", price: "Make-up ab 15.000 HUF", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] }, { name: "Noémi Holczimmer", role: "Make-up-Artist", specialties: "Glamour, natürlich, alternativ, extrem, thematisch", price: "Make-up ab 15.000 HUF", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] }, { name: "Anna Máté", role: "Make-up-Artist", specialties: "Glamour, Beauty, natürlich, Alltag", price: "Make-up ab 15.000 HUF", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }], footerNote: "Wenn du mit unseren Make-up-Artists arbeitest, kannst du das Studio vor deinem Shooting kostenlos zum Schminken nutzen.", contactHeading: "Um eine:n unserer Künstler:innen zu buchen, schreib uns:"
+      heroHeading: "unsere Make-up-Artists und Haarstylist:innen", heroCopy: "unsere Make-up-Artists und Haarstylist:innen können gebucht werden", intro: ["Unsere erfahrenen Make-up-Artists bei aether art space können gebucht werden und bringen ihre Expertise sowohl für Models als auch für Fotograf:innen ein, die das Studio mieten.", "Jede:r Artist bringt einen eigenen Stil mit und entwickelt Looks, die die Vision des Shootings unterstreichen – von natürlicher Eleganz bis zu mutigem kreativem Ausdruck. Mit Blick fürs Detail und einem hohen Anspruch an ein makelloses Ergebnis geben unsere Make-up-Artists jedem Projekt den passenden letzten Schliff."], profiles: [{ name: "Csenge Katica Denes", role: "Haar- und Make-up-Artist", specialties: "Fashion, Commercial, natürlich, Haut wie Haut", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] }, { name: "Noémi Holczimmer", role: "Make-up-Artist", specialties: "Glamour, natürlich, alternativ, extrem, thematisch", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] }, { name: "Anna Máté", role: "Make-up-Artist", specialties: "Glamour, Beauty, natürlich, Alltag", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }], footerNote: "Wenn du mit unseren Make-up-Artists arbeitest, kannst du das Studio vor deinem Shooting kostenlos zum Schminken nutzen.", contactHeading: "Um eine:n unserer Künstler:innen zu buchen, schreib uns:"
     },
     hu: {
       heroHeading: "rezidens sminkesek és fodrászok", heroCopy: "foglald le sminkeseinket és hajszobrászainkat fotózásodhoz", intro: ["Az aether art space kiváló sminkesei és hajstylistjai a modellek és a stúdiót bérlő fotósok számára is elérhetőek.", "Minden sminkesünk egyedi stílust képvisel, és gondoskodik arról, hogy a fotózás megjelenése tökéletesen tükrözze az elképzelt koncepciót – legyen szó természetes eleganciáról vagy merész, kreatív kifejezésről. Precíz munkájukkal és figyelmükkel sminkeseink bármely projektet magasabb szintre emelnek, hogy az elképzelések tökéletesen megvalósuljanak. Foglalj időpontot, és tedd teljessé a következő fotózásod megjelenését!"],
       profiles: [
-        { name: "Csenge Katica Denes", role: "haj-stylist és sminkes", specialties: "divat, reklám, természetes, skin like skin", price: "sminkek 15.000. Ft-tól", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
-        { name: "Holczimmer Noémi", role: "sminkes", specialties: "glamour, természetes, alternatív, extrém, tematikus", price: "sminkek 15.000. Ft-tól", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
-        { name: "Máté Anna", role: "sminkes", specialties: "glamour, beauty, természetes, mindennapi", price: "sminkek 15.000. Ft-tól", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }
+        { name: "Csenge Katica Denes", role: "haj-stylist és sminkes", specialties: "divat, reklám, természetes, skin like skin", imageIndex: 0, socials: [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/katica_hmua" }] },
+        { name: "Holczimmer Noémi", role: "sminkes", specialties: "glamour, természetes, alternatív, extrém, tematikus", imageIndex: 1, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/nome_makeups" }] },
+        { name: "Máté Anna", role: "sminkes", specialties: "glamour, beauty, természetes, mindennapi", imageIndex: 2, socials: [{ type: "instagram", label: "Instagram", href: "https://instagram.com/anna_mate_mua" }] }
       ],
       footerNote: "Ha sminkeseinkkel dolgozol, a sminkelésre ingyenesen használhatjátok a studiót a fotózásod előtt.", contactHeading: "Foglalj fotózást rezidens sminkeseinkkel:"
     }
   }
 };
+for (const language of ["en", "hu", "de"]) residentArtistContent.makeup[language].packages = makeupPricing[language];
 residentArtistContent.stylists.de.packages.forEach((packageItem) => { packageItem.price = packageItem.price.replace(". HUF", " HUF"); });
-residentArtistContent.makeup.de.profiles.forEach((profile) => { profile.price = profile.price.replace(". HUF", " HUF"); });
+for (const language of ["en", "hu", "de"]) {
+  const profiles = residentArtistContent.makeup[language].profiles;
+  const eszter = profiles.pop();
+  eszter.name = "Gémesi Eszter";
+  eszter.specialties = "";
+  eszter.socials = [{ type: "instagram", label: "Instagram", href: "https://www.instagram.com/gemesieszter.makeup/" }];
+  profiles.unshift(eszter);
+  profiles.forEach((profile) => { delete profile.price; });
+}
 
 const modelImage = (filename, alt, objectPosition = "50% 50%") => ({ src: `/images/models/${filename}`, alt, width: 300, height: 524, objectPosition });
 const wixLiveGalleryImage = (mediaUrl, width, height, alt, title = "", description = "") => ({
@@ -1196,14 +1207,14 @@ export const packagesContent = {
     ],
     upgradesHeading: "upgrade your shoot", upgradesIntro: "Add professional makeup, hair and styling to your photoshoot in Budapest for a more polished, cohesive result. Our makeup artist and stylist can help you prepare camera-ready looks, plan outfits and create a stronger visual direction for portraits, model portfolios, branding sessions, glamour, boudoir and editorial-style shoots.",
     upgrades: [
-      { title: "Add Make up & Hair", description: "Professional make-up and hair that is camera-ready and tailored to your look.", priceLabel: "Starting from", price: "+15.000. HUF", cta: "all make up packages", href: "/make-up-artists" },
-      { title: "Add Styling", description: "Professional styling, outfit direction and sourcing for a stronger vision and a cohesive look that fits your concept.", priceLabel: "starting from", price: "+10.000. HUF", cta: "all styling packages", href: "/stylists" },
-      { title: "Complete Creative Team", description: "Make-up, hair and styling together. The perfect choice for a complete transformation or a high end concept.", priceLabel: "starting from", price: "+48.000. HUF", cta: "ask for an offer", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+      { title: "Add Make up & Hair", description: "Professional make-up and hair that is camera-ready and tailored to your look.", priceLabel: "Starting from", price: creativePrice("makeup", "en"), cta: "all make up packages", href: "/make-up-artists" },
+      { title: "Add Styling", description: "Professional styling, outfit direction and sourcing for a stronger vision and a cohesive look that fits your concept.", priceLabel: "starting from", price: creativePrice("styling", "en"), cta: "all styling packages", href: "/stylists" },
+      { title: "Complete Creative Team", description: "Make-up, hair and styling together. The perfect choice for a complete transformation or a high end concept.", priceLabel: "starting from", price: creativePrice("team", "en"), cta: "ask for an offer", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
     ],
     contactHeading: "For booking one of our artists, drop a message:", contactSubject: "combined shoot inquiry"
   },
   de: {
-    heroHeading: "alle Pakete und Leistungen", heroCopy: "Fotoshootings, Styling, Make-up und Kombipakete", intro: ["Wähle das Fotoshooting-Paket, das zu dir passt, und ergänze bei Bedarf Make-up, Haare oder Styling – alles in einer Buchung und an einem Ort.", "Studio, professionelles Licht, Shooting, Retusche und Kreativteam arbeiten zusammen für ein stimmiges, hochwertiges Ergebnis vor der Kamera. Ideal für Porträts, Modelportfolios, Personal Branding, Glamour, Boudoir und kreative Shootings."], packages: [{ title: "Kleines Studio-Fotoshooting", description: "Wähle dieses Paket für neue Profil- oder Bewerbungsfotos oder als unkomplizierten Einstieg ins Studio.", price: "39.000 HUF", features: ["Studio-Miete inklusive", "6 magazinreife Fotos", "ein Outfit", "ein Set", "ein Model"] }, { title: "Standard-Fotoshooting", description: "Perfekt für mehrere Outfits oder Stile – auch für Paare oder Freund:innen.", price: "59.000 HUF", features: ["Studio-Miete inklusive", "15 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "1–2 Models"] }, { title: "All-inclusive-Fotoshooting", description: "Für eine außergewöhnliche Bildserie mit komplexen Sets, besonderem Licht oder Gruppenaufnahmen.", price: "79.000 HUF", features: ["Studio-Miete inklusive", "21 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "ein Model bis zur Gruppe"] }], upgradesHeading: "dein Shooting erweitern", upgradesIntro: "Ergänze dein Fotoshooting in Budapest um professionelles Make-up, Haarstyling und Styling. Unser Make-up- und Hair-Team sowie unsere Stylist:innen helfen dir bei kameratauglichen Looks und der Outfitplanung.", upgrades: [{ title: "Make-up & Haare hinzufügen", description: "Professionelles, kamerataugliches Make-up und Haarstyling, abgestimmt auf deinen Look.", priceLabel: "ab", price: "+15.000 HUF", cta: "alle Make-up-Pakete", href: "/de/make-up-artists" }, { title: "Styling hinzufügen", description: "Professionelles Styling, Outfitkonzept und Beschaffung für einen stimmigen Look passend zu deinem Konzept.", priceLabel: "ab", price: "+10.000. HUF", cta: "alle Styling-Pakete", href: "/de/stylists" }, { title: "Komplettes Kreativteam", description: "Make-up, Haare und Styling zusammen – ideal für eine vollständige Verwandlung oder ein hochwertiges Konzept.", priceLabel: "ab", price: "+48.000 HUF", cta: "Angebot anfragen", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }], contactHeading: "Um unser Kreativteam zu buchen, schreib uns:", contactSubject: "combined shoot inquiry"
+    heroHeading: "alle Pakete und Leistungen", heroCopy: "Fotoshootings, Styling, Make-up und Kombipakete", intro: ["Wähle das Fotoshooting-Paket, das zu dir passt, und ergänze bei Bedarf Make-up, Haare oder Styling – alles in einer Buchung und an einem Ort.", "Studio, professionelles Licht, Shooting, Retusche und Kreativteam arbeiten zusammen für ein stimmiges, hochwertiges Ergebnis vor der Kamera. Ideal für Porträts, Modelportfolios, Personal Branding, Glamour, Boudoir und kreative Shootings."], packages: [{ title: "Kleines Studio-Fotoshooting", description: "Wähle dieses Paket für neue Profil- oder Bewerbungsfotos oder als unkomplizierten Einstieg ins Studio.", price: "39.000 HUF", features: ["Studio-Miete inklusive", "6 magazinreife Fotos", "ein Outfit", "ein Set", "ein Model"] }, { title: "Standard-Fotoshooting", description: "Perfekt für mehrere Outfits oder Stile – auch für Paare oder Freund:innen.", price: "59.000 HUF", features: ["Studio-Miete inklusive", "15 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "1–2 Models"] }, { title: "All-inclusive-Fotoshooting", description: "Für eine außergewöhnliche Bildserie mit komplexen Sets, besonderem Licht oder Gruppenaufnahmen.", price: "79.000 HUF", features: ["Studio-Miete inklusive", "21 magazinreife Fotos", "bis zu 3 Outfits", "bis zu 3 Sets", "ein Model bis zur Gruppe"] }], upgradesHeading: "dein Shooting erweitern", upgradesIntro: "Ergänze dein Fotoshooting in Budapest um professionelles Make-up, Haarstyling und Styling. Unser Make-up- und Hair-Team sowie unsere Stylist:innen helfen dir bei kameratauglichen Looks und der Outfitplanung.", upgrades: [{ title: "Make-up & Haare hinzufügen", description: "Professionelles, kamerataugliches Make-up und Haarstyling, abgestimmt auf deinen Look.", priceLabel: "ab", price: creativePrice("makeup", "de"), cta: "alle Make-up-Pakete", href: "/de/make-up-artists" }, { title: "Styling hinzufügen", description: "Professionelles Styling, Outfitkonzept und Beschaffung für einen stimmigen Look passend zu deinem Konzept.", priceLabel: "ab", price: creativePrice("styling", "de"), cta: "alle Styling-Pakete", href: "/de/stylists" }, { title: "Komplettes Kreativteam", description: "Make-up, Haare und Styling zusammen – ideal für eine vollständige Verwandlung oder ein hochwertiges Konzept.", priceLabel: "ab", price: creativePrice("team", "de"), cta: "Angebot anfragen", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }], contactHeading: "Um unser Kreativteam zu buchen, schreib uns:", contactSubject: "combined shoot inquiry"
   },
   hu: {
     heroHeading: "fotózás és kombinált csomagjaink", heroCopy: "foglald le kreatív csapatunkat fotózásodhoz",
@@ -1215,9 +1226,9 @@ export const packagesContent = {
     ],
     upgradesHeading: "kiegészítő szolgáltatások", upgradesIntro: "A fotózási csomagok mellé profi sminket, frizurát és stylingot is kérhetsz, hogy a végeredmény egységesebb, kidolgozottabb és kamera előtt is működőképes legyen. Sminkesünk és stylistunk segít a megjelenés kialakításában, az outfit tervezésében és a fotózás vizuális irányának erősítésében.",
     upgrades: [
-      { title: "Smink és haj hozzáadása", description: "Professzionális smink és frizura, amely kamera előtt is jól működik, és a te megjelenésedhez igazodik.", priceLabel: "kezdő ár:", price: "+15.000. HUF", cta: "összes smink csomag", href: "/hu/make-up-artists" },
-      { title: "Styling hozzáadása", description: "Professzionális styling, tanácsadás és beszerzés egy erősebb vizuális koncepcióért és egységes megjelenésért.", priceLabel: "kezdő ár:", price: "+10.000. HUF", cta: "összes styling csomag", href: "/hu/stylists" },
-      { title: "Teljes kreatív csapat", description: "Smink, haj és styling együtt. Ideális választás teljes átalakuláshoz vagy magasabb szintű koncepcióhoz.", priceLabel: "kezdő ár:", price: "+48.000. HUF", cta: "kérj ajánlatot", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+      { title: "Smink és haj hozzáadása", description: "Professzionális smink és frizura, amely kamera előtt is jól működik, és a te megjelenésedhez igazodik.", priceLabel: "kezdő ár:", price: creativePrice("makeup", "hu"), cta: "összes smink csomag", href: "/hu/make-up-artists" },
+      { title: "Styling hozzáadása", description: "Professzionális styling, tanácsadás és beszerzés egy erősebb vizuális koncepcióért és egységes megjelenésért.", priceLabel: "kezdő ár:", price: creativePrice("styling", "hu"), cta: "összes styling csomag", href: "/hu/stylists" },
+      { title: "Teljes kreatív csapat", description: "Smink, haj és styling együtt. Ideális választás teljes átalakuláshoz vagy magasabb szintű koncepcióhoz.", priceLabel: "kezdő ár:", price: creativePrice("team", "hu"), cta: "kérj ajánlatot", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
     ],
     contactHeading: "Foglalj fotózást rezidens csapatunkkal:", contactSubject: "combined shoot inquiry"
   }
@@ -1394,19 +1405,19 @@ photoPackageSets.models.de = [
 
 export const commonUpgrades = {
   en: [
-    { title: "Add Make up & Hair", priceLabel: "starting at", price: "15.000. HUF", href: "/make-up-artists" },
-    { title: "Add Styling", priceLabel: "starting from", price: "+10.000. HUF", href: "/stylists" },
-    { title: "Complete Creative Team", priceLabel: "starting at", price: "48.000. HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+    { title: "Add Make up & Hair", priceLabel: "starting at", price: creativePrice("makeup", "en"), href: "/make-up-artists" },
+    { title: "Add Styling", priceLabel: "starting from", price: creativePrice("styling", "en"), href: "/stylists" },
+    { title: "Complete Creative Team", priceLabel: "starting at", price: creativePrice("team", "en"), href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
   ],
   hu: [
-    { title: "Smink és haj", priceLabel: "kezdőár", price: "15.000 HUF", href: "/hu/make-up-artists" },
-    { title: "Styling", priceLabel: "kezdőár", price: "+10.000. HUF", href: "/hu/stylists" },
-    { title: "Teljes kreatív csapat", priceLabel: "kezdőár", price: "48.000 HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+    { title: "Smink és haj", priceLabel: "kezdőár", price: creativePrice("makeup", "hu"), href: "/hu/make-up-artists" },
+    { title: "Styling", priceLabel: "kezdőár", price: creativePrice("styling", "hu"), href: "/hu/stylists" },
+    { title: "Teljes kreatív csapat", priceLabel: "kezdőár", price: creativePrice("team", "hu"), href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
   ],
   de: [
-    { title: "Make-up & Hair dazu buchen", priceLabel: "ab", price: "15.000 HUF", href: "/de/make-up-artists" },
-    { title: "Styling dazu buchen", priceLabel: "ab", price: "+10.000. HUF", href: "/de/stylists" },
-    { title: "Komplettes Kreativteam", priceLabel: "ab", price: "48.000 HUF", href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
+    { title: "Make-up & Hair dazu buchen", priceLabel: "ab", price: creativePrice("makeup", "de"), href: "/de/make-up-artists" },
+    { title: "Styling dazu buchen", priceLabel: "ab", price: creativePrice("styling", "de"), href: "/de/stylists" },
+    { title: "Komplettes Kreativteam", priceLabel: "ab", price: creativePrice("team", "de"), href: "mailto:photostudio.aether@gmail.com?subject=combined%20shoot%20inquiry" }
   ]
 };
 

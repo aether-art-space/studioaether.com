@@ -1,3 +1,4 @@
+import { creativePriceFrom } from "../data/creativePricing.mjs";
 import { studioPriceLabels, studioPricing } from "../data/studioPricing.mjs";
 import { navGroups, pageByPath, site } from "../data/routes.mjs";
 
@@ -172,7 +173,7 @@ const faqItemsEn = [
     "Outside regular opening hours: HUF 10,000/hour by email.",
     "Filmings and castings with 5 or more participants: HUF 10,000/hour.",
     "For make-up, studio rental is half price; it is free during make-up time when working with the studio's make-up artists.",
-    { text: "Extras:", children: ["Paper backdrop: HUF 3,000 per booking if stepped on", "Make-up: from HUF 15,000 per booking", "Large Angel Wings: HUF 8,000 per booking", "Assistance in Hungarian or English: HUF 4,000/hour", "Styling: from HUF 35,000 per booking", "Unique Outfits: from HUF 5,000 per booking", "Camera rental: HUF 4,000–9,000/hour", "Photo Models: from HUF 15,000/hour", "Fog Machine: HUF 5,000 per booking", "Aquarium: HUF 39,000 per booking"] }
+    { text: "Extras:", children: ["Paper backdrop: HUF 3,000 per booking if stepped on", `Make-up: ${creativePriceFrom("makeup", "en")} per booking`, "Large Angel Wings: HUF 8,000 per booking", "Assistance in Hungarian or English: HUF 4,000/hour", `Styling: ${creativePriceFrom("styling", "en")} per booking`, "Unique Outfits: from HUF 5,000 per booking", "Camera rental: HUF 4,000–9,000/hour", "Photo Models: from HUF 15,000/hour", "Fog Machine: HUF 5,000 per booking", "Aquarium: HUF 39,000 per booking"] }
   ])]],
   ["How can I book the studio?", [faqParagraph("Book through our online booking system or contact us by email."), faqList([{ text: "Open the booking system", href: "/booking" }, { text: "Email photostudio.aether@gmail.com", href: "mailto:photostudio.aether@gmail.com" }])]],
   ["Can I extend my booking while in the studio?", [faqParagraph("If the studio is available after your booking, you can extend your session by the hour at the applicable hourly rate. Setup and tear-down are part of the booked time, so please include them when calculating your reservation.")]],
@@ -204,7 +205,7 @@ const faqItemsHu = [
     "Nyitvatartási időn kívül: 10 000 Ft/óra, e-mailes egyeztetéssel.",
     "5 vagy több résztvevős forgatás és casting: 10 000 Ft/óra.",
     "Sminkeléshez a stúdióbérlés féláron vehető igénybe; a sminkelés ideje alatt ingyenes, ha a stúdió sminkeseivel dolgozol.",
-    { text: "Extrák:", children: ["Papírháttér: 3 000 Ft/foglalás, ha rálépnek", "Smink: 15 000 Ft-tól/foglalás", "Nagy angyalszárnyak: 8 000 Ft/foglalás", "Asszisztencia magyar vagy angol nyelven: 4 000 Ft/óra", "Styling: 35 000 Ft-tól/foglalás", "Egyedi ruhák: 5 000 Ft-tól/foglalás", "Fényképezőgép-bérlés: 4 000–9 000 Ft/óra", "Fotómodellek: 15 000 Ft/órától", "Füstgép: 5 000 Ft/foglalás", "Akvárium: 39 000 Ft/foglalás"] }
+    { text: "Extrák:", children: ["Papírháttér: 3 000 Ft/foglalás, ha rálépnek", `Smink: ${creativePriceFrom("makeup", "hu")}/foglalás`, "Nagy angyalszárnyak: 8 000 Ft/foglalás", "Asszisztencia magyar vagy angol nyelven: 4 000 Ft/óra", `Styling: ${creativePriceFrom("styling", "hu")}/foglalás`, "Egyedi ruhák: 5 000 Ft-tól/foglalás", "Fényképezőgép-bérlés: 4 000–9 000 Ft/óra", "Fotómodellek: 15 000 Ft/órától", "Füstgép: 5 000 Ft/foglalás", "Akvárium: 39 000 Ft/foglalás"] }
   ])]],
   ["Hogyan tudok időpontot foglalni?", [faqParagraph("Az online foglalási rendszeren keresztül foglalhatsz, vagy e-mailben veheted fel velünk a kapcsolatot."), faqList([{ text: "Online foglalási rendszer megnyitása", href: "/hu/booking" }, { text: "E-mail: photostudio.aether@gmail.com", href: "mailto:photostudio.aether@gmail.com" }])]],
   ["Meghosszabbíthatom a foglalásomat a helyszínen?", [faqParagraph("Ha a foglalásod után a stúdió szabad, a fotózást óránként, az aktuális óradíj szerint meghosszabbíthatod. A berendezés és az elpakolás a lefoglalt idő részét képezi, ezért ezeket is számítsd bele a foglalás időtartamába.")]],
@@ -236,7 +237,7 @@ const faqItemsDe = [
     "Außerhalb der regulären Öffnungszeiten: 10.000 HUF/Stunde nach Absprache per E-Mail.",
     "Filmproduktionen und Castings mit 5 oder mehr Teilnehmenden: 10.000 HUF/Stunde.",
     "Für Make-up ist die Studiomiete halb so teuer; während der Make-up-Zeit ist sie kostenlos, wenn du mit unseren Make-up-Artists arbeitest.",
-    { text: "Extras:", children: ["Papierhintergrund: 3.000 HUF pro Buchung, wenn er betreten wird", "Make-up: ab 15.000 HUF pro Buchung", "Große Engelsflügel: 8.000 HUF pro Buchung", "Assistenz auf Ungarisch oder Englisch: 4.000 HUF/Stunde", "Styling: ab 35.000 HUF pro Buchung", "Individuelle Outfits: ab 5.000 HUF pro Buchung", "Kameramiete: 4.000–9.000 HUF/Stunde", "Fotomodelle: ab 15.000 HUF/Stunde", "Nebelmaschine: 5.000 HUF pro Buchung", "Aquarium: 39.000 HUF pro Buchung"] }
+    { text: "Extras:", children: ["Papierhintergrund: 3.000 HUF pro Buchung, wenn er betreten wird", `Make-up: ${creativePriceFrom("makeup", "de")} pro Buchung`, "Große Engelsflügel: 8.000 HUF pro Buchung", "Assistenz auf Ungarisch oder Englisch: 4.000 HUF/Stunde", `Styling: ${creativePriceFrom("styling", "de")} pro Buchung`, "Individuelle Outfits: ab 5.000 HUF pro Buchung", "Kameramiete: 4.000–9.000 HUF/Stunde", "Fotomodelle: ab 15.000 HUF/Stunde", "Nebelmaschine: 5.000 HUF pro Buchung", "Aquarium: 39.000 HUF pro Buchung"] }
   ])]],
   ["Wie buche ich das Studio?", [faqList([{ text: "Buchungssystem öffnen", href: "/de/booking" }, { text: "E-Mail: photostudio.aether@gmail.com", href: "mailto:photostudio.aether@gmail.com" }])]],
   ["Kann ich meine Buchung verlängern?", [faqParagraph("Wenn das Studio danach frei ist, kannst du stundenweise verlängern. Aufbau und Abbau gehören zur gebuchten Zeit.")]],

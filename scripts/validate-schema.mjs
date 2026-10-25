@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import { pages, site } from '../src/data/routes.mjs';
 import { studioPricing } from '../src/data/studioPricing.mjs';
+import { creativePrices } from '../src/data/creativePricing.mjs';
 
 const errors = [];
 const check = (ok, message) => { if (!ok) errors.push(message); };
@@ -61,6 +62,15 @@ for (const page of pages.filter(p => p.disposition !== 'redirect')) {
       const anchor = offer.url.split('#')[1];
       check(html.includes(`id="${anchor}"`), `${page.path}: offer fragment missing: ${anchor}`);
     }
+  }
+  const creativeExtraPages = new Set(['/selfie-studio-budapest', '/booking', '/packages', '/christmas-photoshoot', '/christmas-studio', '/glamour-boudoir-photography-budapest', '/model-polaroids-budapest', '/portrait-photography-budapest', '/fitness', '/wedding-photography']);
+  if (creativeExtraPages.has(base)) {
+    for (const key of ['makeup', 'styling', 'team']) {
+      check(offers.some(o => o.price === undefined && o.priceSpecification?.minPrice === creativePrices[key]), `${page.path}: missing creative extra starting price: ${key}`);
+    }
+  }
+  if (base === '/make-up-artists') {
+    check(offers.length === 3 && [creativePrices.makeup, creativePrices.makeupAndHair, creativePrices.editorial].every(price => offers.some(o => o.price === price)), `${page.path}: makeup package prices or removed profile prices out of sync`);
   }
   if (base === '/booking' || base === '/christmas-studio') {
     check([studioPricing.discounted, studioPricing.standard, studioPricing.pass].every(p => offers.some(o => o.price === p || o.priceSpecification?.price === p)), `${page.path}: studio offer tiers incomplete`);

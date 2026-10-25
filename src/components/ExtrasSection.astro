@@ -36,4 +36,5 @@ const sectionClass = ["service-upgrades", "extras-section", className].filter(Bo
   <div class="service-upgrade-grid">
     {items.map((item) => <ExtrasCard title={item.title} priceLabel={item.priceLabel} price={item.price} href={item.href} linkLabel={item.linkLabel} showLink={showLinks} />)}
   </div>
+  <slot />
 </section>

@@ -3,7 +3,7 @@ import { studioPricing } from "../data/studioPricing.mjs";
 import { bookingExtrasFor } from "../data/bookingExtras.mjs";
 import { idPhotoPricing } from "../data/idPhotoPricing.mjs";
 import {
-  selfieContent, residentArtistContent, modelsContent, packagesContent,
+  selfieContent, residentArtistContent, modelsContent, packagesContent, commonUpgrades,
   serviceContent, mentoringContent, photoPackageSets, equipmentCaptions, propsContent
 } from "../data/content.mjs";
 
@@ -96,10 +96,12 @@ export function serviceOffersFor(page, { origin = site.domain } = {}) {
   if (route("/selfie-studio-budapest")) {
     const content = selfieContent[lang];
     (content?.prices || []).forEach(([name, details, price]) => add({ name, description: (details || []).join("; "), price, anchor: "selfie-prices-title", service: "Self-service photography studio" }));
+
   }
   if (route("/packages")) addPackages(packagesContent[lang]?.packages, null, "Studio photoshoot package");
   if (route("/photographers-budapest")) addPackages(residentArtistContent.photographers[lang]?.packages, "", "Photoshoot with resident photographer");
   if (route("/stylists")) addPackages(residentArtistContent.stylists[lang]?.packages, "", "Professional styling service");
+  if (route("/make-up-artists")) addPackages(residentArtistContent.makeup[lang]?.packages, "makeup-pricing", "Make-up and hair styling");
   if (route("/make-up-artists")) (residentArtistContent.makeup[lang]?.profiles || []).forEach((p) => add({ name: `${p.name} — ${p.role}`, description: p.specialties, price: p.price, service: "Make-up and hair styling" }));
   if (route("/models-budapest")) {
     const m = modelsContent[lang];
@@ -142,6 +144,23 @@ export function serviceOffersFor(page, { origin = site.domain } = {}) {
       if (!item.price) continue;
       add({ name: item.title, description: item.detail, price: item.price, service: "Equipment rental", anchor: group === "lenses" ? "lenses-for-rent" : group === "cameras" ? "cameras-for-rent" : undefined });
     }
+  }
+  // Include creative extras only on pages that actually render their cards.
+  // Booking already includes make-up and styling in its detailed extras list.
+  const commonExtraPages = [
+    ["/selfie-studio-budapest", "selfie-extras-title"],
+    ["/glamour-boudoir-photography-budapest", "special-extras-title"],
+    ["/model-polaroids-budapest", "special-extras-title"],
+    ["/portrait-photography-budapest", "portrait-extras-title"],
+    ["/fitness", "fitness-extras-title"],
+    ["/wedding-photography", "wedding-creative-extras-title"]
+  ];
+  const commonExtraPage = commonExtraPages.find(([key]) => route(key));
+  const hasUpgradeCards = ["/packages", "/christmas-photoshoot", "/christmas-studio", "/booking"].some(route);
+  const extras = commonExtraPage ? commonUpgrades[lang] : hasUpgradeCards ? packagesContent[lang]?.upgrades : [];
+  for (const extra of extras || []) {
+    if (route("/booking") && !extra.href?.startsWith("mailto:")) continue;
+    add({ name: extra.title, description: extra.description, price: `from ${extra.price}`, anchor: commonExtraPage?.[1], service: extra.title });
   }
   return offers;
 }

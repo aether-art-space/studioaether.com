@@ -909,6 +909,12 @@ const relatedHref = localizedPath("/packages", language);
       </PriceSection>
       <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={localizedPath("/selfie-booking", language)}>{selfie.reserveCta}</a></div>
     </section>
+    <ExtrasSection heading={de ? "Zusatzleistungen" : hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[de ? "Mach mehr aus deiner Selfie-Session." : hu ? "Emeld új szintre a szelfifotózásodat!" : "Take your selfie session to the next level." ]} items={serviceUpgradesWithLinks} showLinks headingId="selfie-extras-title">
+      <div class="selfie-extras-contact">
+        <p>{de ? "Schreib uns, wenn du Make-up oder Styling dazubuchen möchtest!" : hu ? "Írj nekünk, ha sminket vagy stylingot szeretnél!" : "Message us if you’d like make-up or styling!"}</p>
+        <button class="button button--secondary" type="button" data-site-contact-open aria-controls="site-contact-modal" data-gtag-event="contact_click" data-gtag-location="selfie-extras">{de ? "Kontakt aufnehmen" : hu ? "írj nekünk" : "contact us"}</button>
+      </div>
+    </ExtrasSection>
     <section class="selfie-location" aria-labelledby="selfie-location-title">
       <div class="selfie-location__inner"><div class="selfie-location__visual"><ResponsiveImage image={{ src: "/images/selfie/szeged-space.avif", alt: "", width: 1600, height: 900 }} role="content" loading="lazy" className="selfie-location__background" /><h2 id="selfie-location-title">{selfie.szegedHeading}</h2></div><div class="selfie-location__copy"><ResponsiveImage className="selfie-location__logo" image={{ src: "/images/selfie/szeged-logo.avif", alt: "aether art space", width: 326, height: 184 }} role="logo" loading="lazy" /><p>{selfie.szegedCopy}</p><a class="button button--dark" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div></div>
     </section>
@@ -1026,8 +1032,10 @@ const relatedHref = localizedPath("/packages", language);
     {artistType === "stylists" && artistPackagesWithTitleLines.length > 0 && <PriceSection id="stylist-pricing" priceEyebrow={de ? "ab" : hu ? "kezdőár" : "starting from"} ariaLabel={de ? "Styling-Pakete" : hu ? "Styling csomagok" : "Styling packages"} packages={artistPackagesWithTitleLines} cta={priceCardCtas.contact}>
       <PricingTabs slot="tabs" language={page.language} active="stylist" />
     </PriceSection>}
-    {artistType === "makeup" && <PricingTabs language={page.language} active="makeup" />}
-    <section id={artistType === "makeup" ? "makeup-pricing" : undefined} class={`artist-profiles artist-profiles--${artistType}`} aria-label={de ? "Ansässige Kreative" : hu ? "Rezidens alkotók" : "Resident artists"}>
+    {artistType === "makeup" && artistPackagesWithTitleLines.length > 0 && <PriceSection id="makeup-pricing" ariaLabel={de ? "Make-up- und Haarstyling-Pakete" : hu ? "Smink és frizura csomagok" : "Make-up and hair packages"} packages={artistPackagesWithTitleLines} cta={priceCardCtas.contact}>
+      <PricingTabs slot="tabs" language={page.language} active="makeup" />
+    </PriceSection>}
+    <section class={`artist-profiles artist-profiles--${artistType}`} aria-label={de ? "Ansässige Kreative" : hu ? "Rezidens alkotók" : "Resident artists"}>
       <div class="artist-profiles__grid">
         {artistType === "stylists"
           ? localizedArtistProfiles.map((profile: any) => <StylistProfile profile={profile} hu={hu} de={de} />)
