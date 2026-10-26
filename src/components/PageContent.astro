@@ -1146,6 +1146,15 @@ const relatedHref = localizedPath("/packages", language);
       <PricingTabs slot="tabs" language={page.language} active="studio" />
     </PriceSection>
       <UpgradeSection items={packagesContent[language].upgrades} cardsOnly ariaLabel={de ? "Zusatzleistungen" : hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
+    <section class="christmas-studio-photographer" aria-labelledby="christmas-studio-photographer-title">
+      <div class="christmas-studio-photographer__background" aria-hidden="true"><ResponsiveImage image={{ ...localizedSeasonalPageImages[1], alt: "", sizes: "(min-width: 1236px) 1200px, calc(100vw - 36px)" }} role="hero" loading="lazy" fetchpriority="auto" /></div>
+      <div class="christmas-studio-photographer__content">
+      <p class="christmas-studio-photographer__eyebrow">{de ? "Weihnachtsfotografie" : hu ? "Karácsonyi fotózás" : "Christmas photography services"}</p>
+      <h2 id="christmas-studio-photographer-title">{de ? "Suchst du auch einen Fotografen?" : hu ? "Fotóst is keresel?" : "Are you also looking for a photographer?"}</h2>
+      <p>{de ? "Entdecke unsere Fotopakete inklusive Studiomiete – ab 39.000 HUF." : hu ? "Nézd meg fotózási csomagjainkat stúdióbérléssel együtt, már 39 000 Ft-tól." : "Take a look at our photography packages with studio rent included, starting from 39.000 HUF."}</p>
+      <a class="button button--inverted" href={localizedPath("/christmas-photoshoot", language)}>{de ? "Fotopakete ansehen" : hu ? "Fotózási csomagok" : "View packages"}</a>
+      </div>
+    </section>
     <GalleryLightbox label={de ? "Weihnachtsstudio-Galerie" : hu ? "Karácsonyi stúdió galériája" : "Christmas studio gallery"} hu={hu} de={de} />
   </>
 ) : isProfile ? (
