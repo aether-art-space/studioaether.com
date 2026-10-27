@@ -1,4 +1,5 @@
 ---
+import { koreanSelfie } from "../data/koreanSelfie.mjs";
 import { idPhotoPricing } from "../data/idPhotoPricing.mjs";
 import { bookingExtrasFor } from "../data/bookingExtras.mjs";
 import { studioPriceLabels } from "../data/studioPricing.mjs";
@@ -29,13 +30,14 @@ import { inferGalleryMetadata } from "../lib/galleryMetadata.mjs";
 import { InstagramLogoIcon, XLogoIcon } from "@phosphor-icons/react/ssr";
 
 const { page } = Astro.props;
+const ko = page.language === "ko";
 const hu = page.language === "hu";
 const de = page.language === "de";
-const language = (page.language || "en") as "en" | "hu" | "de";
+const language = (ko ? "en" : (page.language || "en")) as "en" | "hu" | "de";
 const studioPrices = studioPriceLabels(language);
 const priceCardCtas = {
   studio: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: site.bookingUrl, event: "booking_click", location: "price-card-studio" },
-  selfie: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: localizedPath("/selfie-booking", language), event: "selfie_booking_click", location: "price-card-selfie" },
+  selfie: { label: ko ? "예약하기" : de ? "Jetzt buchen" : hu ? "foglalok" : "book now", href: localizedPath("/selfie-booking", page.language), event: "selfie_booking_click", location: "price-card-selfie" },
   contact: { label: de ? "Jetzt buchen" : hu ? "foglalok" : "book now", contact: true, event: "email_click", location: "price-card-photography" }
 };
 const modelPriceCardCta = {
@@ -48,7 +50,7 @@ const localizeCopy = <T,>(value: T): T => de ? naturalGerman(value) as T : value
 const faqGroups = localizeCopy(faqGroupsFor(page)) as Array<[string, any[]]>;
 const home = localizeCopy(homeContent[language]);
 const studio = localizeCopy(studioContent[language]);
-const selfie = localizeCopy(selfieContent[language]);
+const selfie = ko ? koreanSelfie : localizeCopy(selfieContent[language]);
 const selfiePackages = selfie.prices.map((priceItem) => ({
   title: priceItem[0] as string,
   descriptionLines: (priceItem[1] as string[]).map((text) => ({ text })),
@@ -862,13 +864,17 @@ const relatedHref = localizedPath("/packages", language);
 ) : isLocalizedRoute("/selfie-studio-budapest") ? (
   <>
     <ImageHero variant="selfie" headingId="selfie-title" title={selfie.heroHeading} image={localizedSelfieHero} subheading={selfie.heroSubheading} lead={selfie.heroCopy}>
-      <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-hero" href={localizedPath("/selfie-booking", language)}>{selfie.heroCta}</a>
+      <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-hero" href={localizedPath("/selfie-booking", page.language)}>{selfie.heroCta}</a>
     </ImageHero>
-    <section class="selfie-process" data-gallery aria-labelledby="selfie-process-title">
+    <section id={ko ? "how-it-works" : undefined} class="selfie-process" data-gallery aria-labelledby="selfie-process-title">
       <h2 id="selfie-process-title">{selfie.processHeading}</h2>
       <ol class="selfie-process__list">
         {selfie.processSteps.map((step) => { const note = step.length === 3 ? step[1] : ""; return <li><span>{step[0]}</span>{note && <small>{note}</small>}</li>; })}
       </ol>
+      {ko && <InfoBox class="selfie-process__language-note">
+        <p><strong>한국어 안내 및 현장 도움</strong></p>
+        <p>현장에서 한국어 안내문을 제공해 드립니다. 직원은 한국어를 구사하지 않지만, 번역 앱을 사용해 기꺼이 도와드리겠습니다. 영어로도 안내해 드릴 수 있습니다.</p>
+      </InfoBox>}
       <div class="selfie-process__images">
         {localizedSelfieProcessImages.map((image: any, index: number) => <GalleryImage image={image} index={index} className="selfie-process__image" label={de ? `Bild öffnen: ${index + 1}` : hu ? `Kép megnyitása: ${index + 1}` : `Open image ${index + 1}`} />)}
       </div>
@@ -883,7 +889,7 @@ const relatedHref = localizedPath("/packages", language);
         <p>{selfie.customizeCopy}</p>
       </div>
       <div class="selfie-controls">
-        {selfie.controls.map((control, controlIndex) => { const label = control[0] as string; const options = control[1] as string[]; const ids = control[2] as string[]; const optionsText = controlIndex === 2 ? (de ? `Wähle zwischen "Porträt", "Oberkörper" oder "Ganzkörper" – letzteres eignet sich auch für größere Gruppen.` : hu ? `Válassz "Portré", "Deréktól felfele" vagy "Teljes alakos" kivágásaink közül - az utóbbi csoportoknak is alkalmas.` : `Choose between "Portrait", "Waist up" or "Full body" - the latter is also good for larger groups`) : ""; return <article class={`selfie-control selfie-control--${controlIndex + 1}`} data-gallery><h3>{label}</h3><div class="selfie-control__images">{ids.map((id, index) => { const image = localizeImage(selfieImages.controls.get(id)); return image && <figure><GalleryImage image={image} index={index} className="selfie-control__image" label={de ? `Bild öffnen: ${options[index]}` : hu ? `Kép megnyitása: ${options[index]}` : `Open ${options[index]}`} /></figure>; })}</div>{controlIndex === 1 ? <div class="selfie-control__options">{options.map((option) => { const text = de ? option : hu ? option : option === "Blacklight" ? `and "${option}"!` : (() => { const [name, ...rest] = option.split(" for "); return `"${name}" for ${rest.join(" for ")}`; })(); return <span>{splitSelfieBoldText(text).map((part) => part.bold ? <strong>{part.text}</strong> : part.text)}</span>; })}</div> : controlIndex === 2 ? <p class="selfie-control__options">{splitSelfieBoldText(optionsText).map((part) => part.bold ? <strong>{part.text}</strong> : part.text)}</p> : <p class="selfie-control__options">{options.join(", ")}</p>}</article>; })}
+        {selfie.controls.map((control, controlIndex) => { const label = control[0] as string; const options = control[1] as string[]; const ids = control[2] as string[]; const optionsText = controlIndex === 2 ? (ko ? "클로즈업, 허리 위 또는 전신 구도를 선택하세요. 전신 구도는 단체 촬영에도 좋습니다." : de ? `Wähle zwischen "Porträt", "Oberkörper" oder "Ganzkörper" – letzteres eignet sich auch für größere Gruppen.` : hu ? `Válassz "Portré", "Deréktól felfele" vagy "Teljes alakos" kivágásaink közül - az utóbbi csoportoknak is alkalmas.` : `Choose between "Portrait", "Waist up" or "Full body" - the latter is also good for larger groups`) : ""; return <article class={`selfie-control selfie-control--${controlIndex + 1}`} data-gallery><h3>{label}</h3><div class="selfie-control__images">{ids.map((id, index) => { const image = localizeImage(selfieImages.controls.get(id)); return image && <figure><GalleryImage image={image} index={index} className="selfie-control__image" label={de ? `Bild öffnen: ${options[index]}` : hu ? `Kép megnyitása: ${options[index]}` : `Open ${options[index]}`} /></figure>; })}</div>{controlIndex === 1 ? <div class="selfie-control__options">{options.map((option) => { const text = ko ? option : de ? option : hu ? option : option === "Blacklight" ? `and "${option}"!` : (() => { const [name, ...rest] = option.split(" for "); return `"${name}" for ${rest.join(" for ")}`; })(); return <span>{splitSelfieBoldText(text).map((part) => part.bold ? <strong>{part.text}</strong> : part.text)}</span>; })}</div> : controlIndex === 2 ? <p class="selfie-control__options">{splitSelfieBoldText(optionsText).map((part) => part.bold ? <strong>{part.text}</strong> : part.text)}</p> : <p class="selfie-control__options">{options.join(", ")}</p>}</article>; })}
       </div>
     </section>
     <section class="selfie-benefits home-favourite" aria-labelledby="selfie-benefits-title">
@@ -893,31 +899,33 @@ const relatedHref = localizedPath("/packages", language);
     <section class="selfie-christmas-feature" aria-labelledby="selfie-christmas-title">
       <ResponsiveImage image={localizedSelfieChristmasIntroImage} role="content" loading="lazy" />
       <div class="selfie-christmas-feature__copy">
-        <p class="selfie-christmas__eyebrow">{de ? "15. Oktober – 24. Dezember 2026" : hu ? "2026. október 15. – december 24." : "October 15 – December 24, 2026"}</p>
-        <h2 id="selfie-christmas-title">{de ? "Weihnachts-Selfie-Session" : hu ? "Karácsonyi szelfifotózás" : "Christmas Selfie Session"}</h2>
-        <p>{de ? "Mach deine eigenen festlichen Fotos in unserem weihnachtlich dekorierten Studio – mit professionellem Licht, Fernauslöser und allen Bildern inklusive." : hu ? "Készítsd el saját ünnepi fotóidat karácsonyi díszletünkben, profi világítással és távirányítós kamerával – az összes elkészült képet megkapod." : "Create your own festive photos in our Christmas-decorated studio, with professional lighting, a remote-controlled camera, and every photo included."}</p>
+        <p class="selfie-christmas__eyebrow">{ko ? "2026년 10월 15일 – 12월 24일" : de ? "15. Oktober – 24. Dezember 2026" : hu ? "2026. október 15. – december 24." : "October 15 – December 24, 2026"}</p>
+        <h2 id="selfie-christmas-title">{ko ? "크리스마스 셀프 촬영" : de ? "Weihnachts-Selfie-Session" : hu ? "Karácsonyi szelfifotózás" : "Christmas Selfie Session"}</h2>
+        <p>{ko ? "크리스마스 장식이 있는 스튜디오에서 전문 조명과 리모컨을 사용해 직접 촬영하세요. 촬영한 사진 전체를 받을 수 있습니다." : de ? "Mach deine eigenen festlichen Fotos in unserem weihnachtlich dekorierten Studio – mit professionellem Licht, Fernauslöser und allen Bildern inklusive." : hu ? "Készítsd el saját ünnepi fotóidat karácsonyi díszletünkben, profi világítással és távirányítós kamerával – az összes elkészült képet megkapod." : "Create your own festive photos in our Christmas-decorated studio, with professional lighting, a remote-controlled camera, and every photo included."}</p>
         <div class="selfie-christmas__booking" role="note">
-          <strong>{de ? "Die Buchung ist geöffnet." : hu ? "A foglalás már nyitva." : "Bookings are now open."}</strong>
-          <span>{de ? "Buche wie gewohnt eine Selfie-Session und wähle bei der Buchung „Weihnachtsdekoration“ aus." : hu ? "Foglalj a megszokott módon szelfifotózást, és a foglalásnál válaszd a „Karácsonyi dekoráció” opciót." : "Book a selfie session as usual and select “Christmas decoration” when booking."}</span>
+          <strong>{ko ? "예약이 열려 있습니다." : de ? "Die Buchung ist geöffnet." : hu ? "A foglalás már nyitva." : "Bookings are now open."}</strong>
+          <span>{ko ? "셀프 촬영을 예약하고 예약 과정에서 크리스마스 장식을 선택해 주세요." : de ? "Buche wie gewohnt eine Selfie-Session und wähle bei der Buchung „Weihnachtsdekoration“ aus." : hu ? "Foglalj a megszokott módon szelfifotózást, és a foglalásnál válaszd a „Karácsonyi dekoráció” opciót." : "Book a selfie session as usual and select “Christmas decoration” when booking."}</span>
         </div>
-        <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-christmas" href={localizedPath("/selfie-booking", language)}>{de ? "Weihnachts-Selfie buchen" : hu ? "Karácsonyi szelfifotózás foglalása" : "Book a Christmas Selfie Session"}</a>
+        <a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-christmas" href={localizedPath("/selfie-booking", page.language)}>{ko ? "크리스마스 셀프 촬영 예약" : de ? "Weihnachts-Selfie buchen" : hu ? "Karácsonyi szelfifotózás foglalása" : "Book a Christmas Selfie Session"}</a>
       </div>
     </section>
-    <section id="selfie-pricing" class="selfie-prices" aria-labelledby="selfie-prices-title">
+    <section id={ko ? "prices" : "selfie-pricing"} class="selfie-prices" aria-labelledby="selfie-prices-title">
       <PriceSection className="selfie-prices__packages" gridClassName="selfie-prices__grid" heading={selfie.pricesHeading} headingId="selfie-prices-title" packages={selfiePackages} cta={priceCardCtas.selfie}>
-        <PricingTabs slot="tabs" language={page.language} active="selfie" />
+        {!ko && <PricingTabs slot="tabs" language={page.language} active="selfie" />}
       </PriceSection>
-      <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={localizedPath("/selfie-booking", language)}>{selfie.reserveCta}</a></div>
+      <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={localizedPath("/selfie-booking", page.language)}>{selfie.reserveCta}</a></div>
     </section>
-    <ExtrasSection heading={de ? "Zusatzleistungen" : hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[de ? "Mach mehr aus deiner Selfie-Session." : hu ? "Emeld új szintre a szelfifotózásodat!" : "Take your selfie session to the next level." ]} items={serviceUpgradesWithLinks} showLinks headingId="selfie-extras-title">
+    <ExtrasSection heading={ko ? "추가 서비스" : de ? "Zusatzleistungen" : hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[ko ? "셀프 촬영에 추가 서비스를 이용해 보세요." : de ? "Mach mehr aus deiner Selfie-Session." : hu ? "Emeld új szintre a szelfifotózásodat!" : "Take your selfie session to the next level." ]} items={ko ? serviceUpgradesWithLinks.map((item: any, index: number) => ({ ...item, title: ["메이크업과 헤어", "스타일링", "전체 크리에이티브 팀"][index], priceLabel: "시작 가격", linkLabel: index === 2 ? "이메일 문의 (영어)" : "자세히 보기 (영어)" })) : serviceUpgradesWithLinks} showLinks headingId="selfie-extras-title">
       <div class="selfie-extras-contact">
-        <p>{de ? "Schreib uns, wenn du Make-up oder Styling dazubuchen möchtest!" : hu ? "Írj nekünk, ha sminket vagy stylingot szeretnél!" : "Message us if you’d like make-up or styling!"}</p>
-        <button class="button button--secondary" type="button" data-site-contact-open aria-controls="site-contact-modal" data-gtag-event="contact_click" data-gtag-location="selfie-extras">{de ? "Kontakt aufnehmen" : hu ? "írj nekünk" : "contact us"}</button>
+        <p>{ko ? "메이크업이나 스타일링이 필요하시면 문의해 주세요." : de ? "Schreib uns, wenn du Make-up oder Styling dazubuchen möchtest!" : hu ? "Írj nekünk, ha sminket vagy stylingot szeretnél!" : "Message us if you’d like make-up or styling!"}</p>
+        {ko ? <a class="button button--secondary" href={`mailto:${site.email}`}>이메일 문의 (영어)</a> : <button class="button button--secondary" type="button" data-site-contact-open aria-controls="site-contact-modal" data-gtag-event="contact_click" data-gtag-location="selfie-extras">{de ? "Kontakt aufnehmen" : hu ? "írj nekünk" : "contact us"}</button>}
       </div>
     </ExtrasSection>
+    {!ko && (
     <section class="selfie-location" aria-labelledby="selfie-location-title">
       <div class="selfie-location__inner"><div class="selfie-location__visual"><ResponsiveImage image={{ src: "/images/selfie/szeged-space.avif", alt: "", width: 1600, height: 900 }} role="content" loading="lazy" className="selfie-location__background" /><h2 id="selfie-location-title">{selfie.szegedHeading}</h2></div><div class="selfie-location__copy"><ResponsiveImage className="selfie-location__logo" image={{ src: "/images/selfie/szeged-logo.avif", alt: "aether art space", width: 326, height: 184 }} role="logo" loading="lazy" /><p>{selfie.szegedCopy}</p><a class="button button--dark" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div></div>
     </section>
+    )}
     <GalleryLightbox label={de ? "Selfie-Studio-Galerie" : hu ? "Szelfi stúdió galéria" : "Selfie studio gallery"} hu={hu} de={de} />
   </>
 ) : collectionPage ? (

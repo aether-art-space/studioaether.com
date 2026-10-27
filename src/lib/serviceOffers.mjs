@@ -82,6 +82,18 @@ export function serviceOffersFor(page, { origin = site.domain } = {}) {
     price: item.price, anchor, service: serviceName
   }));
 
+  // The Korean pilot displays only session prices and retouching, not the
+  // broader creative extras advertised on the full shared selfie page.
+  if (page.language === "ko") {
+    if (path === "/ko/selfie-studio-budapest") {
+      const names = ["30분 셀프 촬영", "60분 셀프 촬영", "사진 보정"];
+      selfieContent.en.prices.forEach(([name, , price], index) => add({
+        name: names[index] || name, price, anchor: "prices", service: "셀프사진관"
+      }));
+    }
+    return offers;
+  }
+
   if (route("/booking")) {
     [
       { name: lang === "hu" ? "Kedvezményes stúdióidősáv" : lang === "de" ? "Vergünstigtes Studio-Zeitfenster" : "Discounted studio timeslot", price: studioPricing.discounted, description: "Monday–Thursday, 09:00–18:00." },

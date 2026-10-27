@@ -1,0 +1,45 @@
+---
+import SelfieBookingEmbed from "./SelfieBookingEmbed.astro";
+import { site } from "../data/routes.mjs";
+import { sitePath } from "../lib/site.mjs";
+const { page } = Astro.props;
+const received = page.path === "/ko/selfie-post-booking";
+---
+<div class="ko-booking-page">
+  <a class="ko-back" href={sitePath("/ko/selfie-studio-budapest")}>← 셀프사진관 안내</a>
+  <p class="ko-eyebrow">AETHER SELF-PHOTO STUDIO · BUDAPEST</p>
+  <h1>{page.h1}</h1>
+  {received ? <>
+    <p class="ko-booking-lead">아직 예약이 확정된 것은 아닙니다. 요청 내용을 확인한 뒤 24시간 이내에 이메일로 예약 확정 안내를 보내 드립니다.</p>
+    <p>스팸 메일함도 확인해 주세요. 문의 사항은 <a href={`mailto:${site.email}`}>{site.email}</a>로 보내 주세요. 문의는 영어로 부탁드립니다.</p>
+  </> : <>
+    <p class="ko-booking-lead">원하는 날짜와 촬영 시간을 선택해 주세요.</p>
+    <div class="ko-booking-note"><strong>모든 촬영 시간은 부다페스트 현지 시간입니다.</strong><p>한국에서 예약하실 때에도 부다페스트 현지 시간을 기준으로 선택해 주세요. 예약 화면은 브라우저 언어에 따라 표시되며, 일부 질문과 안내는 영어 또는 헝가리어로 표시될 수 있습니다.</p><p>예약 요청 후 이메일로 확정 안내를 보내 드립니다. 현장에서는 한국어 안내문을 제공하며, 한국어를 구사하지 않는 직원이 번역 앱이나 영어로 도와드립니다.</p></div>
+    <p><a href="#booking-terms">예약 및 취소 조건 먼저 확인하기 ↓</a></p>
+    <SelfieBookingEmbed page={page} />
+    <p class="ko-calendar-fallback">달력이 표시되지 않나요? <a href={site.selfieBookingUrl} target="_blank" rel="noopener noreferrer" data-gtag-event="selfie_booking_click" data-gtag-location="korean-calendar-fallback">Cal.com에서 예약 달력 열기</a><br /><small>새 창에서 예약하면 이 사이트의 한국어 접수 안내 페이지로 돌아오지 않을 수 있습니다.</small></p>
+  </>}
+  <section id="booking-terms" class="ko-booking-terms" aria-labelledby="ko-terms-title">
+    <h2 id="ko-terms-title">방문 전 알아 두세요</h2>
+    <div><h3>예약 확정</h3><p>예약은 요청 접수 후 이메일 확인을 거쳐 확정됩니다. 모든 촬영 시간은 부다페스트 현지 시간입니다.</p></div>
+    <div><h3>결제</h3><p>현장에서 현금 또는 카드로 결제합니다. 현장에서 부가세가 포함된 공식 인보이스를 발급해 드립니다.</p></div>
+    <div><h3>변경 및 취소</h3><p>변경이나 취소는 이메일 또는 전화로 문의해 주세요. 촬영 7일 이내부터 24시간 전까지 취소하면 예약 요금의 50%가 부과됩니다. 촬영 24시간 이내에 취소하면 예약 요금 전액이 부과됩니다.</p></div>
+    <div><h3>도착 안내</h3><p>예약 시간에 촬영이 시작됩니다. 몇 분 일찍 도착해 준비해 주세요. 예약 시간에는 준비와 정리 시간이 포함됩니다.</p><address>{site.publicAddress}<br />1층 4호</address><p><a href={site.mapsUrl} target="_blank" rel="noopener noreferrer">Google 지도에서 길 찾기 ↗</a></p></div>
+  </section>
+</div>
+<style>
+  .ko-booking-page { max-width: 1120px; margin: auto; padding: 42px 28px 80px; }
+  .ko-back { font-size: 14px; text-underline-offset: 4px; }
+  .ko-eyebrow { font-size: 11px; letter-spacing: 2px; margin-top: 44px; color: #526459; }
+  h1 { font-size: clamp(32px,5vw,52px); line-height: 1.3; letter-spacing: -1.5px; margin: 18px 0 24px; }
+  .ko-booking-lead { font-size: 20px; line-height: 1.8; max-width: 780px; }
+  p { line-height: 1.9; }
+  .ko-booking-note { max-width: 840px; margin: 30px 0; padding: 24px; background: #eef3ef; border-left: 3px solid #3c6551; border-radius: 4px; }
+  .ko-booking-note p { margin: 12px 0 0; font-size: 15px; }
+  .ko-calendar-fallback { margin: -45px 0 50px; }
+  .ko-booking-terms { scroll-margin-top: 110px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 44px; border-top: 1px solid #dfe5df; padding-top: 40px; margin-top: 50px; }
+  h2 { grid-column: 1/-1; font-size: 28px; margin: 0; }
+  h3 { font-size: 18px; margin: 0; }
+  address { font-style: normal; line-height: 1.8; }
+  @media(max-width:600px) { .ko-booking-page { padding: 28px 20px 60px; } .ko-booking-terms { grid-template-columns: 1fr; } .ko-booking-lead { font-size: 18px; } }
+</style>

@@ -42,7 +42,7 @@ for (const page of renderedPages) {
   const canonicalTag = html.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/i)?.[0] || "";
   const canonical = canonicalTag.match(/\bhref=["']([^"']+)["']/i)?.[1] || "";
   if (!canonicalTag || canonical !== `${site.domain}${page.path}`) fail.push(`canonical mismatch: ${page.path}`);
-  const hreflang = page.language === "hu" ? "hu-hu" : "en-us";
+  const hreflang = ({ en: "en-us", hu: "hu-hu", de: "de-de", ko: "ko" })[page.language];
   if (!html.includes(`hreflang="${hreflang}"`)) fail.push(`self hreflang missing: ${page.path}`);
   if (!intentionallyUndescribed.has(page.path) && !html.match(/<meta\b[^>]*name=["']description["'][^>]*content=["'][^"']+[^>]*>/i)) fail.push(`missing description: ${page.path}`);
   for (const [attributeName, value] of [
@@ -95,6 +95,10 @@ for (const page of renderedPages) {
       "/fonts/Jitter-Regular-hun-v2.ttf",
       "/fonts/Jura-400.ttf"
     ].includes(link)) continue;
+    if (link.startsWith("/_astro/")) {
+      if (!(await fs.stat(path.join(dist, link.slice(1))).catch(() => null))?.isFile()) fail.push(`missing built asset ${link} from ${page.path}`);
+      continue;
+    }
     if (!pageByPath.has(link)) fail.push(`broken internal link ${link} from ${page.path}`);
   }
   if (page.indexable === false && !html.includes('content="noindex,follow"')) fail.push(`missing noindex in production build: ${page.path}`);
