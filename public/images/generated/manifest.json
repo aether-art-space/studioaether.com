@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T12:19:02.712Z",
+  "generatedAt": "2026-10-24T11:46:10.664Z",
   "images": {
     "/images/equipment/A7301405.jpg": {
       "source": "/images/equipment/A7301405.jpg",
@@ -52598,6 +52598,83 @@
           "src": "/images/generated/wedding/thoughtful-planning--full--24f41cae7d.webp",
           "width": 640,
           "height": 640,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/props-collection/A7309987 - crop.jpg": {
+      "source": "/images/galleries/props-collection/A7309987 - crop.jpg",
+      "width": 2750,
+      "height": 3436,
+      "alpha": false,
+      "hash": "fc7e7ee4cc",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--320w--fc7e7ee4cc.webp",
+            "width": 320,
+            "height": 400,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--480w--fc7e7ee4cc.webp",
+            "width": 480,
+            "height": 600,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--640w--fc7e7ee4cc.webp",
+            "width": 640,
+            "height": 800,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--960w--fc7e7ee4cc.webp",
+            "width": 960,
+            "height": 1199,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--1280w--fc7e7ee4cc.webp",
+            "width": 1280,
+            "height": 1599,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--1600w--fc7e7ee4cc.webp",
+            "width": 1600,
+            "height": 1999,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--1920w--fc7e7ee4cc.webp",
+            "width": 1920,
+            "height": 2399,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--thumb-160--fc7e7ee4cc.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/props-collection/A7309987 - crop--thumb-320--fc7e7ee4cc.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/galleries/props-collection/A7309987 - crop--full--fc7e7ee4cc.webp",
+          "width": 1920,
+          "height": 2399,
           "alpha": false
         }
       }
