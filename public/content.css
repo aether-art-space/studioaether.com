@@ -1693,6 +1693,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .wedding-hero p { width: min(820px, 100%); margin: 0 auto 18px; font: var(--text-body); }
 .wedding-hero .actions { align-items: stretch; flex-direction: column; justify-content: center; width: 302px; margin: 28px auto 0; gap: 8px; }
 .wedding-hero .actions .button { display: flex; width: 100%; min-width: 0; height: 40px; box-sizing: border-box; align-items: center; justify-content: center; }
+.wedding-approach-card:first-child img { object-position: center 30%; }
 .wedding-glance { display: grid; grid-template-columns: 1fr 1fr; min-height: 588px; background: #f5f5f5; }
 .wedding-glance__copy { display: flex; flex-direction: column; justify-content: center; padding: 70px clamp(42px, 8vw, 150px); }
 .wedding-glance h2, .wedding-approach h2, .wedding-contact h2, .wedding-packages h2, .wedding-build h2, .wedding-options h2, .wedding-process h2, .wedding-testimonials h2 { margin: 0 0 18px; font: var(--font-section-title); }

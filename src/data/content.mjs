@@ -1926,7 +1926,7 @@ const weddingIncludedHu = [
   ["Ingyenes konzultáció", "Egy videóhívás vagy személyes találkozó során megismerünk benneteket és átbeszéljük a terveiteket, mielőtt elkészítjük személyre szabott ajánlatotokat."],
   ["Gyors átadás", "Egy héten belül küldünk egy előzetes válogatást, a teljes esküvői galériát pedig egy hónapon belül átadjuk."],
   ["Privát online galéria", "A fényképeket privát online galérián keresztül adjuk át, ahonnan megtekinthetitek, letölthetitek és megoszthatjátok őket."],
-  ["Magas minőségű fényképek", "Minden átadott képet gondosan kiválasztunk, professzionálisan retusálunk és nagy felbontásban adunk át."]
+  ["Minőségi fényképek", "Minden átadott képet gondosan kiválasztunk, professzionálisan retusálunk és nagy felbontásban adunk át."]
 ];
 
 const weddingApproachHu = [
@@ -2002,7 +2002,7 @@ export const weddingImages = [
 ];
 
 export const weddingSectionImages = {
-  glance: { src: "/images/wix/wedding/source-sections/wedding-glance.jpg", width: 1000, height: 1500, alt: "Wedding photography at a Budapest wedding" },
+  glance: { src: "/images/wedding-glance/couple-among-rocks.jpg", width: 6000, height: 4000, alt: "Bride and groom among rocks beneath a cloudy sky" },
   coverage: [
     { src: "/images/wedding/preparations-down15.webp", width: 1280, height: 854, alt: "Wedding preparations photography" },
     { src: "/images/wedding/creative-couple-up5.webp", width: 1280, height: 853, alt: "Creative couple wedding portrait" },
@@ -2014,13 +2014,13 @@ export const weddingSectionImages = {
   options: [
     { src: "/images/wix/wedding/source-sections/options-01.png", width: 1000, height: 667, alt: "Engagement photoshoot" },
     { src: "/images/wix/wedding/source-sections/options-02.jpg", width: 1500, height: 1000, alt: "Bridal boudoir photography" },
-    { src: "/images/wix/wedding/source-sections/options-03.png", width: 1499, height: 1000, alt: "Analogue wedding photography" },
+    { src: "/images/wedding-analogue/film-strip.jpg", width: 5149, height: 3433, alt: "Black-and-white wedding portraits on Ilford film" },
     { src: "/images/wix/wedding/source-sections/options-04.png", width: 928, height: 522, alt: "Polaroid camera rental" },
     { src: "/images/wix/wedding/source-sections/options-05.jpg", width: 6240, height: 4160, alt: "Selfie corner rental" }
   ],
   alexandra: { src: "/images/wix/wedding/source-sections/photographer-alexandra.jpg", width: 5000, height: 3571, alt: "Alexandra Kulcsár-Horváth" },
   approach: [
-    { src: "/images/wix/wedding/source-sections/approach-01.jpg", width: 600, height: 600, alt: "Natural wedding moments" },
+    { src: "/images/wedding-natural/couple-close-up.jpg", width: 4000, height: 6000, alt: "Natural wedding moments" },
     { src: "/images/wix/wedding/source-sections/approach-02.jpg", width: 600, height: 600, alt: "Elegant wedding portraits" },
     { src: "/images/wix/wedding/source-sections/approach-03.jpg", width: 600, height: 600, alt: "Unobtrusive wedding photography" }
   ],

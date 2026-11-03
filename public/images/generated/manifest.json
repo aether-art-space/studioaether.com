@@ -52601,6 +52601,669 @@
           "alpha": false
         }
       }
+    },
+    "/images/wedding-analogue/film-strip.jpg": {
+      "source": "/images/wedding-analogue/film-strip.jpg",
+      "width": 5149,
+      "height": 3433,
+      "alpha": false,
+      "hash": "39c4ac6dce",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--320w--39c4ac6dce.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--480w--39c4ac6dce.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--640w--39c4ac6dce.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--960w--39c4ac6dce.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--1280w--39c4ac6dce.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--1600w--39c4ac6dce.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--2400w--39c4ac6dce.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--thumb-160--39c4ac6dce.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-analogue/film-strip--thumb-320--39c4ac6dce.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/wedding-analogue/film-strip--full--39c4ac6dce.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/wedding-glance/couple-among-rocks.jpg": {
+      "source": "/images/wedding-glance/couple-among-rocks.jpg",
+      "width": 6000,
+      "height": 4000,
+      "alpha": false,
+      "hash": "ae4586a8cd",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--320w--ae4586a8cd.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--480w--ae4586a8cd.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--640w--ae4586a8cd.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--960w--ae4586a8cd.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--1280w--ae4586a8cd.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--1600w--ae4586a8cd.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--2400w--ae4586a8cd.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--thumb-160--ae4586a8cd.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-glance/couple-among-rocks--thumb-320--ae4586a8cd.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/wedding-glance/couple-among-rocks--full--ae4586a8cd.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/wedding/02-couple-close-up.jpg": {
+      "source": "/images/galleries/wedding/02-couple-close-up.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alpha": false,
+      "hash": "317024eda2",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--320w--317024eda2.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--480w--317024eda2.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--640w--317024eda2.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--960w--317024eda2.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--1280w--317024eda2.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--1600w--317024eda2.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--thumb-160--317024eda2.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/02-couple-close-up--thumb-320--317024eda2.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/galleries/wedding/02-couple-close-up--full--317024eda2.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/wedding/03-film-walking.jpg": {
+      "source": "/images/galleries/wedding/03-film-walking.jpg",
+      "width": 5197,
+      "height": 3465,
+      "alpha": false,
+      "hash": "25a63157c5",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--320w--25a63157c5.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--480w--25a63157c5.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--640w--25a63157c5.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--960w--25a63157c5.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--1280w--25a63157c5.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--1600w--25a63157c5.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--2400w--25a63157c5.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--thumb-160--25a63157c5.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/03-film-walking--thumb-320--25a63157c5.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/galleries/wedding/03-film-walking--full--25a63157c5.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/wedding/04-chapel-portrait.jpg": {
+      "source": "/images/galleries/wedding/04-chapel-portrait.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alpha": false,
+      "hash": "40b5dfd316",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--320w--40b5dfd316.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--480w--40b5dfd316.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--640w--40b5dfd316.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--960w--40b5dfd316.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--1280w--40b5dfd316.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--1600w--40b5dfd316.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--thumb-160--40b5dfd316.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/04-chapel-portrait--thumb-320--40b5dfd316.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/galleries/wedding/04-chapel-portrait--full--40b5dfd316.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/wedding/05-hand-kiss.jpg": {
+      "source": "/images/galleries/wedding/05-hand-kiss.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alpha": false,
+      "hash": "070d1faa07",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--320w--070d1faa07.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--480w--070d1faa07.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--640w--070d1faa07.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--960w--070d1faa07.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--1280w--070d1faa07.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--1600w--070d1faa07.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--thumb-160--070d1faa07.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/05-hand-kiss--thumb-320--070d1faa07.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/galleries/wedding/05-hand-kiss--full--070d1faa07.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/wedding/07-rocks-portrait.jpg": {
+      "source": "/images/galleries/wedding/07-rocks-portrait.jpg",
+      "width": 6000,
+      "height": 4000,
+      "alpha": false,
+      "hash": "df14d7067a",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--320w--df14d7067a.webp",
+            "width": 320,
+            "height": 213,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--480w--df14d7067a.webp",
+            "width": 480,
+            "height": 320,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--640w--df14d7067a.webp",
+            "width": 640,
+            "height": 427,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--960w--df14d7067a.webp",
+            "width": 960,
+            "height": 640,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--1280w--df14d7067a.webp",
+            "width": 1280,
+            "height": 853,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--1600w--df14d7067a.webp",
+            "width": 1600,
+            "height": 1067,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--2400w--df14d7067a.webp",
+            "width": 2400,
+            "height": 1600,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--thumb-160--df14d7067a.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/07-rocks-portrait--thumb-320--df14d7067a.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/galleries/wedding/07-rocks-portrait--full--df14d7067a.webp",
+          "width": 2400,
+          "height": 1600,
+          "alpha": false
+        }
+      }
+    },
+    "/images/galleries/wedding/08-film-embrace.jpg": {
+      "source": "/images/galleries/wedding/08-film-embrace.jpg",
+      "width": 3465,
+      "height": 5197,
+      "alpha": false,
+      "hash": "3357d346c5",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--320w--3357d346c5.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--480w--3357d346c5.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--640w--3357d346c5.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--960w--3357d346c5.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--1280w--3357d346c5.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--1600w--3357d346c5.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--thumb-160--3357d346c5.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/galleries/wedding/08-film-embrace--thumb-320--3357d346c5.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/galleries/wedding/08-film-embrace--full--3357d346c5.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/wedding-natural/couple-close-up.jpg": {
+      "source": "/images/wedding-natural/couple-close-up.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alpha": false,
+      "hash": "49ecdd78cd",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--320w--49ecdd78cd.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--480w--49ecdd78cd.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--640w--49ecdd78cd.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--960w--49ecdd78cd.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--1280w--49ecdd78cd.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--1600w--49ecdd78cd.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--thumb-160--49ecdd78cd.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/wedding-natural/couple-close-up--thumb-320--49ecdd78cd.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/wedding-natural/couple-close-up--full--49ecdd78cd.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
     }
   },
   "unusedSources": []
