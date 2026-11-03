@@ -1659,6 +1659,16 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .christmas-studio-details { width: min(884px, calc(100% - 36px)); margin: 98px auto 0; }
 .christmas-studio-details h2 { margin: 0 0 30px; font: var(--font-subsection-title); }
 .christmas-studio-details p { margin: 0; font: var(--text-body); }
+.christmas-studio-photographer { position: relative; isolation: isolate; overflow: hidden; width: min(1200px, calc(100% - 36px)); margin: 40px auto 80px; border-radius: 24px; background: #29231f; color: var(--paper); text-align: center; }
+.christmas-studio-photographer__background { position: absolute; z-index: -2; inset: 0; }
+.christmas-studio-photographer__background picture, .christmas-studio-photographer__background img { display: block; width: 100%; height: 100%; }
+.christmas-studio-photographer__background img { object-fit: cover; object-position: center 55%; }
+.christmas-studio-photographer::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgb(22 18 16 / 74%), rgb(22 18 16 / 58%), rgb(22 18 16 / 74%)); }
+.christmas-studio-photographer__content { max-width: 760px; margin: auto; padding: clamp(56px, 8vw, 100px) 24px; }
+.christmas-studio-photographer h2 { margin: 0 0 12px; font: 400 clamp(32px, 4vw, 52px)/1.12 var(--serif); text-wrap: balance; }
+.christmas-studio-photographer p { max-width: 540px; margin: 0 auto; font: var(--text-body); text-wrap: balance; }
+.christmas-studio-photographer .christmas-studio-photographer__eyebrow { margin-bottom: 16px; font: var(--font-caption); letter-spacing: .14em; text-transform: uppercase; }
+.christmas-studio-photographer .button { margin-top: 32px; max-width: 100%; white-space: normal; }
 .christmas-studio-details ul { margin: 38px 0 0; padding-left: 20px; }
 .christmas-studio-details li { margin: 8px 0; font: var(--text-small); }
 .christmas-studio-details + .booking-intro { max-width: 884px; padding: 28px 24px 0; text-align: left; }
@@ -1693,6 +1703,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .wedding-hero p { width: min(820px, 100%); margin: 0 auto 18px; font: var(--text-body); }
 .wedding-hero .actions { align-items: stretch; flex-direction: column; justify-content: center; width: 302px; margin: 28px auto 0; gap: 8px; }
 .wedding-hero .actions .button { display: flex; width: 100%; min-width: 0; height: 40px; box-sizing: border-box; align-items: center; justify-content: center; }
+.wedding-approach-card:first-child img { object-position: center 30%; }
 .wedding-glance { display: grid; grid-template-columns: 1fr 1fr; min-height: 588px; background: #f5f5f5; }
 .wedding-glance__copy { display: flex; flex-direction: column; justify-content: center; padding: 70px clamp(42px, 8vw, 150px); }
 .wedding-glance h2, .wedding-approach h2, .wedding-contact h2, .wedding-packages h2, .wedding-build h2, .wedding-options h2, .wedding-process h2, .wedding-testimonials h2 { margin: 0 0 18px; font: var(--font-section-title); }
@@ -2095,3 +2106,28 @@ summary { cursor: pointer; font: var(--font-card-title); }
   #stylist-pricing .price-card { container-type: normal; grid-template-rows: subgrid; grid-row: span 4; }
   #stylist-pricing .price-card__header { display: grid; grid-template-rows: subgrid; grid-row: span 2; row-gap: 0; }
 }
+
+/* Compact beauty packages with shared title, description, price and feature rows. */
+#makeup-pricing { padding-top: 24px; padding-bottom: 32px; }
+#makeup-pricing .pricing-tabs { padding-top: 0; }
+#makeup-pricing .service-package-grid { margin-top: 24px; }
+#makeup-pricing .price-card { min-height: 0; padding: 26px 24px 24px; }
+#makeup-pricing .price-card__header h3 { margin-bottom: 12px; font-size: 27px; line-height: 1.12; }
+#makeup-pricing .price-card__accent { display: inline-block; margin-top: 6px; color: #baf3e6; font: 400 20px/1.2 var(--serif); }
+#makeup-pricing .price-card__description { min-height: 0; max-width: none; }
+#makeup-pricing .price-card__details { padding-top: 16px; }
+#makeup-pricing .price-card__price { min-height: 0; margin: 0; padding-bottom: 18px; }
+#makeup-pricing .price-card__features { margin: 0 -24px -24px; padding: 18px 24px 24px; }
+#makeup-pricing .price-card ul { margin-top: 0; gap: 6px; }
+#makeup-pricing .price-card__action-wrap { padding-top: 18px; }
+@media (min-width: 701px) {
+  #makeup-pricing .service-package-grid { grid-template-rows: auto auto auto minmax(auto, 1fr); }
+  #makeup-pricing .price-card { container-type: normal; grid-template-rows: subgrid; grid-row: span 4; }
+  #makeup-pricing .price-card__header { display: grid; grid-template-rows: subgrid; grid-row: span 2; row-gap: 0; }
+}
+
+/* Match makeup portrait overlays to the badge panel's horizontal inset. */
+.artist-profiles--makeup .artist-profile__image-copy { left: 18px; right: 18px; }
+
+.selfie-extras-contact { margin-top: 28px; text-align: center; }
+.selfie-extras-contact p { margin: 0 0 16px; font: var(--text-body); }

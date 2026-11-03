@@ -52,8 +52,8 @@ const socialImage = resolveImage({
 const socialImageUrl = absoluteUrl(socialImage.lightbox.fallback);
 const iconImage = resolveImage({ src: "/images/wix/jpg/logo-icon.jpg", alt: site.name }, "thumb");
 const iconImageUrl = absoluteUrl(iconImage.lightbox.fallback);
-const languageCodes: Record<string, string> = { en: "en-us", hu: "hu-hu", de: "de-de" };
-const socialLocales: Record<string, string> = { en: "en_US", hu: "hu_HU", de: "de_DE" };
+const languageCodes: Record<string, string> = { en: "en-us", hu: "hu-hu", de: "de-de", ko: "ko" };
+const socialLocales: Record<string, string> = { en: "en_US", hu: "hu_HU", de: "de_DE", ko: "ko_KR" };
 const alternates = Object.entries(page.alternatePaths || { [page.language]: page.path }).map(([language, path]) => ({ hreflang: languageCodes[language] || language, href: absoluteUrl(path) }));
 const xDefault = absoluteUrl(page.alternatePaths?.en || "/");
 const locale = socialLocales[page.language] || "en_US";
@@ -137,7 +137,7 @@ const faqAnswerText = (answer: unknown) => {
     ? block.items.map((item: any) => [typeof item === "string" ? item : item.text, ...(item.children || [])].join(" "))
     : [block.text]).join(" ");
 };
-const tracking = preview ? { gtmId: "", googleTagId: "", ga4Id: "", googleAdsId: "" } : site.tracking;
+const tracking = preview ? { gtmId: "", googleTagId: "", ga4Id: "", googleAdsId: "" } : { ...site.tracking, ...(page.language === "ko" ? { experimentGa4Id: "G-NFVD8Z3MN2" } : {}) };
 const trackingId = tracking.gtmId || tracking.googleTagId || tracking.ga4Id || tracking.googleAdsId;
 const businessUrl = absoluteUrl("/");
 const businessId = `${businessUrl}#business`;

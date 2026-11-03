@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import KoreanSelfieLayout from "../layouts/KoreanSelfieLayout.astro";
+import KoreanSelfieBookingContent from "../components/KoreanSelfieBookingContent.astro";
 import PageContent from "../components/PageContent.astro";
 import { pages } from "../data/routes.mjs";
 
@@ -14,6 +16,10 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 ---
-<BaseLayout page={page}>
-  <PageContent page={page} />
-</BaseLayout>
+{page.language === "ko" ? (
+  <KoreanSelfieLayout page={page}>
+    {page.path === "/ko/selfie-studio-budapest" ? <PageContent page={page} /> : <KoreanSelfieBookingContent page={page} />}
+  </KoreanSelfieLayout>
+) : (
+  <BaseLayout page={page}><PageContent page={page} /></BaseLayout>
+)}

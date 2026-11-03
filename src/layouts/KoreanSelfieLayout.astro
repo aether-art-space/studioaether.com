@@ -1,0 +1,92 @@
+---
+import Seo from "../components/Seo.astro";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+import CookieConsent from "../components/CookieConsent.astro";
+import { site } from "../data/routes.mjs";
+import { sitePath } from "../lib/site.mjs";
+const { page } = Astro.props;
+const landing = sitePath("/ko/selfie-studio-budapest");
+const booking = sitePath("/ko/selfie-booking");
+const preview = import.meta.env.PUBLIC_DEPLOY_ENV === "preview";
+const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.googleTagId || site.tracking.ga4Id || site.tracking.googleAdsId);
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {!preview && <meta name="google-site-verification" content="b_x-KWZ6Ick8sQOdGXlWWSpVSDiR3t2ggAL-2uZXSik" />}
+    <Seo page={page} />
+    <link rel="stylesheet" href={sitePath("/site.css?v=20260909-19")} />
+    <link rel="stylesheet" href={sitePath("/content.css?v=20260919-01")} />
+  </head>
+  <body class="korean-selfie" data-experiment="korean-selfie-v1">
+    <a class="skip-link" href="#main">본문으로 바로 가기</a>
+    <header class="ko-header">
+      <div class="ko-header-inner">
+        <a class="brand" href={landing} aria-label="aether 셀프사진관 처음으로"><ResponsiveImage image={{ src: "/images/generated/wix/jpg/logo-full-transparent.png", alt: site.name, width: 326, height: 184 }} role="logo" loading="eager" /></a>
+        <nav class="ko-nav" aria-label="셀프사진관 안내">
+          <a href={`${landing}#how-it-works`}>이용 방법</a>
+          <a href={`${landing}#prices`}>가격</a>
+          <a href={`${landing}#selfie-gallery-title`}>갤러리</a>
+          <a href={`${landing}#selfie-benefits-title`}>스튜디오</a>
+        </nav>
+        <div class="ko-header-actions">
+          <a href={sitePath(page.alternatePaths.en)} lang="en" aria-label="View this page in English">EN</a>
+          <a class="ko-book" href={booking} data-gtag-event="selfie_booking_click" data-gtag-location="korean-header">예약하기</a>
+        </div>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="ko-footer">
+      <div><a class="ko-footer-brand" href={landing}>aether art space</a><address>{site.publicAddress}<br />1층 4호</address><p>매일 09:00–22:00</p></div>
+      <div class="ko-footer-links">
+        <a href={`tel:${site.phone.replace(/\s/g, "")}`}>전화: {site.phone}</a>
+        <a href={`mailto:${site.email}`} data-gtag-event="email_click" data-gtag-location="korean-footer">이메일 문의 (영어)</a>
+        <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href={sitePath("/privacy-policy")} lang="en">개인정보 처리방침 (영어)</a>
+        <a href={`${booking}#booking-terms`}>예약 및 취소 안내</a>
+        {consentEnabled && <button type="button" data-cookie-settings>쿠키 설정</button>}
+      </div>
+    </footer>
+    <CookieConsent page={page} enabled={consentEnabled} />
+  </body>
+</html>
+<style is:global>
+  html:lang(ko) { --sans: "Jura", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; --serif: "Jitter", "Apple SD Gothic Neo", "Malgun Gothic", serif; scroll-behavior: smooth; scroll-padding-top: 100px; word-break: keep-all; overflow-wrap: anywhere; }
+  body.korean-selfie { padding-top: 0; font-family: var(--sans); background: #fff; }
+  .korean-selfie main { width: 100%; max-width: none; margin: 0; padding: 0; }
+  .korean-selfie a:focus-visible,.korean-selfie button:focus-visible,.korean-selfie summary:focus-visible { outline: 3px solid #15735e; outline-offset: 5px; }
+  .ko-header { position: sticky; top: 0; z-index: 30; background: rgb(255 255 255 / 97%); border-bottom: 1px solid #e4e8e4; }
+  .ko-header-inner { max-width: 1320px; min-height: 88px; margin: auto; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+  .ko-brand { text-decoration: none; font: 400 38px/1 Georgia,serif; letter-spacing: -2px; }
+  .ko-brand span { display: block; font: 500 9px/1.8 var(--sans); letter-spacing: 1.3px; margin-top: 7px; }
+  .ko-nav,.ko-header-actions { display: flex; align-items: center; gap: 24px; }
+  .ko-nav a,.ko-header-actions a { text-decoration: none; font-size: 14px; }
+  .ko-nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+  .ko-header-actions .ko-book { padding: 13px 23px; background: #050505; color: white; border-radius: 5px; }
+  .ko-footer { max-width: 1320px; margin: auto; padding: 60px 32px; border-top: 1px solid #dfe5df; display: flex; justify-content: space-between; gap: 40px; font-size: 14px; color: #525c55; }
+  .ko-footer-brand { text-decoration: none; font: 30px Georgia,serif; color: #050505; }
+  .ko-footer address { font-style: normal; line-height: 1.9; }
+  .ko-footer-links { display: grid; align-content: start; gap: 12px; }
+  .ko-footer-links a { text-underline-offset: 4px; }
+  .ko-footer-links button { background: none; border: 0; padding: 0; text-align: left; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; }
+  .ko-mobile-book { display: none; }
+  .korean-selfie .selfie-process { height: auto; padding-bottom: 50px; }
+  .korean-selfie .selfie-process__language-note { width: min(611px, calc(100% - 48px)); margin: 28px auto 0; text-align: left; }
+  .korean-selfie .selfie-process__language-note p { margin: 0; font: var(--text-body); }
+  .korean-selfie .selfie-process__language-note p + p { margin-top: 6px; }
+  .korean-selfie .cookie-consent { z-index: 100; }
+  @media(max-width: 760px) {
+    .ko-header-inner { min-height: 76px; padding: 12px 20px; gap: 16px; }
+    .ko-brand { font-size: 31px; }
+    .ko-brand span { font-size: 7px; letter-spacing: .6px; }
+    .ko-nav { display: none; }
+    .ko-header-actions { gap: 14px; }
+    .ko-header-actions .ko-book { padding: 11px 15px; }
+    .ko-footer { padding: 40px 22px 108px; flex-direction: column; gap: 30px; }
+    .ko-mobile-book { display: block; position: fixed; bottom: 0; left: 0; right: 0; padding: 10px 20px calc(10px + env(safe-area-inset-bottom)); background: rgb(255 255 255 / 97%); border-top: 1px solid #dfe5df; z-index: 25; }
+    .ko-mobile-book a { display: flex; justify-content: space-between; padding: 15px 20px; background: #050505; color: white; border-radius: 5px; text-decoration: none; font-weight: 600; }
+  }
+  @media(prefers-reduced-motion: reduce) { html:lang(ko) { scroll-behavior: auto; } }
+</style>

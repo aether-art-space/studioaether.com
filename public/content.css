@@ -1659,6 +1659,16 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .christmas-studio-details { width: min(884px, calc(100% - 36px)); margin: 98px auto 0; }
 .christmas-studio-details h2 { margin: 0 0 30px; font: var(--font-subsection-title); }
 .christmas-studio-details p { margin: 0; font: var(--text-body); }
+.christmas-studio-photographer { position: relative; isolation: isolate; overflow: hidden; width: min(1200px, calc(100% - 36px)); margin: 40px auto 80px; border-radius: 24px; background: #29231f; color: var(--paper); text-align: center; }
+.christmas-studio-photographer__background { position: absolute; z-index: -2; inset: 0; }
+.christmas-studio-photographer__background picture, .christmas-studio-photographer__background img { display: block; width: 100%; height: 100%; }
+.christmas-studio-photographer__background img { object-fit: cover; object-position: center 55%; }
+.christmas-studio-photographer::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgb(22 18 16 / 74%), rgb(22 18 16 / 58%), rgb(22 18 16 / 74%)); }
+.christmas-studio-photographer__content { max-width: 760px; margin: auto; padding: clamp(56px, 8vw, 100px) 24px; }
+.christmas-studio-photographer h2 { margin: 0 0 12px; font: 400 clamp(32px, 4vw, 52px)/1.12 var(--serif); text-wrap: balance; }
+.christmas-studio-photographer p { max-width: 540px; margin: 0 auto; font: var(--text-body); text-wrap: balance; }
+.christmas-studio-photographer .christmas-studio-photographer__eyebrow { margin-bottom: 16px; font: var(--font-caption); letter-spacing: .14em; text-transform: uppercase; }
+.christmas-studio-photographer .button { margin-top: 32px; max-width: 100%; white-space: normal; }
 .christmas-studio-details ul { margin: 38px 0 0; padding-left: 20px; }
 .christmas-studio-details li { margin: 8px 0; font: var(--text-small); }
 .christmas-studio-details + .booking-intro { max-width: 884px; padding: 28px 24px 0; text-align: left; }

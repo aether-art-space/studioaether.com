@@ -3,7 +3,9 @@ import { localizedPath } from "../lib/site.mjs";
 
 const { page } = Astro.props;
 const confirmationPath = localizedPath("/selfie-post-booking", page.language);
-const copy = page.language === "de"
+const copy = page.language === "ko"
+  ? { title: "셀프사진관 예약 달력", fallback: "예약 달력을 불러오지 못했습니다. 아래의 예약 링크를 이용하거나 이메일로 문의해 주세요." }
+  : page.language === "de"
   ? { title: "Selfie-Studio buchen", fallback: "Der Buchungskalender konnte nicht geladen werden. Bitte versuche es erneut oder kontaktiere uns per E-Mail." }
   : page.language === "hu"
     ? { title: "Szelfi stúdió foglalása", fallback: "A foglalási naptár nem töltődött be. Próbáld újra, vagy írj nekünk e-mailt." }
@@ -33,7 +35,14 @@ const copy = page.language === "de"
     const redirectAfterBooking = () => {
       if (redirected) return;
       redirected = true;
-      window.location.assign(confirmationPath);
+      // Only an actual Cal.com success callback counts as a received request.
+      // Do not forward its payload: it can contain personal booking details.
+      document.dispatchEvent(new CustomEvent("selfie:booking-received"));
+      if (document.body.dataset.experiment === "korean-selfie-v1") {
+        window.setTimeout(() => window.location.assign(confirmationPath), 600);
+      } else {
+        window.location.assign(confirmationPath);
+      }
     };
 
     const handleEmbedFailure = () => {

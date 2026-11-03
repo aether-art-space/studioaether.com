@@ -1,5 +1,6 @@
 ---
 const { enabled = false, page } = Astro.props;
+const ko = page.language === "ko";
 const hu = page.language === "hu";
 const de = page.language === "de";
 const privacyHref = de ? "/de/privacy-policy" : hu ? "/hu/privacy-policy" : "/privacy-policy";
@@ -9,17 +10,21 @@ const titleId = `cookie-consent-title-${page.language}`;
 {enabled && <div class="cookie-consent" data-cookie-consent hidden>
   <section class="cookie-consent__panel" aria-labelledby={titleId}>
     <div class="cookie-consent__copy">
-      <h2 id={titleId}>{de ? "Cookie-Hinweis" : hu ? "Süti tájékoztató" : "Cookie notice"}</h2>
+      <h2 id={titleId}>{ko ? "쿠키 안내" : de ? "Cookie-Hinweis" : hu ? "Süti tájékoztató" : "Cookie notice"}</h2>
       <p>
-        {de
+        {ko
+          ? "필수 쿠키는 웹사이트 작동에 사용됩니다."
+          : de
           ? "Notwendige Cookies halten die Website funktionsfähig."
           : hu
           ? "A szükséges sütik biztosítják a webhely működését."
           : "Necessary cookies keep the website working."}
-        {" "}<a href={privacyHref}>{de ? "Datenschutzerklärung" : hu ? "Adatvédelmi tájékoztató" : "Privacy Policy"}</a>
+        {" "}<a href={privacyHref}>{ko ? "개인정보 처리방침 (영어)" : de ? "Datenschutzerklärung" : hu ? "Adatvédelmi tájékoztató" : "Privacy Policy"}</a>
       </p>
       <p class="cookie-consent__benefit">
-        {de
+        {ko
+          ? "선택 쿠키로 방문과 예약 경로를 분석하고 광고 성과를 측정합니다. 동의하지 않아도 예약할 수 있습니다."
+          : de
           ? "Anzeigenmessung hilft uns, unser Werbebudget sinnvoll einzusetzen und unsere Preise niedrig zu halten. 🤍"
           : hu
           ? "A hirdetésmérés segít okosabban felhasználni a reklámkeretünket, hogy alacsonyan tarthassuk az árainkat. 🤍"
@@ -28,13 +33,13 @@ const titleId = `cookie-consent-title-${page.language}`;
     </div>
     <div class="cookie-consent__actions">
       <button class="button cookie-consent__accept" type="button" data-cookie-consent-all>
-        {de ? "Alle akzeptieren" : hu ? "Összes elfogadása" : "Accept all"}
+        {ko ? "모두 허용" : de ? "Alle akzeptieren" : hu ? "Összes elfogadása" : "Accept all"}
       </button>
       <button class="button cookie-consent__measurement" type="button" data-cookie-consent-measurement>
-        {de ? "Anzeigenmessung erlauben" : hu ? "Hirdetésmérések engedélyezése" : "Allow ad measurement"}
+        {ko ? "광고 측정만 허용" : de ? "Anzeigenmessung erlauben" : hu ? "Hirdetésmérések engedélyezése" : "Allow ad measurement"}
       </button>
       <button class="button cookie-consent__necessary" type="button" data-cookie-consent-necessary>
-        {de ? "Nur notwendige" : hu ? "Csak szükséges" : "Only necessary"}
+        {ko ? "필수 쿠키만" : de ? "Nur notwendige" : hu ? "Csak szükséges" : "Only necessary"}
       </button>
     </div>
   </section>

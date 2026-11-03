@@ -164,12 +164,28 @@ const germanPages = sourcePages
     return { ...page, path: germanPath, url: `${base}${germanPath}`, language: "de", title, h1, description, counterpartPath: page.path, alternatePaths: { en: page.path, hu: page.path === "/" ? "/hu" : `/hu${page.path}`, de: germanPath } };
   });
 
-export const pages = sourcePages.map((page) => ({
+const localizedPages = sourcePages.map((page) => ({
   ...page,
   alternatePaths: page.language === "en"
     ? { en: page.path, hu: page.path === "/" ? "/hu" : `/hu${page.path}`, de: page.path === "/" ? "/de" : `/de${page.path}` }
     : { en: page.path === "/hu" ? "/" : page.path.replace(/^\/hu/, ""), hu: page.path, de: page.path === "/hu" ? "/de" : page.path.replace(/^\/hu/, "/de") }
 })).concat(germanPages);
+
+// A deliberately small Korean pilot: only the selfie journey is translated.
+const koreanSelfieRoutes = [
+  ["/selfie-studio-budapest", "부다페스트 셀프사진관 | 여행 기념사진 · aether", "부다페스트 셀프사진관", "부다페스트 셀프사진관 Aether(에테르)에서 여행의 추억을 남겨보세요. 리모컨으로 직접 촬영하고, 한국어 안내문과 번역 앱을 통한 현장 도움을 받으실 수 있습니다."],
+  ["/selfie-booking", "부다페스트 셀프사진관 예약 | aether", "셀프사진관 예약", "부다페스트 현지 시간으로 셀프사진관 이용 시간을 선택하세요. 예약 요청 후 이메일로 확정 안내를 보내 드립니다."],
+  ["/selfie-post-booking", "예약 요청 접수 | aether 셀프사진관", "예약 요청을 받았습니다", "셀프사진관 예약 요청이 접수되었습니다. 24시간 이내에 이메일로 예약 확정 안내를 보내 드립니다."]
+];
+const koreanPages = koreanSelfieRoutes.map(([englishPath, title, h1, description]) => {
+  const source = localizedPages.find((page) => page.path === englishPath);
+  const path = `/ko${englishPath}`;
+  return { ...source, path, url: `${base}${path}`, language: "ko", title, h1, description, nav: false, counterpartPath: englishPath, alternatePaths: { ...source.alternatePaths, ko: path } };
+});
+export const pages = localizedPages.map((page) => {
+  const korean = koreanPages.find((candidate) => candidate.alternatePaths.en === page.alternatePaths.en);
+  return korean ? { ...page, alternatePaths: { ...page.alternatePaths, ko: korean.path } } : page;
+}).concat(koreanPages);
 
 export const pageByPath = new Map(pages.map((page) => [page.path, page]));
 
