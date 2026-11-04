@@ -765,7 +765,11 @@ const relatedHref = localizedPath("/packages", language);
 {page.section === "home" ? (
   <>
     <ImageHero variant="home" headingId="home-title" title={page.h1} eyebrow="aether art space" image={localizeImage(homeImages.hero)} icon={{ ...homeImages.icon, width: 450, height: 436 }}>
-      <a class="button button--inverted" data-gtag-event="booking_click" data-gtag-location="home" href={site.bookingUrl}><span class="home-hero__cta-desktop">{de ? "Studio buchen" : hu ? "foglalás" : "book the studio"}</span><span class="home-hero__cta-mobile">{de ? "Fotostudio buchen" : hu ? "foglalás" : "book the photostudio"}</span></a>
+      <div class="home-hero__choices" role="group" aria-label={de ? "Wähle dein Fotoerlebnis" : hu ? "Válaszd ki, mire van szükséged" : "Choose your photo experience"}>
+        <a class="button button--inverted" data-gtag-event="booking_click" data-gtag-location="home-hero-studio" href={localizedPath("/booking", language)}>{de ? "Studio mieten" : hu ? "Stúdiót bérelnék" : "Rent the studio"}</a>
+        <a class="button button--inverted" data-gtag-event="selfie_booking_click" data-gtag-location="home-hero-selfie" href={localizedPath("/selfie-studio-budapest", language)}>{de ? "Selfie-Fotoshooting" : hu ? "Szelfifotózást szeretnék" : "Selfie photoshoot"}</a>
+        <a class="button button--inverted" data-gtag-event="contact_click" data-gtag-location="home-hero-photographer" href={localizedPath("/photographers-budapest", language)}>{de ? "Fotografen buchen" : hu ? "Fotóst keresek" : "Book a photographer"}</a>
+      </div>
     </ImageHero>
     <section class="home-favourite home-favourite--home" aria-labelledby="favourite-title" data-reveal-section>
       <div class="home-favourite__intro" data-reveal-item>

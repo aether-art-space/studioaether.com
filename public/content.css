@@ -12,6 +12,9 @@
 .image-hero h1 { width: min(746px, calc(100% - 32px)); margin: 0; font: var(--font-hero); letter-spacing: 0; }
 .image-hero .button { flex-shrink: 0; margin-top: 26px; }
 .image-hero--home .image-hero__veil { background: rgb(0 0 0 / 34%); }
+.home-hero__choices { display: flex; justify-content: center; gap: 12px; width: 100%; margin-top: 26px; }
+.image-hero--home .home-hero__choices .button { min-width: 190px; margin-top: 0; }
+
 .image-hero--selfie .image-hero__image-wrap { height: 592px; clip-path: ellipse(88% 100% at 50% 0); }
 .image-hero--selfie .image-hero__image { object-position: center 48%; filter: grayscale(1); }
 .image-hero--selfie .image-hero__veil { background: rgb(255 255 255 / 62%); }
@@ -35,6 +38,9 @@
 .motion-ready [data-reveal-section].is-revealed [data-reveal-item] { opacity: 1; transform: translateY(0); }
 .motion-ready [data-gallery-image] { opacity: 0; transform: translateY(10px); transition: opacity 700ms ease-out, transform 800ms cubic-bezier(.22, 1, .36, 1); transition-delay: calc(min(var(--gallery-index, 0), 7) * 110ms); }
 .motion-ready [data-gallery-image].is-revealed { opacity: 1; transform: translateY(0); }
+@media (min-width: 761px) and (max-width: 1000px) {
+  .image-hero--home .image-hero__content { bottom: 107px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .image-hero--home .image-hero__icon { animation: none; }
   .studio-showcase__rent, .studio-showcase__book { animation: none !important; transition: none; }
@@ -1059,7 +1065,6 @@ summary { cursor: pointer; font: var(--font-card-title); }
 
 /* Wix mobile parity: the source switches to a compact, single-column composition
    at phone widths. Keep these rules together so the mobile contract is easy to audit. */
-.home-hero__cta-mobile { display: none; }
 .home-mobile-break { display: none; }
 @media (max-width: 760px) {
   .home-hero__image-wrap {
@@ -1087,8 +1092,6 @@ summary { cursor: pointer; font: var(--font-card-title); }
     padding: 0;
     font-size: 14px;
   }
-  .home-hero__cta-desktop { display: none; }
-  .home-hero__cta-mobile { display: inline; }
 
   .home-favourite {
     padding: 46px 18px 72px;
@@ -2041,6 +2044,10 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .image-hero--home .image-hero__icon { top: 9%; left: 34%; width: 32%; }
   .image-hero--home h1 { width: 100%; font-size: clamp(28px, 8vw, 38px); }
   .image-hero--home .button { width: 211px; min-width: 0; height: 42px; margin-top: 25px; padding: 0; font-size: 14px; }
+  .image-hero--home .image-hero__image-wrap { height: 640px; }
+  .home-hero__choices { flex-direction: column; align-items: center; gap: 10px; margin-top: 22px; }
+  .image-hero--home .home-hero__choices .button { width: min(260px, 70vw); min-width: 0; min-height: 44px; margin-top: 0; padding: 0 12px; }
+
   .image-hero--selfie .image-hero__image-wrap { height: 760px; clip-path: ellipse(120% 100% at 50% 0%); }
   .image-hero--selfie .image-hero__content { inset: 0; justify-content: center; padding: 74px 20px 72px; }
   .image-hero--selfie h1 { font-size: clamp(45px, 12vw, 62px); }

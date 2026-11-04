@@ -39,7 +39,7 @@ async function startStaticServer() {
     let file = join(root, safePath || 'index.html');
     try {
       try {
-        if ((await stat(file)).isDirectory()) file = join(file, 'index.html');
+        if ((await stat(file)).isDirectory()) file = existsSync(`${file}.html`) ? `${file}.html` : join(file, 'index.html');
       } catch {
         if (!extname(file) && existsSync(`${file}.html`)) file = `${file}.html`;
         else throw new Error(`No static file for ${pathname}`);
