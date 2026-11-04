@@ -19,6 +19,7 @@ interface Props {
   showLink?: boolean;
   image?: CardImage;
   className?: string;
+  headingLevel?: 2 | 3 | 4;
 }
 
 const {
@@ -30,16 +31,18 @@ const {
   linkLabel = "learn more",
   showLink = false,
   image,
-  className = ""
+  className = "",
+  headingLevel = 3
 } = Astro.props;
 
+const Heading = headingLevel === 2 ? "h2" : headingLevel === 4 ? "h4" : "h3";
 const cardClass = ["extras-card", image ? "extras-card--image" : "", className].filter(Boolean).join(" ");
 ---
 
 <article class={cardClass} data-reveal-item>
   {image && <ResponsiveImage image={image} role="card" className="extras-card__image" loading="lazy" />}
   {image ? <div class="extras-card__body">
-    <h4>{title}</h4>
+    <Heading class="extras-card__title">{title}</Heading>
     {description && <p class="extras-card__description">{description}</p>}
     <slot name="action" />
     {(priceLabel || price) && <div class="extras-card__price">
@@ -48,7 +51,7 @@ const cardClass = ["extras-card", image ? "extras-card--image" : "", className].
     </div>}
     {showLink && href && <a class="text-link" href={href}>{linkLabel}</a>}
   </div> : <>
-    <h4>{title}</h4>
+    <Heading class="extras-card__title">{title}</Heading>
     {description && <p class="extras-card__description">{description}</p>}
     <slot name="action" />
     {(priceLabel || price) && <div class="extras-card__price">

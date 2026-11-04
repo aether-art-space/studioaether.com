@@ -11,7 +11,7 @@ Conservative, static-first replacement for the Wix site. The first release is in
 - `src/pages/robots.txt.ts` and `src/pages/sitemap.xml.ts` generate crawl-control files from the same route data.
 - `scripts/validate.mjs` checks generated URL parity, metadata, canonical/hreflang coverage, JSON-LD, sitemap membership, redirects and internal links.
 
-This keeps the first release fast, crawlable and reversible. A framework can be introduced later if it does not change the emitted URL contract.
+This keeps the first release fast, crawlable and reversible. Changes to the framework must preserve the emitted URL contract.
 
 ## Run locally
 
@@ -31,26 +31,28 @@ The managed folders are `studio`, `selfie`, `props-*`, `mentoring-*`, `christmas
 
 Use `npm run gallery:sync` only when intentionally refreshing every managed gallery. For a named gallery release, use `npm run gallery:update -- --galleries=corporate` (or a comma-separated list such as `corporate,glamour`). It updates just those galleries and their manifest entries; normal `dev`, `check`, and build commands leave image assets alone.
 
-Releases are explicit too. Git is the source of truth, so push the release commits before deploying and always deploy the same commit that was reviewed:
+Releases are explicit too. Git is the source of truth, so commit and push source changes before building, then deploy the same commit that was reviewed. The release build creates `dist` first, runs type/route validation and both test suites against that output, then writes an ignored `output/release-manifest.json` containing the commit and a SHA-256 digest of every file in `dist`.
 
 ```bash
-# Confirm the worktree is clean and the release commit is on the shared branch.
-git status --short
+# Push the reviewed release commit, then update the remote tracking refs.
 git push origin main
+git fetch origin
 
-# Build and validate the production artifact.
+# Build and validate the production artifact from that pushed commit.
 npm run release:build
 
 # Publish the current HEAD to Cloudflare Pages.
 npm run release:publish
 ```
 
-After publishing, verify the deployment URL and the key English/Hungarian routes. `release:publish` uploads the verified `dist` artifact directly to Cloudflare Pages and records the current Git commit on the deployment. If a deployment is made before the push, push that exact commit afterward so `origin/main` remains synchronized; a Git push alone does not generate or deploy images automatically.
+The repository currently tracks `dist`, so the production build will show generated output changes after the source commit. Leave those generated files unstaged and uncommitted; the ignored manifest binds their current bytes to the source commit. `release:publish` checks that the manifest matches current `HEAD`, the `dist` digest is unchanged, relevant tracked source files are unchanged, and the commit is on `origin/main` after fetching it. Rebuild after any source, asset, or output change. Unrelated docs and Google Ads working files do not block release. After publishing, verify the deployment URL and key English/Hungarian routes. A Git push alone does not generate or deploy images automatically.
 
-The current page body is a conservative scaffold on routes not yet migrated. The English/Hungarian homepage and studio pair now use verified Wix copy and current studio facts; remaining routes are migrated page by page after their own source audit.
+## Current production health
 
-## Migration gates before DNS cutover
+The site is live on Cloudflare Pages with English, Hungarian and German routes plus the Korean selfie flow. The route contract covers 96 rendered routes, including 85 indexable URLs. Production build validation checks metadata, language alternates, links, images, structured offers and script CSP. The UI prototype lives outside the page router in `src/prototypes/`.
 
-The inventory and migration plan require source-level verification that is not available in a public search crawl. Before launch, replace the conservative fallback descriptions and complete the open decisions in `docs/MIGRATION.md` using Wix raw HTML, Search Console, backlinks, Google Ads landing-page exports, GA4 and consent configuration.
+`npm test` covers form privacy/timeouts, booking callbacks and artifact integrity. `npm run test:browser` exercises the generated site with mocked form/measurement providers and captures EN/HU/DE/KO screenshots. No test submits a real enquiry or booking. CI runs both suites and dependency auditing on PRs and main.
 
-The current implementation preserves `/photographer-daniel` and sitemap-discovered URLs pending Search Console/content review. `/mentoring` follows the observed Wix behavior with one direct 301 to `/photographer-mentoring-budapest`; this is covered by the route contract and build validator.
+`npm run health:production` performs a read-only live route/security/booking-fallback check. The production-health workflow runs daily and can be dispatched manually. See `docs/HEALTH-AUDIT-2026-11-04.md` for findings and `docs/HEALTH-RELEASE-2026-11-04.md` for implementation coverage and remaining account-side checks.
+
+Production scripts are externalized into content-addressed assets so CSP can omit script `unsafe-inline`. An optional HTTPS `CSP_REPORT_URI` build setting enables reports to an operator-provided endpoint; no reporting account is assumed. Fonts are self-hosted with their licenses in `public/fonts/`.

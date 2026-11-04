@@ -573,7 +573,6 @@ const localizedHomeFeatures: any = localizeGalleryImages(homeImages.features);
 const localizedHomePhotographers: any = localizeGalleryImages(homeImages.photographers);
 const localizedSelfieHero: any = localizeGalleryImages([selfieImages.hero])[0];
 const localizedSelfieBenefits: any = localizeGalleryImages(selfieImages.benefits);
-const localizedSelfieChristmasImages: any = localizeGalleryImages((seasonalImages as any).studioGallery.slice(0, 6));
 const localizedSelfieChristmasIntroImage: any = localizeImage((seasonalImages as any).studioIntro);
 const localizedStudioImages: any = localizeGalleryImages(studioImages);
 const localizedStudioBackdrops: any = localizeGalleryImages(studioBackdropImages);
@@ -756,7 +755,7 @@ const bookingPackages = de ? [
 const servicePackages = serviceType === "portrait" ? (photoPackageSets.portrait as any)[language] : servicePageAny?.packages ?? [];
 const specialPackages = specialType ? (photoPackageSets as any)[specialType][language] : [];
 const serviceUpgrades = weddingPage ? weddingCreativeUpgrades[language] : commonUpgrades[language];
-const serviceUpgradesWithLinks = serviceUpgrades.map((item: any) => ({ ...item, linkLabel: item.href?.startsWith("mailto:") ? (de ? "Angebot anfragen" : hu ? "kérj ajánlatot" : "ask for an offer") : (de ? "mehr erfahren" : hu ? "bővebben" : "learn more") }));
+const serviceUpgradesWithLinks = serviceUpgrades.map((item: any) => ({ ...item, linkLabel: item.href?.startsWith("mailto:") ? (de ? "Angebot anfragen" : hu ? "kérj ajánlatot" : "ask for an offer") : (de ? `${item.title} entdecken` : hu ? `${item.title} – részletek` : `Explore ${item.title}`) }));
 const serviceLinks = localizedNav(page.language).flatMap((group) => group.links)
   .filter(([path]) => path !== page.path)
   .slice(0, 4);
@@ -1404,6 +1403,7 @@ const relatedHref = localizedPath("/packages", language);
 )}
 
 <script>
+  import { submitWeb3Form } from "../../public/form-submission.js";
   const lightbox = document.querySelector<HTMLDialogElement>("[data-studio-lightbox]");
   const image = lightbox?.querySelector<HTMLImageElement>("[data-lightbox-image]");
   const lightboxAvif = lightbox?.querySelector<HTMLSourceElement>("[data-lightbox-avif]");
@@ -1600,22 +1600,13 @@ const relatedHref = localizedPath("/packages", language);
         formData.set("from_name", submitterName ? `${submitterName} via aether` : "aether art space");
         formData.set("subject", submitterName ? `Wedding enquiry — ${submitterName}` : "New wedding enquiry");
         formData.set("replyto", String(formData.get("email") || "").trim());
-        const response = await fetch(weddingForm.action, {
-          method: "POST",
-          body: formData,
-          headers: { Accept: "application/json" }
+        await submitWeb3Form(weddingForm, {
+          formData,
+          formType: "wedding_enquiry",
+          pagePath: window.location.pathname,
+          location: "wedding-page"
         });
-        const result = await response.json();
-        if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
-        const submittedEmail = String(formData.get("email") || "").trim().toLowerCase();
         weddingForm.reset();
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "contact_form_submit",
-          form_type: "wedding_enquiry",
-          page_path: window.location.pathname,
-          user_data: { email: submittedEmail }
-        });
         setWeddingStatus(document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk az elérhetőséggel." : "Thank you, we’ll be in touch soon about availability.");
       } catch {
         setWeddingStatus(document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your enquiry. Please email us instead.", true);

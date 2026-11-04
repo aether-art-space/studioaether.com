@@ -17,4 +17,8 @@ interface ImportMeta {
 
 interface Window {
   dataLayer: unknown[];
+  siteTracking?: Record<string, string>;
+  aetherApplyCookieConsent: (consent?: { analytics?: boolean; adMeasurement?: boolean; adPersonalization?: boolean }) => void;
+  aetherCookieConsent?: { analytics: boolean; adMeasurement?: boolean; adPersonalization?: boolean };
+  gtag?: (...args: unknown[]) => void;
 }

@@ -50,8 +50,8 @@ const socialImage = resolveImage({
   alt: page.h1
 }, "content");
 const socialImageUrl = absoluteUrl(socialImage.lightbox.fallback);
-const iconImage = resolveImage({ src: "/images/wix/jpg/logo-icon.jpg", alt: site.name }, "thumb");
-const iconImageUrl = absoluteUrl(iconImage.lightbox.fallback);
+const socialImagePath = new URL(socialImageUrl).pathname.toLowerCase();
+const socialImageMimeType = socialImagePath.endsWith(".png") ? "image/png" : socialImagePath.endsWith(".webp") ? "image/webp" : socialImagePath.endsWith(".avif") ? "image/avif" : socialImagePath.endsWith(".gif") ? "image/gif" : "image/jpeg";
 const languageCodes: Record<string, string> = { en: "en-us", hu: "hu-hu", de: "de-de", ko: "ko" };
 const socialLocales: Record<string, string> = { en: "en_US", hu: "hu_HU", de: "de_DE", ko: "ko_KR" };
 const alternates = Object.entries(page.alternatePaths || { [page.language]: page.path }).map(([language, path]) => ({ hreflang: languageCodes[language] || language, href: absoluteUrl(path) }));
@@ -368,7 +368,7 @@ if (page.path.endsWith("photographer-alexandra")) {
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:image" content={socialImageUrl} />
 <meta property="og:image:secure_url" content={socialImageUrl} />
-<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:type" content={socialImageMimeType} />
 <meta property="og:image:width" content={String(socialImage.lightbox.width || "")} />
 <meta property="og:image:height" content={String(socialImage.lightbox.height || "")} />
 <meta property="og:image:alt" content={page.h1} />

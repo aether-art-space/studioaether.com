@@ -1,5 +1,5 @@
 ---
-import { localizedPath } from "../lib/site.mjs";
+import { localizedPath, site } from "../lib/site.mjs";
 
 const { page } = Astro.props;
 const confirmationPath = localizedPath("/selfie-post-booking", page.language);
@@ -10,6 +10,8 @@ const copy = page.language === "ko"
   : page.language === "hu"
     ? { title: "Szelfi stúdió foglalása", fallback: "A foglalási naptár nem töltődött be. Próbáld újra, vagy írj nekünk e-mailt." }
     : { title: "Book the Selfie Studio", fallback: "The booking calendar could not be loaded. Please try again or email us." };
+const directLabel = page.language === "hu" ? "Foglalás megnyitása a Cal.com oldalon" : page.language === "de" ? "Buchung auf Cal.com öffnen" : page.language === "ko" ? "Cal.com 예약 페이지 열기" : "Open the booking page on Cal.com";
+const emailLabel = page.language === "hu" ? "E-mail küldése" : page.language === "de" ? "E-Mail schreiben" : page.language === "ko" ? "이메일 문의" : "Email us";
 ---
 
 <section class="selfie-booking-embed" aria-label={copy.title}>
@@ -21,6 +23,11 @@ const copy = page.language === "ko"
     data-selfie-booking-fallback={copy.fallback}
     aria-live="polite"
   ></div>
+  <p class="selfie-booking-embed__fallback-links">
+    <a href="https://cal.com/aether-studio/selfie-shoot" target="_blank" rel="noopener noreferrer">{directLabel}</a>
+    <span aria-hidden="true"> · </span><a href={`mailto:${site.email}`}>{emailLabel}</a>
+  </p>
+  <noscript><p>{copy.fallback} <a href="https://cal.com/aether-studio/selfie-shoot">{directLabel}</a> · <a href={`mailto:${site.email}`}>{emailLabel}</a></p></noscript>
 </section>
 
 <script is:inline>
@@ -46,10 +53,17 @@ const copy = page.language === "ko"
     };
 
     const handleEmbedFailure = () => {
-      if (container.querySelector("iframe")) return;
+      if (container.querySelector("iframe") || container.dataset.calFailed === "true") return;
+      container.dataset.calFailed = "true";
       container.textContent = fallback;
       container.classList.add("selfie-booking-embed__calendar--failed");
     };
+
+    // A blocked or stalled embed may never emit linkFailed. Keep the external
+    // Cal.com and email options visible below the calendar, and announce failure.
+    window.setTimeout(() => {
+      if (!container.querySelector("iframe")) handleEmbedFailure();
+    }, 15_000);
 
     // Cal.com queues these calls until its embed script is ready. Register both
     // action names because the hosted embed has used both during the transition
@@ -135,6 +149,9 @@ const copy = page.language === "ko"
     text-align: center;
     font: var(--text-body);
   }
+
+  .selfie-booking-embed__fallback-links { margin: 16px 0 0; text-align: center; }
+  .selfie-booking-embed__fallback-links a { text-underline-offset: 3px; }
 
   @media (max-width: 760px) {
     .selfie-booking-embed {

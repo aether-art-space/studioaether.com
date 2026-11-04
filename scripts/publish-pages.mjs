@@ -1,19 +1,19 @@
 import { execFileSync } from "node:child_process";
+import { validateArtifact } from "./release-artifact.mjs";
+import { verifyReleaseSources } from "./release-sources.mjs";
 
-const run = (command, args) => execFileSync(command, args, { stdio: "inherit" });
-const git = (args) => execFileSync("git", args, { encoding: "utf8" }).trim();
+verifyReleaseSources();
+const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
+if (branch !== "main") throw new Error(`Refusing to publish from ${branch || "a detached HEAD"}; check out main at the reviewed release commit.`);
+execFileSync("git", ["fetch", "origin", "main"], { stdio: "inherit" });
 
-const commitHash = git(["rev-parse", "HEAD"]);
-const commitMessage = git(["log", "-1", "--pretty=%s"]);
-
-run("npx", [
-  "wrangler",
-  "pages",
-  "deploy",
-  "dist",
+const manifest = await validateArtifact();
+const commitMessage = execFileSync("git", ["log", "-1", "--pretty=%s"], { encoding: "utf8" }).trim();
+execFileSync("node_modules/.bin/wrangler", [
+  "pages", "deploy", "dist",
   "--project-name=studioaether-com",
   "--branch=main",
-  `--commit-hash=${commitHash}`,
+  `--commit-hash=${manifest.commit}`,
   `--commit-message=${commitMessage}`,
-  "--commit-dirty=false"
-]);
+  "--commit-dirty=false",
+], { stdio: "inherit" });

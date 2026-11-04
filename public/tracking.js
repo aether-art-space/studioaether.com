@@ -179,6 +179,7 @@ window.aetherApplyCookieConsent = (consent) => {
     pendingExperimentView = null;
     sendExperimentEvent(eventName);
   }
+  document.dispatchEvent?.(new CustomEvent("aether:consent-change"));
 };
 
 document.addEventListener("click", (event) => {

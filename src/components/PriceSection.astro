@@ -60,6 +60,6 @@ const gridClass = ["service-package-grid", gridClassName].filter(Boolean).join("
   {lead && <p data-reveal-item>{lead}</p>}
   <slot name="tabs" />
   <div class={gridClass}>
-    {packages.map((packageItem) => <PriceCard title={packageItem.title} titleLines={packageItem.titleLines} titleAccent={packageItem.titleAccent} description={packageItem.description} descriptionLines={packageItem.descriptionLines} price={packageItem.price} priceEyebrow={priceEyebrow} hidePriceEyebrow={packageItem.hidePriceEyebrow} includesLabel={includesLabel} features={packageItem.features} cta={cta} />)}
+    {packages.map((packageItem) => <PriceCard headingLevel={heading ? 3 : 2} title={packageItem.title} titleLines={packageItem.titleLines} titleAccent={packageItem.titleAccent} description={packageItem.description} descriptionLines={packageItem.descriptionLines} price={packageItem.price} priceEyebrow={priceEyebrow} hidePriceEyebrow={packageItem.hidePriceEyebrow} includesLabel={includesLabel} features={packageItem.features} cta={cta} />)}
   </div>
 </section>

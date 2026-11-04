@@ -12,7 +12,8 @@ for (const [path, source] of html) {
   assert.match(source, /data-experiment="korean-selfie-v1"/);
   assert.equal((source.match(/<main\b/g) || []).length, 1);
   assert.doesNotMatch(source, /class="site-header"|class="site-footer"/);
-  assert.match(source, /"experimentGa4Id":"G-NFVD8Z3MN2"/);
+  const scripts = await Promise.all([...source.matchAll(/<script[^>]*src="(\/_astro\/[^"?]+)"[^>]*>/g)].map(async ([, src]) => fs.readFile(`dist${src}`, 'utf8')));
+  assert.match(scripts.join("\n"), /"experimentGa4Id":"G-NFVD8Z3MN2"/);
   assert.match(source, new RegExp(`rel="canonical" href="https://www.studioaether.com${path}"`));
 }
 assert.doesNotMatch(html.get(landing), /noindex/);
@@ -38,7 +39,7 @@ for (const path of [landing, booking, confirmation]) {
 const embed = await fs.readFile('src/components/SelfieBookingEmbed.astro', 'utf8');
 const script = embed.match(/<script is:inline>([\s\S]*?)<\/script>/)[1];
 const callbacks = new Map();
-const container = { dataset: { selfieConfirmationPath: confirmation }, querySelector: () => null };
+const container = { classList: { add() {} }, dataset: { selfieConfirmationPath: confirmation }, querySelector: () => null };
 let received = 0;
 const redirects = [];
 const document = {

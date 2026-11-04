@@ -93,7 +93,7 @@ for (const page of renderedPages) {
       "/apple-touch-icon.png",
       "/tracking.js",
       "/fonts/Jitter-Regular-hun-v2.ttf",
-      "/fonts/Jura-400.ttf"
+      "/fonts/jura-latin-400-normal.woff2"
     ].includes(link)) continue;
     if (link.startsWith("/_astro/")) {
       if (!(await fs.stat(path.join(dist, link.slice(1))).catch(() => null))?.isFile()) fail.push(`missing built asset ${link} from ${page.path}`);
@@ -103,6 +103,9 @@ for (const page of renderedPages) {
   }
   if (page.indexable === false && !html.includes('content="noindex,follow"')) fail.push(`missing noindex in production build: ${page.path}`);
   if (page.indexable !== false && html.includes('content="noindex')) fail.push(`unexpected noindex in production build: ${page.path}`);
+  for (const [, attributes, code] of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+    if (!/\bsrc=/.test(attributes) && code.trim() && !/type=["']application\/(?:ld\+)?json["']/.test(attributes)) fail.push(`executable inline script bypasses CSP: ${page.path}`);
+  }
   const jsonLdNodes = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/gis)].map((match) => JSON.parse(match[1]));
   if (jsonLdNodes.length === 0) fail.push(`missing JSON-LD: ${page.path}`);
   const faqNode = jsonLdNodes.find((node) => node["@type"] === "FAQPage");
@@ -150,6 +153,8 @@ for (const directive of ["img-src", "connect-src"]) {
     if (!cspDirectives.get(directive)?.includes(source)) fail.push(`missing Google measurement source in ${directive}: ${source}`);
   }
 }
+if (cspDirectives.get("script-src")?.includes("'unsafe-inline'")) fail.push("Production scripts allow unsafe-inline");
+if ((await fs.stat(path.join(dist, "ui-library-prototype.html")).catch(() => null))) fail.push("Prototype shipped in production output");
 if (!cspDirectives.get("connect-src")?.includes("https://analytics.google.com")) fail.push("Google Analytics connection blocked by CSP");
 
 if (fail.length) {

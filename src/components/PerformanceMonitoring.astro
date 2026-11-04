@@ -1,0 +1,24 @@
+<script>
+  import { reportVital, reportRuntimeError } from "../lib/healthMonitoring.mjs";
+  let started = false;
+  const reportedErrors = new Set<string>();
+  const start = async () => {
+    if (started || !window.siteTracking || window.aetherCookieConsent?.analytics !== true) return;
+    started = true;
+    try {
+      const { onCLS, onINP, onLCP } = await import("web-vitals");
+      onCLS(reportVital);
+      onINP(reportVital);
+      onLCP(reportVital);
+    } catch { /* Monitoring must never interrupt navigation or booking. */ }
+  };
+  const reportError = (source: string) => {
+    if (!window.siteTracking || window.aetherCookieConsent?.analytics !== true || reportedErrors.has(source)) return;
+    reportedErrors.add(source);
+    reportRuntimeError(source);
+  };
+  window.addEventListener("error", () => reportError("script"));
+  window.addEventListener("unhandledrejection", () => reportError("promise"));
+  document.addEventListener("aether:consent-change", start);
+  start();
+</script>

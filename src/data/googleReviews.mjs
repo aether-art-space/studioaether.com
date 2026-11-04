@@ -1,10 +1,10 @@
 // Static Google review summary. Refresh these values before each deploy.
-// Verified against the public Business Profile on 2026-09-08.
+// Verified against the public Google Maps Business Profile on 2026-11-04.
 export const googleReviewSummary = {
-  rating: "5.0",
-  reviewCount: 51,
-  checkedOn: "2026-09-08",
-  checkedLabel: "as of 8 Sep 2026",
-  checkedLabelHu: "2026.09.08.",
-  checkedLabelDe: "Stand: 8. Sep. 2026"
+  rating: "4.9",
+  reviewCount: 53,
+  checkedOn: "2026-11-04",
+  checkedLabel: "as of 4 Nov 2026",
+  checkedLabelHu: "2026.11.04.",
+  checkedLabelDe: "Stand: 4. Nov. 2026"
 };

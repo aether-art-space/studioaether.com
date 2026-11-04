@@ -15,6 +15,14 @@ Cloudflare Pages supports Git-backed builds and preview deployments for pull req
 
 ## Environment separation
 
+## Release and CI gate
+
+`.github/workflows/quality.yml` runs on pull requests and pushes to `main`. It installs from the lockfile, runs `npm run check` and the browser smoke suite, then creates and validates a production build. Successful `main` builds retain `dist` and `output/release-manifest.json` as a 14-day Actions artifact.
+
+For a Cloudflare release, push the reviewed commit to `main` and fetch `origin` before running `npm run release:build`. The command runs the type/route checks and browser smoke tests before building with the production hostname and GTM ID. It records the commit and a SHA-256 digest of all generated files in the ignored manifest. `npm run release:publish` refuses if the current commit differs, is not reachable from `origin/main`, relevant tracked source has changed, the manifest is absent, or any file in `dist` no longer matches the digest. Unrelated documentation and Google Ads working files are allowed. Run the release build again whenever source or output changes.
+
+The preview-only `npm run build:github` path does not create a production manifest and cannot be passed to the production publisher.
+
 ### Production
 
 - Built from `main`.

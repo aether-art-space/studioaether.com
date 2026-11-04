@@ -1,5 +1,6 @@
 ---
 import Seo from "../components/Seo.astro";
+import PerformanceMonitoring from "../components/PerformanceMonitoring.astro";
 import CookieConsent from "../components/CookieConsent.astro";
 import ContactModal from "../components/ContactModal.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -19,9 +20,9 @@ const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.
     {!preview && <meta name="google-site-verification" content="b_x-KWZ6Ick8sQOdGXlWWSpVSDiR3t2ggAL-2uZXSik" />}
     <Seo page={page} />
     <link rel="preload" href="/fonts/Jitter-Regular-hun-v2.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/Jura-400.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/site.css?v=20260909-19" />
-    <link rel="stylesheet" href="/content.css?v=20260919-01" />
+    <link rel="preload" href="/fonts/jura-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/site.css?v=20261104-01" />
+    <link rel="stylesheet" href="/content.css?v=20261104-01" />
   </head>
   <body>
     <a class="skip-link" href="#main">{page.language === "de" ? "Zum Inhalt springen" : page.language === "hu" ? "Ugrás a tartalomhoz" : "Skip to content"}</a>
@@ -31,6 +32,7 @@ const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.
     <ContactModal page={page} />
     <CookieConsent page={page} enabled={consentEnabled} />
     <GoogleReviewBar language={page.language} />
+    <PerformanceMonitoring />
     <script>
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 

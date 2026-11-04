@@ -1,5 +1,6 @@
 ---
 import Seo from "../components/Seo.astro";
+import PerformanceMonitoring from "../components/PerformanceMonitoring.astro";
 import ResponsiveImage from "../components/ResponsiveImage.astro";
 import CookieConsent from "../components/CookieConsent.astro";
 import { site } from "../data/routes.mjs";
@@ -17,8 +18,8 @@ const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {!preview && <meta name="google-site-verification" content="b_x-KWZ6Ick8sQOdGXlWWSpVSDiR3t2ggAL-2uZXSik" />}
     <Seo page={page} />
-    <link rel="stylesheet" href={sitePath("/site.css?v=20260909-19")} />
-    <link rel="stylesheet" href={sitePath("/content.css?v=20260919-01")} />
+    <link rel="stylesheet" href={sitePath("/site.css?v=20261104-01")} />
+    <link rel="stylesheet" href={sitePath("/content.css?v=20261104-01")} />
   </head>
   <body class="korean-selfie" data-experiment="korean-selfie-v1">
     <a class="skip-link" href="#main">본문으로 바로 가기</a>
@@ -50,6 +51,7 @@ const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.
       </div>
     </footer>
     <CookieConsent page={page} enabled={consentEnabled} />
+    <PerformanceMonitoring />
   </body>
 </html>
 <style is:global>

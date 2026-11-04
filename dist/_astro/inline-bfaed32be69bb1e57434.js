@@ -1,0 +1,1 @@
+window.siteTracking={"gtmId":"GTM-P6G8NTP2","googleTagId":"","ga4Id":"","googleAdsId":""};

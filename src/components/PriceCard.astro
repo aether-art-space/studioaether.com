@@ -14,6 +14,7 @@ interface Props {
   highlightedFeatures?: number[];
   includesLabel?: string;
   className?: string;
+  headingLevel?: 2 | 3;
   descriptionAbovePrice?: boolean;
   cta?: {
     label: string;
@@ -39,21 +40,23 @@ const {
   highlightedFeatures = [],
   includesLabel,
   className = "",
+  headingLevel = 3,
   descriptionAbovePrice = false,
   cta
 } = Astro.props;
 
 const isSimpleCard = !description && descriptionLines.length === 0 && !includesLabel && features.length === 0;
+const Heading = headingLevel === 2 ? "h2" : "h3";
 const hasCta = Boolean(cta?.href || cta?.contact);
 ---
 
 <article class={`price-card ${isSimpleCard ? "price-card--simple" : ""} ${className}`.trim()} data-reveal-item>
   <header class="price-card__header">
     {eyebrow && <p class="price-card__eyebrow">{eyebrow}</p>}
-    <h3>
+    <Heading class="price-card__title">
       {titleLines.length > 0 ? titleLines.map((line, index) => <span>{line}{index < titleLines.length - 1 && <br />}</span>) : title}
       {titleAccent && <><br /><span class="price-card__accent">{titleAccent}</span></>}
-    </h3>
+    </Heading>
     {!descriptionAbovePrice && (descriptionLines.length > 0
       ? <div class="price-card__description price-card__description--lines">{descriptionLines.map((line) => <p class={line.bold ? "price-card__description-line--bold" : ""}>{line.text || "\u00a0"}</p>)}</div>
       : description && <p class="price-card__description">{description}</p>)}

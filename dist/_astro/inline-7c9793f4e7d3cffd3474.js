@@ -1,0 +1,1 @@
+document.querySelectorAll(`.mobile-menu`).forEach(e=>{e.querySelector(`.mobile-nav-overlay`)?.addEventListener(`click`,()=>e.removeAttribute(`open`))});

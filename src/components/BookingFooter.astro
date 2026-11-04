@@ -85,6 +85,7 @@ const headingId = `footer-booking-title-${variantKey}`;
 </dialog>}
 
 {includeContactModal && <script>
+  import { submitWeb3Form } from "../../public/form-submission.js";
   const contactModal = document.querySelector<HTMLDialogElement>("[data-contact-modal]");
   const contactOpens = [...document.querySelectorAll<HTMLButtonElement>("[data-contact-open]")];
   const contactClose = contactModal?.querySelector<HTMLButtonElement>("[data-contact-close]");
@@ -118,30 +119,12 @@ const headingId = `footer-booking-title-${variantKey}`;
       setContactStatus(document.documentElement.lang === "de" ? "Wird gesendet …" : document.documentElement.lang === "hu" ? "Küldés…" : "Sending…");
 
       try {
-        const formData = new FormData(contactForm);
-        const submitterName = String(formData.get("name") || "").trim();
-        formData.set("from_name", submitterName ? `${submitterName} via aether` : "aether art space");
-        formData.set("subject", submitterName ? `Website enquiry — ${submitterName}` : "New website enquiry");
-        formData.set("replyto", String(formData.get("email") || "").trim());
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: formData,
-          headers: { Accept: "application/json" }
-        });
-        const result = await response.json();
-        if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
-        const submittedEmail = String(formData.get("email") || "").trim().toLowerCase();
+        await submitWeb3Form(contactForm, { formType: "general_contact", pagePath: window.location.pathname, location: "footer-contact-modal" });
         contactForm.reset();
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "contact_form_submit",
-          form_type: "general_contact",
-          page_path: window.location.pathname,
-          user_data: { email: submittedEmail }
-        });
         setContactStatus(document.documentElement.lang === "de" ? "Danke, wir melden uns bald bei dir." : document.documentElement.lang === "hu" ? "Köszönjük, hamarosan jelentkezünk." : "Thank you, we’ll be in touch soon.");
-      } catch {
-        setContactStatus(document.documentElement.lang === "de" ? "Deine Nachricht konnte nicht gesendet werden. Schreib uns bitte eine E-Mail." : document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead.", true);
+      } catch (error) {
+        const detail = error instanceof Error ? error.message : "";
+        setContactStatus(detail || (document.documentElement.lang === "de" ? "Deine Nachricht konnte nicht gesendet werden. Schreib uns bitte eine E-Mail." : document.documentElement.lang === "hu" ? "A küldés nem sikerült. Kérjük, írj nekünk e-mailt." : "We couldn’t send your message. Please email us instead."), true);
       } finally {
         if (submitButton) submitButton.disabled = false;
       }
