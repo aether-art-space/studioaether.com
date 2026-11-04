@@ -3,7 +3,7 @@ import { studioPricing } from "../data/studioPricing.mjs";
 import { bookingExtrasFor } from "../data/bookingExtras.mjs";
 import { idPhotoPricing } from "../data/idPhotoPricing.mjs";
 import {
-  selfieContent, residentArtistContent, modelsContent, packagesContent, commonUpgrades,
+  selfieContent, residentArtistContent, modelsContent, packagesContent, commonUpgrades, weddingCreativeUpgrades,
   serviceContent, mentoringContent, photoPackageSets, equipmentCaptions, propsContent
 } from "../data/content.mjs";
 
@@ -169,7 +169,7 @@ export function serviceOffersFor(page, { origin = site.domain } = {}) {
   ];
   const commonExtraPage = commonExtraPages.find(([key]) => route(key));
   const hasUpgradeCards = ["/packages", "/christmas-photoshoot", "/christmas-studio", "/booking"].some(route);
-  const extras = commonExtraPage ? commonUpgrades[lang] : hasUpgradeCards ? packagesContent[lang]?.upgrades : [];
+  const extras = commonExtraPage ? (route("/wedding-photography") ? weddingCreativeUpgrades[lang] : commonUpgrades[lang]) : hasUpgradeCards ? packagesContent[lang]?.upgrades : [];
   for (const extra of extras || []) {
     if (route("/booking") && !extra.href?.startsWith("mailto:")) continue;
     add({ name: extra.title, description: extra.description, price: `from ${extra.price}`, anchor: commonExtraPage?.[1], service: extra.title });

@@ -64,7 +64,11 @@ for (const page of pages.filter(p => p.disposition !== 'redirect')) {
     }
   }
   const creativeExtraPages = new Set(['/selfie-studio-budapest', '/booking', '/packages', '/christmas-photoshoot', '/christmas-studio', '/glamour-boudoir-photography-budapest', '/model-polaroids-budapest', '/portrait-photography-budapest', '/fitness', '/wedding-photography']);
-  if (creativeExtraPages.has(base)) {
+  if (base === '/wedding-photography') {
+    for (const price of [30000, 20000, 35000]) {
+      check(offers.some(o => o.price === undefined && o.priceSpecification?.minPrice === price), `${page.path}: missing wedding extra starting price: ${price}`);
+    }
+  } else if (creativeExtraPages.has(base)) {
     for (const key of ['makeup', 'styling', 'team']) {
       check(offers.some(o => o.price === undefined && o.priceSpecification?.minPrice === creativePrices[key]), `${page.path}: missing creative extra starting price: ${key}`);
     }

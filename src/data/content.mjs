@@ -1403,6 +1403,12 @@ photoPackageSets.models.de = [
   { title: "Komplettes Model-Portfolio-Paket", description: "Präsentiere dich mit einem gedruckten Lookbook und einem vielseitigen Portfolio professionell.", price: "149.000 HUF", features: ["4 standardisierte Model-Digitals", "PDF-Modelkarte", "genug Fotos für dein 30-seitiges Lookbook", "bis zu 3 Outfits", "bis zu 3 Sets", "Studio-Miete inklusive"] }
 ];
 
+export const weddingCreativeUpgrades = Object.fromEntries(["en", "hu", "de"].map((language) => [language, [
+  { title: language === "hu" ? "Menyasszonyi smink" : language === "de" ? "Braut-Make-up" : "Bridal Makeup", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "30.000 HUF", href: `${language === "en" ? "" : `/${language}`}/make-up-artists` },
+  { title: language === "hu" ? "Menyasszonyi frizura" : language === "de" ? "Brautfrisur" : "Bridal Hair", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "20.000 HUF", href: `${language === "en" ? "" : `/${language}`}/make-up-artists` },
+  { title: "Styling", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "35.000 HUF", href: `${language === "en" ? "" : `/${language}`}/stylists` }
+]]));
+
 export const commonUpgrades = {
   en: [
     { title: "Add Make up & Hair", priceLabel: "starting at", price: creativePrice("makeup", "en"), href: "/make-up-artists" },

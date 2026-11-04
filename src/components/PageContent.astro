@@ -4,7 +4,7 @@ import { idPhotoPricing } from "../data/idPhotoPricing.mjs";
 import { bookingExtrasFor } from "../data/bookingExtras.mjs";
 import { studioPriceLabels } from "../data/studioPricing.mjs";
 import { faqGroupsFor, introFor, site, localizedNav, localizedPath, naturalGerman } from "../lib/site.mjs";
-import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, propsCaptions, residentArtistContent, residentArtistImages, modelsContent, modelImages, modelDigitalsGuideContent, packagesContent, photoPackageSets, commonUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, selfiePostBookingContent, weddingContent, weddingContentCreation, weddingCategoryGalleries, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
+import { homeContent, studioContent, studioImages, studioGalleryImages, studioBackdropImages, selfieContent, selfieImages, equipmentContent, equipmentImages, equipmentCaptions, propsContent, propsImages, propsCaptions, residentArtistContent, residentArtistImages, modelsContent, modelImages, modelDigitalsGuideContent, packagesContent, photoPackageSets, commonUpgrades, weddingCreativeUpgrades, serviceContent, serviceImages, corporateGalleryImages, specialContent, specialImages, mentoringContent, mentoringImages, seasonalContent, seasonalImages, profileContent, profileImages, postBookingContent, selfiePostBookingContent, weddingContent, weddingContentCreation, weddingCategoryGalleries, weddingImages, weddingSectionImages, legalContent, homeImages } from "../data/content.mjs";
 import ArtistCard from "./ArtistCard.astro";
 import CircularCard from "./CircularCard.astro";
 import ExtrasCard from "./ExtrasCard.astro";
@@ -755,7 +755,7 @@ const bookingPackages = de ? [
 ];
 const servicePackages = serviceType === "portrait" ? (photoPackageSets.portrait as any)[language] : servicePageAny?.packages ?? [];
 const specialPackages = specialType ? (photoPackageSets as any)[specialType][language] : [];
-const serviceUpgrades = commonUpgrades[language];
+const serviceUpgrades = weddingPage ? weddingCreativeUpgrades[language] : commonUpgrades[language];
 const serviceUpgradesWithLinks = serviceUpgrades.map((item: any) => ({ ...item, linkLabel: item.href?.startsWith("mailto:") ? (de ? "Angebot anfragen" : hu ? "kérj ajánlatot" : "ask for an offer") : (de ? "mehr erfahren" : hu ? "bővebben" : "learn more") }));
 const serviceLinks = localizedNav(page.language).flatMap((group) => group.links)
   .filter(([path]) => path !== page.path)
