@@ -37,12 +37,10 @@ export const koreanSelfie = {
   pricesHeading: '셀프사진관 가격',
   prices: en.prices.map(([, , price], index) => [
     ['미니 셀프 세션', '셀프 세션', '사진 보정'][index],
-    index === 2 ? ['원하는 사진을 전문적으로 보정'] : ['1–6명', '촬영 횟수 무제한'],
+    index === 2 ? ['원하는 사진을 전문적으로 보정'] : ['1–4명', '촬영 횟수 무제한'],
     String(price).replace(/10\.990\./, '10,990').replace(/16\.990/, '16,990').replace('5000', '5,000').replace('/ 30 min', '/ 30분').replace('/ hour', '/ 60분').replace('/ photo', '/ 장')
   ]),
-  reserveHeading: '셀프사진관 예약',
-  reserveCopy: '부다페스트 현지 시간으로 원하는 촬영 시간을 선택하세요. 예약 요청은 이메일 확인 후 확정됩니다.',
-  reserveCta: '예약하기',
+  groupInfo: '4명을 초과하는 단체도 이용할 수 있습니다. 4명 초과 시 추가 인원 1명당 2,000 HUF가 부과됩니다.',
   szegedHeading: '세게드 스튜디오도 만나보세요!',
   szegedCopy: '세게드의 미니 셀프사진관에서도 같은 가격으로 촬영할 수 있습니다.',
   szegedCta: '세게드 셀프사진관 (영어)'

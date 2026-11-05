@@ -342,15 +342,13 @@ export const selfieContent = {
     ],
     pricesHeading: "Friendliest prices in town",
     prices: [
-      ["Mini Selfie Session", ["1-6 people", "unlimited pictures"], "10.990. HUF / 30 min", "price-01"],
-      ["Selfie Session", ["1-6 people", "unlimited pictures"], "16.990 HUF / hour", "price-02"],
+      ["Mini Selfie Session", ["1–4 people", "unlimited pictures"], "10.990. HUF / 30 min", "price-01"],
+      ["Selfie Session", ["1–4 people", "unlimited pictures"], "16.990 HUF / hour", "price-02"],
       ["Retouching service", ["Get your favourite pictures professionally retouched"], "5000 HUF / photo", "price-03"]
     ],
     extrasHeading: "Extras",
     extras: [["Large Angel Wings", "HUF 8,000 per booking"], ["Live White Snake", "HUF 15,000", "let us know in advance please!"], ["Smoke machine", "HUF 5,000 per booking"]],
-    reserveHeading: "Reserve your spot",
-    reserveCopy: "Don’t miss your chance to experience Budapest’s most creative photo studio!",
-    reserveCta: "Book Now",
+    groupInfo: "More than 4 people? Larger groups are welcome for an additional 2,000 HUF per person above 4.",
     szegedHeading: "Check out our location in Szeged!",
     szegedCopy: "Our Szeged mini selfie studio is the first one in the city.\n\nSame prices, same friendly atmosphere, and the same attention to detail—go check it out!",
     szegedCta: "Szeged Selfie Space"
@@ -388,15 +386,13 @@ export const selfieContent = {
     ],
     pricesHeading: "Legjobb árak Budapesten",
     prices: [
-      ["Mini Szelfi Fotózás", ["1-6 fő", "korlátlan kép"], "10.990. Ft / 30 perc", "price-01"],
-      ["Szelfi fotózás", ["1-6 fő", "korlátlan kép"], "16.990. Ft / óra", "price-02"],
+      ["Mini Szelfi Fotózás", ["1–4 fő", "korlátlan kép"], "10.990. Ft / 30 perc", "price-01"],
+      ["Szelfi fotózás", ["1–4 fő", "korlátlan kép"], "16.990. Ft / óra", "price-02"],
       ["Retusálás", ["Retusáltasd ki magazin minőségre a kedvenc képeid."], "5.000. Ft / fotó", "price-03"]
     ],
     extrasHeading: "Extrák",
     extras: [["Nagy Angyalszárny", "8 000 Ft/foglalás"], ["Élő fehér kígyó", "15 000 Ft", "Előzetes foglalás szükséges!"], ["Füstgép", "5 000 Ft/foglalás"]],
-    reserveHeading: "Foglald le a helyed",
-    reserveCopy: "Ne hagyd ki a lehetőséget, hogy kipróbáld Budapest legkreatívabb fotóstúdióját!",
-    reserveCta: "Foglalj Most",
+    groupInfo: "Négy főnél többen érkeznétek? Nagyobb csoportokat is várunk: 4 fő felett minden további résztvevő díja 2 000 Ft/fő.",
     szegedHeading: "Nézd meg a szegedi stúdiónkat is!",
     szegedCopy: "Megnyitottuk Szeged első szelfistúdióját!\n\nUgyanazok az árak, barátságos atmoszféra és a részletekre fordított figyelem vár, mint az első helyszínünkön. Nézd meg:",
     szegedCta: "Szeged Selfie Space"
@@ -434,15 +430,13 @@ export const selfieContent = {
     ],
     pricesHeading: "faire Preise in Budapest",
     prices: [
-      ["Mini-Selfie-Session", ["1–6 Personen", "unbegrenzt viele Fotos"], "10.990 HUF / 30 Min.", "price-01"],
-      ["Selfie-Session", ["1–6 Personen", "unbegrenzt viele Fotos"], "16.990 HUF / Stunde", "price-02"],
+      ["Mini-Selfie-Session", ["1–4 Personen", "unbegrenzt viele Fotos"], "10.990 HUF / 30 Min.", "price-01"],
+      ["Selfie-Session", ["1–4 Personen", "unbegrenzt viele Fotos"], "16.990 HUF / Stunde", "price-02"],
       ["Retusche", ["Lass deine Lieblingsfotos professionell retuschieren."], "5.000 HUF / Foto", "price-03"]
     ],
     extrasHeading: "Extras",
     extras: [["große Engelsflügel", "8.000 HUF pro Buchung"], ["lebende weiße Schlange", "15.000 HUF", "bitte vorher Bescheid geben!"], ["Nebelmaschine", "5.000 HUF pro Buchung"]],
-    reserveHeading: "Reserviere deinen Termin",
-    reserveCopy: "Verpasse nicht die Gelegenheit, Budapests kreativstes Fotostudio zu erleben!",
-    reserveCta: "Jetzt buchen",
+    groupInfo: "Mehr als 4 Personen? Größere Gruppen sind willkommen: Für jede weitere Person über 4 berechnen wir zusätzlich 2.000 HUF.",
     szegedHeading: "Entdecke auch unseren Standort in Szeged!",
     szegedCopy: "Unser Mini-Selfie-Studio in Szeged ist das erste der Stadt.\n\nDie gleichen Preise, die gleiche freundliche Atmosphäre und dieselbe Liebe zum Detail – schau vorbei!",
     szegedCta: "Szeged Selfie Space"

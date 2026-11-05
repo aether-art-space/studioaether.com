@@ -916,7 +916,7 @@ const relatedHref = localizedPath("/packages", language);
       <PriceSection className="selfie-prices__packages" gridClassName="selfie-prices__grid" heading={selfie.pricesHeading} headingId="selfie-prices-title" packages={selfiePackages} cta={priceCardCtas.selfie}>
         {!ko && <PricingTabs slot="tabs" language={page.language} active="selfie" />}
       </PriceSection>
-      <div class="selfie-reserve"><h3>{selfie.reserveHeading}</h3><p>{selfie.reserveCopy}</p><a class="button button--dark" data-gtag-event="selfie_booking_click" data-gtag-location="selfie-studio-reserve" href={localizedPath("/selfie-booking", page.language)}>{selfie.reserveCta}</a></div>
+      <InfoBox class="selfie-group-info"><p>{selfie.groupInfo}</p></InfoBox>
     </section>
     <ExtrasSection heading={ko ? "추가 서비스" : de ? "Zusatzleistungen" : hu ? "kiegészítő szolgáltatások" : "upgrade your shoot"} intro={[ko ? "셀프 촬영에 추가 서비스를 이용해 보세요." : de ? "Mach mehr aus deiner Selfie-Session." : hu ? "Emeld új szintre a szelfifotózásodat!" : "Take your selfie session to the next level." ]} items={ko ? serviceUpgradesWithLinks.map((item: any, index: number) => ({ ...item, title: ["메이크업과 헤어", "스타일링", "전체 크리에이티브 팀"][index], priceLabel: "시작 가격", linkLabel: index === 2 ? "이메일 문의 (영어)" : "자세히 보기 (영어)" })) : serviceUpgradesWithLinks} showLinks headingId="selfie-extras-title">
       <div class="selfie-extras-contact">

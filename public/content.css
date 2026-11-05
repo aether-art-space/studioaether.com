@@ -340,9 +340,8 @@
 
 .selfie-prices { min-height: 0; padding: 57px 24px 40px; border-top: 1px solid var(--line); background: var(--paper); text-align: center; overflow: hidden; }
 .selfie-prices__packages { max-width: var(--content-max); margin: 0 auto; padding: 0; }
-.selfie-reserve { width: min(907px, 100%); margin: 32px auto 0; text-align: center; }
-.selfie-reserve p { margin: 0; font: var(--text-body); }
-.selfie-reserve .button { margin-top: 26px; }
+.selfie-group-info { max-width: min(907px, 100%); margin: 24px auto 0; text-align: left; }
+.selfie-group-info p { margin: 0; font: var(--text-body); }
 
 .selfie-location { min-height: 430px; padding: 0; border-top: 1px solid var(--line); overflow: hidden; background: var(--paper); }
 .selfie-location__inner { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; min-height: 430px; margin: 0 auto; }
@@ -389,8 +388,7 @@
   .selfie-benefits { height: auto; min-height: 0; }
   .selfie-prices { height: auto; min-height: 0; padding: 48px 18px 40px; }
   .selfie-prices__packages { padding: 0; }
-  .selfie-reserve { margin-top: 32px; }
-  .selfie-reserve p { font: 400 15px/22.5px var(--sans); }
+  .selfie-group-info p { font: 400 15px/22.5px var(--sans); }
   .selfie-location { min-height: 0; }
   .selfie-location__inner { display: grid; grid-template-columns: 1fr; min-height: 0; width: 100%; }
   .selfie-location__visual { min-height: 360px; padding: 36px 24px; }
