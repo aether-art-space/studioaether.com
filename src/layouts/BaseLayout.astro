@@ -31,7 +31,7 @@ const consentEnabled = !preview && Boolean(site.tracking.gtmId || site.tracking.
     <SiteFooter page={page} consentEnabled={consentEnabled} />
     <ContactModal page={page} />
     <CookieConsent page={page} enabled={consentEnabled} />
-    <GoogleReviewBar language={page.language} />
+    {!page.path.includes("post-booking") && <GoogleReviewBar language={page.language} />}
     <PerformanceMonitoring />
     <script>
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

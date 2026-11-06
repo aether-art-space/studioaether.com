@@ -1,0 +1,40 @@
+---
+import { ClockIcon, CreditCardIcon, MapPinIcon, ArrowUpRightIcon, ShieldCheckIcon } from '@phosphor-icons/react/ssr';
+import InfoBox from './InfoBox.astro';
+import { site } from '../data/routes.mjs';
+const { page, content } = Astro.props;
+const hu = page.language === 'hu';
+const de = page.language === 'de';
+const rules = hu ? ['Szabályaink', ['A hátterekre cipő nélkül vagy alaposan megtisztított cipőben léphetsz.', 'A hátterek használata ingyenes, ha makulátlan állapotban maradnak. Sérülés esetén 10 000 Ft díjat számítunk fel.']] : de ? ['Unsere Regeln', ['Betritt die Hintergründe bitte ohne Schuhe oder mit gründlich gereinigten Schuhen.', 'Die Nutzung der Hintergründe ist kostenlos, solange sie makellos bleiben. Bei Beschädigung berechnen wir 10.000 HUF.']] : ['Our rules', ['Please step onto the backdrops without shoes or with thoroughly cleaned shoes.', 'Backdrop use is free as long as they remain spotless. If a backdrop is damaged, a 10,000 HUF fee applies.']];
+const copy = hu ? { next: 'A fotózásod előtt', timing: '7 napon belül, de több mint 24 órával előtte', late: '24 órán belül', half: 'A foglalási díj 50%-a', full: 'A teljes foglalási díj', directions: 'Útvonaltervezés', doorbell: 'Földszint 4. · 4-es kapucsengő', email: 'Írj nekünk', call: 'Hívj minket' } : de ? { next: 'Vor deiner Session', timing: 'Innerhalb von 7 Tagen, mehr als 24 Stunden vorher', late: 'Innerhalb von 24 Stunden', half: '50 % der Buchungsgebühr', full: 'Die volle Buchungsgebühr', directions: 'Route planen', doorbell: 'Erdgeschoss 4 · Klingel Nr. 4', email: 'E-Mail schreiben', call: 'Anrufen' } : { next: 'Before your session', timing: 'Within 7 days, more than 24 hours before', late: 'Within 24 hours', half: '50% of the booking fee', full: 'The full booking fee', directions: 'Get directions', doorbell: 'Ground floor 4 · Doorbell #4', email: 'Email us', call: 'Call us' };
+---
+<div class="selfie-confirmation">
+  <header class="selfie-confirmation__header">
+    <h1 id="selfie-post-booking-title">{page.h1}</h1>
+    <InfoBox class="selfie-confirmation__status"><p>{content.intro}</p></InfoBox>
+  </header>
+  <section aria-labelledby="selfie-preparation-title">
+    <h2 id="selfie-preparation-title">{copy.next}</h2>
+    <div class="selfie-confirmation__cards">
+      {[{ section: content.sections[2], Icon: ClockIcon }, { section: content.sections[1], Icon: CreditCardIcon }, { section: rules, Icon: ShieldCheckIcon }].map(({section, Icon}) => <section class="selfie-confirmation__card">
+        <div class="selfie-confirmation__card-heading"><Icon size={28} weight="regular" aria-hidden="true" /><h3>{section[0]}</h3></div>
+        {section[1].map((text: string) => <p>{text}</p>)}
+      </section>)}
+    </div>
+  </section>
+  <section class="selfie-confirmation__cancellation" aria-labelledby="selfie-cancellation-title">
+    <h2 id="selfie-cancellation-title">{content.sections[0][0]}</h2>
+    <p>{content.sections[0][1][0]}</p>
+    <dl class="selfie-confirmation__fees">
+      <div><dt>{copy.timing}</dt><dd>{copy.half}</dd></div>
+      <div><dt>{copy.late}</dt><dd>{copy.full}</dd></div>
+    </dl>
+    <div class="selfie-confirmation__contact"><a href={`mailto:${site.email}`}>{copy.email}</a><a href="tel:+36703861739">{copy.call}</a></div>
+  </section>
+  <section class="selfie-confirmation__location" aria-label={hu ? 'Itt találkozunk' : de ? 'Hier findest du uns' : 'Find us here'}>
+    <MapPinIcon size={28} weight="regular" aria-hidden="true" />
+    <div><h2>aether art space</h2><p>1093 Budapest, Lónyay utca 60.<br />{copy.doorbell}</p></div>
+    <a class="button button--secondary" href={site.mapsUrl} target="_blank" rel="noreferrer noopener">{copy.directions}<ArrowUpRightIcon size={18} aria-hidden="true" /></a>
+  </section>
+  <p class="selfie-confirmation__closing">{content.closing[1]}</p>
+</div>

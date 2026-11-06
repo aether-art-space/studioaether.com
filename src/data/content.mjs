@@ -1795,8 +1795,8 @@ export const selfiePostBookingContent = {
         "Payment is made on site by cash or card.",
         "We issue an official VAT invoice on site."
       ]],
-      ["Arriving", [
-        "Your session starts at the reserved time. Please arrive a few minutes early so you can settle in.",
+      ["Your time", [
+        "Your session starts at your booked time. Please avoid arriving much earlier, as entry before your booking is not guaranteed.",
         "Your booking includes setup and cleanup time. Please leave the studio as you found it."
       ]]
     ]
@@ -1815,8 +1815,8 @@ export const selfiePostBookingContent = {
         "A helyszínen készpénzzel vagy bankkártyával fizethetsz.",
         "A helyszínen hivatalos, áfás számlát állítunk ki."
       ]],
-      ["Érkezés", [
-        "A foglalásod a lefoglalt időpontban kezdődik. Kérjük, érkezz néhány perccel korábban, hogy legyen időd megérkezni.",
+      ["A te időd", [
+        "A foglalásod a lefoglalt időpontban kezdődik. Kérjük, ne érkezz jóval korábban, mert az időpontod előtti bejutást nem tudjuk garantálni.",
         "A foglalási idő a berendezést és az elpakolást is tartalmazza. Kérjük, úgy add vissza a stúdiót, ahogy kaptad."
       ]]
     ]
@@ -1835,8 +1835,8 @@ export const selfiePostBookingContent = {
         "Du zahlst vor Ort bar oder mit Karte.",
         "Eine offizielle Rechnung mit Mehrwertsteuer erhältst du vor Ort."
       ]],
-      ["Ankunft", [
-        "Deine Session beginnt zur reservierten Zeit. Komm bitte ein paar Minuten früher, damit du in Ruhe ankommen kannst.",
+      ["Deine Zeit", [
+        "Deine Session beginnt zur gebuchten Zeit. Bitte komm nicht viel früher, da wir den Einlass vor deinem Termin nicht garantieren können.",
         "Auf- und Abbau gehören zur Buchungszeit. Bitte hinterlasse das Studio so, wie du es vorgefunden hast."
       ]]
     ]

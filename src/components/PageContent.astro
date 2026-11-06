@@ -12,6 +12,7 @@ import GalleryLightbox from "./GalleryLightbox.astro";
 import HorizontalMasonryGallery from "./HorizontalMasonryGallery.astro";
 import ImageHero from "./ImageHero.astro";
 import InfoBox from "./InfoBox.astro";
+import SelfieConfirmation from "./SelfieConfirmation.astro";
 import ExtrasSection from "./ExtrasSection.astro";
 import FaqSection from "./FaqSection.astro";
 import PageHero from "./PageHero.astro";
@@ -1205,17 +1206,7 @@ const relatedHref = localizedPath("/packages", language);
     <SelfieBookingEmbed page={page} />
   </>
 ) : isSelfiePostBooking ? (
-  <>
-    <PageHero variant="service" headingId="selfie-post-booking-title" title={page.h1} description={selfiePostBookingPage.intro} />
-    <section class="post-booking post-booking--selfie" aria-labelledby="selfie-post-booking-rules-title">
-      <h2 id="selfie-post-booking-rules-title" class="post-booking__rules-heading">{selfiePostBookingPage.rulesHeading}</h2>
-      {selfiePostBookingPage.sections.map((section: [string, string[]]) => <section class="post-booking__section">
-        <h3>{section[0]}</h3>
-        <ul>{section[1].map((item: string) => <li>{item}</li>)}</ul>
-      </section>)}
-      <p class="post-booking__closing">{selfiePostBookingPage.closing[0]}<br />{selfiePostBookingPage.closing[1]}</p>
-    </section>
-  </>
+  <SelfieConfirmation page={page} content={selfiePostBookingPage} />
 ) : isPostBooking ? (
   <>
     <PageHero variant="service" headingId="post-booking-title" title={page.h1} description={postBookingPage.intro} />

@@ -2136,3 +2136,50 @@ summary { cursor: pointer; font: var(--font-card-title); }
 
 .selfie-extras-contact { margin-top: 28px; text-align: center; }
 .selfie-extras-contact p { margin: 0 0 16px; font: var(--text-body); }
+
+/* Selfie booking confirmation */
+.selfie-confirmation { max-width: 940px; padding: 58px 24px 64px; margin: 0 auto; }
+.selfie-confirmation__header { margin-bottom: 48px; text-align: center; }
+.selfie-confirmation__header h1 { margin: 0 0 26px; font: var(--font-page-title); }
+.selfie-confirmation__status { margin: 0 auto; text-align: left; }
+.selfie-confirmation__status p { margin: 0; font: var(--text-body); }
+.selfie-confirmation h2 { margin: 0 0 22px; font: var(--font-subsection-title); }
+.selfie-confirmation__cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.selfie-confirmation__card { padding: 28px; border: 1px solid var(--line); border-radius: 10px; }
+.selfie-confirmation__card-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.selfie-confirmation__card-heading > svg { flex-shrink: 0; }
+.selfie-confirmation__card h3 { margin: 0; font: var(--font-lead); }
+.selfie-confirmation p { font: var(--text-body); }
+.selfie-confirmation__card p { margin: 0; }
+.selfie-confirmation__card p + p { margin-top: 14px; }
+.selfie-confirmation__cancellation { margin-top: 42px; }
+.selfie-confirmation__cancellation > p { margin: 0 0 22px; }
+.selfie-confirmation__fees { margin: 0; border-top: 1px solid var(--line); }
+.selfie-confirmation__fees > div { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); font: var(--text-body); }
+.selfie-confirmation__fees dd { margin: 0; font-weight: 700; text-align: right; }
+.selfie-confirmation__contact { display: flex; gap: 24px; margin-top: 18px; font: var(--text-body); }
+.selfie-confirmation__contact a { text-underline-offset: 4px; }
+.selfie-confirmation__location { display: flex; align-items: center; gap: 20px; padding: 28px 0; margin-top: 42px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.selfie-confirmation__location > svg { flex-shrink: 0; }
+.selfie-confirmation__location h2 { margin: 0 0 8px; font: var(--font-lead); }
+.selfie-confirmation__location p { margin: 0; }
+.selfie-confirmation__location .button { margin-left: auto; display: inline-flex; gap: 10px; align-items: center; flex-shrink: 0; }
+.selfie-confirmation__closing { margin: 32px 0 0; text-align: center; }
+@media (max-width: 640px) {
+  .selfie-confirmation { padding: 36px 18px 48px; }
+  .selfie-confirmation__header { margin-bottom: 32px; }
+  .selfie-confirmation__header h1 { font-size: 34px; }
+  .selfie-confirmation h2 { font-size: 28px; }
+  .selfie-confirmation__cards { grid-template-columns: 1fr; gap: 16px; }
+  .selfie-confirmation__card { padding: 22px; }
+  .selfie-confirmation__fees > div { grid-template-columns: 1fr; gap: 8px; }
+  .selfie-confirmation__fees dd { text-align: left; }
+  .selfie-confirmation__location { flex-wrap: wrap; align-items: flex-start; }
+  .selfie-confirmation__location h2 { font: var(--font-lead); }
+  .selfie-confirmation__location .button { margin: 0; width: 100%; justify-content: center; }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .selfie-confirmation__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .selfie-confirmation__card:last-child { grid-column: 1 / -1; }
+}
