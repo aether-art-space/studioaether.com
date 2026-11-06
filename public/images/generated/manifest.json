@@ -53560,6 +53560,77 @@
           "alpha": false
         }
       }
+    },
+    "/images/home-wedding/couple-portrait.jpg": {
+      "source": "/images/home-wedding/couple-portrait.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alpha": false,
+      "hash": "317024eda2",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--320w--317024eda2.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--480w--317024eda2.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--640w--317024eda2.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--960w--317024eda2.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--1280w--317024eda2.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--1600w--317024eda2.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--thumb-160--317024eda2.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/home-wedding/couple-portrait--thumb-320--317024eda2.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/home-wedding/couple-portrait--full--317024eda2.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
     }
   },
   "unusedSources": []

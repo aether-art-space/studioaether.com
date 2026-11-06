@@ -8,6 +8,7 @@ interface CardImage {
   alt: string;
   width?: number;
   height?: number;
+  objectPosition?: string;
 }
 
 interface Props {
@@ -31,12 +32,12 @@ const cardClass = ["circular-card", `circular-card--${variant}`, className].filt
 <article class={cardClass} data-reveal-item>
   {href ? <a class="circular-card__link" href={href}>
     <h3>{title}</h3>
-    {showImage && <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />}
+    {showImage && <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" objectPosition={image.objectPosition} />}
     {copyParagraphs.map((paragraph, index) => <p class={index === 1 ? "circular-card__copy-emphasis" : undefined}>{paragraph}</p>)}
     {linkLabel && <span class="text-link">{linkLabel}</span>}
   </a> : <>
     <h3>{title}</h3>
-    {showImage && <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" />}
+    {showImage && <ResponsiveImage image={{ ...image, width: imageWidth, height: imageHeight }} role="card" loading="lazy" objectPosition={image.objectPosition} />}
     {copyParagraphs.map((paragraph, index) => <p class={index === 1 ? "circular-card__copy-emphasis" : undefined}>{paragraph}</p>)}
   </>}
 </article>

@@ -1567,7 +1567,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
 
 @media (max-width: 1050px) and (min-width: 761px) {
   .pricing-tabs__list { display: none; }
-  .pricing-tabs__select-wrap { position: relative; display: block; }
+  .pricing-tabs__select-wrap { position: relative; display: block; width: min(360px, 100%); margin-inline: auto; }
   .pricing-tabs__dropdown-trigger { width: 100%; }
 }
 

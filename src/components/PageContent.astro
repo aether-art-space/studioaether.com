@@ -769,7 +769,7 @@ const relatedHref = localizedPath("/packages", language);
       <div class="home-hero__choices" role="group" aria-label={de ? "Wähle dein Fotoerlebnis" : hu ? "Válaszd ki, mire van szükséged" : "Choose your photo experience"}>
         <a class="button button--inverted" data-gtag-event="booking_click" data-gtag-location="home-hero-studio" href={localizedPath("/booking", language)}>{de ? "Studio mieten" : hu ? "Stúdiót bérelnék" : "Rent the studio"}</a>
         <a class="button button--inverted" data-gtag-event="selfie_booking_click" data-gtag-location="home-hero-selfie" href={localizedPath("/selfie-studio-budapest", language)}>{de ? "Selfie-Fotoshooting" : hu ? "Szelfifotózást szeretnék" : "Selfie photoshoot"}</a>
-        <a class="button button--inverted" data-gtag-event="contact_click" data-gtag-location="home-hero-photographer" href={localizedPath("/photographers-budapest", language)}>{de ? "Fotografen buchen" : hu ? "Fotóst keresek" : "Book a photographer"}</a>
+        <a class="button button--inverted" data-gtag-event="contact_click" data-gtag-location="home-hero-photographer" href={localizedPath("/packages", language)}>{de ? "Fotografen buchen" : hu ? "Fotóst keresek" : "Book a photographer"}</a>
       </div>
     </ImageHero>
     <section class="home-favourite home-favourite--home" aria-labelledby="favourite-title" data-reveal-section>
@@ -964,6 +964,13 @@ const relatedHref = localizedPath("/packages", language);
       </div>
     </section>
     <UpgradeSection items={packagesPageAny.upgrades} cardsOnly ariaLabel={de ? "Zusatzleistungen" : hu ? "Kiegészítő szolgáltatások" : "Upgrade options"} />
+    <section class="home-services packages-genres" aria-labelledby="packages-genres-title">
+      <div class="home-services__intro">
+        <h2 id="packages-genres-title">{de ? "Entdecke unsere Fotografie-Genres" : hu ? "Milyen fotózást szeretnél?" : "Explore our photography genres"}</h2>
+        <p>{de ? "Entdecke unsere Arbeiten und erfahre mehr über die einzelnen Shootings und ihre Pakete." : hu ? "Nézd meg munkáinkat, és ismerd meg az egyes fotózások részleteit és csomagjait." : "Explore our work and find out more about each type of photoshoot and its packages."}</p>
+      </div>
+      <div class="home-services__grid">{home.photographyServices.map(([title, href, label], index) => <CircularCard variant="service" title={title} href={href} linkLabel={label} image={localizedHomePhotographers[index]} />)}</div>
+    </section>
   </>
 ) : modelPage ? (
   <>

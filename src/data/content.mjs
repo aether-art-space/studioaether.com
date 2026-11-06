@@ -2129,7 +2129,7 @@ export const homeImages = {
     { src: "/images/wix/reference/service-fitness.jpg", width: 300, height: 298, alt: "fitness and yoga photography" },
     { src: "/images/wix/reference/service-glamour.jpg", width: 300, height: 298, alt: "glamour and boudoir photography" },
     { src: "/images/wix/reference/service-models.jpg", width: 300, height: 298, alt: "model digitals and portfolio photography" },
-    { src: "/images/wix/wedding/wedding-01.jpg", width: 1500, height: 1000, alt: "wedding photography in Budapest and Hungary" }
+    { src: "/images/home-wedding/couple-portrait.jpg", width: 4000, height: 6000, objectPosition: "50% 25%", alt: "Wedding couple looking at each other outdoors", altHu: "Egymásra néző esküvői pár a szabadban", altDe: "Brautpaar blickt sich im Freien an" }
   ],
   booking: [
     { src: "/images/wix/reference/booking-photo-studio.jpg", width: 640, height: 382, alt: "aether photo studio interior", altHu: "az aether fotóstúdió belső tere", altDe: "Innenraum des aether-Fotostudios" },
