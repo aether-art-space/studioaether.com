@@ -982,7 +982,10 @@ export const residentArtistImages = {
     profiles: [
       { image: artistImage("makeup", "makeup-09.png", "Csenge Katica Denes, hair and make-up artist"), gallery: artistGallery("makeup", ["makeup-10.jpg", "makeup-11.jpg", "makeup-12.png", "makeup-13.jpg", "makeup-14.jpg", "makeup-15.jpeg"], "Make-up work by Csenge Katica Denes") },
       { image: artistImage("makeup", "makeup-16.jpg", "Noémi Holczimmer, make-up artist"), gallery: artistGallery("makeup", ["makeup-17.jpeg", "makeup-18.jpeg", "makeup-19.jpeg", "makeup-20.jpg", "makeup-21.jpeg", "makeup-22.jpg"], "Make-up work by Noémi Holczimmer") },
-      { image: { src: "/images/eszter-placeholder.svg", alt: "Gémesi Eszter", width: 600, height: 800 }, gallery: [] }
+      {
+        image: { ...artistImage("makeup", "gemesi-eszter.jpg", "Gémesi Eszter"), width: 828, height: 1379 },
+        gallery: numbered("makeup", "gemesi-eszter", 1, 6, "jpg", "Make-up work by Gémesi Eszter")
+      }
     ]
   }
 };
@@ -1398,8 +1401,8 @@ photoPackageSets.models.de = [
 ];
 
 export const weddingCreativeUpgrades = Object.fromEntries(["en", "hu", "de"].map((language) => [language, [
-  { title: language === "hu" ? "Menyasszonyi smink" : language === "de" ? "Braut-Make-up" : "Bridal Makeup", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "30.000 HUF", href: `${language === "en" ? "" : `/${language}`}/make-up-artists` },
-  { title: language === "hu" ? "Menyasszonyi frizura" : language === "de" ? "Brautfrisur" : "Bridal Hair", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "20.000 HUF", href: `${language === "en" ? "" : `/${language}`}/make-up-artists` },
+  { title: language === "hu" ? "Menyasszonyi smink" : language === "de" ? "Braut-Make-up" : "Bridal Makeup", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "29.000 HUF", href: `${language === "en" ? "" : `/${language}`}/make-up-artists` },
+  { title: language === "hu" ? "Menyasszonyi frizura" : language === "de" ? "Brautfrisur" : "Bridal Hair", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "19.000 HUF", href: `${language === "en" ? "" : `/${language}`}/make-up-artists` },
   { title: "Styling", priceLabel: language === "hu" ? "kezdőár" : language === "de" ? "ab" : "starting from", price: "35.000 HUF", href: `${language === "en" ? "" : `/${language}`}/stylists` }
 ]]));
 
