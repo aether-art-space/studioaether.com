@@ -1058,7 +1058,7 @@ const relatedHref = localizedPath("/packages", language);
       <div class="artist-profiles__grid">
         {artistType === "stylists"
           ? localizedArtistProfiles.map((profile: any) => <StylistProfile profile={profile} hu={hu} de={de} />)
-          : localizedArtistProfiles.map((profile: any) => <ArtistCard profile={profile} hu={hu} de={de} showGalleryProfileMeta={false} />)}
+          : localizedArtistProfiles.map((profile: any) => <ArtistCard profile={profile} hu={hu} de={de} showDetails={artistType !== "makeup"} showGalleryProfileMeta={false} />)}
       </div>
 </section>
           {artistPageAny.footerNote && <InfoBox class="artist-note"><p>{artistPageAny.footerNote}</p></InfoBox>}
