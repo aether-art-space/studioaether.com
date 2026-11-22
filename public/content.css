@@ -657,11 +657,7 @@
 /* Model directory: Wix-style portrait galleries with measurement cards. */
 .models-intro { padding: 39px 24px 64px; }
 .models-list > h2 { display: none; }
-.models-fee { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 52px auto 0; text-align: center; }
-.models-fee h2 { margin: 0; font: 400 30px/1.1 var(--serif); }
-.models-fee strong { font: 400 23px/1.15 var(--serif); }
-.models-fee .button { margin-top: 8px; }
-.models-pricing { max-width: var(--content-max); margin: 78px auto 0; }
+.models-pricing { max-width: var(--content-max); margin: 0 auto; }
 .models-pricing > h2 { margin: 0; text-align: center; font: 400 42px/1.08 var(--serif); }
 .models-pricing-grid { margin-top: 28px; text-align: left; }
 .models-pricing__disclaimer { max-width: 700px; margin: 24px auto 0; text-align: center; font: var(--text-small); color: var(--muted); }
@@ -684,7 +680,7 @@
 .model-measurements p { margin: 0; font: var(--text-small); }
 .model-measurements p + p { margin-top: 25px; }
 .model-measurements span { display: block; }
-.model-card__action { display: flex; position: static; width: 100%; flex-direction: column; align-items: flex-start; margin-top: 30px; text-align: left; }
+.model-card__action { display: flex; position: absolute; right: 35px; bottom: 31px; width: auto; flex-direction: column; align-items: flex-end; margin: 0; text-align: right; }
 .model-card__action p { margin: 0 0 18px; font: var(--text-small); }
 .model-card__action .button { min-width: 142px; }
 .models-animal { padding: 92px 24px 86px; }
@@ -692,14 +688,16 @@
 .models-animal__intro h2 { margin: 0 0 27px; font: 400 48px/1.1 var(--serif); }
 .models-animal__intro p { margin: 0; font: var(--text-body); }
 .models-animal__intro p + p { margin-top: 24px; }
-.model-animal { display: grid; grid-template-columns: minmax(280px, 42%) minmax(0, 1fr); gap: 35px; align-items: stretch; max-width: var(--content-max); min-height: 280px; margin: 0 auto; overflow: hidden; border-radius: 20px; background: #f5f5f5; }
+.models-animal__pricing { width: min(796px, calc(66.667vw - 36px)); max-width: 100%; margin: 0 auto 56px; }
+.models-animal__pricing > h3 { margin: 0; text-align: center; font: 400 36px/1.08 var(--serif); }
+.models-animal__pricing .models-animal__pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 26px auto 0; }
+.models-animal__cards { display: grid; width: 100%; grid-template-columns: minmax(0, 1fr); max-width: var(--content-max); gap: 22px; margin: 0 auto; }
+.model-animal { display: grid; width: 100%; grid-template-columns: minmax(280px, 42%) minmax(0, 1fr); gap: 0; align-items: stretch; max-width: var(--content-max); min-height: 280px; margin: 0 auto; overflow: hidden; border-radius: 20px; background: #f5f5f5; }
 .model-animal > .responsive-image { position: relative; display: block; min-width: 0; min-height: 0; overflow: hidden; }
 .model-animal > .responsive-image > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
 .model-animal__body { position: relative; min-height: 280px; padding: 31px 35px; }
 .model-animal__body h3 { margin: 0; font: 400 36px/1.1 var(--serif); }
 .model-animal__body > p { margin: 12px 0 0; font: var(--text-small); }
-.model-animal__body > strong { display: block; margin-top: 25px; font: 700 16px/1.2 var(--sans); }
-.model-animal__body > b { display: block; margin-top: 3px; font: 400 21px/1.2 var(--serif); }
 .model-animal__body h4 { margin-top: 24px; }
 .model-animal__body .model-measurements p + p { margin-top: 8px; }
 .model-animal__body .model-card__action { position: static; width: 100%; margin-top: 34px; align-items: flex-start; text-align: left; }
@@ -710,6 +708,8 @@
 }
 @media (max-width: 1199px) and (min-width: 761px) {
   .model-card { min-height: 0; }
+  .model-card__action { position: static; width: 100%; align-items: flex-end; margin-top: 24px; text-align: right; }
+  .model-card__action p { margin-bottom: 10px; }
   .model-gallery {
     grid-template-columns: 1fr;
     grid-template-rows: minmax(0, 1fr) 72px;
@@ -756,9 +756,7 @@
   .page-hero--models h1 { font-size: clamp(45px, 12vw, 62px); }
   .page-hero--models > .page-hero__lead { margin: 8px auto 0; font: 400 15px/22.5px var(--sans); }
   .models-intro { padding: 46px 18px 58px; }
-  .models-fee { margin-top: 38px; }
-  .models-fee h2 { font-size: 26px; }
-  .models-pricing { margin-top: 58px; }
+  .models-pricing { margin-top: 30px; }
   .models-pricing > h2 { font-size: 34px; }
   .models-list { width: calc(100% - 36px); gap: 14px; }
   .model-card { grid-template-columns: 1fr; min-height: 0; }
@@ -775,6 +773,10 @@
   .models-animal { padding: 66px 18px 60px; }
   .models-animal__intro { margin-bottom: 31px; }
   .models-animal__intro h2 { font-size: 36px; }
+  .models-animal__pricing { margin-bottom: 38px; }
+  .models-animal__pricing { width: 100%; }
+  .models-animal__pricing > h3 { font-size: 30px; }
+  .models-animal__pricing .models-animal__pricing-grid { grid-template-columns: 1fr; }
   .models-animal__intro p { font: 400 15px/22.5px var(--sans); }
   .models-animal__intro p + p { margin-top: 20px; }
   .model-animal { grid-template-columns: 1fr; gap: 22px; width: 100%; }
@@ -982,7 +984,7 @@ summary { cursor: pointer; font: var(--font-card-title); }
   .studio-overview__floorplan img { margin-right: auto; margin-left: auto; }
   .selfie-benefits .selfie-benefit:nth-child(2) h3 { max-width: 170px; margin-right: auto; margin-left: auto; }
   .models-platform { border-radius: 0; }
-  .models-list, .model-animal { width: calc(100% - 48px); }
+  .models-list { width: calc(100% - 48px); }
   .wedding-glance { min-height: 0; }
   .wedding-glance > .responsive-image,
   .wedding-glance > .responsive-image > img { height: 100%; }
@@ -1389,13 +1391,14 @@ summary { cursor: pointer; font: var(--font-card-title); }
 .selfie-prices__grid .price-card__details { padding-top: 12px; }
 .selfie-prices__grid .price-card__price { min-height: 0; padding-bottom: 0; }
 /* Model price cards are intentionally compact and do not use the shared subgrid height. */
-.models-pricing-grid { grid-template-rows: none; }
-.models-pricing-grid .models-pricing-card { display: flex; min-height: 0; grid-row: auto; padding: 24px 22px 20px; flex-direction: column; }
-.models-pricing-grid .models-pricing-card .price-card__header .price-card__title { margin-bottom: 12px; }
-.models-pricing-grid .models-pricing-card .price-card__details { display: flex; flex: 1 1 auto; padding-top: 12px; flex-direction: column; }
-.models-pricing-grid .models-pricing-card .price-card__price-label { margin: 0 0 6px; color: rgba(255, 255, 255, .72); font: var(--text-small); }
-.models-pricing-grid .models-pricing-card .price-card__price { min-height: 0; padding-bottom: 0; }
-.models-pricing-grid .models-pricing-card .price-card__action-wrap { padding-top: 16px; }
+.models-pricing-grid, .models-animal__pricing-grid { grid-template-rows: none; }
+.models-pricing-grid .models-pricing-card, .models-animal__pricing-grid .models-animal__price-card { display: flex; min-height: 0; grid-row: auto; padding: 24px 22px 20px; flex-direction: column; }
+.models-pricing-grid .models-pricing-card .price-card__header .price-card__title, .models-animal__pricing-grid .models-animal__price-card .price-card__header .price-card__title { margin-bottom: 12px; }
+.models-pricing-grid .models-pricing-card .price-card__details, .models-animal__pricing-grid .models-animal__price-card .price-card__details { display: flex; flex: 1 1 auto; padding-top: 12px; flex-direction: column; }
+.models-pricing-grid .models-pricing-card .price-card__price-label, .models-animal__pricing-grid .models-animal__price-card .price-card__price-label { margin: 0 0 6px; color: rgba(255, 255, 255, .72); font: var(--text-small); }
+.models-pricing-grid .models-pricing-card .price-card__price-label { margin-bottom: 14px; }
+.models-pricing-grid .models-pricing-card .price-card__price, .models-animal__pricing-grid .models-animal__price-card .price-card__price { min-height: 0; padding-bottom: 0; }
+.models-pricing-grid .models-pricing-card .price-card__action-wrap, .models-animal__pricing-grid .models-animal__price-card .price-card__action-wrap { padding-top: 16px; }
 .corporate-overview { background: #f5f5f5; }
 .corporate-overview .service-section { max-width: none; }
 .corporate-overview .service-section--corporate-intro { padding-bottom: 42px; text-align: center; }

@@ -54044,6 +54044,148 @@
           "alpha": false
         }
       }
+    },
+    "/images/models/snake-01.jpg": {
+      "source": "/images/models/snake-01.jpg",
+      "width": 1794,
+      "height": 2691,
+      "alpha": false,
+      "hash": "b6b98bb43a",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/models/snake-01--320w--b6b98bb43a.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-01--480w--b6b98bb43a.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-01--640w--b6b98bb43a.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-01--960w--b6b98bb43a.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-01--1280w--b6b98bb43a.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-01--1600w--b6b98bb43a.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/models/snake-01--thumb-160--b6b98bb43a.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-01--thumb-320--b6b98bb43a.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/models/snake-01--full--b6b98bb43a.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
+    },
+    "/images/models/snake-02.jpg": {
+      "source": "/images/models/snake-02.jpg",
+      "width": 1633,
+      "height": 2449,
+      "alpha": false,
+      "hash": "76c89294e3",
+      "regular": {
+        "webp": [
+          {
+            "src": "/images/generated/models/snake-02--320w--76c89294e3.webp",
+            "width": 320,
+            "height": 480,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-02--480w--76c89294e3.webp",
+            "width": 480,
+            "height": 720,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-02--640w--76c89294e3.webp",
+            "width": 640,
+            "height": 960,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-02--960w--76c89294e3.webp",
+            "width": 960,
+            "height": 1440,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-02--1280w--76c89294e3.webp",
+            "width": 1280,
+            "height": 1920,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-02--1600w--76c89294e3.webp",
+            "width": 1600,
+            "height": 2400,
+            "alpha": false
+          }
+        ]
+      },
+      "thumb": {
+        "webp": [
+          {
+            "src": "/images/generated/models/snake-02--thumb-160--76c89294e3.webp",
+            "width": 160,
+            "height": 160,
+            "alpha": false
+          },
+          {
+            "src": "/images/generated/models/snake-02--thumb-320--76c89294e3.webp",
+            "width": 320,
+            "height": 320,
+            "alpha": false
+          }
+        ]
+      },
+      "full": {
+        "webp": {
+          "src": "/images/generated/models/snake-02--full--76c89294e3.webp",
+          "width": 1600,
+          "height": 2400,
+          "alpha": false
+        }
+      }
     }
   },
   "unusedSources": []

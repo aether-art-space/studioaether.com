@@ -976,11 +976,6 @@ const relatedHref = localizedPath("/packages", language);
   <>
     <PageHero variant="models" headingId="models-title" title={modelPageAny.heroHeading} lead={modelPageAny.heroCopy} description={modelPageAny.intro} />
     <section class="models-intro" aria-label={de ? "Modelbuchung" : hu ? "Modellfoglalás" : "Model booking"}>
-      <div class="models-fee">
-        <h2>{modelPageAny.feeTitle}</h2>
-        <strong>{modelPageAny.feePrice}</strong>
-      <button class="button button--outline" type="button" data-contact-open aria-controls="footer-contact-modal">{modelPageAny.contactLabel}</button>
-      </div>
       <section class="models-pricing" aria-labelledby="models-pricing-title">
         <h2 id="models-pricing-title">{modelPageAny.pricing.heading}</h2>
         <div class="models-pricing-grid service-package-grid">
@@ -1018,18 +1013,28 @@ const relatedHref = localizedPath("/packages", language);
         <h2 id="models-animal-title">{modelPageAny.animalHeading}</h2>
         {modelPageAny.animalIntro.map((paragraph: string) => <p>{paragraph}</p>)}
       </div>
-      <article class="model-animal">
-        <ResponsiveImage image={de ? { ...modelImages.animal, alt: "Lucifer, weiße Kornnatter" } : modelImages.animal} role="content" loading="lazy" />
-        <div class="model-animal__body">
-          <h3>{modelPageAny.animal.name}</h3>
-          <p>{modelPageAny.animal.description}</p>
-          <strong>{modelPageAny.animal.priceLabel}</strong>
-          <b>{modelPageAny.animal.price}</b>
-          <h4>{modelPageAny.animal.measurementsTitle}</h4>
-          <div class="model-measurements">{modelPageAny.animal.measurements.map((group: string[]) => <p>{group.map((line) => <span>{line}</span>)}</p>)}</div>
-          <div class="model-card__action"><p>{modelPageAny.animal.contactPrefix}{modelPageAny.animal.contactSuffix}</p><button class="button button--outline" type="button" data-contact-open aria-controls="footer-contact-modal">{modelPageAny.contactLabel}</button></div>
+      <section class="models-animal__pricing" aria-labelledby="models-animal-pricing-title">
+        <h3 id="models-animal-pricing-title">{modelPageAny.animalPricing.heading}</h3>
+        <div class="service-package-grid models-animal__pricing-grid">
+          {modelPageAny.animalPricing.cards.map((card: any) => <PriceCard className="models-animal__price-card" title={card.title} description={card.description} descriptionAbovePrice price={card.price} cta={modelPriceCardCta} />)}
         </div>
-      </article>
+      </section>
+      <div class="models-animal__cards">
+        {modelPageAny.animals.map((animal: any, index: number) => <article class="model-animal">
+          <ResponsiveImage image={de
+            ? { ...modelImages.animals[index], alt: index === 0 ? "Lilith, mexikanische schwarze Königsnatter" : "Gülü, texanische weiße Rattennatter" }
+            : hu
+              ? { ...modelImages.animals[index], alt: index === 0 ? "Lilith, mexikói fekete királysikló" : "Gülü, texasi fehér patkánysikló" }
+              : modelImages.animals[index]} role="content" loading="lazy" />
+          <div class="model-animal__body">
+            <h3>{animal.name}</h3>
+            <p>{animal.description}</p>
+            <h4>{animal.measurementsTitle}</h4>
+            <div class="model-measurements">{animal.measurements.map((group: string[]) => <p>{group.map((line) => <span>{line}</span>)}</p>)}</div>
+            <div class="model-card__action"><p>{animal.contactPrefix}{animal.contactSuffix}</p><button class="button button--outline" type="button" data-contact-open aria-controls="footer-contact-modal">{modelPageAny.contactLabel}</button></div>
+          </div>
+        </article>)}
+      </div>
     </section>
     <section class="models-platform" aria-labelledby="models-platform-title">
       <div class="models-platform__copy">
