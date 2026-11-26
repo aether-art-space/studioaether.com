@@ -109,8 +109,11 @@ for (const page of renderedPages) {
   const jsonLdNodes = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/gis)].map((match) => JSON.parse(match[1]));
   if (jsonLdNodes.length === 0) fail.push(`missing JSON-LD: ${page.path}`);
   const faqNode = jsonLdNodes.find((node) => node["@type"] === "FAQPage");
+  const isSelfieFaqPage = page.path.endsWith("/selfie-studio-budapest");
+  const visibleSelfieFaqCount = [...html.matchAll(/<details\b[^>]*class=["'][^"']*selfie-faq__item/g)].length;
   if (page.section === "faq" && (!faqNode || faqNode.mainEntity?.length !== 21)) fail.push(`FAQPage schema does not match visible FAQ content: ${page.path}`);
-  if (page.section !== "faq" && faqNode) fail.push(`unexpected FAQPage schema: ${page.path}`);
+  if (isSelfieFaqPage && (!faqNode || faqNode.mainEntity?.length !== 6 || visibleSelfieFaqCount !== 6)) fail.push(`Selfie FAQ schema does not match the six visible accordions: ${page.path}`);
+  if (page.section !== "faq" && !isSelfieFaqPage && faqNode) fail.push(`unexpected FAQPage schema: ${page.path}`);
 }
 
 for (const [title, paths] of titleSeen) if (paths.length > 1) warnings.push(`duplicate title (${paths.length}) in ${paths.join(", ")}: ${title}`);
