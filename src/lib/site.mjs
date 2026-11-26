@@ -154,6 +154,44 @@ export const introFor = (page) => {
 const faqParagraph = (text) => ({ type: "paragraph", text });
 const faqList = (items) => ({ type: "list", items });
 
+const selfieFaqItemsEn = [
+  ["Are dogs allowed in the Selfie Studio?", "Yes, dogs are welcome for your selfie session. Please let us know in advance and keep the studio clean; an extra cleaning fee may apply if needed."],
+  ["Can I use a gift voucher or booking coupon?", "Yes. Book your session online and follow the instructions on your voucher. Depending on the voucher, enter its code in the booking notes or at payment, and bring the voucher number with you. You do not need to print it."],
+  ["What is the cancellation or rescheduling policy?", "Cancel or reschedule more than 7 days before your session and there is no fee. Changes made within 7 days require 50% of the booking price; within 24 hours, the full booking price applies. The same terms apply when moving your session to another date."],
+  ["Can I pay by cash or card at the studio?", "Yes. You can pay on site by either cash or card."],
+  ["Can I arrive early to get ready?", "Please arrive for your booked start time. The dressing and make-up area is available during your session, and getting ready counts toward the booked time. We cannot offer early access when the studio is reserved for another booking."],
+  ["Can I recreate a reference photo or use more than one background?", "You can take inspiration from a reference, although the self-service setup has some limits. Background changes are possible with staff assistance and take extra time; a 30-minute session normally uses one background, so book enough time for the looks you want."],
+];
+
+const selfieFaqItemsHu = [
+  ["Hozhatok kutyát a szelfi stúdióba?", "Igen, kutyát is hozhatsz a szelfifotózásra. Kérjük, előre jelezd, és ügyelj arra, hogy tisztán hagyjátok a stúdiót; szükség esetén extra takarítási díjat számíthatunk fel."],
+  ["Felhasználhatok ajándékutalványt vagy foglalási kupont?", "Igen. Foglalj online, és kövesd az utalványon szereplő útmutatót. Az utalvány típusától függően a kódot a foglalás megjegyzésébe vagy a fizetésnél add meg, és hozd magaddal az utalvány számát. Kinyomtatni nem szükséges."],
+  ["Mi a lemondási és időpont-módosítási feltétel?", "A fotózás előtt több mint 7 nappal díjmentesen mondhatod le vagy módosíthatod az időpontot. 7 napon belüli módosításnál a foglalási ár 50%-a, 24 órán belül pedig a teljes ár fizetendő. Az időpont másik napra helyezésére is ugyanezek a feltételek vonatkoznak."],
+  ["Fizethetek készpénzzel vagy bankkártyával a stúdióban?", "Igen. A helyszínen készpénzzel és bankkártyával is fizethetsz."],
+  ["Érkezhetek korábban készülődni?", "Kérjük, a lefoglalt kezdési időpontra érkezz. Az öltöző és a sminkasztal a foglalás ideje alatt használható, a készülődés is beleszámít a lefoglalt időbe. Korábbi belépést nem tudunk biztosítani, ha a stúdiót egy másik foglalás használja."],
+  ["Elkészíthetünk egy referenciaképet, vagy használhatunk több hátteret?", "A referenciaképből inspirálódhattok, de az önkiszolgáló rendszernek vannak korlátai. A hátterek cseréjében munkatársunk tud segíteni, ami extra időt igényel; egy 30 perces alkalom során általában egy hátteret használunk, ezért foglalj elegendő időt a tervezett képekhez."],
+];
+
+const selfieFaqItemsDe = [
+  ["Darf ich einen Hund ins Selfie-Studio mitbringen?", "Ja, Hunde sind bei deiner Selfie-Session willkommen. Bitte gib uns vorher Bescheid und hinterlasse das Studio sauber; falls nötig, kann eine zusätzliche Reinigungsgebühr anfallen."],
+  ["Kann ich einen Gutschein oder Buchungscode einlösen?", "Ja. Buche deine Session online und folge den Hinweisen auf deinem Gutschein. Je nach Gutschein gibst du den Code in den Buchungsnotizen oder bei der Zahlung ein und bringst die Gutscheinnummer mit. Ein Ausdruck ist nicht nötig."],
+  ["Wie lauten die Stornierungs- und Umbuchungsbedingungen?", "Mehr als 7 Tage vor der Session kannst du kostenlos stornieren oder umbuchen. Bei Änderungen innerhalb von 7 Tagen werden 50 % des Buchungspreises fällig; innerhalb von 24 Stunden der volle Preis. Dieselben Bedingungen gelten bei einer Verlegung auf einen anderen Termin."],
+  ["Kann ich im Studio bar oder mit Karte bezahlen?", "Ja. Du kannst vor Ort bar oder mit Karte bezahlen."],
+  ["Kann ich früher kommen, um mich fertig zu machen?", "Bitte komme zu deiner gebuchten Startzeit. Umkleide und Make-up-Platz kannst du während deiner Session nutzen; die Vorbereitung zählt zur gebuchten Zeit. Ein früherer Zugang ist nicht möglich, wenn das Studio für eine andere Buchung reserviert ist."],
+  ["Kann ich ein Referenzfoto nachstellen oder mehrere Hintergründe nutzen?", "Du kannst dich von einem Referenzfoto inspirieren lassen, aber das Self-Service-System hat gewisse Grenzen. Ein Hintergrundwechsel ist mit Unterstützung unseres Teams möglich und braucht zusätzliche Zeit. Bei einer 30-minütigen Session wird normalerweise ein Hintergrund genutzt – plane daher genug Zeit für deine Ideen ein."],
+];
+
+const selfieFaqItemsKo = [
+  ["셀프사진관에 반려견을 데려갈 수 있나요?", "네, 셀프 촬영에 반려견을 데려오실 수 있습니다. 미리 알려주시고 스튜디오를 깨끗하게 사용해 주세요. 필요한 경우 추가 청소 비용이 발생할 수 있습니다."],
+  ["기프트 바우처나 예약 쿠폰을 사용할 수 있나요?", "네. 온라인으로 예약하고 바우처 안내를 따라 주세요. 바우처 종류에 따라 예약 메모 또는 결제 단계에서 코드를 입력하고, 바우처 번호를 가져와 주세요. 출력하실 필요는 없습니다."],
+  ["예약 취소 또는 변경 규정은 어떻게 되나요?", "촬영일 7일보다 더 일찍 취소하거나 변경하면 수수료가 없습니다. 촬영 7일 이내 변경은 예약 금액의 50%, 24시간 이내 변경은 전체 금액이 적용됩니다. 날짜 변경에도 같은 조건이 적용됩니다."],
+  ["현장에서 현금이나 카드로 결제할 수 있나요?", "네. 스튜디오에서 현금 또는 카드로 결제하실 수 있습니다."],
+  ["촬영 준비를 위해 일찍 도착해도 되나요?", "예약 시작 시간에 맞춰 도착해 주세요. 탈의실과 메이크업 테이블은 예약 시간 동안 이용할 수 있으며, 준비 시간도 예약 시간에 포함됩니다. 다른 예약이 있으면 일찍 입장하실 수 없습니다."],
+  ["레퍼런스 사진처럼 촬영하거나 배경을 여러 개 사용할 수 있나요?", "레퍼런스에서 아이디어를 얻어 촬영할 수 있지만 셀프 촬영 시스템에는 일부 한계가 있습니다. 배경 교체는 직원의 도움이 필요하고 추가 시간이 걸립니다. 30분 촬영은 보통 한 가지 배경을 사용하므로 원하는 촬영에 맞춰 충분한 시간을 예약해 주세요."],
+];
+
+export const selfieFaqItemsFor = (page) => page.language === "hu" ? selfieFaqItemsHu : page.language === "de" ? selfieFaqItemsDe : page.language === "ko" ? selfieFaqItemsKo : selfieFaqItemsEn;
+
 const faqItemsEn = [
   ["What is aether art space?", [faqParagraph("Aether Art Space is a professional yet welcoming photo studio in the heart of Budapest, offering studio rental, equipment, props, wardrobe and creative services for photographers and other creatives.")]],
   ["Is the studio suitable for beginners?", [faqParagraph("The studio is perfect for first timers and beginners. We help you set the lights and your camera for free at the beginning of your shoot if you wish. You can also ask for full assistance for 4,000 HUF/hour.")]],

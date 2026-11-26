@@ -1,5 +1,5 @@
 ---
-import { absoluteUrl, faqItemsFor, site } from "../lib/site.mjs";
+import { absoluteUrl, faqItemsFor, selfieFaqItemsFor, site } from "../lib/site.mjs";
 import { weddingContent, weddingContentCreation } from "../data/content.mjs";
 import { serviceOffersFor } from "../lib/serviceOffers.mjs";
 import { resolveImage } from "../lib/images.mjs";
@@ -234,6 +234,21 @@ if (page.section === "faq") {
         "@type": "Answer",
         text: faqAnswerText(answer)
       }
+    }))
+  });
+}
+
+if (page.path.endsWith("/selfie-studio-budapest")) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${canonicalUrl}#selfie-faq`,
+    url: canonicalUrl,
+    inLanguage: page.language,
+    mainEntity: selfieFaqItemsFor(page).map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer }
     }))
   });
 }

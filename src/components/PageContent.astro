@@ -15,6 +15,7 @@ import InfoBox from "./InfoBox.astro";
 import SelfieConfirmation from "./SelfieConfirmation.astro";
 import ExtrasSection from "./ExtrasSection.astro";
 import FaqSection from "./FaqSection.astro";
+import SelfieFaqSection from "./SelfieFaqSection.astro";
 import PageHero from "./PageHero.astro";
 import PriceCard from "./PriceCard.astro";
 import PriceSection from "./PriceSection.astro";
@@ -930,6 +931,7 @@ const relatedHref = localizedPath("/packages", language);
       <div class="selfie-location__inner"><div class="selfie-location__visual"><ResponsiveImage image={{ src: "/images/selfie/szeged-space.avif", alt: "", width: 1600, height: 900 }} role="content" loading="lazy" className="selfie-location__background" /><h2 id="selfie-location-title">{selfie.szegedHeading}</h2></div><div class="selfie-location__copy"><ResponsiveImage className="selfie-location__logo" image={{ src: "/images/selfie/szeged-logo.avif", alt: "aether art space", width: 326, height: 184 }} role="logo" loading="lazy" /><p>{selfie.szegedCopy}</p><a class="button button--dark" href={hu ? "https://www.aetherstudio-szeged.com/" : "https://www.aetherstudio-szeged.com/en"} target="_blank" rel="noreferrer noopener">{selfie.szegedCta}</a></div></div>
     </section>
     )}
+    <SelfieFaqSection page={page} />
     <GalleryLightbox label={de ? "Selfie-Studio-Galerie" : hu ? "Szelfi stúdió galéria" : "Selfie studio gallery"} hu={hu} de={de} />
   </>
 ) : collectionPage ? (

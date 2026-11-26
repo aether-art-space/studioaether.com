@@ -1,0 +1,27 @@
+import { selfieFaqItemsFor } from "../lib/site.mjs";
+
+const { page } = Astro.props;
+const copy = page.language === "hu"
+  ? { heading: "Gyakori kérdések", label: "Válasz megnyitása" }
+  : page.language === "de"
+    ? { heading: "Häufige Fragen", label: "Antwort öffnen" }
+    : page.language === "ko"
+      ? { heading: "자주 묻는 질문", label: "답변 열기" }
+      : { heading: "Frequently asked questions", label: "Show answer" };
+const items = selfieFaqItemsFor(page);
+---
+
+<section class="selfie-faq service-faq" aria-labelledby="selfie-faq-title">
+  <h2 id="selfie-faq-title">{copy.heading}</h2>
+  <div class="selfie-faq__list">
+    {items.map(([question, answer]) => (
+      <details class="selfie-faq__item">
+        <summary aria-label={`${question} — ${copy.label}`}>
+          <span>{question}</span>
+          <span class="selfie-faq__icon" aria-hidden="true"></span>
+        </summary>
+        <p>{answer}</p>
+      </details>
+    ))}
+  </div>
+</section>
